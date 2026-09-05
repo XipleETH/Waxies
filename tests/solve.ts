@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { DUNGEONS,PHYSICS,createState,requestJump,step,trapPosition } from '../lib/game/physics';
+import { DUNGEONS,PHYSICS,createState,requestJump,step } from '../lib/game/physics';
 for(const level of DUNGEONS){
  let won=false,bestTime=Infinity,bestRoute:unknown;
  for(let seed=0;seed<400;seed++){
@@ -14,7 +14,7 @@ for(const level of DUNGEONS){
     else if(s.y<7)jump=s.direction===-1&&s.x<threshold[2];
     else if(s.y<10)jump=s.direction===1&&s.x>threshold[3];
    }
-   if(s.grounded)for(const trap of level.traps){const p=trapPosition(trap,s.time);const ahead=(p.x-s.x)*s.direction;if(ahead>0&&ahead<1.65&&Math.abs(s.y-p.y)<0.9)jump=true;}
+   if(s.grounded)for(const p of s.hazards.traps){const ahead=(p.x-s.x)*s.direction;if(ahead>0&&ahead<1.65&&Math.abs(s.y-p.y)<0.9)jump=true;}
    if(s.wall!==0&&!s.grounded&&s.vy<1)jump=true;
    if(jump){requestJump(s);actions.push(f);}
    step(s,level);

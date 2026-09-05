@@ -27,9 +27,36 @@
       "ffd2fe",
       "f78ee2",
       "d900d0"
+    ],
+    "plant-02": [
+      "afdb1b",
+      "75ba00",
+      "e3efdb",
+      "aebd44",
+      "70ce00"
     ]
   },
   "parts": [
+    {
+      "file": "carrot-part.png",
+      "part": "Carrot",
+      "partId": "tail-carrot",
+      "cardId": "plant-tail-02",
+      "card": "Carrot Hammer",
+      "effect": "Gain one energy when the Axie's shield breaks; at most once per round.",
+      "attack": 80,
+      "shield": 50,
+      "energy": 1,
+      "atlasKey": "plant-02.tail",
+      "rect": [
+        700,
+        876,
+        192,
+        151
+      ],
+      "palette": "plant-02",
+      "cardImage": "https://classic.axieinfinity.com/art/cards/plant-tail-02.png"
+    },
     {
       "file": "grass-snake-part.png",
       "part": "Grass Snake",
@@ -168,5 +195,5 @@
     "note": "Real aquatic Axie from official mixer playground; not Buba."
   },
   "reuseNote": "Official Sky Mavis repositories. No standalone LICENSE/COPYING/NOTICE found in inspected repositories; do not represent art as CC0 or MIT. Toolkit READMEs describe game-development usage. Axie terms and any applicable builder/event terms govern reuse.",
-  "adaptationNote": "These are Classic level-1 effects. Frame timing, automatic collision triggers, firing intervals, trap hitboxes, and any seconds-to-rounds conversion are platformer adaptations, not canonical Axie effects. Preserve exact Poison count, speed percentage and conditional damage. Grass Snake is Venom Spray; Gas Unleash belongs to Yam (plant-tail-08)."
+  "adaptationNote": "These are Classic level-1 effects. Frame timing, automatic collision triggers, firing intervals, trap hitboxes, and any seconds-to-rounds conversion are platformer adaptations, not canonical Axie effects. Preserve exact Poison count, speed percentage and conditional damage. Grass Snake is Venom Spray; Gas Unleash belongs to Yam (plant-tail-08). Carrot Hammer is melee in Classic. Carrot projectiles and energy used for an extra shot are the requested WAXIS adaptation."
 }

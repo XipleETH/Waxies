@@ -1,5 +1,7 @@
+import { createHazards, stepHazards, type HazardState } from './hazards';
+import type { PartId } from './catalog';
 export interface Rect { x: number; y: number; w: number; h: number }
-export interface Trap { part: 'lagging' | 'grass-snake' | 'thorny-caterpillar'; x: number; y: number; patrol: number; phase: number }
+export interface Trap { part: PartId; x: number; y: number; patrol: number; phase: number }
 export interface Dungeon {
   id: string; name: string; subtitle: string; difficulty: string;
   platforms: Rect[]; traps: Trap[]; spawn: { x: number; y: number }; chest: { x: number; y: number };
@@ -16,7 +18,7 @@ export const DUNGEONS: Dungeon[] = [
   { id: 'ruins', name: 'Las ruinas de Lunacia', subtitle: 'La primera incursión', difficulty: 'Aprendiz', platforms,
     spawn: { x: 2.5, y: 1.4 }, chest: { x: 20.5, y: 11.45 },
     traps: [
-      { part: 'lagging', x: 12, y: 1.55, patrol: 2.6, phase: 0 },
+      { part: 'carrot', x: 12, y: 1.55, patrol: 2.6, phase: 0 },
       { part: 'grass-snake', x: 18, y: 6.45, patrol: 1.7, phase: 1.2 },
       { part: 'thorny-caterpillar', x: 8, y: 8.95, patrol: 2.1, phase: 2.8 },
     ],
@@ -43,15 +45,15 @@ export interface GameState {
   phase: Phase; x: number; y: number; vy: number; direction: 1 | -1;
   grounded: boolean; wall: number; coyote: number; jumpBuffer: number;
   time: number; hp: number; poison: number; slowActions: number; invulnerable: number;
-  jumps: number; deaths: number; reason: string;
+  jumps: number; deaths: number; reason: string; hazards: HazardState;
 }
 export function createState(level: Dungeon, deaths = 0): GameState {
   return { phase: 'ready', x: level.spawn.x, y: level.spawn.y, vy: 0, direction: 1, grounded: true,
     wall: 0, coyote: 0, jumpBuffer: 0, time: 0, hp: 100, poison: 0, slowActions: 0,
-    invulnerable: 0, jumps: 0, deaths, reason: '' };
+    invulnerable: 0, jumps: 0, deaths, reason: '', hazards: createHazards(level) };
 }
-export function trapPosition(trap: Trap, time: number) {
-  return { x: trap.x + Math.sin(time * 1.45 + trap.phase) * trap.patrol, y: trap.y };
+export function trapPosition(trap: Trap, _time: number) {
+  return { x: trap.x, y: trap.y };
 }
 export function requestJump(state: GameState) {
   if (state.phase === 'ready') state.phase = 'playing';
@@ -87,7 +89,7 @@ export function step(state: GameState, level: Dungeon, dt = PHYSICS.step) {
       if (oldX - r >= rr - 0.03 && state.x - r < rr) { state.x = rr + r; state.wall = -1; }
     }
   }
-  const oldY = state.y;
+  const oldY = state.y; const descending = state.vy <= 0;
   state.vy -= PHYSICS.gravity * dt;
   if (state.wall && state.vy < PHYSICS.wallSlide) state.vy = PHYSICS.wallSlide;
   state.y += state.vy * dt; state.grounded = false;
@@ -103,18 +105,6 @@ export function step(state: GameState, level: Dungeon, dt = PHYSICS.step) {
   }
   if (state.y + r > ROOM.h - 0.5) { state.y = ROOM.h - 0.5 - r; state.vy = Math.min(0, state.vy); }
   if (state.grounded && state.wall) state.direction = state.wall < 0 ? 1 : -1;
-  if (state.invulnerable <= 0) for (const trap of level.traps) {
-    const pos = trapPosition(trap, state.time);
-    if (Math.hypot(state.x - pos.x, state.y - pos.y) < 0.86) {
-      const debuffed = state.poison > 0 || state.slowActions > 0;
-      const damage = trap.part === 'thorny-caterpillar' ? (debuffed ? 39 : 30) : 18;
-      state.hp = Math.max(0, state.hp - damage);
-      if (trap.part === 'grass-snake') state.poison += 1;
-      if (trap.part === 'lagging') state.slowActions = 2;
-      state.invulnerable = 1.25;
-      if (state.hp <= 0) die(state, 'Las defensas protegieron el cofre.');
-      break;
-    }
-  }
+  stepHazards(state, level, dt, oldY, descending);
   if (state.phase === 'playing' && Math.abs(state.x - level.chest.x) < 0.95 && Math.abs(state.y - level.chest.y) < 0.85) state.phase = 'won';
 }

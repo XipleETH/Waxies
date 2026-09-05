@@ -1,0 +1,48 @@
+{
+  "part": "Carrot",
+  "partId": "tail-carrot",
+  "partClass": "Plant",
+  "slot": "tail",
+  "cardId": "plant-tail-02",
+  "card": "Carrot Hammer",
+  "level": 1,
+  "type": "melee",
+  "attack": 80,
+  "shield": 50,
+  "energy": 1,
+  "effect": "Gain one energy when the Axie's shield breaks; at most once per round.",
+  "sourcePage": "https://classic.axieinfinity.com/explorer/cards",
+  "sourceData": "https://classic.axieinfinity.com/_next/static/chunks/305-4d7b0c0d49e94286.js",
+  "cardArt": "https://classic.axieinfinity.com/art/cards/plant-tail-02.png",
+  "isolatedFile": "carrot-part.png",
+  "isolatedBytes": 39568,
+  "atlasKey": "plant-02.tail",
+  "atlasRect": {
+    "x": 700,
+    "y": 876,
+    "width": 192,
+    "height": 151,
+    "rotate": false
+  },
+  "atlasBase": "https://raw.githubusercontent.com/axieinfinity/cc-axie-gtk2d/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/atlas-single/",
+  "atlasFiles": [
+    "axie-2d-v3-stuff.png",
+    "axie-2d-v3-stuff.txt",
+    "axie-2d-v3-stuff_line.png",
+    "axie-2d-v3-stuff_splat0.png",
+    "axie-2d-v3-stuff_splat1.png"
+  ],
+  "shaderSource": "https://github.com/axieinfinity/cc-axie-gtk2d/blob/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/textureSplattingEffect.effect",
+  "paletteSource": "https://github.com/axieinfinity/cc-axie-gtk2d/blob/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/mixer-data/axie-2d-v3-stuff-genes.json",
+  "paletteKey": "plant-02",
+  "palette": [
+    "afdb1b",
+    "75ba00",
+    "e3efdb",
+    "aebd44",
+    "70ce00"
+  ],
+  "nameMapping": "https://github.com/axieinfinity/mixer-playground/blob/c2288f76728bdb4881ef145a007307195800c07e/components/axie-figure/key.json",
+  "rendering": "Exact atlas extraction with original official shader formula and original palette; no invented artwork.",
+  "adaptation": "Firing carrots is the user's requested WAXIS platformer behavior, not the Classic Carrot Hammer card effect."
+}

@@ -1,14 +1,14 @@
 import * as THREE from 'three';
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
-import { DUNGEONS, PHYSICS, createState, requestJump, step, trapPosition, type Dungeon, type GameState } from './physics';
-import { PARTS } from './catalog';
+import { DUNGEONS, PHYSICS, createState, requestJump, step, type Dungeon, type GameState } from './physics';
+import { createHazardVisuals } from './hazard-visuals';
 export interface Engine { jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
 export function createEngine(host: HTMLElement, onState: (s: GameState) => void, onLoad: (error?: string) => void): Engine {
   let disposed = false, level = DUNGEONS[0], state = createState(level), raf = 0, elapsed = 0;
   const renderer = new THREE.WebGLRenderer({antialias: true, alpha: false, powerPreference: 'high-performance'});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); renderer.setClearColor(0x0c191d);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.5;
   renderer.domElement.setAttribute('aria-label', 'Mazmorra 3D. Espacio o clic para saltar; P para pausar; R para reintentar.');
   renderer.domElement.tabIndex=0; host.appendChild(renderer.domElement);
@@ -56,11 +56,11 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   const gem=new THREE.Mesh(gemGeo,mat(0xf7e29c,{emissive:0xffc95b,emissiveIntensity:0.8})); gem.position.set(0,0,0.7); chest.add(gem);
   const ringGeo = new THREE.TorusGeometry(1.15,0.018,4,64); geometries.push(ringGeo);
   const halo = new THREE.Mesh(ringGeo,mat(0xf1c86c,{emissive:0xc78d35,emissiveIntensity:1.3})); halo.position.set(0,0.5,-0.9); chest.add(halo);
-  let traps: THREE.Group[] = [];
+  let hazardVisuals: ReturnType<typeof createHazardVisuals> | undefined;
   let roomGeometries:THREE.BufferGeometry[]=[],roomMaterials:THREE.Material[]=[],roomTextures:THREE.Texture[]=[];
   const loader = new THREE.TextureLoader();
   function buildLevel(next: Dungeon) {
-    level = next; state = createState(level); roomGroup.clear(); traps = [];
+    level = next; state = createState(level); roomGroup.clear(); hazardVisuals?.dispose();
     for(const geo of roomGeometries){geo.dispose();geometries.splice(geometries.indexOf(geo),1);}
     for(const material of roomMaterials){material.dispose();materials.splice(materials.indexOf(material),1);}
     for(const texture of roomTextures){texture.dispose();textures.splice(textures.indexOf(texture),1);}
@@ -74,16 +74,8 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
       for(let i=0;i<n;i++) if(i%3!==1) box(roomGroup,p.x-p.w/2+i*p.w/n+0.4,p.y+p.h/2-0.13,1.39,0.35,0.2,0.06,mat(0x487963));
     });
     chest.position.set(level.chest.x,level.chest.y,0.45); lid.rotation.x=0;
-    level.traps.forEach(t=>{
-      const group = new THREE.Group(); const color = new THREE.Color(PARTS[t.part].color);
-      const geo = new THREE.TorusGeometry(0.5,0.05,8,32); geometries.push(geo);
-      const ring = new THREE.Mesh(geo,mat(color.getHex(),{emissive:color.getHex(),emissiveIntensity:0.4})); group.add(ring);
-      const tex=loader.load(`/assets/${t.part}-part.png`); tex.colorSpace=THREE.SRGBColorSpace; textures.push(tex);
-      // Exact part art extracted from the official Axie atlas and palette shader.
-      const sm=new THREE.SpriteMaterial({map:tex,transparent:true}); materials.push(sm);
-      const sprite=new THREE.Sprite(sm);sprite.scale.set(1.3,t.part === 'grass-snake' ? 0.8 : 1.05,1);sprite.position.z=0.07;group.add(sprite);
-      roomGroup.add(group); traps.push(group);
-    });
+    hazardVisuals = createHazardVisuals(scene, level);
+    hazardVisuals.update(state);
     roomGeometries=geometries.slice(geometryStart);roomMaterials=materials.slice(materialStart);roomTextures=textures.slice(textureStart);
     onState({...state});
   }
@@ -131,7 +123,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
       actions[animation]?.reset().fadeIn(0.1).play();activeAction=animation;
     }
     lastJump=state.jumps;if(state.phase!=='paused')mixer?.update(delta);
-    traps.forEach((group,i)=>{const p=trapPosition(level.traps[i],state.time);group.position.set(p.x,p.y,0.9);group.rotation.z=Math.sin(elapsed*2+i)*0.06;});
+    hazardVisuals?.update(state);
     halo.rotation.z=elapsed*0.3;halo.scale.setScalar(1+Math.sin(elapsed*2)*0.04);
     lid.rotation.x=THREE.MathUtils.lerp(lid.rotation.x,state.phase==='won'?-1.2:0,0.08);
     particles.rotation.z=Math.sin(elapsed*0.1)*0.005;
@@ -149,8 +141,8 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   };
   const visibility=()=>{if(document.hidden&&state.phase==='playing'){state.phase='paused';onState({...state});}};
   window.addEventListener('keydown',key);document.addEventListener('visibilitychange',visibility);
-  return {jump,start:()=>{if(state.phase==='ready')state.phase='playing';renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>({...state}),dispose:()=>{
+  return {jump,start:()=>{if(state.phase==='ready')state.phase='playing';renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
     disposed=true;cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
-    mixer?.stopAllAction();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.domElement.remove();
+    hazardVisuals?.dispose();mixer?.stopAllAction();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.domElement.remove();
   }};
 }

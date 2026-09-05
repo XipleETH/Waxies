@@ -6,10 +6,10 @@ export const STORAGE_KEY = 'waxis.practice.v1';
 export const REWARDS: Record<string,{token:TokenId;units:number}> = { ruins:{token:'SLP',units:250*UNIT},grove:{token:'AXS',units:1.25*UNIT},sanctum:{token:'RON',units:2.5*UNIT} };
 export interface Entry { id:string; kind:'deposit'|'withdraw'|'reward'; token:TokenId; units:number; date:string }
 export interface Save {
-  version:1; balances:Record<TokenId,number>; chest:Record<TokenId,number>; claimed:string[];
+  version:1; rulesVersion?:2; balances:Record<TokenId,number>; chest:Record<TokenId,number>; claimed:string[];
   traps:Trap[]; proofs:number; validated:boolean; history:Entry[];
 }
-export function newSave():Save { return {version:1,balances:{SLP:1250*UNIT,AXS:8*UNIT,RON:12*UNIT},chest:{SLP:0,AXS:0,RON:0},claimed:[],traps:DUNGEONS[0].traps.map(t=>({...t})),proofs:0,validated:false,history:[]}; }
+export function newSave():Save { return {version:1,rulesVersion:2,balances:{SLP:1250*UNIT,AXS:8*UNIT,RON:12*UNIT},chest:{SLP:0,AXS:0,RON:0},claimed:[],traps:DUNGEONS[0].traps.map(t=>({...t})),proofs:0,validated:false,history:[]}; }
 export function amount(value:string):number {
   if(!/^\d+(?:[.,]\d{1,6})?$/.test(value.trim()))throw new Error('Escribe un importe positivo con hasta 6 decimales.');
   const [whole,frac='']=value.trim().replace(',','.').split('.');
@@ -35,9 +35,12 @@ export function customDungeon(save:Save):Dungeon { return {...DUNGEONS[0],id:'my
 export function validSave(value:unknown):value is Save {
   if(!value||typeof value!=='object')return false;const s=value as Save;
   const validBalances=(b:Record<TokenId,number>)=>b&&TOKENS.every(t=>Number.isSafeInteger(b[t])&&b[t]>=0&&b[t]<=1e13);
-  return s.version===1&&validBalances(s.balances)&&validBalances(s.chest)&&Array.isArray(s.claimed)&&s.claimed.length<=3&&new Set(s.claimed).size===s.claimed.length&&s.claimed.every(id=>Object.hasOwn(REWARDS,id))
-    &&Array.isArray(s.traps)&&s.traps.length===3&&s.traps.every((t,i)=>t&&['lagging','grass-snake','thorny-caterpillar'].includes(t.part)&&Number.isFinite(t.x)&&Math.abs(t.x-DUNGEONS[0].traps[i].x)<=2&&t.y===DUNGEONS[0].traps[i].y&&t.patrol===DUNGEONS[0].traps[i].patrol&&t.phase===DUNGEONS[0].traps[i].phase)
+  return s.version===1&&(s.rulesVersion===undefined||s.rulesVersion===2)&&validBalances(s.balances)&&validBalances(s.chest)&&Array.isArray(s.claimed)&&s.claimed.length<=3&&new Set(s.claimed).size===s.claimed.length&&s.claimed.every(id=>Object.hasOwn(REWARDS,id))
+    &&Array.isArray(s.traps)&&s.traps.length===3&&s.traps.every((t,i)=>t&&['carrot','lagging','grass-snake','thorny-caterpillar'].includes(t.part)&&Number.isFinite(t.x)&&Math.abs(t.x-DUNGEONS[0].traps[i].x)<=2&&t.y===DUNGEONS[0].traps[i].y&&t.patrol===DUNGEONS[0].traps[i].patrol&&t.phase===DUNGEONS[0].traps[i].phase)
     &&Number.isInteger(s.proofs)&&s.proofs>=0&&s.proofs<=2&&typeof s.validated==='boolean'&&s.validated===(s.proofs===2)
     &&Array.isArray(s.history)&&s.history.length<=20&&s.history.every(e=>e&&typeof e.id==='string'&&['deposit','withdraw','reward'].includes(e.kind)&&TOKENS.includes(e.token)&&Number.isSafeInteger(e.units)&&e.units>0&&typeof e.date==='string'&&Number.isFinite(Date.parse(e.date)));
 }
-export function readSave():Save { const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return newSave();try{const s:unknown=JSON.parse(raw);if(validSave(s))return s;}catch{}throw new Error('El guardado local no es válido. Se abrió una sesión nueva de práctica.'); }
+export function readSave():Save { const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return newSave();try{const s:unknown=JSON.parse(raw);if(validSave(s))return migrateSave(s);}catch{}throw new Error('El guardado local no es válido. Se abrió una sesión nueva de práctica.'); }
+
+/** New combat rules require proving old layouts again; preserve all funds and placements. */
+export function migrateSave(s:Save):Save { return s.rulesVersion===2?s:{...s,rulesVersion:2,proofs:0,validated:false}; }
