@@ -9,8 +9,8 @@ void test('ground jump cannot be repeated in midair',()=>{const s=createState(em
 void test('wall jump changes direction and supplies upward velocity',()=>{const s=createState(empty);s.phase='playing';s.x=22.62;s.y=9;s.wall=1;s.grounded=false;s.direction=1;requestJump(s);step(s,empty);assert.equal(s.direction,-1);assert.ok(s.vy>12);assert.ok(s.x<22.62);});
 void test('platform top collision supports player and does not tunnel',()=>{const s=createState(empty);s.phase='playing';s.x=7;s.y=3.85;s.vy=-12;s.grounded=false;step(s,empty);assert.equal(s.grounded,true);assert.ok(Math.abs(s.y-3.78)<0.001);});
 void test('Grass Snake projectile applies exactly one Poison and each jump costs two HP per stack',()=>{
- const s=createState(empty);s.phase='playing';s.hazards.projectiles.push({id:0,owner:0,part:'grass-snake',x:2.5,y:1.5,vx:0,vy:0,life:1});
- step(s,empty);assert.equal(s.poison,1);assert.equal(s.hp,88);assert.equal(s.hazards.projectiles.length,0);requestJump(s);step(s,empty);assert.equal(s.hp,86);
+ const level={...empty,traps:[{part:'grass-snake',x:12,y:1.55,phase:0,patrol:0}]};const s=createState(level);s.phase='playing';s.hazards.projectiles.push({id:0,owner:0,part:'grass-snake',x:2.5,y:1.5,vx:0,vy:0,life:1});
+ step(s,level);assert.equal(s.poison,1);assert.equal(s.hp,88);assert.equal(s.hazards.projectiles.length,0);requestJump(s);step(s,level);assert.equal(s.hp,86);
 });
 void test('Lagging reduces horizontal velocity by 20 percent',()=>{const a=createState(empty),b=createState(empty);a.phase=b.phase='playing';a.slowActions=2;step(a,empty);step(b,empty);assert.ok(Math.abs((a.x-2.5)/(b.x-2.5)-0.8)<1e-9);});
 void test('Thorny activates only after its proximity warning and applies 130 percent to debuffs',()=>{
@@ -63,7 +63,7 @@ void test('pause freezes all hazards and restart clears shots, poison and shield
 });
 void test('new combat rules invalidate old proofs while preserving currency, claims and trap placements',()=>{
  const old={...claimReward(newSave(),'ruins'),rulesVersion:undefined,proofs:2,validated:true};old.chest.RON=UNIT;
- assert.ok(validSave(old));const migrated=migrateSave(old);assert.equal(migrated.proofs,0);assert.equal(migrated.validated,false);assert.equal(migrated.rulesVersion,2);
+ assert.ok(validSave(old));const migrated=migrateSave(old);assert.equal(migrated.proofs,0);assert.equal(migrated.validated,false);assert.equal(migrated.rulesVersion,3);
  assert.deepEqual(migrated.balances,old.balances);assert.deepEqual(migrated.chest,old.chest);assert.deepEqual(migrated.traps,old.traps);assert.deepEqual(migrated.claimed,old.claimed);
  assert.equal(migrateSave(migrated),migrated);
 });

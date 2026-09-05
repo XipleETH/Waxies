@@ -22,22 +22,17 @@ Abrir la dirección indicada por el servidor. `npm run build` genera el paquete 
 
 ## Incluido
 
-Tres incursiones, cuatro partes Classic con ilustración y procedencia oficiales, modelo Buba con animación oficial, cámara ortográfica, colisión a 120 pasos por segundo, vidas/estados, reintentos, editor de tres defensas, dos recorridos para validar el diseño y guardado local.
+Tres incursiones, 132 cartas Classic con ilustración y procedencia oficiales, modelo Buba con animación oficial, cámara ortográfica, colisión a 120 pasos por segundo, vidas/estados, reintentos, editor de cuatro defensas, dos recorridos para validar el diseño y guardado local.
 
 El cofre puede contener SLP, AXS y RON **simulados**. Se inicia con 1.250 SLP, 8 AXS y 12 RON de práctica. Los depósitos y retiros conservan el saldo total. Cada cofre de incursión se reclama una sola vez por guardado. Las pruebas del propio cofre no generan recompensas. Los importes se representan con enteros de seis decimales para evitar errores de punto flotante. No son los decimales on-chain de los tokens.
 
-## Partes oficiales y adaptación
+## Catálogo y partes del Axie
 
-Fuente de las cartas nivel 1: [explorador oficial de Axie Classic](https://classic.axieinfinity.com/explorer/cards), consultado el 5 de septiembre de 2026. Las descripciones antiguas pueden diferir. Las fichas dentro del juego separan la carta original de las reglas del plataformas.
+132 defensas basadas en las cartas Classic de nivel 1; 192 partes estándar y 87 variantes cosméticas documentadas. El juego incluye un catálogo con búsqueda y filtros y una investigación completa en /investigacion. La matriz editable está en research/classic-defense-matrix.csv y la procedencia en research/.
 
-| Parte real | Carta Classic | Efecto Classic | Adaptación jugable |
-| --- | --- | --- | --- |
-| Carrot, cola | Carrot Hammer | +1 energía cuando se rompe el escudo, una vez por ronda | Lanzador de zanahorias (20 daño); pisar el escudo rebota al Axie y carga un disparo extra |
-| Lagging, cuerno | Mystic Rush | Speed− durante 2 rondas; −20% Speed | Detecta, avisa y embiste; 12 daño y velocidad ×0,8 hasta 2 saltos. Regreso inofensivo |
-| Grass Snake, cola | Venom Spray | Aplica 1 Poison | Rocío de tres gotas en arco; impacto o charco: 12 daño, 1 Poison; 2 HP por acumulación en cada salto posterior |
-| Thorny Caterpillar, cola | Allergic Reaction | 130% daño contra objetivos con debuff | Espinas por proximidad con aviso previo: 30 daño; 39 con Poison o Speed− |
+En Mi mazmorra, un ID de Axie consulta el endpoint oficial de metadatos y decodifica sus genes dominantes de 512 bits. Solo las cuatro cartas de sus partes pueden equiparse. Ojos y orejas no reciben ataques inventados. Las skins recientes se resuelven por genes y usan arte base identificado cuando su ilustración no está disponible; las evoluciones juegan con la carta de nivel 1. La consulta de un ID no verifica propiedad de la wallet. Sin un Axie cargado funciona el laboratorio libre.
 
-Los patrones de ataque, avisos de 0,65 segundos, daño escalado, charcos de 2,2 segundos, ciclos de recarga y un salto como acción son decisiones de WAXIS. Carrot Hammer es cuerpo a cuerpo en Classic; disparar zanahorias es la adaptación solicitada. Se conserva su energía al romper el escudo, una vez por ciclo, y el escudo se repone tras recargar. Los proyectiles chocan con plataformas y paredes; todos los ataques se congelan al pausar y se reinician con el intento. El personaje Buba usa recursos oficiales de los starter Axies; sus estadísticas de Origins no se presentan como estadísticas de Classic.
+Las recetas son explícitas para cada carta: diez patrones físicos, combos, estados, curación, escudo, energía, robo/descarte adaptado, reflejo y Last Stand. Los pisotones permiten interactuar con las defensas sin añadir otro botón. En research/AXIE_CLASSIC.md y /investigacion están las sustituciones entre combate por turnos y plataformas.
 
 ## Recursos
 
@@ -54,4 +49,7 @@ Antes de activar fondos reales: integrar Ronin Wallet; contratos de custodia lim
 
 Se exponen herramientas WebMCP de consulta, inicio y traslado de tokens de práctica cuando el navegador ofrece `document.modelContext`. Su ausencia no impide jugar. No conceden ninguna capacidad sobre fondos reales.
 
-La versión de reglas 2 conserva saldos, cofres, recompensas reclamadas y posiciones de guardados anteriores. Invalida únicamente las pruebas de defensa: los nuevos ataques requieren repetir los dos recorridos.
+La versión de reglas 3 conserva saldos, cofres, recompensas reclamadas y posiciones de guardados anteriores. Añade una cuarta ranura e invalida únicamente las pruebas de defensa: los nuevos ataques requieren repetir los dos recorridos.
+
+### Consulta pública y archivos
+El proveedor puede responder 403 a peticiones del servidor. En ese caso se muestra el rechazo y el editor permite importar un JSON de metadatos obtenido por el usuario. Los archivos se marcan como `metadata-file`: se validan genes y estructura, pero no autenticidad ni propiedad. No se utilizan proxies para eludir la protección del proveedor.

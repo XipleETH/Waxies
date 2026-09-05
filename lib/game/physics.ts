@@ -1,10 +1,11 @@
+import { createCombat, decay, type CombatState } from './combat';
 import { createHazards, stepHazards, type HazardState } from './hazards';
 import type { PartId } from './catalog';
 export interface Rect { x: number; y: number; w: number; h: number }
 export interface Trap { part: PartId; x: number; y: number; patrol: number; phase: number }
 export interface Dungeon {
   id: string; name: string; subtitle: string; difficulty: string;
-  platforms: Rect[]; traps: Trap[]; spawn: { x: number; y: number }; chest: { x: number; y: number };
+  runnerClass?: string; runnerShield?: number; platforms: Rect[]; traps: Trap[]; spawn: { x: number; y: number }; chest: { x: number; y: number };
 }
 export const ROOM = { w: 24, h: 14, left: 1, right: 23, floor: 1 };
 export const PHYSICS = { speed: 5.2, gravity: 24, jump: 12.7, radius: 0.38, step: 1 / 120, wallSlide: -2.2 };
@@ -45,12 +46,12 @@ export interface GameState {
   phase: Phase; x: number; y: number; vy: number; direction: 1 | -1;
   grounded: boolean; wall: number; coyote: number; jumpBuffer: number;
   time: number; hp: number; poison: number; slowActions: number; invulnerable: number;
-  jumps: number; deaths: number; reason: string; hazards: HazardState;
+  jumps: number; deaths: number; reason: string; hazards: HazardState; combat: CombatState;
 }
 export function createState(level: Dungeon, deaths = 0): GameState {
   return { phase: 'ready', x: level.spawn.x, y: level.spawn.y, vy: 0, direction: 1, grounded: true,
     wall: 0, coyote: 0, jumpBuffer: 0, time: 0, hp: 100, poison: 0, slowActions: 0,
-    invulnerable: 0, jumps: 0, deaths, reason: '', hazards: createHazards(level) };
+    invulnerable: 0, jumps: 0, deaths, reason: '', hazards: createHazards(level), combat: createCombat(level) };
 }
 export function trapPosition(trap: Trap, _time: number) {
   return { x: trap.x, y: trap.y };
@@ -71,7 +72,7 @@ export function step(state: GameState, level: Dungeon, dt = PHYSICS.step) {
   if (state.jumpBuffer > 0 && (state.grounded || state.wall !== 0 || state.coyote > 0)) {
     if (state.wall) state.direction = state.wall < 0 ? 1 : -1;
     state.vy = PHYSICS.jump; state.grounded = false; state.wall = 0;
-    state.coyote = 0; state.jumpBuffer = 0; state.jumps++;
+    state.coyote = 0; state.jumpBuffer = 0; state.jumps++; state.combat.lastJumpAt=state.time; decay(state.combat.statuses);
     state.hp = Math.max(0, state.hp - state.poison * 2);
     state.slowActions = Math.max(0, state.slowActions - 1);
     if (state.hp <= 0) { die(state, 'El veneno agotó tu vida.'); return; }

@@ -1,0 +1,2513 @@
+[
+  {
+    "id": "back-furball",
+    "name": "Furball",
+    "slot": "back",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-back-12",
+    "image": "/assets/parts/back-furball.png"
+  },
+  {
+    "id": "back-hero",
+    "name": "Hero",
+    "slot": "back",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-back-04",
+    "image": "/assets/parts/back-hero.png"
+  },
+  {
+    "id": "back-jaguar",
+    "name": "Jaguar",
+    "slot": "back",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-back-06",
+    "image": "/assets/parts/back-jaguar.png"
+  },
+  {
+    "id": "back-risky-beast",
+    "name": "Risky Beast",
+    "slot": "back",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-back-08",
+    "image": "/assets/parts/back-risky-beast.png"
+  },
+  {
+    "id": "back-ronin",
+    "name": "Ronin",
+    "slot": "back",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-back-02",
+    "image": "/assets/parts/back-ronin.png"
+  },
+  {
+    "id": "back-timber",
+    "name": "Timber",
+    "slot": "back",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-back-10",
+    "image": "/assets/parts/back-timber.png"
+  },
+  {
+    "id": "ears-belieber",
+    "name": "Belieber",
+    "slot": "ears",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-belieber.png"
+  },
+  {
+    "id": "ears-innocent-lamb",
+    "name": "Innocent Lamb",
+    "slot": "ears",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-innocent-lamb.png"
+  },
+  {
+    "id": "ears-nut-cracker",
+    "name": "Nut Cracker",
+    "slot": "ears",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-nut-cracker.png"
+  },
+  {
+    "id": "ears-nyan",
+    "name": "Nyan",
+    "slot": "ears",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-nyan.png"
+  },
+  {
+    "id": "ears-puppy",
+    "name": "Puppy",
+    "slot": "ears",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-puppy.png"
+  },
+  {
+    "id": "ears-zen",
+    "name": "Zen",
+    "slot": "ears",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-zen.png"
+  },
+  {
+    "id": "eyes-chubby",
+    "name": "Chubby",
+    "slot": "eyes",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-chubby.png"
+  },
+  {
+    "id": "eyes-little-peas",
+    "name": "Little Peas",
+    "slot": "eyes",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-little-peas.png"
+  },
+  {
+    "id": "eyes-puppy",
+    "name": "Puppy",
+    "slot": "eyes",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-puppy.png"
+  },
+  {
+    "id": "eyes-zeal",
+    "name": "Zeal",
+    "slot": "eyes",
+    "class": "beast",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-zeal.png"
+  },
+  {
+    "id": "horn-arco",
+    "name": "Arco",
+    "slot": "horn",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-horn-12",
+    "image": "/assets/parts/horn-arco.png"
+  },
+  {
+    "id": "horn-dual-blade",
+    "name": "Dual Blade",
+    "slot": "horn",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-horn-10",
+    "image": "/assets/parts/horn-dual-blade.png"
+  },
+  {
+    "id": "horn-imp",
+    "name": "Imp",
+    "slot": "horn",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-horn-04",
+    "image": "/assets/parts/horn-imp.png"
+  },
+  {
+    "id": "horn-little-branch",
+    "name": "Little Branch",
+    "slot": "horn",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-horn-02",
+    "image": "/assets/parts/horn-little-branch.png"
+  },
+  {
+    "id": "horn-merry",
+    "name": "Merry",
+    "slot": "horn",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-horn-06",
+    "image": "/assets/parts/horn-merry.png"
+  },
+  {
+    "id": "horn-pocky",
+    "name": "Pocky",
+    "slot": "horn",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-horn-08",
+    "image": "/assets/parts/horn-pocky.png"
+  },
+  {
+    "id": "mouth-axie-kiss",
+    "name": "Axie Kiss",
+    "slot": "mouth",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-mouth-08",
+    "image": "/assets/parts/mouth-axie-kiss.png"
+  },
+  {
+    "id": "mouth-confident",
+    "name": "Confident",
+    "slot": "mouth",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-mouth-10",
+    "image": "/assets/parts/mouth-confident.png"
+  },
+  {
+    "id": "mouth-goda",
+    "name": "Goda",
+    "slot": "mouth",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-mouth-04",
+    "image": "/assets/parts/mouth-goda.png"
+  },
+  {
+    "id": "mouth-nut-cracker",
+    "name": "Nut Cracker",
+    "slot": "mouth",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-mouth-02",
+    "image": "/assets/parts/mouth-nut-cracker.png"
+  },
+  {
+    "id": "tail-cottontail",
+    "name": "Cottontail",
+    "slot": "tail",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-tail-02",
+    "image": "/assets/parts/tail-cottontail.png"
+  },
+  {
+    "id": "tail-gerbil",
+    "name": "Gerbil",
+    "slot": "tail",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-tail-12",
+    "image": "/assets/parts/tail-gerbil.png"
+  },
+  {
+    "id": "tail-hare",
+    "name": "Hare",
+    "slot": "tail",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-tail-08",
+    "image": "/assets/parts/tail-hare.png"
+  },
+  {
+    "id": "tail-nut-cracker",
+    "name": "Nut Cracker",
+    "slot": "tail",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-tail-10",
+    "image": "/assets/parts/tail-nut-cracker.png"
+  },
+  {
+    "id": "tail-rice",
+    "name": "Rice",
+    "slot": "tail",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-tail-04",
+    "image": "/assets/parts/tail-rice.png"
+  },
+  {
+    "id": "tail-shiba",
+    "name": "Shiba",
+    "slot": "tail",
+    "class": "beast",
+    "standard": true,
+    "cardId": "beast-tail-06",
+    "image": "/assets/parts/tail-shiba.png"
+  },
+  {
+    "id": "back-bidens",
+    "name": "Bidens",
+    "slot": "back",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-back-06",
+    "image": "/assets/parts/back-bidens.png"
+  },
+  {
+    "id": "back-mint",
+    "name": "Mint",
+    "slot": "back",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-back-10",
+    "image": "/assets/parts/back-mint.png"
+  },
+  {
+    "id": "back-pumpkin",
+    "name": "Pumpkin",
+    "slot": "back",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-back-12",
+    "image": "/assets/parts/back-pumpkin.png"
+  },
+  {
+    "id": "back-shiitake",
+    "name": "Shiitake",
+    "slot": "back",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-back-04",
+    "image": "/assets/parts/back-shiitake.png"
+  },
+  {
+    "id": "back-turnip",
+    "name": "Turnip",
+    "slot": "back",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-back-02",
+    "image": "/assets/parts/back-turnip.png"
+  },
+  {
+    "id": "back-watering-can",
+    "name": "Watering Can",
+    "slot": "back",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-back-08",
+    "image": "/assets/parts/back-watering-can.png"
+  },
+  {
+    "id": "ears-clover",
+    "name": "Clover",
+    "slot": "ears",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-clover.png"
+  },
+  {
+    "id": "ears-hollow",
+    "name": "Hollow",
+    "slot": "ears",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-hollow.png"
+  },
+  {
+    "id": "ears-leafy",
+    "name": "Leafy",
+    "slot": "ears",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-leafy.png"
+  },
+  {
+    "id": "ears-lotus",
+    "name": "Lotus",
+    "slot": "ears",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-lotus.png"
+  },
+  {
+    "id": "ears-rosa",
+    "name": "Rosa",
+    "slot": "ears",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-rosa.png"
+  },
+  {
+    "id": "ears-sakura",
+    "name": "Sakura",
+    "slot": "ears",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-sakura.png"
+  },
+  {
+    "id": "eyes-blossom",
+    "name": "Blossom",
+    "slot": "eyes",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-blossom.png"
+  },
+  {
+    "id": "eyes-confused",
+    "name": "Confused",
+    "slot": "eyes",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-confused.png"
+  },
+  {
+    "id": "eyes-cucumber-slice",
+    "name": "Cucumber Slice",
+    "slot": "eyes",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-cucumber-slice.png"
+  },
+  {
+    "id": "eyes-papi",
+    "name": "Papi",
+    "slot": "eyes",
+    "class": "plant",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-papi.png"
+  },
+  {
+    "id": "horn-bamboo-shoot",
+    "name": "Bamboo Shoot",
+    "slot": "horn",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-horn-02",
+    "image": "/assets/parts/horn-bamboo-shoot.png"
+  },
+  {
+    "id": "horn-beech",
+    "name": "Beech",
+    "slot": "horn",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-horn-04",
+    "image": "/assets/parts/horn-beech.png"
+  },
+  {
+    "id": "horn-cactus",
+    "name": "Cactus",
+    "slot": "horn",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-horn-10",
+    "image": "/assets/parts/horn-cactus.png"
+  },
+  {
+    "id": "horn-rose-bud",
+    "name": "Rose Bud",
+    "slot": "horn",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-horn-06",
+    "image": "/assets/parts/horn-rose-bud.png"
+  },
+  {
+    "id": "horn-strawberry-shortcake",
+    "name": "Strawberry Shortcake",
+    "slot": "horn",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-horn-08",
+    "image": "/assets/parts/horn-strawberry-shortcake.png"
+  },
+  {
+    "id": "horn-watermelon",
+    "name": "Watermelon",
+    "slot": "horn",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-horn-12",
+    "image": "/assets/parts/horn-watermelon.png"
+  },
+  {
+    "id": "mouth-herbivore",
+    "name": "Herbivore",
+    "slot": "mouth",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-mouth-08",
+    "image": "/assets/parts/mouth-herbivore.png"
+  },
+  {
+    "id": "mouth-serious",
+    "name": "Serious",
+    "slot": "mouth",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-mouth-02",
+    "image": "/assets/parts/mouth-serious.png"
+  },
+  {
+    "id": "mouth-silence-whisper",
+    "name": "Silence Whisper",
+    "slot": "mouth",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-mouth-10",
+    "image": "/assets/parts/mouth-silence-whisper.png"
+  },
+  {
+    "id": "mouth-zigzag",
+    "name": "Zigzag",
+    "slot": "mouth",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-mouth-04",
+    "image": "/assets/parts/mouth-zigzag.png"
+  },
+  {
+    "id": "tail-carrot",
+    "name": "Carrot",
+    "slot": "tail",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-tail-02",
+    "image": "/assets/parts/tail-carrot.png"
+  },
+  {
+    "id": "tail-cattail",
+    "name": "Cattail",
+    "slot": "tail",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-tail-04",
+    "image": "/assets/parts/tail-cattail.png"
+  },
+  {
+    "id": "tail-hatsune",
+    "name": "Hatsune",
+    "slot": "tail",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-tail-06",
+    "image": "/assets/parts/tail-hatsune.png"
+  },
+  {
+    "id": "tail-hot-butt",
+    "name": "Hot Butt",
+    "slot": "tail",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-tail-12",
+    "image": "/assets/parts/tail-hot-butt.png"
+  },
+  {
+    "id": "tail-potato-leaf",
+    "name": "Potato Leaf",
+    "slot": "tail",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-tail-10",
+    "image": "/assets/parts/tail-potato-leaf.png"
+  },
+  {
+    "id": "tail-yam",
+    "name": "Yam",
+    "slot": "tail",
+    "class": "plant",
+    "standard": true,
+    "cardId": "plant-tail-08",
+    "image": "/assets/parts/tail-yam.png"
+  },
+  {
+    "id": "back-anemone",
+    "name": "Anemone",
+    "slot": "back",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-back-10",
+    "image": "/assets/parts/back-anemone.png"
+  },
+  {
+    "id": "back-blue-moon",
+    "name": "Blue Moon",
+    "slot": "back",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-back-04",
+    "image": "/assets/parts/back-blue-moon.png"
+  },
+  {
+    "id": "back-goldfish",
+    "name": "Goldfish",
+    "slot": "back",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-back-06",
+    "image": "/assets/parts/back-goldfish.png"
+  },
+  {
+    "id": "back-hermit",
+    "name": "Hermit",
+    "slot": "back",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-back-02",
+    "image": "/assets/parts/back-hermit.png"
+  },
+  {
+    "id": "back-perch",
+    "name": "Perch",
+    "slot": "back",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-back-12",
+    "image": "/assets/parts/back-perch.png"
+  },
+  {
+    "id": "back-sponge",
+    "name": "Sponge",
+    "slot": "back",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-back-08",
+    "image": "/assets/parts/back-sponge.png"
+  },
+  {
+    "id": "ears-bubblemaker",
+    "name": "Bubblemaker",
+    "slot": "ears",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-bubblemaker.png"
+  },
+  {
+    "id": "ears-gill",
+    "name": "Gill",
+    "slot": "ears",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-gill.png"
+  },
+  {
+    "id": "ears-inkling",
+    "name": "Inkling",
+    "slot": "ears",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-inkling.png"
+  },
+  {
+    "id": "ears-nimo",
+    "name": "Nimo",
+    "slot": "ears",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-nimo.png"
+  },
+  {
+    "id": "ears-seaslug",
+    "name": "Seaslug",
+    "slot": "ears",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-seaslug.png"
+  },
+  {
+    "id": "ears-tiny-fan",
+    "name": "Tiny Fan",
+    "slot": "ears",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-tiny-fan.png"
+  },
+  {
+    "id": "eyes-clear",
+    "name": "Clear",
+    "slot": "eyes",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-clear.png"
+  },
+  {
+    "id": "eyes-gero",
+    "name": "Gero",
+    "slot": "eyes",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-gero.png"
+  },
+  {
+    "id": "eyes-sleepless",
+    "name": "Sleepless",
+    "slot": "eyes",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-sleepless.png"
+  },
+  {
+    "id": "eyes-telescope",
+    "name": "Telescope",
+    "slot": "eyes",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-telescope.png"
+  },
+  {
+    "id": "horn-anemone",
+    "name": "Anemone",
+    "slot": "horn",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-horn-08",
+    "image": "/assets/parts/horn-anemone.png"
+  },
+  {
+    "id": "horn-babylonia",
+    "name": "Babylonia",
+    "slot": "horn",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-horn-02",
+    "image": "/assets/parts/horn-babylonia.png"
+  },
+  {
+    "id": "horn-clamshell",
+    "name": "Clamshell",
+    "slot": "horn",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-horn-06",
+    "image": "/assets/parts/horn-clamshell.png"
+  },
+  {
+    "id": "horn-oranda",
+    "name": "Oranda",
+    "slot": "horn",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-horn-10",
+    "image": "/assets/parts/horn-oranda.png"
+  },
+  {
+    "id": "horn-shoal-star",
+    "name": "Shoal Star",
+    "slot": "horn",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-horn-12",
+    "image": "/assets/parts/horn-shoal-star.png"
+  },
+  {
+    "id": "horn-teal-shell",
+    "name": "Teal Shell",
+    "slot": "horn",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-horn-04",
+    "image": "/assets/parts/horn-teal-shell.png"
+  },
+  {
+    "id": "mouth-catfish",
+    "name": "Catfish",
+    "slot": "mouth",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-mouth-04",
+    "image": "/assets/parts/mouth-catfish.png"
+  },
+  {
+    "id": "mouth-lam",
+    "name": "Lam",
+    "slot": "mouth",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-mouth-02",
+    "image": "/assets/parts/mouth-lam.png"
+  },
+  {
+    "id": "mouth-piranha",
+    "name": "Piranha",
+    "slot": "mouth",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-mouth-10",
+    "image": "/assets/parts/mouth-piranha.png"
+  },
+  {
+    "id": "mouth-risky-fish",
+    "name": "Risky Fish",
+    "slot": "mouth",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-mouth-08",
+    "image": "/assets/parts/mouth-risky-fish.png"
+  },
+  {
+    "id": "tail-koi",
+    "name": "Koi",
+    "slot": "tail",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-tail-02",
+    "image": "/assets/parts/tail-koi.png"
+  },
+  {
+    "id": "tail-navaga",
+    "name": "Navaga",
+    "slot": "tail",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-tail-10",
+    "image": "/assets/parts/tail-navaga.png"
+  },
+  {
+    "id": "tail-nimo",
+    "name": "Nimo",
+    "slot": "tail",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-tail-04",
+    "image": "/assets/parts/tail-nimo.png"
+  },
+  {
+    "id": "tail-ranchu",
+    "name": "Ranchu",
+    "slot": "tail",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-tail-08",
+    "image": "/assets/parts/tail-ranchu.png"
+  },
+  {
+    "id": "tail-shrimp",
+    "name": "Shrimp",
+    "slot": "tail",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-tail-12",
+    "image": "/assets/parts/tail-shrimp.png"
+  },
+  {
+    "id": "tail-tadpole",
+    "name": "Tadpole",
+    "slot": "tail",
+    "class": "aquatic",
+    "standard": true,
+    "cardId": "aquatic-tail-06",
+    "image": "/assets/parts/tail-tadpole.png"
+  },
+  {
+    "id": "back-buzz-buzz",
+    "name": "Buzz Buzz",
+    "slot": "back",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-back-06",
+    "image": "/assets/parts/back-buzz-buzz.png"
+  },
+  {
+    "id": "back-garish-worm",
+    "name": "Garish Worm",
+    "slot": "back",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-back-04",
+    "image": "/assets/parts/back-garish-worm.png"
+  },
+  {
+    "id": "back-sandal",
+    "name": "Sandal",
+    "slot": "back",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-back-08",
+    "image": "/assets/parts/back-sandal.png"
+  },
+  {
+    "id": "back-scarab",
+    "name": "Scarab",
+    "slot": "back",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-back-10",
+    "image": "/assets/parts/back-scarab.png"
+  },
+  {
+    "id": "back-snail-shell",
+    "name": "Snail Shell",
+    "slot": "back",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-back-02",
+    "image": "/assets/parts/back-snail-shell.png"
+  },
+  {
+    "id": "back-spiky-wing",
+    "name": "Spiky Wing",
+    "slot": "back",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-back-12",
+    "image": "/assets/parts/back-spiky-wing.png"
+  },
+  {
+    "id": "ears-beetle-spike",
+    "name": "Beetle Spike",
+    "slot": "ears",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-beetle-spike.png"
+  },
+  {
+    "id": "ears-ear-breathing",
+    "name": "Ear Breathing",
+    "slot": "ears",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-ear-breathing.png"
+  },
+  {
+    "id": "ears-earwing",
+    "name": "Earwing",
+    "slot": "ears",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-earwing.png"
+  },
+  {
+    "id": "ears-larva",
+    "name": "Larva",
+    "slot": "ears",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-larva.png"
+  },
+  {
+    "id": "ears-leaf-bug",
+    "name": "Leaf Bug",
+    "slot": "ears",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-leaf-bug.png"
+  },
+  {
+    "id": "ears-tassels",
+    "name": "Tassels",
+    "slot": "ears",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-tassels.png"
+  },
+  {
+    "id": "eyes-bookworm",
+    "name": "Bookworm",
+    "slot": "eyes",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-bookworm.png"
+  },
+  {
+    "id": "eyes-kotaro?",
+    "name": "Kotaro?",
+    "slot": "eyes",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-kotaro-u3f.png"
+  },
+  {
+    "id": "eyes-neo",
+    "name": "Neo",
+    "slot": "eyes",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-neo.png"
+  },
+  {
+    "id": "eyes-nerdy",
+    "name": "Nerdy",
+    "slot": "eyes",
+    "class": "bug",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-nerdy.png"
+  },
+  {
+    "id": "horn-antenna",
+    "name": "Antenna",
+    "slot": "horn",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-horn-04",
+    "image": "/assets/parts/horn-antenna.png"
+  },
+  {
+    "id": "horn-caterpillars",
+    "name": "Caterpillars",
+    "slot": "horn",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-horn-06",
+    "image": "/assets/parts/horn-caterpillars.png"
+  },
+  {
+    "id": "horn-lagging",
+    "name": "Lagging",
+    "slot": "horn",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-horn-02",
+    "image": "/assets/parts/horn-lagging.png"
+  },
+  {
+    "id": "horn-leaf-bug",
+    "name": "Leaf Bug",
+    "slot": "horn",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-horn-12",
+    "image": "/assets/parts/horn-leaf-bug.png"
+  },
+  {
+    "id": "horn-parasite",
+    "name": "Parasite",
+    "slot": "horn",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-horn-10",
+    "image": "/assets/parts/horn-parasite.png"
+  },
+  {
+    "id": "horn-pliers",
+    "name": "Pliers",
+    "slot": "horn",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-horn-08",
+    "image": "/assets/parts/horn-pliers.png"
+  },
+  {
+    "id": "mouth-cute-bunny",
+    "name": "Cute Bunny",
+    "slot": "mouth",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-mouth-08",
+    "image": "/assets/parts/mouth-cute-bunny.png"
+  },
+  {
+    "id": "mouth-mosquito",
+    "name": "Mosquito",
+    "slot": "mouth",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-mouth-02",
+    "image": "/assets/parts/mouth-mosquito.png"
+  },
+  {
+    "id": "mouth-pincer",
+    "name": "Pincer",
+    "slot": "mouth",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-mouth-04",
+    "image": "/assets/parts/mouth-pincer.png"
+  },
+  {
+    "id": "mouth-square-teeth",
+    "name": "Square Teeth",
+    "slot": "mouth",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-mouth-10",
+    "image": "/assets/parts/mouth-square-teeth.png"
+  },
+  {
+    "id": "tail-ant",
+    "name": "Ant",
+    "slot": "tail",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-tail-02",
+    "image": "/assets/parts/tail-ant.png"
+  },
+  {
+    "id": "tail-fish-snack",
+    "name": "Fish Snack",
+    "slot": "tail",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-tail-06",
+    "image": "/assets/parts/tail-fish-snack.png"
+  },
+  {
+    "id": "tail-gravel-ant",
+    "name": "Gravel Ant",
+    "slot": "tail",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-tail-08",
+    "image": "/assets/parts/tail-gravel-ant.png"
+  },
+  {
+    "id": "tail-pupae",
+    "name": "Pupae",
+    "slot": "tail",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-tail-10",
+    "image": "/assets/parts/tail-pupae.png"
+  },
+  {
+    "id": "tail-thorny-caterpillar",
+    "name": "Thorny Caterpillar",
+    "slot": "tail",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-tail-12",
+    "image": "/assets/parts/tail-thorny-caterpillar.png"
+  },
+  {
+    "id": "tail-twin-tail",
+    "name": "Twin Tail",
+    "slot": "tail",
+    "class": "bug",
+    "standard": true,
+    "cardId": "bug-tail-04",
+    "image": "/assets/parts/tail-twin-tail.png"
+  },
+  {
+    "id": "back-balloon",
+    "name": "Balloon",
+    "slot": "back",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-back-02",
+    "image": "/assets/parts/back-balloon.png"
+  },
+  {
+    "id": "back-cupid",
+    "name": "Cupid",
+    "slot": "back",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-back-04",
+    "image": "/assets/parts/back-cupid.png"
+  },
+  {
+    "id": "back-kingfisher",
+    "name": "Kingfisher",
+    "slot": "back",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-back-10",
+    "image": "/assets/parts/back-kingfisher.png"
+  },
+  {
+    "id": "back-pigeon-post",
+    "name": "Pigeon Post",
+    "slot": "back",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-back-08",
+    "image": "/assets/parts/back-pigeon-post.png"
+  },
+  {
+    "id": "back-raven",
+    "name": "Raven",
+    "slot": "back",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-back-06",
+    "image": "/assets/parts/back-raven.png"
+  },
+  {
+    "id": "back-tri-feather",
+    "name": "Tri Feather",
+    "slot": "back",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-back-12",
+    "image": "/assets/parts/back-tri-feather.png"
+  },
+  {
+    "id": "ears-curly",
+    "name": "Curly",
+    "slot": "ears",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-curly.png"
+  },
+  {
+    "id": "ears-early-bird",
+    "name": "Early Bird",
+    "slot": "ears",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-early-bird.png"
+  },
+  {
+    "id": "ears-owl",
+    "name": "Owl",
+    "slot": "ears",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-owl.png"
+  },
+  {
+    "id": "ears-peace-maker",
+    "name": "Peace Maker",
+    "slot": "ears",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-peace-maker.png"
+  },
+  {
+    "id": "ears-pink-cheek",
+    "name": "Pink Cheek",
+    "slot": "ears",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-pink-cheek.png"
+  },
+  {
+    "id": "ears-risky-bird",
+    "name": "Risky Bird",
+    "slot": "ears",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-risky-bird.png"
+  },
+  {
+    "id": "eyes-little-owl",
+    "name": "Little Owl",
+    "slot": "eyes",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-little-owl.png"
+  },
+  {
+    "id": "eyes-lucas",
+    "name": "Lucas",
+    "slot": "eyes",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-lucas.png"
+  },
+  {
+    "id": "eyes-mavis",
+    "name": "Mavis",
+    "slot": "eyes",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-mavis.png"
+  },
+  {
+    "id": "eyes-robin",
+    "name": "Robin",
+    "slot": "eyes",
+    "class": "bird",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-robin.png"
+  },
+  {
+    "id": "horn-cuckoo",
+    "name": "Cuckoo",
+    "slot": "horn",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-horn-04",
+    "image": "/assets/parts/horn-cuckoo.png"
+  },
+  {
+    "id": "horn-eggshell",
+    "name": "Eggshell",
+    "slot": "horn",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-horn-02",
+    "image": "/assets/parts/horn-eggshell.png"
+  },
+  {
+    "id": "horn-feather-spear",
+    "name": "Feather Spear",
+    "slot": "horn",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-horn-12",
+    "image": "/assets/parts/horn-feather-spear.png"
+  },
+  {
+    "id": "horn-kestrel",
+    "name": "Kestrel",
+    "slot": "horn",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-horn-08",
+    "image": "/assets/parts/horn-kestrel.png"
+  },
+  {
+    "id": "horn-trump",
+    "name": "Trump",
+    "slot": "horn",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-horn-06",
+    "image": "/assets/parts/horn-trump.png"
+  },
+  {
+    "id": "horn-wing-horn",
+    "name": "Wing Horn",
+    "slot": "horn",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-horn-10",
+    "image": "/assets/parts/horn-wing-horn.png"
+  },
+  {
+    "id": "mouth-doubletalk",
+    "name": "Doubletalk",
+    "slot": "mouth",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-mouth-02",
+    "image": "/assets/parts/mouth-doubletalk.png"
+  },
+  {
+    "id": "mouth-hungry-bird",
+    "name": "Hungry Bird",
+    "slot": "mouth",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-mouth-08",
+    "image": "/assets/parts/mouth-hungry-bird.png"
+  },
+  {
+    "id": "mouth-little-owl",
+    "name": "Little Owl",
+    "slot": "mouth",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-mouth-10",
+    "image": "/assets/parts/mouth-little-owl.png"
+  },
+  {
+    "id": "mouth-peace-maker",
+    "name": "Peace Maker",
+    "slot": "mouth",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-mouth-04",
+    "image": "/assets/parts/mouth-peace-maker.png"
+  },
+  {
+    "id": "tail-cloud",
+    "name": "Cloud",
+    "slot": "tail",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-tail-08",
+    "image": "/assets/parts/tail-cloud.png"
+  },
+  {
+    "id": "tail-feather-fan",
+    "name": "Feather Fan",
+    "slot": "tail",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-tail-04",
+    "image": "/assets/parts/tail-feather-fan.png"
+  },
+  {
+    "id": "tail-granmas-fan",
+    "name": "Granma's Fan",
+    "slot": "tail",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-tail-10",
+    "image": "/assets/parts/tail-granmas-fan.png"
+  },
+  {
+    "id": "tail-post-fight",
+    "name": "Post Fight",
+    "slot": "tail",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-tail-12",
+    "image": "/assets/parts/tail-post-fight.png"
+  },
+  {
+    "id": "tail-swallow",
+    "name": "Swallow",
+    "slot": "tail",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-tail-02",
+    "image": "/assets/parts/tail-swallow.png"
+  },
+  {
+    "id": "tail-the-last-one",
+    "name": "The Last One",
+    "slot": "tail",
+    "class": "bird",
+    "standard": true,
+    "cardId": "bird-tail-06",
+    "image": "/assets/parts/tail-the-last-one.png"
+  },
+  {
+    "id": "back-bone-sail",
+    "name": "Bone Sail",
+    "slot": "back",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-back-02",
+    "image": "/assets/parts/back-bone-sail.png"
+  },
+  {
+    "id": "back-croc",
+    "name": "Croc",
+    "slot": "back",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-back-12",
+    "image": "/assets/parts/back-croc.png"
+  },
+  {
+    "id": "back-green-thorns",
+    "name": "Green Thorns",
+    "slot": "back",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-back-06",
+    "image": "/assets/parts/back-green-thorns.png"
+  },
+  {
+    "id": "back-indian-star",
+    "name": "Indian Star",
+    "slot": "back",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-back-08",
+    "image": "/assets/parts/back-indian-star.png"
+  },
+  {
+    "id": "back-red-ear",
+    "name": "Red Ear",
+    "slot": "back",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-back-10",
+    "image": "/assets/parts/back-red-ear.png"
+  },
+  {
+    "id": "back-tri-spikes",
+    "name": "Tri Spikes",
+    "slot": "back",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-back-04",
+    "image": "/assets/parts/back-tri-spikes.png"
+  },
+  {
+    "id": "ears-curved-spine",
+    "name": "Curved Spine",
+    "slot": "ears",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-curved-spine.png"
+  },
+  {
+    "id": "ears-friezard",
+    "name": "Friezard",
+    "slot": "ears",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-friezard.png"
+  },
+  {
+    "id": "ears-pogona",
+    "name": "Pogona",
+    "slot": "ears",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-pogona.png"
+  },
+  {
+    "id": "ears-sidebarb",
+    "name": "Sidebarb",
+    "slot": "ears",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-sidebarb.png"
+  },
+  {
+    "id": "ears-small-frill",
+    "name": "Small Frill",
+    "slot": "ears",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-small-frill.png"
+  },
+  {
+    "id": "ears-swirl",
+    "name": "Swirl",
+    "slot": "ears",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/ears-swirl.png"
+  },
+  {
+    "id": "eyes-gecko",
+    "name": "Gecko",
+    "slot": "eyes",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-gecko.png"
+  },
+  {
+    "id": "eyes-scar",
+    "name": "Scar",
+    "slot": "eyes",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-scar.png"
+  },
+  {
+    "id": "eyes-topaz",
+    "name": "Topaz",
+    "slot": "eyes",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-topaz.png"
+  },
+  {
+    "id": "eyes-tricky",
+    "name": "Tricky",
+    "slot": "eyes",
+    "class": "reptile",
+    "standard": true,
+    "cardId": null,
+    "image": "/assets/parts/eyes-tricky.png"
+  },
+  {
+    "id": "horn-bumpy",
+    "name": "Bumpy",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-horn-12",
+    "image": "/assets/parts/horn-bumpy.png"
+  },
+  {
+    "id": "horn-cerastes",
+    "name": "Cerastes",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-horn-06",
+    "image": "/assets/parts/horn-cerastes.png"
+  },
+  {
+    "id": "horn-incisor",
+    "name": "Incisor",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-horn-10",
+    "image": "/assets/parts/horn-incisor.png"
+  },
+  {
+    "id": "horn-scaly-spear",
+    "name": "Scaly Spear",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-horn-04",
+    "image": "/assets/parts/horn-scaly-spear.png"
+  },
+  {
+    "id": "horn-scaly-spoon",
+    "name": "Scaly Spoon",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-horn-08",
+    "image": "/assets/parts/horn-scaly-spoon.png"
+  },
+  {
+    "id": "horn-unko",
+    "name": "Unko",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-horn-02",
+    "image": "/assets/parts/horn-unko.png"
+  },
+  {
+    "id": "mouth-kotaro",
+    "name": "Kotaro",
+    "slot": "mouth",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-mouth-04",
+    "image": "/assets/parts/mouth-kotaro.png"
+  },
+  {
+    "id": "mouth-razor-bite",
+    "name": "Razor Bite",
+    "slot": "mouth",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-mouth-08",
+    "image": "/assets/parts/mouth-razor-bite.png"
+  },
+  {
+    "id": "mouth-tiny-turtle",
+    "name": "Tiny Turtle",
+    "slot": "mouth",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-mouth-10",
+    "image": "/assets/parts/mouth-tiny-turtle.png"
+  },
+  {
+    "id": "mouth-toothless-bite",
+    "name": "Toothless Bite",
+    "slot": "mouth",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-mouth-02",
+    "image": "/assets/parts/mouth-toothless-bite.png"
+  },
+  {
+    "id": "tail-gila",
+    "name": "Gila",
+    "slot": "tail",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-tail-10",
+    "image": "/assets/parts/tail-gila.png"
+  },
+  {
+    "id": "tail-grass-snake",
+    "name": "Grass Snake",
+    "slot": "tail",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-tail-12",
+    "image": "/assets/parts/tail-grass-snake.png"
+  },
+  {
+    "id": "tail-iguana",
+    "name": "Iguana",
+    "slot": "tail",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-tail-04",
+    "image": "/assets/parts/tail-iguana.png"
+  },
+  {
+    "id": "tail-snake-jar",
+    "name": "Snake Jar",
+    "slot": "tail",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-tail-08",
+    "image": "/assets/parts/tail-snake-jar.png"
+  },
+  {
+    "id": "tail-tiny-dino",
+    "name": "Tiny Dino",
+    "slot": "tail",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-tail-06",
+    "image": "/assets/parts/tail-tiny-dino.png"
+  },
+  {
+    "id": "tail-wall-gecko",
+    "name": "Wall Gecko",
+    "slot": "tail",
+    "class": "reptile",
+    "standard": true,
+    "cardId": "reptile-tail-02",
+    "image": "/assets/parts/tail-wall-gecko.png"
+  },
+  {
+    "id": "back-beach-ball",
+    "name": "Beach Ball",
+    "slot": "back",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-back-12",
+    "image": "/assets/parts/back-beach-ball.png"
+  },
+  {
+    "id": "back-beach-ball-shiny",
+    "name": "Beach Ball Shiny",
+    "slot": "back",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-back-12",
+    "image": "/assets/parts/back-beach-ball-shiny.png"
+  },
+  {
+    "id": "back-hamaya",
+    "name": "Hamaya",
+    "slot": "back",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-back-08",
+    "image": "/assets/parts/back-hamaya.png"
+  },
+  {
+    "id": "back-hasagi",
+    "name": "Hasagi",
+    "slot": "back",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-back-02",
+    "image": "/assets/parts/back-hasagi.png"
+  },
+  {
+    "id": "ears-coca",
+    "name": "Coca",
+    "slot": "ears",
+    "class": "beast",
+    "standard": false,
+    "cardId": null,
+    "image": null
+  },
+  {
+    "id": "ears-coca-shiny",
+    "name": "Coca Shiny",
+    "slot": "ears",
+    "class": "beast",
+    "standard": false,
+    "cardId": null,
+    "image": null
+  },
+  {
+    "id": "ears-merry-lamb",
+    "name": "Merry Lamb",
+    "slot": "ears",
+    "class": "beast",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-merry-lamb.png"
+  },
+  {
+    "id": "ears-pointy-nyan",
+    "name": "Pointy Nyan",
+    "slot": "ears",
+    "class": "beast",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-pointy-nyan.png"
+  },
+  {
+    "id": "eyes-calico-zeal",
+    "name": "Calico Zeal",
+    "slot": "eyes",
+    "class": "beast",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-calico-zeal.png"
+  },
+  {
+    "id": "eyes-snowflakes",
+    "name": "Snowflakes",
+    "slot": "eyes",
+    "class": "beast",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-snowflakes.png"
+  },
+  {
+    "id": "horn-kendama",
+    "name": "Kendama",
+    "slot": "horn",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-horn-04",
+    "image": "/assets/parts/horn-kendama.png"
+  },
+  {
+    "id": "horn-umaibo",
+    "name": "Umaibo",
+    "slot": "horn",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-horn-08",
+    "image": "/assets/parts/horn-umaibo.png"
+  },
+  {
+    "id": "horn-winter-branch",
+    "name": "Winter Branch",
+    "slot": "horn",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-horn-02",
+    "image": "/assets/parts/horn-winter-branch.png"
+  },
+  {
+    "id": "mouth-skull-cracker",
+    "name": "Skull Cracker",
+    "slot": "mouth",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-mouth-02",
+    "image": "/assets/parts/mouth-skull-cracker.png"
+  },
+  {
+    "id": "tail-cotton-candy",
+    "name": "Cotton Candy",
+    "slot": "tail",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-tail-02",
+    "image": "/assets/parts/tail-cotton-candy.png"
+  },
+  {
+    "id": "tail-cotton-candy-shiny",
+    "name": "Cotton Candy Shiny",
+    "slot": "tail",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-tail-02",
+    "image": "/assets/parts/tail-cotton-candy-shiny.png"
+  },
+  {
+    "id": "tail-sakura-cottontail",
+    "name": "Sakura Cottontail",
+    "slot": "tail",
+    "class": "beast",
+    "standard": false,
+    "cardId": "beast-tail-02",
+    "image": "/assets/parts/tail-sakura-cottontail.png"
+  },
+  {
+    "id": "back-pink-turnip",
+    "name": "Pink Turnip",
+    "slot": "back",
+    "class": "plant",
+    "standard": false,
+    "cardId": "plant-back-02",
+    "image": "/assets/parts/back-pink-turnip.png"
+  },
+  {
+    "id": "back-yakitori",
+    "name": "Yakitori",
+    "slot": "back",
+    "class": "plant",
+    "standard": false,
+    "cardId": "plant-back-04",
+    "image": "/assets/parts/back-yakitori.png"
+  },
+  {
+    "id": "ears-maiko",
+    "name": "Maiko",
+    "slot": "ears",
+    "class": "plant",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-maiko.png"
+  },
+  {
+    "id": "ears-pinecones",
+    "name": "Pinecones",
+    "slot": "ears",
+    "class": "plant",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-pinecones.png"
+  },
+  {
+    "id": "ears-the-last-leaf",
+    "name": "The Last Leaf",
+    "slot": "ears",
+    "class": "plant",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-the-last-leaf.png"
+  },
+  {
+    "id": "eyes-dreamy-papi",
+    "name": "Dreamy Papi",
+    "slot": "eyes",
+    "class": "plant",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-dreamy-papi.png"
+  },
+  {
+    "id": "horn-golden-bamboo-shoot",
+    "name": "Golden Bamboo Shoot",
+    "slot": "horn",
+    "class": "plant",
+    "standard": false,
+    "cardId": "plant-horn-02",
+    "image": "/assets/parts/horn-golden-bamboo-shoot.png"
+  },
+  {
+    "id": "horn-santas-gift",
+    "name": "Santa's Gift",
+    "slot": "horn",
+    "class": "plant",
+    "standard": false,
+    "cardId": "plant-horn-10",
+    "image": "/assets/parts/horn-santas-gift.png"
+  },
+  {
+    "id": "horn-yorishiro",
+    "name": "Yorishiro",
+    "slot": "horn",
+    "class": "plant",
+    "standard": false,
+    "cardId": "plant-horn-04",
+    "image": "/assets/parts/horn-yorishiro.png"
+  },
+  {
+    "id": "mouth-humorless",
+    "name": "Humorless",
+    "slot": "mouth",
+    "class": "plant",
+    "standard": false,
+    "cardId": "plant-mouth-02",
+    "image": "/assets/parts/mouth-humorless.png"
+  },
+  {
+    "id": "mouth-rudolph",
+    "name": "Rudolph",
+    "slot": "mouth",
+    "class": "plant",
+    "standard": false,
+    "cardId": "plant-mouth-04",
+    "image": "/assets/parts/mouth-rudolph.png"
+  },
+  {
+    "id": "tail-namek-carrot",
+    "name": "Namek Carrot",
+    "slot": "tail",
+    "class": "plant",
+    "standard": false,
+    "cardId": "plant-tail-02",
+    "image": "/assets/parts/tail-namek-carrot.png"
+  },
+  {
+    "id": "back-crystal-hermit",
+    "name": "Crystal Hermit",
+    "slot": "back",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": "aquatic-back-02",
+    "image": "/assets/parts/back-crystal-hermit.png"
+  },
+  {
+    "id": "ears-red-nimo",
+    "name": "Red Nimo",
+    "slot": "ears",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-red-nimo.png"
+  },
+  {
+    "id": "eyes-insomnia",
+    "name": "Insomnia",
+    "slot": "eyes",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-insomnia.png"
+  },
+  {
+    "id": "eyes-yen",
+    "name": "Yen",
+    "slot": "eyes",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-yen.png"
+  },
+  {
+    "id": "horn-5h04l-5t4r",
+    "name": "5H04L-5T4R",
+    "slot": "horn",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": "aquatic-horn-12",
+    "image": "/assets/parts/horn-5h04l-5t4r.png"
+  },
+  {
+    "id": "horn-candy-babylonia",
+    "name": "Candy Babylonia",
+    "slot": "horn",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": "aquatic-horn-02",
+    "image": "/assets/parts/horn-candy-babylonia.png"
+  },
+  {
+    "id": "mouth-bubble-fish",
+    "name": "Bubble Fish",
+    "slot": "mouth",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": "aquatic-mouth-08",
+    "image": "/assets/parts/mouth-bubble-fish.png"
+  },
+  {
+    "id": "mouth-bubble-fish-shiny",
+    "name": "Bubble Fish Shiny",
+    "slot": "mouth",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": "aquatic-mouth-08",
+    "image": "/assets/parts/mouth-bubble-fish-shiny.png"
+  },
+  {
+    "id": "mouth-geisha",
+    "name": "Geisha",
+    "slot": "mouth",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": "aquatic-mouth-10",
+    "image": "/assets/parts/mouth-geisha.png"
+  },
+  {
+    "id": "mouth-lam-handsome",
+    "name": "Lam Handsome",
+    "slot": "mouth",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": "aquatic-mouth-02",
+    "image": "/assets/parts/mouth-lam-handsome.png"
+  },
+  {
+    "id": "tail-koinobori",
+    "name": "Koinobori",
+    "slot": "tail",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": "aquatic-tail-02",
+    "image": "/assets/parts/tail-koinobori.png"
+  },
+  {
+    "id": "tail-kuro-koi",
+    "name": "Kuro Koi",
+    "slot": "tail",
+    "class": "aquatic",
+    "standard": false,
+    "cardId": "aquatic-tail-02",
+    "image": "/assets/parts/tail-kuro-koi.png"
+  },
+  {
+    "id": "back-candy-canes",
+    "name": "Candy Canes",
+    "slot": "back",
+    "class": "bug",
+    "standard": false,
+    "cardId": "bug-back-04",
+    "image": "/assets/parts/back-candy-canes.png"
+  },
+  {
+    "id": "back-starry-shell",
+    "name": "Starry Shell",
+    "slot": "back",
+    "class": "bug",
+    "standard": false,
+    "cardId": "bug-back-02",
+    "image": "/assets/parts/back-starry-shell.png"
+  },
+  {
+    "id": "ears-mon",
+    "name": "Mon",
+    "slot": "ears",
+    "class": "bug",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-mon.png"
+  },
+  {
+    "id": "ears-vector",
+    "name": "Vector",
+    "slot": "ears",
+    "class": "bug",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-vector.png"
+  },
+  {
+    "id": "eyes-broken-bookworm",
+    "name": "Broken Bookworm",
+    "slot": "eyes",
+    "class": "bug",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-broken-bookworm.png"
+  },
+  {
+    "id": "eyes-flower-sunglasses",
+    "name": "Flower Sunglasses",
+    "slot": "eyes",
+    "class": "bug",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-flower-sunglasses.png"
+  },
+  {
+    "id": "eyes-flower-sunglasses-shiny",
+    "name": "Flower Sunglasses Shiny",
+    "slot": "eyes",
+    "class": "bug",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-flower-sunglasses-shiny.png"
+  },
+  {
+    "id": "horn-laggingggggg",
+    "name": "Laggingggggg",
+    "slot": "horn",
+    "class": "bug",
+    "standard": false,
+    "cardId": "bug-horn-02",
+    "image": "/assets/parts/horn-laggingggggg.png"
+  },
+  {
+    "id": "horn-p4r451t3",
+    "name": "P4R451T3",
+    "slot": "horn",
+    "class": "bug",
+    "standard": false,
+    "cardId": "bug-horn-10",
+    "image": "/assets/parts/horn-p4r451t3.png"
+  },
+  {
+    "id": "mouth-feasting-mosquito",
+    "name": "Feasting Mosquito",
+    "slot": "mouth",
+    "class": "bug",
+    "standard": false,
+    "cardId": "bug-mouth-02",
+    "image": "/assets/parts/mouth-feasting-mosquito.png"
+  },
+  {
+    "id": "mouth-kawaii",
+    "name": "Kawaii",
+    "slot": "mouth",
+    "class": "bug",
+    "standard": false,
+    "cardId": "bug-mouth-08",
+    "image": "/assets/parts/mouth-kawaii.png"
+  },
+  {
+    "id": "tail-fire-ant",
+    "name": "Fire Ant",
+    "slot": "tail",
+    "class": "bug",
+    "standard": false,
+    "cardId": "bug-tail-02",
+    "image": "/assets/parts/tail-fire-ant.png"
+  },
+  {
+    "id": "tail-maki",
+    "name": "Maki",
+    "slot": "tail",
+    "class": "bug",
+    "standard": false,
+    "cardId": "bug-tail-06",
+    "image": "/assets/parts/tail-maki.png"
+  },
+  {
+    "id": "back-origami",
+    "name": "Origami",
+    "slot": "back",
+    "class": "bird",
+    "standard": false,
+    "cardId": "bird-back-04",
+    "image": "/assets/parts/back-origami.png"
+  },
+  {
+    "id": "back-starry-balloon",
+    "name": "Starry Balloon",
+    "slot": "back",
+    "class": "bird",
+    "standard": false,
+    "cardId": "bird-back-02",
+    "image": "/assets/parts/back-starry-balloon.png"
+  },
+  {
+    "id": "ears-heart-cheek",
+    "name": "Heart Cheek",
+    "slot": "ears",
+    "class": "bird",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-heart-cheek.png"
+  },
+  {
+    "id": "ears-karimata",
+    "name": "Karimata",
+    "slot": "ears",
+    "class": "bird",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-karimata.png"
+  },
+  {
+    "id": "eyes-icy-gaze",
+    "name": "Icy Gaze",
+    "slot": "eyes",
+    "class": "bird",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-icy-gaze.png"
+  },
+  {
+    "id": "eyes-sky-mavis",
+    "name": "Sky Mavis",
+    "slot": "eyes",
+    "class": "bird",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-sky-mavis.png"
+  },
+  {
+    "id": "horn-golden-shell",
+    "name": "Golden Shell",
+    "slot": "horn",
+    "class": "bird",
+    "standard": false,
+    "cardId": "bird-horn-02",
+    "image": "/assets/parts/horn-golden-shell.png"
+  },
+  {
+    "id": "horn-spruce-spear",
+    "name": "Spruce Spear",
+    "slot": "horn",
+    "class": "bird",
+    "standard": false,
+    "cardId": "bird-horn-12",
+    "image": "/assets/parts/horn-spruce-spear.png"
+  },
+  {
+    "id": "mouth-mr-doubletalk",
+    "name": "Mr. Doubletalk",
+    "slot": "mouth",
+    "class": "bird",
+    "standard": false,
+    "cardId": "bird-mouth-02",
+    "image": "/assets/parts/mouth-mr-doubletalk.png"
+  },
+  {
+    "id": "tail-omatsuri",
+    "name": "Omatsuri",
+    "slot": "tail",
+    "class": "bird",
+    "standard": false,
+    "cardId": "bird-tail-10",
+    "image": "/assets/parts/tail-omatsuri.png"
+  },
+  {
+    "id": "tail-snowy-swallow",
+    "name": "Snowy Swallow",
+    "slot": "tail",
+    "class": "bird",
+    "standard": false,
+    "cardId": "bird-tail-02",
+    "image": "/assets/parts/tail-snowy-swallow.png"
+  },
+  {
+    "id": "back-1nd14n-5t4r",
+    "name": "1ND14N-5T4R",
+    "slot": "back",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-back-08",
+    "image": "/assets/parts/back-1nd14n-5t4r.png"
+  },
+  {
+    "id": "back-frozen-bucket",
+    "name": "Frozen Bucket",
+    "slot": "back",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-back-08",
+    "image": "/assets/parts/back-frozen-bucket.png"
+  },
+  {
+    "id": "back-rugged-sail",
+    "name": "Rugged Sail",
+    "slot": "back",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-back-02",
+    "image": "/assets/parts/back-rugged-sail.png"
+  },
+  {
+    "id": "back-turtle-buoy",
+    "name": "Turtle Buoy",
+    "slot": "back",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-back-10",
+    "image": "/assets/parts/back-turtle-buoy.png"
+  },
+  {
+    "id": "back-turtle-buoy-shiny",
+    "name": "Turtle Buoy Shiny",
+    "slot": "back",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-back-10",
+    "image": "/assets/parts/back-turtle-buoy-shiny.png"
+  },
+  {
+    "id": "ears-deadly-pogona",
+    "name": "Deadly Pogona",
+    "slot": "ears",
+    "class": "reptile",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/ears-deadly-pogona.png"
+  },
+  {
+    "id": "eyes-crimson-gecko",
+    "name": "Crimson Gecko",
+    "slot": "eyes",
+    "class": "reptile",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-crimson-gecko.png"
+  },
+  {
+    "id": "eyes-dokuganryu",
+    "name": "Dokuganryu",
+    "slot": "eyes",
+    "class": "reptile",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-dokuganryu.png"
+  },
+  {
+    "id": "eyes-kabuki",
+    "name": "Kabuki",
+    "slot": "eyes",
+    "class": "reptile",
+    "standard": false,
+    "cardId": null,
+    "image": "/assets/parts/eyes-kabuki.png"
+  },
+  {
+    "id": "horn-pinku-unko",
+    "name": "Pinku Unko",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-horn-02",
+    "image": "/assets/parts/horn-pinku-unko.png"
+  },
+  {
+    "id": "horn-strawberry-ice-cream",
+    "name": "Strawberry Ice Cream",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-horn-02",
+    "image": "/assets/parts/horn-strawberry-ice-cream.png"
+  },
+  {
+    "id": "horn-strawberry-ice-cream-shiny",
+    "name": "Strawberry Ice Cream Shiny",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-horn-02",
+    "image": "/assets/parts/horn-strawberry-ice-cream-shiny.png"
+  },
+  {
+    "id": "horn-vanilla-ice-cream",
+    "name": "Vanilla Ice Cream",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-horn-02",
+    "image": "/assets/parts/horn-vanilla-ice-cream.png"
+  },
+  {
+    "id": "horn-vanilla-ice-cream-shiny",
+    "name": "Vanilla Ice Cream Shiny",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-horn-02",
+    "image": "/assets/parts/horn-vanilla-ice-cream-shiny.png"
+  },
+  {
+    "id": "horn-watermelon-ice-cream",
+    "name": "Watermelon Ice Cream",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-horn-02",
+    "image": "/assets/parts/horn-watermelon-ice-cream.png"
+  },
+  {
+    "id": "horn-watermelon-ice-cream-shiny",
+    "name": "Watermelon Ice Cream Shiny",
+    "slot": "horn",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-horn-02",
+    "image": "/assets/parts/horn-watermelon-ice-cream-shiny.png"
+  },
+  {
+    "id": "mouth-dango",
+    "name": "Dango",
+    "slot": "mouth",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-mouth-10",
+    "image": "/assets/parts/mouth-dango.png"
+  },
+  {
+    "id": "mouth-tiny-carrot",
+    "name": "Tiny Carrot",
+    "slot": "mouth",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-mouth-10",
+    "image": "/assets/parts/mouth-tiny-carrot.png"
+  },
+  {
+    "id": "mouth-venom-bite",
+    "name": "Venom Bite",
+    "slot": "mouth",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-mouth-02",
+    "image": "/assets/parts/mouth-venom-bite.png"
+  },
+  {
+    "id": "tail-december-surprise",
+    "name": "December Surprise",
+    "slot": "tail",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-tail-08",
+    "image": "/assets/parts/tail-december-surprise.png"
+  },
+  {
+    "id": "tail-escaped-gecko",
+    "name": "Escaped Gecko",
+    "slot": "tail",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-tail-02",
+    "image": "/assets/parts/tail-escaped-gecko.png"
+  },
+  {
+    "id": "tail-fir-trunk",
+    "name": "Fir Trunk",
+    "slot": "tail",
+    "class": "reptile",
+    "standard": false,
+    "cardId": "reptile-tail-06",
+    "image": "/assets/parts/tail-fir-trunk.png"
+  }
+]

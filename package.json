@@ -11,7 +11,7 @@
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt",
-    "test": "tsx --test tests/game.test.ts",
+    "test": "tsx --test tests/*.test.ts",
     "test:routes": "tsx tests/solve.ts",
     "typecheck": "tsc --noEmit"
   },

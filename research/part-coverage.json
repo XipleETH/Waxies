@@ -1,0 +1,80 @@
+{
+  "officialNamedParts": 279,
+  "standardParts": 192,
+  "standardBattleExpected": 132,
+  "standardBattleMapped": 132,
+  "standardBattleExtractable": 132,
+  "standardBattleVerifiedCardIds": 132,
+  "standardBattleByClass": {
+    "beast": 22,
+    "plant": 22,
+    "aquatic": 22,
+    "bug": 22,
+    "bird": 22,
+    "reptile": 22
+  },
+  "standardBattleBySlot": {
+    "back": 36,
+    "horn": 36,
+    "mouth": 24,
+    "tail": 36
+  },
+  "eyeEarStandard": 60,
+  "knownCosmetics": 87,
+  "totalExtractable": 277,
+  "missingArt": [
+    {
+      "partId": "ears-coca",
+      "sample": "summer-a",
+      "issues": [
+        "requires multipart atlas assembly"
+      ]
+    },
+    {
+      "partId": "ears-coca-shiny",
+      "sample": "summer-as",
+      "issues": [
+        "requires multipart atlas assembly"
+      ]
+    }
+  ],
+  "anyIssues": [
+    {
+      "partId": "ears-coca",
+      "issues": [
+        "requires multipart atlas assembly"
+      ]
+    },
+    {
+      "partId": "ears-coca-shiny",
+      "issues": [
+        "requires multipart atlas assembly"
+      ]
+    }
+  ],
+  "verifiedCardRecordCount": 264,
+  "limits": [
+    "Mapping contains the 279 named parts in the pinned official mixer-playground source; newer cosmetic parts absent from that source are not fabricated.",
+    "Eye and ear parts do not have Axie Classic battle cards and therefore have null cardId.",
+    "Each sprite is an exact atlas region rendered with the official shader and a default class-02 palette; the user Axie gene palette may differ.",
+    "Ears use one authentic left-ear image where available, otherwise the right-ear image; atlasKey records the exact choice."
+  ],
+  "exportedPngs": 277,
+  "spriteBytes": 6824679.0,
+  "emptySprites": 0,
+  "spritesWithoutTransparency": 0,
+  "visualInspection": "All 132 standard battle sprites inspected across six class contact sheets; recognizable, uncropped authentic atlas art. Native small mouth textures remain at source resolution.",
+  "cardArt": {
+    "expected": 132,
+    "downloaded": 132,
+    "bytes": 9419225.0,
+    "errors": [],
+    "checks": "HTTP 200; PNG signature; image decode; dimensions",
+    "dimensions": [
+      {
+        "size": "290, 415",
+        "count": 132
+      }
+    ]
+  }
+}
