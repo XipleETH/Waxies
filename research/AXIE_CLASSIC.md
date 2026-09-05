@@ -145,5 +145,9 @@ Las reglas detalladas, sustituciones de combos/mano/energía/Last Stand, límite
 | Gila | Neuro Toxin | Reptile | Cola | 100 | 50 | 1 | Aplica 2 Attack− si el asaltante ya está envenenado. |
 | Grass Snake | Venom Spray | Reptile | Cola | 20 | 20 | 0 | Escupe veneno en arco y deja charcos; cada impacto aplica exactamente 1 Poison. |
 
-## Disponibilidad de la consulta por ID
-El proveedor rechazó con HTTP 403 las consultas del servidor de desarrollo. Se conserva el error explícito y se ofrece importar un archivo de metadatos; su estructura y genes se validan, pero la procedencia se marca sin verificar. La consulta en vivo depende de que el proveedor acepte peticiones de la aplicación.
+## Consulta por ID y modelo 3D
+La versión actual lee los genes y propietario directamente del contrato Axie en Ronin, usando getAxie(uint256) y ownerOf(uint256) en un mismo bloque. Sustituye la consulta automática de metadatos que el proveedor bloqueó con HTTP 403. La importación de archivos sigue disponible para práctica.
+
+Ronin Wallet permite listar los Axies de la cuenta compartida y seleccionar uno, contrastando de nuevo su propietario antes de cargarlo. Solo hay lecturas y solicitud de cuenta: sin firmas ni transferencias. Esto no es una sesión autenticada de servidor.
+
+El modelo usa el Mixer 3D oficial adaptado a Three.js; ver MIXER_3D.md y mixer-coverage.json. Los genes eligen cuerpo, paleta y las seis partes. Las variantes ausentes aplican la sustitución oficial y se avisan en el juego. Las habilidades siguen siendo Classic nivel 1.

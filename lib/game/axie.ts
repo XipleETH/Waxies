@@ -3,7 +3,7 @@ import bodies from './data/body-parts.json';
 import { BATTLE_SLOTS, PARTS, type PartId } from './catalog';
 export const BODY_PARTS=bodies;
 export interface AxiePart {slot:string;id:string;name:string;skin:string;stage:number;card:string|null;image:string|null;known:boolean;artIsBase?:boolean}
-export interface AxieLoadout {id:string;name:string;class:string;genes:string;parts:AxiePart[];source:'official-metadata'|'metadata-file';fetchedAt:string;level:1}
+export interface AxieLoadout {id:string;name:string;class:string;genes:string;parts:AxiePart[];source:'official-metadata'|'metadata-file'|'ronin-contract';owner?:string;blockNumber?:string;fetchedAt:string;level:1}
 export function parseAxieId(input:string):string {
  const text=input.trim();const match=/^(?:#)?([1-9]\d{0,8})$/.exec(text)??/^https:\/\/app\.axieinfinity\.com\/marketplace\/axies\/([1-9]\d{0,8})\/?(?:[?#].*)?$/.exec(text);
  if(!match)throw new Error('Escribe un ID numérico o un enlace de App.Axie.');return match[1];
@@ -27,7 +27,7 @@ export function parseMetadata(raw:unknown,id:string):AxieLoadout {
 export function allowedParts(loadout:AxieLoadout|null|undefined):PartId[]{return loadout?[...new Set(loadout.parts.flatMap(p=>p.card&&Object.hasOwn(PARTS,p.card)?[p.card]:[]))]:Object.keys(PARTS);}
 export function validLoadout(value:unknown):value is AxieLoadout{
  if(!value||typeof value!=='object')return false;const a=value as AxieLoadout;let decoded:ReturnType<typeof decodeGenes>;try{decoded=decodeGenes(a.genes);}catch{return false;}
- return /^[1-9]\d{0,8}$/.test(a.id)&&['official-metadata','metadata-file'].includes(a.source)&&a.level===1&&typeof a.name==='string'&&typeof a.class==='string'&&Array.isArray(a.parts)&&a.parts.length===6&&new Set(a.parts.map(p=>p.slot)).size===6&&a.parts.every(p=>['eyes','ears',...BATTLE_SLOTS].includes(p.slot)&&typeof p.id==='string'&&typeof p.name==='string'&&p.card===decoded.find(g=>g.slot===p.slot)?.card)&&Number.isFinite(Date.parse(a.fetchedAt));
+ return /^[1-9]\d{0,8}$/.test(a.id)&&['official-metadata','metadata-file','ronin-contract'].includes(a.source)&&a.level===1&&typeof a.name==='string'&&typeof a.class==='string'&&Array.isArray(a.parts)&&a.parts.length===6&&new Set(a.parts.map(p=>p.slot)).size===6&&a.parts.every(p=>['eyes','ears',...BATTLE_SLOTS].includes(p.slot)&&typeof p.id==='string'&&typeof p.name==='string'&&p.card===decoded.find(g=>g.slot===p.slot)?.card)&&Number.isFinite(Date.parse(a.fetchedAt));
 }
 
 /** User-supplied files have validated structure and genes, but unverified provenance. */

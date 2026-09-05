@@ -1,0 +1,605 @@
+[
+  {
+    "index": 0,
+    "key": "beast-00",
+    "skin": 0,
+    "class": "beast",
+    "value": 0,
+    "primary": "#fdfcf2",
+    "secondary": "#af8c56"
+  },
+  {
+    "index": 1,
+    "key": "beast-01",
+    "skin": 0,
+    "class": "beast",
+    "value": 1,
+    "primary": "#544f44",
+    "secondary": "#edd8b8"
+  },
+  {
+    "index": 2,
+    "key": "beast-02",
+    "skin": 0,
+    "class": "beast",
+    "value": 2,
+    "primary": "#ffd500",
+    "secondary": "#fffeda"
+  },
+  {
+    "index": 3,
+    "key": "beast-03",
+    "skin": 0,
+    "class": "beast",
+    "value": 3,
+    "primary": "#fdb014",
+    "secondary": "#fef0a3"
+  },
+  {
+    "index": 4,
+    "key": "beast-04",
+    "skin": 0,
+    "class": "beast",
+    "value": 4,
+    "primary": "#f5a037",
+    "secondary": "#fde5b6"
+  },
+  {
+    "index": 5,
+    "key": "beast-06",
+    "skin": 0,
+    "class": "beast",
+    "value": 6,
+    "primary": "#427cad",
+    "secondary": "#ffcd63"
+  },
+  {
+    "index": 6,
+    "key": "plant-00",
+    "skin": 0,
+    "class": "plant",
+    "value": 0,
+    "primary": "#fefdf1",
+    "secondary": "#98984a"
+  },
+  {
+    "index": 7,
+    "key": "plant-01",
+    "skin": 0,
+    "class": "plant",
+    "value": 1,
+    "primary": "#4e523e",
+    "secondary": "#efe5a7"
+  },
+  {
+    "index": 8,
+    "key": "plant-02",
+    "skin": 0,
+    "class": "plant",
+    "value": 2,
+    "primary": "#afdb1b",
+    "secondary": "#e3efdb"
+  },
+  {
+    "index": 9,
+    "key": "plant-03",
+    "skin": 0,
+    "class": "plant",
+    "value": 3,
+    "primary": "#decd00",
+    "secondary": "#f3eaba"
+  },
+  {
+    "index": 10,
+    "key": "plant-04",
+    "skin": 0,
+    "class": "plant",
+    "value": 4,
+    "primary": "#99ff73",
+    "secondary": "#fbfdf1"
+  },
+  {
+    "index": 11,
+    "key": "aquatic-00",
+    "skin": 0,
+    "class": "aquatic",
+    "value": 0,
+    "primary": "#f4fff4",
+    "secondary": "#3ca1d9"
+  },
+  {
+    "index": 12,
+    "key": "aquatic-01",
+    "skin": 0,
+    "class": "aquatic",
+    "value": 1,
+    "primary": "#4d545e",
+    "secondary": "#a9ead5"
+  },
+  {
+    "index": 13,
+    "key": "aquatic-02",
+    "skin": 0,
+    "class": "aquatic",
+    "value": 2,
+    "primary": "#00f1d2",
+    "secondary": "#befedb"
+  },
+  {
+    "index": 14,
+    "key": "aquatic-03",
+    "skin": 0,
+    "class": "aquatic",
+    "value": 3,
+    "primary": "#00dff3",
+    "secondary": "#bffef4"
+  },
+  {
+    "index": 15,
+    "key": "aquatic-04",
+    "skin": 0,
+    "class": "aquatic",
+    "value": 4,
+    "primary": "#00b8ff",
+    "secondary": "#c9eeff"
+  },
+  {
+    "index": 16,
+    "key": "aquatic-06",
+    "skin": 0,
+    "class": "aquatic",
+    "value": 6,
+    "primary": "#e12f64",
+    "secondary": "#62ffe2"
+  },
+  {
+    "index": 17,
+    "key": "bug-00",
+    "skin": 0,
+    "class": "bug",
+    "value": 0,
+    "primary": "#fffaf5",
+    "secondary": "#e22737"
+  },
+  {
+    "index": 18,
+    "key": "bug-01",
+    "skin": 0,
+    "class": "bug",
+    "value": 1,
+    "primary": "#553b39",
+    "secondary": "#ffe7e2"
+  },
+  {
+    "index": 19,
+    "key": "bug-02",
+    "skin": 0,
+    "class": "bug",
+    "value": 2,
+    "primary": "#ff606c",
+    "secondary": "#fff4f9"
+  },
+  {
+    "index": 20,
+    "key": "bug-03",
+    "skin": 0,
+    "class": "bug",
+    "value": 3,
+    "primary": "#ff433e",
+    "secondary": "#ffdcce"
+  },
+  {
+    "index": 21,
+    "key": "bug-04",
+    "skin": 0,
+    "class": "bug",
+    "value": 4,
+    "primary": "#df2e54",
+    "secondary": "#ffd8d6"
+  },
+  {
+    "index": 22,
+    "key": "bird-00",
+    "skin": 0,
+    "class": "bird",
+    "value": 0,
+    "primary": "#fff7ff",
+    "secondary": "#fa59a0"
+  },
+  {
+    "index": 23,
+    "key": "bird-01",
+    "skin": 0,
+    "class": "bird",
+    "value": 1,
+    "primary": "#583c44",
+    "secondary": "#fec3dd"
+  },
+  {
+    "index": 24,
+    "key": "bird-02",
+    "skin": 0,
+    "class": "bird",
+    "value": 2,
+    "primary": "#ff99b0",
+    "secondary": "#ffd8f3"
+  },
+  {
+    "index": 25,
+    "key": "bird-03",
+    "skin": 0,
+    "class": "bird",
+    "value": 3,
+    "primary": "#ffafc1",
+    "secondary": "#ffe0e7"
+  },
+  {
+    "index": 26,
+    "key": "bird-04",
+    "skin": 0,
+    "class": "bird",
+    "value": 4,
+    "primary": "#ff78b4",
+    "secondary": "#ffedff"
+  },
+  {
+    "index": 27,
+    "key": "reptile-00",
+    "skin": 0,
+    "class": "reptile",
+    "value": 0,
+    "primary": "#fff7ff",
+    "secondary": "#bb68ce"
+  },
+  {
+    "index": 28,
+    "key": "reptile-01",
+    "skin": 0,
+    "class": "reptile",
+    "value": 1,
+    "primary": "#5e436d",
+    "secondary": "#f4cdfe"
+  },
+  {
+    "index": 29,
+    "key": "reptile-02",
+    "skin": 0,
+    "class": "reptile",
+    "value": 2,
+    "primary": "#c569cf",
+    "secondary": "#ffd2fe"
+  },
+  {
+    "index": 30,
+    "key": "reptile-03",
+    "skin": 0,
+    "class": "reptile",
+    "value": 3,
+    "primary": "#9967fb",
+    "secondary": "#dac3ff"
+  },
+  {
+    "index": 31,
+    "key": "reptile-04",
+    "skin": 0,
+    "class": "reptile",
+    "value": 4,
+    "primary": "#f8bbff",
+    "secondary": "#fff1fe"
+  },
+  {
+    "index": 32,
+    "key": "reptile-06",
+    "skin": 0,
+    "class": "reptile",
+    "value": 6,
+    "primary": "#00c15f",
+    "secondary": "#f4aaff"
+  },
+  {
+    "index": 33,
+    "key": "dawn-00",
+    "skin": 0,
+    "class": "dawn",
+    "value": 0,
+    "primary": "#fcfbf2",
+    "secondary": "#d4f8d0"
+  },
+  {
+    "index": 34,
+    "key": "dawn-01",
+    "skin": 0,
+    "class": "dawn",
+    "value": 1,
+    "primary": "#594026",
+    "secondary": "#fede29"
+  },
+  {
+    "index": 35,
+    "key": "dawn-02",
+    "skin": 0,
+    "class": "dawn",
+    "value": 2,
+    "primary": "#bbbaff",
+    "secondary": "#eaf8ff"
+  },
+  {
+    "index": 36,
+    "key": "dawn-03",
+    "skin": 0,
+    "class": "dawn",
+    "value": 3,
+    "primary": "#ffff8d",
+    "secondary": "#feffe3"
+  },
+  {
+    "index": 37,
+    "key": "dawn-04",
+    "skin": 0,
+    "class": "dawn",
+    "value": 4,
+    "primary": "#a5ffff",
+    "secondary": "#ffffff"
+  },
+  {
+    "index": 38,
+    "key": "dusk-00",
+    "skin": 0,
+    "class": "dusk",
+    "value": 0,
+    "primary": "#f4fefb",
+    "secondary": "#feffff"
+  },
+  {
+    "index": 39,
+    "key": "dusk-01",
+    "skin": 0,
+    "class": "dusk",
+    "value": 1,
+    "primary": "#1d4d4f",
+    "secondary": "#d0fec0"
+  },
+  {
+    "index": 40,
+    "key": "dusk-02",
+    "skin": 0,
+    "class": "dusk",
+    "value": 2,
+    "primary": "#0097a0",
+    "secondary": "#abffac"
+  },
+  {
+    "index": 41,
+    "key": "dusk-03",
+    "skin": 0,
+    "class": "dusk",
+    "value": 3,
+    "primary": "#007181",
+    "secondary": "#62feda"
+  },
+  {
+    "index": 42,
+    "key": "dusk-04",
+    "skin": 0,
+    "class": "dusk",
+    "value": 4,
+    "primary": "#00aeb7",
+    "secondary": "#a4ffcb"
+  },
+  {
+    "index": 43,
+    "key": "mech-00",
+    "skin": 0,
+    "class": "mech",
+    "value": 0,
+    "primary": "#f6fbff",
+    "secondary": "#929292"
+  },
+  {
+    "index": 44,
+    "key": "mech-01",
+    "skin": 0,
+    "class": "mech",
+    "value": 1,
+    "primary": "#505050",
+    "secondary": "#e5e5e5"
+  },
+  {
+    "index": 45,
+    "key": "mech-02",
+    "skin": 0,
+    "class": "mech",
+    "value": 2,
+    "primary": "#ced5d7",
+    "secondary": "#f1fdf0"
+  },
+  {
+    "index": 46,
+    "key": "mech-03",
+    "skin": 0,
+    "class": "mech",
+    "value": 3,
+    "primary": "#ad6d3f",
+    "secondary": "#9ae6cb"
+  },
+  {
+    "index": 47,
+    "key": "mech-04",
+    "skin": 0,
+    "class": "mech",
+    "value": 4,
+    "primary": "#8c8e9e",
+    "secondary": "#ebe7de"
+  },
+  {
+    "index": 48,
+    "key": "body-frosty",
+    "skin": 1,
+    "class": "any",
+    "value": -1,
+    "primary": "#f3fefe",
+    "secondary": "#f3fefe"
+  },
+  {
+    "index": 49,
+    "key": "beast-summer",
+    "skin": 2,
+    "class": "beast",
+    "value": -1,
+    "primary": "#fe9701",
+    "secondary": "#fff6ec"
+  },
+  {
+    "index": 50,
+    "key": "plant-summer",
+    "skin": 2,
+    "class": "plant",
+    "value": -1,
+    "primary": "#67e92f",
+    "secondary": "#f6fff7"
+  },
+  {
+    "index": 51,
+    "key": "aquatic-summer",
+    "skin": 2,
+    "class": "aquatic",
+    "value": -1,
+    "primary": "#00c5d0",
+    "secondary": "#f5fffd"
+  },
+  {
+    "index": 52,
+    "key": "bug-summer",
+    "skin": 2,
+    "class": "bug",
+    "value": -1,
+    "primary": "#ff4363",
+    "secondary": "#fffdff"
+  },
+  {
+    "index": 53,
+    "key": "bird-summer",
+    "skin": 2,
+    "class": "bird",
+    "value": -1,
+    "primary": "#ff78bb",
+    "secondary": "#fffdff"
+  },
+  {
+    "index": 54,
+    "key": "reptile-summer",
+    "skin": 2,
+    "class": "reptile",
+    "value": -1,
+    "primary": "#e173ff",
+    "secondary": "#fefeff"
+  },
+  {
+    "index": 55,
+    "key": "dawn-summer",
+    "skin": 2,
+    "class": "dawn",
+    "value": -1,
+    "primary": "#ffda00",
+    "secondary": "#f8fdea"
+  },
+  {
+    "index": 56,
+    "key": "mech-summer",
+    "skin": 2,
+    "class": "mech",
+    "value": -1,
+    "primary": "#c7d7e9",
+    "secondary": "#fefeff"
+  },
+  {
+    "index": 57,
+    "key": "dusk-summer",
+    "skin": 2,
+    "class": "dusk",
+    "value": -1,
+    "primary": "#474b84",
+    "secondary": "#fefeff"
+  },
+  {
+    "index": 58,
+    "key": "beast-nightmare",
+    "skin": 3,
+    "class": "beast",
+    "value": -1,
+    "primary": "#e6eee6",
+    "secondary": "#fe9701"
+  },
+  {
+    "index": 59,
+    "key": "plant-nightmare",
+    "skin": 3,
+    "class": "plant",
+    "value": -1,
+    "primary": "#e6eee6",
+    "secondary": "#67e92f"
+  },
+  {
+    "index": 60,
+    "key": "aquatic-nightmare",
+    "skin": 3,
+    "class": "aquatic",
+    "value": -1,
+    "primary": "#e6eee6",
+    "secondary": "#00c5d0"
+  },
+  {
+    "index": 61,
+    "key": "bug-nightmare",
+    "skin": 3,
+    "class": "bug",
+    "value": -1,
+    "primary": "#e6eee6",
+    "secondary": "#ff4363"
+  },
+  {
+    "index": 62,
+    "key": "bird-nightmare",
+    "skin": 3,
+    "class": "bird",
+    "value": -1,
+    "primary": "#e6eee6",
+    "secondary": "#ff78bb"
+  },
+  {
+    "index": 63,
+    "key": "reptile-nightmare",
+    "skin": 3,
+    "class": "reptile",
+    "value": -1,
+    "primary": "#e6eee6",
+    "secondary": "#e173ff"
+  },
+  {
+    "index": 64,
+    "key": "dawn-nightmare",
+    "skin": 3,
+    "class": "dawn",
+    "value": -1,
+    "primary": "#e6eee6",
+    "secondary": "#ffda00"
+  },
+  {
+    "index": 65,
+    "key": "mech-nightmare",
+    "skin": 3,
+    "class": "mech",
+    "value": -1,
+    "primary": "#e6eee6",
+    "secondary": "#c7d7e9"
+  },
+  {
+    "index": 66,
+    "key": "dusk-nightmare",
+    "skin": 3,
+    "class": "dusk",
+    "value": -1,
+    "primary": "#e6eee6",
+    "secondary": "#474b84"
+  }
+]

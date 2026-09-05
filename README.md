@@ -51,5 +51,9 @@ Se exponen herramientas WebMCP de consulta, inicio y traslado de tokens de prác
 
 La versión de reglas 3 conserva saldos, cofres, recompensas reclamadas y posiciones de guardados anteriores. Añade una cuarta ranura e invalida únicamente las pruebas de defensa: los nuevos ataques requieren repetir los dos recorridos.
 
-### Consulta pública y archivos
-El proveedor puede responder 403 a peticiones del servidor. En ese caso se muestra el rechazo y el editor permite importar un JSON de metadatos obtenido por el usuario. Los archivos se marcan como `metadata-file`: se validan genes y estructura, pero no autenticidad ni propiedad. No se utilizan proxies para eludir la protección del proveedor.
+### Modelo por genes y Ronin Wallet
+El personaje seleccionado se ensambla con los recursos oficiales de unity-axie-mixer3d, revisión 63ec82afc7deeec242734e70fea4bb9fffa904cc. Se incluyen 8 cuerpos, 575 variantes completas, 733 modelos con esqueleto y 513 texturas. Ver research/MIXER_3D.md y research/mixer-coverage.json. Se conservan la geometría, los bind poses y las curvas oficiales; las pistas de armas ausentes se omiten. El material replica el shader V5 de tintes genéticos. No incluye partículas adicionales Mystic ni skins no publicadas por el Mixer.
+
+GET /api/axie/:id consulta eth_blockNumber y luego getAxie(uint256) / ownerOf(uint256) en el mismo bloque del contrato Ronin 0x32950db2a7164ae833121501c797d79e7b79d74c. Los genes ocupan las palabras ABI 3 y 4 (base 0) de la respuesta actual de 7 palabras, comprobadas contra los metadatos oficiales de 4200042 y 27. El formato se valida estrictamente. El proveedor público tiene límites de uso; para tráfico de producción debe configurarse un proveedor dedicado.
+
+Ronin Wallet usa el proveedor inyectado documentado. Solo solicita compartir la cuenta y hace lecturas; no solicita firmas, aprobaciones de token ni transacciones. Lista 8 NFT por página mediante balanceOf/tokenOfOwnerByIndex y vuelve a verificar ownerOf al seleccionar. Esta comprobación en el cliente no sustituye autenticación y validación de partidas en un servidor para economía real. Los archivos de metadatos siguen disponibles y se marcan como procedencia sin verificar.

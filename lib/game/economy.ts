@@ -35,7 +35,7 @@ export function claimReward(save:Save,id:string):Save {
   if(save.claimed.includes(id))throw new Error('Ya reclamaste este cofre. Puedes seguir practicando.');
   return {...save,claimed:[...save.claimed,id],balances:{...save.balances,[reward.token]:save.balances[reward.token]+reward.units},history:[entry('reward',reward.token,reward.units),...save.history].slice(0,20)};
 }
-export function customDungeon(save:Save):Dungeon { return {...DUNGEONS[0],id:'my-vault',name:'Tu refugio en Lunacia',subtitle:'Pon a prueba tu defensa',difficulty:save.axie?'Axie #'+save.axie.id:'Laboratorio',runnerClass:save.runnerClass??'Beast',traps:save.traps.filter(t=>allowedParts(save.axie).includes(t.part))}; }
+export function customDungeon(save:Save):Dungeon { return {...DUNGEONS[0],id:'my-vault',name:'Tu refugio en Lunacia',subtitle:'Pon a prueba tu defensa',difficulty:save.axie?'Axie #'+save.axie.id:'Laboratorio',runnerClass:save.axie?.class??save.runnerClass??'Beast',traps:save.traps.filter(t=>allowedParts(save.axie).includes(t.part))}; }
 export function validSave(value:unknown):value is Save {
   if(!value||typeof value!=='object')return false;const s=value as Save;
   const validBalances=(b:Record<TokenId,number>)=>b&&TOKENS.every(t=>Number.isSafeInteger(b[t])&&b[t]>=0&&b[t]<=1e13);
@@ -54,5 +54,5 @@ export function migrateSave(s:Save):Save {
 export function equipAxie(save:Save,axie:AxieLoadout):Save {
  if(!validLoadout(axie))throw new Error('Axie no válido.');const available=allowedParts(axie);
  if(!available.length)throw new Error('Ninguna parte de este Axie tiene una carta Classic verificada en el catálogo.');
- return {...save,axie,traps:DEFENSE_SLOTS.map((slot,i)=>({...slot,part:available[i%available.length]})),proofs:0,validated:false,rulesVersion:3};
+ return {...save,axie,runnerClass:axie.class,traps:DEFENSE_SLOTS.map((slot,i)=>({...slot,part:available[i%available.length]})),proofs:0,validated:false,rulesVersion:3};
 }

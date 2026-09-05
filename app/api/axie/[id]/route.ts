@@ -1,12 +1,12 @@
-import { parseAxieId, parseMetadata } from '@/lib/game/axie';
+import { readAxieOnChain } from '@/lib/game/ronin';
 export async function GET(_request:Request,{params}:{params:Promise<{id:string}>}){
  try{
-  const id=parseAxieId((await params).id);
-  const response=await fetch('https://metadata.axieinfinity.com/axie/'+id,{headers:{Accept:'application/json'},signal:AbortSignal.timeout(10000),redirect:'manual'});
-  if(!response.ok)return Response.json({error:response.status===403?'El proveedor ha bloqueado la consulta automática. Puedes importar su archivo de metadatos.':'App.Axie no está disponible ahora. Intenta de nuevo.'},{status:502});
-  const text=await response.text();if(text.length>100000)throw new Error('Metadatos demasiado grandes.');
-  const axie=parseMetadata(JSON.parse(text),id);
-  return Response.json({axie},{headers:{'Cache-Control':'public, max-age=60'}});
- }catch(error){const message=error instanceof Error?error.message:'No pudimos consultar ese Axie.';return Response.json({error:message.includes('timeout')?'La consulta tardó demasiado. Vuelve a intentarlo.':message},{status:400});}
+  const {id}=await params;const signal=AbortSignal.timeout(12000);
+  const axie=await readAxieOnChain(id,async args=>{
+   const response=await fetch('https://api.roninchain.com/rpc',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,...args}),signal,redirect:'manual'});
+   if(!response.ok)throw new Error('Ronin no está disponible ahora. Puedes cargar tu Axie desde la billetera.');
+   const data=await response.json() as {result?:unknown;error?:{message?:string}};if(data.error)throw new Error('Ronin no pudo consultar ese Axie. Revisa el ID o intenta más tarde.');return data.result;
+  });
+  return Response.json({axie},{headers:{'Cache-Control':'public, max-age=30'}});
+ }catch(error){return Response.json({error:error instanceof Error?error.message:'No pudimos consultar ese Axie.'},{status:400});}
 }
-
