@@ -1,0 +1,156 @@
+import * as THREE from 'three';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import { DUNGEONS, PHYSICS, createState, requestJump, step, trapPosition, type Dungeon, type GameState } from './physics';
+import { PARTS } from './catalog';
+export interface Engine { jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
+export function createEngine(host: HTMLElement, onState: (s: GameState) => void, onLoad: (error?: string) => void): Engine {
+  let disposed = false, level = DUNGEONS[0], state = createState(level), raf = 0, elapsed = 0;
+  const renderer = new THREE.WebGLRenderer({antialias: true, alpha: false, powerPreference: 'high-performance'});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); renderer.setClearColor(0x0c191d);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.5;
+  renderer.domElement.setAttribute('aria-label', 'Mazmorra 3D. Espacio o clic para saltar; P para pausar; R para reintentar.');
+  renderer.domElement.tabIndex=0; host.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.fog = new THREE.FogExp2(0x0c191d, 0.018);
+  const camera = new THREE.OrthographicCamera(-13, 13, 7.5, -7.5, 0.1, 100);
+  camera.position.set(12, 11, 38); camera.lookAt(12, 7, 0);
+  scene.add(new THREE.HemisphereLight(0x91d9ce, 0x202b27, 2));
+  const sun = new THREE.DirectionalLight(0xd6ffdb, 3.5); sun.position.set(5, 17, 12); sun.castShadow = true;
+  sun.shadow.mapSize.set(1024, 1024); Object.assign(sun.shadow.camera, {left: -18, right: 18, top: 18, bottom: -18});
+  sun.shadow.bias = -0.002; scene.add(sun);
+  const warm = new THREE.PointLight(0xffb64e, 45, 16); warm.position.set(20, 12, 3); scene.add(warm);
+  const teal = new THREE.PointLight(0x52e0bb, 26, 14); teal.position.set(2, 6, 3); scene.add(teal);
+  const roomGroup = new THREE.Group(); scene.add(roomGroup);
+  const materials: THREE.Material[] = [], geometries: THREE.BufferGeometry[] = [], textures: THREE.Texture[] = [];
+  const mat = (color: number, extra: THREE.MeshStandardMaterialParameters = {}) => { const m = new THREE.MeshStandardMaterial({color, roughness: 0.86, ...extra}); materials.push(m); return m; };
+  const stone = mat(0x31504c), top = mat(0x52817a), dark = mat(0x182e31), gold = mat(0xd69b35, {metalness: 0.65, roughness: 0.3}), wood = mat(0x5c3828);
+  const edgeMat = new THREE.LineBasicMaterial({color: 0x0a191b, transparent: true, opacity: 0.65}); materials.push(edgeMat);
+  const box = (parent: THREE.Object3D, x: number, y: number, z: number, w: number, h: number, d: number, material: THREE.Material, outline = false) => {
+    const geo = new THREE.BoxGeometry(w, h, d); geometries.push(geo);
+    const mesh = new THREE.Mesh(geo, material); mesh.position.set(x,y,z); mesh.castShadow = true; mesh.receiveShadow = true; parent.add(mesh);
+    if (outline) { const edges = new THREE.EdgesGeometry(geo); geometries.push(edges); mesh.add(new THREE.LineSegments(edges, edgeMat)); } return mesh;
+  };
+  box(scene,12,7,-3,28,17,0.5,dark);
+  // World geometry is intentionally three-dimensional; collision remains in XY.
+  for(let row=0;row<9;row++) for(let col=0;col<11;col++) {
+    const shade = new THREE.Color(0x203b3b).multiplyScalar(0.72 + ((col*13+row*7)%9)*0.038);
+    box(scene, col*2.5+(row%2)*1.25, row*1.7, -2.6, 2.42,1.61,0.24,mat(shade.getHex()));
+  }
+  for(const x of [0.2, 12, 23.8]) {
+    box(scene,x,7,-1.7,0.95,14,1,stone,true);
+    for(const y of [1.3,6.7,12.8]) box(scene,x,y,-1.45,1.45,0.42,1.4,stone,true);
+  }
+  // Portal marks the entry; the vault sits at the opposite end of the route.
+  const portalMat = mat(0x72ffd2,{emissive:0x2cdca4,emissiveIntensity:1.6});
+  box(scene,2.5,1.85,-1.3,1.55,2.1,0.3,mat(0x062d2b));
+  for(const x of [1.65,3.35]) box(scene,x,1.85,-1.05,0.18,2.35,0.35,portalMat);
+  box(scene,2.5,3,-1.05,1.85,0.18,0.35,portalMat);
+  const chest = new THREE.Group(); scene.add(chest);
+  box(chest,0,-0.22,0,1.45,0.7,1.1,wood,true);
+  const lid = new THREE.Group(); lid.position.set(0,0.12,-0.5); chest.add(lid);
+  box(lid,0,0.17,0.5,1.5,0.42,1.15,wood,true);
+  for(const x of [-0.51,0.51]) { box(chest,x,-0.2,0,0.14,0.79,1.17,gold); box(lid,x,0.2,0.5,0.15,0.49,1.2,gold); }
+  box(chest,0,-0.08,0.59,0.27,0.35,0.13,gold);
+  const gemGeo=new THREE.OctahedronGeometry(0.17); geometries.push(gemGeo);
+  const gem=new THREE.Mesh(gemGeo,mat(0xf7e29c,{emissive:0xffc95b,emissiveIntensity:0.8})); gem.position.set(0,0,0.7); chest.add(gem);
+  const ringGeo = new THREE.TorusGeometry(1.15,0.018,4,64); geometries.push(ringGeo);
+  const halo = new THREE.Mesh(ringGeo,mat(0xf1c86c,{emissive:0xc78d35,emissiveIntensity:1.3})); halo.position.set(0,0.5,-0.9); chest.add(halo);
+  let traps: THREE.Group[] = [];
+  let roomGeometries:THREE.BufferGeometry[]=[],roomMaterials:THREE.Material[]=[],roomTextures:THREE.Texture[]=[];
+  const loader = new THREE.TextureLoader();
+  function buildLevel(next: Dungeon) {
+    level = next; state = createState(level); roomGroup.clear(); traps = [];
+    for(const geo of roomGeometries){geo.dispose();geometries.splice(geometries.indexOf(geo),1);}
+    for(const material of roomMaterials){material.dispose();materials.splice(materials.indexOf(material),1);}
+    for(const texture of roomTextures){texture.dispose();textures.splice(textures.indexOf(texture),1);}
+    const geometryStart=geometries.length,materialStart=materials.length,textureStart=textures.length;
+    const blocks = [{x:12,y:0.35,w:24,h:1.3}, ...level.platforms, {x:0.45,y:7,w:1.1,h:14}, {x:23.55,y:7,w:1.1,h:14}];
+    blocks.forEach(p=>{
+      box(roomGroup,p.x,p.y,0,p.w,p.h,2.6,stone,true);
+      box(roomGroup,p.x,p.y+p.h/2,0.02,p.w+0.12,0.13,2.74,top,true);
+      const n=Math.floor(p.w/1.5);
+      for(let i=1;i<n;i++) box(roomGroup,p.x-p.w/2+i*p.w/n,p.y,1.32,0.025,p.h,0.02,dark);
+      for(let i=0;i<n;i++) if(i%3!==1) box(roomGroup,p.x-p.w/2+i*p.w/n+0.4,p.y+p.h/2-0.13,1.39,0.35,0.2,0.06,mat(0x487963));
+    });
+    chest.position.set(level.chest.x,level.chest.y,0.45); lid.rotation.x=0;
+    level.traps.forEach(t=>{
+      const group = new THREE.Group(); const color = new THREE.Color(PARTS[t.part].color);
+      const geo = new THREE.TorusGeometry(0.5,0.05,8,32); geometries.push(geo);
+      const ring = new THREE.Mesh(geo,mat(color.getHex(),{emissive:color.getHex(),emissiveIntensity:0.4})); group.add(ring);
+      const tex=loader.load(`/assets/${t.part}-part.png`); tex.colorSpace=THREE.SRGBColorSpace; textures.push(tex);
+      // Exact part art extracted from the official Axie atlas and palette shader.
+      const sm=new THREE.SpriteMaterial({map:tex,transparent:true}); materials.push(sm);
+      const sprite=new THREE.Sprite(sm);sprite.scale.set(1.3,t.part === 'grass-snake' ? 0.8 : 1.05,1);sprite.position.z=0.07;group.add(sprite);
+      roomGroup.add(group); traps.push(group);
+    });
+    roomGeometries=geometries.slice(geometryStart);roomMaterials=materials.slice(materialStart);roomTextures=textures.slice(textureStart);
+    onState({...state});
+  }
+  buildLevel(level);
+  // Small motes give depth without obscuring the jump path.
+  const particleGeo = new THREE.BufferGeometry(); geometries.push(particleGeo);
+  const points=new Float32Array(90*3);
+  for(let i=0;i<90;i++){points[i*3]=((i*713)%239)/10;points[i*3+1]=((i*311)%130)/10;points[i*3+2]=((i*97)%40)/10-1;}
+  particleGeo.setAttribute('position',new THREE.BufferAttribute(points,3));
+  const particleMat=new THREE.PointsMaterial({color:0x91d9ac,size:0.045,transparent:true,opacity:0.5});materials.push(particleMat);
+  const particles=new THREE.Points(particleGeo,particleMat);scene.add(particles);
+  const avatar=new THREE.Group();scene.add(avatar);let mixer:THREE.AnimationMixer|undefined;
+  const actions:Partial<Record<'run'|'idle'|'jump',THREE.AnimationAction>>={};let activeAction='';let lastJump=0;
+  const manager=new THREE.LoadingManager();manager.setURLModifier(url=>/\.(png|jpe?g)$/i.test(url)||url.startsWith('blob:')?'/assets/buba-texture.png':url);
+  const fbx=new FBXLoader(manager);
+  Promise.all([fbx.loadAsync('/assets/buba-rig.fbx'),fbx.loadAsync('/assets/buba-run.fbx'),fbx.loadAsync('/assets/buba-idle.fbx'),fbx.loadAsync('/assets/buba-jump.fbx'),loader.loadAsync('/assets/buba-texture.png')]).then(([model,run,idle,jump,tex])=>{
+    if(disposed)return;
+    tex.flipY=true;tex.colorSpace=THREE.SRGBColorSpace;textures.push(tex);
+    const avatarMaterial=new THREE.MeshStandardMaterial({map:tex,color:0xffffff,roughness:1,metalness:0});materials.push(avatarMaterial);
+    model.traverse(o=>{if(o instanceof THREE.Mesh){const old=Array.isArray(o.material)?o.material:[o.material];old.forEach(m=>m.dispose());o.material=avatarMaterial;geometries.push(o.geometry);o.castShadow=true;}});
+    const bounds=new THREE.Box3().setFromObject(model);const size=bounds.getSize(new THREE.Vector3());
+    model.scale.setScalar(1.65/size.y);
+    const scaled=new THREE.Box3().setFromObject(model);const center=scaled.getCenter(new THREE.Vector3());
+    model.position.set(-center.x,-scaled.min.y-PHYSICS.radius,-center.z);avatar.add(model);
+    mixer=new THREE.AnimationMixer(model);
+    for(const [name,asset] of [['run',run],['idle',idle],['jump',jump]] as const){
+      if(asset.animations[0]){const action=mixer.clipAction(asset.animations[0]);actions[name]=action;if(name==='jump'){action.setLoop(THREE.LoopOnce,1);action.clampWhenFinished=true;}}
+      asset.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m.dispose());}});
+    }
+    onLoad();
+  }).catch(()=>{if(!disposed)onLoad('No se pudo cargar el Axie. Recarga para volver a intentarlo.');});
+  const resize=()=>{const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);const aspect=w/Math.max(h,1);const vh=Math.max(15.2,26/aspect);camera.left=-vh*aspect/2;camera.right=vh*aspect/2;camera.top=vh/2;camera.bottom=-vh/2;camera.updateProjectionMatrix();};
+  const observer=new ResizeObserver(resize);observer.observe(host);resize();
+  let previous=performance.now(),accumulator=0,lastReport=0,lastPhase=state.phase;
+  const loop=(now:number)=>{
+    if(disposed)return;raf=requestAnimationFrame(loop);const delta=Math.min((now-previous)/1000,0.05);previous=now;
+    elapsed+=delta;accumulator+=delta;
+    while(accumulator>=PHYSICS.step){step(state,level);accumulator-=PHYSICS.step;}
+    avatar.position.set(state.x,state.y,0.8);avatar.rotation.y=state.direction===1?Math.PI/2:-Math.PI/2;
+    avatar.visible=state.invulnerable<=0||Math.floor(elapsed*15)%2===0;
+    avatar.scale.set(1,state.grounded?1:1.04,1);
+    const animation=state.phase==='playing'?(state.grounded?'run':'jump'):'idle';
+    if(animation!==activeAction||(animation==='jump'&&state.jumps!==lastJump)){
+      if(activeAction&&actions[activeAction as keyof typeof actions])actions[activeAction as keyof typeof actions]?.fadeOut(0.1);
+      actions[animation]?.reset().fadeIn(0.1).play();activeAction=animation;
+    }
+    lastJump=state.jumps;if(state.phase!=='paused')mixer?.update(delta);
+    traps.forEach((group,i)=>{const p=trapPosition(level.traps[i],state.time);group.position.set(p.x,p.y,0.9);group.rotation.z=Math.sin(elapsed*2+i)*0.06;});
+    halo.rotation.z=elapsed*0.3;halo.scale.setScalar(1+Math.sin(elapsed*2)*0.04);
+    lid.rotation.x=THREE.MathUtils.lerp(lid.rotation.x,state.phase==='won'?-1.2:0,0.08);
+    particles.rotation.z=Math.sin(elapsed*0.1)*0.005;
+    if(now-lastReport>100||state.phase!==lastPhase){onState({...state});lastReport=now;lastPhase=state.phase;}
+    renderer.render(scene,camera);
+  };raf=requestAnimationFrame(loop);
+  const jump=()=>requestJump(state);
+  const pause=()=>{if(state.phase==='playing')state.phase='paused';else if(state.phase==='paused')state.phase='playing';onState({...state});};
+  const restart=()=>{state=createState(level,state.deaths);onState({...state});renderer.domElement.focus({preventScroll:true});};
+  const key=(e:KeyboardEvent)=>{
+    if((e.target as HTMLElement)?.closest('input,select,textarea,[role="dialog"]'))return;
+    if(e.repeat)return;
+    if(e.code==='Space'||e.code==='ArrowUp'){if((e.target as HTMLElement)?.closest('button,[role="tab"]'))return;e.preventDefault();jump();}
+    if(e.code==='KeyR')restart();if(e.code==='KeyP'||e.code==='Escape')pause();
+  };
+  const visibility=()=>{if(document.hidden&&state.phase==='playing'){state.phase='paused';onState({...state});}};
+  window.addEventListener('keydown',key);document.addEventListener('visibilitychange',visibility);
+  return {jump,start:()=>{if(state.phase==='ready')state.phase='playing';renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>({...state}),dispose:()=>{
+    disposed=true;cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
+    mixer?.stopAllAction();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.domElement.remove();
+  }};
+}

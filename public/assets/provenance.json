@@ -1,0 +1,172 @@
+{
+  "checkedAt": "2026-09-05",
+  "catalogSource": "https://classic.axieinfinity.com/explorer/cards",
+  "catalogData": "https://classic.axieinfinity.com/_next/static/chunks/305-4d7b0c0d49e94286.js",
+  "canonicalPartNamesSource": "https://github.com/axieinfinity/mixer-playground/blob/c2288f76728bdb4881ef145a007307195800c07e/components/axie-figure/key.json",
+  "atlasSourceBase": "https://raw.githubusercontent.com/axieinfinity/cc-axie-gtk2d/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/atlas-single/",
+  "atlasFiles": [
+    "axie-2d-v3-stuff.png",
+    "axie-2d-v3-stuff.txt",
+    "axie-2d-v3-stuff_line.png",
+    "axie-2d-v3-stuff_splat0.png",
+    "axie-2d-v3-stuff_splat1.png"
+  ],
+  "renderingFormula": "https://github.com/axieinfinity/cc-axie-gtk2d/blob/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/textureSplattingEffect.effect",
+  "paletteSource": "https://github.com/axieinfinity/cc-axie-gtk2d/blob/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/mixer-data/axie-2d-v3-stuff-genes.json",
+  "palettes": {
+    "bug-02": [
+      "ff606c",
+      "f2213e",
+      "fff4f9",
+      "ffa9af",
+      "de0000"
+    ],
+    "reptile-02": [
+      "c569cf",
+      "a754b4",
+      "ffd2fe",
+      "f78ee2",
+      "d900d0"
+    ]
+  },
+  "parts": [
+    {
+      "file": "grass-snake-part.png",
+      "part": "Grass Snake",
+      "partId": "tail-grass-snake",
+      "cardId": "reptile-tail-12",
+      "card": "Venom Spray",
+      "effect": "Apply one Poison stack to target.",
+      "attack": 20,
+      "shield": 20,
+      "energy": 0,
+      "atlasKey": "reptile-12.tail",
+      "rect": [
+        2877,
+        876,
+        199,
+        117
+      ],
+      "palette": "reptile-02",
+      "cardImage": "https://classic.axieinfinity.com/art/cards/reptile-tail-12.png"
+    },
+    {
+      "file": "lagging-part.png",
+      "part": "Lagging",
+      "partId": "horn-lagging",
+      "cardId": "bug-horn-02",
+      "card": "Mystic Rush",
+      "effect": "Lower target Speed by 20% for two rounds.",
+      "attack": 40,
+      "shield": 0,
+      "energy": 0,
+      "atlasKey": "bug-02.horn",
+      "rect": [
+        2052,
+        1844,
+        151,
+        124
+      ],
+      "palette": "bug-02",
+      "cardImage": "https://classic.axieinfinity.com/art/cards/bug-horn-02.png"
+    },
+    {
+      "file": "thorny-caterpillar-part.png",
+      "part": "Thorny Caterpillar",
+      "partId": "tail-thorny-caterpillar",
+      "cardId": "bug-tail-12",
+      "card": "Allergic Reaction",
+      "effect": "Deal 130% of base damage if target has a debuff.",
+      "attack": 100,
+      "shield": 40,
+      "energy": 1,
+      "atlasKey": "bug-12.tail",
+      "rect": [
+        2961,
+        1397,
+        158,
+        132
+      ],
+      "palette": "bug-02",
+      "cardImage": "https://classic.axieinfinity.com/art/cards/bug-tail-12.png"
+    },
+    {
+      "file": "snail-shell-part.png",
+      "part": "Snail Shell",
+      "partId": "back-snail-shell",
+      "cardId": "bug-back-02",
+      "card": "Sticky Goo",
+      "effect": "Shield breaking stuns the attacker; at most once each round.",
+      "attack": 40,
+      "shield": 60,
+      "energy": 1,
+      "atlasKey": "bug-02.back",
+      "rect": [
+        3206,
+        1034,
+        147,
+        146
+      ],
+      "palette": "bug-02",
+      "cardImage": "https://classic.axieinfinity.com/art/cards/bug-back-02.png"
+    }
+  ],
+  "buba": {
+    "base": "https://raw.githubusercontent.com/axieinfinity/axie-starter-3d-assets/a419e0cdddf7d10684547a4b5e5d25af73b7fe5c/",
+    "run": "glb/buba/starter_buba_run.glb",
+    "runBytes": 314940,
+    "idle": "glb/buba/starter_buba_idle.glb",
+    "idleBytes": 374940,
+    "jump": "glb/buba/starter_buba_jump.glb",
+    "jumpBytes": 330500,
+    "texture": "fbx/buba/textures/starter_buba_texture.png",
+    "textureBytes": 2056739,
+    "textureSize": [
+      2048,
+      2048
+    ],
+    "note": "GLB embedded maps include 1x1 placeholder PNGs; assign official texture separately. Each clip is named Take 001.",
+    "recommendedLoader": "THREE.FBXLoader for atlas-compatible rig; do not use old GLB geometry with shared atlas.",
+    "fbxRig": "fbx/buba/rig/starter_buba_rig.fbx",
+    "fbxRigBytes": 2304848,
+    "fbxAnimations": {
+      "run": {
+        "path": "fbx/buba/animations/starter_buba_run.fbx",
+        "bytes": 1254240,
+        "durationSeconds": 0.5
+      },
+      "idle": {
+        "path": "fbx/buba/animations/starter_buba_idle.fbx",
+        "bytes": 1690768,
+        "durationSeconds": 2
+      },
+      "jump": {
+        "path": "fbx/buba/animations/starter_buba_jump.fbx",
+        "bytes": 1246688,
+        "durationSeconds": 0.8333333134651184
+      }
+    },
+    "mappingRules": {
+      "textureFlipY": true,
+      "colorSpace": "THREE.SRGBColorSpace",
+      "allMeshes": "Replace material with shared texture and white color; metalness 0, roughness 1.",
+      "animationGeometry": "Use only clips from animation FBXs; their mesh geometry has old UVs.",
+      "axis": "+Y up, +Z facing",
+      "heightApprox": 147
+    },
+    "verified": "Parsed with Three.js 0.180.0. Browser compared flipY true/false and original materials; flipY true matches official Buba reference. Verified run at t=0.1/0.35 and jump at t=0.4. No runtime errors; all animation track node names exist in rig."
+  },
+  "portrait": {
+    "file": "axie-portrait.png",
+    "source": "https://raw.githubusercontent.com/axieinfinity/mixer-playground/c2288f76728bdb4881ef145a007307195800c07e/public/axie.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 28377,
+    "transparent": true,
+    "note": "Real aquatic Axie from official mixer playground; not Buba."
+  },
+  "reuseNote": "Official Sky Mavis repositories. No standalone LICENSE/COPYING/NOTICE found in inspected repositories; do not represent art as CC0 or MIT. Toolkit READMEs describe game-development usage. Axie terms and any applicable builder/event terms govern reuse.",
+  "adaptationNote": "These are Classic level-1 effects. Frame timing, automatic collision triggers, firing intervals, trap hitboxes, and any seconds-to-rounds conversion are platformer adaptations, not canonical Axie effects. Preserve exact Poison count, speed percentage and conditional damage. Grass Snake is Venom Spray; Gas Unleash belongs to Yam (plant-tail-08)."
+}
