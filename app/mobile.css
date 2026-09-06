@@ -1474,3 +1474,112 @@
     transition: none;
   }
 }
+/* Campaign chapters stay behind one home action, preserving the full-screen refuge. */
+.story-dialog {
+  width: calc(100% - 28px);
+  max-width: 460px;
+  max-height: 86dvh;
+  display: flex;
+  flex-direction: column;
+  background: #142925;
+  border: 1px solid #83ab8c40;
+  border-radius: 26px;
+  padding: 24px;
+  overflow: hidden;
+  color: #eff4df;
+}
+.story-map {
+  overflow-y: auto;
+  min-height: 0;
+  padding: 0 3px 16px;
+  overscroll-behavior: contain;
+}
+.story-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  color: #d5dfc6;
+  font-size: 12px;
+}
+.story-summary strong {
+  color: #e4c67c;
+}
+.story-free {
+  color: #8eafa3;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.story-chapter {
+  padding: 22px 0;
+  border-bottom: 1px solid #809d8133;
+}
+.story-chapter h3 {
+  font: 700 23px var(--font-display);
+  color: #e9ecd3;
+  margin: 5px 0 8px;
+}
+.story-chapter > p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #a8bfae;
+  margin-bottom: 16px;
+}
+.story-levels {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+.story-levels button {
+  min-height: 58px;
+  border-radius: 13px;
+  background: #203b33;
+  border: 1px solid #6a927747;
+  color: #c3d4bd;
+  cursor: pointer;
+}
+.story-levels button > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  font-size: 15px;
+  font-weight: 750;
+}
+.story-levels small {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  font-size: 7px;
+  margin-top: 7px;
+}
+.story-levels .current {
+  background: #b9ddb0;
+  color: #1c402d;
+  border-color: #e4ebbb;
+  box-shadow: 0 0 18px #c4e3a629;
+}
+.story-levels .cleared small {
+  color: #e7c675;
+}
+.story-levels button:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+.story-levels button:focus-visible {
+  outline: 2px solid #edcc7b;
+  outline-offset: 3px;
+}
+.story-dialog .story-free:last-child {
+  margin-top: 18px;
+}
+.home-play > span:first-of-type {
+  font-size: 18px;
+}
+.run-traps {
+  flex-wrap: wrap;
+}
+.story-map {
+  scrollbar-width: thin;
+  scrollbar-color: #567562 transparent;
+}

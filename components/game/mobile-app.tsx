@@ -41,6 +41,13 @@ import {
 } from '@/lib/game/route-proof';
 import coursesData from '@/lib/game/data/verified-courses.json';
 import { choosePracticeCourse } from '@/lib/game/practice-selection';
+import storyData from '@/lib/game/data/story-courses.json';
+import {
+  STORY_LENGTH,
+  storyUnlocked,
+  completeStory,
+} from '@/lib/game/story-progress';
+import { StoryMap } from './story-map';
 import {
   Dialog,
   DialogContent,
@@ -54,6 +61,10 @@ const PartLibrary = dynamic(() =>
   import('./part-library').then((m) => m.PartLibrary),
 );
 const courses = coursesData as VerifiedCourse[];
+const storyCourses = storyData as (VerifiedCourse & {
+  number: number;
+  chapter: number;
+})[];
 const layoutExamples = [
   ...new Map(courses.map((c) => [c.level.layoutId ?? c.level.id, c])).values(),
 ];
@@ -68,6 +79,7 @@ export default function MobileApp() {
     [shared, setShared] = useState<VerifiedCourse | null>(null),
     [shareUrl, setShareUrl] = useState(''),
     [roomsOpen, setRoomsOpen] = useState(false),
+    [storyOpen, setStoryOpen] = useState(false),
     [guestAxie] = useState(() => randomAxie());
   const profileRef = useRef(profile),
     lastLayout = useRef<string | null>(null);
@@ -136,6 +148,19 @@ export default function MobileApp() {
     setRoomsOpen(false);
     launch({ ...course, mode: 'practice', axie: null });
   }
+  function story(number = storyUnlocked(profileRef.current.story)) {
+    if (number < 1 || number > storyUnlocked(profileRef.current.story)) return;
+    const course = storyCourses[number - 1];
+    if (!course) return;
+    setStoryOpen(false);
+    launch({
+      ...course,
+      mode: 'story',
+      axie: null,
+      storyNumber: number,
+      previousBest: profileRef.current.story[number - 1] ?? 0,
+    });
+  }
   function exit() {
     setRun(null);
     if (document.fullscreenElement)
@@ -203,9 +228,21 @@ export default function MobileApp() {
         key={run.id}
         run={run}
         onExit={exit}
-        onNext={() => practice()}
+        onNext={() =>
+          run.mode === 'story'
+            ? run.storyNumber! < STORY_LENGTH
+              ? story(run.storyNumber! + 1)
+              : exit()
+            : practice()
+        }
         onClaim={(id, hp) => {
-          if (!save(claimChispas(profileRef.current, id, hp)))
+          if (
+            !save(
+              run.mode === 'story'
+                ? completeStory(profileRef.current, run.storyNumber!, hp)
+                : claimChispas(profileRef.current, id, hp),
+            )
+          )
             throw Error('No se pudo guardar el premio.');
         }}
         onValidate={(proof) => {
@@ -296,23 +333,32 @@ export default function MobileApp() {
               ) : null}
               <button
                 className="home-play"
-                onClick={() => practice()}
+                onClick={() =>
+                  profile.story.length === STORY_LENGTH
+                    ? setStoryOpen(true)
+                    : story()
+                }
                 disabled={!ready}
               >
                 <Play size={22} fill="currentColor" />
                 <span>
-                  Jugar<small>Práctica aleatoria</small>
+                  {profile.story.length === STORY_LENGTH
+                    ? 'Historia completada'
+                    : profile.story.length
+                      ? 'Continuar historia'
+                      : 'Comenzar historia'}
+                  <small>Un jugador · Axie aleatorio</small>
                 </span>
                 <span className="home-mode-count">
-                  {layoutExamples.length} salas
+                  {storyUnlocked(profile.story)} / {STORY_LENGTH}
                 </span>
               </button>
               <div className="home-shortcuts">
                 <button onClick={() => setRoomsOpen(true)} disabled={!ready}>
-                  <BookOpen size={17} /> Elegir sala
+                  <BookOpen size={17} /> Práctica
                 </button>
-                <button onClick={() => setScreen('vault')}>
-                  <Castle size={17} /> Mi mazmorra
+                <button onClick={() => setStoryOpen(true)} disabled={!ready}>
+                  <BookOpen size={17} /> Capítulos
                 </button>
               </div>
             </section>
@@ -642,11 +688,18 @@ export default function MobileApp() {
       </nav>
       <Dialog open={roomsOpen} onOpenChange={setRoomsOpen}>
         <DialogContent className="room-picker-dialog">
-          <DialogTitle>Elige tu próxima sala</DialogTitle>
+          <DialogTitle>Práctica libre</DialogTitle>
           <DialogDescription>
             {layoutExamples.length} mapas · {courses.length} combinaciones
-            verificadas
-          </DialogDescription>{' '}
+            verificadas · No avanza la historia
+          </DialogDescription>
+          <button
+            className="m-primary"
+            onClick={() => practice()}
+            disabled={!ready}
+          >
+            <Play size={17} /> Sala aleatoria
+          </button>
           <div className="map-carousel" aria-label="Mapas de práctica">
             {layoutExamples.map(({ level }) => (
               <button
@@ -707,6 +760,13 @@ export default function MobileApp() {
               </button>
             ))}
           </div>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={storyOpen} onOpenChange={setStoryOpen}>
+        <DialogContent className="story-dialog">
+          <DialogTitle>Historia de Lunacia</DialogTitle>
+          <DialogDescription>50 niveles. Un cofre a la vez.</DialogDescription>
+          <StoryMap best={profile.story} onPlay={story} />
         </DialogContent>
       </Dialog>
       {library ? (

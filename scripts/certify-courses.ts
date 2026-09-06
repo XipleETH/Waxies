@@ -40,3 +40,12 @@ if (generate) writeFileSync(path, JSON.stringify(courses, null, 2) + '\n');
 console.log(
   `${courses.length} courses across ${PRACTICE_LAYOUTS.length} rooms verified without hits. ${covered.size} Classic parts covered.`,
 );
+
+const story = JSON.parse(
+  readFileSync('lib/game/data/story-courses.json', 'utf8'),
+) as VerifiedCourse[];
+if (story.length !== 50) throw Error('Story must contain 50 levels');
+for (const course of story)
+  if (!verifyRoute(course.level, course.proof))
+    throw Error('Invalid story proof: ' + course.level.id);
+console.log('50 story levels verified without hits.');

@@ -19,11 +19,18 @@ import { randomAxie } from '@/lib/game/random-axie';
 import type { AxieLoadout } from '@/lib/game/axie';
 import { PARTS } from '@/lib/game/catalog';
 import { raidPowerDescription } from '@/lib/game/raid-powers';
+import {
+  STORY_LENGTH,
+  STORY_CHAPTERS,
+  storyStars,
+} from '@/lib/game/story-progress';
 export interface RunConfig {
   id: string;
   level: Dungeon;
   proof?: RouteProof;
-  mode: 'practice' | 'validate' | 'shared';
+  mode: 'practice' | 'validate' | 'shared' | 'story';
+  storyNumber?: number;
+  previousBest?: number;
   axie: Pick<AxieLoadout, 'genes' | 'class' | 'name'> | null;
 }
 export function MobileRun({
@@ -99,6 +106,11 @@ export function MobileRun({
       engine.current = null;
     };
   }, [run]);
+  const rewards = run.mode === 'practice' || run.mode === 'story';
+  const reward =
+    run.mode === 'story'
+      ? Math.max(0, state.hp - (run.previousBest ?? 0))
+      : state.hp;
   const start = () => {
     engine.current?.start();
   };
@@ -123,7 +135,7 @@ export function MobileRun({
       }
       handled.current = true;
       onValidate(proof);
-    } else if (run.mode === 'practice') {
+    } else if (rewards) {
       try {
         onClaim(run.id, s.hp);
         handled.current = true;
@@ -178,7 +190,7 @@ export function MobileRun({
         </div>
         <div className="run-prize">
           <Sparkles size={17} />
-          <strong>{run.mode === 'practice' && !demo ? state.hp : 0}</strong>
+          <strong>{rewards && !demo ? reward : 0}</strong>
           <small>premio</small>
         </div>
         <button
@@ -216,7 +228,9 @@ export function MobileRun({
                   ? 'TU DEFENSA'
                   : run.mode === 'shared'
                     ? 'RETO COMPARTIDO'
-                    : 'PRÁCTICA ALEATORIA'}
+                    : run.mode === 'story'
+                      ? `HISTORIA · NIVEL ${run.storyNumber} / ${STORY_LENGTH}`
+                      : 'PRÁCTICA ALEATORIA'}
             </span>
             <h1>
               {state.phase === 'won'
@@ -233,13 +247,22 @@ export function MobileRun({
             </h1>
             {state.phase === 'ready' ? (
               <>
-                {run.mode === 'practice' ? (
-                  <p className="room-intro">{run.level.subtitle}</p>
+                {rewards ? (
+                  <p className="room-intro">
+                    {run.mode === 'story' && run.storyNumber! % 10 === 1
+                      ? STORY_CHAPTERS[Math.floor((run.storyNumber! - 1) / 10)]
+                          .text + ' '
+                      : ''}
+                    {run.level.subtitle}
+                  </p>
                 ) : null}
                 <p>
                   Tu Axie corre solo. Toca para saltar y rebota en las paredes.
                   Cualquier contacto con una trampa reinicia el intento.
                 </p>
+                {run.level.traps.length === 0 ? (
+                  <p className="run-rule">Sala de aprendizaje · sin trampas</p>
+                ) : null}
                 <div className="run-traps">
                   {run.level.traps.map((t, i) => (
                     <button
@@ -264,13 +287,17 @@ export function MobileRun({
                   </p>
                 ) : (
                   <p className="run-tip-hint">
-                    Toca una parte para ver cómo esquivarla.
+                    {run.level.traps.length
+                      ? 'Toca una parte para ver cómo esquivarla.'
+                      : 'Practica los rebotes antes de conocer a los guardianes.'}
                   </p>
                 )}
                 <p className="run-rule">
                   {run.mode === 'validate'
                     ? 'Solo puedes guardar tu defensa con 100 de salud y cero golpes.'
-                    : 'Cada golpe: −20 salud y −20 Chispas del cofre.'}
+                    : run.mode === 'story'
+                      ? 'Cada golpe reinicia el intento y resta 20 de salud. Mejora tu marca para ganar estrellas.'
+                      : 'Cada golpe: −20 salud y −20 Chispas del cofre.'}
                 </p>
                 <button
                   className="m-primary"
@@ -280,7 +307,7 @@ export function MobileRun({
                   <Play size={19} fill="currentColor" />
                   {loaded ? 'Entrar a la sala' : 'Preparando tu Axie…'}
                 </button>
-                {run.proof && loaded ? (
+                {run.proof && loaded && run.mode !== 'story' ? (
                   <button className="m-secondary" onClick={showProof}>
                     <Bot size={18} />{' '}
                     {run.mode === 'shared'
@@ -305,6 +332,11 @@ export function MobileRun({
                 >
                   <RotateCcw size={16} /> Volver al inicio · conserva salud
                 </button>
+                {run.mode === 'story' && run.proof ? (
+                  <button className="m-secondary" onClick={showProof}>
+                    <Bot size={18} /> Ver una solución · sin premio
+                  </button>
+                ) : null}
               </>
             ) : null}
             {state.phase === 'dead' ? (
@@ -359,21 +391,49 @@ export function MobileRun({
                       </>
                     )}
                   </>
-                ) : run.mode === 'practice' ? (
+                ) : rewards ? (
                   <>
+                    {run.mode === 'story' ? (
+                      <p>
+                        Mejor salud: {Math.max(state.hp, run.previousBest ?? 0)}{' '}
+                        / 100.{' '}
+                        {run.previousBest
+                          ? 'Solo recibes Chispas si mejoras tu marca.'
+                          : run.storyNumber === STORY_LENGTH
+                            ? 'Has conquistado el último cofre.'
+                            : 'Este cofre abre el siguiente nivel.'}
+                      </p>
+                    ) : null}
                     <div className="reward-number">
-                      <Sparkles /> {state.hp}
-                      <small>Chispas · {state.hits} golpe(s)</small>
+                      <Sparkles /> {reward}
+                      <small>
+                        Chispas · {state.hits} golpe(s)
+                        {run.mode === 'story'
+                          ? ` · ${storyStars(state.hp)} ★`
+                          : ''}
+                      </small>
                     </div>
                     <button
                       className="m-primary"
                       onClick={claimed ? onNext : collect}
                     >
-                      {claimed ? 'Siguiente pista' : 'Recoger premio'}
+                      {claimed
+                        ? run.mode === 'story'
+                          ? run.storyNumber === STORY_LENGTH
+                            ? 'Volver al refugio'
+                            : `Ir al nivel ${run.storyNumber! + 1}`
+                          : 'Siguiente pista'
+                        : run.mode === 'story'
+                          ? 'Guardar resultado'
+                          : 'Recoger premio'}
                     </button>
                     {claimed ? (
                       <output className="claim-status">
-                        Premio guardado en este dispositivo.
+                        {run.mode === 'story'
+                          ? run.storyNumber === STORY_LENGTH
+                            ? '¡Historia completada! Puedes volver por las 150 estrellas.'
+                            : 'Progreso guardado. Siguiente nivel desbloqueado.'
+                          : 'Premio guardado en este dispositivo.'}
                       </output>
                     ) : null}
                   </>
@@ -412,7 +472,10 @@ export function MobileRun({
       ) : null}
       <footer className="run-controls">
         <div>
-          <strong>{run.level.name}</strong>
+          <strong>
+            {run.mode === 'story' ? `${run.storyNumber}. ` : ''}
+            {run.level.name}
+          </strong>
           <span>
             {state.phase === 'resetting'
               ? 'Nuevo intento…'

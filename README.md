@@ -15,17 +15,23 @@ npm run typecheck
 npm run build
 ```
 
+`npm run story:generate` regenera los niveles de campaña y sus mediciones; cambiar ese archivo publicado requiere preservar la correspondencia de los 50 números con sus niveles para no reinterpretar progreso existente. `npm run courses:verify` comprueba tanto Práctica como Historia.
+
 `npm run courses:generate` vuelve a buscar una ruta sin golpes para cada configuración con el mismo simulador del juego. Solo sobrescribe los certificados si todas las pistas pasan. Una búsqueda fallida no demuestra que un nivel sea imposible.
 
 ## Jugar
 
-- Lobby a pantalla completa con el Axie 3D animado en un refugio personal y controles flotantes. El fondo refleja el tema equipado, el adorno, las tres defensas guardadas y el estado de validación. Accesos a Práctica aleatoria, Refugio, Bazar y Mi Axie.
-- Ocho mapas con geometrías diferentes: patio, islas, jardín partido, chimeneas, puente, balcones, escalera rota y torre. Sus 52 combinaciones certificadas cubren las 132 cartas Classic. El azar cambia de mapa entre entradas; «Elegir sala» abre las miniaturas para escoger una sala concreta.
+- Lobby a pantalla completa con el Axie 3D animado en un refugio personal y controles flotantes. El fondo refleja el tema equipado, el adorno, las tres defensas guardadas y el estado de validación. Accesos a Historia, Práctica, Refugio, Bazar y Mi Axie.
+- Historia de un jugador: 50 niveles fijos en cinco capítulos, Axie aleatorio gratuito y desbloqueo secuencial. Los tres primeros enseñan saltos sin trampas. Capítulos permite repetir niveles para mejorar de una a tres estrellas.
+- La campaña amplía las ocho familias de salas con variantes de plataformas y defensas; cada uno de sus 50 trazados tiene una repetición sin golpes comprobada. La dificultad estimada combina margen de pulsación, saltos, duración y trampas. Es una primera calibración, no una medición de dificultad humana.
+- Práctica conserva ocho mapas con geometrías diferentes: patio, islas, jardín partido, chimeneas, puente, balcones, escalera rota y torre. Sus 52 combinaciones certificadas cubren las 132 cartas Classic. El azar cambia de mapa entre entradas; «Práctica» abre las miniaturas para escoger una sala concreta.
 - El Axie corre solo. Tocar, Espacio o Flecha arriba salta. Saltar contra una pared permite rebotar. P/Escape pausa y R vuelve al inicio conservando salud.
 - Cualquier contacto dañino con una defensa, proyectil o charco reinicia el intento y resta 20 de salud. La pista, el Axie y el ciclo inicial se conservan. Cinco golpes agotan el premio.
-- El cofre entrega tantas Chispas como salud restante, hasta 100. La repetición del bot no concede premios.
+- En Historia, guardar el resultado desbloquea el siguiente nivel. El primer premio equivale a la salud restante; las repeticiones solo pagan la mejora sobre el mejor premio previo. Tres estrellas requieren 100 de salud; dos, al menos 60; una, llegar. Práctica mantiene sus premios por partida. La repetición del bot no concede premios ni desbloqueos.
 - Chispas compra tres temas y dos adornos, visibles en el lobby y la mazmorra propia. Son puntos locales; no existe conversión a dinero ni pagos con tokens.
 - La partida ocupa el área disponible con `100dvh` y zonas seguras. Intenta entrar en Fullscreen al pulsar Jugar si el navegador lo admite. El manifiesto pide orientación vertical; en iOS puede añadirse a la pantalla de inicio para abrirla como app independiente.
+
+La certificación y la estimación de dificultad se explican en [STORY_MODE.md](research/STORY_MODE.md).
 
 ## Construir y compartir
 
@@ -58,7 +64,7 @@ Los recursos pertenecen a sus titulares. Las procedencias detalladas están en `
 
 ## Guardado y alcance
 
-`waxies.mobile.v1` guarda Chispas, compras, Axie y defensa en el navegador. El guardado antiguo `waxis.practice.v1` se conserva y solo se importa su selección de Axie compatible. Los saldos simulados SLP/AXS/RON del prototipo anterior no se convierten en Chispas. El motor y las pruebas del combate anterior permanecen como referencia técnica; la portada usa las reglas `portrait-raid-v1`.
+`waxies.mobile.v1` guarda Chispas, compras, Axie, defensa y mejores resultados de Historia en el navegador. Los perfiles anteriores reciben una campaña vacía y conservan su progreso previo. El guardado antiguo `waxis.practice.v1` se conserva y solo se importa su selección de Axie compatible. Los saldos simulados SLP/AXS/RON del prototipo anterior no se convierten en Chispas. El motor y las pruebas del combate anterior permanecen como referencia técnica; la portada usa las reglas `portrait-raid-v1`.
 
 Los certificados prueban que existe una ruta con estas reglas; no que sea fácil para todos los jugadores ni que el cliente sea una fuente confiable para dinero. Antes de vender cosméticos con SLP, AXS, RON o USDC hacen falta autenticación, inventario y validación de recompensas en servidor, además de integración de pagos. No hay pagos ni recompensas on-chain activos.
 

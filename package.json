@@ -15,7 +15,8 @@
     "test:routes": "tsx tests/solve.ts",
     "typecheck": "tsc --noEmit",
     "courses:verify": "tsx scripts/certify-courses.ts",
-    "courses:generate": "tsx scripts/certify-courses.ts --generate"
+    "courses:generate": "tsx scripts/certify-courses.ts --generate",
+    "story:generate": "tsx scripts/generate-story.ts"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

@@ -1,0 +1,5239 @@
+[
+  {
+    "level": {
+      "id": "story-01",
+      "layoutId": "first-steps",
+      "name": "De pared en pared",
+      "subtitle": "Aprende a saltar y rebotar. No hay trampas en esta sala.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 10.35,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9,
+        "y": 9.05
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 563,
+      "actions": [
+        0,
+        216,
+        312,
+        420,
+        504,
+        540
+      ]
+    },
+    "metrics": {
+      "score": 5,
+      "timingPassed": 12,
+      "timingTrials": 12,
+      "timingOffsetMs": 50,
+      "seconds": 5,
+      "jumps": 6
+    },
+    "number": 1,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-02",
+      "layoutId": "first-steps",
+      "name": "Camino al bosque",
+      "subtitle": "Aprende a saltar y rebotar. No hay trampas en esta sala.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 12.6,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 792,
+      "actions": [
+        0,
+        216,
+        312,
+        444,
+        600,
+        624,
+        696,
+        768
+      ]
+    },
+    "metrics": {
+      "score": 7,
+      "timingPassed": 16,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 2,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-03",
+      "layoutId": "first-steps",
+      "name": "Primer salto",
+      "subtitle": "Aprende a saltar y rebotar. No hay trampas en esta sala.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 7.75,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 6.45
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 363,
+      "actions": [
+        0,
+        216,
+        312,
+        348
+      ]
+    },
+    "metrics": {
+      "score": 10,
+      "timingPassed": 7,
+      "timingTrials": 8,
+      "timingOffsetMs": 50,
+      "seconds": 3,
+      "jumps": 4
+    },
+    "number": 3,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-04",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.85,
+          "h": 0.55
+        },
+        {
+          "x": 11.29,
+          "y": 5.4,
+          "w": 3.42,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 9.79,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.68,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.25,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "lam",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "catfish",
+          "patrol": 0,
+          "phase": 1.5
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 730,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 21,
+      "timingPassed": 16,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 8
+    },
+    "number": 4,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-05",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3.09,
+          "h": 0.55
+        },
+        {
+          "x": 11.147,
+          "y": 5.4,
+          "w": 3.705,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10.06,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.875,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.49,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "axie-kiss",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "cottontail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 733,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 24,
+      "timingPassed": 16,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 8
+    },
+    "number": 5,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-06",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.74,
+          "h": 0.55
+        },
+        {
+          "x": 11.362,
+          "y": 5.4,
+          "w": 3.275,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 9.61,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.345,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.14,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 729,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 26,
+      "timingPassed": 16,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 8
+    },
+    "number": 6,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-07",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.61,
+          "h": 0.55
+        },
+        {
+          "x": 11.427,
+          "y": 5.4,
+          "w": 3.145,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 9.74,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.475,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.01,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "axie-kiss",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "cottontail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 728,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 26,
+      "timingPassed": 16,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 8
+    },
+    "number": 7,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-08",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.94,
+          "h": 0.55
+        },
+        {
+          "x": 11.235,
+          "y": 5.4,
+          "w": 3.53,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 9.96,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.75,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.34,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "axie-kiss",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "cottontail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 731,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 26,
+      "timingPassed": 16,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 8
+    },
+    "number": 8,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-09",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.89,
+          "y": 3.1,
+          "w": 4.22,
+          "h": 0.55
+        },
+        {
+          "x": 2.895,
+          "y": 5.3,
+          "w": 3.79,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 2.88,
+          "h": 0.55
+        },
+        {
+          "x": 2.425,
+          "y": 10.3,
+          "w": 2.85,
+          "h": 0.55
+        },
+        {
+          "x": 8.69,
+          "y": 12.4,
+          "w": 4.62,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 2.99,
+          "h": 0.55
+        },
+        {
+          "x": 8.76,
+          "y": 17,
+          "w": 4.48,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 752,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 27,
+      "timingPassed": 15,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 9
+    },
+    "number": 9,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-10",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "El despertar",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.037,
+          "h": 0.55
+        },
+        {
+          "x": 11.475,
+          "y": 5.4,
+          "w": 3.05,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 9.313,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 1.975,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 2.438,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "swallow",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "feather-fan",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "the-last-one",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 728,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 28,
+      "timingPassed": 16,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 8
+    },
+    "number": 10,
+    "chapter": 1
+  },
+  {
+    "level": {
+      "id": "story-11",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.08,
+          "y": 3.1,
+          "w": 5.84,
+          "h": 0.55
+        },
+        {
+          "x": 3.74,
+          "y": 5.65,
+          "w": 5.48,
+          "h": 0.55
+        },
+        {
+          "x": 7.92,
+          "y": 8.25,
+          "w": 6.16,
+          "h": 0.55
+        },
+        {
+          "x": 3.3,
+          "y": 10.5,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.5,
+          "y": 3.9,
+          "part": "incisor",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.1999999999999997,
+          "y": 6.45,
+          "part": "bumpy",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.1,
+          "y": 9.05,
+          "part": "toothless-bite",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1056,
+      "actions": [
+        0,
+        108,
+        324,
+        456,
+        672,
+        756,
+        804,
+        888,
+        960
+      ]
+    },
+    "metrics": {
+      "score": 29,
+      "timingPassed": 16,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 9,
+      "jumps": 9
+    },
+    "number": 11,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-12",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.29,
+          "y": 3.1,
+          "w": 5.42,
+          "h": 0.55
+        },
+        {
+          "x": 3.495,
+          "y": 5.65,
+          "w": 4.99,
+          "h": 0.55
+        },
+        {
+          "x": 8.06,
+          "y": 8.25,
+          "w": 5.88,
+          "h": 0.55
+        },
+        {
+          "x": 3.125,
+          "y": 10.5,
+          "w": 4.25,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "incisor",
+          "patrol": 0,
+          "phase": 0
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1056,
+      "actions": [
+        0,
+        108,
+        324,
+        456,
+        672,
+        756,
+        804,
+        888,
+        960
+      ]
+    },
+    "metrics": {
+      "score": 30,
+      "timingPassed": 12,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 9,
+      "jumps": 9
+    },
+    "number": 12,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-13",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3.105,
+          "h": 0.55
+        },
+        {
+          "x": 11.17,
+          "y": 5.4,
+          "w": 3.66,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10.075,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.89,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.505,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "swallow",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "feather-fan",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "the-last-one",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 733,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 30,
+      "timingPassed": 14,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 8
+    },
+    "number": 13,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-14",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.175,
+          "h": 0.55
+        },
+        {
+          "x": 11.681,
+          "y": 5.4,
+          "w": 2.638,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 9.45,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.112,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 2.575,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "axie-kiss",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "cottontail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 724,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 30,
+      "timingPassed": 16,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 8
+    },
+    "number": 14,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-15",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.155,
+          "y": 3.1,
+          "w": 5.69,
+          "h": 0.55
+        },
+        {
+          "x": 3.653,
+          "y": 5.65,
+          "w": 5.305,
+          "h": 0.55
+        },
+        {
+          "x": 7.97,
+          "y": 8.25,
+          "w": 6.06,
+          "h": 0.55
+        },
+        {
+          "x": 3.238,
+          "y": 10.5,
+          "w": 4.475,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "jaguar",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "risky-beast",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "timber",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1068,
+      "actions": [
+        0,
+        120,
+        336,
+        468,
+        684,
+        768,
+        816,
+        900,
+        972
+      ]
+    },
+    "metrics": {
+      "score": 32,
+      "timingPassed": 15,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 9,
+      "jumps": 9
+    },
+    "number": 15,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-16",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.905,
+          "y": 3.1,
+          "w": 4.19,
+          "h": 0.55
+        },
+        {
+          "x": 2.94,
+          "y": 5.3,
+          "w": 3.88,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 2.85,
+          "h": 0.55
+        },
+        {
+          "x": 2.41,
+          "y": 10.3,
+          "w": 2.82,
+          "h": 0.55
+        },
+        {
+          "x": 8.705,
+          "y": 12.4,
+          "w": 4.59,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.08,
+          "h": 0.55
+        },
+        {
+          "x": 8.775,
+          "y": 17,
+          "w": 4.45,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "koi",
+          "patrol": 0,
+          "phase": 1.5
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 775,
+      "actions": [
+        12,
+        180,
+        216,
+        324,
+        420,
+        432,
+        468,
+        600,
+        696
+      ]
+    },
+    "metrics": {
+      "score": 33,
+      "timingPassed": 14,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 9
+    },
+    "number": 16,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-17",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.1,
+          "y": 3.1,
+          "w": 5.8,
+          "h": 0.55
+        },
+        {
+          "x": 3.72,
+          "y": 5.65,
+          "w": 5.44,
+          "h": 0.55
+        },
+        {
+          "x": 7.86,
+          "y": 8.25,
+          "w": 6.28,
+          "h": 0.55
+        },
+        {
+          "x": 3.28,
+          "y": 10.5,
+          "w": 4.56,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.5,
+          "y": 3.9,
+          "part": "rose-bud",
+          "patrol": 0,
+          "phase": 0.4
+        },
+        {
+          "x": 2.1999999999999997,
+          "y": 6.45,
+          "part": "strawberry-shortcake",
+          "patrol": 0,
+          "phase": 1.9
+        },
+        {
+          "x": 9.1,
+          "y": 9.05,
+          "part": "cactus",
+          "patrol": 0,
+          "phase": 3.4
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1056,
+      "actions": [
+        0,
+        108,
+        324,
+        456,
+        672,
+        756,
+        804,
+        888,
+        960
+      ]
+    },
+    "metrics": {
+      "score": 34,
+      "timingPassed": 14,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 9,
+      "jumps": 9
+    },
+    "number": 17,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-18",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.835,
+          "y": 3.1,
+          "w": 4.33,
+          "h": 0.55
+        },
+        {
+          "x": 2.98,
+          "y": 5.3,
+          "w": 3.96,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 2.95,
+          "h": 0.55
+        },
+        {
+          "x": 2.47,
+          "y": 10.3,
+          "w": 2.94,
+          "h": 0.55
+        },
+        {
+          "x": 8.635,
+          "y": 12.4,
+          "w": 4.73,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.16,
+          "h": 0.55
+        },
+        {
+          "x": 8.725,
+          "y": 17,
+          "w": 4.55,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "koi",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "nimo",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 777,
+      "actions": [
+        12,
+        180,
+        216,
+        324,
+        420,
+        432,
+        468,
+        600,
+        696
+      ]
+    },
+    "metrics": {
+      "score": 35,
+      "timingPassed": 15,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 9
+    },
+    "number": 18,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-19",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 3.94,
+          "y": 14.5,
+          "w": 5.88,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 0
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 908,
+      "actions": [
+        24,
+        72,
+        120,
+        168,
+        372,
+        396,
+        468,
+        732,
+        816
+      ]
+    },
+    "metrics": {
+      "score": 36,
+      "timingPassed": 11,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 8,
+      "jumps": 9
+    },
+    "number": 19,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-20",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Senderos de Lunacia",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2.2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.84,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.12,
+          "y": 8.5,
+          "w": 3.76,
+          "h": 0.55
+        },
+        {
+          "x": 3.7,
+          "y": 10.8,
+          "w": 5.4,
+          "h": 0.55
+        },
+        {
+          "x": 8.38,
+          "y": 12.8,
+          "w": 5.24,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.6,
+          "y": 5.2,
+          "part": "tadpole",
+          "patrol": 0,
+          "phase": 0.4
+        },
+        {
+          "x": 2.3,
+          "y": 11.6,
+          "part": "ranchu",
+          "patrol": 0,
+          "phase": 1.9
+        },
+        {
+          "x": 4.2,
+          "y": 3.3,
+          "part": "navaga",
+          "patrol": 0,
+          "phase": 3.4
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 662,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    },
+    "metrics": {
+      "score": 37,
+      "timingPassed": 15,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 9
+    },
+    "number": 20,
+    "chapter": 2
+  },
+  {
+    "level": {
+      "id": "story-21",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2.28,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.76,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.08,
+          "y": 8.5,
+          "w": 3.84,
+          "h": 0.55
+        },
+        {
+          "x": 3.74,
+          "y": 10.8,
+          "w": 5.48,
+          "h": 0.55
+        },
+        {
+          "x": 8.42,
+          "y": 12.8,
+          "w": 5.16,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.6,
+          "y": 5.2,
+          "part": "snail-shell",
+          "patrol": 0,
+          "phase": 0.2
+        },
+        {
+          "x": 2.3,
+          "y": 11.6,
+          "part": "garish-worm",
+          "patrol": 0,
+          "phase": 1.7
+        },
+        {
+          "x": 4.2,
+          "y": 3.3,
+          "part": "buzz-buzz",
+          "patrol": 0,
+          "phase": 3.2
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 660,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    },
+    "metrics": {
+      "score": 37,
+      "timingPassed": 15,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 9
+    },
+    "number": 21,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-22",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2.06,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.675,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.147,
+          "y": 8.5,
+          "w": 3.705,
+          "h": 0.55
+        },
+        {
+          "x": 3.63,
+          "y": 10.8,
+          "w": 5.26,
+          "h": 0.55
+        },
+        {
+          "x": 8.463,
+          "y": 12.8,
+          "w": 5.075,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    },
+    "metrics": {
+      "score": 37,
+      "timingPassed": 15,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 5,
+      "jumps": 9
+    },
+    "number": 22,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-23",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2.105,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.66,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.155,
+          "y": 8.5,
+          "w": 3.69,
+          "h": 0.55
+        },
+        {
+          "x": 3.653,
+          "y": 10.8,
+          "w": 5.305,
+          "h": 0.55
+        },
+        {
+          "x": 8.47,
+          "y": 12.8,
+          "w": 5.06,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "snail-shell",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "garish-worm",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "buzz-buzz",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    },
+    "metrics": {
+      "score": 37,
+      "timingPassed": 15,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 5,
+      "jumps": 9
+    },
+    "number": 23,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-24",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 1.96,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.55,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.235,
+          "y": 8.5,
+          "w": 3.53,
+          "h": 0.55
+        },
+        {
+          "x": 3.58,
+          "y": 10.8,
+          "w": 5.16,
+          "h": 0.55
+        },
+        {
+          "x": 8.525,
+          "y": 12.8,
+          "w": 4.95,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    },
+    "metrics": {
+      "score": 39,
+      "timingPassed": 14,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 5,
+      "jumps": 9
+    },
+    "number": 24,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-25",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 1.94,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.53,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.225,
+          "y": 8.5,
+          "w": 3.55,
+          "h": 0.55
+        },
+        {
+          "x": 3.57,
+          "y": 10.8,
+          "w": 5.14,
+          "h": 0.55
+        },
+        {
+          "x": 8.535,
+          "y": 12.8,
+          "w": 4.93,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "nut-cracker-tail",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "gerbil",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "balloon",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    },
+    "metrics": {
+      "score": 39,
+      "timingPassed": 14,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 5,
+      "jumps": 9
+    },
+    "number": 25,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-26",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.963,
+          "y": 3.1,
+          "w": 4.075,
+          "h": 0.55
+        },
+        {
+          "x": 2.805,
+          "y": 5.3,
+          "w": 3.61,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 2.545,
+          "h": 0.55
+        },
+        {
+          "x": 2.37,
+          "y": 10.3,
+          "w": 2.74,
+          "h": 0.55
+        },
+        {
+          "x": 8.762,
+          "y": 12.4,
+          "w": 4.475,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 2.81,
+          "h": 0.55
+        },
+        {
+          "x": 8.927,
+          "y": 17,
+          "w": 4.145,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "cloud",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "granma-s-fan",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "post-fight",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 744,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 42,
+      "timingPassed": 13,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 9
+    },
+    "number": 26,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-27",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 1.93,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.56,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.23,
+          "y": 8.5,
+          "w": 3.54,
+          "h": 0.55
+        },
+        {
+          "x": 3.565,
+          "y": 10.8,
+          "w": 5.13,
+          "h": 0.55
+        },
+        {
+          "x": 8.52,
+          "y": 12.8,
+          "w": 4.96,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "snail-shell",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "garish-worm",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "buzz-buzz",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    },
+    "metrics": {
+      "score": 42,
+      "timingPassed": 13,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 5,
+      "jumps": 9
+    },
+    "number": 27,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-28",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.675,
+          "h": 0.55
+        },
+        {
+          "x": 9.155,
+          "y": 5.3,
+          "w": 3.69,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.505,
+          "h": 0.55
+        },
+        {
+          "x": 2.63,
+          "y": 9.8,
+          "w": 3.26,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.275,
+          "h": 0.55
+        },
+        {
+          "x": 8.355,
+          "y": 14.3,
+          "w": 5.29,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "furball",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "little-branch",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "imp",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    },
+    "metrics": {
+      "score": 42,
+      "timingPassed": 11,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 28,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-29",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.48,
+          "h": 0.55
+        },
+        {
+          "x": 9.275,
+          "y": 5.3,
+          "w": 3.45,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.22,
+          "h": 0.55
+        },
+        {
+          "x": 2.495,
+          "y": 9.8,
+          "w": 2.99,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.08,
+          "h": 0.55
+        },
+        {
+          "x": 8.475,
+          "y": 14.3,
+          "w": 5.05,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "sponge",
+          "patrol": 0,
+          "phase": 0
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    },
+    "metrics": {
+      "score": 43,
+      "timingPassed": 8,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 29,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-30",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Ruinas de cristal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.825,
+          "y": 3.1,
+          "w": 4.35,
+          "h": 0.55
+        },
+        {
+          "x": 2.97,
+          "y": 5.3,
+          "w": 3.94,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 2.93,
+          "h": 0.55
+        },
+        {
+          "x": 2.48,
+          "y": 10.3,
+          "w": 2.96,
+          "h": 0.55
+        },
+        {
+          "x": 8.625,
+          "y": 12.4,
+          "w": 4.75,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.14,
+          "h": 0.55
+        },
+        {
+          "x": 8.735,
+          "y": 17,
+          "w": 4.53,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "cloud",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "granma-s-fan",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "post-fight",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 753,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    },
+    "metrics": {
+      "score": 43,
+      "timingPassed": 12,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 9
+    },
+    "number": 30,
+    "chapter": 3
+  },
+  {
+    "level": {
+      "id": "story-31",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.42,
+          "h": 0.55
+        },
+        {
+          "x": 9.305,
+          "y": 5.3,
+          "w": 3.39,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.28,
+          "h": 0.55
+        },
+        {
+          "x": 2.525,
+          "y": 9.8,
+          "w": 3.05,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.02,
+          "h": 0.55
+        },
+        {
+          "x": 8.505,
+          "y": 14.3,
+          "w": 4.99,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "cuckoo",
+          "patrol": 0,
+          "phase": 0
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    },
+    "metrics": {
+      "score": 44,
+      "timingPassed": 7,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 31,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-32",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.76,
+          "h": 0.55
+        },
+        {
+          "x": 9.1,
+          "y": 5.3,
+          "w": 3.8,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.64,
+          "h": 0.55
+        },
+        {
+          "x": 2.74,
+          "y": 9.8,
+          "w": 3.48,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.36,
+          "h": 0.55
+        },
+        {
+          "x": 8.3,
+          "y": 14.3,
+          "w": 5.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 10,
+          "y": 6.1,
+          "part": "sponge",
+          "patrol": 0,
+          "phase": 0.4
+        },
+        {
+          "x": 1.8,
+          "y": 10.6,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 1.9
+        },
+        {
+          "x": 4.4,
+          "y": 12.8,
+          "part": "perch",
+          "patrol": 0,
+          "phase": 3.4
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    },
+    "metrics": {
+      "score": 45,
+      "timingPassed": 10,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 32,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-33",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.45,
+          "h": 0.55
+        },
+        {
+          "x": 9.29,
+          "y": 5.3,
+          "w": 3.42,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.19,
+          "h": 0.55
+        },
+        {
+          "x": 2.54,
+          "y": 9.8,
+          "w": 3.08,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.05,
+          "h": 0.55
+        },
+        {
+          "x": 8.49,
+          "y": 14.3,
+          "w": 5.02,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "furball",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "little-branch",
+          "patrol": 0,
+          "phase": 1.5
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    },
+    "metrics": {
+      "score": 46,
+      "timingPassed": 8,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 33,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-34",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.765,
+          "y": 3,
+          "w": 3.53,
+          "h": 0.55
+        },
+        {
+          "x": 9.22,
+          "y": 3,
+          "w": 3.56,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.35,
+          "h": 0.55
+        },
+        {
+          "x": 2.37,
+          "y": 8,
+          "w": 2.74,
+          "h": 0.55
+        },
+        {
+          "x": 9.035,
+          "y": 8,
+          "w": 3.93,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 2.96,
+          "h": 0.55
+        },
+        {
+          "x": 2.575,
+          "y": 13,
+          "w": 3.15,
+          "h": 0.55
+        },
+        {
+          "x": 8.83,
+          "y": 13,
+          "w": 4.34,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 3.93,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "teal-shell",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "clamshell",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    },
+    "metrics": {
+      "score": 47,
+      "timingPassed": 15,
+      "timingTrials": 24,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 12
+    },
+    "number": 34,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-35",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.853,
+          "y": 3,
+          "w": 3.705,
+          "h": 0.55
+        },
+        {
+          "x": 9.17,
+          "y": 3,
+          "w": 3.66,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.475,
+          "h": 0.55
+        },
+        {
+          "x": 2.445,
+          "y": 8,
+          "w": 2.89,
+          "h": 0.55
+        },
+        {
+          "x": 8.947,
+          "y": 8,
+          "w": 4.105,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3.06,
+          "h": 0.55
+        },
+        {
+          "x": 2.638,
+          "y": 13,
+          "w": 3.275,
+          "h": 0.55
+        },
+        {
+          "x": 8.755,
+          "y": 13,
+          "w": 4.49,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4.105,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "teal-shell",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "clamshell",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    },
+    "metrics": {
+      "score": 47,
+      "timingPassed": 14,
+      "timingTrials": 24,
+      "timingOffsetMs": 50,
+      "seconds": 6,
+      "jumps": 12
+    },
+    "number": 35,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-36",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.54,
+          "h": 0.55
+        },
+        {
+          "x": 9.235,
+          "y": 5.3,
+          "w": 3.53,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.36,
+          "h": 0.55
+        },
+        {
+          "x": 2.575,
+          "y": 9.8,
+          "w": 3.15,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.14,
+          "h": 0.55
+        },
+        {
+          "x": 8.435,
+          "y": 14.3,
+          "w": 5.13,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "cuckoo",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "trump",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "kestrel",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    },
+    "metrics": {
+      "score": 48,
+      "timingPassed": 9,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 36,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-37",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.84,
+          "h": 0.55
+        },
+        {
+          "x": 9.06,
+          "y": 5.3,
+          "w": 3.88,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.56,
+          "h": 0.55
+        },
+        {
+          "x": 2.7,
+          "y": 9.8,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.44,
+          "h": 0.55
+        },
+        {
+          "x": 8.26,
+          "y": 14.3,
+          "w": 5.48,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 10,
+          "y": 6.1,
+          "part": "cuckoo",
+          "patrol": 0,
+          "phase": 0.2
+        },
+        {
+          "x": 1.8,
+          "y": 10.6,
+          "part": "trump",
+          "patrol": 0,
+          "phase": 1.7
+        },
+        {
+          "x": 4.4,
+          "y": 12.8,
+          "part": "kestrel",
+          "patrol": 0,
+          "phase": 3.2
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    },
+    "metrics": {
+      "score": 51,
+      "timingPassed": 8,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 37,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-38",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.145,
+          "h": 0.55
+        },
+        {
+          "x": 9.33,
+          "y": 5.3,
+          "w": 3.34,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.075,
+          "h": 0.55
+        },
+        {
+          "x": 2.405,
+          "y": 9.8,
+          "w": 2.81,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 3.745,
+          "h": 0.55
+        },
+        {
+          "x": 8.53,
+          "y": 14.3,
+          "w": 4.94,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "pliers",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "parasite",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "leaf-bug",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    },
+    "metrics": {
+      "score": 53,
+      "timingPassed": 8,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 38,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-39",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1125,
+      "actions": [
+        0,
+        48,
+        108,
+        156,
+        228,
+        276,
+        324,
+        348,
+        408,
+        588,
+        696,
+        804,
+        900,
+        924,
+        1020,
+        1044,
+        1104
+      ]
+    },
+    "metrics": {
+      "score": 54,
+      "timingPassed": 13,
+      "timingTrials": 24,
+      "timingOffsetMs": 50,
+      "seconds": 9,
+      "jumps": 17
+    },
+    "number": 39,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-40",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Guardianes del cofre",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.162,
+          "y": 3.1,
+          "w": 5.675,
+          "h": 0.55
+        },
+        {
+          "x": 3.645,
+          "y": 5.65,
+          "w": 5.29,
+          "h": 0.55
+        },
+        {
+          "x": 7.947,
+          "y": 8.25,
+          "w": 6.105,
+          "h": 0.55
+        },
+        {
+          "x": 3.23,
+          "y": 10.5,
+          "w": 4.46,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "blue-moon",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1066,
+      "actions": [
+        0,
+        120,
+        336,
+        468,
+        684,
+        780,
+        924,
+        1044
+      ]
+    },
+    "metrics": {
+      "score": 54,
+      "timingPassed": 6,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 9,
+      "jumps": 8
+    },
+    "number": 40,
+    "chapter": 4
+  },
+  {
+    "level": {
+      "id": "story-41",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 3.925,
+          "y": 14.5,
+          "w": 5.85,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "snake-jar",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "gila",
+          "patrol": 0,
+          "phase": 1.5
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 920,
+      "actions": [
+        36,
+        84,
+        132,
+        180,
+        384,
+        408,
+        480,
+        744,
+        828
+      ]
+    },
+    "metrics": {
+      "score": 55,
+      "timingPassed": 6,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 8,
+      "jumps": 9
+    },
+    "number": 41,
+    "chapter": 5
+  },
+  {
+    "level": {
+      "id": "story-42",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    },
+    "metrics": {
+      "score": 57,
+      "timingPassed": 10,
+      "timingTrials": 24,
+      "timingOffsetMs": 50,
+      "seconds": 13,
+      "jumps": 14
+    },
+    "number": 42,
+    "chapter": 5
+  },
+  {
+    "level": {
+      "id": "story-43",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.53,
+          "h": 0.55
+        },
+        {
+          "x": 9.22,
+          "y": 5.3,
+          "w": 3.56,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.35,
+          "h": 0.55
+        },
+        {
+          "x": 2.57,
+          "y": 9.8,
+          "w": 3.14,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.13,
+          "h": 0.55
+        },
+        {
+          "x": 8.42,
+          "y": 14.3,
+          "w": 5.16,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 850,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        336,
+        456,
+        684,
+        816
+      ]
+    },
+    "metrics": {
+      "score": 57,
+      "timingPassed": 6,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 7,
+      "jumps": 8
+    },
+    "number": 43,
+    "chapter": 5
+  },
+  {
+    "level": {
+      "id": "story-44",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.77,
+          "y": 3,
+          "w": 3.54,
+          "h": 0.55
+        },
+        {
+          "x": 9.235,
+          "y": 3,
+          "w": 3.53,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.36,
+          "h": 0.55
+        },
+        {
+          "x": 2.375,
+          "y": 8,
+          "w": 2.75,
+          "h": 0.55
+        },
+        {
+          "x": 9.03,
+          "y": 8,
+          "w": 3.94,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 2.93,
+          "h": 0.55
+        },
+        {
+          "x": 2.58,
+          "y": 13,
+          "w": 3.16,
+          "h": 0.55
+        },
+        {
+          "x": 8.825,
+          "y": 13,
+          "w": 4.35,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 3.94,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1125,
+      "actions": [
+        0,
+        48,
+        108,
+        156,
+        228,
+        276,
+        324,
+        348,
+        408,
+        588,
+        696,
+        804,
+        900,
+        924,
+        1020,
+        1044,
+        1104
+      ]
+    },
+    "metrics": {
+      "score": 58,
+      "timingPassed": 12,
+      "timingTrials": 24,
+      "timingOffsetMs": 50,
+      "seconds": 9,
+      "jumps": 17
+    },
+    "number": 44,
+    "chapter": 5
+  },
+  {
+    "level": {
+      "id": "story-45",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 4.053,
+          "y": 14.5,
+          "w": 6.105,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 932,
+      "actions": [
+        60,
+        72,
+        276,
+        324,
+        396,
+        492,
+        756,
+        840
+      ]
+    },
+    "metrics": {
+      "score": 58,
+      "timingPassed": 6,
+      "timingTrials": 16,
+      "timingOffsetMs": 50,
+      "seconds": 8,
+      "jumps": 8
+    },
+    "number": 45,
+    "chapter": 5
+  },
+  {
+    "level": {
+      "id": "story-46",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 4.03,
+          "y": 14.5,
+          "w": 6.06,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "shoal-star",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 908,
+      "actions": [
+        24,
+        72,
+        120,
+        168,
+        372,
+        396,
+        468,
+        732,
+        816
+      ]
+    },
+    "metrics": {
+      "score": 60,
+      "timingPassed": 6,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 8,
+      "jumps": 9
+    },
+    "number": 46,
+    "chapter": 5
+  },
+  {
+    "level": {
+      "id": "story-47",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 3.87,
+          "y": 14.5,
+          "w": 5.74,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "shoal-star",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 908,
+      "actions": [
+        24,
+        72,
+        120,
+        168,
+        372,
+        396,
+        468,
+        732,
+        816
+      ]
+    },
+    "metrics": {
+      "score": 63,
+      "timingPassed": 5,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 8,
+      "jumps": 9
+    },
+    "number": 47,
+    "chapter": 5
+  },
+  {
+    "level": {
+      "id": "story-48",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 4.037,
+          "y": 14.5,
+          "w": 6.075,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "snake-jar",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "gila",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 920,
+      "actions": [
+        36,
+        84,
+        132,
+        180,
+        384,
+        408,
+        480,
+        744,
+        828
+      ]
+    },
+    "metrics": {
+      "score": 63,
+      "timingPassed": 5,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 8,
+      "jumps": 9
+    },
+    "number": 48,
+    "chapter": 5
+  },
+  {
+    "level": {
+      "id": "story-49",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 3.8,
+          "y": 14.5,
+          "w": 5.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "shoal-star",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 909,
+      "actions": [
+        24,
+        72,
+        120,
+        168,
+        372,
+        396,
+        468,
+        732,
+        816
+      ]
+    },
+    "metrics": {
+      "score": 66,
+      "timingPassed": 4,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 8,
+      "jumps": 9
+    },
+    "number": 49,
+    "chapter": 5
+  },
+  {
+    "level": {
+      "id": "story-50",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "La última bóveda",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 4.1,
+          "y": 14.5,
+          "w": 6.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 5,
+          "y": 10.2,
+          "part": "snake-jar",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.05,
+          "y": 12.9,
+          "part": "gila",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 6,
+          "y": 15.3,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 920,
+      "actions": [
+        36,
+        84,
+        132,
+        180,
+        384,
+        408,
+        480,
+        744,
+        828
+      ]
+    },
+    "metrics": {
+      "score": 69,
+      "timingPassed": 3,
+      "timingTrials": 18,
+      "timingOffsetMs": 50,
+      "seconds": 8,
+      "jumps": 9
+    },
+    "number": 50,
+    "chapter": 5
+  }
+]

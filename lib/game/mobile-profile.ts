@@ -57,10 +57,12 @@ export interface MobileProfile {
   axie: AxieLoadout | null;
   traps: Trap[];
   proof: RouteProof | null;
+  story: number[];
 }
 export function newProfile(): MobileProfile {
   return {
     version: 1,
+    story: [],
     chispas: 0,
     owned: ['moss'],
     theme: 'moss',
@@ -133,7 +135,14 @@ export function readProfile(): MobileProfile {
     return p;
   }
   const p = JSON.parse(text) as MobileProfile;
+  p.story ??= [];
   if (
+    !Array.isArray(p.story) ||
+    p.story.length > 50 ||
+    p.story.some(
+      (hp, i) =>
+        ![20, 40, 60, 80, 100].includes(hp) || (i > 0 && !p.story[i - 1]),
+    ) ||
     p.version !== 1 ||
     !Number.isSafeInteger(p.chispas) ||
     p.chispas < 0 ||
