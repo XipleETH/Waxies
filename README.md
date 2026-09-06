@@ -43,7 +43,7 @@ Las recetas son explícitas para cada carta: diez patrones físicos, combos, est
 
 ## Alcance de esta versión
 
-Funciona en un navegador compatible con WebGL 2. El progreso solo existe en ese navegador y no es una fuente de verdad financiera. No incluye PvP asíncrono entre cuentas, conexión de wallet, contratos, depósitos reales, recompensas on-chain ni verificación remota contra trampas. Ningún botón firma o envía transacciones. El diseño propio y sus pruebas se guardan localmente.
+Funciona en un navegador compatible con WebGL 2. El progreso solo existe en ese navegador y no es una fuente de verdad financiera. No incluye PvP asíncrono entre cuentas, contratos de economía, depósitos reales, recompensas on-chain ni verificación remota contra trampas. Ningún botón firma o envía transacciones. El diseño propio y sus pruebas se guardan localmente.
 
 Antes de activar fondos reales: integrar Ronin Wallet; contratos de custodia limitados a tokens permitidos y sus decimales reales; un servicio que reproduzca entradas y valide la física y las dos pruebas de cada defensa; identidad, permisos y prevención de repetición por incursión; liquidación atómica y revisión de seguridad. La física determinista y el inventario de partes ofrecen una base para ese validador, pero las recompensas locales nunca deben aceptarse como prueba.
 
@@ -57,3 +57,9 @@ El personaje seleccionado se ensambla con los recursos oficiales de unity-axie-m
 GET /api/axie/:id consulta eth_blockNumber y luego getAxie(uint256) / ownerOf(uint256) en el mismo bloque del contrato Ronin 0x32950db2a7164ae833121501c797d79e7b79d74c. Los genes ocupan las palabras ABI 3 y 4 (base 0) de la respuesta actual de 7 palabras, comprobadas contra los metadatos oficiales de 4200042 y 27. El formato se valida estrictamente. El proveedor público tiene límites de uso; para tráfico de producción debe configurarse un proveedor dedicado.
 
 Ronin Wallet usa el proveedor inyectado documentado. Solo solicita compartir la cuenta y hace lecturas; no solicita firmas, aprobaciones de token ni transacciones. Lista 8 NFT por página mediante balanceOf/tokenOfOwnerByIndex y vuelve a verificar ownerOf al seleccionar. Esta comprobación en el cliente no sustituye autenticación y validación de partidas en un servidor para economía real. Los archivos de metadatos siguen disponibles y se marcan como procedencia sin verificar.
+
+## Publicación en Vercel
+
+Aplicación Next.js 16 con Node.js 22. Importar `XipleETH/Waxies` en Vercel, usar la raíz del repositorio y el preset Next.js. `main` es la rama de producción; los siguientes pushes generan publicaciones automáticas cuando la integración Git está conectada. No se necesitan secretos para la demo: los datos de Axie usan lecturas públicas de Ronin. `npm ci`, `npm run build` y `npm start` permiten comprobar la misma aplicación localmente.
+
+El modo de pruebas genera un Axie con partes oficiales en cada intento. En Asaltar, las trampas aleatorias eligen tres habilidades distintas del catálogo de 132 cartas; los controles permiten generar otra combinación o recuperar las trampas originales. Mi mazmorra conserva las defensas guardadas. Los modos aleatorios son independientes y no crean NFT ni dan permisos de billetera.
