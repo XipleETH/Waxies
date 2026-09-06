@@ -7,9 +7,7 @@ import {
   Castle,
   Sparkles,
   ShoppingBag,
-  ArrowUpRight,
   Play,
-  Shuffle,
   ShieldCheck,
   LockKeyhole,
   Link2,
@@ -20,6 +18,7 @@ import {
   Gem,
 } from 'lucide-react';
 import { AxiePreview } from './axie-preview';
+import { randomAxie } from '@/lib/game/random-axie';
 import { MobileRun, type RunConfig } from './mobile-run';
 import { PARTS } from '@/lib/game/catalog';
 import { raidPowerDescription } from '@/lib/game/raid-powers';
@@ -67,7 +66,9 @@ export default function MobileApp() {
     [library, setLibrary] = useState(false),
     [inspect, setInspect] = useState<string | null>(null),
     [shared, setShared] = useState<VerifiedCourse | null>(null),
-    [shareUrl, setShareUrl] = useState('');
+    [shareUrl, setShareUrl] = useState(''),
+    [roomsOpen, setRoomsOpen] = useState(false),
+    [guestAxie] = useState(() => randomAxie());
   const profileRef = useRef(profile),
     lastLayout = useRef<string | null>(null);
   useEffect(() => {
@@ -132,6 +133,7 @@ export default function MobileApp() {
   function practice(layoutId?: string) {
     const course = choosePracticeCourse(courses, lastLayout.current, layoutId);
     lastLayout.current = course.level.layoutId ?? course.level.id;
+    setRoomsOpen(false);
     launch({ ...course, mode: 'practice', axie: null });
   }
   function exit() {
@@ -216,7 +218,19 @@ export default function MobileApp() {
       />
     );
   return (
-    <main className="mobile-app">
+    <main className={screen === 'home' ? 'mobile-app is-home' : 'mobile-app'}>
+      {screen === 'home' ? (
+        <>
+          <AxiePreview
+            genes={profile.axie?.genes ?? guestAxie.genes}
+            theme={profile.theme}
+            decoration={profile.decoration}
+            traps={profile.traps}
+            validated={!!profile.proof}
+          />
+          <div className="home-shading" aria-hidden="true" />
+        </>
+      ) : null}
       <header className="m-header">
         <button
           onClick={() => setScreen('home')}
@@ -239,173 +253,69 @@ export default function MobileApp() {
       <div className="m-content">
         {screen === 'home' ? (
           <>
-            <div className="m-heading">
-              <div>
-                <span className="m-eyebrow">TU PRÓXIMA AVENTURA</span>
-                <h1>El cofre te espera.</h1>
-              </div>
-              <span className="m-season">ALPHA 02</span>
-            </div>
-            <section className="lobby-hero">
-              <div className="hero-orbit orbit-one" />
-              <div className="hero-orbit orbit-two" />
-              <div className="hero-copy">
-                <span>
-                  <i /> LUNACIA · EN EXPLORACIÓN
-                </span>
-                <h2>
-                  Pequeño Axie.
-                  <br />
-                  Gran botín.
-                </h2>
-              </div>
-              <AxiePreview genes={profile.axie?.genes} />
-              <button className="hero-axie" onClick={() => setScreen('axie')}>
-                <span>
-                  {profile.axie
-                    ? 'Axie #' + profile.axie.id
-                    : 'Un Axie, mil combinaciones'}
-                  <small>
-                    {profile.axie
-                      ? 'Ver sus partes'
-                      : 'Personajes aleatorios en práctica'}
-                  </small>
-                </span>
-                <ChevronRight size={20} />
+            <section className="home-heading">
+              <span className="m-eyebrow">TU RINCÓN DE LUNACIA</span>
+              <h1>Tu refugio.</h1>
+              <button
+                className="home-refuge-state"
+                onClick={() => setScreen('vault')}
+              >
+                <span>{GOODS.find((g) => g.id === profile.theme)?.name}</span>
+                <i />
+                {profile.proof ? (
+                  <>
+                    <ShieldCheck size={13} /> Validado
+                  </>
+                ) : (
+                  <>
+                    Borrador <ChevronRight size={13} />
+                  </>
+                )}
               </button>
             </section>
-            {shared ? (
-              <button
-                className="shared-card"
-                onClick={() =>
-                  launch({ ...shared, mode: 'shared', axie: profile.axie })
-                }
-              >
-                <Link2 />
-                <span>
-                  <strong>Te han retado</strong>
-                  <small>Defensa con ruta sin golpes verificada</small>
-                </span>
-                <Play size={20} />
-              </button>
-            ) : null}
-            <div className="m-section-heading">
-              <h2>Elige tu aventura</h2>
-              <span>01 MODO DISPONIBLE</span>
-            </div>
             <button
-              className="practice-card"
-              onClick={() => practice()}
-              disabled={!ready}
+              className="home-companion"
+              onClick={() => setScreen('axie')}
             >
-              <div className="practice-top">
-                <span className="mode-icon">
-                  <Shuffle size={24} />
-                </span>
-                <span className="verified-tag">
-                  <ShieldCheck size={13} /> RUTAS VERIFICADAS
-                </span>
-              </div>
-              <h2>Práctica aleatoria</h2>
-              <p>
-                Un nuevo Axie. Una sala por conquistar.
-                <br />
-                Aprende los poderes y recoge Chispas.
-              </p>
-              <div className="practice-bottom">
-                <span>
-                  {layoutExamples.length} mapas · {courses.length} combinaciones
-                </span>
-                <span className="play-circle">
-                  <Play size={23} fill="currentColor" />
-                </span>
-              </div>
+              <Sparkles size={14} />
+              {profile.axie ? 'Axie #' + profile.axie.id : 'Conoce a tu Axie'}
+              <ChevronRight size={14} />
             </button>
-            <div className="m-section-heading">
-              <h2>O elige una sala</h2>
-              <span>DESLIZA PARA EXPLORAR</span>
-            </div>
-            <div className="map-carousel" aria-label="Mapas de práctica">
-              {layoutExamples.map(({ level }) => (
+            <section className="home-actions" aria-label="Jugar y personalizar">
+              {shared ? (
                 <button
-                  className="map-choice"
-                  key={level.layoutId ?? level.id}
-                  onClick={() => practice(level.layoutId)}
-                  disabled={!ready}
+                  className="home-challenge"
+                  onClick={() =>
+                    launch({ ...shared, mode: 'shared', axie: profile.axie })
+                  }
                 >
-                  <svg
-                    viewBox={`0 0 ${level.room!.w} ${level.room!.h}`}
-                    aria-label={`Plano de ${level.name}`}
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width={level.room!.w - 1}
-                      height={level.room!.h - 1}
-                      rx=".4"
-                      fill={
-                        level.theme === 'amethyst'
-                          ? '#35344c'
-                          : level.theme === 'ember'
-                            ? '#49372b'
-                            : '#25463e'
-                      }
-                    />
-                    {level.platforms.map((p, i) => (
-                      <rect
-                        key={i}
-                        x={p.x - p.w / 2}
-                        y={level.room!.h - p.y - p.h / 2}
-                        width={p.w}
-                        height={p.h}
-                        fill={
-                          level.theme === 'amethyst'
-                            ? '#a69aca'
-                            : level.theme === 'ember'
-                              ? '#ceac74'
-                              : '#a3cdad'
-                        }
-                      />
-                    ))}
-                    <circle
-                      cx={level.chest.x}
-                      cy={level.room!.h - level.chest.y}
-                      r=".5"
-                      fill="#f1d178"
-                    />
-                    <circle
-                      cx={level.spawn.x}
-                      cy={level.room!.h - level.spawn.y}
-                      r=".25"
-                      fill="#c4eee0"
-                    />
-                  </svg>
-                  <strong>{level.name}</strong>
-                  <span>{level.difficulty}</span>
+                  <Link2 size={16} />
+                  <span>Un amigo te ha retado</span>
+                  <ChevronRight size={16} />
                 </button>
-              ))}
-            </div>
-            <div className="lobby-duo">
-              <button onClick={() => setScreen('vault')}>
-                <Castle size={25} />
-                <strong>Mi refugio</strong>
-                <span>Construye tu defensa</span>
-                <ArrowUpRight size={16} />
+              ) : null}
+              <button
+                className="home-play"
+                onClick={() => practice()}
+                disabled={!ready}
+              >
+                <Play size={22} fill="currentColor" />
+                <span>
+                  Jugar<small>Práctica aleatoria</small>
+                </span>
+                <span className="home-mode-count">
+                  {layoutExamples.length} salas
+                </span>
               </button>
-              <button onClick={() => setScreen('shop')}>
-                <Gem size={25} />
-                <strong>Dale tu estilo</strong>
-                <span>Temas y adornos</span>
-                <ArrowUpRight size={16} />
-              </button>
-            </div>
-            <div className="lobby-tip">
-              <Flame size={21} />
-              <p>
-                <strong>Cada golpe cuenta.</strong> Conserva tu salud para
-                llevarte más Chispas del cofre.
-              </p>
-            </div>
+              <div className="home-shortcuts">
+                <button onClick={() => setRoomsOpen(true)} disabled={!ready}>
+                  <BookOpen size={17} /> Elegir sala
+                </button>
+                <button onClick={() => setScreen('vault')}>
+                  <Castle size={17} /> Mi mazmorra
+                </button>
+              </div>
+            </section>
           </>
         ) : null}
         {screen === 'vault' ? (
@@ -730,6 +640,75 @@ export default function MobileApp() {
           </button>
         ))}
       </nav>
+      <Dialog open={roomsOpen} onOpenChange={setRoomsOpen}>
+        <DialogContent className="room-picker-dialog">
+          <DialogTitle>Elige tu próxima sala</DialogTitle>
+          <DialogDescription>
+            {layoutExamples.length} mapas · {courses.length} combinaciones
+            verificadas
+          </DialogDescription>{' '}
+          <div className="map-carousel" aria-label="Mapas de práctica">
+            {layoutExamples.map(({ level }) => (
+              <button
+                className="map-choice"
+                key={level.layoutId ?? level.id}
+                onClick={() => practice(level.layoutId)}
+                disabled={!ready}
+              >
+                <svg
+                  viewBox={`0 0 ${level.room!.w} ${level.room!.h}`}
+                  aria-label={`Plano de ${level.name}`}
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width={level.room!.w - 1}
+                    height={level.room!.h - 1}
+                    rx=".4"
+                    fill={
+                      level.theme === 'amethyst'
+                        ? '#35344c'
+                        : level.theme === 'ember'
+                          ? '#49372b'
+                          : '#25463e'
+                    }
+                  />
+                  {level.platforms.map((p, i) => (
+                    <rect
+                      key={i}
+                      x={p.x - p.w / 2}
+                      y={level.room!.h - p.y - p.h / 2}
+                      width={p.w}
+                      height={p.h}
+                      fill={
+                        level.theme === 'amethyst'
+                          ? '#a69aca'
+                          : level.theme === 'ember'
+                            ? '#ceac74'
+                            : '#a3cdad'
+                      }
+                    />
+                  ))}
+                  <circle
+                    cx={level.chest.x}
+                    cy={level.room!.h - level.chest.y}
+                    r=".5"
+                    fill="#f1d178"
+                  />
+                  <circle
+                    cx={level.spawn.x}
+                    cy={level.room!.h - level.spawn.y}
+                    r=".25"
+                    fill="#c4eee0"
+                  />
+                </svg>
+                <strong>{level.name}</strong>
+                <span>{level.difficulty}</span>
+              </button>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
       {library ? (
         <PartLibrary
           open={library}

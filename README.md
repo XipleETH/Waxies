@@ -19,12 +19,12 @@ npm run build
 
 ## Jugar
 
-- Lobby con Práctica aleatoria, Refugio, Bazar y Mi Axie.
-- Ocho mapas con geometrías diferentes: patio, islas, jardín partido, chimeneas, puente, balcones, escalera rota y torre. Sus 52 combinaciones certificadas cubren las 132 cartas Classic. El azar cambia de mapa entre entradas; las miniaturas permiten elegir una sala concreta.
+- Lobby a pantalla completa con el Axie 3D animado en un refugio personal y controles flotantes. El fondo refleja el tema equipado, el adorno, las tres defensas guardadas y el estado de validación. Accesos a Práctica aleatoria, Refugio, Bazar y Mi Axie.
+- Ocho mapas con geometrías diferentes: patio, islas, jardín partido, chimeneas, puente, balcones, escalera rota y torre. Sus 52 combinaciones certificadas cubren las 132 cartas Classic. El azar cambia de mapa entre entradas; «Elegir sala» abre las miniaturas para escoger una sala concreta.
 - El Axie corre solo. Tocar, Espacio o Flecha arriba salta. Saltar contra una pared permite rebotar. P/Escape pausa y R vuelve al inicio conservando salud.
 - Cualquier contacto dañino con una defensa, proyectil o charco reinicia el intento y resta 20 de salud. La pista, el Axie y el ciclo inicial se conservan. Cinco golpes agotan el premio.
 - El cofre entrega tantas Chispas como salud restante, hasta 100. La repetición del bot no concede premios.
-- Chispas compra tres temas y dos adornos, visibles en la mazmorra propia. Son puntos locales; no existe conversión a dinero ni pagos con tokens.
+- Chispas compra tres temas y dos adornos, visibles en el lobby y la mazmorra propia. Son puntos locales; no existe conversión a dinero ni pagos con tokens.
 - La partida ocupa el área disponible con `100dvh` y zonas seguras. Intenta entrar en Fullscreen al pulsar Jugar si el navegador lo admite. El manifiesto pide orientación vertical; en iOS puede añadirse a la pantalla de inicio para abrirla como app independiente.
 
 ## Construir y compartir
