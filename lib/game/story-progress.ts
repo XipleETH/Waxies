@@ -3,7 +3,7 @@ export const STORY_LENGTH = 50;
 export const STORY_CHAPTERS = [
   {
     name: 'El despertar',
-    text: 'El camino comienza en un patio tranquilo. Aprende los saltos antes de entrar al bosque.',
+    text: 'Desde el primer patio hay defensas. Lee sus avisos y aprende a esquivarlas antes de entrar al bosque.',
   },
   {
     name: 'Senderos de Lunacia',

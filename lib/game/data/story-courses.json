@@ -4,7 +4,7 @@
       "id": "story-01",
       "layoutId": "first-steps",
       "name": "De pared en pared",
-      "subtitle": "Aprende a saltar y rebotar. No hay trampas en esta sala.",
+      "subtitle": "Carrot lanza zanahorias. Mira el aviso, salta el disparo y rebota hacia el cofre.",
       "difficulty": "El despertar",
       "rules": "raid",
       "room": {
@@ -42,7 +42,15 @@
           "h": 0.55
         }
       ],
-      "traps": [],
+      "traps": [
+        {
+          "x": 4.432,
+          "y": 6.45,
+          "part": "carrot",
+          "phase": 0,
+          "patrol": 0
+        }
+      ],
       "theme": "moss"
     },
     "proof": {
@@ -58,8 +66,8 @@
       ]
     },
     "metrics": {
-      "score": 5,
-      "timingPassed": 12,
+      "score": 19,
+      "timingPassed": 10,
       "timingTrials": 12,
       "timingOffsetMs": 50,
       "seconds": 5,
@@ -73,7 +81,7 @@
       "id": "story-02",
       "layoutId": "first-steps",
       "name": "Camino al bosque",
-      "subtitle": "Aprende a saltar y rebotar. No hay trampas en esta sala.",
+      "subtitle": "Carrot lanza zanahorias. Mira el aviso, salta el disparo y rebota hacia el cofre.",
       "difficulty": "El despertar",
       "rules": "raid",
       "room": {
@@ -117,7 +125,15 @@
           "h": 0.55
         }
       ],
-      "traps": [],
+      "traps": [
+        {
+          "x": 4.432,
+          "y": 6.45,
+          "part": "carrot",
+          "phase": 0,
+          "patrol": 0
+        }
+      ],
       "theme": "moss"
     },
     "proof": {
@@ -135,8 +151,8 @@
       ]
     },
     "metrics": {
-      "score": 7,
-      "timingPassed": 16,
+      "score": 18,
+      "timingPassed": 14,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
@@ -150,7 +166,7 @@
       "id": "story-03",
       "layoutId": "first-steps",
       "name": "Primer salto",
-      "subtitle": "Aprende a saltar y rebotar. No hay trampas en esta sala.",
+      "subtitle": "Carrot lanza zanahorias. Mira el aviso, salta el disparo y rebota hacia el cofre.",
       "difficulty": "El despertar",
       "rules": "raid",
       "room": {
@@ -182,7 +198,15 @@
           "h": 0.55
         }
       ],
-      "traps": [],
+      "traps": [
+        {
+          "x": 5.9,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 0,
+          "patrol": 0
+        }
+      ],
       "theme": "moss"
     },
     "proof": {
@@ -196,7 +220,7 @@
       ]
     },
     "metrics": {
-      "score": 10,
+      "score": 15,
       "timingPassed": 7,
       "timingTrials": 8,
       "timingOffsetMs": 50,
@@ -373,13 +397,6 @@
           "part": "confident",
           "patrol": 0,
           "phase": 1.5
-        },
-        {
-          "x": 9.7,
-          "y": 8.8,
-          "part": "cottontail",
-          "patrol": 0,
-          "phase": 3
         }
       ],
       "theme": "ember"
@@ -399,7 +416,7 @@
       ]
     },
     "metrics": {
-      "score": 24,
+      "score": 19,
       "timingPassed": 16,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -478,13 +495,6 @@
           "part": "lagging",
           "patrol": 0,
           "phase": 1.5
-        },
-        {
-          "x": 9.7,
-          "y": 8.8,
-          "part": "grass-snake",
-          "patrol": 0,
-          "phase": 3
         }
       ],
       "theme": "ember"
@@ -504,7 +514,7 @@
       ]
     },
     "metrics": {
-      "score": 26,
+      "score": 21,
       "timingPassed": 16,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -583,13 +593,6 @@
           "part": "confident",
           "patrol": 0,
           "phase": 1.5
-        },
-        {
-          "x": 9.7,
-          "y": 8.8,
-          "part": "cottontail",
-          "patrol": 0,
-          "phase": 3
         }
       ],
       "theme": "ember"
@@ -609,7 +612,7 @@
       ]
     },
     "metrics": {
-      "score": 26,
+      "score": 21,
       "timingPassed": 16,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -688,13 +691,6 @@
           "part": "confident",
           "patrol": 0,
           "phase": 1.5
-        },
-        {
-          "x": 9.7,
-          "y": 8.8,
-          "part": "cottontail",
-          "patrol": 0,
-          "phase": 3
         }
       ],
       "theme": "ember"
@@ -714,7 +710,7 @@
       ]
     },
     "metrics": {
-      "score": 26,
+      "score": 21,
       "timingPassed": 16,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -798,6 +794,13 @@
           "part": "carrot",
           "patrol": 0,
           "phase": 0
+        },
+        {
+          "x": 10.168,
+          "y": 13.2,
+          "part": "carrot",
+          "phase": 0.8,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -818,7 +821,7 @@
       ]
     },
     "metrics": {
-      "score": 27,
+      "score": 32,
       "timingPassed": 15,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -897,13 +900,6 @@
           "part": "feather-fan",
           "patrol": 0,
           "phase": 1.5
-        },
-        {
-          "x": 9.7,
-          "y": 8.8,
-          "part": "the-last-one",
-          "patrol": 0,
-          "phase": 3
         }
       ],
       "theme": "ember"
@@ -923,7 +919,7 @@
       ]
     },
     "metrics": {
-      "score": 28,
+      "score": 23,
       "timingPassed": 16,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -1089,6 +1085,20 @@
           "part": "incisor",
           "patrol": 0,
           "phase": 0
+        },
+        {
+          "x": 3.495,
+          "y": 6.45,
+          "part": "carrot",
+          "phase": 0.8,
+          "patrol": 0
+        },
+        {
+          "x": 9.942,
+          "y": 9.05,
+          "part": "carrot",
+          "phase": 1.6,
+          "patrol": 0
         }
       ],
       "theme": "moss"
@@ -1109,8 +1119,8 @@
       ]
     },
     "metrics": {
-      "score": 30,
-      "timingPassed": 12,
+      "score": 48,
+      "timingPassed": 9,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 9,
@@ -1510,6 +1520,13 @@
           "part": "koi",
           "patrol": 0,
           "phase": 1.5
+        },
+        {
+          "x": 10.174,
+          "y": 13.2,
+          "part": "carrot",
+          "phase": 1.6,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -1530,7 +1547,7 @@
       ]
     },
     "metrics": {
-      "score": 33,
+      "score": 38,
       "timingPassed": 14,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -1808,6 +1825,20 @@
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0
+        },
+        {
+          "x": 7.2,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 0.8,
+          "patrol": 0
+        },
+        {
+          "x": 9.268,
+          "y": 12.625,
+          "part": "carrot",
+          "phase": 1.6,
+          "patrol": 0
         }
       ],
       "theme": "ember"
@@ -1828,8 +1859,8 @@
       ]
     },
     "metrics": {
-      "score": 36,
-      "timingPassed": 11,
+      "score": 58,
+      "timingPassed": 7,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,
@@ -2598,6 +2629,13 @@
           "part": "post-fight",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 10.194,
+          "y": 13.2,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -2618,7 +2656,7 @@
       ]
     },
     "metrics": {
-      "score": 42,
+      "score": 47,
       "timingPassed": 13,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -2710,6 +2748,13 @@
           "part": "buzz-buzz",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 6.981,
+          "y": 5.2,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "moss"
@@ -2730,7 +2775,7 @@
       ]
     },
     "metrics": {
-      "score": 42,
+      "score": 47,
       "timingPassed": 13,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -2822,6 +2867,13 @@
           "part": "imp",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 3.673,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -2841,7 +2893,7 @@
       ]
     },
     "metrics": {
-      "score": 42,
+      "score": 47,
       "timingPassed": 11,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -2919,6 +2971,27 @@
           "part": "sponge",
           "patrol": 0,
           "phase": 0
+        },
+        {
+          "x": 8.171,
+          "y": 6.1,
+          "part": "carrot",
+          "phase": 0.8,
+          "patrol": 0
+        },
+        {
+          "x": 3.452,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 1.6,
+          "patrol": 0
+        },
+        {
+          "x": 2.017,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -2938,7 +3011,7 @@
       ]
     },
     "metrics": {
-      "score": 43,
+      "score": 58,
       "timingPassed": 8,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -3036,6 +3109,13 @@
           "part": "post-fight",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 10.145,
+          "y": 13.2,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -3056,7 +3136,7 @@
       ]
     },
     "metrics": {
-      "score": 43,
+      "score": 48,
       "timingPassed": 12,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -3134,6 +3214,27 @@
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0
+        },
+        {
+          "x": 8.22,
+          "y": 6.1,
+          "part": "carrot",
+          "phase": 0.8,
+          "patrol": 0
+        },
+        {
+          "x": 3.501,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 1.6,
+          "patrol": 0
+        },
+        {
+          "x": 2.037,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -3153,7 +3254,7 @@
       ]
     },
     "metrics": {
-      "score": 44,
+      "score": 59,
       "timingPassed": 7,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -3245,6 +3346,13 @@
           "part": "perch",
           "patrol": 0,
           "phase": 3.4
+        },
+        {
+          "x": 3.854,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -3264,7 +3372,7 @@
       ]
     },
     "metrics": {
-      "score": 45,
+      "score": 50,
       "timingPassed": 10,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -3349,6 +3457,20 @@
           "part": "little-branch",
           "patrol": 0,
           "phase": 1.5
+        },
+        {
+          "x": 3.526,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 1.6,
+          "patrol": 0
+        },
+        {
+          "x": 8.196,
+          "y": 6.1,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -3368,7 +3490,7 @@
       ]
     },
     "metrics": {
-      "score": 46,
+      "score": 56,
       "timingPassed": 8,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -3478,6 +3600,13 @@
           "part": "clamshell",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 7.441,
+          "y": 13.8,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "moss"
@@ -3501,7 +3630,7 @@
       ]
     },
     "metrics": {
-      "score": 47,
+      "score": 52,
       "timingPassed": 15,
       "timingTrials": 24,
       "timingOffsetMs": 50,
@@ -3611,6 +3740,13 @@
           "part": "clamshell",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 7.318,
+          "y": 13.8,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "moss"
@@ -3634,7 +3770,7 @@
       ]
     },
     "metrics": {
-      "score": 47,
+      "score": 52,
       "timingPassed": 14,
       "timingTrials": 24,
       "timingOffsetMs": 50,
@@ -3726,6 +3862,13 @@
           "part": "kestrel",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 3.583,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -3745,7 +3888,7 @@
       ]
     },
     "metrics": {
-      "score": 48,
+      "score": 53,
       "timingPassed": 9,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -3837,6 +3980,13 @@
           "part": "kestrel",
           "patrol": 0,
           "phase": 3.2
+        },
+        {
+          "x": 3.788,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -3856,7 +4006,7 @@
       ]
     },
     "metrics": {
-      "score": 51,
+      "score": 56,
       "timingPassed": 8,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -3948,6 +4098,13 @@
           "part": "leaf-bug",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 3.304,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -3967,7 +4124,7 @@
       ]
     },
     "metrics": {
-      "score": 53,
+      "score": 58,
       "timingPassed": 8,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -4077,6 +4234,13 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 7.392,
+          "y": 13.8,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "moss"
@@ -4105,7 +4269,7 @@
       ]
     },
     "metrics": {
-      "score": 54,
+      "score": 59,
       "timingPassed": 13,
       "timingTrials": 24,
       "timingOffsetMs": 50,
@@ -4185,6 +4349,13 @@
           "part": "goldfish",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 5.9,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
         }
       ],
       "theme": "moss"
@@ -4204,7 +4375,7 @@
       ]
     },
     "metrics": {
-      "score": 54,
+      "score": 59,
       "timingPassed": 6,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -4271,6 +4442,27 @@
           "part": "gila",
           "patrol": 0,
           "phase": 1.5
+        },
+        {
+          "x": 7.2,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 1.6,
+          "patrol": 0
+        },
+        {
+          "x": 5.797,
+          "y": 15.3,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 8.5,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "ember"
@@ -4291,7 +4483,7 @@
       ]
     },
     "metrics": {
-      "score": 55,
+      "score": 70,
       "timingPassed": 6,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -4389,6 +4581,20 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 2.08,
+          "y": 17.15,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 2.08,
+          "y": 6.55,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -4414,7 +4620,7 @@
       ]
     },
     "metrics": {
-      "score": 57,
+      "score": 67,
       "timingPassed": 10,
       "timingTrials": 24,
       "timingOffsetMs": 50,
@@ -4506,6 +4712,20 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 3.575,
+          "y": 10.6,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 8.081,
+          "y": 6.1,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "amethyst"
@@ -4525,8 +4745,8 @@
       ]
     },
     "metrics": {
-      "score": 57,
-      "timingPassed": 6,
+      "score": 71,
+      "timingPassed": 5,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
@@ -4635,6 +4855,20 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 6.838,
+          "y": 11.3,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 7.433,
+          "y": 13.8,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "moss"
@@ -4663,7 +4897,7 @@
       ]
     },
     "metrics": {
-      "score": 58,
+      "score": 68,
       "timingPassed": 12,
       "timingTrials": 24,
       "timingOffsetMs": 50,
@@ -4737,6 +4971,20 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 4.053,
+          "y": 15.3,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 7.2,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "ember"
@@ -4756,7 +5004,7 @@
       ]
     },
     "metrics": {
-      "score": 58,
+      "score": 68,
       "timingPassed": 6,
       "timingTrials": 16,
       "timingOffsetMs": 50,
@@ -4830,6 +5078,20 @@
           "part": "shoal-star",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 7.2,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 8.5,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "ember"
@@ -4850,7 +5112,7 @@
       ]
     },
     "metrics": {
-      "score": 60,
+      "score": 70,
       "timingPassed": 6,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -4924,6 +5186,20 @@
           "part": "shoal-star",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 7.2,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 8.5,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "ember"
@@ -4944,7 +5220,7 @@
       ]
     },
     "metrics": {
-      "score": 63,
+      "score": 73,
       "timingPassed": 5,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -5018,6 +5294,20 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 7.2,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 8.5,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "ember"
@@ -5038,7 +5328,7 @@
       ]
     },
     "metrics": {
-      "score": 63,
+      "score": 73,
       "timingPassed": 5,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -5112,6 +5402,20 @@
           "part": "shoal-star",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 4.696,
+          "y": 15.3,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 7.2,
+          "y": 1.525,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "ember"
@@ -5132,7 +5436,7 @@
       ]
     },
     "metrics": {
-      "score": 66,
+      "score": 76,
       "timingPassed": 4,
       "timingTrials": 18,
       "timingOffsetMs": 50,
@@ -5206,6 +5510,20 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3
+        },
+        {
+          "x": 3.792,
+          "y": 9.925,
+          "part": "carrot",
+          "phase": 2.4,
+          "patrol": 0
+        },
+        {
+          "x": 4.1,
+          "y": 15.3,
+          "part": "carrot",
+          "phase": 3.2,
+          "patrol": 0
         }
       ],
       "theme": "ember"
@@ -5226,7 +5544,7 @@
       ]
     },
     "metrics": {
-      "score": 69,
+      "score": 79,
       "timingPassed": 3,
       "timingTrials": 18,
       "timingOffsetMs": 50,

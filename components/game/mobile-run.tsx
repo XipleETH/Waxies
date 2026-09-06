@@ -260,9 +260,11 @@ export function MobileRun({
                   Tu Axie corre solo. Toca para saltar y rebota en las paredes.
                   Cualquier contacto con una trampa reinicia el intento.
                 </p>
-                {run.level.traps.length === 0 ? (
-                  <p className="run-rule">Sala de aprendizaje · sin trampas</p>
-                ) : null}
+                <p className="run-rule">
+                  {run.level.traps.length}{' '}
+                  {run.level.traps.length === 1 ? 'trampa' : 'trampas'} en esta
+                  sala
+                </p>
                 <div className="run-traps">
                   {run.level.traps.map((t, i) => (
                     <button

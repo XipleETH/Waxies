@@ -15,14 +15,14 @@ npm run typecheck
 npm run build
 ```
 
-`npm run story:generate` regenera los niveles de campaña y sus mediciones; cambiar ese archivo publicado requiere preservar la correspondencia de los 50 números con sus niveles para no reinterpretar progreso existente. `npm run courses:verify` comprueba tanto Práctica como Historia.
+`npm run story:generate` reequilibra las defensas y recalcula sus certificados conservando los 50 números y geometrías publicados. `npm run courses:verify` comprueba tanto Práctica como Historia.
 
 `npm run courses:generate` vuelve a buscar una ruta sin golpes para cada configuración con el mismo simulador del juego. Solo sobrescribe los certificados si todas las pistas pasan. Una búsqueda fallida no demuestra que un nivel sea imposible.
 
 ## Jugar
 
 - Lobby a pantalla completa con el Axie 3D animado en un refugio personal y controles flotantes. El fondo refleja el tema equipado, el adorno, las tres defensas guardadas y el estado de validación. Accesos a Historia, Práctica, Refugio, Bazar y Mi Axie.
-- Historia de un jugador: 50 niveles fijos en cinco capítulos, Axie aleatorio gratuito y desbloqueo secuencial. Los tres primeros enseñan saltos sin trampas. Capítulos permite repetir niveles para mejorar de una a tres estrellas.
+- Historia de un jugador: 50 niveles fijos en cinco capítulos, Axie aleatorio gratuito y desbloqueo secuencial. Las defensas crecen por tramos: una en los niveles 1–3, dos en el 4–10, tres en el 11–25, cuatro en el 26–40 y cinco en el 41–50. Capítulos permite repetir niveles para mejorar de una a tres estrellas.
 - La campaña amplía las ocho familias de salas con variantes de plataformas y defensas; cada uno de sus 50 trazados tiene una repetición sin golpes comprobada. La dificultad estimada combina margen de pulsación, saltos, duración y trampas. Es una primera calibración, no una medición de dificultad humana.
 - Práctica conserva ocho mapas con geometrías diferentes: patio, islas, jardín partido, chimeneas, puente, balcones, escalera rota y torre. Sus 52 combinaciones certificadas cubren las 132 cartas Classic. El azar cambia de mapa entre entradas; «Práctica» abre las miniaturas para escoger una sala concreta.
 - El Axie corre solo. Tocar, Espacio o Flecha arriba salta. Saltar contra una pared permite rebotar. P/Escape pausa y R vuelve al inicio conservando salud.

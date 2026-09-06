@@ -1,3 +1,4 @@
+import { storyTrapCount } from '../lib/game/story-difficulty';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { verifyRoute, type VerifiedCourse } from '../lib/game/route-proof';
 import { solveRoute } from '../lib/game/route-solver';
@@ -45,7 +46,10 @@ const story = JSON.parse(
   readFileSync('lib/game/data/story-courses.json', 'utf8'),
 ) as VerifiedCourse[];
 if (story.length !== 50) throw Error('Story must contain 50 levels');
-for (const course of story)
+for (const [index, course] of story.entries()) {
+  if (course.level.traps.length !== storyTrapCount(index + 1))
+    throw Error('Invalid story obstacle progression: ' + course.level.id);
   if (!verifyRoute(course.level, course.proof))
     throw Error('Invalid story proof: ' + course.level.id);
+}
 console.log('50 story levels verified without hits.');
