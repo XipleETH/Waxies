@@ -2,15 +2,18 @@ import * as THREE from 'three';
 import { loadMixedAvatar, type MixedAvatar } from './mixer-avatar';
 import type { AxieLoadout } from './axie';
 import { randomAxie } from './random-axie';
+import { randomTrapDungeon } from './random-traps';
 type AvatarInput=Pick<AxieLoadout,'genes'|'class'|'name'> & {testParts?:string[]};
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
 import { DUNGEONS, PHYSICS, createState, requestJump, step, type Dungeon, type GameState } from './physics';
 import { createHazardVisuals } from './hazard-visuals';
 export interface AvatarStatus {kind:'buba'|'mixed'|'error'|'loading';name:string;fallbacks:string[];message?:string;testParts?:string[]}
-export interface Engine { setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
-export function createEngine(host: HTMLElement, onState: (s: GameState) => void, onLoad: (error?: string) => void, onAvatar: (status:AvatarStatus)=>void=()=>{}): Engine {
+export interface Engine { setRandomTraps(enabled:boolean):void; setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
+export function createEngine(host: HTMLElement, onState: (s: GameState) => void, onLoad: (error?: string) => void, onAvatar: (status:AvatarStatus)=>void=()=>{}, onLevel:(level:Dungeon)=>void=()=>{}): Engine {
   let disposed = false, level = DUNGEONS[0], state = createState(level), raf = 0, elapsed = 0;
   let activeAxieClass:string|null=null,sourceLevel=level;
+  let randomTraps=false;
+  const canRandomizeTraps=(dungeon:Dungeon)=>DUNGEONS.some(d=>d.id===dungeon.id);
   let randomMode=false,refreshRandom:()=>void=()=>{},startAfterLoad=false;
   const renderer = new THREE.WebGLRenderer({antialias: true, alpha: false, powerPreference: 'high-performance'});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); renderer.setClearColor(0x0c191d);
@@ -66,8 +69,8 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   let hazardVisuals: ReturnType<typeof createHazardVisuals> | undefined;
   let roomGeometries:THREE.BufferGeometry[]=[],roomMaterials:THREE.Material[]=[],roomTextures:THREE.Texture[]=[];
   const loader = new THREE.TextureLoader();
-  function buildLevel(next: Dungeon) {
-    startAfterLoad=false;sourceLevel=next;level = {...next,runnerClass:activeAxieClass??next.runnerClass}; state = createState(level); roomGroup.clear(); hazardVisuals?.dispose();
+  function buildLevel(next: Dungeon, deaths=0) {
+    startAfterLoad=false;sourceLevel=next;level = {...(randomTraps&&canRandomizeTraps(next)?randomTrapDungeon(next):next),runnerClass:activeAxieClass??next.runnerClass}; state = createState(level,deaths); roomGroup.clear(); hazardVisuals?.dispose();
     for(const geo of roomGeometries){geo.dispose();geometries.splice(geometries.indexOf(geo),1);}
     for(const material of roomMaterials){material.dispose();materials.splice(materials.indexOf(material),1);}
     for(const texture of roomTextures){texture.dispose();textures.splice(textures.indexOf(texture),1);}
@@ -84,7 +87,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     hazardVisuals = createHazardVisuals(scene, level);
     hazardVisuals.update(state);
     roomGeometries=geometries.slice(geometryStart);roomMaterials=materials.slice(materialStart);roomTextures=textures.slice(textureStart);
-    onState({...state});refreshRandom();
+    onLevel(level);onState({...state});refreshRandom();
   }
   buildLevel(level);
   // Small motes give depth without obscuring the jump path.
@@ -118,7 +121,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   const setAxie=async(axie:AvatarInput|null):Promise<AvatarStatus|null>=>{
     onAvatar({kind:'loading',name:axie?.name??'Buba',fallbacks:[],testParts:axie?.testParts});
     const report=(result:AvatarStatus)=>{const status={...result,testParts:axie?.testParts};onAvatar(status);if(startAfterLoad&&state.phase==='ready'){state.phase='playing';onState({...state});}startAfterLoad=false;return status;};
-    activeAxieClass=axie?.class??null;level={...sourceLevel,runnerClass:activeAxieClass??sourceLevel.runnerClass};state.combat.class=level.runnerClass??'Beast';
+    activeAxieClass=axie?.class??null;level={...level,runnerClass:activeAxieClass??sourceLevel.runnerClass};state.combat.class=level.runnerClass??'Beast';
     const request=++avatarRequest;avatarController?.abort();avatarController=new AbortController();
     if(state.phase==='playing'){state.phase='paused';onState({...state});}avatarReady=false;
     currentMixed?.dispose();currentMixed=undefined;mixer=bubaMixer;actions=bubaActions;activeAction='';
@@ -156,7 +159,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   };raf=requestAnimationFrame(loop);
   const jump=()=>{if(avatarReady)requestJump(state);};
   const pause=()=>{if(!avatarReady)return;if(state.phase==='playing')state.phase='paused';else if(state.phase==='paused')state.phase='playing';onState({...state});};
-  const restart=()=>{startAfterLoad=false;state=createState(level,state.deaths);refreshRandom();onState({...state});renderer.domElement.focus({preventScroll:true});};
+  const restart=()=>{startAfterLoad=false;if(randomTraps&&canRandomizeTraps(sourceLevel))buildLevel(sourceLevel,state.deaths);else{state=createState(level,state.deaths);refreshRandom();onState({...state});}renderer.domElement.focus({preventScroll:true});};
   const key=(e:KeyboardEvent)=>{
     if((e.target as HTMLElement)?.closest('input,select,textarea,[role="dialog"]'))return;
     if(e.repeat)return;
@@ -165,7 +168,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   };
   const visibility=()=>{if(document.hidden&&state.phase==='playing'){state.phase='paused';onState({...state});}};
   window.addEventListener('keydown',key);document.addEventListener('visibilitychange',visibility);
-  return {setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
+  return {setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
     disposed=true;avatarRequest++;avatarController?.abort();currentMixed?.dispose();cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
     hazardVisuals?.dispose();mixer?.stopAllAction();bubaMixer?.stopAllAction();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.domElement.remove();
   }};
