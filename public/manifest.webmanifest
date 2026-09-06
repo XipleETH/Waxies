@@ -1,1 +1,10 @@
-{"name":"WAXIS · Vault Raiders","short_name":"WAXIS","description":"Incursiones de Axie en Lunacia","start_url":"/","display":"standalone","background_color":"#101819","theme_color":"#101819"}
+{
+  "name": "WAXIS · Vault Raiders",
+  "short_name": "WAXIS",
+  "description": "Torres verticales, Axies y cofres por conquistar.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101f23",
+  "theme_color": "#101f23",
+  "orientation": "portrait"
+}

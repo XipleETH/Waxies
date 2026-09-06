@@ -1,0 +1,5788 @@
+[
+  {
+    "level": {
+      "id": "tower-0",
+      "name": "Raíces despiertas",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Aprendiz",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "carrot",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "lagging",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "grass-snake",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "tower-1",
+      "name": "El salto preciso",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Aprendiz",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "carrot",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "thorny-caterpillar",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "lagging",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1610,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        636,
+        816,
+        900,
+        1020,
+        1032,
+        1152,
+        1272,
+        1368,
+        1488,
+        1584
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "tower-2",
+      "name": "Jardín de veneno",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Aprendiz",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "grass-snake",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "carrot",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "thorny-caterpillar",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "tower-3",
+      "name": "Cuernos en marcha",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Desafío",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "lagging",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "grass-snake",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "carrot",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1626,
+      "actions": [
+        0,
+        240,
+        336,
+        552,
+        672,
+        756,
+        768,
+        852,
+        996,
+        1104,
+        1224,
+        1320,
+        1476,
+        1596
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "tower-4",
+      "name": "La ronda de espinas",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Desafío",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "thorny-caterpillar",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "carrot",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "lagging",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1818,
+      "actions": [
+        0,
+        252,
+        276,
+        384,
+        468,
+        528,
+        744,
+        864,
+        948,
+        960,
+        1044,
+        1200,
+        1296,
+        1416,
+        1512,
+        1668,
+        1788
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "tower-5",
+      "name": "Lluvia de zanahorias",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Desafío",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "carrot",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "carrot",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "grass-snake",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "tower-6",
+      "name": "Carrera de cuernos",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Desafío",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "lagging",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "lagging",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "thorny-caterpillar",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "tower-7",
+      "name": "El último rebote",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Desafío",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "grass-snake",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "thorny-caterpillar",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "carrot",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1674,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        636,
+        816,
+        900,
+        1056,
+        1152,
+        1272,
+        1368,
+        1524,
+        1644
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-0",
+      "name": "Hermit · Goldfish",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "hermit",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "blue-moon",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "goldfish",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-1",
+      "name": "Sponge · Perch",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "sponge",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "anemone-back",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "perch",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1698,
+      "actions": [
+        0,
+        240,
+        336,
+        516,
+        600,
+        660,
+        840,
+        924,
+        1080,
+        1176,
+        1296,
+        1392,
+        1548,
+        1668
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-2",
+      "name": "Babylonia · Clamshell",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "babylonia",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "teal-shell",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "clamshell",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1698,
+      "actions": [
+        0,
+        240,
+        336,
+        516,
+        600,
+        660,
+        840,
+        924,
+        1080,
+        1176,
+        1296,
+        1392,
+        1548,
+        1668
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-3",
+      "name": "Anemone · Shoal Star",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "anemone-horn",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "oranda",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "shoal-star",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-4",
+      "name": "Lam · Risky Fish",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "lam",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "catfish",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "risky-fish",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1698,
+      "actions": [
+        0,
+        240,
+        336,
+        516,
+        600,
+        660,
+        840,
+        924,
+        1080,
+        1176,
+        1296,
+        1392,
+        1548,
+        1668
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-5",
+      "name": "Piranha · Nimo",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "piranha",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "koi",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "nimo",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-6",
+      "name": "Tadpole · Navaga",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "tadpole",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "ranchu",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "navaga",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-7",
+      "name": "Shrimp · Hero",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "shrimp",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "ronin",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "hero",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1674,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        636,
+        816,
+        900,
+        1056,
+        1152,
+        1272,
+        1368,
+        1524,
+        1644
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-8",
+      "name": "Jaguar · Timber",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "jaguar",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "risky-beast",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "timber",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1602,
+      "actions": [
+        0,
+        228,
+        324,
+        528,
+        648,
+        732,
+        744,
+        828,
+        984,
+        1080,
+        1200,
+        1296,
+        1452,
+        1572
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-9",
+      "name": "Furball · Imp",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "furball",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "little-branch",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "imp",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1602,
+      "actions": [
+        0,
+        252,
+        348,
+        528,
+        648,
+        732,
+        744,
+        828,
+        984,
+        1080,
+        1200,
+        1296,
+        1452,
+        1572
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-10",
+      "name": "Merry · Dual Blade",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "merry",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "pocky",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "dual-blade",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-11",
+      "name": "Arco · Goda",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "arco",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "nut-cracker-mouth",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "goda",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1806,
+      "actions": [
+        0,
+        228,
+        324,
+        564,
+        660,
+        720,
+        912,
+        996,
+        1116,
+        1128,
+        1248,
+        1332,
+        1344,
+        1428,
+        1488,
+        1656,
+        1764
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-12",
+      "name": "Axie Kiss · Cottontail",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "axie-kiss",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "confident",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "cottontail",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-13",
+      "name": "Rice · Hare",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "rice",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "shiba",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "hare",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-14",
+      "name": "Nut Cracker · Balloon",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "nut-cracker-tail",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "gerbil",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "balloon",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1164,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-15",
+      "name": "Cupid · Pigeon Post",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "cupid",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "raven",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "pigeon-post",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-16",
+      "name": "Kingfisher · Eggshell",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "kingfisher",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "tri-feather",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "eggshell",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-17",
+      "name": "Cuckoo · Kestrel",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "cuckoo",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "trump",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "kestrel",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1164,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-18",
+      "name": "Wing Horn · Doubletalk",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "wing-horn",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "feather-spear",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "doubletalk",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-19",
+      "name": "Peace Maker · Little Owl",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "peace-maker",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "hungry-bird",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "little-owl",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1164,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-20",
+      "name": "Swallow · The Last One",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "swallow",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "feather-fan",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "the-last-one",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1806,
+      "actions": [
+        36,
+        264,
+        360,
+        564,
+        660,
+        720,
+        912,
+        996,
+        1152,
+        1248,
+        1332,
+        1344,
+        1428,
+        1488,
+        1656,
+        1776
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-21",
+      "name": "Cloud · Post Fight",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "cloud",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "granma-s-fan",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "post-fight",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-22",
+      "name": "Snail Shell · Buzz Buzz",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "snail-shell",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "garish-worm",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "buzz-buzz",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-23",
+      "name": "Sandal · Spiky Wing",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "sandal",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "scarab",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "spiky-wing",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-24",
+      "name": "Lagging · Caterpillars",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "lagging",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "antenna",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "caterpillars",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-25",
+      "name": "Pliers · Leaf Bug",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "pliers",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "parasite",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "leaf-bug",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-26",
+      "name": "Mosquito · Cute Bunny",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "mosquito",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "pincer",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "cute-bunny",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1698,
+      "actions": [
+        0,
+        240,
+        336,
+        516,
+        600,
+        660,
+        840,
+        924,
+        1080,
+        1176,
+        1296,
+        1392,
+        1548,
+        1668
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-27",
+      "name": "Square Teeth · Twin Tail",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "square-teeth",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "ant",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "twin-tail",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-28",
+      "name": "Fish Snack · Pupae",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "fish-snack",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "gravel-ant",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "pupae",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-29",
+      "name": "Thorny Caterpillar · Shiitake",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "thorny-caterpillar",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "turnip",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "shiitake",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1878,
+      "actions": [
+        0,
+        252,
+        276,
+        384,
+        516,
+        696,
+        828,
+        1020,
+        1104,
+        1260,
+        1356,
+        1476,
+        1572,
+        1728,
+        1848
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-30",
+      "name": "Bidens · Mint",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "bidens",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "watering-can",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "mint",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1758,
+      "actions": [
+        0,
+        228,
+        324,
+        564,
+        660,
+        720,
+        900,
+        984,
+        1140,
+        1236,
+        1356,
+        1452,
+        1608,
+        1728
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-31",
+      "name": "Pumpkin · Beech",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "pumpkin",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "bamboo-shoot",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "beech",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1782,
+      "actions": [
+        36,
+        204,
+        216,
+        300,
+        360,
+        576,
+        684,
+        744,
+        924,
+        1008,
+        1164,
+        1260,
+        1380,
+        1476,
+        1632,
+        1752
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-32",
+      "name": "Rose Bud · Cactus",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "rose-bud",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "strawberry-shortcake",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "cactus",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-33",
+      "name": "Watermelon · Zigzag",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "watermelon",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "serious",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "zigzag",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1674,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        636,
+        816,
+        900,
+        1056,
+        1152,
+        1272,
+        1368,
+        1524,
+        1644
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-34",
+      "name": "Herbivore · Carrot",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "herbivore",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "silence-whisper",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "carrot",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-35",
+      "name": "Cattail · Yam",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "cattail",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "hatsune",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "yam",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1926,
+      "actions": [
+        0,
+        108,
+        288,
+        420,
+        612,
+        696,
+        756,
+        936,
+        1020,
+        1140,
+        1152,
+        1236,
+        1296,
+        1476,
+        1608,
+        1776,
+        1896
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-36",
+      "name": "Potato Leaf · Bone Sail",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "potato-leaf",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "hot-butt",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "bone-sail",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1698,
+      "actions": [
+        0,
+        240,
+        336,
+        516,
+        600,
+        660,
+        840,
+        924,
+        1080,
+        1176,
+        1296,
+        1392,
+        1548,
+        1668
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-37",
+      "name": "Tri Spikes · Indian Star",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "tri-spikes",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "green-thorns",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "indian-star",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-38",
+      "name": "Red Ear · Unko",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "red-ear",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "croc",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "unko",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-39",
+      "name": "Scaly Spear · Scaly Spoon",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "scaly-spear",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "cerastes",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "scaly-spoon",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1806,
+      "actions": [
+        0,
+        240,
+        336,
+        576,
+        672,
+        732,
+        912,
+        996,
+        1140,
+        1248,
+        1332,
+        1344,
+        1428,
+        1488,
+        1656,
+        1752
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-40",
+      "name": "Incisor · Toothless Bite",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "incisor",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "bumpy",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "toothless-bite",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1806,
+      "actions": [
+        0,
+        108,
+        300,
+        432,
+        624,
+        708,
+        768,
+        948,
+        1032,
+        1176,
+        1284,
+        1404,
+        1500,
+        1656,
+        1776
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-41",
+      "name": "Kotaro · Tiny Turtle",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "kotaro",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "razor-bite",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "tiny-turtle",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1698,
+      "actions": [
+        0,
+        240,
+        336,
+        516,
+        600,
+        660,
+        840,
+        924,
+        1080,
+        1176,
+        1296,
+        1392,
+        1548,
+        1668
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-42",
+      "name": "Wall Gecko · Tiny Dino",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "wall-gecko",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "iguana",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "tiny-dino",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "arsenal-43",
+      "name": "Snake Jar · Grass Snake",
+      "subtitle": "Llega al cofre sin tocar una defensa",
+      "difficulty": "Arsenal",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "snake-jar",
+          "phase": 0,
+          "patrol": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "gila",
+          "phase": 1.5,
+          "patrol": 0
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "grass-snake",
+          "phase": 3,
+          "patrol": 0
+        }
+      ]
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  }
+]

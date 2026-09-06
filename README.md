@@ -1,65 +1,67 @@
 # WAXIS · Vault Raiders
 
-Prototipo jugable para una hackatón de Axie Infinity. Three.js renderiza una mazmorra 3D con física de plataformas en 2D: carrera automática, saltos con un botón, rebotes en paredes, trampas y un cofre.
+Juego de plataformas 2.5D para una hackatón de Axie Infinity. Three.js dibuja los Axies oficiales; la física corre en 2D a 120 pasos por segundo. La experiencia principal es una app web vertical para teléfono.
 
-## Ejecutar
+## Ejecutar y comprobar
 
-Requiere Node.js 22.13 o superior.
+Node.js 22.13 o superior:
 
 ```sh
-npm install
+npm ci
 npm run dev
+npm test
+npm run courses:verify
+npm run typecheck
+npm run build
 ```
 
-Abrir la dirección indicada por el servidor. `npm run build` genera el paquete de producción. `npm test`, `npm run test:routes` y `npm run typecheck` verifican reglas, rutas alcanzables y tipos.
+`npm run courses:generate` vuelve a buscar una ruta sin golpes para cada configuración con el mismo simulador del juego. Solo sobrescribe los certificados si todas las pistas pasan. Una búsqueda fallida no demuestra que un nivel sea imposible.
 
-## Controles
+## Jugar
 
-- Espacio, flecha arriba, clic o toque: saltar.
-- Saltar mientras se toca una pared: rebotar en sentido contrario.
-- P o Escape: pausar/continuar. R: reiniciar.
-- Las pestañas y formularios conservan navegación por teclado.
+- Lobby con Práctica aleatoria, Refugio, Bazar y Mi Axie.
+- 52 configuraciones de torre vertical que cubren las 132 cartas Classic. El azar elige una configuración certificada y una apariencia de Axie; no mezcla ataques sin comprobar.
+- El Axie corre solo. Tocar, Espacio o Flecha arriba salta. Saltar contra una pared permite rebotar. P/Escape pausa y R vuelve al inicio conservando salud.
+- Cualquier contacto dañino con una defensa, proyectil o charco reinicia el intento y resta 20 de salud. La pista, el Axie y el ciclo inicial se conservan. Cinco golpes agotan el premio.
+- El cofre entrega tantas Chispas como salud restante, hasta 100. La repetición del bot no concede premios.
+- Chispas compra tres temas y dos adornos, visibles en la mazmorra propia. Son puntos locales; no existe conversión a dinero ni pagos con tokens.
+- La partida ocupa el área disponible con `100dvh` y zonas seguras. Intenta entrar en Fullscreen al pulsar Jugar si el navegador lo admite. El manifiesto pide orientación vertical; en iOS puede añadirse a la pantalla de inicio para abrirla como app independiente.
 
-## Incluido
+## Construir y compartir
 
-Tres incursiones, 132 cartas Classic con ilustración y procedencia oficiales, modelo Buba con animación oficial, cámara ortográfica, colisión a 120 pasos por segundo, vidas/estados, reintentos, editor de cuatro defensas, dos recorridos para validar el diseño y guardado local.
+El editor coloca tres defensas sobre una torre de siete plataformas. Permite elegir partes y ajustar su posición horizontal. Al cargar un Axie solo se habilitan sus cartas dominantes. Ojos y orejas son cosméticos; no se inventan cartas para ellos. Sin Axie, el laboratorio permite probar las 132 partes.
 
-El cofre puede contener SLP, AXS y RON **simulados**. Se inicia con 1.250 SLP, 8 AXS y 12 RON de práctica. Los depósitos y retiros conservan el saldo total. Cada cofre de incursión se reclama una sola vez por guardado. Las pruebas del propio cofre no generan recompensas. Los importes se representan con enteros de seis decimales para evitar errores de punto flotante. No son los decimales on-chain de los tokens.
+Los cambios se guardan como **borrador**. Para guardar una defensa validada, el jugador debe alcanzar el cofre desde el inicio con 100 de salud y cero contactos. El motor registra los saltos y vuelve a simular la ruta. Modificar una trampa invalida la prueba. Los temas y adornos no afectan la colisión y no la invalidan.
 
-## Catálogo y partes del Axie
+Compartir crea un enlace que contiene la disposición, el estilo y la repetición. Al abrirlo, el cliente vuelve a comprobar la ruta antes de permitir el ataque. No hay un listado global de mazmorras, resultados entre cuentas ni protección remota contra trampas todavía.
 
-132 defensas basadas en las cartas Classic de nivel 1; 192 partes estándar y 87 variantes cosméticas documentadas. El juego incluye un catálogo con búsqueda y filtros y una investigación completa en /investigacion. La matriz editable está en research/classic-defense-matrix.csv y la procedencia en research/.
+## Cartas y poderes
 
-En Mi mazmorra, un ID de Axie consulta el endpoint oficial de metadatos y decodifica sus genes dominantes de 512 bits. Solo las cuatro cartas de sus partes pueden equiparse. Ojos y orejas no reciben ataques inventados. Las skins recientes se resuelven por genes y usan arte base identificado cuando su ilustración no está disponible; las evoluciones juegan con la carta de nivel 1. La consulta de un ID no verifica propiedad de la wallet. Sin un Axie cargado funciona el laboratorio libre.
+El catálogo conserva 132 cartas Classic de nivel 1, 192 partes estándar y 87 variantes cosméticas documentadas. Los datos originales están en `lib/game/data/classic-cards.json`; las adaptaciones físicas, en `recipes.ts` y `raid-powers.ts`. La ficha separa la habilidad original de las reglas del modo de plataformas.
 
-Las recetas son explícitas para cada carta: diez patrones físicos, combos, estados, curación, escudo, energía, robo/descarte adaptado, reflejo y Last Stand. Los pisotones permiten interactuar con las defensas sin añadir otro botón. En research/AXIE_CLASSIC.md y /investigacion están las sustituciones entre combate por turnos y plataformas.
+Los cuerpos de las trampas permanecen visibles durante todo el ciclo. Los avisos preceden a proyectiles, abanicos, embestidas, ataques cercanos, espinas y bumeranes. La mira de un disparo dirigido queda fijada durante el aviso. Los suelos bloquean ataques y los charcos solo se forman en superficies.
 
-## Recursos
+El modo móvil no permite pisotones ofensivos, veneno acumulativo tras el contacto ni Último Aliento del jugador. Condiciones Classic que dependen de esos sistemas no se presentan como habilidades equivalentes. Consulta [la investigación del rediseño](research/MOBILE_REDESIGN.md) y `/investigacion`.
 
-- [Rig, textura y animaciones de Buba](https://github.com/axieinfinity/axie-starter-3d-assets/tree/a419e0cdddf7d10684547a4b5e5d25af73b7fe5c/fbx/buba). Se usa el FBX rig y únicamente los clips de los FBX de animación. La textura compartida necesita `flipY=true`. Los GLB del repositorio contienen UV/materiales antiguos y no son compatibles con esa textura.
-- [Atlas y shader de partes oficial](https://github.com/axieinfinity/cc-axie-gtk2d/tree/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/atlas-single). Los PNG separados usan las regiones originales, máscaras y paletas del shader oficial; no son diseños nuevos.
-- Las ilustraciones de cartas proceden de `classic.axieinfinity.com/art/cards/`.
-- `public/assets/provenance.json` y `public/assets/carrot-provenance.json` conservan las URLs, coordenadas y paletas. Los derechos de Axie pertenecen a sus titulares; no se atribuye licencia MIT/CC0 a estos recursos.
+## Axies y recursos oficiales
 
-## Alcance de esta versión
+Se conservan el modelo por genes, los esqueletos, las animaciones y el shader del Mixer oficial. Incluye ocho cuerpos, 575 variantes completas, 733 modelos y 513 texturas. Las variantes ausentes usan sustituciones documentadas; no se crean piezas nuevas. Detalles en [MIXER_3D.md](research/MIXER_3D.md).
 
-Funciona en un navegador compatible con WebGL 2. El progreso solo existe en ese navegador y no es una fuente de verdad financiera. No incluye PvP asíncrono entre cuentas, contratos de economía, depósitos reales, recompensas on-chain ni verificación remota contra trampas. Ningún botón firma o envía transacciones. El diseño propio y sus pruebas se guardan localmente.
+- [Mixer 3D oficial](https://github.com/axieinfinity/unity-axie-mixer3d), revisión `63ec82afc7deeec242734e70fea4bb9fffa904cc`.
+- [Buba oficial](https://github.com/axieinfinity/axie-starter-3d-assets/tree/a419e0cdddf7d10684547a4b5e5d25af73b7fe5c/fbx/buba), usado también como respaldo.
+- [Atlas oficial de partes](https://github.com/axieinfinity/cc-axie-gtk2d/tree/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/atlas-single).
+- [Explorador Classic](https://classic.axieinfinity.com/explorer/cards).
 
-Antes de activar fondos reales: integrar Ronin Wallet; contratos de custodia limitados a tokens permitidos y sus decimales reales; un servicio que reproduzca entradas y valide la física y las dos pruebas de cada defensa; identidad, permisos y prevención de repetición por incursión; liquidación atómica y revisión de seguridad. La física determinista y el inventario de partes ofrecen una base para ese validador, pero las recompensas locales nunca deben aceptarse como prueba.
+`GET /api/axie/:id` consulta genes y propietario en el contrato Ronin `0x32950db2a7164ae833121501c797d79e7b79d74c`. Las lecturas se fijan al mismo bloque. Ronin Wallet comparte la cuenta y enumera sus Axies; no solicita firmas ni transacciones. Consultar un ID público no acredita que quien lo escribe controle esa billetera.
 
-Se exponen herramientas WebMCP de consulta, inicio y traslado de tokens de práctica cuando el navegador ofrece `document.modelContext`. Su ausencia no impide jugar. No conceden ninguna capacidad sobre fondos reales.
+Los recursos pertenecen a sus titulares. Las procedencias detalladas están en `public/assets/provenance.json`, `public/assets/carrot-provenance.json` y `research/`.
 
-La versión de reglas 3 conserva saldos, cofres, recompensas reclamadas y posiciones de guardados anteriores. Añade una cuarta ranura e invalida únicamente las pruebas de defensa: los nuevos ataques requieren repetir los dos recorridos.
+## Guardado y alcance
 
-### Modelo por genes y Ronin Wallet
-El personaje seleccionado se ensambla con los recursos oficiales de unity-axie-mixer3d, revisión 63ec82afc7deeec242734e70fea4bb9fffa904cc. Se incluyen 8 cuerpos, 575 variantes completas, 733 modelos con esqueleto y 513 texturas. Ver research/MIXER_3D.md y research/mixer-coverage.json. Se conservan la geometría, los bind poses y las curvas oficiales; las pistas de armas ausentes se omiten. El material replica el shader V5 de tintes genéticos. No incluye partículas adicionales Mystic ni skins no publicadas por el Mixer.
+`waxies.mobile.v1` guarda Chispas, compras, Axie y defensa en el navegador. El guardado antiguo `waxis.practice.v1` se conserva y solo se importa su selección de Axie compatible. Los saldos simulados SLP/AXS/RON del prototipo anterior no se convierten en Chispas. El motor y las pruebas del combate anterior permanecen como referencia técnica; la portada usa las reglas `portrait-raid-v1`.
 
-GET /api/axie/:id consulta eth_blockNumber y luego getAxie(uint256) / ownerOf(uint256) en el mismo bloque del contrato Ronin 0x32950db2a7164ae833121501c797d79e7b79d74c. Los genes ocupan las palabras ABI 3 y 4 (base 0) de la respuesta actual de 7 palabras, comprobadas contra los metadatos oficiales de 4200042 y 27. El formato se valida estrictamente. El proveedor público tiene límites de uso; para tráfico de producción debe configurarse un proveedor dedicado.
+Los certificados prueban que existe una ruta con estas reglas; no que sea fácil para todos los jugadores ni que el cliente sea una fuente confiable para dinero. Antes de vender cosméticos con SLP, AXS, RON o USDC hacen falta autenticación, inventario y validación de recompensas en servidor, además de integración de pagos. No hay pagos ni recompensas on-chain activos.
 
-Ronin Wallet usa el proveedor inyectado documentado. Solo solicita compartir la cuenta y hace lecturas; no solicita firmas, aprobaciones de token ni transacciones. Lista 8 NFT por página mediante balanceOf/tokenOfOwnerByIndex y vuelve a verificar ownerOf al seleccionar. Esta comprobación en el cliente no sustituye autenticación y validación de partidas en un servidor para economía real. Los archivos de metadatos siguen disponibles y se marcan como procedencia sin verificar.
+## Publicación
 
-## Publicación en Vercel
-
-Aplicación Next.js 16 con Node.js 22. Importar `XipleETH/Waxies` en Vercel, usar la raíz del repositorio y el preset Next.js. `main` es la rama de producción; los siguientes pushes generan publicaciones automáticas cuando la integración Git está conectada. No se necesitan secretos para la demo: los datos de Axie usan lecturas públicas de Ronin. `npm ci`, `npm run build` y `npm start` permiten comprobar la misma aplicación localmente.
-
-El modo de pruebas genera un Axie con partes oficiales en cada intento. En Asaltar, las trampas aleatorias eligen tres habilidades distintas del catálogo de 132 cartas; los controles permiten generar otra combinación o recuperar las trampas originales. Mi mazmorra conserva las defensas guardadas. Los modos aleatorios son independientes y no crean NFT ni dan permisos de billetera.
+Next.js 16 / Node.js 22. El repositorio [XipleETH/Waxies](https://github.com/XipleETH/Waxies) está conectado con Vercel; los pushes a `main` publican [waxies.vercel.app](https://waxies.vercel.app/). Preset Next.js, raíz del repositorio, `npm ci` y `npm run build`. No se necesitan secretos para la demo de lecturas públicas de Ronin.

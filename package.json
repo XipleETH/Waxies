@@ -7,13 +7,15 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run courses:verify && next build",
     "start": "next start",
     "lint": "oxlint",
     "format": "oxfmt",
     "test": "tsx --test tests/*.test.ts",
     "test:routes": "tsx tests/solve.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "courses:verify": "tsx scripts/certify-courses.ts",
+    "courses:generate": "tsx scripts/certify-courses.ts --generate"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

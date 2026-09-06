@@ -5,13 +5,16 @@ import { randomAxie } from './random-axie';
 import { randomTrapDungeon } from './random-traps';
 type AvatarInput=Pick<AxieLoadout,'genes'|'class'|'name'> & {testParts?:string[]};
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
-import { DUNGEONS, PHYSICS, createState, requestJump, step, type Dungeon, type GameState } from './physics';
+import type {RouteProof} from './route-proof';
+import {MOBILE_RULES} from './portrait';
+import { DUNGEONS, roomFor, PHYSICS, createState, requestJump, step, type Dungeon, type GameState } from './physics';
 import { createHazardVisuals } from './hazard-visuals';
 export interface AvatarStatus {kind:'buba'|'mixed'|'error'|'loading';name:string;fallbacks:string[];message?:string;testParts?:string[]}
-export interface Engine { setRandomTraps(enabled:boolean):void; setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
+export interface Engine { getProof():RouteProof; playProof(proof:RouteProof):void; setRandomTraps(enabled:boolean):void; setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
 export function createEngine(host: HTMLElement, onState: (s: GameState) => void, onLoad: (error?: string) => void, onAvatar: (status:AvatarStatus)=>void=()=>{}, onLevel:(level:Dungeon)=>void=()=>{}): Engine {
   let disposed = false, level = DUNGEONS[0], state = createState(level), raf = 0, elapsed = 0;
   let activeAxieClass:string|null=null,sourceLevel=level;
+  let proofActions:number[]=[],replay:RouteProof|null=null,replayIndex=0;let fitRoom:()=>void=()=>{};
   let randomTraps=false;
   const canRandomizeTraps=(dungeon:Dungeon)=>DUNGEONS.some(d=>d.id===dungeon.id);
   let randomMode=false,refreshRandom:()=>void=()=>{},startAfterLoad=false;
@@ -41,9 +44,9 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     const mesh = new THREE.Mesh(geo, material); mesh.position.set(x,y,z); mesh.castShadow = true; mesh.receiveShadow = true; parent.add(mesh);
     if (outline) { const edges = new THREE.EdgesGeometry(geo); geometries.push(edges); mesh.add(new THREE.LineSegments(edges, edgeMat)); } return mesh;
   };
-  box(scene,12,7,-3,28,17,0.5,dark);
+  box(scene,12,14,-3,45,40,0.5,dark);
   // World geometry is intentionally three-dimensional; collision remains in XY.
-  for(let row=0;row<9;row++) for(let col=0;col<11;col++) {
+  for(let row=0;row<18;row++) for(let col=0;col<11;col++) {
     const shade = new THREE.Color(0x203b3b).multiplyScalar(0.72 + ((col*13+row*7)%9)*0.038);
     box(scene, col*2.5+(row%2)*1.25, row*1.7, -2.6, 2.42,1.61,0.24,mat(shade.getHex()));
   }
@@ -70,12 +73,13 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   let roomGeometries:THREE.BufferGeometry[]=[],roomMaterials:THREE.Material[]=[],roomTextures:THREE.Texture[]=[];
   const loader = new THREE.TextureLoader();
   function buildLevel(next: Dungeon, deaths=0) {
-    startAfterLoad=false;sourceLevel=next;level = {...(randomTraps&&canRandomizeTraps(next)?randomTrapDungeon(next):next),runnerClass:activeAxieClass??next.runnerClass}; state = createState(level,deaths); roomGroup.clear(); hazardVisuals?.dispose();
+    startAfterLoad=false;proofActions=[];replay=null;sourceLevel=next;level = {...(randomTraps&&canRandomizeTraps(next)?randomTrapDungeon(next):next),runnerClass:next.rules==='raid'?next.runnerClass:(activeAxieClass??next.runnerClass)}; state = createState(level,deaths); roomGroup.clear(); hazardVisuals?.dispose();
     for(const geo of roomGeometries){geo.dispose();geometries.splice(geometries.indexOf(geo),1);}
     for(const material of roomMaterials){material.dispose();materials.splice(materials.indexOf(material),1);}
     for(const texture of roomTextures){texture.dispose();textures.splice(textures.indexOf(texture),1);}
     const geometryStart=geometries.length,materialStart=materials.length,textureStart=textures.length;
-    const blocks = [{x:12,y:0.35,w:24,h:1.3}, ...level.platforms, {x:0.45,y:7,w:1.1,h:14}, {x:23.55,y:7,w:1.1,h:14}];
+    const room=roomFor(level);const colors=level.theme==='amethyst'?[0x403c65,0x82749e]:level.theme==='ember'?[0x54372d,0xab7447]:[0x335d54,0x74a488];stone.color.setHex(colors[0]);top.color.setHex(colors[1]);
+    const blocks = [{x:room.w/2,y:room.floor-.65,w:room.w,h:1.3}, ...level.platforms, {x:room.left-.55,y:room.h/2,w:1.1,h:room.h}, {x:room.right+.55,y:room.h/2,w:1.1,h:room.h}];
     blocks.forEach(p=>{
       box(roomGroup,p.x,p.y,0,p.w,p.h,2.6,stone,true);
       box(roomGroup,p.x,p.y+p.h/2,0.02,p.w+0.12,0.13,2.74,top,true);
@@ -83,11 +87,13 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
       for(let i=1;i<n;i++) box(roomGroup,p.x-p.w/2+i*p.w/n,p.y,1.32,0.025,p.h,0.02,dark);
       for(let i=0;i<n;i++) if(i%3!==1) box(roomGroup,p.x-p.w/2+i*p.w/n+0.4,p.y+p.h/2-0.13,1.39,0.35,0.2,0.06,mat(0x487963));
     });
+    if(level.decoration==='crystals'){for(const x of [1.5,room.w-1.5]){const geo=new THREE.OctahedronGeometry(.3);geometries.push(geo);const crystal=new THREE.Mesh(geo,mat(0xb7a0fc,{emissive:0x6950af,emissiveIntensity:.7}));crystal.position.set(x,room.h-1.4,-.8);roomGroup.add(crystal);}}
+    if(level.decoration==='lanterns'){for(const x of [1.7,room.w-1.7]){box(roomGroup,x,room.h-2,-.5,.32,.6,.35,mat(0xffd391,{emissive:0xd38f34,emissiveIntensity:1.3}));}}
     chest.position.set(level.chest.x,level.chest.y,0.45); lid.rotation.x=0;
     hazardVisuals = createHazardVisuals(scene, level);
     hazardVisuals.update(state);
     roomGeometries=geometries.slice(geometryStart);roomMaterials=materials.slice(materialStart);roomTextures=textures.slice(textureStart);
-    onLevel(level);onState({...state});refreshRandom();
+    fitRoom();onLevel(level);onState({...state});refreshRandom();
   }
   buildLevel(level);
   // Small motes give depth without obscuring the jump path.
@@ -121,7 +127,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   const setAxie=async(axie:AvatarInput|null):Promise<AvatarStatus|null>=>{
     onAvatar({kind:'loading',name:axie?.name??'Buba',fallbacks:[],testParts:axie?.testParts});
     const report=(result:AvatarStatus)=>{const status={...result,testParts:axie?.testParts};onAvatar(status);if(startAfterLoad&&state.phase==='ready'){state.phase='playing';onState({...state});}startAfterLoad=false;return status;};
-    activeAxieClass=axie?.class??null;level={...level,runnerClass:activeAxieClass??sourceLevel.runnerClass};state.combat.class=level.runnerClass??'Beast';
+    activeAxieClass=axie?.class??null;level={...level,runnerClass:level.rules==='raid'?sourceLevel.runnerClass:(activeAxieClass??sourceLevel.runnerClass)};state.combat.class=level.runnerClass??'Beast';
     const request=++avatarRequest;avatarController?.abort();avatarController=new AbortController();
     if(state.phase==='playing'){state.phase='paused';onState({...state});}avatarReady=false;
     currentMixed?.dispose();currentMixed=undefined;mixer=bubaMixer;actions=bubaActions;activeAction='';
@@ -134,17 +140,17 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     }catch(error){if(disposed||request!==avatarRequest)return null;if(bubaModel)bubaModel.visible=true;avatarReady=true;return report({kind:'error',name:'Buba',fallbacks:[],message:error instanceof Error?error.message:'No se pudo ensamblar el Axie.'});}
   };
   refreshRandom=()=>{if(randomMode)void setAxie(randomAxie());};
-  const resize=()=>{const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);const aspect=w/Math.max(h,1);const vh=Math.max(15.2,26/aspect);camera.left=-vh*aspect/2;camera.right=vh*aspect/2;camera.top=vh/2;camera.bottom=-vh/2;camera.updateProjectionMatrix();};
+  const resize=()=>{const w=host.clientWidth,h=host.clientHeight,room=roomFor(level);renderer.setSize(w,h,false);const aspect=w/Math.max(h,1);const vh=Math.max(room.h+1,(room.w+.8)/aspect);camera.left=-vh*aspect/2;camera.right=vh*aspect/2;camera.top=vh/2;camera.bottom=-vh/2;camera.position.set(room.w/2,room.h/2+2,38);camera.lookAt(room.w/2,room.h/2,0);camera.updateProjectionMatrix();};fitRoom=resize;
   const observer=new ResizeObserver(resize);observer.observe(host);resize();
   let previous=performance.now(),accumulator=0,lastReport=0,lastPhase=state.phase;
   const loop=(now:number)=>{
     if(disposed)return;raf=requestAnimationFrame(loop);const delta=Math.min((now-previous)/1000,0.05);previous=now;
     elapsed+=delta;accumulator+=delta;
-    while(accumulator>=PHYSICS.step){step(state,level);accumulator-=PHYSICS.step;}
+    while(accumulator>=PHYSICS.step){if(replay&&state.phase==='playing'&&replay.actions[replayIndex]===state.frame){requestJump(state);replayIndex++;}const hits=state.hits;step(state,level);if(state.hits>hits){proofActions=[];replay=null;}accumulator-=PHYSICS.step;}
     avatar.position.set(state.x,state.y,0.8);avatar.rotation.y=state.direction===1?Math.PI/2:-Math.PI/2;
-    avatar.visible=state.invulnerable<=0||Math.floor(elapsed*15)%2===0;
+    avatar.visible=state.raid||state.invulnerable<=0||Math.floor(elapsed*15)%2===0;
     avatar.scale.set(1,state.grounded?1:1.04,1);
-    const animation=currentMixed?(state.phase==='dead'?'dead':state.phase==='playing'?(state.grounded?'run':'air'):'idle'):state.phase==='playing'?(state.grounded?'run':'jump'):'idle';
+    const animation=currentMixed?((state.phase==='dead'||state.phase==='resetting')?'dead':state.phase==='playing'?(state.grounded?'run':'air'):'idle'):state.phase==='playing'?(state.grounded?'run':'jump'):'idle';
     if(animation!==activeAction||(animation==='jump'&&state.jumps!==lastJump)){
       if(activeAction&&actions[activeAction as keyof typeof actions])actions[activeAction as keyof typeof actions]?.fadeOut(0.1);
       actions[animation]?.reset().fadeIn(0.1).play();if(animation==='air'&&actions.air){actions.air.paused=true;actions.air.time=.2;}activeAction=animation;
@@ -157,9 +163,9 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     if(now-lastReport>100||state.phase!==lastPhase){onState({...state});lastReport=now;lastPhase=state.phase;}
     renderer.render(scene,camera);
   };raf=requestAnimationFrame(loop);
-  const jump=()=>{if(avatarReady)requestJump(state);};
+  const jump=()=>{if(avatarReady&&!replay&&(state.phase==='playing'||state.phase==='ready')){if(proofActions.at(-1)!==state.frame)proofActions.push(state.frame);requestJump(state);}};
   const pause=()=>{if(!avatarReady)return;if(state.phase==='playing')state.phase='paused';else if(state.phase==='paused')state.phase='playing';onState({...state});};
-  const restart=()=>{startAfterLoad=false;if(randomTraps&&canRandomizeTraps(sourceLevel))buildLevel(sourceLevel,state.deaths);else{state=createState(level,state.deaths);refreshRandom();onState({...state});}renderer.domElement.focus({preventScroll:true});};
+  const restart=()=>{proofActions=[];replay=null;startAfterLoad=false;if(state.raid){const hp=state.hp,hits=state.hits;state={...createState(level,state.deaths),hp,hits,phase:hp>0?'ready':'dead'};onState({...state});return;}if(randomTraps&&canRandomizeTraps(sourceLevel))buildLevel(sourceLevel,state.deaths);else{state=createState(level,state.deaths);refreshRandom();onState({...state});}renderer.domElement.focus({preventScroll:true});};
   const key=(e:KeyboardEvent)=>{
     if((e.target as HTMLElement)?.closest('input,select,textarea,[role="dialog"]'))return;
     if(e.repeat)return;
@@ -168,7 +174,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   };
   const visibility=()=>{if(document.hidden&&state.phase==='playing'){state.phase='paused';onState({...state});}};
   window.addEventListener('keydown',key);document.addEventListener('visibilitychange',visibility);
-  return {setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
+  return {getProof:()=>({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions]}),playProof:(proof)=>{proofActions=[];state=createState(level);replay=proof;replayIndex=0;if(avatarReady)state.phase='playing';else startAfterLoad=true;onState({...state});},setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
     disposed=true;avatarRequest++;avatarController?.abort();currentMixed?.dispose();cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
     hazardVisuals?.dispose();mixer?.stopAllAction();bubaMixer?.stopAllAction();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.domElement.remove();
   }};

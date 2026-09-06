@@ -87,7 +87,12 @@ export function applyRules(s:GameState,level:Dungeon,i:number,rules:Rule[],damag
  t.shield=t.shieldHp>0;
  if(critical)level.traps.forEach((part,j)=>{if(PARTS[part.part].partId==='beast-horn-04')s.hazards.traps[j].energy=Math.min(3,s.hazards.traps[j].energy+1);});
 }
+export function raidContact(s:GameState,part:string){
+ if(s.phase!=='playing')return;
+ s.hp=Math.max(0,s.hp-20);s.hits++;s.deaths++;s.resetTimer=.65;s.phase=s.hp===0?'dead':'resetting';s.reason=part+' te alcanzó';
+}
 export function hitRunner(s:GameState,level:Dungeon,i:number){
+ if(s.raid){raidContact(s,PARTS[level.traps[i].part].name);return;}
  if(s.invulnerable>0||s.phase!=='playing')return;
  const t=s.hazards.traps[i],part=PARTS[level.traps[i].part],rules=rulesFor(s,level,i,'hit');
  if(t.statuses.stun||t.statuses.fear){delete t.statuses.stun;return;}

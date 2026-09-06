@@ -46,8 +46,9 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
     stations.forEach((v,i)=>{
       const t=s.hazards.traps[i],part=level.traps[i].part,warn=t.stage==='warning',active=t.stage==='active';
       v.group.position.set(t.x,t.y,0);
-      v.body.material.opacity=t.stage==='disabled'?.15:t.stage==='recover'?.45:1;
-      v.health.visible=t.hp<100;v.health.scale.x=.9*Math.max(0,t.hp)/100;v.health.position.x=-(.9-v.health.scale.x)/2;
+      v.body.material.opacity=1;
+      v.body.material.color.set(t.stage==='disabled'?0x9aafba:0xffffff);
+      v.health.visible=!s.raid&&t.hp<100;v.health.scale.x=.9*Math.max(0,t.hp)/100;v.health.position.x=-(.9-v.health.scale.x)/2;
       v.links.forEach(l=>{l.visible=PARTS[part].recipe.pattern==='aura'&&active;});
       v.body.position.x=warn?Math.sin(s.time*45)*.035:0;
       v.body.material.rotation=part==='lagging'?(t.facing<0?-.35:.35):part==='grass-snake'?(t.facing<0?.1:-.1):0;
@@ -64,8 +65,9 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
       v.thorns.visible=thorn&&active;
       v.beam.visible=warn&&!thorn&&!aura;v.arrow.visible=warn&&!thorn&&!aura;
       const range=PARTS[part].recipe.pattern==='dash'?ATTACK.dashSpeed*ATTACK.dashDuration:4.5;
-      v.beam.scale.set(range,.07,1);v.beam.position.x=t.facing*range/2;
-      v.arrow.position.x=t.facing*range;v.arrow.rotation.z=t.facing===1?0:Math.PI;
+      const angle=PARTS[part].recipe.pattern==='sniper'?Math.atan2(t.aimY-t.y,t.aimX-t.x):(t.facing===1?0:Math.PI);
+      v.beam.scale.set(range,.07,1);v.beam.rotation.z=angle;v.beam.position.set(Math.cos(angle)*range/2,Math.sin(angle)*range/2,.75);
+      v.arrow.position.set(Math.cos(angle)*range,Math.sin(angle)*range,.8);v.arrow.rotation.z=angle;
     });
     darts.forEach((v,i)=>{const p=s.hazards.projectiles[i];v.group.visible=!!p;if(!p)return;
       v.group.position.set(p.x,p.y,1.05);v.group.rotation.z=Math.atan2(p.vy,p.vx);
