@@ -141,7 +141,7 @@ void test('certificates reject missing jumps, incompatible rules, bad frames and
   );
 });
 void test('a shared defense is reconstructed and replayed before it can be attacked', () => {
-  const c = verified[0];
+  const c = verified.find(c=>c.level.layoutId==='tower')!;
   const decoded = decodeChallenge(challengeCode(c));
   assert.ok(verifyRoute(decoded.level, decoded.proof));
   assert.deepEqual(decoded.level.traps, c.level.traps);

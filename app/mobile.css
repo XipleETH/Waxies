@@ -1100,3 +1100,55 @@
   color: #d9e3c2;
   font-size: 10px;
 }
+.map-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 124px;
+  gap: 11px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding: 2px 0 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #48695b transparent;
+}
+.map-choice {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1a2d30;
+  border: 1px solid #a5c2a31c;
+  border-radius: 16px;
+  padding: 11px 8px;
+  text-align: left;
+}
+.map-choice > svg {
+  width: 82px;
+  height: 117px;
+  display: block;
+  flex: none;
+  margin-bottom: 10px;
+}
+.map-choice strong {
+  width: 100%;
+  font: 600 12px/1.3 var(--font-display);
+  color: #d9e7cf;
+  min-height: 31px;
+}
+.map-choice > span {
+  width: 100%;
+  font-size: 9px;
+  color: #91aa9e;
+  margin-top: 6px;
+}
+.map-choice:hover {
+  border-color: #abc99966;
+}
+.run-panel .room-intro {
+  color: #d9d39b;
+  font-size: 11px;
+  border-bottom: 1px solid #81987933;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}

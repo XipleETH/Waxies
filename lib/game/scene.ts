@@ -50,10 +50,6 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     const shade = new THREE.Color(0x203b3b).multiplyScalar(0.72 + ((col*13+row*7)%9)*0.038);
     box(scene, col*2.5+(row%2)*1.25, row*1.7, -2.6, 2.42,1.61,0.24,mat(shade.getHex()));
   }
-  for(const x of [0.2, 12, 23.8]) {
-    box(scene,x,7,-1.7,0.95,14,1,stone,true);
-    for(const y of [1.3,6.7,12.8]) box(scene,x,y,-1.45,1.45,0.42,1.4,stone,true);
-  }
   // Portal marks the entry; the vault sits at the opposite end of the route.
   const portalMat = mat(0x72ffd2,{emissive:0x2cdca4,emissiveIntensity:1.6});
   box(scene,2.5,1.85,-1.3,1.55,2.1,0.3,mat(0x062d2b));
@@ -79,7 +75,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     for(const texture of roomTextures){texture.dispose();textures.splice(textures.indexOf(texture),1);}
     const geometryStart=geometries.length,materialStart=materials.length,textureStart=textures.length;
     const room=roomFor(level);const colors=level.theme==='amethyst'?[0x403c65,0x82749e]:level.theme==='ember'?[0x54372d,0xab7447]:[0x335d54,0x74a488];stone.color.setHex(colors[0]);top.color.setHex(colors[1]);
-    const blocks = [{x:room.w/2,y:room.floor-.65,w:room.w,h:1.3}, ...level.platforms, {x:room.left-.55,y:room.h/2,w:1.1,h:room.h}, {x:room.right+.55,y:room.h/2,w:1.1,h:room.h}];
+    const blocks = [{x:room.w/2,y:room.floor-.65,w:room.w,h:1.3}, ...level.platforms, ...(level.rules==='raid'?[{x:room.w/2,y:room.h-.25,w:room.w,h:.5}]:[]), {x:room.left-.55,y:room.h/2,w:1.1,h:room.h}, {x:room.right+.55,y:room.h/2,w:1.1,h:room.h}];
     blocks.forEach(p=>{
       box(roomGroup,p.x,p.y,0,p.w,p.h,2.6,stone,true);
       box(roomGroup,p.x,p.y+p.h/2,0.02,p.w+0.12,0.13,2.74,top,true);

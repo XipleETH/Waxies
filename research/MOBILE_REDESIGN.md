@@ -4,7 +4,7 @@
 
 Ultimate Chicken Horse combina construcción con ejecución de saltos y esquiva. Su editor permite compartir desafíos. Tomamos esa relación entre colocación, trayectoria y habilidad del jugador; WAXIS conserva su carrera automática y un solo botón. [Descripción del editor móvil, Noodlecake](https://noodlecake.com/games/ultimate-chicken-horse/).
 
-Clever Endeavour recomienda variedad de desafíos, espacio para correr y evitar cuellos de botella que puedan volverse imposibles. La torre usa plataformas alternadas, huecos amplios y tres estaciones separadas. El desafío viene del momento del salto y la trayectoria de ataque. Estas son decisiones propias a partir de la guía, no medidas copiadas de UCH. [Criterios oficiales de niveles destacados](https://cleverendeavourgames.freshdesk.com/support/solutions/articles/32000028928-how-do-i-get-my-level-featured-in-the-game-).
+Clever Endeavour recomienda variedad de desafíos, espacio para correr y evitar cuellos de botella que puedan volverse imposibles. Los ocho mapas alternan patios compactos, islas, bifurcaciones, pilares, puentes y balcones, con tres estaciones separadas. El desafío viene del momento del salto y la trayectoria de ataque. Estas son decisiones propias a partir de la guía, no medidas copiadas de UCH. [Criterios oficiales de niveles destacados](https://cleverendeavourgames.freshdesk.com/support/solutions/articles/32000028928-how-do-i-get-my-level-featured-in-the-game-).
 
 La regla de daño sigue la petición del usuario inspirada en King of Thieves: un contacto reinicia el intento y reduce la salud y el premio. Como referencia adicional, la ayuda del evento Living Totem describe reinicios tras trampas y salud decreciente; es una regla documentada de ese evento, no una afirmación sobre todos los modos de KoT. [Ayuda de Living Totem](https://zepto.helpshift.com/hc/pt/3-king-of-thieves/faq/1187-living-totem/?p=ios&s=dungeons).
 
@@ -12,7 +12,7 @@ Las habilidades originales siguen el catálogo de Axie Classic nivel 1 previamen
 
 ## Reglas del modo vertical
 
-- Sala de 12 × 22 unidades, siete plataformas alternadas y tres defensas.
+- Ocho geometrías de práctica, con alturas de 13 a 22 unidades, anchuras de 12 o 14 y tres defensas. El editor propio conserva su torre original de siete plataformas.
 - Carrera automática 5,2 unidades/s, salto 12,7, gravedad 24, simulación 120 Hz.
 - Salud 100. Cada contacto perjudicial resta 20 una sola vez y congela el intento durante 0,65 s antes de reconstruir su estado inicial.
 - Se conservan salud, contador de golpes, apariencia y distribución. Se reinician posición, proyectiles, charcos, energía y tiempos de las trampas.
@@ -53,7 +53,7 @@ Las 132 cartas conservan diez recetas físicas explícitas. Las reglas de equipo
 
 `route-solver.ts` realiza una búsqueda acotada: cada 12 fotogramas de simulación explora saltar o continuar, descarta cualquier trayectoria que reciba daño y conserva estados prometedores. El resultado contiene los fotogramas exactos de salto. `verifyRoute` vuelve a ejecutar esos datos desde cero, exige 100 de salud y llegar al cofre en el fotograma declarado.
 
-Se guardaron **52 configuraciones** sobre la misma torre, que cubren **las 132 partes con carta**. El modo aleatorio selecciona una de ellas y un Axie visual independiente. No mezcla libremente tres partes a la hora de jugar. El bot se usa fuera de la partida; el móvil solo reproduce una prueba ligera.
+Se guardaron **52 configuraciones sobre ocho mapas distintos**, que cubren **las 132 partes con carta**. Primero se selecciona el mapa entre los diferentes al anterior y después una combinación certificada de sus trampas. Así no se favorecen las salas con más variantes. Las miniaturas permiten elegir un mapa concreto. La apariencia de Axie se genera de forma independiente. No mezcla libremente tres partes a la hora de jugar. El bot se usa fuera de la partida; el móvil solo reproduce una prueba ligera.
 
 La demostración reproduce esos mismos saltos dentro del motor Three.js. Las repeticiones compartidas admiten hasta cinco minutos y 3000 pulsaciones; el buscador automático usa un horizonte menor. La versión de reglas forma parte del certificado. Si cambia la física o una distribución, la prueba debe repetirse. Una prueba exitosa demuestra existencia de una ruta; no sustituye pruebas con personas, medición de dificultad ni un servidor contra trampas.
 
@@ -63,4 +63,8 @@ El editor guarda borradores localmente, pero solo habilita compartir después de
 
 Chispas compra temas musgo/amatista/ámbar y adornos cristales/faroles. Es una moneda local de prototipo. Los pagos SLP, AXS, RON y USDC son una fase posterior y no están conectados.
 
-La partida usa toda el área disponible en vertical, con HUD arriba y salto al alcance del pulgar abajo. La cámara encaja la torre completa. `100dvh` y las áreas seguras evitan ocultar controles bajo barras del sistema. Fullscreen se solicita en el gesto de entrada cuando el navegador lo admite; el modo instalado usa manifiesto standalone y orientación portrait.
+La partida usa toda el área disponible en vertical, con HUD arriba y salto al alcance del pulgar abajo. La cámara encaja cada sala completa. Una pantalla vertical no obliga a alargar todas las mazmorras: las salas compactas dejan margen de fondo y ofrecen recorridos breves. `100dvh` y las áreas seguras evitan ocultar controles bajo barras del sistema. Fullscreen se solicita en el gesto de entrada cuando el navegador lo admite; el modo instalado usa manifiesto standalone y orientación portrait.
+
+## Diversidad espacial y comprobación
+
+Las plantillas editables están en `lib/game/practice-layouts.ts`. `courses:generate` reconstruye cada configuración desde su plantilla y vuelve a buscar la ruta. Las pruebas comprueban ocho geometrías diferentes, variedad de alturas y que el modo aleatorio no repita el mismo diseño en entradas consecutivas. Se descartaron combinaciones que cerraban el aterrizaje en los pilares y se asignaron a salas con más espacio; no se publican como rutas posibles por intuición.

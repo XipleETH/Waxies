@@ -41,6 +41,7 @@ import {
   type VerifiedCourse,
 } from '@/lib/game/route-proof';
 import coursesData from '@/lib/game/data/verified-courses.json';
+import { choosePracticeCourse } from '@/lib/game/practice-selection';
 import {
   Dialog,
   DialogContent,
@@ -54,6 +55,9 @@ const PartLibrary = dynamic(() =>
   import('./part-library').then((m) => m.PartLibrary),
 );
 const courses = coursesData as VerifiedCourse[];
+const layoutExamples = [
+  ...new Map(courses.map((c) => [c.level.layoutId ?? c.level.id, c])).values(),
+];
 export default function MobileApp() {
   const [profile, setProfile] = useState<MobileProfile>(newProfile),
     [ready, setReady] = useState(false),
@@ -65,7 +69,7 @@ export default function MobileApp() {
     [shared, setShared] = useState<VerifiedCourse | null>(null),
     [shareUrl, setShareUrl] = useState('');
   const profileRef = useRef(profile),
-    lastCourse = useRef(-1);
+    lastLayout = useRef<string | null>(null);
   useEffect(() => {
     let stopped = false;
     queueMicrotask(() => {
@@ -125,11 +129,10 @@ export default function MobileApp() {
     if (!document.fullscreenElement)
       void document.documentElement.requestFullscreen?.().catch(() => {});
   }
-  function practice() {
-    let i = Math.floor(Math.random() * courses.length);
-    if (i === lastCourse.current) i = (i + 1) % courses.length;
-    lastCourse.current = i;
-    launch({ ...courses[i], mode: 'practice', axie: null });
+  function practice(layoutId?: string) {
+    const course = choosePracticeCourse(courses, lastLayout.current, layoutId);
+    lastLayout.current = course.level.layoutId ?? course.level.id;
+    launch({ ...course, mode: 'practice', axie: null });
   }
   function exit() {
     setRun(null);
@@ -198,7 +201,7 @@ export default function MobileApp() {
         key={run.id}
         run={run}
         onExit={exit}
-        onNext={practice}
+        onNext={() => practice()}
         onClaim={(id, hp) => {
           if (!save(claimChispas(profileRef.current, id, hp)))
             throw Error('No se pudo guardar el premio.');
@@ -292,7 +295,7 @@ export default function MobileApp() {
             </div>
             <button
               className="practice-card"
-              onClick={practice}
+              onClick={() => practice()}
               disabled={!ready}
             >
               <div className="practice-top">
@@ -305,17 +308,83 @@ export default function MobileApp() {
               </div>
               <h2>Práctica aleatoria</h2>
               <p>
-                Un nuevo Axie. Una torre por conquistar.
+                Un nuevo Axie. Una sala por conquistar.
                 <br />
                 Aprende los poderes y recoge Chispas.
               </p>
               <div className="practice-bottom">
-                <span>{courses.length} pistas · 1 toque para saltar</span>
+                <span>
+                  {layoutExamples.length} mapas · {courses.length} combinaciones
+                </span>
                 <span className="play-circle">
                   <Play size={23} fill="currentColor" />
                 </span>
               </div>
             </button>
+            <div className="m-section-heading">
+              <h2>O elige una sala</h2>
+              <span>DESLIZA PARA EXPLORAR</span>
+            </div>
+            <div className="map-carousel" aria-label="Mapas de práctica">
+              {layoutExamples.map(({ level }) => (
+                <button
+                  className="map-choice"
+                  key={level.layoutId ?? level.id}
+                  onClick={() => practice(level.layoutId)}
+                  disabled={!ready}
+                >
+                  <svg
+                    viewBox={`0 0 ${level.room!.w} ${level.room!.h}`}
+                    aria-label={`Plano de ${level.name}`}
+                  >
+                    <rect
+                      x="0.5"
+                      y="0.5"
+                      width={level.room!.w - 1}
+                      height={level.room!.h - 1}
+                      rx=".4"
+                      fill={
+                        level.theme === 'amethyst'
+                          ? '#35344c'
+                          : level.theme === 'ember'
+                            ? '#49372b'
+                            : '#25463e'
+                      }
+                    />
+                    {level.platforms.map((p, i) => (
+                      <rect
+                        key={i}
+                        x={p.x - p.w / 2}
+                        y={level.room!.h - p.y - p.h / 2}
+                        width={p.w}
+                        height={p.h}
+                        fill={
+                          level.theme === 'amethyst'
+                            ? '#a69aca'
+                            : level.theme === 'ember'
+                              ? '#ceac74'
+                              : '#a3cdad'
+                        }
+                      />
+                    ))}
+                    <circle
+                      cx={level.chest.x}
+                      cy={level.room!.h - level.chest.y}
+                      r=".5"
+                      fill="#f1d178"
+                    />
+                    <circle
+                      cx={level.spawn.x}
+                      cy={level.room!.h - level.spawn.y}
+                      r=".25"
+                      fill="#c4eee0"
+                    />
+                  </svg>
+                  <strong>{level.name}</strong>
+                  <span>{level.difficulty}</span>
+                </button>
+              ))}
+            </div>
             <div className="lobby-duo">
               <button onClick={() => setScreen('vault')}>
                 <Castle size={25} />

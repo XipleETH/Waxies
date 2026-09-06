@@ -224,18 +224,18 @@ export default function Research() {
       <section>
         <h2>Reglas móviles: un contacto, un reinicio</h2>
         <p>
-          La nueva torre vertical usa carrera automática, un botón de salto y
-          tres defensas. Tocar una trampa, su ataque o un charco resta 20 de
-          salud y devuelve al inicio. El cofre entrega tantas Chispas como salud
+          Las salas verticales usan carrera automática, un botón de salto y tres
+          defensas. Tocar una trampa, su ataque o un charco resta 20 de salud y
+          devuelve al inicio. El cofre entrega tantas Chispas como salud
           restante. Los cuerpos de las trampas permanecen visibles durante todo
           el ciclo.
         </p>
         <p>
-          El modo Práctica elige entre 52 configuraciones que cubren las 132
-          cartas. Cada una tiene una repetición sin golpes comprobada con la
-          física real. Ver la ruta del bot no concede premios. Cambiar una
-          defensa propia invalida su prueba; solo puedes compartirla tras llegar
-          al cofre con 100 de salud.
+          El modo Práctica elige entre ocho mapas diferentes y 52 combinaciones
+          que cubren las 132 cartas. Cada una tiene una repetición sin golpes
+          comprobada con la física real. Ver la ruta del bot no concede premios.
+          Cambiar una defensa propia invalida su prueba; solo puedes compartirla
+          tras llegar al cofre con 100 de salud.
         </p>
         <p>
           Las cartas de Classic son la referencia, pero el combate por turnos y

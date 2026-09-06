@@ -233,6 +233,9 @@ export function MobileRun({
             </h1>
             {state.phase === 'ready' ? (
               <>
+                {run.mode === 'practice' ? (
+                  <p className="room-intro">{run.level.subtitle}</p>
+                ) : null}
                 <p>
                   Tu Axie corre solo. Toca para saltar y rebota en las paredes.
                   Cualquier contacto con una trampa reinicia el intento.
@@ -275,7 +278,7 @@ export function MobileRun({
                   onClick={start}
                 >
                   <Play size={19} fill="currentColor" />
-                  {loaded ? 'Entrar a la torre' : 'Preparando tu Axie…'}
+                  {loaded ? 'Entrar a la sala' : 'Preparando tu Axie…'}
                 </button>
                 {run.proof && loaded ? (
                   <button className="m-secondary" onClick={showProof}>

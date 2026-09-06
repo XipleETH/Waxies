@@ -1,10 +1,4799 @@
 [
   {
     "level": {
+      "id": "patio-0",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1308,
+      "actions": [
+        0,
+        108,
+        312,
+        456,
+        576,
+        708,
+        924,
+        1008,
+        1056,
+        1140,
+        1212
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "patio-1",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "blue-moon",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1066,
+      "actions": [
+        0,
+        120,
+        336,
+        468,
+        684,
+        780,
+        924,
+        1044
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "patio-2",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "jaguar",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "risky-beast",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "timber",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1068,
+      "actions": [
+        0,
+        120,
+        336,
+        468,
+        684,
+        768,
+        816,
+        900,
+        972
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "patio-3",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "kingfisher",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "tri-feather",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "eggshell",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1056,
+      "actions": [
+        0,
+        108,
+        324,
+        456,
+        672,
+        756,
+        804,
+        888,
+        960
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "patio-4",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "antenna",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "caterpillars",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1068,
+      "actions": [
+        0,
+        120,
+        336,
+        468,
+        684,
+        768,
+        816,
+        900,
+        972
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "patio-5",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "rose-bud",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "strawberry-shortcake",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "cactus",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1056,
+      "actions": [
+        0,
+        108,
+        324,
+        456,
+        672,
+        756,
+        804,
+        888,
+        960
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "patio-6",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "incisor",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "bumpy",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "toothless-bite",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1056,
+      "actions": [
+        0,
+        108,
+        324,
+        456,
+        672,
+        756,
+        804,
+        888,
+        960
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "islands-0",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 850,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        336,
+        456,
+        684,
+        816
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "islands-1",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "sponge",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "perch",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "islands-2",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "furball",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "little-branch",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "imp",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "islands-3",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "cuckoo",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "trump",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "kestrel",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "islands-4",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "pliers",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "parasite",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "leaf-bug",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "islands-5",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "watermelon",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "serious",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "zigzag",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "islands-6",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "kotaro",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "razor-bite",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "tiny-turtle",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-0",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1125,
+      "actions": [
+        0,
+        48,
+        108,
+        156,
+        228,
+        276,
+        324,
+        348,
+        408,
+        588,
+        696,
+        804,
+        900,
+        924,
+        1020,
+        1044,
+        1104
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-1",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "teal-shell",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "clamshell",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-2",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "pocky",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "dual-blade",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1110,
+      "actions": [
+        0,
+        48,
+        144,
+        216,
+        264,
+        312,
+        336,
+        396,
+        576,
+        684,
+        792,
+        888,
+        912,
+        1044
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-3",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "wing-horn",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "feather-spear",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "doubletalk",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1137,
+      "actions": [
+        0,
+        48,
+        132,
+        180,
+        228,
+        288,
+        336,
+        360,
+        420,
+        600,
+        708,
+        816,
+        912,
+        936,
+        1032,
+        1056,
+        1116
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-4",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "mosquito",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "pincer",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "cute-bunny",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-5",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "herbivore",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "silence-whisper",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-6",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "wall-gecko",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "iguana",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "tiny-dino",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-extra-11",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "arco",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "nut-cracker-mouth",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "goda",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-extra-19",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "peace-maker",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "hungry-bird",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "little-owl",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1113,
+      "actions": [
+        0,
+        48,
+        144,
+        216,
+        264,
+        312,
+        336,
+        396,
+        576,
+        684,
+        792,
+        888,
+        912,
+        1008,
+        1032,
+        1092
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-extra-27",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "square-teeth",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "ant",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "twin-tail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "forks-extra-35",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "cattail",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "hatsune",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "yam",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "chimneys-0",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 4,
+          "y": 14.5,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 932,
+      "actions": [
+        60,
+        72,
+        276,
+        324,
+        396,
+        492,
+        756,
+        840
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "chimneys-1",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 4,
+          "y": 14.5,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "shoal-star",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 908,
+      "actions": [
+        24,
+        72,
+        120,
+        168,
+        372,
+        396,
+        468,
+        732,
+        816
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "chimneys-6",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 4,
+          "y": 14.5,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "snake-jar",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "gila",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 920,
+      "actions": [
+        36,
+        84,
+        132,
+        180,
+        384,
+        408,
+        480,
+        744,
+        828
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "bridge-0",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "bridge-1",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "lam",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "catfish",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "risky-fish",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "bridge-2",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "axie-kiss",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "cottontail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "bridge-3",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "swallow",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "feather-fan",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "the-last-one",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "bridge-4",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "fish-snack",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "gravel-ant",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "pupae",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "bridge-5",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "potato-leaf",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "hot-butt",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "bone-sail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "balconies-0",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 754,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "balconies-1",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "koi",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "nimo",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 778,
+      "actions": [
+        12,
+        180,
+        216,
+        324,
+        420,
+        432,
+        468,
+        600,
+        696
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "balconies-2",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "rice",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "shiba",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "hare",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 754,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "balconies-3",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "cloud",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "granma-s-fan",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "post-fight",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 754,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "balconies-4",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "thorny-caterpillar",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "turnip",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "shiitake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 754,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "balconies-5",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "tri-spikes",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "green-thorns",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "indian-star",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 742,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        564,
+        660
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "steps-0",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "steps-1",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "tadpole",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "ranchu",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "navaga",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "steps-2",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "nut-cracker-tail",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "gerbil",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "balloon",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "steps-3",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "snail-shell",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "garish-worm",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "buzz-buzz",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "steps-4",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "bidens",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "watering-can",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "mint",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "steps-5",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "red-ear",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "croc",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "unko",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
       "id": "tower-0",
-      "name": "Raíces despiertas",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Aprendiz",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
       "rules": "raid",
       "room": {
         "w": 12,
@@ -70,24 +4859,25 @@
           "x": 3.4,
           "y": 6.55,
           "part": "carrot",
-          "phase": 0,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 0
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "lagging",
-          "phase": 1.5,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 1.5
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "grass-snake",
-          "phase": 3,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 3
         }
-      ]
+      ],
+      "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
@@ -113,1565 +4903,10 @@
   {
     "level": {
       "id": "tower-1",
-      "name": "El salto preciso",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Aprendiz",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "carrot",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "thorny-caterpillar",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "lagging",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1610,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        636,
-        816,
-        900,
-        1020,
-        1032,
-        1152,
-        1272,
-        1368,
-        1488,
-        1584
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "tower-2",
-      "name": "Jardín de veneno",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Aprendiz",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "grass-snake",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "carrot",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "thorny-caterpillar",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "tower-3",
-      "name": "Cuernos en marcha",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Desafío",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "lagging",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "grass-snake",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "carrot",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1626,
-      "actions": [
-        0,
-        240,
-        336,
-        552,
-        672,
-        756,
-        768,
-        852,
-        996,
-        1104,
-        1224,
-        1320,
-        1476,
-        1596
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "tower-4",
-      "name": "La ronda de espinas",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Desafío",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "thorny-caterpillar",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "carrot",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "lagging",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1818,
-      "actions": [
-        0,
-        252,
-        276,
-        384,
-        468,
-        528,
-        744,
-        864,
-        948,
-        960,
-        1044,
-        1200,
-        1296,
-        1416,
-        1512,
-        1668,
-        1788
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "tower-5",
-      "name": "Lluvia de zanahorias",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Desafío",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "carrot",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "carrot",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "grass-snake",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "tower-6",
-      "name": "Carrera de cuernos",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Desafío",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "lagging",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "lagging",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "thorny-caterpillar",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "tower-7",
-      "name": "El último rebote",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Desafío",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "grass-snake",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "thorny-caterpillar",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "carrot",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1674,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        636,
-        816,
-        900,
-        1056,
-        1152,
-        1272,
-        1368,
-        1524,
-        1644
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-0",
-      "name": "Hermit · Goldfish",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "hermit",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "blue-moon",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "goldfish",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-1",
-      "name": "Sponge · Perch",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "sponge",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "anemone-back",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "perch",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1698,
-      "actions": [
-        0,
-        240,
-        336,
-        516,
-        600,
-        660,
-        840,
-        924,
-        1080,
-        1176,
-        1296,
-        1392,
-        1548,
-        1668
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-2",
-      "name": "Babylonia · Clamshell",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "babylonia",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "teal-shell",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "clamshell",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1698,
-      "actions": [
-        0,
-        240,
-        336,
-        516,
-        600,
-        660,
-        840,
-        924,
-        1080,
-        1176,
-        1296,
-        1392,
-        1548,
-        1668
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-3",
-      "name": "Anemone · Shoal Star",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "anemone-horn",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "oranda",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "shoal-star",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-4",
-      "name": "Lam · Risky Fish",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "lam",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "catfish",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "risky-fish",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1698,
-      "actions": [
-        0,
-        240,
-        336,
-        516,
-        600,
-        660,
-        840,
-        924,
-        1080,
-        1176,
-        1296,
-        1392,
-        1548,
-        1668
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-5",
-      "name": "Piranha · Nimo",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "piranha",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "koi",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "nimo",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-6",
-      "name": "Tadpole · Navaga",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "tadpole",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "ranchu",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "navaga",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-7",
-      "name": "Shrimp · Hero",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
       "rules": "raid",
       "room": {
         "w": 12,
@@ -1737,24 +4972,25 @@
           "x": 3.4,
           "y": 6.55,
           "part": "shrimp",
-          "phase": 0,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 0
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "ronin",
-          "phase": 1.5,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 1.5
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "hero",
-          "phase": 3,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 3
         }
-      ]
+      ],
+      "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
@@ -1778,790 +5014,11 @@
   },
   {
     "level": {
-      "id": "arsenal-8",
-      "name": "Jaguar · Timber",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "jaguar",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "risky-beast",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "timber",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1602,
-      "actions": [
-        0,
-        228,
-        324,
-        528,
-        648,
-        732,
-        744,
-        828,
-        984,
-        1080,
-        1200,
-        1296,
-        1452,
-        1572
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-9",
-      "name": "Furball · Imp",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "furball",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "little-branch",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "imp",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1602,
-      "actions": [
-        0,
-        252,
-        348,
-        528,
-        648,
-        732,
-        744,
-        828,
-        984,
-        1080,
-        1200,
-        1296,
-        1452,
-        1572
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-10",
-      "name": "Merry · Dual Blade",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "merry",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "pocky",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "dual-blade",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-11",
-      "name": "Arco · Goda",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "arco",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "nut-cracker-mouth",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "goda",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1806,
-      "actions": [
-        0,
-        228,
-        324,
-        564,
-        660,
-        720,
-        912,
-        996,
-        1116,
-        1128,
-        1248,
-        1332,
-        1344,
-        1428,
-        1488,
-        1656,
-        1764
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-12",
-      "name": "Axie Kiss · Cottontail",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "axie-kiss",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "confident",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "cottontail",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-13",
-      "name": "Rice · Hare",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "rice",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "shiba",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "hare",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-14",
-      "name": "Nut Cracker · Balloon",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "nut-cracker-tail",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "gerbil",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "balloon",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1164,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-15",
-      "name": "Cupid · Pigeon Post",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
+      "id": "tower-2",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
       "rules": "raid",
       "room": {
         "w": 12,
@@ -2627,24 +5084,25 @@
           "x": 3.4,
           "y": 6.55,
           "part": "cupid",
-          "phase": 0,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 0
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "raven",
-          "phase": 1.5,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 1.5
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "pigeon-post",
-          "phase": 3,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 3
         }
-      ]
+      ],
+      "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
@@ -2669,789 +5127,11 @@
   },
   {
     "level": {
-      "id": "arsenal-16",
-      "name": "Kingfisher · Eggshell",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "kingfisher",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "tri-feather",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "eggshell",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-17",
-      "name": "Cuckoo · Kestrel",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "cuckoo",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "trump",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "kestrel",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1164,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-18",
-      "name": "Wing Horn · Doubletalk",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "wing-horn",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "feather-spear",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "doubletalk",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-19",
-      "name": "Peace Maker · Little Owl",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "peace-maker",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "hungry-bird",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "little-owl",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1164,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-20",
-      "name": "Swallow · The Last One",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "swallow",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "feather-fan",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "the-last-one",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1806,
-      "actions": [
-        36,
-        264,
-        360,
-        564,
-        660,
-        720,
-        912,
-        996,
-        1152,
-        1248,
-        1332,
-        1344,
-        1428,
-        1488,
-        1656,
-        1776
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-21",
-      "name": "Cloud · Post Fight",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "cloud",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "granma-s-fan",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "post-fight",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-22",
-      "name": "Snail Shell · Buzz Buzz",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "snail-shell",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "garish-worm",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "buzz-buzz",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-23",
-      "name": "Sandal · Spiky Wing",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
+      "id": "tower-3",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
       "rules": "raid",
       "room": {
         "w": 12,
@@ -3517,24 +5197,25 @@
           "x": 3.4,
           "y": 6.55,
           "part": "sandal",
-          "phase": 0,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 0
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "scarab",
-          "phase": 1.5,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 1.5
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "spiky-wing",
-          "phase": 3,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 3
         }
-      ]
+      ],
+      "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
@@ -3559,788 +5240,11 @@
   },
   {
     "level": {
-      "id": "arsenal-24",
-      "name": "Lagging · Caterpillars",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "lagging",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "antenna",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "caterpillars",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-25",
-      "name": "Pliers · Leaf Bug",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "pliers",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "parasite",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "leaf-bug",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-26",
-      "name": "Mosquito · Cute Bunny",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "mosquito",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "pincer",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "cute-bunny",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1698,
-      "actions": [
-        0,
-        240,
-        336,
-        516,
-        600,
-        660,
-        840,
-        924,
-        1080,
-        1176,
-        1296,
-        1392,
-        1548,
-        1668
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-27",
-      "name": "Square Teeth · Twin Tail",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "square-teeth",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "ant",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "twin-tail",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-28",
-      "name": "Fish Snack · Pupae",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "fish-snack",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "gravel-ant",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "pupae",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-29",
-      "name": "Thorny Caterpillar · Shiitake",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "thorny-caterpillar",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "turnip",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "shiitake",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1878,
-      "actions": [
-        0,
-        252,
-        276,
-        384,
-        516,
-        696,
-        828,
-        1020,
-        1104,
-        1260,
-        1356,
-        1476,
-        1572,
-        1728,
-        1848
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-30",
-      "name": "Bidens · Mint",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "bidens",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "watering-can",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "mint",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1758,
-      "actions": [
-        0,
-        228,
-        324,
-        564,
-        660,
-        720,
-        900,
-        984,
-        1140,
-        1236,
-        1356,
-        1452,
-        1608,
-        1728
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-31",
-      "name": "Pumpkin · Beech",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
+      "id": "tower-4",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
       "rules": "raid",
       "room": {
         "w": 12,
@@ -4406,248 +5310,25 @@
           "x": 3.4,
           "y": 6.55,
           "part": "pumpkin",
-          "phase": 0,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 0
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "bamboo-shoot",
-          "phase": 1.5,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 1.5
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "beech",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1782,
-      "actions": [
-        36,
-        204,
-        216,
-        300,
-        360,
-        576,
-        684,
-        744,
-        924,
-        1008,
-        1164,
-        1260,
-        1380,
-        1476,
-        1632,
-        1752
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-32",
-      "name": "Rose Bud · Cactus",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
+          "patrol": 0,
+          "phase": 3
         }
       ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "rose-bud",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "strawberry-shortcake",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "cactus",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-33",
-      "name": "Watermelon · Zigzag",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "watermelon",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "serious",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "zigzag",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
+      "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
@@ -4671,568 +5352,11 @@
   },
   {
     "level": {
-      "id": "arsenal-34",
-      "name": "Herbivore · Carrot",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "herbivore",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "silence-whisper",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "carrot",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-35",
-      "name": "Cattail · Yam",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "cattail",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "hatsune",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "yam",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1926,
-      "actions": [
-        0,
-        108,
-        288,
-        420,
-        612,
-        696,
-        756,
-        936,
-        1020,
-        1140,
-        1152,
-        1236,
-        1296,
-        1476,
-        1608,
-        1776,
-        1896
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-36",
-      "name": "Potato Leaf · Bone Sail",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "potato-leaf",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "hot-butt",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "bone-sail",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1698,
-      "actions": [
-        0,
-        240,
-        336,
-        516,
-        600,
-        660,
-        840,
-        924,
-        1080,
-        1176,
-        1296,
-        1392,
-        1548,
-        1668
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-37",
-      "name": "Tri Spikes · Indian Star",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "tri-spikes",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "green-thorns",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "indian-star",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-38",
-      "name": "Red Ear · Unko",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "red-ear",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "croc",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "unko",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-39",
-      "name": "Scaly Spear · Scaly Spoon",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
+      "id": "tower-5",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
       "rules": "raid",
       "room": {
         "w": 12,
@@ -5298,490 +5422,43 @@
           "x": 3.4,
           "y": 6.55,
           "part": "scaly-spear",
-          "phase": 0,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 0
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "cerastes",
-          "phase": 1.5,
-          "patrol": 0
+          "patrol": 0,
+          "phase": 1.5
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "scaly-spoon",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1806,
-      "actions": [
-        0,
-        240,
-        336,
-        576,
-        672,
-        732,
-        912,
-        996,
-        1140,
-        1248,
-        1332,
-        1344,
-        1428,
-        1488,
-        1656,
-        1752
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-40",
-      "name": "Incisor · Toothless Bite",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
+          "patrol": 0,
+          "phase": 3
         }
       ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "incisor",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "bumpy",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "toothless-bite",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
+      "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1806,
-      "actions": [
-        0,
-        108,
-        300,
-        432,
-        624,
-        708,
-        768,
-        948,
-        1032,
-        1176,
-        1284,
-        1404,
-        1500,
-        1656,
-        1776
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-41",
-      "name": "Kotaro · Tiny Turtle",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "kotaro",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "razor-bite",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "tiny-turtle",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1698,
-      "actions": [
-        0,
-        240,
-        336,
-        516,
-        600,
-        660,
-        840,
-        924,
-        1080,
-        1176,
-        1296,
-        1392,
-        1548,
-        1668
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-42",
-      "name": "Wall Gecko · Tiny Dino",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "wall-gecko",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "iguana",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "tiny-dino",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
+      "frames": 1674,
       "actions": [
         0,
         228,
         324,
         504,
-        624,
-        708,
-        720,
-        804,
-        960,
+        636,
+        816,
+        900,
         1056,
-        1176,
+        1152,
         1272,
-        1428,
-        1548
-      ]
-    }
-  },
-  {
-    "level": {
-      "id": "arsenal-43",
-      "name": "Snake Jar · Grass Snake",
-      "subtitle": "Llega al cofre sin tocar una defensa",
-      "difficulty": "Arsenal",
-      "rules": "raid",
-      "room": {
-        "w": 12,
-        "h": 22,
-        "left": 1,
-        "right": 11,
-        "floor": 1
-      },
-      "spawn": {
-        "x": 2.2,
-        "y": 1.38
-      },
-      "chest": {
-        "x": 8.8,
-        "y": 20.28
-      },
-      "platforms": [
-        {
-          "x": 8,
-          "y": 3.1,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 5.75,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 8.4,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 11.049999999999999,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 13.7,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 4,
-          "y": 16.35,
-          "w": 6,
-          "h": 0.55
-        },
-        {
-          "x": 8,
-          "y": 19,
-          "w": 6,
-          "h": 0.55
-        }
-      ],
-      "traps": [
-        {
-          "x": 3.4,
-          "y": 6.55,
-          "part": "snake-jar",
-          "phase": 0,
-          "patrol": 0
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "gila",
-          "phase": 1.5,
-          "patrol": 0
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "grass-snake",
-          "phase": 3,
-          "patrol": 0
-        }
-      ]
-    },
-    "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1578,
-      "actions": [
-        0,
-        228,
-        324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
+        1368,
+        1524,
+        1644
       ]
     }
   }

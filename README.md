@@ -20,7 +20,7 @@ npm run build
 ## Jugar
 
 - Lobby con Práctica aleatoria, Refugio, Bazar y Mi Axie.
-- 52 configuraciones de torre vertical que cubren las 132 cartas Classic. El azar elige una configuración certificada y una apariencia de Axie; no mezcla ataques sin comprobar.
+- Ocho mapas con geometrías diferentes: patio, islas, jardín partido, chimeneas, puente, balcones, escalera rota y torre. Sus 52 combinaciones certificadas cubren las 132 cartas Classic. El azar cambia de mapa entre entradas; las miniaturas permiten elegir una sala concreta.
 - El Axie corre solo. Tocar, Espacio o Flecha arriba salta. Saltar contra una pared permite rebotar. P/Escape pausa y R vuelve al inicio conservando salud.
 - Cualquier contacto dañino con una defensa, proyectil o charco reinicia el intento y resta 20 de salud. La pista, el Axie y el ciclo inicial se conservan. Cinco golpes agotan el premio.
 - El cofre entrega tantas Chispas como salud restante, hasta 100. La repetición del bot no concede premios.
