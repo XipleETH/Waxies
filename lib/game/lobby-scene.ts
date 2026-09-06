@@ -207,9 +207,10 @@ export function createLobbyScene(
   appearance.parts.forEach((id, i) => {
     const part = PARTS[id];
     if (!part) return;
-    const x = [-1.5, 0, 1.5][i],
-      y = [0.75, 1.7, 0.75][i],
-      z = i === 1 ? -2.1 : -0.85;
+    const compact = appearance.parts.length > 3;
+    const x = compact ? [-1.6, -0.65, 0.65, 1.6][i % 4] : [-1.5, 0, 1.5][i],
+      y = compact ? (i < 4 ? 0.75 : 1.7) : [0.75, 1.7, 0.75][i],
+      z = compact ? (i < 4 ? -0.85 : -2.1) : i === 1 ? -2.1 : -0.85;
     const base = mesh(new T.CylinderGeometry(0.42, 0.5, y, 7), stone);
     base.position.set(x, y / 2, z);
     const cap = mesh(new T.CylinderGeometry(0.47, 0.47, 0.1, 7), trim);
@@ -222,6 +223,7 @@ export function createLobbyScene(
     const sprite = new T.Sprite(material);
     sprite.scale.set(0.72, 0.62, 1);
     sprite.position.set(x, y + 0.44, z);
+    sprite.userData.baseY = y + 0.44;
     scene.add(sprite);
     defenseSprites.push(sprite);
   });
@@ -325,8 +327,7 @@ export function createLobbyScene(
       );
       defenseSprites.forEach(
         (s, i) =>
-          (s.position.y =
-            [1.19, 2.14, 1.19][i] + Math.sin(now * 0.001 + i) * 0.035),
+          (s.position.y = s.userData.baseY + Math.sin(now * 0.001 + i) * 0.035),
       );
     }
     renderer.render(scene, camera);

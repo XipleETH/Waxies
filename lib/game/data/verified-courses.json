@@ -66,7 +66,7 @@
         {
           "x": 8.9,
           "y": 9.05,
-          "part": "grass-snake",
+          "part": "tri-feather",
           "patrol": 0,
           "phase": 3
         }
@@ -151,14 +151,14 @@
         {
           "x": 2.4,
           "y": 6.45,
-          "part": "blue-moon",
+          "part": "oranda",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 8.9,
           "y": 9.05,
-          "part": "goldfish",
+          "part": "piranha",
           "patrol": 0,
           "phase": 3
         }
@@ -240,14 +240,14 @@
         {
           "x": 2.4,
           "y": 6.45,
-          "part": "risky-beast",
+          "part": "oranda",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 8.9,
           "y": 9.05,
-          "part": "timber",
+          "part": "feather-fan",
           "patrol": 0,
           "phase": 3
         }
@@ -330,7 +330,7 @@
         {
           "x": 2.4,
           "y": 6.45,
-          "part": "tri-feather",
+          "part": "granma-s-fan",
           "patrol": 0,
           "phase": 1.5
         },
@@ -420,14 +420,14 @@
         {
           "x": 2.4,
           "y": 6.45,
-          "part": "antenna",
+          "part": "blue-moon",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 8.9,
           "y": 9.05,
-          "part": "caterpillars",
+          "part": "tadpole",
           "patrol": 0,
           "phase": 3
         }
@@ -510,14 +510,14 @@
         {
           "x": 2.4,
           "y": 6.45,
-          "part": "strawberry-shortcake",
+          "part": "confident",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 8.9,
           "y": 9.05,
-          "part": "cactus",
+          "part": "pupae",
           "patrol": 0,
           "phase": 3
         }
@@ -600,7 +600,7 @@
         {
           "x": 2.4,
           "y": 6.45,
-          "part": "bumpy",
+          "part": "hermit",
           "patrol": 0,
           "phase": 1.5
         },
@@ -709,7 +709,7 @@
         {
           "x": 4.2,
           "y": 12.8,
-          "part": "grass-snake",
+          "part": "tri-feather",
           "patrol": 0,
           "phase": 3
         }
@@ -803,14 +803,14 @@
         {
           "x": 2,
           "y": 10.6,
-          "part": "anemone-back",
+          "part": "babylonia",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4.2,
           "y": 12.8,
-          "part": "perch",
+          "part": "piranha",
           "patrol": 0,
           "phase": 3
         }
@@ -911,7 +911,7 @@
         {
           "x": 4.2,
           "y": 12.8,
-          "part": "imp",
+          "part": "lam",
           "patrol": 0,
           "phase": 3
         }
@@ -1005,14 +1005,14 @@
         {
           "x": 2,
           "y": 10.6,
-          "part": "trump",
+          "part": "goldfish",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4.2,
           "y": 12.8,
-          "part": "kestrel",
+          "part": "shrimp",
           "patrol": 0,
           "phase": 3
         }
@@ -1106,14 +1106,14 @@
         {
           "x": 2,
           "y": 10.6,
-          "part": "parasite",
+          "part": "blue-moon",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4.2,
           "y": 12.8,
-          "part": "leaf-bug",
+          "part": "confident",
           "patrol": 0,
           "phase": 3
         }
@@ -1214,7 +1214,7 @@
         {
           "x": 4.2,
           "y": 12.8,
-          "part": "zigzag",
+          "part": "anemone-back",
           "patrol": 0,
           "phase": 3
         }
@@ -1308,14 +1308,14 @@
         {
           "x": 2,
           "y": 10.6,
-          "part": "razor-bite",
+          "part": "anemone-back",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4.2,
           "y": 12.8,
-          "part": "tiny-turtle",
+          "part": "babylonia",
           "patrol": 0,
           "phase": 3
         }
@@ -1434,7 +1434,7 @@
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "grass-snake",
+          "part": "tri-feather",
           "patrol": 0,
           "phase": 3
         }
@@ -1555,14 +1555,14 @@
         {
           "x": 5,
           "y": 6.3,
-          "part": "teal-shell",
+          "part": "anemone-back",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "clamshell",
+          "part": "lam",
           "patrol": 0,
           "phase": 3
         }
@@ -1678,14 +1678,14 @@
         {
           "x": 5,
           "y": 6.3,
-          "part": "pocky",
+          "part": "goldfish",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "dual-blade",
+          "part": "lam",
           "patrol": 0,
           "phase": 3
         }
@@ -1803,7 +1803,7 @@
         {
           "x": 5,
           "y": 6.3,
-          "part": "feather-spear",
+          "part": "goldfish",
           "patrol": 0,
           "phase": 1.5
         },
@@ -1931,14 +1931,14 @@
         {
           "x": 5,
           "y": 6.3,
-          "part": "pincer",
+          "part": "anemone-back",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "cute-bunny",
+          "part": "babylonia",
           "patrol": 0,
           "phase": 3
         }
@@ -2054,14 +2054,14 @@
         {
           "x": 5,
           "y": 6.3,
-          "part": "silence-whisper",
+          "part": "cottontail",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "carrot",
+          "part": "blue-moon",
           "patrol": 0,
           "phase": 3
         }
@@ -2177,14 +2177,14 @@
         {
           "x": 5,
           "y": 6.3,
-          "part": "iguana",
+          "part": "blue-moon",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "tiny-dino",
+          "part": "piranha",
           "patrol": 0,
           "phase": 3
         }
@@ -2307,7 +2307,7 @@
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "goda",
+          "part": "blue-moon",
           "patrol": 0,
           "phase": 3
         }
@@ -2423,14 +2423,14 @@
         {
           "x": 5,
           "y": 6.3,
-          "part": "hungry-bird",
+          "part": "goldfish",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "little-owl",
+          "part": "shrimp",
           "patrol": 0,
           "phase": 3
         }
@@ -2557,7 +2557,7 @@
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "twin-tail",
+          "part": "furball",
           "patrol": 0,
           "phase": 3
         }
@@ -2673,14 +2673,14 @@
         {
           "x": 5,
           "y": 6.3,
-          "part": "hatsune",
+          "part": "hermit",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 13.8,
-          "part": "yam",
+          "part": "babylonia",
           "patrol": 0,
           "phase": 3
         }
@@ -2767,7 +2767,7 @@
         {
           "x": 5.8,
           "y": 15.3,
-          "part": "grass-snake",
+          "part": "tri-feather",
           "patrol": 0,
           "phase": 3
         }
@@ -2843,14 +2843,14 @@
         {
           "x": 9.25,
           "y": 12.9,
-          "part": "oranda",
+          "part": "blue-moon",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 5.8,
           "y": 15.3,
-          "part": "shoal-star",
+          "part": "lam",
           "patrol": 0,
           "phase": 3
         }
@@ -2927,14 +2927,14 @@
         {
           "x": 9.25,
           "y": 12.9,
-          "part": "gila",
+          "part": "blue-moon",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 5.8,
           "y": 15.3,
-          "part": "grass-snake",
+          "part": "babylonia",
           "patrol": 0,
           "phase": 3
         }
@@ -3030,7 +3030,7 @@
         {
           "x": 9.7,
           "y": 8.8,
-          "part": "grass-snake",
+          "part": "tri-feather",
           "patrol": 0,
           "phase": 3
         }
@@ -3118,14 +3118,14 @@
         {
           "x": 4.5,
           "y": 8.8,
-          "part": "catfish",
+          "part": "anemone-back",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 8.8,
-          "part": "risky-fish",
+          "part": "babylonia",
           "patrol": 0,
           "phase": 3
         }
@@ -3213,14 +3213,14 @@
         {
           "x": 4.5,
           "y": 8.8,
-          "part": "confident",
+          "part": "cottontail",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 8.8,
-          "part": "cottontail",
+          "part": "cuckoo",
           "patrol": 0,
           "phase": 3
         }
@@ -3308,14 +3308,14 @@
         {
           "x": 4.5,
           "y": 8.8,
-          "part": "feather-fan",
+          "part": "hermit",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 8.8,
-          "part": "the-last-one",
+          "part": "oranda",
           "patrol": 0,
           "phase": 3
         }
@@ -3403,14 +3403,14 @@
         {
           "x": 4.5,
           "y": 8.8,
-          "part": "gravel-ant",
+          "part": "blue-moon",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 8.8,
-          "part": "pupae",
+          "part": "cactus",
           "patrol": 0,
           "phase": 3
         }
@@ -3498,14 +3498,14 @@
         {
           "x": 4.5,
           "y": 8.8,
-          "part": "hot-butt",
+          "part": "anemone-back",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 9.7,
           "y": 8.8,
-          "part": "bone-sail",
+          "part": "merry",
           "patrol": 0,
           "phase": 3
         }
@@ -3612,7 +3612,7 @@
         {
           "x": 4.2,
           "y": 15.5,
-          "part": "grass-snake",
+          "part": "tri-feather",
           "patrol": 0,
           "phase": 3
         }
@@ -3720,7 +3720,7 @@
         {
           "x": 4.2,
           "y": 15.5,
-          "part": "nimo",
+          "part": "anemone-back",
           "patrol": 0,
           "phase": 3
         }
@@ -3821,14 +3821,14 @@
         {
           "x": 7.8,
           "y": 13.2,
-          "part": "shiba",
+          "part": "goldfish",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4.2,
           "y": 15.5,
-          "part": "hare",
+          "part": "oranda",
           "patrol": 0,
           "phase": 3
         }
@@ -3929,14 +3929,14 @@
         {
           "x": 7.8,
           "y": 13.2,
-          "part": "granma-s-fan",
+          "part": "tri-feather",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4.2,
           "y": 15.5,
-          "part": "post-fight",
+          "part": "oranda",
           "patrol": 0,
           "phase": 3
         }
@@ -4044,7 +4044,7 @@
         {
           "x": 4.2,
           "y": 15.5,
-          "part": "shiitake",
+          "part": "confident",
           "patrol": 0,
           "phase": 3
         }
@@ -4145,14 +4145,14 @@
         {
           "x": 7.8,
           "y": 13.2,
-          "part": "green-thorns",
+          "part": "granma-s-fan",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4.2,
           "y": 15.5,
-          "part": "indian-star",
+          "part": "merry",
           "patrol": 0,
           "phase": 3
         }
@@ -4254,7 +4254,7 @@
         {
           "x": 4,
           "y": 3.3,
-          "part": "grass-snake",
+          "part": "tri-feather",
           "patrol": 0,
           "phase": 3
         }
@@ -4349,14 +4349,14 @@
         {
           "x": 2.5,
           "y": 11.6,
-          "part": "ranchu",
+          "part": "anemone-horn",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4,
           "y": 3.3,
-          "part": "navaga",
+          "part": "goldfish",
           "patrol": 0,
           "phase": 3
         }
@@ -4451,14 +4451,14 @@
         {
           "x": 2.5,
           "y": 11.6,
-          "part": "gerbil",
+          "part": "goldfish",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4,
           "y": 3.3,
-          "part": "balloon",
+          "part": "anemone-horn",
           "patrol": 0,
           "phase": 3
         }
@@ -4553,14 +4553,14 @@
         {
           "x": 2.5,
           "y": 11.6,
-          "part": "garish-worm",
+          "part": "anemone-horn",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4,
           "y": 3.3,
-          "part": "buzz-buzz",
+          "part": "goda",
           "patrol": 0,
           "phase": 3
         }
@@ -4655,14 +4655,14 @@
         {
           "x": 2.5,
           "y": 11.6,
-          "part": "watering-can",
+          "part": "merry",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4,
           "y": 3.3,
-          "part": "mint",
+          "part": "confident",
           "patrol": 0,
           "phase": 3
         }
@@ -4757,14 +4757,14 @@
         {
           "x": 2.5,
           "y": 11.6,
-          "part": "croc",
+          "part": "oranda",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 4,
           "y": 3.3,
-          "part": "unko",
+          "part": "tadpole",
           "patrol": 0,
           "phase": 3
         }
@@ -4872,7 +4872,7 @@
         {
           "x": 3.4,
           "y": 17.15,
-          "part": "grass-snake",
+          "part": "tri-feather",
           "patrol": 0,
           "phase": 3
         }
@@ -4985,7 +4985,7 @@
         {
           "x": 3.4,
           "y": 17.15,
-          "part": "hero",
+          "part": "babylonia",
           "patrol": 0,
           "phase": 3
         }
@@ -5090,14 +5090,14 @@
         {
           "x": 5.8,
           "y": 11.85,
-          "part": "raven",
+          "part": "oranda",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 3.4,
           "y": 17.15,
-          "part": "pigeon-post",
+          "part": "goda",
           "patrol": 0,
           "phase": 3
         }
@@ -5203,14 +5203,14 @@
         {
           "x": 5.8,
           "y": 11.85,
-          "part": "scarab",
+          "part": "oranda",
           "patrol": 0,
           "phase": 1.5
         },
         {
           "x": 3.4,
           "y": 17.15,
-          "part": "spiky-wing",
+          "part": "goda",
           "patrol": 0,
           "phase": 3
         }
@@ -5323,7 +5323,7 @@
         {
           "x": 3.4,
           "y": 17.15,
-          "part": "beech",
+          "part": "lam",
           "patrol": 0,
           "phase": 3
         }
@@ -5428,7 +5428,6008 @@
         {
           "x": 5.8,
           "y": 11.85,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "lam",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1674,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        636,
+        816,
+        900,
+        1056,
+        1152,
+        1272,
+        1368,
+        1524,
+        1644
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-perch",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "lam",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "perch",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-teal-shell",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "teal-shell",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "lam",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-clamshell",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "lam",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "clamshell",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-shoal-star",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 4,
+          "y": 14.5,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "tadpole",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "blue-moon",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "shoal-star",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 908,
+      "actions": [
+        24,
+        72,
+        120,
+        168,
+        372,
+        396,
+        468,
+        732,
+        816
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-catfish",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "catfish",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-risky-fish",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "risky-fish",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-nimo",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "nimo",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 778,
+      "actions": [
+        12,
+        180,
+        216,
+        324,
+        420,
+        432,
+        468,
+        600,
+        696
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-ranchu",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "ranchu",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-navaga",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "balloon",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "navaga",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-hero",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "shrimp",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "hero",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1674,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        636,
+        816,
+        900,
+        1056,
+        1152,
+        1272,
+        1368,
+        1524,
+        1644
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-risky-beast",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "risky-beast",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1068,
+      "actions": [
+        0,
+        120,
+        336,
+        468,
+        684,
+        768,
+        816,
+        900,
+        972
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-timber",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "timber",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1068,
+      "actions": [
+        0,
+        120,
+        336,
+        468,
+        684,
+        768,
+        816,
+        900,
+        972
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-imp",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "furball",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "imp",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-pocky",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "pocky",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "lam",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1110,
+      "actions": [
+        0,
+        48,
+        144,
+        216,
+        264,
+        312,
+        336,
+        396,
+        576,
+        684,
+        792,
+        888,
+        912,
+        1044
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-dual-blade",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "dual-blade",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1110,
+      "actions": [
+        0,
+        48,
+        144,
+        216,
+        264,
+        312,
+        336,
+        396,
+        576,
+        684,
+        792,
+        888,
+        912,
+        1044
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-shiba",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "shiba",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 754,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-hare",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "hare",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 754,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-gerbil",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "blue-moon",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "gerbil",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-raven",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "raven",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "goda",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-pigeon-post",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "goda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "pigeon-post",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-trump",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "trump",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "shrimp",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-kestrel",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "kestrel",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-feather-spear",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "shrimp",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "feather-spear",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "doubletalk",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1137,
+      "actions": [
+        0,
+        48,
+        132,
+        180,
+        228,
+        288,
+        336,
+        360,
+        420,
+        600,
+        708,
+        816,
+        912,
+        936,
+        1032,
+        1056,
+        1116
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-hungry-bird",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "hungry-bird",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "shrimp",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1113,
+      "actions": [
+        0,
+        48,
+        144,
+        216,
+        264,
+        312,
+        336,
+        396,
+        576,
+        684,
+        792,
+        888,
+        912,
+        1008,
+        1032,
+        1092
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-little-owl",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "koi",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "little-owl",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1113,
+      "actions": [
+        0,
+        48,
+        144,
+        216,
+        264,
+        312,
+        336,
+        396,
+        576,
+        684,
+        792,
+        888,
+        912,
+        1008,
+        1032,
+        1092
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-the-last-one",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "blue-moon",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "the-last-one",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-post-fight",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "post-fight",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 754,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-garish-worm",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "garish-worm",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "goda",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-buzz-buzz",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "tadpole",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "buzz-buzz",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-scarab",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "scarab",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "goda",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-spiky-wing",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "goda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "spiky-wing",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1578,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        624,
+        708,
+        720,
+        804,
+        960,
+        1056,
+        1176,
+        1272,
+        1428,
+        1548
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-antenna",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "antenna",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "tadpole",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1068,
+      "actions": [
+        0,
+        120,
+        336,
+        468,
+        684,
+        768,
+        816,
+        900,
+        972
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-caterpillars",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "goda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "caterpillars",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1068,
+      "actions": [
+        0,
+        120,
+        336,
+        468,
+        684,
+        768,
+        816,
+        900,
+        972
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-parasite",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "parasite",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-leaf-bug",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "goda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "leaf-bug",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-pincer",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "pincer",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-cute-bunny",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "cute-bunny",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-twin-tail",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "square-teeth",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "twin-tail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-gravel-ant",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "gravel-ant",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "cactus",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-shiitake",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "thorny-caterpillar",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "anemone-horn",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "shiitake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 754,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        576,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-watering-can",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "watering-can",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "cottontail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-mint",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "mint",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-beech",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "pumpkin",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "lam",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "beech",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1674,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        636,
+        816,
+        900,
+        1056,
+        1152,
+        1272,
+        1368,
+        1524,
+        1644
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-strawberry-shortcake",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "confident",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "strawberry-shortcake",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "pupae",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1056,
+      "actions": [
+        0,
+        108,
+        324,
+        456,
+        672,
+        756,
+        804,
+        888,
+        960
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-zigzag",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "watermelon",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "zigzag",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-silence-whisper",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "silence-whisper",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "carrot",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-hatsune",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "hatsune",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-yam",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "yam",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-hot-butt",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "hot-butt",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-bone-sail",
+      "layoutId": "bridge",
+      "name": "El puente del guardián",
+      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 14,
+        "h": 15,
+        "left": 1,
+        "right": 13,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 10.8,
+        "y": 13.3
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 11.2,
+          "y": 5.4,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "w": 10,
+          "h": 0.55
+        },
+        {
+          "x": 6.5,
+          "y": 10.6,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 10.3,
+          "y": 12.5,
+          "w": 3.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 11.9,
+          "y": 6.2,
+          "part": "potato-leaf",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 4.5,
+          "y": 8.8,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 8.8,
+          "part": "bone-sail",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 732,
+      "actions": [
+        60,
+        108,
+        336,
+        444,
+        504,
+        516,
+        528,
+        672
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-green-thorns",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "granma-s-fan",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "green-thorns",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 742,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        564,
+        660
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-indian-star",
+      "layoutId": "balconies",
+      "name": "Los balcones olvidados",
+      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 20,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.3,
+        "y": 17.8
+      },
+      "platforms": [
+        {
+          "x": 8.8,
+          "y": 3.1,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 3,
+          "y": 5.3,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 7,
+          "y": 7.6,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.5,
+          "y": 10.3,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 8.6,
+          "y": 12.4,
+          "w": 4.8,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 14.7,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.7,
+          "y": 17,
+          "w": 4.6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 2,
+          "y": 6.1,
+          "part": "granma-s-fan",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 7.8,
+          "y": 13.2,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 15.5,
+          "part": "indian-star",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 742,
+      "actions": [
+        12,
+        168,
+        204,
+        312,
+        408,
+        420,
+        456,
+        564,
+        660
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-croc",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "merry",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "croc",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "tadpole",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-unko",
+      "layoutId": "steps",
+      "name": "La escalera rota",
+      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 15,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 13.6
+      },
+      "platforms": [
+        {
+          "x": 4,
+          "y": 2.5,
+          "w": 2,
+          "h": 0.55
+        },
+        {
+          "x": 7.8,
+          "y": 4.4,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 4.8,
+          "y": 7,
+          "w": 1.4,
+          "h": 3
+        },
+        {
+          "x": 9.2,
+          "y": 8.5,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 10.8,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.5,
+          "y": 12.8,
+          "w": 5,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 8.4,
+          "y": 5.2,
+          "part": "red-ear",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.5,
+          "y": 11.6,
+          "part": "goda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4,
+          "y": 3.3,
+          "part": "unko",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 658,
+      "actions": [
+        0,
+        12,
+        60,
+        156,
+        300,
+        420,
+        492,
+        564,
+        636
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-cerastes",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
           "part": "cerastes",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 3.4,
+          "y": 17.15,
+          "part": "lam",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1674,
+      "actions": [
+        0,
+        228,
+        324,
+        504,
+        636,
+        816,
+        900,
+        1056,
+        1152,
+        1272,
+        1368,
+        1524,
+        1644
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-scaly-spoon",
+      "layoutId": "tower",
+      "name": "La torre de los ecos",
+      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 22,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 8.8,
+        "y": 20.28
+      },
+      "platforms": [
+        {
+          "x": 8,
+          "y": 3.1,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 5.75,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.4,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 11.049999999999999,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 13.7,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 4,
+          "y": 16.35,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 19,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 3.4,
+          "y": 6.55,
+          "part": "goldfish",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5.8,
+          "y": 11.85,
+          "part": "lam",
           "patrol": 0,
           "phase": 1.5
         },
@@ -5459,6 +11460,720 @@
         1368,
         1524,
         1644
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-bumpy",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "bumpy",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "toothless-bite",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1056,
+      "actions": [
+        0,
+        108,
+        324,
+        456,
+        672,
+        756,
+        804,
+        888,
+        960
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-razor-bite",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "razor-bite",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-tiny-turtle",
+      "layoutId": "islands",
+      "name": "Las islas suspendidas",
+      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 17,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 9.5,
+        "y": 15.1
+      },
+      "platforms": [
+        {
+          "x": 5.2,
+          "y": 3,
+          "w": 2.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 5.3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5,
+          "y": 7.5,
+          "w": 2.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 9.8,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 5.7,
+          "y": 12,
+          "w": 4.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.4,
+          "y": 14.3,
+          "w": 5.2,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.8,
+          "y": 6.1,
+          "part": "anemone-back",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2,
+          "y": 10.6,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 4.2,
+          "y": 12.8,
+          "part": "tiny-turtle",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "amethyst"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 826,
+      "actions": [
+        12,
+        36,
+        96,
+        204,
+        312,
+        432,
+        660,
+        792
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-iguana",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "iguana",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "piranha",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-tiny-dino",
+      "layoutId": "forks",
+      "name": "El jardín partido",
+      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 18,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 5.8,
+        "y": 16.3
+      },
+      "platforms": [
+        {
+          "x": 2.8,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 9.2,
+          "y": 3,
+          "w": 3.6,
+          "h": 0.55
+        },
+        {
+          "x": 5.6,
+          "y": 5.5,
+          "w": 3.4,
+          "h": 0.55
+        },
+        {
+          "x": 2.4,
+          "y": 8,
+          "w": 2.8,
+          "h": 0.55
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "w": 4,
+          "h": 0.55
+        },
+        {
+          "x": 5.9,
+          "y": 10.5,
+          "w": 3,
+          "h": 0.55
+        },
+        {
+          "x": 2.6,
+          "y": 13,
+          "w": 3.2,
+          "h": 0.55
+        },
+        {
+          "x": 8.8,
+          "y": 13,
+          "w": 4.4,
+          "h": 0.55
+        },
+        {
+          "x": 5.8,
+          "y": 15.5,
+          "w": 4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.7,
+          "y": 3.8,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 5,
+          "y": 6.3,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 9.7,
+          "y": 13.8,
+          "part": "tiny-dino",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 765,
+      "actions": [
+        0,
+        48,
+        96,
+        120,
+        228,
+        252,
+        312,
+        468,
+        564,
+        660,
+        684,
+        744
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-gila",
+      "layoutId": "chimneys",
+      "name": "Las chimeneas de ámbar",
+      "subtitle": "Usa los costados de los pilares para ganar altura con rebotes cortos.",
+      "difficulty": "Exploración",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 19,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.8,
+        "y": 15.3
+      },
+      "platforms": [
+        {
+          "x": 4.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 8.4
+        },
+        {
+          "x": 8.5,
+          "y": 8,
+          "w": 2.4,
+          "h": 8.2
+        },
+        {
+          "x": 4,
+          "y": 14.5,
+          "w": 6,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 4.8,
+          "y": 10.2,
+          "part": "hermit",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 9.25,
+          "y": 12.9,
+          "part": "gila",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 5.8,
+          "y": 15.3,
+          "part": "babylonia",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "ember"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 920,
+      "actions": [
+        36,
+        84,
+        132,
+        180,
+        384,
+        408,
+        480,
+        744,
+        828
+      ]
+    }
+  },
+  {
+    "level": {
+      "id": "guardian-practice-grass-snake",
+      "layoutId": "patio",
+      "name": "El patio de las raíces",
+      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "difficulty": "Sala compacta",
+      "rules": "raid",
+      "room": {
+        "w": 12,
+        "h": 13,
+        "left": 1,
+        "right": 11,
+        "floor": 1
+      },
+      "spawn": {
+        "x": 2.2,
+        "y": 1.38
+      },
+      "chest": {
+        "x": 2.4,
+        "y": 11.3
+      },
+      "platforms": [
+        {
+          "x": 8.2,
+          "y": 3.1,
+          "w": 5.6,
+          "h": 0.55
+        },
+        {
+          "x": 3.6,
+          "y": 5.65,
+          "w": 5.2,
+          "h": 0.55
+        },
+        {
+          "x": 8,
+          "y": 8.25,
+          "w": 6,
+          "h": 0.55
+        },
+        {
+          "x": 3.2,
+          "y": 10.5,
+          "w": 4.4,
+          "h": 0.55
+        }
+      ],
+      "traps": [
+        {
+          "x": 9.3,
+          "y": 3.9,
+          "part": "blue-moon",
+          "patrol": 0,
+          "phase": 0
+        },
+        {
+          "x": 2.4,
+          "y": 6.45,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5
+        },
+        {
+          "x": 8.9,
+          "y": 9.05,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 3
+        }
+      ],
+      "theme": "moss"
+    },
+    "proof": {
+      "rules": "portrait-raid-v1",
+      "frames": 1308,
+      "actions": [
+        0,
+        108,
+        312,
+        456,
+        576,
+        708,
+        924,
+        1008,
+        1056,
+        1140,
+        1212
       ]
     }
   }

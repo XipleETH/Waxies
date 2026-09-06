@@ -1583,3 +1583,25 @@
   scrollbar-width: thin;
   scrollbar-color: #567562 transparent;
 }
+.guardian-switch {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+.guardian-switch button {
+  flex: 1;
+  min-height: 44px;
+  padding: 9px;
+  border: 1px solid #75988155;
+  border-radius: 12px;
+  color: #b8cfbd;
+  background: #203a31;
+  font-size: 11px;
+}
+.guardian-switch button.selected,
+.guardian-switch button.selected:disabled {
+  background: #bdddb1;
+  color: #254233;
+  opacity: 1;
+  border-color: #dfedcb;
+}

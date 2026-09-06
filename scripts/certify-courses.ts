@@ -1,3 +1,4 @@
+import { dungeonGuardians } from '../lib/game/guardians';
 import { storyTrapCount } from '../lib/game/story-difficulty';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { verifyRoute, type VerifiedCourse } from '../lib/game/route-proof';
@@ -26,6 +27,7 @@ for (const course of courses) {
     if (!proof) throw Error('No route: ' + course.level.name);
     course.proof = proof;
   }
+  dungeonGuardians(course.level);
   if (!verifyRoute(course.level, course.proof))
     throw Error('Invalid proof: ' + course.level.name);
 }

@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import Image from 'next/image';
 import {
   ArrowLeft,
@@ -18,6 +18,7 @@ import { verifyRoute, type RouteProof } from '@/lib/game/route-proof';
 import { randomAxie } from '@/lib/game/random-axie';
 import type { AxieLoadout } from '@/lib/game/axie';
 import { PARTS } from '@/lib/game/catalog';
+import { dungeonGuardians } from '@/lib/game/guardians';
 import { raidPowerDescription } from '@/lib/game/raid-powers';
 import {
   STORY_LENGTH,
@@ -106,6 +107,7 @@ export function MobileRun({
       engine.current = null;
     };
   }, [run]);
+  const defenders = useMemo(() => dungeonGuardians(run.level), [run.level]);
   const rewards = run.mode === 'practice' || run.mode === 'story';
   const reward =
     run.mode === 'story'
@@ -262,8 +264,9 @@ export function MobileRun({
                 </p>
                 <p className="run-rule">
                   {run.level.traps.length}{' '}
-                  {run.level.traps.length === 1 ? 'trampa' : 'trampas'} en esta
-                  sala
+                  {run.level.traps.length === 1 ? 'trampa' : 'trampas'} ·{' '}
+                  {defenders.length}{' '}
+                  {defenders.length === 1 ? 'guardián' : 'guardianes'}
                 </p>
                 <div className="run-traps">
                   {run.level.traps.map((t, i) => (

@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { loadMixedAvatar, type MixedAvatar } from './mixer-avatar';
 import type { AxieLoadout } from './axie';
 import { randomAxie } from './random-axie';
+import {createGuardianVisuals} from './guardian-visuals';
 import { randomTrapDungeon } from './random-traps';
 type AvatarInput=Pick<AxieLoadout,'genes'|'class'|'name'> & {testParts?:string[]};
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
@@ -65,11 +66,12 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   const gem=new THREE.Mesh(gemGeo,mat(0xf7e29c,{emissive:0xffc95b,emissiveIntensity:0.8})); gem.position.set(0,0,0.7); chest.add(gem);
   const ringGeo = new THREE.TorusGeometry(1.15,0.018,4,64); geometries.push(ringGeo);
   const halo = new THREE.Mesh(ringGeo,mat(0xf1c86c,{emissive:0xc78d35,emissiveIntensity:1.3})); halo.position.set(0,0.5,-0.9); chest.add(halo);
+  let guardianVisuals:ReturnType<typeof createGuardianVisuals>|undefined;
   let hazardVisuals: ReturnType<typeof createHazardVisuals> | undefined;
   let roomGeometries:THREE.BufferGeometry[]=[],roomMaterials:THREE.Material[]=[],roomTextures:THREE.Texture[]=[];
   const loader = new THREE.TextureLoader();
   function buildLevel(next: Dungeon, deaths=0) {
-    startAfterLoad=false;proofActions=[];replay=null;sourceLevel=next;level = {...(randomTraps&&canRandomizeTraps(next)?randomTrapDungeon(next):next),runnerClass:next.rules==='raid'?next.runnerClass:(activeAxieClass??next.runnerClass)}; state = createState(level,deaths); roomGroup.clear(); hazardVisuals?.dispose();
+    startAfterLoad=false;proofActions=[];replay=null;sourceLevel=next;level = {...(randomTraps&&canRandomizeTraps(next)?randomTrapDungeon(next):next),runnerClass:next.rules==='raid'?next.runnerClass:(activeAxieClass??next.runnerClass)}; state = createState(level,deaths); roomGroup.clear(); hazardVisuals?.dispose();guardianVisuals?.dispose();guardianVisuals=undefined;
     for(const geo of roomGeometries){geo.dispose();geometries.splice(geometries.indexOf(geo),1);}
     for(const material of roomMaterials){material.dispose();materials.splice(materials.indexOf(material),1);}
     for(const texture of roomTextures){texture.dispose();textures.splice(textures.indexOf(texture),1);}
@@ -88,6 +90,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     chest.position.set(level.chest.x,level.chest.y,0.45); lid.rotation.x=0;
     hazardVisuals = createHazardVisuals(scene, level);
     hazardVisuals.update(state);
+    if(level.rules==='raid')guardianVisuals=createGuardianVisuals(scene,level);
     roomGeometries=geometries.slice(geometryStart);roomMaterials=materials.slice(materialStart);roomTextures=textures.slice(textureStart);
     fitRoom();onLevel(level);onState({...state});refreshRandom();
   }
@@ -142,6 +145,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   const loop=(now:number)=>{
     if(disposed)return;raf=requestAnimationFrame(loop);const delta=Math.min((now-previous)/1000,0.05);previous=now;
     elapsed+=delta;accumulator+=delta;
+    if(state.phase!=='paused')guardianVisuals?.update(delta,elapsed);
     while(accumulator>=PHYSICS.step){if(replay&&state.phase==='playing'&&replay.actions[replayIndex]===state.frame){requestJump(state);replayIndex++;}const hits=state.hits;step(state,level);if(state.hits>hits){proofActions=[];replay=null;}accumulator-=PHYSICS.step;}
     avatar.position.set(state.x,state.y,0.8);avatar.rotation.y=state.direction===1?Math.PI/2:-Math.PI/2;
     avatar.visible=state.raid||state.invulnerable<=0||Math.floor(elapsed*15)%2===0;
@@ -171,7 +175,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   const visibility=()=>{if(document.hidden&&state.phase==='playing'){state.phase='paused';onState({...state});}};
   window.addEventListener('keydown',key);document.addEventListener('visibilitychange',visibility);
   return {getProof:()=>({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions]}),playProof:(proof)=>{proofActions=[];state=createState(level);replay=proof;replayIndex=0;if(avatarReady)state.phase='playing';else startAfterLoad=true;onState({...state});},setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
-    disposed=true;avatarRequest++;avatarController?.abort();currentMixed?.dispose();cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
+    disposed=true;guardianVisuals?.dispose();avatarRequest++;avatarController?.abort();currentMixed?.dispose();cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
     hazardVisuals?.dispose();mixer?.stopAllAction();bubaMixer?.stopAllAction();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.domElement.remove();
   }};
 }

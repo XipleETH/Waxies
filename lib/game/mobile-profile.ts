@@ -1,4 +1,6 @@
 import { allowedParts, validLoadout, type AxieLoadout } from './axie';
+import { makeVaultTraps, validVaultTraps } from './vault-layout';
+import { guardianGenes } from './guardians';
 import { PORTRAIT_BASE, PORTRAIT_SLOTS } from './portrait';
 import { verifyRoute, type RouteProof } from './route-proof';
 import { PARTS } from './catalog';
@@ -48,6 +50,9 @@ export const GOODS = [
 ] as const;
 export interface MobileProfile {
   version: 1;
+  vaultVersion: 2;
+  guardianCount: 1 | 2;
+  companion: AxieLoadout | null;
   chispas: number;
   owned: string[];
   theme: string;
@@ -62,6 +67,9 @@ export interface MobileProfile {
 export function newProfile(): MobileProfile {
   return {
     version: 1,
+    vaultVersion: 2,
+    guardianCount: 1,
+    companion: null,
     story: [],
     chispas: 0,
     owned: ['moss'],
@@ -70,7 +78,7 @@ export function newProfile(): MobileProfile {
     claimed: [],
     wins: 0,
     axie: null,
-    traps: PORTRAIT_SLOTS.map((t) => ({ ...t })),
+    traps: makeVaultTraps([], 1, [null]),
     proof: null,
   };
 }
@@ -80,6 +88,18 @@ export function vaultLevel(p: MobileProfile): Dungeon {
     id: 'my-vault',
     name: 'Mi refugio',
     traps: p.traps,
+    guardianGenes: Array.from({ length: p.guardianCount }, (_, g) => {
+      const axie = g === 0 ? p.axie : p.companion;
+      return (
+        axie?.genes ??
+        guardianGenes(
+          p.traps
+            .filter((t) => Math.floor(t.anchor! / 4) === g)
+            .map((t) => t.part),
+          'my-vault-' + g,
+        )
+      );
+    }),
     theme: p.theme,
     decoration: p.decoration,
   };
@@ -125,17 +145,18 @@ export function readProfile(): MobileProfile {
       );
       if (validLoadout(old?.axie)) {
         p.axie = old.axie;
-        const parts = allowedParts(p.axie);
-        p.traps = p.traps.map((t, i) => ({
-          ...t,
-          part: parts[i % parts.length] ?? t.part,
-        }));
+        p.traps = makeVaultTraps(p.traps, 1, [p.axie]);
       }
     } catch {}
     return p;
   }
   const p = JSON.parse(text) as MobileProfile;
   p.story ??= [];
+  const legacyVault = p.vaultVersion !== 2;
+  if (legacyVault) {
+    p.guardianCount = 1;
+    p.companion = null;
+  }
   if (
     !Array.isArray(p.story) ||
     p.story.length > 50 ||
@@ -163,19 +184,33 @@ export function readProfile(): MobileProfile {
     p.claimed.some((s) => typeof s !== 'string') ||
     (p.axie && !validLoadout(p.axie)) ||
     !Array.isArray(p.traps) ||
-    p.traps.length !== 3 ||
-    p.traps.some(
-      (t, i) =>
-        !PARTS[t.part] ||
-        !Number.isFinite(t.x) ||
-        Math.abs(t.x - PORTRAIT_SLOTS[i].x) > 1.5 ||
-        t.y !== PORTRAIT_SLOTS[i].y ||
-        t.phase !== PORTRAIT_SLOTS[i].phase ||
-        t.patrol !== 0,
-    )
+    (legacyVault
+      ? p.traps.length !== 3 ||
+        p.traps.some(
+          (t, i) =>
+            !PARTS[t.part] ||
+            !Number.isFinite(t.x) ||
+            Math.abs(t.x - PORTRAIT_SLOTS[i].x) > 1.5 ||
+            t.y !== PORTRAIT_SLOTS[i].y ||
+            t.phase !== PORTRAIT_SLOTS[i].phase ||
+            t.patrol !== 0,
+        )
+      : ![1, 2].includes(p.guardianCount) ||
+        (!!p.companion && !validLoadout(p.companion)) ||
+        !validVaultTraps(p.traps, p.guardianCount))
   )
     throw Error('No se pudo recuperar el progreso de este dispositivo.');
-  if (p.axie && p.traps.some((t) => !allowedParts(p.axie).includes(t.part)))
+  if (legacyVault) {
+    p.traps = makeVaultTraps(p.traps, 1, [p.axie]);
+    p.vaultVersion = 2;
+    p.proof = null;
+  }
+  if (
+    p.traps.some((t) => {
+      const axie = t.anchor! < 4 ? p.axie : p.companion;
+      return axie && !allowedParts(axie).includes(t.part);
+    })
+  )
     throw Error('La defensa contiene partes ajenas a tu Axie.');
   if (p.proof && !verifyRoute(vaultLevel(p), p.proof)) p.proof = null;
   return p;

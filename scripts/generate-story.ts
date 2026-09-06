@@ -1,3 +1,6 @@
+import { PART_LIST, PARTS } from '../lib/game/catalog';
+import { fitGuardianParts } from './guardian-certification';
+import { dungeonGuardians } from '../lib/game/guardians';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { type Trap } from '../lib/game/physics';
 import {
@@ -16,11 +19,20 @@ const story = JSON.parse(readFileSync(path, 'utf8')) as Array<
     metrics: ReturnType<typeof metrics>;
   }
 >;
-const attackers = ['carrot', 'lagging', 'cactus', 'grass-snake'];
+const attackers = [
+  ...new Set([
+    'carrot',
+    'lagging',
+    'cactus',
+    'grass-snake',
+    ...PART_LIST.map((p) => p.id),
+  ]),
+];
 for (const course of story) {
-  const level = structuredClone(course.level),
-    target = storyTrapCount(course.number);
-  let proof: RouteProof | null = course.proof;
+  const target = storyTrapCount(course.number);
+  const fitted = fitGuardianParts(course, target <= 4 ? 1 : 2);
+  const level = fitted.level;
+  let proof: RouteProof | null = fitted.proof;
   level.traps = level.traps.slice(0, target);
   if (!verifyRoute(level, proof))
     proof = replay(level, proof.actions, Math.min(12000, proof.frames + 1200));
@@ -65,7 +77,13 @@ for (const course of story) {
     });
     if (course.number <= 3 && index === 0) stations.unshift({ x: 8.8, y: 3.9 });
     let chosen: { trap: Trap; proof: RouteProof } | undefined;
-    for (const part of course.number <= 3 ? ['carrot'] : attackers) {
+    const availableAttackers = attackers.filter(
+      (id) =>
+        !level.traps.some((t) => t.part === id) &&
+        level.traps.filter((t) => PARTS[t.part].slotId === PARTS[id].slotId)
+          .length < (target <= 4 ? 1 : 2),
+    );
+    for (const part of course.number <= 3 ? ['carrot'] : availableAttackers) {
       for (const station of stations) {
         const trap = {
           ...station,
@@ -90,7 +108,7 @@ for (const course of story) {
       for (const station of stations.slice(0, 6)) {
         const trap = {
           ...station,
-          part: attackers[index % attackers.length],
+          part: availableAttackers[index % availableAttackers.length],
           phase: index * 0.8,
           patrol: 0,
         };
@@ -116,6 +134,7 @@ for (const course of story) {
       'Carrot lanza zanahorias. Mira el aviso, salta el disparo y rebota hacia el cofre.';
   if (!verifyRoute(level, proof))
     throw Error('Invalid final proof ' + course.number);
+  dungeonGuardians(level);
   course.level = level;
   course.proof = proof;
   course.metrics = metrics(level, proof);

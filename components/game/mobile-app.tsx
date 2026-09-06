@@ -33,7 +33,11 @@ import {
   claimChispas,
   type MobileProfile,
 } from '@/lib/game/mobile-profile';
-import { PORTRAIT_SLOTS } from '@/lib/game/portrait';
+import {
+  makeVaultTraps,
+  defenderParts,
+  vaultRange,
+} from '@/lib/game/vault-layout';
 import {
   challengeCode,
   decodeChallenge,
@@ -80,6 +84,7 @@ export default function MobileApp() {
     [shareUrl, setShareUrl] = useState(''),
     [roomsOpen, setRoomsOpen] = useState(false),
     [storyOpen, setStoryOpen] = useState(false),
+    [activeDefender, setActiveDefender] = useState<0 | 1>(0),
     [guestAxie] = useState(() => randomAxie());
   const profileRef = useRef(profile),
     lastLayout = useRef<string | null>(null);
@@ -167,35 +172,52 @@ export default function MobileApp() {
       void document.exitFullscreen().catch(() => {});
   }
   function loadAxie(axie: Loadout | null) {
-    const parts = allowedParts(axie);
-    if (!parts.length) {
+    if (!allowedParts(axie).length) {
       setNotice(
         'Este Axie no tiene cartas compatibles con el catálogo Classic actual.',
       );
       return;
     }
     const p = profileRef.current;
+    const next = { ...p, [activeDefender === 0 ? 'axie' : 'companion']: axie };
+    next.traps = makeVaultTraps(p.traps, p.guardianCount, [
+      next.axie,
+      next.companion,
+    ]);
+    next.proof = null;
+    save(next);
+    setShareUrl('');
+    setNotice(
+      'Guardián ' +
+        (activeDefender + 1) +
+        ' actualizado. Valida de nuevo su defensa.',
+    );
+  }
+  function changeGuardians(count: 1 | 2) {
+    const p = profileRef.current;
     save({
       ...p,
-      axie,
-      traps: p.traps.map((t, i) => ({
-        ...t,
-        part: parts.includes(t.part)
-          ? t.part
-          : (parts[i % parts.length] ?? 'carrot'),
-      })),
+      guardianCount: count,
+      traps: makeVaultTraps(p.traps, count, [p.axie, p.companion]),
       proof: null,
     });
     setShareUrl('');
-    setNotice(
-      axie
-        ? 'Axie cargado. Tu defensa solo usa sus cartas disponibles.'
-        : 'Laboratorio libre: todas las cartas disponibles.',
-    );
+    if (count === 1) setActiveDefender(0);
   }
   function editTrap(index: number, change: { part?: string; x?: number }) {
     const p = profileRef.current;
-    if (change.part && !allowedParts(p.axie).includes(change.part)) return;
+    const trap = p.traps[index],
+      anchor = trap.anchor!,
+      axie = anchor < 4 ? p.axie : p.companion;
+    if (
+      change.part &&
+      !defenderParts(
+        axie,
+        anchor,
+        p.traps.filter((_, i) => i !== index).map((t) => t.part),
+      ).includes(change.part)
+    )
+      return;
     save({
       ...p,
       traps: p.traps.map((t, i) => (i === index ? { ...t, ...change } : t)),
@@ -381,9 +403,29 @@ export default function MobileApp() {
               </span>
             </div>
             <p className="m-intro">
-              Coloca tres defensas. Para que otros la ataquen, tú debes llegar
-              al cofre sin recibir un solo golpe.
+              Cada guardián aporta hasta cuatro partes diferentes. Para que
+              otros la ataquen, tú debes llegar al cofre sin recibir un solo
+              golpe.
             </p>
+            <div
+              className="guardian-switch"
+              aria-label="Cantidad de guardianes"
+            >
+              <button
+                className={profile.guardianCount === 1 ? 'selected' : ''}
+                onClick={() => changeGuardians(1)}
+                disabled={profile.guardianCount === 1}
+              >
+                1 guardián · hasta 4
+              </button>
+              <button
+                className={profile.guardianCount === 2 ? 'selected' : ''}
+                onClick={() => changeGuardians(2)}
+                disabled={profile.guardianCount === 2}
+              >
+                2 guardianes · hasta 8
+              </button>
+            </div>
             <div
               className="vault-editor-map"
               style={
@@ -447,14 +489,16 @@ export default function MobileApp() {
                 <h2>{GOODS.find((g) => g.id === profile.theme)?.name}</h2>
                 <p>
                   7 plataformas
-                  <br />3 defensas
+                  <br />
+                  {profile.traps.length} defensas · {profile.guardianCount}{' '}
+                  {profile.guardianCount === 1 ? 'guardián' : 'guardianes'}
                   <br />
                   {profile.axie
                     ? 'Partes del Axie #' + profile.axie.id
                     : 'Laboratorio libre'}
                 </p>
                 <button className="m-text" onClick={() => setScreen('axie')}>
-                  Cambiar Axie <ChevronRight size={15} />
+                  Elegir guardianes <ChevronRight size={15} />
                 </button>
                 <button className="m-text" onClick={() => setScreen('shop')}>
                   Personalizar <ChevronRight size={15} />
@@ -473,13 +517,22 @@ export default function MobileApp() {
                     alt=""
                   />
                   <div className="slot-settings">
-                    <label htmlFor={'trap-' + i}>Defensa {i + 1}</label>
+                    <label htmlFor={'trap-' + i}>
+                      Guardián {Math.floor(t.anchor! / 4) + 1} ·{' '}
+                      {PARTS[t.part].slot}
+                    </label>
                     <select
                       id={'trap-' + i}
                       value={t.part}
                       onChange={(e) => editTrap(i, { part: e.target.value })}
                     >
-                      {available.map((id) => (
+                      {defenderParts(
+                        t.anchor! < 4 ? profile.axie : profile.companion,
+                        t.anchor!,
+                        profile.traps
+                          .filter((_, j) => j !== i)
+                          .map((t) => t.part),
+                      ).map((id) => (
                         <option key={id} value={id}>
                           {PARTS[id].name} · {PARTS[id].short}
                         </option>
@@ -491,8 +544,8 @@ export default function MobileApp() {
                     <input
                       id={'position-' + i}
                       type="range"
-                      min={PORTRAIT_SLOTS[i].x - 1.5}
-                      max={PORTRAIT_SLOTS[i].x + 1.5}
+                      min={vaultRange(t.anchor!).min}
+                      max={vaultRange(t.anchor!).max}
                       step="0.1"
                       value={t.x}
                       onChange={(e) =>
@@ -646,8 +699,25 @@ export default function MobileApp() {
               Las partes de tu Axie forman su modelo y desbloquean las defensas
               de tu refugio. En práctica descubrirás combinaciones aleatorias.
             </p>
+            {profile.guardianCount === 2 ? (
+              <div className="guardian-switch">
+                <button
+                  onClick={() => setActiveDefender(0)}
+                  className={activeDefender === 0 ? 'selected' : ''}
+                >
+                  Guardián 1
+                </button>
+                <button
+                  onClick={() => setActiveDefender(1)}
+                  className={activeDefender === 1 ? 'selected' : ''}
+                >
+                  Guardián 2
+                </button>
+              </div>
+            ) : null}
             <AxieLoadout
-              axie={profile.axie}
+              key={activeDefender}
+              axie={activeDefender === 0 ? profile.axie : profile.companion}
               onLoad={loadAxie}
               onLab={() => loadAxie(null)}
               onBrowse={() => setLibrary(true)}

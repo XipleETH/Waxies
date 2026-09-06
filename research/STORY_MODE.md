@@ -6,7 +6,7 @@ La campaña contiene 50 niveles numerados en cinco capítulos. Usa las ocho fami
 
 `route-solver.ts` ejecuta el mismo motor de física a 120 pasos por segundo. Considera saltar o continuar cada 12 pasos (0,1 segundos), descarta estados con daño y conserva un conjunto limitado de candidatos. La búsqueda favorece altura y velocidad ascendente. Práctica intenta anchos de búsqueda de 200 y 450 candidatos; ese número no equivale a intentos humanos. Si no encuentra solución, solo sabemos que esa búsqueda no encontró una: no demuestra imposibilidad.
 
-`generate-story.ts` conserva la geometría y el número de cada sala publicada. Ajusta la cantidad de defensas al tramo, prueba posiciones sobre superficies y vuelve a simular las rutas; si es necesario busca otra secuencia de saltos. Solo escribe el catálogo cuando las 50 salas incluyen la cantidad correcta de obstáculos y llegan al cofre sin daño. `courses:verify` reproduce las 52 configuraciones de Práctica y los 50 niveles de Historia durante cada build.
+`generate-story.ts` conserva la geometría y el número de cada sala publicada. Ajusta la cantidad de defensas al tramo, prueba posiciones sobre superficies y vuelve a simular las rutas; si es necesario busca otra secuencia de saltos. Solo escribe el catálogo cuando las 50 salas incluyen la cantidad correcta de obstáculos y llegan al cofre sin daño. `courses:verify` reproduce las 115 configuraciones de Práctica y los 50 niveles de Historia durante cada build.
 
 ## Cómo estimamos dificultad
 
