@@ -172,3 +172,14 @@
   color: #ecedca;
   box-shadow: 0 3px #10291f;
 }
+.balance > div {
+  padding: 9px 5px;
+  border-radius: 10px;
+}
+.balance b {
+  font-size: 18px;
+  margin: 4px 0 2px;
+}
+.balance span {
+  font-size: 9px;
+}

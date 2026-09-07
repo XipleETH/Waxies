@@ -51,3 +51,37 @@
   outline: 2px solid #edcc7b;
   outline-offset: 2px;
 }
+.bar {
+  gap: 5px;
+  padding: 7px;
+  background: linear-gradient(#294432f5, #152c23f5);
+  border: 2px solid #72836180;
+  box-shadow:
+    0 5px #0b211a,
+    inset 0 1px #bdc89544;
+  border-radius: 15px;
+}
+.bar button {
+  background: linear-gradient(#405d43, #263f2f);
+  border: 1px solid #71836080;
+  border-radius: 9px;
+  box-shadow:
+    0 3px #10291e,
+    inset 0 1px #c6d59a20;
+  color: #c4d4b2;
+}
+.bar button.active {
+  background: linear-gradient(#d3dfa0, #91ad70);
+  border-color: #e0e7ad;
+  color: #203d29;
+  box-shadow:
+    0 3px #527041,
+    inset 0 1px #eef4ce;
+}
+.bar button.active::before {
+  display: none;
+}
+.bar button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px #10291e;
+}

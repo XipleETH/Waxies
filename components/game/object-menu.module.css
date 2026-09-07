@@ -1,0 +1,72 @@
+.objects {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 350px;
+  isolation: isolate;
+}
+.objects[data-count='2'] {
+  height: 180px;
+  grid-template-rows: 1fr;
+}
+.scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.objects > button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 4px 12px !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  min-width: 0;
+}
+.objects > button > span {
+  display: block;
+  min-width: 108px;
+  padding: 8px 12px;
+  background: linear-gradient(#658559, #3b583e);
+  border: 2px solid #a1b479;
+  border-radius: 5px;
+  box-shadow:
+    0 5px #203a2a,
+    inset 0 1px #e3e7a566;
+  font: 800 14px var(--font-display);
+  color: #f4e6b8;
+  text-shadow: 0 2px #314331;
+  transform: perspective(250px) rotateX(-8deg);
+}
+.objects > button:active > span {
+  transform: translateY(3px);
+  box-shadow: 0 2px #203a2a;
+}
+.objects > button > small {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  background: #e9ce7e;
+  color: #293f2a;
+  padding: 3px 7px;
+  border-radius: 9px;
+  font-size: 10px;
+  font-weight: 800;
+}
+.objects > button:focus-visible {
+  outline: 2px solid #f0d88d;
+  border-radius: 20px;
+}
+.objects > button:disabled {
+  opacity: 0.45;
+}

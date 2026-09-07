@@ -42,6 +42,8 @@ const LiveVault = dynamic(() =>
 import { snapTrap } from '@/lib/game/free-vault';
 import { reachSettings } from '@/lib/game/trap-reach';
 import { StoryMap } from './story-map';
+import { AxieRoom } from './axie-room';
+import { ObjectMenu } from './object-menu';
 import { STORY_INTRO_KEY } from '@/lib/game/story-narrative';
 const StoryIntro = dynamic(() =>
   import('./story-intro').then((m) => m.StoryIntro),
@@ -52,9 +54,6 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
-const AxieLoadout = dynamic(() =>
-  import('./axie-loadout').then((m) => m.AxieLoadout),
-);
 const PartLibrary = dynamic(() =>
   import('./part-library').then((m) => m.PartLibrary),
 );
@@ -302,13 +301,21 @@ export default function MobileApp() {
   return (
     <main
       className={
-        screen === 'home' ? 'mobile-app is-home' : 'mobile-app game-menu-room'
+        screen === 'home'
+          ? 'mobile-app is-home'
+          : screen === 'axie'
+            ? 'mobile-app is-home is-axie-room'
+            : 'mobile-app game-menu-room'
       }
     >
       {!storyOpen ? (
         <>
           <AxiePreview
-            genes={profile.axie?.genes ?? guestAxie.genes}
+            genes={
+              (screen === 'axie' && activeDefender === 1
+                ? profile.companion?.genes
+                : profile.axie?.genes) ?? guestAxie.genes
+            }
             theme={profile.theme}
             decoration={profile.decoration}
             traps={profile.traps}
@@ -417,42 +424,18 @@ export default function MobileApp() {
         ) : null}
         {screen === 'axie' ? (
           <>
-            <div className="m-heading">
-              <div>
-                <span className="m-eyebrow">TU COMPAÑERO</span>
-                <h1>Mi Axie</h1>
-              </div>
-              <BookOpen size={27} />
-            </div>
-            <p className="m-intro">
-              Un guardián. Cuatro poderes para tu mazmorra.
-            </p>
             {profile.guardianCount === 2 ? (
               <div className="guardian-switch">
-                <button
-                  onClick={() => setActiveDefender(0)}
-                  className={activeDefender === 0 ? 'selected' : ''}
-                >
-                  Guardián 1
-                </button>
-                <button
-                  onClick={() => setActiveDefender(1)}
-                  className={activeDefender === 1 ? 'selected' : ''}
-                >
-                  Guardián 2
-                </button>
+                <button onClick={() => setActiveDefender(0)}>Guardián 1</button>
+                <button onClick={() => setActiveDefender(1)}>Guardián 2</button>
               </div>
             ) : null}
-            <AxieLoadout
-              key={activeDefender}
+            <AxieRoom
               axie={activeDefender === 0 ? profile.axie : profile.companion}
               onLoad={loadAxie}
               onLab={() => loadAxie(null)}
               onBrowse={() => setLibrary(true)}
             />
-            <button className="m-secondary" onClick={() => setLibrary(true)}>
-              <BookOpen size={18} /> Explorar 132 cartas Classic
-            </button>
           </>
         ) : null}
       </div>
@@ -478,65 +461,29 @@ export default function MobileApp() {
           >
             <Play size={17} /> Sala aleatoria
           </button>
-          <div className="map-carousel" aria-label="Mapas de práctica">
-            {layoutExamples.map(({ level }) => (
-              <button
-                className="map-choice"
-                key={level.layoutId ?? level.id}
-                onClick={() => practice(level.layoutId)}
-                disabled={!ready}
-              >
-                <svg
-                  viewBox={`0 0 ${level.room!.w} ${level.room!.h}`}
-                  aria-label={`Plano de ${level.name}`}
-                >
-                  <rect
-                    x="0.5"
-                    y="0.5"
-                    width={level.room!.w - 1}
-                    height={level.room!.h - 1}
-                    rx=".4"
-                    fill={
-                      level.theme === 'amethyst'
-                        ? '#35344c'
-                        : level.theme === 'ember'
-                          ? '#49372b'
-                          : '#25463e'
-                    }
-                  />
-                  {level.platforms.map((p, i) => (
-                    <rect
-                      key={i}
-                      x={p.x - p.w / 2}
-                      y={level.room!.h - p.y - p.h / 2}
-                      width={p.w}
-                      height={p.h}
-                      fill={
-                        level.theme === 'amethyst'
-                          ? '#a69aca'
-                          : level.theme === 'ember'
-                            ? '#ceac74'
-                            : '#a3cdad'
-                      }
-                    />
-                  ))}
-                  <circle
-                    cx={level.chest.x}
-                    cy={level.room!.h - level.chest.y}
-                    r=".5"
-                    fill="#f1d178"
-                  />
-                  <circle
-                    cx={level.spawn.x}
-                    cy={level.room!.h - level.spawn.y}
-                    r=".25"
-                    fill="#c4eee0"
-                  />
-                </svg>
-                <strong>{level.name}</strong>
-                <span>{level.difficulty}</span>
-              </button>
-            ))}
+          <div className="practice-portals">
+            <ObjectMenu
+              label="Portales de práctica"
+              actions={layoutExamples.map(({ level }) => ({
+                id: level.layoutId ?? level.id,
+                label:
+                  (
+                    {
+                      patio: 'Patio',
+                      islands: 'Islas',
+                      forks: 'Jardín',
+                      chimneys: 'Chimeneas',
+                      bridge: 'Puente',
+                      balconies: 'Balcones',
+                      steps: 'Escalera',
+                      tower: 'Torre',
+                    } as Record<string, string>
+                  )[level.layoutId ?? ''] ?? level.name,
+                kind: 'portal' as const,
+                onClick: () => practice(level.layoutId),
+                disabled: !ready,
+              }))}
+            />
           </div>
         </DialogContent>
       </Dialog>

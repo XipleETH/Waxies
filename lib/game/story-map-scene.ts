@@ -1,4 +1,12 @@
 import * as THREE from 'three';
+import courses from './data/story-courses.json';
+import {
+  storyMapNodes,
+  dungeonMapSize,
+  storyMapStep,
+} from './story-map-layout';
+import { createMapGuardians } from './map-guardians';
+import type { Dungeon } from './physics';
 export type MapPin = { x: number; y: number };
 const PALETTES = [
   [0x172f2b, 0x497762, 0x95b68a, 0x314d40],
@@ -24,8 +32,9 @@ export function createStoryMapScene(
   renderer.domElement.setAttribute('aria-hidden', 'true');
   host.appendChild(renderer.domElement);
   const camera = new THREE.OrthographicCamera(-7, 7, 23, -23, 0.1, 150);
-  camera.position.set(0, 44, 57);
-  camera.lookAt(0, 0, 18.9);
+  const centerZ = storyMapStep(chapter) * 4.5;
+  camera.position.set(0, 55, centerZ + 47.7);
+  camera.lookAt(0, 0, centerZ);
   scene.add(new THREE.HemisphereLight(0xf5f2d9, colors[3], 2.5));
   const sun = new THREE.DirectionalLight(0xffeac1, 3);
   sun.position.set(-12, 25, 12);
@@ -82,10 +91,10 @@ export function createStoryMapScene(
   ) {
     return mesh(new THREE.BoxGeometry(w, h, d), m, x, y, z, parent);
   }
-  const nodes = Array.from(
-    { length: 10 },
-    (_, i) => new THREE.Vector3(Math.sin(i * 1.45) * 3, 0, i * 4.2),
+  const nodes = storyMapNodes(chapter).map(
+    (p) => new THREE.Vector3(p.x, 0, p.z),
   );
+  const guardianRooms: Array<{ level: Dungeon; roof: THREE.Group }> = [];
   const curve = new THREE.CatmullRomCurve3(
     nodes.map((p) => new THREE.Vector3(p.x, -0.5, p.z)),
   );
@@ -119,7 +128,18 @@ export function createStoryMapScene(
       0,
       group,
     );
-    if (i === 9) group.scale.set(1.15, 1.2, 1.15);
+    const level = courses[number - 1].level as Dungeon;
+    const size = dungeonMapSize(number, level.traps.length);
+    group.scale.set(size.width, size.height, size.width);
+    const roof = new THREE.Group();
+    roof.position.set(0, 2.1, 0.05);
+    group.add(roof);
+    guardianRooms.push({ level, roof });
+    if (level.traps.length >= 3)
+      for (const side of [-1, 1]) {
+        box(side * 1.15, 0.85, -0.3, 0.48, 1.7, 0.65, stone, group);
+        box(side * 1.15, 1.8, -0.3, 0.58, 0.2, 0.75, stone, group);
+      }
     // Stone lintel, columns and recessed doorway echo the refuge architecture.
     box(0, 0.78, -0.25, 1.8, 1.3, 0.85, locked ? rock : stone, group);
     box(0, 0.66, 0.21, 0.68, 1.05, 0.06, dark, group);
@@ -193,11 +213,28 @@ export function createStoryMapScene(
         scene,
       );
   });
+  const guardianLayer = createMapGuardians(guardianRooms, () => {
+    if (!disposed) renderer.render(scene, camera);
+  });
+  let disposed = false;
+  const scroll = host.parentElement?.parentElement;
+  let projected: number[] = [];
+  function visibleGuardians() {
+    if (!scroll) return;
+    const top = scroll.scrollTop,
+      bottom = top + scroll.clientHeight;
+    guardianLayer.visible(
+      projected.flatMap((y, i) =>
+        y >= top - 180 && y <= bottom + 180 ? [i] : [],
+      ),
+    );
+  }
+  scroll?.addEventListener('scroll', visibleGuardians, { passive: true });
   function resize() {
     const w = host.clientWidth,
       h = host.clientHeight;
     if (!w || !h) return;
-    const half = 18.5;
+    const half = (23 * storyMapStep(chapter)) / 5.4;
     camera.left = (-half * w) / h;
     camera.right = (half * w) / h;
     camera.top = half;
@@ -205,12 +242,13 @@ export function createStoryMapScene(
     camera.updateProjectionMatrix();
     camera.updateMatrixWorld();
     renderer.setSize(w, h);
-    onPins(
-      nodes.map((p) => {
-        const v = new THREE.Vector3(p.x, 0.2, p.z + 1.45).project(camera);
-        return { x: (v.x + 1) * 50, y: (1 - v.y) * 50 };
-      }),
-    );
+    const pins = nodes.map((p) => {
+      const v = new THREE.Vector3(p.x, 0.2, p.z + 1.45).project(camera);
+      return { x: (v.x + 1) * 50, y: (1 - v.y) * 50 };
+    });
+    projected = pins.map((p) => (p.y / 100) * h);
+    onPins(pins);
+    visibleGuardians();
     renderer.render(scene, camera);
   }
   const observer = new ResizeObserver(resize);
@@ -222,6 +260,7 @@ export function createStoryMapScene(
   function animate(t: number) {
     raf = requestAnimationFrame(animate);
     if (document.hidden || t - last < 50 || reduce.matches) return;
+    guardianLayer.update(last ? Math.min((t - last) / 1000, 0.1) : 0);
     last = t;
     sparks.forEach((s, i) => {
       s.position.y = 1.4 + Math.sin(t * 0.002 + i) * 0.2;
@@ -232,6 +271,9 @@ export function createStoryMapScene(
   raf = requestAnimationFrame(animate);
   return {
     dispose() {
+      disposed = true;
+      guardianLayer.dispose();
+      scroll?.removeEventListener('scroll', visibleGuardians);
       cancelAnimationFrame(raf);
       observer.disconnect();
       geometries.forEach((g) => g.dispose());

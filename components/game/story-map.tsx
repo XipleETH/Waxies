@@ -17,6 +17,8 @@ import {
   storyUnlocked,
 } from '@/lib/game/story-progress';
 import courses from '@/lib/game/data/story-courses.json';
+import { storyMapHeight } from '@/lib/game/story-map-layout';
+import { dungeonGuardians } from '@/lib/game/guardians';
 import type { MapPin } from '@/lib/game/story-map-scene';
 import styles from './story-map.module.css';
 export function StoryMap({
@@ -64,7 +66,8 @@ export function StoryMap({
       const index = Math.max(0, Math.min(9, unlocked - chapter * 10 - 1));
       scroll.current.scrollTop = Math.max(
         0,
-        (pins[index].y / 100) * 1240 - scroll.current.clientHeight * 0.4,
+        (pins[index].y / 100) * storyMapHeight(chapter) -
+          scroll.current.clientHeight * 0.4,
       );
     }
   }, [pins, chapter, unlocked]);
@@ -120,7 +123,7 @@ export function StoryMap({
         </button>
       </nav>
       <div className={styles.scroll} ref={scroll}>
-        <div className={styles.world}>
+        <div className={styles.world} style={{ height: storyMapHeight(chapter) }}>
           <div ref={host} className={styles.scene} />
           {Array.from({ length: 10 }, (_, i) => {
             const n = chapter * 10 + i + 1,
@@ -173,7 +176,12 @@ export function StoryMap({
         <div className={styles.title}>
           <span>{selected}</span>
           <div>
-            <small>MAZMORRA</small>
+            <small>
+              {level.traps.length}{' '}
+              {level.traps.length === 1 ? 'TRAMPA' : 'TRAMPAS'} ·{' '}
+              {dungeonGuardians(level).length}{' '}
+              {dungeonGuardians(level).length === 1 ? 'GUARDIÁN' : 'GUARDIANES'}
+            </small>
             <h3>{level.name}</h3>
           </div>
         </div>
