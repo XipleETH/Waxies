@@ -1,0 +1,53 @@
+.bar {
+  position: fixed;
+  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(8px + env(safe-area-inset-bottom));
+  width: min(calc(100% - 28px), 440px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 8px 6px;
+  border: 1px solid #c7dab527;
+  border-radius: 21px;
+  background: #122a2aeb;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 5px 30px #00121c24;
+}
+.bar button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  min-height: 46px;
+  padding: 4px 2px;
+  border: 0;
+  border-radius: 13px;
+  color: #a8bfb3;
+  background: transparent;
+  font: 600 10px/1.2 var(--font-geist-sans);
+  cursor: pointer;
+}
+.bar button.active {
+  color: #e1f0c6;
+  background: #c1e5a812;
+}
+.bar button.active::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  width: 15px;
+  height: 2px;
+  border-radius: 2px;
+  background: #d9eac0;
+}
+.bar button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.bar button:focus-visible {
+  outline: 2px solid #edcc7b;
+  outline-offset: 2px;
+}

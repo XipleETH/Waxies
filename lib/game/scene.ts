@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { loadMixedAvatar, type MixedAvatar } from './mixer-avatar';
 import type { AxieLoadout } from './axie';
 import { randomAxie } from './random-axie';
+import { createDecorationVisuals } from './decoration-visuals';
 import { dungeonRoofY } from './dungeon-framing';
 import {createGuardianVisuals} from './guardian-visuals';
 import { randomTrapDungeon } from './random-traps';
@@ -13,7 +14,7 @@ import {MOBILE_RULES} from './portrait';
 import { DUNGEONS, roomFor, PHYSICS, createState, requestJump, step, type Dungeon, type GameState } from './physics';
 import { createHazardVisuals } from './hazard-visuals';
 export interface AvatarStatus {kind:'buba'|'mixed'|'error'|'loading';name:string;fallbacks:string[];message?:string;testParts?:string[]}
-export interface Engine { setEditing(enabled:boolean):void; project(x:number,y:number):{x:number;y:number}; unproject(x:number,y:number):{x:number;y:number}; getRaidReplay():RaidReplay; getProof():RouteProof; playProof(proof:RouteProof):void; setRandomTraps(enabled:boolean):void; setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
+export interface Engine { setAppearance(appearance: Pick<Dungeon,'theme'|'decoration'|'decorationPositions'>):void; setEditing(enabled:boolean):void; project(x:number,y:number):{x:number;y:number}; unproject(x:number,y:number):{x:number;y:number}; getRaidReplay():RaidReplay; getProof():RouteProof; playProof(proof:RouteProof):void; setRandomTraps(enabled:boolean):void; setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
 export function createEngine(host: HTMLElement, onState: (s: GameState) => void, onLoad: (error?: string) => void, onAvatar: (status:AvatarStatus)=>void=()=>{}, onLevel:(level:Dungeon)=>void=()=>{}): Engine {
   let disposed = false, level = DUNGEONS[0], state = createState(level), raf = 0, elapsed = 0;
   let activeAxieClass:string|null=null,sourceLevel=level;
@@ -69,6 +70,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   const gem=new THREE.Mesh(gemGeo,mat(0xf7e29c,{emissive:0xffc95b,emissiveIntensity:0.8})); gem.position.set(0,0,0.7); chest.add(gem);
   const ringGeo = new THREE.TorusGeometry(1.15,0.018,4,64); geometries.push(ringGeo);
   const halo = new THREE.Mesh(ringGeo,mat(0xf1c86c,{emissive:0xc78d35,emissiveIntensity:1.3})); halo.position.set(0,0.5,-0.9); chest.add(halo);
+  const decorationVisuals = createDecorationVisuals(scene);
   let guardianVisuals:ReturnType<typeof createGuardianVisuals>|undefined;
   let hazardVisuals: ReturnType<typeof createHazardVisuals> | undefined;
   let roomGeometries:THREE.BufferGeometry[]=[],roomMaterials:THREE.Material[]=[],roomTextures:THREE.Texture[]=[];
@@ -88,8 +90,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
       for(let i=1;i<n;i++) box(roomGroup,p.x-p.w/2+i*p.w/n,p.y,1.32,0.025,p.h,0.02,dark);
       for(let i=0;i<n;i++) if(i%3!==1) box(roomGroup,p.x-p.w/2+i*p.w/n+0.4,p.y+p.h/2-0.13,1.39,0.35,0.2,0.06,mat(0x487963));
     });
-    if(level.decoration==='crystals'){for(const x of [1.5,room.w-1.5]){const geo=new THREE.OctahedronGeometry(.3);geometries.push(geo);const crystal=new THREE.Mesh(geo,mat(0xb7a0fc,{emissive:0x6950af,emissiveIntensity:.7}));crystal.position.set(x,roofY-1.4,-.8);roomGroup.add(crystal);}}
-    if(level.decoration==='lanterns'){for(const x of [1.7,room.w-1.7]){box(roomGroup,x,roofY-2,-.5,.32,.6,.35,mat(0xffd391,{emissive:0xd38f34,emissiveIntensity:1.3}));}}
+    decorationVisuals.update(level);
     chest.position.set(level.chest.x,level.chest.y,0.45); lid.rotation.x=0;
     hazardVisuals = createHazardVisuals(scene, level);
     hazardVisuals.update(state);
@@ -178,8 +179,8 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   };
   const visibility=()=>{if(document.hidden&&state.phase==='playing'){state.phase='paused';onState({...state});}};
   window.addEventListener('keydown',key);document.addEventListener('visibilitychange',visibility);
-  return {setEditing:(enabled)=>{editing=enabled;guardianVisuals?.setVisible(!enabled);},project:(x,y)=>{camera.updateMatrixWorld();const v=new THREE.Vector3(x,y,.8).project(camera);return {x:(v.x+1)/2,y:(1-v.y)/2};},unproject:(x,y)=>{camera.updateMatrixWorld();const a=new THREE.Vector3(x*2-1,1-y*2,-1).unproject(camera),b=new THREE.Vector3(x*2-1,1-y*2,1).unproject(camera);const t=(.8-a.z)/(b.z-a.z);return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t};},getRaidReplay:()=>({attempts:[...attempts,...(state.phase==='won'?[{rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'won' as const}]:[])]}),getProof:()=>({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions]}),playProof:(proof)=>{proofActions=[];state=createState(level);replay=proof;replayIndex=0;if(avatarReady)state.phase='playing';else startAfterLoad=true;onState({...state});},setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
-    disposed=true;guardianVisuals?.dispose();avatarRequest++;avatarController?.abort();currentMixed?.dispose();cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
+  return {setAppearance:(appearance)=>{level={...level,...appearance};sourceLevel={...sourceLevel,...appearance};const colors=level.theme==='amethyst'?[0x403c65,0x82749e]:level.theme==='ember'?[0x54372d,0xab7447]:[0x335d54,0x74a488];stone.color.setHex(colors[0]);top.color.setHex(colors[1]);decorationVisuals.update(level);},setEditing:(enabled)=>{editing=enabled;guardianVisuals?.setVisible(!enabled);},project:(x,y)=>{camera.updateMatrixWorld();const v=new THREE.Vector3(x,y,.8).project(camera);return {x:(v.x+1)/2,y:(1-v.y)/2};},unproject:(x,y)=>{camera.updateMatrixWorld();const a=new THREE.Vector3(x*2-1,1-y*2,-1).unproject(camera),b=new THREE.Vector3(x*2-1,1-y*2,1).unproject(camera);const t=(.8-a.z)/(b.z-a.z);return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t};},getRaidReplay:()=>({attempts:[...attempts,...(state.phase==='won'?[{rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'won' as const}]:[])]}),getProof:()=>({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions]}),playProof:(proof)=>{proofActions=[];state=createState(level);replay=proof;replayIndex=0;if(avatarReady)state.phase='playing';else startAfterLoad=true;onState({...state});},setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
+    disposed=true;decorationVisuals.dispose();guardianVisuals?.dispose();avatarRequest++;avatarController?.abort();currentMixed?.dispose();cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
     hazardVisuals?.dispose();mixer?.stopAllAction();bubaMixer?.stopAllAction();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.domElement.remove();
   }};
 }

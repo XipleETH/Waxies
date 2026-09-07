@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   height: 100dvh;
+  padding-bottom: calc(82px + env(safe-area-inset-bottom));
   isolation: isolate;
   overflow: hidden;
 }
@@ -24,7 +25,7 @@
   gap: 6px;
   font-size: 12px;
 }
-.stage button {
+:where(.stage) button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,10 +38,10 @@
   font-size: 13px;
   padding: 8px 12px;
 }
-.stage button:disabled {
+:where(.stage) button:disabled {
   opacity: 0.4;
 }
-.stage button:focus-visible {
+:where(.stage) button:focus-visible {
   outline: 3px solid #f2d18b;
 }
 .world {
@@ -279,4 +280,94 @@
   .bottom button {
     padding: 7px;
   }
+}
+
+.decorTarget {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border: 1px dashed #d4bafa !important;
+  background: transparent !important;
+  border-radius: 12px;
+  padding: 0 !important;
+  touch-action: none;
+}
+.bazaar {
+  position: absolute;
+  z-index: 12;
+  bottom: calc(85px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 20px), 440px);
+  border: 1px solid #8bae7955;
+  border-radius: 19px;
+  background: #16362eed;
+  backdrop-filter: blur(12px);
+  padding: 7px 10px;
+  box-shadow: 0 8px 24px #0005;
+}
+.bazaarHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+}
+.bazaarHeader span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.bazaarHeader span:nth-child(2) {
+  margin-left: auto;
+}
+.bazaarHeader button {
+  min-height: 32px;
+  width: 32px;
+  padding: 4px;
+}
+.goods {
+  display: flex;
+  overflow-x: auto;
+  gap: 7px;
+  padding: 6px 0;
+  scrollbar-width: none;
+}
+.goods button {
+  flex: 0 0 65px;
+  flex-direction: column;
+  gap: 4px;
+  padding: 7px 3px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #0e281ec7;
+}
+.goods button[aria-pressed='true'] {
+  border-color: #e4ca85;
+  background: #45604b;
+}
+.goods small {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 9px;
+  color: #dae7cf;
+  white-space: nowrap;
+}
+.purchase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  padding-top: 4px;
+}
+.purchase button {
+  min-height: 36px;
+  padding: 6px 12px;
+  background: #c6dfa9;
+  color: #193d2b;
+}
+
+.goods::-webkit-scrollbar {
+  display: none;
 }

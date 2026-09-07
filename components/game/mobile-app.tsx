@@ -3,19 +3,14 @@ import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import {
-  Home,
   Swords,
-  Castle,
   Sparkles,
-  ShoppingBag,
   Play,
   Link2,
   BookOpen,
   Dumbbell,
-  Check,
-  Flame,
-  Gem,
 } from 'lucide-react';
+import { AppNavigation, type AppScreen } from './app-navigation';
 import { AxiePreview } from './axie-preview';
 import { randomAxie } from '@/lib/game/random-axie';
 import { OnlinePanel, onlineRequest, queueOnlineReward } from './online-panel';
@@ -26,10 +21,8 @@ import { raidPowerDescription } from '@/lib/game/raid-powers';
 import { allowedParts, type AxieLoadout as Loadout } from '@/lib/game/axie';
 import {
   PROFILE_KEY,
-  GOODS,
   newProfile,
   readProfile,
-  buyGood,
   claimChispas,
   type MobileProfile,
 } from '@/lib/game/mobile-profile';
@@ -76,9 +69,7 @@ const layoutExamples = [
 export default function MobileApp() {
   const [profile, setProfile] = useState<MobileProfile>(newProfile),
     [ready, setReady] = useState(false),
-    [screen, setScreen] = useState<
-      'home' | 'vault' | 'shop' | 'axie' | 'online'
-    >('home'),
+    [screen, setScreen] = useState<AppScreen>('home'),
     [run, setRun] = useState<RunConfig | null>(null),
     [notice, setNotice] = useState(''),
     [library, setLibrary] = useState(false),
@@ -151,8 +142,6 @@ export default function MobileApp() {
     if (!ready) return;
     setNotice('');
     setRun({ ...config, id: crypto.randomUUID() });
-    if (!document.fullscreenElement)
-      void document.documentElement.requestFullscreen?.().catch(() => {});
   }
   function practice(layoutId?: string) {
     const course = choosePracticeCourse(courses, lastLayout.current, layoutId);
@@ -210,8 +199,6 @@ export default function MobileApp() {
       setScreen('online');
     }
     setRun(null);
-    if (document.fullscreenElement)
-      void document.exitFullscreen().catch(() => {});
   }
   function loadAxie(axie: Loadout | null) {
     if (!allowedParts(axie).length) {
@@ -255,13 +242,15 @@ export default function MobileApp() {
         }}
       />
     );
-  if (screen === 'vault' && !run)
+  if ((screen === 'vault' || screen === 'shop') && !run)
     return (
       <LiveVault
         profile={profile}
         onSave={save}
         onExit={() => setScreen('home')}
-        onAxie={() => setScreen('axie')}
+        onNavigate={setScreen}
+        shopOpen={screen === 'shop'}
+        onShopChange={(open) => setScreen(open ? 'shop' : 'vault')}
       />
     );
   if (run)
@@ -402,7 +391,7 @@ export default function MobileApp() {
                 </button>
                 {shared ? (
                   <button
-                    className="home-mode"
+                    className="home-mode home-mode-shared"
                     aria-label="Reto"
                     onClick={() =>
                       launch({ ...shared, mode: 'shared', axie: profile.axie })
@@ -424,91 +413,6 @@ export default function MobileApp() {
             onEdit={() => setScreen('vault')}
             onAttack={attack}
           />
-        ) : null}
-        {screen === 'shop' ? (
-          <>
-            <div className="m-heading">
-              <div>
-                <span className="m-eyebrow">EL BAZAR DE LUNACIA</span>
-                <h1>Hazlo tuyo.</h1>
-              </div>
-              <ShoppingBag size={28} />
-            </div>
-            <p className="m-intro">
-              Tus victorias se convierten en estilo. Usa Chispas para decorar tu
-              refugio.
-            </p>
-            <div className="shop-wallet">
-              <Sparkles size={28} />
-              <div>
-                <span>TUS CHISPAS</span>
-                <strong>{profile.chispas}</strong>
-              </div>
-              <small>
-                {profile.wins} cofres
-                <br />
-                recogidos
-              </small>
-            </div>
-            <div className="shop-grid">
-              {GOODS.map((g) => {
-                const owned = profile.owned.includes(g.id),
-                  equipped =
-                    profile.theme === g.id || profile.decoration === g.id;
-                return (
-                  <article className="shop-good" key={g.id}>
-                    <div
-                      className={'good-art ' + g.kind}
-                      style={{ '--good-color': g.color } as React.CSSProperties}
-                    >
-                      {g.kind === 'theme' ? (
-                        <Castle size={58} strokeWidth={1.2} />
-                      ) : g.id === 'crystals' ? (
-                        <Gem size={52} />
-                      ) : (
-                        <Flame size={52} />
-                      )}
-                      <span>{g.kind === 'theme' ? 'TEMA' : 'ADORNO'}</span>
-                    </div>
-                    <h2>{g.name}</h2>
-                    <p>{g.description}</p>
-                    <button
-                      disabled={
-                        !ready ||
-                        equipped ||
-                        (!owned && profile.chispas < g.price)
-                      }
-                      onClick={() => {
-                        try {
-                          if (save(buyGood(profileRef.current, g.id)))
-                            setNotice(g.name + ' equipado en tu refugio.');
-                        } catch (e) {
-                          setNotice((e as Error).message);
-                        }
-                      }}
-                    >
-                      {equipped ? (
-                        <>
-                          <Check size={15} /> Equipado
-                        </>
-                      ) : owned ? (
-                        'Equipar'
-                      ) : (
-                        <>
-                          <Sparkles size={14} /> {g.price}
-                        </>
-                      )}
-                    </button>
-                  </article>
-                );
-              })}
-            </div>
-            <p className="m-footnote">
-              Chispas es una moneda de juego local, sin valor monetario. Más
-              adelante: compras de cosméticos con SLP, AXS, RON y USDC. No hay
-              pagos ni canjes activos.
-            </p>
-          </>
         ) : null}
         {screen === 'axie' ? (
           <>
@@ -560,26 +464,7 @@ export default function MobileApp() {
           </button>
         </output>
       ) : null}
-      <nav className="m-nav" aria-label="Navegación principal">
-        {(
-          [
-            { id: 'home', label: 'Jugar', Icon: Home },
-            { id: 'vault', label: 'Refugio', Icon: Castle },
-            { id: 'shop', label: 'Bazar', Icon: ShoppingBag },
-            { id: 'axie', label: 'Mi Axie', Icon: Sparkles },
-          ] as const
-        ).map(({ id, label, Icon }) => (
-          <button
-            key={id}
-            onClick={() => setScreen(id)}
-            className={screen === id ? 'active' : ''}
-            aria-current={screen === id ? 'page' : undefined}
-          >
-            <Icon size={22} />
-            <span>{label}</span>
-          </button>
-        ))}
-      </nav>
+      <AppNavigation active={screen} onNavigate={setScreen} />
       <Dialog open={roomsOpen} onOpenChange={setRoomsOpen}>
         <DialogContent className="room-picker-dialog">
           <DialogTitle>Práctica libre</DialogTitle>

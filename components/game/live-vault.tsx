@@ -12,9 +12,24 @@ import {
   Coins,
   Sparkles,
   Link2,
-  ArrowUp,
+  ShoppingBag,
+  Castle,
+  Gem,
+  Flame,
+  X,
 } from 'lucide-react';
-import { vaultLevel, type MobileProfile } from '@/lib/game/mobile-profile';
+import {
+  vaultLevel,
+  GOODS,
+  buyGood,
+  type MobileProfile,
+} from '@/lib/game/mobile-profile';
+import { AppNavigation, type AppScreen } from './app-navigation';
+import {
+  decorationPositionsFor,
+  clampDecorationPosition,
+  type DecorationPosition,
+} from '@/lib/game/decoration-layout';
 import { roomFor, type Trap, type Dungeon } from '@/lib/game/physics';
 import type { Engine } from '@/lib/game/scene';
 import { PARTS, BATTLE_SLOTS } from '@/lib/game/catalog';
@@ -37,12 +52,16 @@ export function LiveVault({
   profile,
   onSave,
   onExit,
-  onAxie,
+  onNavigate,
+  shopOpen,
+  onShopChange,
 }: {
   profile: MobileProfile;
   onSave: (p: MobileProfile) => boolean;
   onExit: () => void;
-  onAxie: () => void;
+  onNavigate: (screen: AppScreen) => void;
+  shopOpen: boolean;
+  onShopChange: (open: boolean) => void;
 }) {
   const host = useRef<HTMLDivElement>(null),
     engine = useRef<Engine | null>(null),
@@ -62,7 +81,46 @@ export function LiveVault({
     [busy, setBusy] = useState(false),
     [name, setName] = useState(''),
     [amount, setAmount] = useState('50'),
-    [link, setLink] = useState('');
+    [link, setLink] = useState(''),
+    [preview, setPreview] = useState<MobileProfile | null>(null),
+    [previewId, setPreviewId] = useState<string | null>(null),
+    [decorGhost, setDecorGhost] = useState<DecorationPosition[] | null>(null);
+  const decorDrag = useRef<{
+    index: number;
+    positions: DecorationPosition[];
+    moved: boolean;
+  } | null>(null);
+  const displayed = preview ?? profile;
+  const displayedLevel = vaultLevel(displayed);
+  if (decorGhost) displayedLevel.decorationPositions = decorGhost;
+  useEffect(() => {
+    let stopped = false;
+    void onlineRequest()
+      .then((v) => {
+        if (!stopped) {
+          setView(v);
+          if (v.player?.chest) setAmount(String(v.player.chest));
+        }
+      })
+      .catch(() => {});
+    return () => {
+      stopped = true;
+    };
+  }, []);
+  useEffect(() => {
+    if (loaded)
+      engine.current?.setAppearance({
+        theme: displayed.theme,
+        decoration: displayed.decoration,
+        decorationPositions: decorGhost ?? displayed.decorationPositions,
+      });
+  }, [
+    displayed.theme,
+    displayed.decoration,
+    displayed.decorationPositions,
+    decorGhost,
+    loaded,
+  ]);
   const drag = useRef<{
     trap: Trap;
     reach: boolean;
@@ -149,8 +207,14 @@ export function LiveVault({
   }, []);
   useEffect(() => {
     if (loaded && modeRef.current === 'edit')
-      engine.current?.setLevel(vaultLevel(profile));
-  }, [profile, loaded]);
+      engine.current?.setLevel(vaultLevel(latest.current));
+  }, [
+    profile.traps,
+    profile.axie,
+    profile.guardianCount,
+    profile.freePlacement,
+    loaded,
+  ]);
   const traps = profile.traps,
     defaults = makeVaultTraps(traps, 1, [profile.axie]),
     t = ghost ?? traps.find((t) => t.anchor === selected),
@@ -261,11 +325,123 @@ export function LiveVault({
     changeMode('test');
     engine.current?.start();
   }
+  function navigate(screen: AppScreen) {
+    setPreview(null);
+    setPreviewId(null);
+    setDecorGhost(null);
+    if (screen === 'shop') {
+      edit();
+      onShopChange(!shopOpen);
+    } else onNavigate(screen);
+  }
+  function previewGood(id: string) {
+    setSelected(null);
+    setMessage('');
+    setDecorGhost(null);
+    setPreviewId(id);
+    const good = GOODS.find((g) => g.id === id),
+      p = latest.current;
+    setPreview(
+      id === 'none'
+        ? { ...p, decoration: 'none' }
+        : good
+          ? { ...p, [good.kind]: id }
+          : null,
+    );
+  }
+  function applyGood() {
+    if (!previewId || !preview) return;
+    try {
+      const next =
+        previewId === 'none'
+          ? { ...latest.current, decoration: 'none' }
+          : buyGood(latest.current, previewId);
+      if (next.decoration === preview.decoration)
+        next.decorationPositions = preview.decorationPositions;
+      if (!onSave(next)) throw Error('No se pudo guardar');
+      setPreview(null);
+      setPreviewId(null);
+      setMessage('Aplicado');
+    } catch (e) {
+      setMessage((e as Error).message);
+    }
+  }
+  function startDecor(e: PointerEvent<HTMLButtonElement>, index: number) {
+    e.preventDefault();
+    e.currentTarget.setPointerCapture(e.pointerId);
+    setSelected(null);
+    setMessage('');
+    decorDrag.current = {
+      index,
+      positions: decorationPositionsFor(displayedLevel).map((p) => ({ ...p })),
+      moved: false,
+    };
+  }
+  function moveDecor(e: PointerEvent<HTMLButtonElement>) {
+    const d = decorDrag.current,
+      rect = host.current?.getBoundingClientRect(),
+      g = engine.current;
+    if (!d || !rect || !g) return;
+    const position = g.unproject(
+      (e.clientX - rect.left) / rect.width,
+      (e.clientY - rect.top) / rect.height,
+    );
+    d.positions[d.index] = clampDecorationPosition(
+      position.x,
+      position.y,
+      displayedLevel,
+    );
+    d.moved = true;
+    setDecorGhost(d.positions.map((p) => ({ ...p })));
+  }
+  function endDecor() {
+    const d = decorDrag.current;
+    decorDrag.current = null;
+    setDecorGhost(null);
+    if (!d?.moved) return;
+    if (preview) setPreview({ ...preview, decorationPositions: d.positions });
+    else if (!onSave({ ...latest.current, decorationPositions: d.positions }))
+      setMessage('No se pudo guardar');
+  }
+  function closeShop() {
+    setPreview(null);
+    setPreviewId(null);
+    setDecorGhost(null);
+    onShopChange(false);
+  }
+  async function saveVault() {
+    if (busy || !latest.current.proof) return;
+    setBusy(true);
+    setMessage('');
+    try {
+      const current = await onlineRequest();
+      setView(current);
+      edit();
+      if (!current.player?.chest) {
+        setFund(true);
+        return;
+      }
+      const p = latest.current;
+      const next = await onlineRequest({
+        action: 'activate',
+        amount: current.player.chest,
+        code: challengeCode({ level: vaultLevel(p), proof: p.proof! }),
+      });
+      setView(next);
+      setMessage('Guardada');
+    } catch (e) {
+      setMessage((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
   async function openFund() {
     setFund(true);
     setMessage('');
     try {
-      setView(await onlineRequest());
+      const next = await onlineRequest();
+      setView(next);
+      if (next.player?.chest) setAmount(String(next.player.chest));
     } catch (e) {
       setMessage((e as Error).message);
     }
@@ -289,6 +465,7 @@ export function LiveVault({
         }),
       );
       setFund(false);
+      edit();
       setMessage('Cofre activo');
     } catch (e) {
       setMessage((e as Error).message);
@@ -392,6 +569,63 @@ export function LiveVault({
                 );
               })}
             </div>
+            {displayed.decoration !== 'none'
+              ? decorationPositionsFor(displayedLevel).map((point, index) => (
+                  <button
+                    key={'decor-' + index}
+                    className={styles.decorTarget}
+                    style={pos(point.x, point.y)}
+                    aria-label={`Mover adorno ${index + 1}`}
+                    onPointerDown={(e) => startDecor(e, index)}
+                    onPointerMove={moveDecor}
+                    onPointerUp={endDecor}
+                    onPointerCancel={() => {
+                      decorDrag.current = null;
+                      setDecorGhost(null);
+                    }}
+                    onKeyDown={(e) => {
+                      if (
+                        ![
+                          'ArrowLeft',
+                          'ArrowRight',
+                          'ArrowUp',
+                          'ArrowDown',
+                        ].includes(e.key)
+                      )
+                        return;
+                      e.preventDefault();
+                      const positions = decorationPositionsFor(
+                        displayedLevel,
+                      ).map((p) => ({ ...p }));
+                      positions[index] = clampDecorationPosition(
+                        point.x +
+                          (e.key === 'ArrowLeft'
+                            ? -0.2
+                            : e.key === 'ArrowRight'
+                              ? 0.2
+                              : 0),
+                        point.y +
+                          (e.key === 'ArrowUp'
+                            ? 0.2
+                            : e.key === 'ArrowDown'
+                              ? -0.2
+                              : 0),
+                        displayedLevel,
+                      );
+                      if (preview)
+                        setPreview({
+                          ...preview,
+                          decorationPositions: positions,
+                        });
+                      else
+                        onSave({
+                          ...latest.current,
+                          decorationPositions: positions,
+                        });
+                    }}
+                  />
+                ))
+              : null}
             {traps.map((trap) => (
               <button
                 key={trap.anchor}
@@ -568,55 +802,107 @@ export function LiveVault({
       {message && !fund ? (
         <output className={styles.message}>{message}</output>
       ) : null}
-      <footer
-        className={styles.bottom}
-        style={{
-          visibility:
-            mode === 'failed' || mode === 'won' ? 'hidden' : 'visible',
+      {shopOpen ? (
+        <aside className={styles.bazaar} aria-label="Bazar del refugio">
+          <div className={styles.bazaarHeader}>
+            <span>
+              <ShoppingBag size={16} /> Bazar
+            </span>
+            <span>
+              <Sparkles size={14} /> {profile.chispas}
+            </span>
+            <button onClick={closeShop} aria-label="Cerrar Bazar">
+              <X size={16} />
+            </button>
+          </div>
+          <div className={styles.goods}>
+            {GOODS.map((g) => (
+              <button
+                key={g.id}
+                disabled={!loaded}
+                aria-label={'Previsualizar ' + g.name}
+                aria-pressed={previewId === g.id}
+                onClick={() => previewGood(g.id)}
+                style={{ color: g.color }}
+              >
+                {g.kind === 'theme' ? (
+                  <Castle size={24} />
+                ) : g.id === 'crystals' ? (
+                  <Gem size={24} />
+                ) : (
+                  <Flame size={24} />
+                )}
+                <small>
+                  {
+                    {
+                      moss: 'Musgo',
+                      amethyst: 'Amatista',
+                      ember: 'Ámbar',
+                      crystals: 'Cristales',
+                      lanterns: 'Faroles',
+                    }[g.id]
+                  }
+                </small>
+                <small>
+                  {profile.owned.includes(g.id) ? (
+                    <Check size={12} />
+                  ) : (
+                    <>
+                      <Sparkles size={9} /> {g.price}
+                    </>
+                  )}
+                </small>
+              </button>
+            ))}
+            <button
+              aria-label="Previsualizar sin adornos"
+              aria-pressed={previewId === 'none'}
+              onClick={() => previewGood('none')}
+            >
+              <X size={24} />
+              <small>Sin adornos</small>
+            </button>
+          </div>
+          {previewId ? (
+            <div className={styles.purchase}>
+              <small>Vista previa</small>
+              <button
+                onClick={applyGood}
+                disabled={
+                  previewId !== 'none' &&
+                  !profile.owned.includes(previewId) &&
+                  profile.chispas <
+                    (GOODS.find((g) => g.id === previewId)?.price ?? 0)
+                }
+              >
+                {previewId === 'none' || profile.owned.includes(previewId) ? (
+                  'Aplicar'
+                ) : (
+                  <>
+                    Comprar · {GOODS.find((g) => g.id === previewId)?.price}{' '}
+                    <Sparkles size={12} />
+                  </>
+                )}
+              </button>
+            </div>
+          ) : null}
+        </aside>
+      ) : null}
+      <AppNavigation
+        active={shopOpen ? 'shop' : 'vault'}
+        onNavigate={navigate}
+        vaultAction={{
+          label:
+            mode === 'test' ? 'Editar' : profile.proof ? 'Guardar' : 'Probar',
+          disabled: !loaded || busy,
+          onClick: () => {
+            if (shopOpen) closeShop();
+            if (mode === 'test') edit();
+            else if (profile.proof) void saveVault();
+            else test();
+          },
         }}
-      >
-        {mode === 'test' ? (
-          <>
-            <button onClick={edit}>
-              <Pencil size={18} />
-              Editar
-            </button>
-            <button
-              className={styles.primary}
-              onClick={() => engine.current?.jump()}
-            >
-              <ArrowUp size={22} />
-              Saltar
-            </button>
-          </>
-        ) : (
-          <>
-            <button onClick={onAxie}>
-              <Sparkles size={20} />
-              Axie
-            </button>
-            <button
-              className={styles.primary}
-              disabled={!loaded}
-              onClick={test}
-            >
-              <Play size={20} />
-              Probar
-            </button>
-            <button disabled={!profile.proof} onClick={() => void openFund()}>
-              <Coins size={20} />
-              Cofre
-            </button>
-            <button
-              disabled={!profile.proof}
-              onClick={() => void share()}
-              aria-label="Compartir"
-            >
-              <Link2 size={20} />
-            </button>
-          </>
-        )}
-      </footer>
+      />
       {link && mode === 'edit' ? (
         <input
           className={styles.link}
@@ -635,6 +921,11 @@ export function LiveVault({
               : '100 Chispas de prueba'}
           </DialogDescription>
           {message ? <output>{message}</output> : null}
+          {profile.proof ? (
+            <button onClick={() => void share()}>
+              <Link2 size={16} /> Compartir
+            </button>
+          ) : null}
           {!view ? (
             <span>Conectando…</span>
           ) : !view.configured ? (

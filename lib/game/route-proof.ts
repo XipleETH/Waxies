@@ -1,3 +1,4 @@
+import { validDecorationPositions } from './decoration-layout';
 import { validReach } from './trap-reach';
 import { validFreeTraps } from './free-vault';
 import { VAULT_SLOTS, validVaultTraps } from './vault-layout';
@@ -56,6 +57,7 @@ export function challengeCode(course: VerifiedCourse): string {
     g: modern ? course.level.guardianGenes : undefined,
     theme: course.level.theme ?? 'moss',
     decoration: course.level.decoration ?? 'none',
+    d: course.level.decorationPositions,
     t: course.level.traps.map((t) => ({
       part: t.part,
       x: t.x,
@@ -137,7 +139,10 @@ export function decodeChallenge(code: string): VerifiedCourse {
     traps,
     theme: data.theme ?? 'moss',
     decoration: data.decoration ?? 'none',
+    decorationPositions: data.d,
   };
+  if (!validDecorationPositions(level.decorationPositions, level))
+    throw Error('Posiciones de adornos no válidas.');
   dungeonGuardians(level);
   if (!verifyRoute(level, data.p))
     throw Error(

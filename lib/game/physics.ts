@@ -4,6 +4,7 @@ import type { PartId } from './catalog';
 export interface Rect { x: number; y: number; w: number; h: number }
 export interface Trap { reach?:number; anchor?:number; part: PartId; x: number; y: number; patrol: number; phase: number }
 export interface Dungeon {
+  decorationPositions?: import('./decoration-layout').DecorationPosition[];
   id: string; guardianGenes?: string[]; freePlacement?:boolean; layoutId?: string; name: string; subtitle: string; difficulty: string;
   rules?:'raid'; room?:typeof ROOM; theme?:string; decoration?:string; runnerClass?: string; runnerShield?: number; platforms: Rect[]; traps: Trap[]; spawn: { x: number; y: number }; chest: { x: number; y: number };
 }

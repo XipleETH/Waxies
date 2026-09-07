@@ -1,3 +1,7 @@
+import {
+  validDecorationPositions,
+  type DecorationPosition,
+} from './decoration-layout';
 import { validFreeTraps, snapTrap } from './free-vault';
 import { reachSettings } from './trap-reach';
 import { allowedParts, validLoadout, type AxieLoadout } from './axie';
@@ -60,6 +64,7 @@ export interface MobileProfile {
   owned: string[];
   theme: string;
   decoration: string;
+  decorationPositions?: DecorationPosition[];
   claimed: string[];
   wins: number;
   axie: AxieLoadout | null;
@@ -110,6 +115,7 @@ export function vaultLevel(p: MobileProfile): Dungeon {
     }),
     theme: p.theme,
     decoration: p.decoration,
+    decorationPositions: p.decorationPositions,
   };
 }
 export function prize(hp: number) {
@@ -160,6 +166,8 @@ export function readProfile(): MobileProfile {
   }
   const p = JSON.parse(text) as MobileProfile;
   p.story ??= [];
+  if (!validDecorationPositions(p.decorationPositions, PORTRAIT_BASE))
+    throw Error('Posiciones de adornos no válidas.');
   const legacyVault = p.vaultVersion !== 2;
   if (legacyVault) {
     p.guardianCount = 1;
