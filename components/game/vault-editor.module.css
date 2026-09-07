@@ -1,0 +1,98 @@
+.editor {
+  padding: 16px;
+  background: #112c29;
+  border: 1px solid #547a5b66;
+  border-radius: 22px;
+  margin: 16px 0;
+}
+.editor > p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #b9cdba;
+  margin: 0 0 14px;
+}
+.board {
+  position: relative;
+  aspect-ratio: 12/22;
+  max-height: 490px;
+  margin: auto;
+  width: min(100%, 267px);
+  touch-action: none;
+}
+.board svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.trap,
+.handle {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  touch-action: none;
+  cursor: grab;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.trap {
+  width: 42px;
+  height: 42px;
+  background: #19382a;
+  border: 1px solid #8ab590;
+  border-radius: 50%;
+  z-index: 2;
+}
+.trap img {
+  object-fit: contain;
+  pointer-events: none;
+}
+.trap span {
+  position: absolute;
+  bottom: -3px;
+  right: -2px;
+  background: #d7bc7c;
+  color: #243c2c;
+  font-size: 10px;
+  font-weight: bold;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.trap.selected {
+  outline: 2px solid #edc97b;
+  outline-offset: 2px;
+  z-index: 3;
+}
+.handle {
+  width: 34px;
+  height: 34px;
+  z-index: 4;
+  color: #23362c;
+  background: #edc97b;
+  border: 2px solid #fff2c6;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.selectedInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 0;
+  color: #eadcaf;
+  font-size: 12px;
+}
+.selectedInfo span {
+  text-align: right;
+  font-size: 11px;
+}
+.editor .note {
+  font-size: 10px;
+  margin: 0;
+  color: #88a797;
+}
+.error {
+  display: block;
+  color: #e8b499;
+  font-size: 12px;
+  margin-top: 12px;
+}

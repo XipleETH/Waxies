@@ -1,3 +1,5 @@
+import { validFreeTraps, snapTrap } from './free-vault';
+import { reachSettings } from './trap-reach';
 import { allowedParts, validLoadout, type AxieLoadout } from './axie';
 import { makeVaultTraps, validVaultTraps } from './vault-layout';
 import { guardianGenes } from './guardians';
@@ -51,6 +53,7 @@ export const GOODS = [
 export interface MobileProfile {
   version: 1;
   vaultVersion: 2;
+  freePlacement?: boolean;
   guardianCount: 1 | 2;
   companion: AxieLoadout | null;
   chispas: number;
@@ -68,6 +71,7 @@ export function newProfile(): MobileProfile {
   return {
     version: 1,
     vaultVersion: 2,
+    freePlacement: true,
     guardianCount: 1,
     companion: null,
     story: [],
@@ -78,7 +82,10 @@ export function newProfile(): MobileProfile {
     claimed: [],
     wins: 0,
     axie: null,
-    traps: makeVaultTraps([], 1, [null]),
+    traps: makeVaultTraps([], 1, [null]).map((t) => ({
+      ...t,
+      reach: reachSettings(t.part).default,
+    })),
     proof: null,
   };
 }
@@ -88,6 +95,7 @@ export function vaultLevel(p: MobileProfile): Dungeon {
     id: 'my-vault',
     name: 'Mi refugio',
     traps: p.traps,
+    freePlacement: p.freePlacement,
     guardianGenes: Array.from({ length: p.guardianCount }, (_, g) => {
       const axie = g === 0 ? p.axie : p.companion;
       return (
@@ -197,12 +205,24 @@ export function readProfile(): MobileProfile {
         )
       : ![1, 2].includes(p.guardianCount) ||
         (!!p.companion && !validLoadout(p.companion)) ||
-        !validVaultTraps(p.traps, p.guardianCount))
+        !(p.freePlacement
+          ? p.guardianCount === 1 && validFreeTraps(p.traps)
+          : validVaultTraps(p.traps, p.guardianCount)))
   )
     throw Error('No se pudo recuperar el progreso de este dispositivo.');
   if (legacyVault) {
     p.traps = makeVaultTraps(p.traps, 1, [p.axie]);
     p.vaultVersion = 2;
+    p.proof = null;
+  }
+  if (!p.freePlacement) {
+    p.guardianCount = 1;
+    p.traps = makeVaultTraps(p.traps, 1, [p.axie]).map((t) => ({
+      ...t,
+      ...snapTrap(t.x, t.y),
+      reach: reachSettings(t.part).default,
+    }));
+    p.freePlacement = true;
     p.proof = null;
   }
   if (

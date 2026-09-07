@@ -1,3 +1,5 @@
+import { validReach } from './trap-reach';
+import { validFreeTraps } from './free-vault';
 import { VAULT_SLOTS, validVaultTraps } from './vault-layout';
 import { dungeonGuardians } from './guardians';
 import { createState, requestJump, step, type Dungeon } from './physics';
@@ -50,7 +52,7 @@ export function challengeCode(course: VerifiedCourse): string {
   const modern = course.level.traps.every((t) => t.anchor !== undefined);
   if (modern) dungeonGuardians(course.level);
   const data = {
-    v: modern ? 2 : 1,
+    v: course.level.freePlacement ? 3 : modern ? 2 : 1,
     g: modern ? course.level.guardianGenes : undefined,
     theme: course.level.theme ?? 'moss',
     decoration: course.level.decoration ?? 'none',
@@ -58,6 +60,8 @@ export function challengeCode(course: VerifiedCourse): string {
       part: t.part,
       x: t.x,
       ...(modern ? { anchor: t.anchor } : {}),
+      ...(course.level.freePlacement ? { y: t.y } : {}),
+      ...(t.reach !== undefined ? { reach: t.reach } : {}),
     })),
     p: course.proof,
   };
@@ -67,9 +71,10 @@ export function decodeChallenge(code: string): VerifiedCourse {
   if (code.length > 120000)
     throw Error('El enlace de reto es demasiado largo.');
   const data = JSON.parse(atob(code));
-  const modern = data.v === 2;
+  const free = data.v === 3;
+  const modern = free || data.v === 2;
   if (
-    ![1, 2].includes(data.v) ||
+    ![1, 2, 3].includes(data.v) ||
     !Array.isArray(data.t) ||
     (!modern && data.t.length !== 3) ||
     (modern &&
@@ -81,14 +86,24 @@ export function decodeChallenge(code: string): VerifiedCourse {
   )
     throw Error('Reto no compatible.');
   const traps = data.t.map(
-    (t: { part: string; x: number; anchor?: number }, i: number) => {
+    (
+      t: {
+        part: string;
+        x: number;
+        y?: number;
+        reach?: number;
+        anchor?: number;
+      },
+      i: number,
+    ) => {
       const slot = modern ? VAULT_SLOTS[t.anchor!] : PORTRAIT_SLOTS[i];
       if (
         !slot ||
         (modern && !Number.isInteger(t.anchor)) ||
         !PARTS[t.part] ||
+        !validReach(t as import('./physics').Trap) ||
         !Number.isFinite(t.x) ||
-        Math.abs(t.x - slot.x) > 1.5
+        (!free && Math.abs(t.x - slot.x) > 1.5)
       )
         throw Error('La defensa contiene una posición no permitida.');
       return {
@@ -96,6 +111,8 @@ export function decodeChallenge(code: string): VerifiedCourse {
         part: t.part,
         x: t.x,
         ...(modern ? { anchor: t.anchor } : {}),
+        ...(free ? { y: t.y! } : {}),
+        ...(t.reach !== undefined ? { reach: t.reach } : {}),
       };
     },
   );
@@ -104,12 +121,18 @@ export function decodeChallenge(code: string): VerifiedCourse {
     !['none', 'crystals', 'lanterns'].includes(data.decoration ?? 'none')
   )
     throw Error('Estilo de defensa no compatible.');
-  if (modern && !validVaultTraps(traps, data.g.length))
+  if (
+    modern &&
+    !(free
+      ? data.g.length === 1 && validFreeTraps(traps)
+      : validVaultTraps(traps, data.g.length))
+  )
     throw Error('Defensas de guardianes no válidas.');
   const level = {
     ...PORTRAIT_BASE,
     id: 'shared-vault',
     name: 'Reto de un amigo',
+    freePlacement: free,
     guardianGenes: modern ? data.g : undefined,
     traps,
     theme: data.theme ?? 'moss',

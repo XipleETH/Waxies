@@ -1,3 +1,4 @@
+import type { RaidAttempt, RaidReplay } from './raid-replay';
 import * as THREE from 'three';
 import { loadMixedAvatar, type MixedAvatar } from './mixer-avatar';
 import type { AxieLoadout } from './axie';
@@ -11,10 +12,11 @@ import {MOBILE_RULES} from './portrait';
 import { DUNGEONS, roomFor, PHYSICS, createState, requestJump, step, type Dungeon, type GameState } from './physics';
 import { createHazardVisuals } from './hazard-visuals';
 export interface AvatarStatus {kind:'buba'|'mixed'|'error'|'loading';name:string;fallbacks:string[];message?:string;testParts?:string[]}
-export interface Engine { getProof():RouteProof; playProof(proof:RouteProof):void; setRandomTraps(enabled:boolean):void; setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
+export interface Engine { getRaidReplay():RaidReplay; getProof():RouteProof; playProof(proof:RouteProof):void; setRandomTraps(enabled:boolean):void; setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
 export function createEngine(host: HTMLElement, onState: (s: GameState) => void, onLoad: (error?: string) => void, onAvatar: (status:AvatarStatus)=>void=()=>{}, onLevel:(level:Dungeon)=>void=()=>{}): Engine {
   let disposed = false, level = DUNGEONS[0], state = createState(level), raf = 0, elapsed = 0;
   let activeAxieClass:string|null=null,sourceLevel=level;
+  let attempts:RaidAttempt[]=[];
   let proofActions:number[]=[],replay:RouteProof|null=null,replayIndex=0;let fitRoom:()=>void=()=>{};
   let randomTraps=false;
   const canRandomizeTraps=(dungeon:Dungeon)=>DUNGEONS.some(d=>d.id===dungeon.id);
@@ -71,7 +73,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   let roomGeometries:THREE.BufferGeometry[]=[],roomMaterials:THREE.Material[]=[],roomTextures:THREE.Texture[]=[];
   const loader = new THREE.TextureLoader();
   function buildLevel(next: Dungeon, deaths=0) {
-    startAfterLoad=false;proofActions=[];replay=null;sourceLevel=next;level = {...(randomTraps&&canRandomizeTraps(next)?randomTrapDungeon(next):next),runnerClass:next.rules==='raid'?next.runnerClass:(activeAxieClass??next.runnerClass)}; state = createState(level,deaths); roomGroup.clear(); hazardVisuals?.dispose();guardianVisuals?.dispose();guardianVisuals=undefined;
+    startAfterLoad=false;proofActions=[];attempts=[];replay=null;sourceLevel=next;level = {...(randomTraps&&canRandomizeTraps(next)?randomTrapDungeon(next):next),runnerClass:next.rules==='raid'?next.runnerClass:(activeAxieClass??next.runnerClass)}; state = createState(level,deaths); roomGroup.clear(); hazardVisuals?.dispose();guardianVisuals?.dispose();guardianVisuals=undefined;
     for(const geo of roomGeometries){geo.dispose();geometries.splice(geometries.indexOf(geo),1);}
     for(const material of roomMaterials){material.dispose();materials.splice(materials.indexOf(material),1);}
     for(const texture of roomTextures){texture.dispose();textures.splice(textures.indexOf(texture),1);}
@@ -146,7 +148,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     if(disposed)return;raf=requestAnimationFrame(loop);const delta=Math.min((now-previous)/1000,0.05);previous=now;
     elapsed+=delta;accumulator+=delta;
     if(state.phase!=='paused')guardianVisuals?.update(delta,elapsed);
-    while(accumulator>=PHYSICS.step){if(replay&&state.phase==='playing'&&replay.actions[replayIndex]===state.frame){requestJump(state);replayIndex++;}const hits=state.hits;step(state,level);if(state.hits>hits){proofActions=[];replay=null;}accumulator-=PHYSICS.step;}
+    while(accumulator>=PHYSICS.step){if(replay&&state.phase==='playing'&&replay.actions[replayIndex]===state.frame){requestJump(state);replayIndex++;}const hits=state.hits;step(state,level);if(state.hits>hits){attempts.push({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'hit'});proofActions=[];replay=null;}accumulator-=PHYSICS.step;}
     avatar.position.set(state.x,state.y,0.8);avatar.rotation.y=state.direction===1?Math.PI/2:-Math.PI/2;
     avatar.visible=state.raid||state.invulnerable<=0||Math.floor(elapsed*15)%2===0;
     avatar.scale.set(1,state.grounded?1:1.04,1);
@@ -165,7 +167,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   };raf=requestAnimationFrame(loop);
   const jump=()=>{if(avatarReady&&!replay&&(state.phase==='playing'||state.phase==='ready')){if(proofActions.at(-1)!==state.frame)proofActions.push(state.frame);requestJump(state);}};
   const pause=()=>{if(!avatarReady)return;if(state.phase==='playing')state.phase='paused';else if(state.phase==='paused')state.phase='playing';onState({...state});};
-  const restart=()=>{proofActions=[];replay=null;startAfterLoad=false;if(state.raid){const hp=state.hp,hits=state.hits;state={...createState(level,state.deaths),hp,hits,phase:hp>0?'ready':'dead'};onState({...state});return;}if(randomTraps&&canRandomizeTraps(sourceLevel))buildLevel(sourceLevel,state.deaths);else{state=createState(level,state.deaths);refreshRandom();onState({...state});}renderer.domElement.focus({preventScroll:true});};
+  const restart=()=>{if(state.raid&&state.frame>0&&['playing','paused'].includes(state.phase))attempts.push({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'restart'});proofActions=[];replay=null;startAfterLoad=false;if(state.raid){const hp=state.hp,hits=state.hits;state={...createState(level,state.deaths),hp,hits,phase:hp>0?'ready':'dead'};onState({...state});return;}if(randomTraps&&canRandomizeTraps(sourceLevel))buildLevel(sourceLevel,state.deaths);else{state=createState(level,state.deaths);refreshRandom();onState({...state});}renderer.domElement.focus({preventScroll:true});};
   const key=(e:KeyboardEvent)=>{
     if((e.target as HTMLElement)?.closest('input,select,textarea,[role="dialog"]'))return;
     if(e.repeat)return;
@@ -174,7 +176,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   };
   const visibility=()=>{if(document.hidden&&state.phase==='playing'){state.phase='paused';onState({...state});}};
   window.addEventListener('keydown',key);document.addEventListener('visibilitychange',visibility);
-  return {getProof:()=>({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions]}),playProof:(proof)=>{proofActions=[];state=createState(level);replay=proof;replayIndex=0;if(avatarReady)state.phase='playing';else startAfterLoad=true;onState({...state});},setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
+  return {getRaidReplay:()=>({attempts:[...attempts,...(state.phase==='won'?[{rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'won' as const}]:[])]}),getProof:()=>({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions]}),playProof:(proof)=>{proofActions=[];state=createState(level);replay=proof;replayIndex=0;if(avatarReady)state.phase='playing';else startAfterLoad=true;onState({...state});},setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
     disposed=true;guardianVisuals?.dispose();avatarRequest++;avatarController?.abort();currentMixed?.dispose();cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
     hazardVisuals?.dispose();mixer?.stopAllAction();bubaMixer?.stopAllAction();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.domElement.remove();
   }};

@@ -1,0 +1,146 @@
+.online > h1 {
+  font-size: 40px;
+  letter-spacing: -0.05em;
+  margin: 8px 0;
+}
+.online > p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #bbccbb;
+}
+.modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+.modes span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 9px;
+  border-radius: 10px;
+  background: #203d34;
+  color: #8ea79c;
+  font-size: 10px;
+}
+.modes span:first-child {
+  background: #c3dda9;
+  color: #234130;
+}
+.card {
+  padding: 18px;
+  background: #16342f;
+  border: 1px solid #4b725b77;
+  border-radius: 20px;
+  margin: 16px 0;
+}
+.card h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #eee4bf;
+}
+.card p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #b3c6b6;
+}
+.online button {
+  min-height: 44px;
+  border-radius: 12px;
+  border: 1px solid #70916b77;
+  background: #c4dcae;
+  color: #244331;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+.card > button {
+  width: 100%;
+  margin: 7px 0;
+}
+.online button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.card label {
+  display: block;
+  font-size: 12px;
+  margin: 12px 0 7px;
+}
+.card input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #102922;
+  border: 1px solid #749b7d;
+  color: #e4eccd;
+}
+.card small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #89a794;
+  margin-top: 10px;
+}
+.balance {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.balance > div {
+  background: #213e32;
+  padding: 15px 8px;
+  border-radius: 16px;
+  text-align: center;
+  color: #d4dca7;
+}
+.balance svg {
+  margin: auto;
+}
+.balance b {
+  display: block;
+  font-size: 25px;
+  margin: 8px 0 3px;
+}
+.balance span {
+  font-size: 10px;
+  color: #a3bea5;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+}
+.actions button {
+  flex: 1;
+  background: #214436;
+  color: #cbd7b4;
+}
+.event {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 13px 0;
+  border-bottom: 1px solid #8cac7922;
+}
+.event strong {
+  font-size: 13px;
+}
+.event span {
+  font-size: 11px;
+  color: #acc2ad;
+}
+.error {
+  display: block;
+  background: #4a3029;
+  color: #efd0b4;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.online .muted {
+  font-size: 10px;
+  color: #8ba790;
+}

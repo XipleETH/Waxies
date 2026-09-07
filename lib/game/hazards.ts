@@ -4,7 +4,7 @@ import {roomFor, type Dungeon, type GameState, type Trap} from './physics';
 export type AttackStage='idle'|'warning'|'active'|'recover'|'disabled';
 export interface TrapState { x:number;y:number;facing:1|-1;stage:AttackStage;timer:number;shield:boolean;energy:number;powered:boolean;shots:number;shotTimer:number;
  hp:number;shieldHp:number;maxShield:number;cycleShield:number;statuses:StatusMap;round:number;broken:boolean;breakUsed:boolean;struckUsed:boolean;draw:number;lastStand:number;aimY:number;hitThisAttack:boolean;aimX:number }
-export interface Projectile { id:number;owner:number;part:string;x:number;y:number;vx:number;vy:number;life:number;gravity?:number;returnAt?:number }
+export interface Projectile { id:number;owner:number;part:string;x:number;y:number;vx:number;vy:number;life:number;gravity?:number;returnAt?:number;travel?:number;maxTravel?:number;turnAfter?:number }
 export interface PoisonPool { id:number;x:number;y:number;life:number;owner?:number;part?:string }
 export interface HazardState {traps:TrapState[];projectiles:Projectile[];pools:PoisonPool[];nextId:number}
 export const ATTACK={warning:.65,thornRadius:1.65,dashSpeed:10,dashDuration:.38,projectileRadius:.19,poolRadius:.75};
@@ -19,13 +19,13 @@ function fire(s:GameState,level:Dungeon,i:number){
  const fan=pattern==='fan',arc=pattern==='arc'||fan,gravity=arc?9:pattern==='sniper'?0:.8;
  const speeds=fan?[1.6,3.6,5.6]:[pattern==='arc'?5:.4];
  for(const vy of speeds){const aim=pattern==='sniper'?Math.atan2(t.aimY-t.y,Math.abs(t.aimX-t.x)):0;
-  h.projectiles.push({id:h.nextId++,owner:i,part,x:t.x+t.facing*.68,y:t.y+.06,vx:t.facing*(pattern==='sniper'?9*Math.cos(aim):arc?5.8:7.5),vy:pattern==='sniper'?9*Math.sin(aim):vy,gravity,life:4,returnAt:pattern==='boomerang'?3.25:undefined});
+  h.projectiles.push({id:h.nextId++,owner:i,part,x:t.x+t.facing*.68,y:t.y+.06,vx:t.facing*(pattern==='sniper'?9*Math.cos(aim):arc?5.8:7.5),vy:pattern==='sniper'?9*Math.sin(aim):vy,gravity,life:4,returnAt:pattern==='boomerang'&&level.traps[i].reach===undefined?3.25:undefined,...(level.traps[i].reach!==undefined?{travel:0,maxTravel:level.traps[i].reach!*(pattern==='boomerang'?2:1),turnAfter:pattern==='boomerang'?level.traps[i].reach:undefined}:{})});
  }
 }
 function beginAttack(s:GameState,level:Dungeon,i:number){
  const t=s.hazards.traps[i],p=PARTS[level.traps[i].part],pattern=p.recipe.pattern;
  if((t.statuses.stun||t.statuses.fear)&&p.id!=='bidens'){delete t.statuses.stun;t.stage='recover';t.timer=1.5;return;}
- t.stage='active';t.timer=pattern==='dash'?ATTACK.dashDuration:isRadial(p.id)?.5:.4;t.hitThisAttack=false;
+ t.stage='active';t.timer=pattern==='dash'?(level.traps[i].reach??(ATTACK.dashSpeed*ATTACK.dashDuration))/ATTACK.dashSpeed:isRadial(p.id)?.5:.4;t.hitThisAttack=false;
  const rules=rulesFor(s,level,i,'fire');
  const energy=t.energy;t.powered=energy>0;t.energy=0;
  t.shots=Math.max(1,...rules.filter(r=>r.op==='repeat').map(r=>r.value))-1+Math.min(2,energy);t.shotTimer=.22;
@@ -59,9 +59,9 @@ export function stepHazards(s:GameState,level:Dungeon,dt:number,oldY:number,desc
   else if(t.stage==='active'){
    if(pattern==='dash'){
     const speed=ATTACK.dashSpeed*(t.statuses['speed-up']?1.2:1)*(t.statuses['speed-down']?.8:1),next=t.x+t.facing*speed*dt;
-    if(blocked(level,next,t.y,.35))t.timer=0;else t.x=next;
+    if(blocked(level,next,t.y,.35))t.timer=0;else if(trap.reach!==undefined&&Math.abs(next-trap.x)>=trap.reach){t.x=trap.x+t.facing*trap.reach;t.timer=0;}else t.x=next;
    }
-   const radius=isRadial(p.id)?ATTACK.thornRadius+.38:.88;
+   const radius=isRadial(p.id)?(trap.reach??ATTACK.thornRadius)+.38:pattern==='bite'?(trap.reach??.5)+.38:.88;
    if(p.attack>0&&(isRadial(p.id)||['dash','bite','barrier'].includes(pattern))&&!t.hitThisAttack&&Math.hypot(s.x-t.x,s.y-t.y)<radius&&lineClear(level,t.x,t.y,s.x,s.y)){hitRunner(s,level,i);t.hitThisAttack=true;}
    if(t.shots>0){t.shotTimer-=dt;if(t.shotTimer<=0){fire(s,level,i);t.shots--;t.shotTimer=.22;t.timer=Math.max(t.timer,.23);}}
    if(t.timer<=0){applyRules(s,level,i,rulesFor(s,level,i,'end'));t.stage='recover';t.timer=Math.max(.35,(pattern==='dash'?1.1:1.5)-t.draw*.35);t.draw=0;}
@@ -75,6 +75,7 @@ export function stepHazards(s:GameState,level:Dungeon,dt:number,oldY:number,desc
   const old=p.y;p.life-=dt;
   if(p.returnAt!==undefined&&p.life<p.returnAt){p.vx=-p.vx;p.returnAt=undefined;}
   p.vy-=(p.gravity??(p.part==='grass-snake'?9:.8))*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;
+  if(p.maxTravel!==undefined){p.travel=(p.travel??0)+Math.hypot(p.vx,p.vy)*dt;if(p.travel>=p.maxTravel){p.life=0;continue;}if(p.turnAfter!==undefined&&p.travel>=p.turnAfter){p.vx=-p.vx;p.turnAfter=undefined;}}
   if(blocked(level,p.x,p.y,ATTACK.projectileRadius)){
    p.life=0;
    if(['grass-snake','yam','garish-worm'].includes(p.part)&&p.vy<0&&level.traps[p.owner]&&rulesFor(s,level,p.owner,'hit').some(r=>r.status==='poison')){

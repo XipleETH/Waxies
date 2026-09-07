@@ -1,0 +1,133 @@
+{
+  "level": {
+    "id": "my-vault",
+    "name": "Mi refugio",
+    "subtitle": "Llega al cofre sin tocar una defensa",
+    "difficulty": "Práctica",
+    "rules": "raid",
+    "room": {
+      "w": 12,
+      "h": 22,
+      "left": 1,
+      "right": 11,
+      "floor": 1
+    },
+    "spawn": {
+      "x": 2.2,
+      "y": 1.38
+    },
+    "chest": {
+      "x": 8.8,
+      "y": 20.28
+    },
+    "platforms": [
+      {
+        "x": 8,
+        "y": 3.1,
+        "w": 6,
+        "h": 0.55
+      },
+      {
+        "x": 4,
+        "y": 5.75,
+        "w": 6,
+        "h": 0.55
+      },
+      {
+        "x": 8,
+        "y": 8.4,
+        "w": 6,
+        "h": 0.55
+      },
+      {
+        "x": 4,
+        "y": 11.049999999999999,
+        "w": 6,
+        "h": 0.55
+      },
+      {
+        "x": 8,
+        "y": 13.7,
+        "w": 6,
+        "h": 0.55
+      },
+      {
+        "x": 4,
+        "y": 16.35,
+        "w": 6,
+        "h": 0.55
+      },
+      {
+        "x": 8,
+        "y": 19,
+        "w": 6,
+        "h": 0.55
+      }
+    ],
+    "traps": [
+      {
+        "x": 3.4,
+        "y": 6.55,
+        "part": "serious",
+        "phase": 0,
+        "patrol": 0,
+        "anchor": 0,
+        "reach": 0.5
+      },
+      {
+        "x": 5.8,
+        "y": 11.85,
+        "part": "lagging",
+        "phase": 1.5,
+        "patrol": 0,
+        "anchor": 1,
+        "reach": 3.8
+      },
+      {
+        "x": 3.4,
+        "y": 17.15,
+        "part": "pumpkin",
+        "phase": 3,
+        "patrol": 0,
+        "anchor": 2,
+        "reach": 0.4
+      },
+      {
+        "x": 8.8,
+        "y": 3.9,
+        "part": "carrot",
+        "phase": 0.8,
+        "patrol": 0,
+        "anchor": 3,
+        "reach": 6
+      }
+    ],
+    "freePlacement": true,
+    "guardianGenes": [
+      "0x2000000000000000800000004000000000000004080000000000000c08000000000000042800000000000004080000000000000c300000000000000c08000000"
+    ],
+    "theme": "moss",
+    "decoration": "none"
+  },
+  "proof": {
+    "rules": "portrait-raid-v1",
+    "frames": 1674,
+    "actions": [
+      0,
+      108,
+      288,
+      420,
+      600,
+      720,
+      804,
+      816,
+      900,
+      1056,
+      1152,
+      1272,
+      1368,
+      1524,
+      1644
+    ]
+  }
+}

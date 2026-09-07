@@ -54,21 +54,24 @@
           "y": 3.9,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.5
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.5
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "moss"
@@ -146,21 +149,24 @@
           "y": 3.9,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "piranha",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 6
         }
       ],
       "theme": "moss"
@@ -235,21 +241,24 @@
           "y": 3.9,
           "part": "jaguar",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.75
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 12
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "feather-fan",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "moss"
@@ -325,21 +334,24 @@
           "y": 3.9,
           "part": "kingfisher",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 6
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "granma-s-fan",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "eggshell",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "moss"
@@ -415,21 +427,24 @@
           "y": 3.9,
           "part": "lagging",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 2.25
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 7
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "tadpole",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "moss"
@@ -505,21 +520,24 @@
           "y": 3.9,
           "part": "rose-bud",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "confident",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "pupae",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1.65
         }
       ],
       "theme": "moss"
@@ -595,21 +613,24 @@
           "y": 3.9,
           "part": "incisor",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "hermit",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "toothless-bite",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "moss"
@@ -697,21 +718,24 @@
           "y": 6.1,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 12
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 2.25
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "amethyst"
@@ -798,21 +822,24 @@
           "y": 6.1,
           "part": "sponge",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.8
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "piranha",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.75
         }
       ],
       "theme": "amethyst"
@@ -899,21 +926,24 @@
           "y": 6.1,
           "part": "furball",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 7
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "little-branch",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.75
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "lam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.5
         }
       ],
       "theme": "amethyst"
@@ -1000,21 +1030,24 @@
           "y": 6.1,
           "part": "cuckoo",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 6
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "amethyst"
@@ -1101,21 +1134,24 @@
           "y": 6.1,
           "part": "pliers",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1.2
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "confident",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "amethyst"
@@ -1202,21 +1238,24 @@
           "y": 6.1,
           "part": "watermelon",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.5
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "serious",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.8
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.5
         }
       ],
       "theme": "amethyst"
@@ -1303,21 +1342,24 @@
           "y": 6.1,
           "part": "kotaro",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.5
         }
       ],
       "theme": "amethyst"
@@ -1422,21 +1464,24 @@
           "y": 3.8,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 6
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "moss"
@@ -1550,21 +1595,24 @@
           "y": 3.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1.2
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "lam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.8
         }
       ],
       "theme": "moss"
@@ -1673,21 +1721,24 @@
           "y": 3.8,
           "part": "merry",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "lam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1
         }
       ],
       "theme": "moss"
@@ -1798,21 +1849,24 @@
           "y": 3.8,
           "part": "wing-horn",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 7
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.75
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "doubletalk",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -1926,21 +1980,24 @@
           "y": 3.8,
           "part": "mosquito",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "moss"
@@ -2049,21 +2106,24 @@
           "y": 3.8,
           "part": "herbivore",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1.2
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "cottontail",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "moss"
@@ -2172,21 +2232,24 @@
           "y": 3.8,
           "part": "wall-gecko",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 7
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "piranha",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.75
         }
       ],
       "theme": "moss"
@@ -2295,21 +2358,24 @@
           "y": 3.8,
           "part": "arco",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 3.5
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "nut-cracker-mouth",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -2418,21 +2484,24 @@
           "y": 3.8,
           "part": "peace-maker",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 6
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "moss"
@@ -2545,21 +2614,24 @@
           "y": 3.8,
           "part": "square-teeth",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1.2
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "ant",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "furball",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "moss"
@@ -2668,21 +2740,24 @@
           "y": 3.8,
           "part": "cattail",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "hermit",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1
         }
       ],
       "theme": "moss"
@@ -2755,21 +2830,24 @@
           "y": 10.2,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 7
         },
         {
           "x": 9.25,
           "y": 12.9,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.75
         },
         {
           "x": 5.8,
           "y": 15.3,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "ember"
@@ -2838,21 +2916,24 @@
           "y": 10.2,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 9.25,
           "y": 12.9,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 12
         },
         {
           "x": 5.8,
           "y": 15.3,
           "part": "lam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "ember"
@@ -2922,21 +3003,24 @@
           "y": 10.2,
           "part": "snake-jar",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 9.25,
           "y": 12.9,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 5.8,
           "y": 15.3,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.8
         }
       ],
       "theme": "ember"
@@ -3018,21 +3102,24 @@
           "y": 6.2,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.5
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.5
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "ember"
@@ -3113,21 +3200,24 @@
           "y": 6.2,
           "part": "lam",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1.2
         }
       ],
       "theme": "ember"
@@ -3208,21 +3298,24 @@
           "y": 6.2,
           "part": "axie-kiss",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "cottontail",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "cuckoo",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "ember"
@@ -3303,21 +3396,24 @@
           "y": 6.2,
           "part": "swallow",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 12
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "hermit",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "oranda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "ember"
@@ -3398,21 +3494,24 @@
           "y": 6.2,
           "part": "fish-snack",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 7
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "cactus",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 2.3
         }
       ],
       "theme": "ember"
@@ -3493,21 +3592,24 @@
           "y": 6.2,
           "part": "potato-leaf",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "merry",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "ember"
@@ -3600,21 +3702,24 @@
           "y": 6.1,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 6
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "amethyst"
@@ -3708,21 +3813,24 @@
           "y": 6.1,
           "part": "piranha",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 6
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "koi",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 2.25
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.8
         }
       ],
       "theme": "amethyst"
@@ -3816,21 +3924,24 @@
           "y": 6.1,
           "part": "rice",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.6
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.5
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "oranda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "amethyst"
@@ -3924,21 +4035,24 @@
           "y": 6.1,
           "part": "cloud",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 3.5
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "oranda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "amethyst"
@@ -4032,21 +4146,24 @@
           "y": 6.1,
           "part": "thorny-caterpillar",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 2.3
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "turnip",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 12
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "confident",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "amethyst"
@@ -4140,21 +4257,24 @@
           "y": 6.1,
           "part": "tri-spikes",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 12
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "granma-s-fan",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "merry",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "amethyst"
@@ -4242,21 +4362,24 @@
           "y": 5.2,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.5
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.5
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "moss"
@@ -4344,21 +4467,24 @@
           "y": 5.2,
           "part": "tadpole",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 7
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 6
         }
       ],
       "theme": "moss"
@@ -4446,21 +4572,24 @@
           "y": 5.2,
           "part": "nut-cracker-tail",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.8
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "moss"
@@ -4548,21 +4677,24 @@
           "y": 5.2,
           "part": "snail-shell",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "goda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "moss"
@@ -4650,21 +4782,24 @@
           "y": 5.2,
           "part": "bidens",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "merry",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "confident",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "moss"
@@ -4752,21 +4887,24 @@
           "y": 5.2,
           "part": "red-ear",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "tadpole",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -4860,21 +4998,24 @@
           "y": 6.55,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 6
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "amethyst"
@@ -4973,21 +5114,24 @@
           "y": 6.55,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 12
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "ronin",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.6
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.8
         }
       ],
       "theme": "amethyst"
@@ -5085,21 +5229,24 @@
           "y": 6.55,
           "part": "cupid",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.5
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 7
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "goda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "amethyst"
@@ -5198,21 +5345,24 @@
           "y": 6.55,
           "part": "sandal",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "goda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "amethyst"
@@ -5311,21 +5461,24 @@
           "y": 6.55,
           "part": "pumpkin",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "bamboo-shoot",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1.2
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "lam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "amethyst"
@@ -5423,21 +5576,24 @@
           "y": 6.55,
           "part": "scaly-spear",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 6
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.6
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "lam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.8
         }
       ],
       "theme": "amethyst"
@@ -5529,21 +5685,24 @@
           "y": 6.1,
           "part": "merry",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "lam",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.8
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "perch",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.75
         }
       ],
       "theme": "amethyst"
@@ -5648,21 +5807,24 @@
           "y": 3.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "teal-shell",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "lam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1.2
         }
       ],
       "theme": "moss"
@@ -5771,21 +5933,24 @@
           "y": 3.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "lam",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "clamshell",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "moss"
@@ -5858,21 +6023,24 @@
           "y": 10.2,
           "part": "tadpole",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 12
         },
         {
           "x": 9.25,
           "y": 12.9,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 5.8,
           "y": 15.3,
           "part": "shoal-star",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "ember"
@@ -5954,21 +6122,24 @@
           "y": 6.2,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.6
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "catfish",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.8
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1
         }
       ],
       "theme": "ember"
@@ -6049,21 +6220,24 @@
           "y": 6.2,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "risky-fish",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1.2
         }
       ],
       "theme": "ember"
@@ -6156,21 +6330,24 @@
           "y": 6.1,
           "part": "piranha",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.75
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 6
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "nimo",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "amethyst"
@@ -6258,21 +6435,24 @@
           "y": 5.2,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 12
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "ranchu",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 3.5
         }
       ],
       "theme": "moss"
@@ -6360,21 +6540,24 @@
           "y": 5.2,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.5
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "balloon",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 7
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "navaga",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.75
         }
       ],
       "theme": "moss"
@@ -6468,21 +6651,24 @@
           "y": 6.55,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 7
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "hero",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1.2
         }
       ],
       "theme": "amethyst"
@@ -6562,21 +6748,24 @@
           "y": 3.9,
           "part": "piranha",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.75
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "risky-beast",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 12
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "merry",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "moss"
@@ -6652,21 +6841,24 @@
           "y": 3.9,
           "part": "piranha",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 6
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "timber",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "moss"
@@ -6754,21 +6946,24 @@
           "y": 6.1,
           "part": "furball",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.5
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "piranha",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.5
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "imp",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.5
         }
       ],
       "theme": "amethyst"
@@ -6873,21 +7068,24 @@
           "y": 3.8,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "pocky",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.75
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "lam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1.2
         }
       ],
       "theme": "moss"
@@ -6998,21 +7196,24 @@
           "y": 3.8,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "piranha",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 6
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "dual-blade",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "moss"
@@ -7111,21 +7312,24 @@
           "y": 6.1,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1.2
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "shiba",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 2.25
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "oranda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "amethyst"
@@ -7219,21 +7423,24 @@
           "y": 6.1,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.6
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "piranha",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.5
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "hare",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "amethyst"
@@ -7321,21 +7528,24 @@
           "y": 5.2,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 7
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "gerbil",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.75
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -7429,21 +7639,24 @@
           "y": 6.55,
           "part": "oranda",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "raven",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 12
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "goda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "amethyst"
@@ -7542,21 +7755,24 @@
           "y": 6.55,
           "part": "oranda",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 12
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "goda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "pigeon-post",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "amethyst"
@@ -7649,21 +7865,24 @@
           "y": 6.1,
           "part": "confident",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "trump",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.5
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "amethyst"
@@ -7750,21 +7969,24 @@
           "y": 6.1,
           "part": "confident",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.75
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "kestrel",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "amethyst"
@@ -7869,21 +8091,24 @@
           "y": 3.8,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "feather-spear",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 6
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "doubletalk",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "moss"
@@ -7997,21 +8222,24 @@
           "y": 3.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1.2
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "hungry-bird",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 2.25
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "moss"
@@ -8124,21 +8352,24 @@
           "y": 3.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.6
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "koi",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 3.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "little-owl",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "moss"
@@ -8227,21 +8458,24 @@
           "y": 6.2,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 7
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "merry",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "the-last-one",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "ember"
@@ -8334,21 +8568,24 @@
           "y": 6.1,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.75
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1.2
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "post-fight",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "amethyst"
@@ -8436,21 +8673,24 @@
           "y": 5.2,
           "part": "merry",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "garish-worm",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "goda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "moss"
@@ -8538,21 +8778,24 @@
           "y": 5.2,
           "part": "merry",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "tadpole",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 7
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "buzz-buzz",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "moss"
@@ -8646,21 +8889,24 @@
           "y": 6.55,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "scarab",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "goda",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "amethyst"
@@ -8759,21 +9005,24 @@
           "y": 6.55,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "goda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 12
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "spiky-wing",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "amethyst"
@@ -8854,21 +9103,24 @@
           "y": 3.9,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 6
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "antenna",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "tadpole",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "moss"
@@ -8944,21 +9196,24 @@
           "y": 3.9,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 2.25
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "goda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 7
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "caterpillars",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "moss"
@@ -9046,21 +9301,24 @@
           "y": 6.1,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "parasite",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "confident",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "amethyst"
@@ -9147,21 +9405,24 @@
           "y": 6.1,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "goda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 12
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "leaf-bug",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "amethyst"
@@ -9266,21 +9527,24 @@
           "y": 3.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1.2
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "pincer",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.8
         }
       ],
       "theme": "moss"
@@ -9389,21 +9653,24 @@
           "y": 3.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.6
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "cute-bunny",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1
         }
       ],
       "theme": "moss"
@@ -9512,21 +9779,24 @@
           "y": 3.8,
           "part": "square-teeth",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "twin-tail",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -9611,21 +9881,24 @@
           "y": 6.2,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "gravel-ant",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 12
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "cactus",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1.3
         }
       ],
       "theme": "ember"
@@ -9718,21 +9991,24 @@
           "y": 6.1,
           "part": "thorny-caterpillar",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 2.8
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "shiitake",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "amethyst"
@@ -9820,21 +10096,24 @@
           "y": 5.2,
           "part": "confident",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "watering-can",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "cottontail",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "moss"
@@ -9922,21 +10201,24 @@
           "y": 5.2,
           "part": "confident",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "merry",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "mint",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "moss"
@@ -10030,21 +10312,24 @@
           "y": 6.55,
           "part": "pumpkin",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "lam",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1.2
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "beech",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "amethyst"
@@ -10124,21 +10409,24 @@
           "y": 3.9,
           "part": "confident",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "strawberry-shortcake",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "pupae",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1.65
         }
       ],
       "theme": "moss"
@@ -10226,21 +10514,24 @@
           "y": 6.1,
           "part": "watermelon",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.5
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.8
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "zigzag",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.5
         }
       ],
       "theme": "amethyst"
@@ -10345,21 +10636,24 @@
           "y": 3.8,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "silence-whisper",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "carrot",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -10468,21 +10762,24 @@
           "y": 3.8,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "hatsune",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "moss"
@@ -10591,21 +10888,24 @@
           "y": 3.8,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "merry",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "yam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "moss"
@@ -10690,21 +10990,24 @@
           "y": 6.2,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "hot-butt",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.8
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "merry",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "ember"
@@ -10785,21 +11088,24 @@
           "y": 6.2,
           "part": "potato-leaf",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 4.5,
           "y": 8.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1
         },
         {
           "x": 9.7,
           "y": 8.8,
           "part": "bone-sail",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "ember"
@@ -10892,21 +11198,24 @@
           "y": 6.1,
           "part": "granma-s-fan",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "green-thorns",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 12
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "merry",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "amethyst"
@@ -11000,21 +11309,24 @@
           "y": 6.1,
           "part": "granma-s-fan",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 12
         },
         {
           "x": 7.8,
           "y": 13.2,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.6
         },
         {
           "x": 4.2,
           "y": 15.5,
           "part": "indian-star",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.4
         }
       ],
       "theme": "amethyst"
@@ -11102,21 +11414,24 @@
           "y": 5.2,
           "part": "merry",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "croc",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 7
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "tadpole",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "moss"
@@ -11204,21 +11519,24 @@
           "y": 5.2,
           "part": "red-ear",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 2.5,
           "y": 11.6,
           "part": "goda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 4,
           "y": 3.3,
           "part": "unko",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -11312,21 +11630,24 @@
           "y": 6.55,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 4.75
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "cerastes",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1.2
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "lam",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "amethyst"
@@ -11424,21 +11745,24 @@
           "y": 6.55,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 6
         },
         {
           "x": 5.8,
           "y": 11.85,
           "part": "lam",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.6
         },
         {
           "x": 3.4,
           "y": 17.15,
           "part": "scaly-spoon",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 7
         }
       ],
       "theme": "amethyst"
@@ -11518,21 +11842,24 @@
           "y": 3.9,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.6
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "bumpy",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 0.4
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "toothless-bite",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 9.5
         }
       ],
       "theme": "moss"
@@ -11620,21 +11947,24 @@
           "y": 6.1,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.8
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "razor-bite",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.5
         }
       ],
       "theme": "amethyst"
@@ -11721,21 +12051,24 @@
           "y": 6.1,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 1
         },
         {
           "x": 2,
           "y": 10.6,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 1.2
         },
         {
           "x": 4.2,
           "y": 12.8,
           "part": "tiny-turtle",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 0.6
         }
       ],
       "theme": "amethyst"
@@ -11840,21 +12173,24 @@
           "y": 3.8,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "iguana",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 4.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "piranha",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 3.5
         }
       ],
       "theme": "moss"
@@ -11963,21 +12299,24 @@
           "y": 3.8,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 5,
           "y": 6.3,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 7
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "tiny-dino",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.75
         }
       ],
       "theme": "moss"
@@ -12050,21 +12389,24 @@
           "y": 10.2,
           "part": "hermit",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 0.4
         },
         {
           "x": 9.25,
           "y": 12.9,
           "part": "gila",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 9.5
         },
         {
           "x": 5.8,
           "y": 15.3,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 1.2
         }
       ],
       "theme": "ember"
@@ -12140,21 +12482,24 @@
           "y": 3.9,
           "part": "blue-moon",
           "patrol": 0,
-          "phase": 0
+          "phase": 0,
+          "reach": 9.5
         },
         {
           "x": 2.4,
           "y": 6.45,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5
+          "phase": 1.5,
+          "reach": 6
         },
         {
           "x": 8.9,
           "y": 9.05,
           "part": "grass-snake",
           "patrol": 0,
-          "phase": 3
+          "phase": 3,
+          "reach": 4.5
         }
       ],
       "theme": "moss"

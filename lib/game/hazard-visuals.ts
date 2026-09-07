@@ -58,13 +58,13 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
       v.charge.scale.setScalar(.11+Math.sin(s.time*9)*.02);
       const thorn=isRadial(part),aura=PARTS[part].recipe.pattern==='aura';
       v.cue.visible=warn||active;v.area.visible=(thorn||aura)&&(warn||active);
-      const radius=aura?2.2:thorn?ATTACK.thornRadius:.65+(warn?(1-t.timer/ATTACK.warning)*.2:0);
+      const radius=aura?2.2:thorn?(level.traps[i].reach??ATTACK.thornRadius):.65+(warn?(1-t.timer/ATTACK.warning)*.2:0);
       v.cue.scale.setScalar(radius);v.area.scale.setScalar(radius);
       v.area.material.opacity=active?.2:.06+(1-t.timer/ATTACK.warning)*.1;
       v.cue.material.opacity=active?.9:.35+(Math.sin(s.time*18)+1)*.2;
-      v.thorns.visible=thorn&&active;
+      v.thorns.visible=thorn&&active;v.thorns.scale.setScalar((level.traps[i].reach??ATTACK.thornRadius)/ATTACK.thornRadius);
       v.beam.visible=warn&&!thorn&&!aura;v.arrow.visible=warn&&!thorn&&!aura;
-      const range=PARTS[part].recipe.pattern==='dash'?ATTACK.dashSpeed*ATTACK.dashDuration:4.5;
+      const range=level.traps[i].reach??(PARTS[part].recipe.pattern==='dash'?ATTACK.dashSpeed*ATTACK.dashDuration:4.5);
       const angle=PARTS[part].recipe.pattern==='sniper'?Math.atan2(t.aimY-t.y,t.aimX-t.x):(t.facing===1?0:Math.PI);
       v.beam.scale.set(range,.07,1);v.beam.rotation.z=angle;v.beam.position.set(Math.cos(angle)*range/2,Math.sin(angle)*range/2,.75);
       v.arrow.position.set(Math.cos(angle)*range,Math.sin(angle)*range,.8);v.arrow.rotation.z=angle;

@@ -15,6 +15,7 @@ import {
 import { createState, type Dungeon } from '@/lib/game/physics';
 import type { Engine } from '@/lib/game/scene';
 import { verifyRoute, type RouteProof } from '@/lib/game/route-proof';
+import type { RaidReplay } from '@/lib/game/raid-replay';
 import { randomAxie } from '@/lib/game/random-axie';
 import type { AxieLoadout } from '@/lib/game/axie';
 import { PARTS } from '@/lib/game/catalog';
@@ -29,7 +30,11 @@ export interface RunConfig {
   id: string;
   level: Dungeon;
   proof?: RouteProof;
-  mode: 'practice' | 'validate' | 'shared' | 'story';
+  mode: 'practice' | 'validate' | 'shared' | 'story' | 'online';
+  onlineId?: string;
+  onlineLimit?: number;
+  opponent?: string;
+  onlineKind?: 'raid' | 'revenge';
   storyNumber?: number;
   previousBest?: number;
   axie: Pick<AxieLoadout, 'genes' | 'class' | 'name'> | null;
@@ -40,11 +45,13 @@ export function MobileRun({
   onNext,
   onClaim,
   onValidate,
+  onOnline,
 }: {
   run: RunConfig;
   onExit: () => void;
   onNext: () => void;
-  onClaim: (id: string, hp: number) => void;
+  onClaim: (id: string, hp: number, replay: RaidReplay) => void;
+  onOnline?: (replay: RaidReplay) => Promise<number>;
   onValidate: (proof: RouteProof) => void;
 }) {
   const host = useRef<HTMLDivElement>(null),
@@ -55,7 +62,9 @@ export function MobileRun({
     [error, setError] = useState(''),
     [demo, setDemo] = useState(false),
     [claimed, setClaimed] = useState(false),
-    [tip, setTip] = useState<number | null>(null);
+    [tip, setTip] = useState<number | null>(null),
+    [submitting, setSubmitting] = useState(false),
+    [onlineAmount, setOnlineAmount] = useState<number | null>(null);
   useEffect(() => {
     let stopped = false;
     const appearance = run.axie ?? randomAxie();
@@ -139,7 +148,7 @@ export function MobileRun({
       onValidate(proof);
     } else if (rewards) {
       try {
-        onClaim(run.id, s.hp);
+        onClaim(run.id, s.hp, game.getRaidReplay());
         handled.current = true;
         setClaimed(true);
       } catch {
@@ -147,6 +156,21 @@ export function MobileRun({
           'No se pudo guardar el premio. Libera espacio e inténtalo otra vez.',
         );
       }
+    }
+  }
+  async function submitOnline() {
+    if (!onOnline || !engine.current || submitting || handled.current) return;
+    setSubmitting(true);
+    setError('');
+    try {
+      const amount = await onOnline(engine.current.getRaidReplay());
+      handled.current = true;
+      setOnlineAmount(amount);
+      setClaimed(true);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setSubmitting(false);
     }
   }
   function fresh() {
@@ -192,7 +216,13 @@ export function MobileRun({
         </div>
         <div className="run-prize">
           <Sparkles size={17} />
-          <strong>{rewards && !demo ? reward : 0}</strong>
+          <strong>
+            {run.mode === 'online'
+              ? Math.floor(((run.onlineLimit ?? 0) * state.hp) / 100)
+              : rewards && !demo
+                ? reward
+                : 0}
+          </strong>
           <small>premio</small>
         </div>
         <button
@@ -300,9 +330,11 @@ export function MobileRun({
                 <p className="run-rule">
                   {run.mode === 'validate'
                     ? 'Solo puedes guardar tu defensa con 100 de salud y cero golpes.'
-                    : run.mode === 'story'
-                      ? 'Cada golpe reinicia el intento y resta 20 de salud. Mejora tu marca para ganar estrellas.'
-                      : 'Cada golpe: −20 salud y −20 Chispas del cofre.'}
+                    : run.mode === 'online'
+                      ? 'Cada golpe resta 20 de salud. El botín depende de la salud al llegar y queda retenido para la revancha.'
+                      : run.mode === 'story'
+                        ? 'Cada golpe reinicia el intento y resta 20 de salud. Mejora tu marca para ganar estrellas.'
+                        : 'Cada golpe: −20 salud y −20 Chispas del cofre.'}
                 </p>
                 <button
                   className="m-primary"
@@ -350,9 +382,23 @@ export function MobileRun({
                   Los cinco golpes agotaron el premio. Practica los saltos y
                   vuelve a intentarlo.
                 </p>
-                <button className="m-primary" onClick={fresh}>
-                  Intentar de nuevo
-                </button>
+                {run.mode === 'online' ? (
+                  <button
+                    className="m-primary"
+                    disabled={submitting}
+                    onClick={claimed ? onExit : submitOnline}
+                  >
+                    {claimed
+                      ? 'Volver a Online'
+                      : submitting
+                        ? 'Guardando…'
+                        : 'Cerrar ataque sin botín'}
+                  </button>
+                ) : (
+                  <button className="m-primary" onClick={fresh}>
+                    Intentar de nuevo
+                  </button>
+                )}
                 {run.proof ? (
                   <button className="m-secondary" onClick={showProof}>
                     <Bot size={18} /> Aprender la ruta
@@ -395,6 +441,38 @@ export function MobileRun({
                         </button>
                       </>
                     )}
+                  </>
+                ) : run.mode === 'online' ? (
+                  <>
+                    <p>
+                      {run.onlineKind === 'revenge'
+                        ? 'Has completado la revancha.'
+                        : 'Has llegado al cofre de ' + run.opponent + '.'}
+                    </p>
+                    <div className="reward-number">
+                      <Sparkles />
+                      {onlineAmount ??
+                        Math.floor(((run.onlineLimit ?? 0) * state.hp) / 100)}
+                      <small>Chispas · {state.hits} golpe(s)</small>
+                    </div>
+                    <p>
+                      {claimed
+                        ? 'Resultado confirmado por el servidor.'
+                        : run.onlineKind === 'revenge'
+                          ? 'Recuperas como máximo lo perdido. El resto se libera para tu rival.'
+                          : 'El botín quedará retenido 24 horas o hasta resolver la revancha.'}
+                    </p>
+                    <button
+                      className="m-primary"
+                      disabled={submitting}
+                      onClick={claimed ? onExit : submitOnline}
+                    >
+                      {claimed
+                        ? 'Volver a Online'
+                        : submitting
+                          ? 'Verificando partida…'
+                          : 'Confirmar resultado'}
+                    </button>
                   </>
                 ) : rewards ? (
                   <>

@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import {
   Home,
+  Swords,
   Castle,
   Sparkles,
   ShoppingBag,
@@ -19,8 +20,10 @@ import {
 } from 'lucide-react';
 import { AxiePreview } from './axie-preview';
 import { randomAxie } from '@/lib/game/random-axie';
+import { OnlinePanel, onlineRequest, queueOnlineReward } from './online-panel';
+import type { OnlineView } from '@/lib/online/types';
 import { MobileRun, type RunConfig } from './mobile-run';
-import { PARTS } from '@/lib/game/catalog';
+import { PARTS, BATTLE_SLOTS } from '@/lib/game/catalog';
 import { raidPowerDescription } from '@/lib/game/raid-powers';
 import { allowedParts, type AxieLoadout as Loadout } from '@/lib/game/axie';
 import {
@@ -36,7 +39,7 @@ import {
 import {
   makeVaultTraps,
   defenderParts,
-  vaultRange,
+  VAULT_SLOTS,
 } from '@/lib/game/vault-layout';
 import {
   challengeCode,
@@ -51,6 +54,10 @@ import {
   storyUnlocked,
   completeStory,
 } from '@/lib/game/story-progress';
+import { MobileVaultEditor } from './mobile-vault-editor';
+import { validFreeTraps, snapTrap } from '@/lib/game/free-vault';
+import { reachSettings } from '@/lib/game/trap-reach';
+import type { Trap } from '@/lib/game/physics';
 import { StoryMap } from './story-map';
 import { STORY_INTRO_KEY } from '@/lib/game/story-narrative';
 const StoryIntro = dynamic(() =>
@@ -79,7 +86,9 @@ const layoutExamples = [
 export default function MobileApp() {
   const [profile, setProfile] = useState<MobileProfile>(newProfile),
     [ready, setReady] = useState(false),
-    [screen, setScreen] = useState<'home' | 'vault' | 'shop' | 'axie'>('home'),
+    [screen, setScreen] = useState<
+      'home' | 'vault' | 'shop' | 'axie' | 'online'
+    >('home'),
     [run, setRun] = useState<RunConfig | null>(null),
     [notice, setNotice] = useState(''),
     [library, setLibrary] = useState(false),
@@ -193,7 +202,24 @@ export default function MobileApp() {
     if (next != null) story(next, true);
     else setStoryOpen(true);
   }
+  function attack(match: NonNullable<OnlineView['match']>) {
+    launch({
+      level: match.level,
+      mode: 'online',
+      axie: profile.axie,
+      onlineId: match.id,
+      onlineLimit: match.limit,
+      opponent: match.opponent,
+      onlineKind: match.kind,
+    });
+  }
   function exit() {
+    if (run?.mode === 'online') {
+      void onlineRequest({ action: 'abandon', matchId: run.onlineId! }).catch(
+        () => {},
+      );
+      setScreen('online');
+    }
     setRun(null);
     if (document.fullscreenElement)
       void document.exitFullscreen().catch(() => {});
@@ -211,6 +237,14 @@ export default function MobileApp() {
       next.axie,
       next.companion,
     ]);
+    next.traps = next.traps.map((t) => {
+      const old = p.traps.find((o) => o.anchor === t.anchor);
+      return {
+        ...t,
+        ...snapTrap(old?.x ?? t.x, old?.y ?? t.y),
+        reach: old?.part === t.part ? old.reach : reachSettings(t.part).default,
+      };
+    });
     next.proof = null;
     save(next);
     setShareUrl('');
@@ -220,18 +254,51 @@ export default function MobileApp() {
         ' actualizado. Valida de nuevo su defensa.',
     );
   }
-  function changeGuardians(count: 1 | 2) {
-    const p = profileRef.current;
+  function replaceTraps(traps: Trap[]) {
+    if (!validFreeTraps(traps)) return;
     save({
-      ...p,
-      guardianCount: count,
-      traps: makeVaultTraps(p.traps, count, [p.axie, p.companion]),
+      ...profileRef.current,
+      freePlacement: true,
+      guardianCount: 1,
+      traps,
       proof: null,
     });
     setShareUrl('');
-    if (count === 1) setActiveDefender(0);
   }
-  function editTrap(index: number, change: { part?: string; x?: number }) {
+  function addTrap(anchor: number) {
+    const p = profileRef.current,
+      part = defenderParts(
+        p.axie,
+        anchor,
+        p.traps.map((t) => t.part),
+      )[0];
+    if (!part) return;
+    const base = VAULT_SLOTS[anchor];
+    for (const y of [base.y, 3.9, 6.55, 9.2, 11.85, 14.5, 17.15, 19.8])
+      for (const x of [base.x, 3, 6, 9]) {
+        const traps = [
+          ...p.traps,
+          {
+            ...base,
+            ...snapTrap(x, y),
+            anchor,
+            part,
+            reach: reachSettings(part).default,
+          },
+        ].sort((a, b) => a.anchor! - b.anchor!);
+        if (validFreeTraps(traps)) {
+          replaceTraps(traps);
+          return;
+        }
+      }
+    setNotice(
+      'No hay espacio libre para esa defensa. Mueve otra trampa primero.',
+    );
+  }
+  function editTrap(
+    index: number,
+    change: { part?: string; x?: number; y?: number; reach?: number },
+  ) {
     const p = profileRef.current;
     const trap = p.traps[index],
       anchor = trap.anchor!,
@@ -245,11 +312,19 @@ export default function MobileApp() {
       ).includes(change.part)
     )
       return;
-    save({
-      ...p,
-      traps: p.traps.map((t, i) => (i === index ? { ...t, ...change } : t)),
-      proof: null,
-    });
+    replaceTraps(
+      p.traps.map((t, i) =>
+        i === index
+          ? {
+              ...t,
+              ...change,
+              ...(change.part
+                ? { reach: reachSettings(change.part).default }
+                : {}),
+            }
+          : t,
+      ),
+    );
     setShareUrl('');
   }
   async function share() {
@@ -295,7 +370,7 @@ export default function MobileApp() {
               : exit()
             : practice()
         }
-        onClaim={(id, hp) => {
+        onClaim={(id, hp, replay) => {
           if (
             !save(
               run.mode === 'story'
@@ -304,6 +379,19 @@ export default function MobileApp() {
             )
           )
             throw Error('No se pudo guardar el premio.');
+          if (run.mode === 'story' || run.mode === 'practice')
+            queueOnlineReward(run.level.id, run.mode, replay);
+        }}
+        onOnline={async (replay) => {
+          const next = await onlineRequest({
+            action: 'finish',
+            matchId: run.onlineId!,
+            replay,
+          });
+          const result = next.history?.find((m) => m.id === run.onlineId);
+          if (result?.status === 'expired')
+            throw Error('El ataque venció; no se transfirieron Chispas.');
+          return result?.amount ?? 0;
         }}
         onValidate={(proof) => {
           if (save({ ...profileRef.current, proof })) {
@@ -413,6 +501,15 @@ export default function MobileApp() {
                   {storyUnlocked(profile.story)} / {STORY_LENGTH}
                 </span>
               </button>
+              <button
+                className="home-challenge"
+                onClick={() => setScreen('online')}
+                disabled={!ready}
+              >
+                <Swords size={18} />
+                <span>Online · Atacar refugios</span>
+                <ChevronRight size={16} />
+              </button>
               <div className="home-shortcuts">
                 <button onClick={() => setRoomsOpen(true)} disabled={!ready}>
                   <BookOpen size={17} /> Práctica
@@ -423,6 +520,13 @@ export default function MobileApp() {
               </div>
             </section>
           </>
+        ) : null}
+        {screen === 'online' ? (
+          <OnlinePanel
+            profile={profile}
+            onEdit={() => setScreen('vault')}
+            onAttack={attack}
+          />
         ) : null}
         {screen === 'vault' ? (
           <>
@@ -445,108 +549,49 @@ export default function MobileApp() {
               otros la ataquen, tú debes llegar al cofre sin recibir un solo
               golpe.
             </p>
-            <div
-              className="guardian-switch"
-              aria-label="Cantidad de guardianes"
-            >
-              <button
-                className={profile.guardianCount === 1 ? 'selected' : ''}
-                onClick={() => changeGuardians(1)}
-                disabled={profile.guardianCount === 1}
-              >
-                1 guardián · hasta 4
-              </button>
-              <button
-                className={profile.guardianCount === 2 ? 'selected' : ''}
-                onClick={() => changeGuardians(2)}
-                disabled={profile.guardianCount === 2}
-              >
-                2 guardianes · hasta 8
-              </button>
-            </div>
-            <div
-              className="vault-editor-map"
-              style={
-                {
-                  '--vault-color': GOODS.find((g) => g.id === profile.theme)
-                    ?.color,
-                } as React.CSSProperties
-              }
-            >
-              <svg
-                viewBox="0 0 120 220"
-                aria-label="Plano vertical de tu mazmorra"
-              >
-                <rect
-                  x="5"
-                  y="2"
-                  width="110"
-                  height="216"
-                  rx="7"
-                  fill="var(--vault-color)"
-                  opacity=".12"
-                />
-                {vaultLevel(profile).platforms.map((p, i) => (
-                  <rect
-                    key={i}
-                    x={(p.x - p.w / 2) * 10}
-                    y={220 - (p.y + p.h / 2) * 10}
-                    width={p.w * 10}
-                    height={p.h * 10}
-                    rx="1"
-                    fill="var(--vault-color)"
-                  />
-                ))}
-                {profile.traps.map((t, i) => (
-                  <g key={i}>
-                    <circle
-                      cx={t.x * 10}
-                      cy={220 - t.y * 10}
-                      r="7"
-                      fill="#d6b769"
-                    />
-                    <text
-                      x={t.x * 10}
-                      y={223 - t.y * 10}
-                      textAnchor="middle"
-                      fontSize="8"
-                      fontWeight="bold"
-                      fill="#162b2a"
-                    >
-                      {i + 1}
-                    </text>
-                  </g>
-                ))}
-                <text x="80" y="20" fontSize="14">
-                  ▣
-                </text>
-                <circle cx="22" cy="205" r="4" fill="#a4ead3" />
-              </svg>
-              <div>
-                <span className="m-eyebrow">TORRE VERTICAL</span>
-                <h2>{GOODS.find((g) => g.id === profile.theme)?.name}</h2>
-                <p>
-                  7 plataformas
-                  <br />
-                  {profile.traps.length} defensas · {profile.guardianCount}{' '}
-                  {profile.guardianCount === 1 ? 'guardián' : 'guardianes'}
-                  <br />
-                  {profile.axie
-                    ? 'Partes del Axie #' + profile.axie.id
-                    : 'Laboratorio libre'}
-                </p>
-                <button className="m-text" onClick={() => setScreen('axie')}>
-                  Elegir guardianes <ChevronRight size={15} />
-                </button>
-                <button className="m-text" onClick={() => setScreen('shop')}>
-                  Personalizar <ChevronRight size={15} />
-                </button>
-              </div>
+            <p className="story-free">
+              Individual · Un Axie · Hasta cuatro trampas
+            </p>
+            <MobileVaultEditor traps={profile.traps} onChange={replaceTraps} />
+            <button className="m-secondary" onClick={() => setScreen('axie')}>
+              Elegir Axie guardián <ChevronRight size={16} />
+            </button>
+            <button className="m-secondary" onClick={() => setScreen('online')}>
+              <Swords size={16} /> Cofre y modo online
+            </button>
+            <div className="guardian-switch">
+              {BATTLE_SLOTS.map((slot, anchor) =>
+                profile.traps.some((t) => t.anchor === anchor) ? null : (
+                  <button key={slot} onClick={() => addTrap(anchor)}>
+                    +{' '}
+                    {
+                      {
+                        mouth: 'Boca',
+                        horn: 'Cuerno',
+                        back: 'Espalda',
+                        tail: 'Cola',
+                      }[slot]
+                    }
+                  </button>
+                ),
+              )}
             </div>
             <div className="vault-slots">
               {profile.traps.map((t, i) => (
                 <section className="vault-slot" key={i}>
-                  <div className="slot-number">{i + 1}</div>
+                  <div className="slot-number">
+                    {i + 1}
+                    <button
+                      className="m-text"
+                      disabled={profile.traps.length <= 1}
+                      aria-label={'Quitar ' + PARTS[t.part].name}
+                      onClick={() =>
+                        replaceTraps(profile.traps.filter((_, j) => j !== i))
+                      }
+                    >
+                      ×
+                    </button>
+                  </div>
                   <Image
                     unoptimized
                     src={PARTS[t.part].partImage}
@@ -582,12 +627,31 @@ export default function MobileApp() {
                     <input
                       id={'position-' + i}
                       type="range"
-                      min={vaultRange(t.anchor!).min}
-                      max={vaultRange(t.anchor!).max}
+                      min={1.7}
+                      max={10.3}
                       step="0.1"
                       value={t.x}
                       onChange={(e) =>
-                        editTrap(i, { x: Number(e.target.value) })
+                        editTrap(i, snapTrap(Number(e.target.value), t.y))
+                      }
+                    />
+                    <label className="range-label" htmlFor={'reach-' + i}>
+                      {reachSettings(t.part).label}{' '}
+                      <span>
+                        {(t.reach ?? reachSettings(t.part).default).toFixed(1)}{' '}
+                        m
+                      </span>
+                    </label>
+                    <input
+                      id={'reach-' + i}
+                      type="range"
+                      min={reachSettings(t.part).min}
+                      max={reachSettings(t.part).max}
+                      step="0.05"
+                      disabled={reachSettings(t.part).kind === 'fixed'}
+                      value={t.reach ?? reachSettings(t.part).default}
+                      onChange={(e) =>
+                        editTrap(i, { reach: Number(e.target.value) })
                       }
                     />
                   </div>
