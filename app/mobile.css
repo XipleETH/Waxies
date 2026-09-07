@@ -1284,88 +1284,88 @@
 }
 .home-actions {
   position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: calc(97px + env(safe-area-inset-bottom));
-  max-width: 420px;
-  margin: auto;
-  pointer-events: auto;
-}
-.home-play {
+  top: clamp(112px, 30dvh, 260px);
+  left: max(14px, env(safe-area-inset-left));
+  right: max(14px, env(safe-area-inset-right));
+  max-width: 440px;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  gap: 15px;
-  min-height: 63px;
-  width: 100%;
-  text-align: left;
-  border-radius: 18px;
-  padding: 12px 19px;
-  background: linear-gradient(125deg, #d2edb5, #a3d5a9);
-  color: #25452d;
-  box-shadow:
-    0 5px 0 #486c4480,
-    0 8px 35px #04171335;
-  border: 1px solid #d5edb799;
-}
-.home-play > svg {
-  margin-left: 1px;
-}
-.home-play > span:first-of-type {
-  font: 700 20px/1.05 var(--font-display);
-  letter-spacing: -0.5px;
-}
-.home-play small {
-  display: block;
-  font: 500 10px var(--font-geist-sans);
-  letter-spacing: 0;
-  margin-top: 4px;
-  color: #496a4b;
-}
-.home-play .home-mode-count {
-  margin-left: auto;
-  padding: 5px 9px;
-  background: #4c79431a;
-  border-radius: 8px;
-  font-size: 9px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-.home-shortcuts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 11px;
-  margin-top: 13px;
-}
-.home-shortcuts > button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 44px;
-  background: #1c3936b8;
-  backdrop-filter: blur(12px);
-  border: 1px solid #c8debd24;
-  border-radius: 13px;
-  color: #d5e5cb;
-  font-size: 11px;
-  font-weight: 550;
-}
-.home-challenge {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 7px;
-  min-height: 37px;
-  width: 100%;
-  padding: 7px 11px;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  background: #c3a568e8;
-  color: #243b2e;
-  font-size: 11px;
+  align-items: flex-start;
+  pointer-events: none;
 }
-.is-home:has(.home-challenge) .home-companion {
-  bottom: calc(285px + env(safe-area-inset-bottom));
+.home-mode-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.home-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 64px;
+  min-height: 74px;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: #e4eed4;
+  cursor: pointer;
+  pointer-events: auto;
+  border-radius: 17px;
+  -webkit-tap-highlight-color: transparent;
+}
+.home-mode-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 17px;
+  background: #16372be0;
+  border: 1px solid #c8debd40;
+  box-shadow: 0 3px 0 #0c251b66, 0 5px 14px #04171326;
+  backdrop-filter: blur(8px);
+  transition: transform 120ms ease;
+}
+.home-mode-story .home-mode-icon {
+  background: linear-gradient(135deg, #d2edb5, #a3d5a9);
+  color: #25452d;
+  border-color: #e4f2c5;
+}
+.home-mode-online .home-mode-icon {
+  background: linear-gradient(135deg, #efd490, #c3a568);
+  color: #37452b;
+  border-color: #f1dba2;
+}
+.home-mode-label {
+  font: 600 10px/1.2 var(--font-geist-sans);
+  text-shadow: 0 1px 4px #031810, 0 0 8px #031810;
+}
+.home-mode-count {
+  position: absolute;
+  top: -6px;
+  right: -7px;
+  border: 1px solid #b6d29a;
+  border-radius: 8px;
+  padding: 3px 5px;
+  background: #183e2b;
+  color: #e1efc7;
+  font: 700 9px/1 var(--font-geist-sans);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.home-mode:active .home-mode-icon { transform: scale(.94); }
+.home-mode:focus-visible { outline: 2px solid #f1d28a; outline-offset: 5px; }
+.home-mode:disabled { opacity: .45; cursor: default; }
+@media (max-height: 580px) {
+  .home-actions { top: calc(92px + env(safe-area-inset-top)); }
+  .home-mode-rail { gap: 10px; }
+  .home-mode { min-height: 60px; }
+  .home-mode-icon { width: 44px; height: 44px; border-radius: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-mode-icon { transition: none; }
 }
 .is-home .m-nav {
   width: min(calc(100% - 30px), 440px);
@@ -1445,19 +1445,6 @@
     font-size: 9px;
     min-height: 29px;
   }
-  .home-actions {
-    bottom: calc(88px + env(safe-area-inset-bottom));
-  }
-  .home-play {
-    min-height: 56px;
-    padding: 10px 16px;
-  }
-  .home-shortcuts {
-    margin-top: 10px;
-  }
-  .home-shortcuts > button {
-    min-height: 40px;
-  }
   .is-home .m-nav {
     padding: 8px;
   }
@@ -1468,12 +1455,7 @@
     display: none;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .home-play,
-  .home-shortcuts > button {
-    transition: none;
-  }
-}
+
 /* Campaign chapters stay behind one home action, preserving the full-screen refuge. */
 .story-dialog {
   width: calc(100% - 28px);
@@ -1573,9 +1555,6 @@
 .story-dialog .story-free:last-child {
   margin-top: 18px;
 }
-.home-play > span:first-of-type {
-  font-size: 18px;
-}
 .run-traps {
   flex-wrap: wrap;
 }
@@ -1605,5 +1584,3 @@
   opacity: 1;
   border-color: #dfedcb;
 }
-/* Compact, icon-led lobby controls. */
-.home-actions{display:flex;flex-direction:column;gap:10px}.home-play{min-height:58px}.home-play>span:first-of-type{font-size:21px}.home-play .home-mode-count{font-size:12px}.home-actions .home-challenge{min-height:52px;margin:0;padding:12px 19px;font-size:18px;font-weight:700;border-radius:17px}.home-challenge>span{flex:1;text-align:left}.home-shortcuts{margin-top:0}.home-shortcuts>button{font-size:13px;min-height:46px}

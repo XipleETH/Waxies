@@ -11,7 +11,7 @@ import {
   Play,
   Link2,
   BookOpen,
-  ChevronRight,
+  Dumbbell,
   Check,
   Flame,
   Gem,
@@ -346,49 +346,74 @@ export default function MobileApp() {
         {screen === 'home' ? (
           <>
             <section className="home-actions" aria-label="Jugar y personalizar">
-              {shared ? (
+              <div className="home-mode-rail">
                 <button
-                  className="home-challenge"
+                  className="home-mode home-mode-story"
+                  aria-label={`Historia ${storyUnlocked(profile.story)} de ${STORY_LENGTH}`}
                   onClick={() =>
-                    launch({ ...shared, mode: 'shared', axie: profile.axie })
+                    profile.story.length === STORY_LENGTH
+                      ? setStoryOpen(true)
+                      : story()
                   }
+                  disabled={!ready}
                 >
-                  <Link2 size={16} />
-                  <span>Reto</span>
-                  <ChevronRight size={16} />
+                  <span className="home-mode-icon" aria-hidden="true">
+                    <Play size={25} fill="currentColor" />
+                    <span className="home-mode-count">
+                      {storyUnlocked(profile.story)}/{STORY_LENGTH}
+                    </span>
+                  </span>
+                  <span className="home-mode-label">Historia</span>
                 </button>
-              ) : null}
-              <button
-                className="home-play"
-                onClick={() =>
-                  profile.story.length === STORY_LENGTH
-                    ? setStoryOpen(true)
-                    : story()
-                }
-                disabled={!ready}
-              >
-                <Play size={22} fill="currentColor" />
-                <span>Historia</span>
-                <span className="home-mode-count">
-                  {storyUnlocked(profile.story)} / {STORY_LENGTH}
-                </span>
-              </button>
-              <button
-                className="home-challenge"
-                onClick={() => setScreen('online')}
-                disabled={!ready}
-              >
-                <Swords size={18} />
-                <span>Online</span>
-                <ChevronRight size={16} />
-              </button>
-              <div className="home-shortcuts">
-                <button onClick={() => setRoomsOpen(true)} disabled={!ready}>
-                  <BookOpen size={17} /> Práctica
+                <button
+                  className="home-mode home-mode-online"
+                  aria-label="Online"
+                  onClick={() => setScreen('online')}
+                  disabled={!ready}
+                >
+                  <span className="home-mode-icon" aria-hidden="true">
+                    <Swords size={26} />
+                  </span>
+                  <span className="home-mode-label">Online</span>
                 </button>
-                <button onClick={() => setStoryOpen(true)} disabled={!ready}>
-                  <BookOpen size={17} /> Capítulos
+              </div>
+              <div className="home-mode-rail">
+                <button
+                  className="home-mode"
+                  aria-label="Práctica"
+                  onClick={() => setRoomsOpen(true)}
+                  disabled={!ready}
+                >
+                  <span className="home-mode-icon" aria-hidden="true">
+                    <Dumbbell size={26} />
+                  </span>
+                  <span className="home-mode-label">Práctica</span>
                 </button>
+                <button
+                  className="home-mode"
+                  aria-label="Capítulos"
+                  onClick={() => setStoryOpen(true)}
+                  disabled={!ready}
+                >
+                  <span className="home-mode-icon" aria-hidden="true">
+                    <BookOpen size={26} />
+                  </span>
+                  <span className="home-mode-label">Capítulos</span>
+                </button>
+                {shared ? (
+                  <button
+                    className="home-mode"
+                    aria-label="Reto"
+                    onClick={() =>
+                      launch({ ...shared, mode: 'shared', axie: profile.axie })
+                    }
+                  >
+                    <span className="home-mode-icon" aria-hidden="true">
+                      <Link2 size={26} />
+                    </span>
+                    <span className="home-mode-label">Reto</span>
+                  </button>
+                ) : null}
               </div>
             </section>
           </>
