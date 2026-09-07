@@ -7,6 +7,8 @@ import { vaultLevel, type MobileProfile } from '@/lib/game/mobile-profile';
 import type { RaidReplay } from '@/lib/game/raid-replay';
 import styles from './online-panel.module.css';
 import { ObjectMenu } from './object-menu';
+import { RaidReplayViewer } from './raid-replay-viewer';
+import type { MatchReplayView } from '@/lib/online/types';
 import {
   Dialog,
   DialogContent,
@@ -54,6 +56,7 @@ export function OnlinePanel({
     [busy, setBusy] = useState(false),
     [name, setName] = useState(''),
     [amount, setAmount] = useState('50'),
+    [replayMatch, setReplayMatch] = useState<MatchReplayView | null>(null),
     [panel, setPanel] = useState<string | null>(null);
   async function refresh() {
     try {
@@ -114,7 +117,37 @@ export function OnlinePanel({
       setError((e as Error).message);
     }
   }
+  async function watchReplay(id: string) {
+    setBusy(true);
+    setError('');
+    try {
+      const response = await fetch(
+        '/api/online?replay=' + encodeURIComponent(id),
+        { cache: 'no-store' },
+      );
+      const data = await response.json();
+      if (!response.ok)
+        throw Error(data.error ?? 'No se pudo cargar la repetición.');
+      setReplayMatch(data);
+      setPanel(null);
+    } catch (e) {
+      setError((e as Error).message);
+      setPanel(null);
+    } finally {
+      setBusy(false);
+    }
+  }
   const p = view?.player;
+  if (replayMatch)
+    return (
+      <RaidReplayViewer
+        match={replayMatch}
+        onClose={() => {
+          setReplayMatch(null);
+          setPanel('activity');
+        }}
+      />
+    );
   return (
     <section className={styles.online} aria-label="Online asíncrono">
       <div className="object-room-title">
@@ -445,6 +478,14 @@ export function OnlinePanel({
                           }[m.status] ?? m.status}{' '}
                           · {m.amount} Chispas
                         </span>
+                        {m.hasReplay ? (
+                          <button
+                            disabled={busy}
+                            onClick={() => void watchReplay(m.id)}
+                          >
+                            Ver repetición
+                          </button>
+                        ) : null}
                       </article>
                     ))
                   ) : (

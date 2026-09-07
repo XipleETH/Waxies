@@ -28,6 +28,7 @@ export interface Match {
   status: 'pending' | 'won' | 'lost' | 'expired' | 'abandoned';
   lootId?: string;
   hp?: number;
+  replay?: RaidReplay;
   amount?: number;
 }
 export interface Loot {
@@ -89,6 +90,7 @@ export interface OnlineView {
   history?: Array<{
     id: string;
     attacking: boolean;
+    hasReplay?: boolean;
     opponent: string;
     status: string;
     amount: number;
@@ -107,4 +109,13 @@ export interface OnlineView {
   }>;
   activePlayers?: number;
   error?: string;
+}
+
+export interface MatchReplayView {
+  id: string;
+  level: Dungeon;
+  replay: RaidReplay;
+  attacker: string;
+  defender: string;
+  amount: number;
 }

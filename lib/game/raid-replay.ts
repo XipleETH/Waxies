@@ -1,4 +1,5 @@
 import { createState, requestJump, step, type Dungeon } from './physics';
+import { validEmotes, type EmoteEvent } from './emotes';
 import { MOBILE_RULES } from './portrait';
 import type { RouteProof } from './route-proof';
 export interface RaidAttempt extends RouteProof {
@@ -6,6 +7,8 @@ export interface RaidAttempt extends RouteProof {
 }
 export interface RaidReplay {
   attempts: RaidAttempt[];
+  emotes?: EmoteEvent[];
+  runnerGenes?: string;
 }
 /** Replays inputs; health and victories are never accepted from the client. */
 export function verifyRaidReplay(
@@ -17,6 +20,16 @@ export function verifyRaidReplay(
     !Array.isArray(replay.attempts) ||
     replay.attempts.length < 1 ||
     replay.attempts.length > 25
+  )
+    return null;
+  if (
+    replay.attempts.some(
+      (a) => !a || !Number.isSafeInteger(a.frames) || a.frames < 1,
+    ) ||
+    !validEmotes(replay.emotes, replay.attempts) ||
+    (replay.runnerGenes !== undefined &&
+      (typeof replay.runnerGenes !== 'string' ||
+        !/^0x[0-9a-f]{128}$/i.test(replay.runnerGenes)))
   )
     return null;
   let hits = 0,
@@ -70,4 +83,13 @@ export function verifyRaidReplay(
     if (hits >= 5) return i === replay.attempts.length - 1 ? 0 : null;
   }
   return null;
+}
+
+/** Imported metadata may omit 0x or leading zeroes; preserve the same 512 bits. */
+export function canonicalRunnerGenes(
+  genes: string | undefined,
+): string | undefined {
+  return genes && /^(?:0x)?[0-9a-f]{1,128}$/i.test(genes)
+    ? '0x' + genes.replace(/^0x/i, '').padStart(128, '0').toLowerCase()
+    : undefined;
 }

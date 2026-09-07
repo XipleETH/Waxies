@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState, useMemo } from 'react';
 import Image from 'next/image';
+import { EmoteBubble, EmotePicker } from './emotes';
 import {
   ArrowLeft,
   ArrowUp,
@@ -18,6 +19,7 @@ import { createState, type Dungeon } from '@/lib/game/physics';
 import type { Engine } from '@/lib/game/scene';
 import { verifyRoute, type RouteProof } from '@/lib/game/route-proof';
 import type { RaidReplay } from '@/lib/game/raid-replay';
+import type { EmoteEvent } from '@/lib/game/emotes';
 import { randomAxie } from '@/lib/game/random-axie';
 import type { AxieLoadout } from '@/lib/game/axie';
 import { PARTS } from '@/lib/game/catalog';
@@ -56,6 +58,10 @@ export function MobileRun({
     engine = useRef<Engine | null>(null),
     handled = useRef(false);
   const [state, setState] = useState(() => createState(run.level)),
+    [gesture, setGesture] = useState<{
+      event: EmoteEvent | null;
+      wait: number;
+    }>({ event: null, wait: 0 }),
     [loaded, setLoaded] = useState(false),
     [error, setError] = useState(''),
     [demo, setDemo] = useState(false),
@@ -72,7 +78,14 @@ export function MobileRun({
         const game = createEngine(
           host.current,
           (s) => {
-            if (!stopped) setState(s);
+            if (!stopped) {
+              setState(s);
+              if (run.mode === 'online')
+                setGesture({
+                  event: engine.current?.getEmote() ?? null,
+                  wait: engine.current?.getEmoteWait() ?? 0,
+                });
+            }
           },
           async (problem) => {
             if (stopped) return;
@@ -244,6 +257,29 @@ export function MobileRun({
           }
         }}
       />
+      {run.mode === 'online' ? (
+        <>
+          <EmoteBubble event={gesture.event} />
+          <EmotePicker
+            wait={gesture.wait}
+            onSend={(id) => {
+              const sent = engine.current?.sendEmote(id) ?? false;
+              if (sent)
+                setGesture({
+                  event: engine.current?.getEmote() ?? null,
+                  wait: engine.current?.getEmoteWait() ?? 0,
+                });
+              return sent;
+            }}
+            disabled={
+              !loaded ||
+              claimed ||
+              submitting ||
+              !['playing', 'won', 'dead'].includes(state.phase)
+            }
+          />
+        </>
+      ) : null}
       {state.phase === 'resetting' ? (
         <output className="run-hit">
           <Heart size={24} /> −20 salud{' '}
@@ -262,7 +298,9 @@ export function MobileRun({
                     ? 'RETO COMPARTIDO'
                     : run.mode === 'story'
                       ? `HISTORIA · NIVEL ${run.storyNumber} / ${STORY_LENGTH}`
-                      : 'PRÁCTICA ALEATORIA'}
+                      : run.mode === 'online'
+                        ? 'ATAQUE ONLINE'
+                        : 'PRÁCTICA ALEATORIA'}
             </span>
             <h1>
               {state.phase === 'won'

@@ -252,3 +252,51 @@ void test('server rewards only verified improvements and rejects forged reward c
   );
   assert.equal(s.players.a.available, 300);
 });
+
+void test('completed attacks retain validated emotes and only participants can watch', async () => {
+  const { matchReplayView } = await import('../lib/online/rules');
+  const { s, act } = setup();
+  act('a', { action: 'activate', code, amount: 50 });
+  act('b', { action: 'activate', code, amount: 50 });
+  act('a', { action: 'match' });
+  const id = s.players.a.lock!;
+  const replay: RaidReplay = {
+    ...win,
+    emotes: [{ id: 'axie-01', attempt: 0, frame: 0 }],
+  };
+  act('a', { action: 'finish', matchId: id, replay });
+  const before = JSON.stringify(s);
+  assert.deepEqual(matchReplayView(s, 'b', id)?.replay, replay);
+  assert.ok(matchReplayView(s, 'a', id));
+  assert.equal(matchReplayView(s, 'c', id), null);
+  assert.equal(matchReplayView(s, 'b', 'missing'), null);
+  assert.equal(JSON.stringify(s), before);
+  assert.equal(onlineView(s, 'b', 1000).history?.[0].hasReplay, true);
+  assert.equal('replay' in onlineView(s, 'b', 1000).history![0], false);
+  assert.equal(total(s), 600);
+});
+
+void test('replay retention removes only old recordings, never results or balances', () => {
+  const { s, act } = setup();
+  act('a', { action: 'activate', code, amount: 50 });
+  act('b', { action: 'activate', code, amount: 50 });
+  act('a', { action: 'match' });
+  const id = s.players.a.lock!,
+    match = s.matches[id];
+  for (let i = 0; i < 201; i++)
+    s.matches['old-' + i] = {
+      ...structuredClone(match),
+      id: 'old-' + i,
+      created: i - 1000,
+      status: 'lost',
+      amount: 0,
+      replay: structuredClone(win),
+    };
+  act('a', { action: 'finish', matchId: id, replay: win });
+  assert.equal(Object.keys(s.matches).length, 202);
+  assert.equal(Object.values(s.matches).filter((m) => m.replay).length, 200);
+  assert.equal(s.matches['old-0'].status, 'lost');
+  assert.equal(s.matches['old-0'].replay, undefined);
+  assert.ok(s.matches[id].replay);
+  assert.equal(total(s), 600);
+});

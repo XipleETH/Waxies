@@ -8,6 +8,7 @@ import {
   type Match,
   type OnlineCommand,
   type OnlineView,
+  type MatchReplayView,
 } from './types';
 import story from '../game/data/story-courses.json';
 import practice from '../game/data/verified-courses.json';
@@ -174,6 +175,32 @@ export function applyOnline(
           : 0;
       if (hp === null)
         fail('La repetición no coincide con una partida válida.');
+      if (command.action === 'finish') {
+        // Retain only validated, bounded fields; financial history remains independent.
+        m.replay = {
+          attempts: command.replay.attempts.map((a) => ({
+            rules: a.rules,
+            frames: a.frames,
+            actions: [...a.actions],
+            end: a.end,
+          })),
+          emotes: (command.replay.emotes ?? []).map((e) => ({
+            id: e.id,
+            attempt: e.attempt,
+            frame: e.frame,
+          })),
+          ...(command.replay.runnerGenes
+            ? { runnerGenes: command.replay.runnerGenes }
+            : {}),
+        };
+        Object.values(s.matches)
+          .filter((q) => q.replay)
+          .sort((a, b) => b.created - a.created)
+          .slice(200)
+          .forEach((q) => {
+            delete q.replay;
+          });
+      }
       m.hp = hp;
       m.status =
         command.action === 'abandon' ? 'abandoned' : hp > 0 ? 'won' : 'lost';
@@ -273,6 +300,7 @@ export function onlineView(
       .map((m) => ({
         id: m.id,
         attacking: m.attacker === id,
+        hasReplay: !!m.replay,
         opponent: s.players[m.attacker === id ? m.defender : m.attacker].name,
         status: m.status,
         amount: m.amount ?? 0,
@@ -297,5 +325,28 @@ export function onlineView(
           l.releaseAt > now,
         recovered: l.recovered ?? 0,
       })),
+  };
+}
+
+/** Only the two participants can watch a completed attack. */
+export function matchReplayView(
+  s: OnlineState,
+  id: string,
+  matchId: string,
+): MatchReplayView | null {
+  const m = s.matches[matchId];
+  if (
+    !m?.replay ||
+    !['won', 'lost'].includes(m.status) ||
+    (m.attacker !== id && m.defender !== id)
+  )
+    return null;
+  return {
+    id: m.id,
+    level: m.level,
+    replay: m.replay,
+    attacker: s.players[m.attacker].name,
+    defender: s.players[m.defender].name,
+    amount: m.amount ?? 0,
   };
 }

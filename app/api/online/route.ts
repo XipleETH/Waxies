@@ -1,7 +1,12 @@
 import { createHash, randomBytes, randomUUID } from 'node:crypto';
 import { NextRequest, NextResponse } from 'next/server';
 import { onlineConfigured, transact } from '@/lib/online/store';
-import { applyOnline, onlineView, settle } from '@/lib/online/rules';
+import {
+  applyOnline,
+  onlineView,
+  settle,
+  matchReplayView,
+} from '@/lib/online/rules';
 import type { OnlineCommand, OnlineState } from '@/lib/online/types';
 export const runtime = 'nodejs';
 const COOKIE = 'waxies_online_session';
@@ -22,16 +27,22 @@ export async function GET(req: NextRequest) {
   if (!onlineConfigured())
     return response({ configured: false, registered: false });
   try {
-    return response(
-      await transact((s) => {
-        const now = Date.now();
-        settle(s, now);
-        const id = identity(req, s);
-        return id
-          ? onlineView(s, id, now)
-          : { configured: true, registered: false };
-      }),
-    );
+    const data = await transact((s) => {
+      const now = Date.now();
+      settle(s, now);
+      const id = identity(req, s);
+      const matchId = req.nextUrl.searchParams.get('replay');
+      if (matchId !== null) return id ? matchReplayView(s, id, matchId) : null;
+      return id
+        ? onlineView(s, id, now)
+        : { configured: true, registered: false };
+    });
+    return data === null
+      ? response(
+          { error: 'Esta repetición no está disponible para tu cuenta.' },
+          404,
+        )
+      : response(data);
   } catch {
     return response(
       { error: 'No se pudo conectar con el modo online. Inténtalo más tarde.' },

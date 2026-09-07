@@ -42,3 +42,12 @@ El servidor calcula salud y victoria reproduciendo los saltos enviados contra su
 `npm test` cubre colocación, alcances, replays, matchmaking, reservas, conservación del saldo, resultados duplicados, vencimientos y revancha única. `npm run build` vuelve a comprobar las 165 pistas.
 
 Neon quedó aprovisionado y conectado a Vercel tras la aceptación del titular. Se verificó la API contra Postgres con dos sesiones invitadas: publicación, matchmaking, bloqueo del cofre, resultados ajenos, dos resultados concurrentes, botín retenido, revancha única y conservación de Chispas. Se retiraron las cuentas y registros de prueba. La comprobación de origen usa el encabezado Host del navegador porque Next normaliza las direcciones locales.
+## Gestos y repeticiones Online
+
+Hay 20 GIF de Axies con genes aleatorios reproducibles, renderizados desde los modelos y partes del Mixer que ya usa el juego. El catálogo (`lib/game/data/emotes.json`) conserva los genes y nombres de las seis partes de cada personaje. Los archivos de `public/assets/emotes/` son GIF de 160 × 160, 24 fotogramas y 2 segundos; sus PNG sirven como miniaturas y alternativa con movimiento reducido. El renderizador de origen está en `scripts/emote-renderer.ts`.
+
+En un ataque Online, el botón de la cara abre los 20 gestos; elegir uno cierra la bandeja. Son cosméticos: no alteran física, salud ni Chispas. Se permite un gesto cada 3 segundos de simulación y hasta 30 por ataque. También puede elegirse un gesto al terminar, antes de confirmar el resultado. Los eventos guardan el índice del intento y el fotograma, incluidos reinicios y golpes.
+
+Al confirmar un ataque ganado o perdido, el servidor valida la simulación y guarda sus entradas, gestos y genes del atacante en el encuentro. «Online → Actividad → Ver repetición» abre el visor 3D para atacante y defensor, con pausa y reinicio. La API `GET /api/online?replay=<id>` exige la sesión de uno de esos participantes. El historial general solo devuelve disponibilidad, no todas las grabaciones. Se conservan las 200 grabaciones más recientes de la beta, sin eliminar movimientos de Chispas ni resultados. Los ataques anteriores a esta función y los abandonados no tienen grabación.
+
+Comprobaciones: `npm test` cubre tiempos, límites, accesos, conservación de Chispas, pausas, reinicios y cinco intentos fallidos; `npm run build` vuelve a certificar las 165 pistas existentes.
