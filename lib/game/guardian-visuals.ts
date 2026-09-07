@@ -89,6 +89,9 @@ export function createGuardianVisuals(scene: T.Scene, level: Dungeon) {
       });
   });
   return {
+    setVisible: (visible: boolean) => {
+      group.visible = visible;
+    },
     update: (delta: number, time: number) => {
       for (const model of models) {
         model.mixer.update(delta);

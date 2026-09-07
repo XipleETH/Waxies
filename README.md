@@ -38,7 +38,7 @@ La certificación y la estimación de dificultad se explican en [STORY_MODE.md](
 
 ## Construir y compartir
 
-El editor individual permite un guardián con entre una y cuatro defensas sobre una torre de siete plataformas. Cada guardián aporta una boca, un cuerno, una espalda y una cola. Puedes añadir o quitar partes, arrastrarlas entre superficies y ajustar el alcance mediante el control dorado o un deslizador. Al cargar un Axie solo se habilitan sus cartas dominantes. Ojos y orejas son cosméticos; no se inventan cartas para ellos. Sin Axie, el laboratorio permite probar las 132 partes.
+El editor individual permite un guardián con entre una y cuatro defensas sobre una torre de siete plataformas. Cada guardián aporta una boca, un cuerno, una espalda y una cola. El propio mapa 3D es el editor a pantalla completa: cuatro poderes aparecen sobre el techo, puedes arrastrarlos entre superficies y ajustar el alcance mediante el control dorado o un deslizador. «Probar» inicia la partida en esa misma escena. Llegar sin golpes guarda la validación automáticamente y permite abrir el cofre para depositar Chispas online. Al cargar un Axie solo se habilitan sus cartas dominantes. Ojos y orejas son cosméticos; no se inventan cartas para ellos. Sin Axie, el laboratorio permite probar las 132 partes.
 
 Cada sala muestra sus guardianes animados en pedestales exteriores sobre el techo. Usan el Mixer oficial: los Axies cargados conservan sus genes y los guardianes del laboratorio se forman con las partes de las trampas. No tienen colisión. Detalles en [GUARDIANS.md](research/GUARDIANS.md).
 

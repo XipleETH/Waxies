@@ -12,13 +12,13 @@ import {MOBILE_RULES} from './portrait';
 import { DUNGEONS, roomFor, PHYSICS, createState, requestJump, step, type Dungeon, type GameState } from './physics';
 import { createHazardVisuals } from './hazard-visuals';
 export interface AvatarStatus {kind:'buba'|'mixed'|'error'|'loading';name:string;fallbacks:string[];message?:string;testParts?:string[]}
-export interface Engine { getRaidReplay():RaidReplay; getProof():RouteProof; playProof(proof:RouteProof):void; setRandomTraps(enabled:boolean):void; setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
+export interface Engine { setEditing(enabled:boolean):void; project(x:number,y:number):{x:number;y:number}; unproject(x:number,y:number):{x:number;y:number}; getRaidReplay():RaidReplay; getProof():RouteProof; playProof(proof:RouteProof):void; setRandomTraps(enabled:boolean):void; setRandomAxies(enabled:boolean):void; setAxie(axie:AvatarInput|null):Promise<AvatarStatus|null>; jump(): void; start(): void; restart(): void; pause(): void; setLevel(level: Dungeon): void; getState(): GameState; dispose(): void }
 export function createEngine(host: HTMLElement, onState: (s: GameState) => void, onLoad: (error?: string) => void, onAvatar: (status:AvatarStatus)=>void=()=>{}, onLevel:(level:Dungeon)=>void=()=>{}): Engine {
   let disposed = false, level = DUNGEONS[0], state = createState(level), raf = 0, elapsed = 0;
   let activeAxieClass:string|null=null,sourceLevel=level;
   let attempts:RaidAttempt[]=[];
   let proofActions:number[]=[],replay:RouteProof|null=null,replayIndex=0;let fitRoom:()=>void=()=>{};
-  let randomTraps=false;
+  let randomTraps=false,editing=false;
   const canRandomizeTraps=(dungeon:Dungeon)=>DUNGEONS.some(d=>d.id===dungeon.id);
   let randomMode=false,refreshRandom:()=>void=()=>{},startAfterLoad=false;
   const renderer = new THREE.WebGLRenderer({antialias: true, alpha: false, powerPreference: 'high-performance'});
@@ -92,7 +92,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     chest.position.set(level.chest.x,level.chest.y,0.45); lid.rotation.x=0;
     hazardVisuals = createHazardVisuals(scene, level);
     hazardVisuals.update(state);
-    if(level.rules==='raid')guardianVisuals=createGuardianVisuals(scene,level);
+    if(level.rules==='raid'){guardianVisuals=createGuardianVisuals(scene,level);guardianVisuals.setVisible(!editing);}
     roomGeometries=geometries.slice(geometryStart);roomMaterials=materials.slice(materialStart);roomTextures=textures.slice(textureStart);
     fitRoom();onLevel(level);onState({...state});refreshRandom();
   }
@@ -148,7 +148,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     if(disposed)return;raf=requestAnimationFrame(loop);const delta=Math.min((now-previous)/1000,0.05);previous=now;
     elapsed+=delta;accumulator+=delta;
     if(state.phase!=='paused')guardianVisuals?.update(delta,elapsed);
-    while(accumulator>=PHYSICS.step){if(replay&&state.phase==='playing'&&replay.actions[replayIndex]===state.frame){requestJump(state);replayIndex++;}const hits=state.hits;step(state,level);if(state.hits>hits){attempts.push({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'hit'});proofActions=[];replay=null;}accumulator-=PHYSICS.step;}
+    while(accumulator>=PHYSICS.step){if(replay&&state.phase==='playing'&&replay.actions[replayIndex]===state.frame){requestJump(state);replayIndex++;}const hits=state.hits;if(!editing)step(state,level);if(state.hits>hits){attempts.push({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'hit'});proofActions=[];replay=null;}accumulator-=PHYSICS.step;}
     avatar.position.set(state.x,state.y,0.8);avatar.rotation.y=state.direction===1?Math.PI/2:-Math.PI/2;
     avatar.visible=state.raid||state.invulnerable<=0||Math.floor(elapsed*15)%2===0;
     avatar.scale.set(1,state.grounded?1:1.04,1);
@@ -165,10 +165,11 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     if(now-lastReport>100||state.phase!==lastPhase){onState({...state});lastReport=now;lastPhase=state.phase;}
     renderer.render(scene,camera);
   };raf=requestAnimationFrame(loop);
-  const jump=()=>{if(avatarReady&&!replay&&(state.phase==='playing'||state.phase==='ready')){if(proofActions.at(-1)!==state.frame)proofActions.push(state.frame);requestJump(state);}};
+  const jump=()=>{if(!editing&&avatarReady&&!replay&&(state.phase==='playing'||state.phase==='ready')){if(proofActions.at(-1)!==state.frame)proofActions.push(state.frame);requestJump(state);}};
   const pause=()=>{if(!avatarReady)return;if(state.phase==='playing')state.phase='paused';else if(state.phase==='paused')state.phase='playing';onState({...state});};
   const restart=()=>{if(state.raid&&state.frame>0&&['playing','paused'].includes(state.phase))attempts.push({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'restart'});proofActions=[];replay=null;startAfterLoad=false;if(state.raid){const hp=state.hp,hits=state.hits;state={...createState(level,state.deaths),hp,hits,phase:hp>0?'ready':'dead'};onState({...state});return;}if(randomTraps&&canRandomizeTraps(sourceLevel))buildLevel(sourceLevel,state.deaths);else{state=createState(level,state.deaths);refreshRandom();onState({...state});}renderer.domElement.focus({preventScroll:true});};
   const key=(e:KeyboardEvent)=>{
+    if(editing)return;
     if((e.target as HTMLElement)?.closest('input,select,textarea,[role="dialog"]'))return;
     if(e.repeat)return;
     if(e.code==='Space'||e.code==='ArrowUp'){if((e.target as HTMLElement)?.closest('button,[role="tab"]'))return;e.preventDefault();jump();}
@@ -176,7 +177,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   };
   const visibility=()=>{if(document.hidden&&state.phase==='playing'){state.phase='paused';onState({...state});}};
   window.addEventListener('keydown',key);document.addEventListener('visibilitychange',visibility);
-  return {getRaidReplay:()=>({attempts:[...attempts,...(state.phase==='won'?[{rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'won' as const}]:[])]}),getProof:()=>({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions]}),playProof:(proof)=>{proofActions=[];state=createState(level);replay=proof;replayIndex=0;if(avatarReady)state.phase='playing';else startAfterLoad=true;onState({...state});},setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
+  return {setEditing:(enabled)=>{editing=enabled;guardianVisuals?.setVisible(!enabled);},project:(x,y)=>{camera.updateMatrixWorld();const v=new THREE.Vector3(x,y,.8).project(camera);return {x:(v.x+1)/2,y:(1-v.y)/2};},unproject:(x,y)=>{camera.updateMatrixWorld();const a=new THREE.Vector3(x*2-1,1-y*2,-1).unproject(camera),b=new THREE.Vector3(x*2-1,1-y*2,1).unproject(camera);const t=(.8-a.z)/(b.z-a.z);return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t};},getRaidReplay:()=>({attempts:[...attempts,...(state.phase==='won'?[{rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions],end:'won' as const}]:[])]}),getProof:()=>({rules:MOBILE_RULES,frames:state.frame,actions:[...proofActions]}),playProof:(proof)=>{proofActions=[];state=createState(level);replay=proof;replayIndex=0;if(avatarReady)state.phase='playing';else startAfterLoad=true;onState({...state});},setRandomTraps:(enabled)=>{if(randomTraps===enabled)return;randomTraps=enabled;if(canRandomizeTraps(sourceLevel))buildLevel(sourceLevel);},setRandomAxies:(enabled)=>{randomMode=enabled;startAfterLoad=false;refreshRandom();},setAxie,jump,start:()=>{if(state.phase==='ready'){if(avatarReady)state.phase='playing';else startAfterLoad=true;}renderer.domElement.focus({preventScroll:true});},restart,pause,setLevel:buildLevel,getState:()=>structuredClone(state),dispose:()=>{
     disposed=true;guardianVisuals?.dispose();avatarRequest++;avatarController?.abort();currentMixed?.dispose();cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('keydown',key);document.removeEventListener('visibilitychange',visibility);
     hazardVisuals?.dispose();mixer?.stopAllAction();bubaMixer?.stopAllAction();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.domElement.remove();
   }};

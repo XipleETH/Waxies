@@ -9,8 +9,6 @@ import {
   Sparkles,
   ShoppingBag,
   Play,
-  ShieldCheck,
-  LockKeyhole,
   Link2,
   BookOpen,
   ChevronRight,
@@ -23,7 +21,7 @@ import { randomAxie } from '@/lib/game/random-axie';
 import { OnlinePanel, onlineRequest, queueOnlineReward } from './online-panel';
 import type { OnlineView } from '@/lib/online/types';
 import { MobileRun, type RunConfig } from './mobile-run';
-import { PARTS, BATTLE_SLOTS } from '@/lib/game/catalog';
+import { PARTS } from '@/lib/game/catalog';
 import { raidPowerDescription } from '@/lib/game/raid-powers';
 import { allowedParts, type AxieLoadout as Loadout } from '@/lib/game/axie';
 import {
@@ -31,21 +29,12 @@ import {
   GOODS,
   newProfile,
   readProfile,
-  vaultLevel,
   buyGood,
   claimChispas,
   type MobileProfile,
 } from '@/lib/game/mobile-profile';
-import {
-  makeVaultTraps,
-  defenderParts,
-  VAULT_SLOTS,
-} from '@/lib/game/vault-layout';
-import {
-  challengeCode,
-  decodeChallenge,
-  type VerifiedCourse,
-} from '@/lib/game/route-proof';
+import { makeVaultTraps } from '@/lib/game/vault-layout';
+import { decodeChallenge, type VerifiedCourse } from '@/lib/game/route-proof';
 import coursesData from '@/lib/game/data/verified-courses.json';
 import { choosePracticeCourse } from '@/lib/game/practice-selection';
 import storyData from '@/lib/game/data/story-courses.json';
@@ -54,10 +43,11 @@ import {
   storyUnlocked,
   completeStory,
 } from '@/lib/game/story-progress';
-import { MobileVaultEditor } from './mobile-vault-editor';
-import { validFreeTraps, snapTrap } from '@/lib/game/free-vault';
+const LiveVault = dynamic(() =>
+  import('./live-vault').then((m) => m.LiveVault),
+);
+import { snapTrap } from '@/lib/game/free-vault';
 import { reachSettings } from '@/lib/game/trap-reach';
-import type { Trap } from '@/lib/game/physics';
 import { StoryMap } from './story-map';
 import { STORY_INTRO_KEY } from '@/lib/game/story-narrative';
 const StoryIntro = dynamic(() =>
@@ -94,7 +84,6 @@ export default function MobileApp() {
     [library, setLibrary] = useState(false),
     [inspect, setInspect] = useState<string | null>(null),
     [shared, setShared] = useState<VerifiedCourse | null>(null),
-    [shareUrl, setShareUrl] = useState(''),
     [roomsOpen, setRoomsOpen] = useState(false),
     [storyOpen, setStoryOpen] = useState(false),
     [intro, setIntro] = useState<{ nextLevel: number | null } | null>(null),
@@ -247,102 +236,11 @@ export default function MobileApp() {
     });
     next.proof = null;
     save(next);
-    setShareUrl('');
     setNotice(
       'Guardián ' +
         (activeDefender + 1) +
         ' actualizado. Valida de nuevo su defensa.',
     );
-  }
-  function replaceTraps(traps: Trap[]) {
-    if (!validFreeTraps(traps)) return;
-    save({
-      ...profileRef.current,
-      freePlacement: true,
-      guardianCount: 1,
-      traps,
-      proof: null,
-    });
-    setShareUrl('');
-  }
-  function addTrap(anchor: number) {
-    const p = profileRef.current,
-      part = defenderParts(
-        p.axie,
-        anchor,
-        p.traps.map((t) => t.part),
-      )[0];
-    if (!part) return;
-    const base = VAULT_SLOTS[anchor];
-    for (const y of [base.y, 3.9, 6.55, 9.2, 11.85, 14.5, 17.15, 19.8])
-      for (const x of [base.x, 3, 6, 9]) {
-        const traps = [
-          ...p.traps,
-          {
-            ...base,
-            ...snapTrap(x, y),
-            anchor,
-            part,
-            reach: reachSettings(part).default,
-          },
-        ].sort((a, b) => a.anchor! - b.anchor!);
-        if (validFreeTraps(traps)) {
-          replaceTraps(traps);
-          return;
-        }
-      }
-    setNotice(
-      'No hay espacio libre para esa defensa. Mueve otra trampa primero.',
-    );
-  }
-  function editTrap(
-    index: number,
-    change: { part?: string; x?: number; y?: number; reach?: number },
-  ) {
-    const p = profileRef.current;
-    const trap = p.traps[index],
-      anchor = trap.anchor!,
-      axie = anchor < 4 ? p.axie : p.companion;
-    if (
-      change.part &&
-      !defenderParts(
-        axie,
-        anchor,
-        p.traps.filter((_, i) => i !== index).map((t) => t.part),
-      ).includes(change.part)
-    )
-      return;
-    replaceTraps(
-      p.traps.map((t, i) =>
-        i === index
-          ? {
-              ...t,
-              ...change,
-              ...(change.part
-                ? { reach: reachSettings(change.part).default }
-                : {}),
-            }
-          : t,
-      ),
-    );
-    setShareUrl('');
-  }
-  async function share() {
-    const p = profileRef.current;
-    if (!p.proof) return;
-    try {
-      const url =
-        location.origin +
-        '/#reto=' +
-        encodeURIComponent(
-          challengeCode({ level: vaultLevel(p), proof: p.proof }),
-        );
-      setShareUrl(url);
-      await navigator.clipboard.writeText(url);
-      setNotice('Enlace copiado. Tu amigo podrá atacar esta defensa.');
-    } catch {
-      setNotice('Puedes copiar el enlace que aparece debajo.');
-    }
   }
   const available = allowedParts(profile.axie),
     part = inspect ? PARTS[inspect] : null;
@@ -355,6 +253,15 @@ export default function MobileApp() {
           setIntro(null);
           if (intro.nextLevel === null) setStoryOpen(true);
         }}
+      />
+    );
+  if (screen === 'vault' && !run)
+    return (
+      <LiveVault
+        profile={profile}
+        onSave={save}
+        onExit={() => setScreen('home')}
+        onAxie={() => setScreen('axie')}
       />
     );
   if (run)
@@ -438,34 +345,6 @@ export default function MobileApp() {
       <div className="m-content">
         {screen === 'home' ? (
           <>
-            <section className="home-heading">
-              <span className="m-eyebrow">TU RINCÓN DE LUNACIA</span>
-              <h1>Tu refugio.</h1>
-              <button
-                className="home-refuge-state"
-                onClick={() => setScreen('vault')}
-              >
-                <span>{GOODS.find((g) => g.id === profile.theme)?.name}</span>
-                <i />
-                {profile.proof ? (
-                  <>
-                    <ShieldCheck size={13} /> Validado
-                  </>
-                ) : (
-                  <>
-                    Borrador <ChevronRight size={13} />
-                  </>
-                )}
-              </button>
-            </section>
-            <button
-              className="home-companion"
-              onClick={() => setScreen('axie')}
-            >
-              <Sparkles size={14} />
-              {profile.axie ? 'Axie #' + profile.axie.id : 'Conoce a tu Axie'}
-              <ChevronRight size={14} />
-            </button>
             <section className="home-actions" aria-label="Jugar y personalizar">
               {shared ? (
                 <button
@@ -475,7 +354,7 @@ export default function MobileApp() {
                   }
                 >
                   <Link2 size={16} />
-                  <span>Un amigo te ha retado</span>
+                  <span>Reto</span>
                   <ChevronRight size={16} />
                 </button>
               ) : null}
@@ -489,14 +368,7 @@ export default function MobileApp() {
                 disabled={!ready}
               >
                 <Play size={22} fill="currentColor" />
-                <span>
-                  {profile.story.length === STORY_LENGTH
-                    ? 'Historia completada'
-                    : profile.story.length
-                      ? 'Continuar historia'
-                      : 'Comenzar historia'}
-                  <small>Un jugador · Axie aleatorio</small>
-                </span>
+                <span>Historia</span>
                 <span className="home-mode-count">
                   {storyUnlocked(profile.story)} / {STORY_LENGTH}
                 </span>
@@ -507,7 +379,7 @@ export default function MobileApp() {
                 disabled={!ready}
               >
                 <Swords size={18} />
-                <span>Online · Atacar refugios</span>
+                <span>Online</span>
                 <ChevronRight size={16} />
               </button>
               <div className="home-shortcuts">
@@ -527,181 +399,6 @@ export default function MobileApp() {
             onEdit={() => setScreen('vault')}
             onAttack={attack}
           />
-        ) : null}
-        {screen === 'vault' ? (
-          <>
-            <div className="m-heading">
-              <div>
-                <span className="m-eyebrow">TU MAZMORRA</span>
-                <h1>Mi refugio</h1>
-              </div>
-              <span className={profile.proof ? 'm-status valid' : 'm-status'}>
-                {profile.proof ? (
-                  <ShieldCheck size={14} />
-                ) : (
-                  <LockKeyhole size={14} />
-                )}{' '}
-                {profile.proof ? 'Validada' : 'Borrador'}
-              </span>
-            </div>
-            <p className="m-intro">
-              Cada guardián aporta hasta cuatro partes diferentes. Para que
-              otros la ataquen, tú debes llegar al cofre sin recibir un solo
-              golpe.
-            </p>
-            <p className="story-free">
-              Individual · Un Axie · Hasta cuatro trampas
-            </p>
-            <MobileVaultEditor traps={profile.traps} onChange={replaceTraps} />
-            <button className="m-secondary" onClick={() => setScreen('axie')}>
-              Elegir Axie guardián <ChevronRight size={16} />
-            </button>
-            <button className="m-secondary" onClick={() => setScreen('online')}>
-              <Swords size={16} /> Cofre y modo online
-            </button>
-            <div className="guardian-switch">
-              {BATTLE_SLOTS.map((slot, anchor) =>
-                profile.traps.some((t) => t.anchor === anchor) ? null : (
-                  <button key={slot} onClick={() => addTrap(anchor)}>
-                    +{' '}
-                    {
-                      {
-                        mouth: 'Boca',
-                        horn: 'Cuerno',
-                        back: 'Espalda',
-                        tail: 'Cola',
-                      }[slot]
-                    }
-                  </button>
-                ),
-              )}
-            </div>
-            <div className="vault-slots">
-              {profile.traps.map((t, i) => (
-                <section className="vault-slot" key={i}>
-                  <div className="slot-number">
-                    {i + 1}
-                    <button
-                      className="m-text"
-                      disabled={profile.traps.length <= 1}
-                      aria-label={'Quitar ' + PARTS[t.part].name}
-                      onClick={() =>
-                        replaceTraps(profile.traps.filter((_, j) => j !== i))
-                      }
-                    >
-                      ×
-                    </button>
-                  </div>
-                  <Image
-                    unoptimized
-                    src={PARTS[t.part].partImage}
-                    width={51}
-                    height={64}
-                    alt=""
-                  />
-                  <div className="slot-settings">
-                    <label htmlFor={'trap-' + i}>
-                      Guardián {Math.floor(t.anchor! / 4) + 1} ·{' '}
-                      {PARTS[t.part].slot}
-                    </label>
-                    <select
-                      id={'trap-' + i}
-                      value={t.part}
-                      onChange={(e) => editTrap(i, { part: e.target.value })}
-                    >
-                      {defenderParts(
-                        t.anchor! < 4 ? profile.axie : profile.companion,
-                        t.anchor!,
-                        profile.traps
-                          .filter((_, j) => j !== i)
-                          .map((t) => t.part),
-                      ).map((id) => (
-                        <option key={id} value={id}>
-                          {PARTS[id].name} · {PARTS[id].short}
-                        </option>
-                      ))}
-                    </select>
-                    <label className="range-label" htmlFor={'position-' + i}>
-                      Posición <span>{t.x.toFixed(1)}</span>
-                    </label>
-                    <input
-                      id={'position-' + i}
-                      type="range"
-                      min={1.7}
-                      max={10.3}
-                      step="0.1"
-                      value={t.x}
-                      onChange={(e) =>
-                        editTrap(i, snapTrap(Number(e.target.value), t.y))
-                      }
-                    />
-                    <label className="range-label" htmlFor={'reach-' + i}>
-                      {reachSettings(t.part).label}{' '}
-                      <span>
-                        {(t.reach ?? reachSettings(t.part).default).toFixed(1)}{' '}
-                        m
-                      </span>
-                    </label>
-                    <input
-                      id={'reach-' + i}
-                      type="range"
-                      min={reachSettings(t.part).min}
-                      max={reachSettings(t.part).max}
-                      step="0.05"
-                      disabled={reachSettings(t.part).kind === 'fixed'}
-                      value={t.reach ?? reachSettings(t.part).default}
-                      onChange={(e) =>
-                        editTrap(i, { reach: Number(e.target.value) })
-                      }
-                    />
-                  </div>
-                  <button
-                    className="slot-info"
-                    aria-label={'Cómo funciona ' + PARTS[t.part].name}
-                    onClick={() => setInspect(t.part)}
-                  >
-                    i
-                  </button>
-                </section>
-              ))}
-            </div>
-            <button
-              className="m-primary"
-              disabled={!ready || available.length === 0}
-              onClick={() =>
-                launch({
-                  level: vaultLevel(profile),
-                  mode: 'validate',
-                  axie: profile.axie,
-                })
-              }
-            >
-              <Play size={18} />{' '}
-              {profile.proof ? 'Jugar mi defensa' : 'Validar sin golpes'}
-            </button>
-            <button
-              className="m-secondary"
-              disabled={!profile.proof}
-              onClick={() => void share()}
-            >
-              <Link2 size={18} /> Compartir defensa
-            </button>
-            {shareUrl ? (
-              <label className="share-field">
-                Enlace de tu reto
-                <input
-                  readOnly
-                  value={shareUrl}
-                  onFocus={(e) => e.target.select()}
-                />
-              </label>
-            ) : null}
-            <p className="m-footnote">
-              Los cambios se guardan como borrador en este dispositivo. Cambiar
-              una trampa invalida su prueba. Los retos se comparten por enlace;
-              todavía no hay clasificación en línea.
-            </p>
-          </>
         ) : null}
         {screen === 'shop' ? (
           <>

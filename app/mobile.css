@@ -1605,3 +1605,5 @@
   opacity: 1;
   border-color: #dfedcb;
 }
+/* Compact, icon-led lobby controls. */
+.home-actions{display:flex;flex-direction:column;gap:10px}.home-play{min-height:58px}.home-play>span:first-of-type{font-size:21px}.home-play .home-mode-count{font-size:12px}.home-actions .home-challenge{min-height:52px;margin:0;padding:12px 19px;font-size:18px;font-weight:700;border-radius:17px}.home-challenge>span{flex:1;text-align:left}.home-shortcuts{margin-top:0}.home-shortcuts>button{font-size:13px;min-height:46px}
