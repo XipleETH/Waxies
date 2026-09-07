@@ -21,3 +21,9 @@ No hacemos que el bot falle artificialmente ni cambiamos la velocidad del jugado
 Guardar una victoria desbloquea el siguiente nivel. Una estrella por llegar, dos con al menos 60 de salud y tres con 100. La primera victoria paga la salud restante; repetir solo paga la mejora sobre la mejor marca. Una demostración no guarda resultados, estrellas ni premios. Desde pausa se puede consultar la solución sin premio.
 
 El progreso es local en `waxies.mobile.v1`. Los perfiles anteriores conservan sus compras, saldo, Axie y defensa. Los números publicados de Historia deben mantener su identidad; regenerar/reordenar el catálogo futuro requiere versionar o migrar ese progreso.
+
+## Prólogo animado
+
+«La guerra de los cofres» cuenta una ficción de WAXIS en cuatro escenas 3D: escasez de SLP/AXS/RON, almacenamiento en cofres, guardianes dormidos y una incursión. Reutiliza modelos y animaciones del Mixer oficial. Se muestra al entrar por primera vez en Historia y se puede repetir desde Capítulos. Avanza por pulsación; permite retroceder, saltar, cerrar y pausar. Respeta la preferencia de movimiento reducido.
+
+La marca independiente `waxies.story-intro.v1` solo recuerda si se terminó o saltó el prólogo; no cambia el perfil ni desbloquea niveles. Si falla WebGL o la carga, el relato sigue legible y permite jugar. SLP, AXS y RON son elementos narrativos: los premios jugables continúan siendo Chispas.

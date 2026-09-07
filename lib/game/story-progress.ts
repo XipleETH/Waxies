@@ -3,23 +3,23 @@ export const STORY_LENGTH = 50;
 export const STORY_CHAPTERS = [
   {
     name: 'El despertar',
-    text: 'Desde el primer patio hay defensas. Lee sus avisos y aprende a esquivarlas antes de entrar al bosque.',
+    text: 'Las pociones escasean y los primeros refugios cierran sus cofres. Aprende a leer sus defensas antes de entrar al bosque.',
   },
   {
     name: 'Senderos de Lunacia',
-    text: 'Los guardianes han ocupado los senderos. Observa sus avisos y encuentra el momento de cruzar.',
+    text: 'Los Axies vigilan los caminos hacia sus reservas. Observa las señales de sus trampas y encuentra el momento de cruzar.',
   },
   {
     name: 'Ruinas de cristal',
-    text: 'Entre islas y balcones, cada aterrizaje cuenta. La siguiente bóveda espera más arriba.',
+    text: 'Los tesoros llegan a las antiguas ruinas. Entre islas y balcones, cada salto te acerca a otra bóveda.',
   },
   {
     name: 'Guardianes del cofre',
-    text: 'Las defensas comparten el camino. Encadena rebotes sin perder de vista el próximo ataque.',
+    text: 'Los guardianes duermen junto a sus cofres, pero sus poderes siguen vigilando. Encadena rebotes entre sus defensas.',
   },
   {
     name: 'La última bóveda',
-    text: 'Has llegado a las salas más exigentes. Conserva tu salud y conquista el último cofre.',
+    text: 'La guerra por los recursos te lleva a la última bóveda. Conserva tu salud y alcanza el cofre más protegido.',
   },
 ];
 export function storyUnlocked(best: number[] = []) {

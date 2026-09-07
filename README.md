@@ -22,6 +22,7 @@ npm run build
 ## Jugar
 
 - Lobby a pantalla completa con el Axie 3D animado en un refugio personal y controles flotantes. El fondo refleja el tema equipado, el adorno, las defensas guardadas y el estado de validación. Accesos a Historia, Práctica, Refugio, Bazar y Mi Axie.
+- Prólogo animado «La guerra de los cofres»: cuatro escenas 3D con Axies oficiales, recursos guardados y guardianes dormidos. Se muestra una vez al entrar a Historia y se repite desde Capítulos; incluye pausa, movimiento reducido y opción de saltarlo.
 - Historia de un jugador: 50 niveles fijos en cinco capítulos, Axie aleatorio gratuito y desbloqueo secuencial. Las defensas crecen por tramos: una en los niveles 1–3, dos en el 4–10, tres en el 11–25, cuatro en el 26–40 y cinco en el 41–50. Capítulos permite repetir niveles para mejorar de una a tres estrellas.
 - La campaña amplía las ocho familias de salas con variantes de plataformas y defensas; cada uno de sus 50 trazados tiene una repetición sin golpes comprobada. La dificultad estimada combina margen de pulsación, saltos, duración y trampas. Es una primera calibración, no una medición de dificultad humana.
 - Práctica conserva ocho mapas con geometrías diferentes: patio, islas, jardín partido, chimeneas, puente, balcones, escalera rota y torre. Sus 115 combinaciones certificadas cubren las 132 cartas Classic. El azar cambia de mapa entre entradas; «Práctica» abre las miniaturas para escoger una sala concreta.

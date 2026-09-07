@@ -52,6 +52,10 @@ import {
   completeStory,
 } from '@/lib/game/story-progress';
 import { StoryMap } from './story-map';
+import { STORY_INTRO_KEY } from '@/lib/game/story-narrative';
+const StoryIntro = dynamic(() =>
+  import('./story-intro').then((m) => m.StoryIntro),
+);
 import {
   Dialog,
   DialogContent,
@@ -84,10 +88,12 @@ export default function MobileApp() {
     [shareUrl, setShareUrl] = useState(''),
     [roomsOpen, setRoomsOpen] = useState(false),
     [storyOpen, setStoryOpen] = useState(false),
+    [intro, setIntro] = useState<{ nextLevel: number | null } | null>(null),
     [activeDefender, setActiveDefender] = useState<0 | 1>(0),
     [guestAxie] = useState(() => randomAxie());
   const profileRef = useRef(profile),
-    lastLayout = useRef<string | null>(null);
+    lastLayout = useRef<string | null>(null),
+    introSeen = useRef(false);
   useEffect(() => {
     let stopped = false;
     queueMicrotask(() => {
@@ -102,6 +108,9 @@ export default function MobileApp() {
             ' El archivo anterior se conserva hasta que guardes un cambio.',
         );
       }
+      try {
+        introSeen.current = localStorage.getItem(STORY_INTRO_KEY) === 'seen';
+      } catch {}
       setReady(true);
       readLink();
     });
@@ -153,11 +162,19 @@ export default function MobileApp() {
     setRoomsOpen(false);
     launch({ ...course, mode: 'practice', axie: null });
   }
-  function story(number = storyUnlocked(profileRef.current.story)) {
+  function story(
+    number = storyUnlocked(profileRef.current.story),
+    skipIntro = false,
+  ) {
     if (number < 1 || number > storyUnlocked(profileRef.current.story)) return;
     const course = storyCourses[number - 1];
     if (!course) return;
     setStoryOpen(false);
+    if (!skipIntro && !introSeen.current) {
+      setRun(null);
+      setIntro({ nextLevel: number });
+      return;
+    }
     launch({
       ...course,
       mode: 'story',
@@ -165,6 +182,16 @@ export default function MobileApp() {
       storyNumber: number,
       previousBest: profileRef.current.story[number - 1] ?? 0,
     });
+  }
+  function finishIntro() {
+    const next = intro?.nextLevel;
+    introSeen.current = true;
+    try {
+      localStorage.setItem(STORY_INTRO_KEY, 'seen');
+    } catch {}
+    setIntro(null);
+    if (next != null) story(next, true);
+    else setStoryOpen(true);
   }
   function exit() {
     setRun(null);
@@ -244,6 +271,17 @@ export default function MobileApp() {
   }
   const available = allowedParts(profile.axie),
     part = inspect ? PARTS[inspect] : null;
+  if (intro)
+    return (
+      <StoryIntro
+        replay={intro.nextLevel === null}
+        onFinish={finishIntro}
+        onClose={() => {
+          setIntro(null);
+          if (intro.nextLevel === null) setStoryOpen(true);
+        }}
+      />
+    );
   if (run)
     return (
       <MobileRun
@@ -836,6 +874,15 @@ export default function MobileApp() {
         <DialogContent className="story-dialog">
           <DialogTitle>Historia de Lunacia</DialogTitle>
           <DialogDescription>50 niveles. Un cofre a la vez.</DialogDescription>
+          <button
+            className="m-secondary"
+            onClick={() => {
+              setStoryOpen(false);
+              setIntro({ nextLevel: null });
+            }}
+          >
+            <BookOpen size={17} /> Ver prólogo · La guerra de los cofres
+          </button>
           <StoryMap best={profile.story} onPlay={story} />
         </DialogContent>
       </Dialog>
