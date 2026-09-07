@@ -40,7 +40,11 @@ export async function GET(req: NextRequest) {
   }
 }
 export async function POST(req: NextRequest) {
-  if (req.headers.get('origin') !== req.nextUrl.origin)
+  // Next normalizes loopback URLs; compare against the browser's actual Host.
+  if (
+    req.headers.get('origin') !==
+    `${req.nextUrl.protocol}//${req.headers.get('host')}`
+  )
     return response({ error: 'Origen no permitido.' }, 403);
   if (!onlineConfigured())
     return response(

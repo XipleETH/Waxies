@@ -2,7 +2,7 @@ import * as T from 'three';
 import { dungeonGuardians } from './guardians';
 import { loadMixedAvatar, type MixedAvatar } from './mixer-avatar';
 import { roomFor, type Dungeon } from './physics';
-/** Non-colliding alcoves at the back of the room, using the same official Mixer as the player. */
+/** Non-colliding guardian perches above the exterior roof, using the same official Mixer as the player. */
 export function createGuardianVisuals(scene: T.Scene, level: Dungeon) {
   const group = new T.Group();
   scene.add(group);
@@ -15,9 +15,9 @@ export function createGuardianVisuals(scene: T.Scene, level: Dungeon) {
   const room = roomFor(level),
     guardians = dungeonGuardians(level);
   guardians.forEach((guardian, index) => {
-    const alcoveX = index === 0 ? 2.6 : 5.35;
-    const x = level.chest.x > room.w / 2 ? alcoveX : room.w - alcoveX;
-    const baseY = room.h - 2.25;
+    const x =
+      room.w / 2 + (guardians.length === 1 ? 0 : index === 0 ? -1.8 : 1.8);
+    const baseY = room.h + 1.05;
     const geo = new T.CylinderGeometry(0.95, 1.1, 0.22, 12),
       material = new T.MeshStandardMaterial({
         color: index === 0 ? 0x678f77 : 0x958073,

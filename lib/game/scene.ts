@@ -141,7 +141,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     }catch(error){if(disposed||request!==avatarRequest)return null;if(bubaModel)bubaModel.visible=true;avatarReady=true;return report({kind:'error',name:'Buba',fallbacks:[],message:error instanceof Error?error.message:'No se pudo ensamblar el Axie.'});}
   };
   refreshRandom=()=>{if(randomMode)void setAxie(randomAxie());};
-  const resize=()=>{const w=host.clientWidth,h=host.clientHeight,room=roomFor(level);renderer.setSize(w,h,false);const aspect=w/Math.max(h,1);const vh=Math.max(room.h+1,(room.w+.8)/aspect);camera.left=-vh*aspect/2;camera.right=vh*aspect/2;camera.top=vh/2;camera.bottom=-vh/2;camera.position.set(room.w/2,room.h/2+2,38);camera.lookAt(room.w/2,room.h/2,0);camera.updateProjectionMatrix();};fitRoom=resize;
+  const resize=()=>{const w=host.clientWidth,h=host.clientHeight,room=roomFor(level);renderer.setSize(w,h,false);const aspect=w/Math.max(h,1);const viewH=room.h+(level.rules==='raid'?3.6:0);const vh=Math.max(viewH+1,(room.w+.8)/aspect);camera.left=-vh*aspect/2;camera.right=vh*aspect/2;camera.top=vh/2;camera.bottom=-vh/2;camera.position.set(room.w/2,viewH/2+2,38);camera.lookAt(room.w/2,viewH/2,0);camera.updateProjectionMatrix();};fitRoom=resize;
   const observer=new ResizeObserver(resize);observer.observe(host);resize();
   let previous=performance.now(),accumulator=0,lastReport=0,lastPhase=state.phase;
   const loop=(now:number)=>{

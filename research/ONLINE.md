@@ -41,4 +41,4 @@ El servidor calcula salud y victoria reproduciendo los saltos enviados contra su
 
 `npm test` cubre colocación, alcances, replays, matchmaking, reservas, conservación del saldo, resultados duplicados, vencimientos y revancha única. `npm run build` vuelve a comprobar las 165 pistas.
 
-Pendiente externo: el titular debe aceptar los términos de Neon en Vercel para aprovisionar la base gratuita. Después se deben conectar las variables, comprobar dos cuentas reales contra Postgres y verificar el despliegue. Las pruebas unitarias del libro de movimientos no sustituyen esa prueba de integración.
+Neon quedó aprovisionado y conectado a Vercel tras la aceptación del titular. Se verificó la API contra Postgres con dos sesiones invitadas: publicación, matchmaking, bloqueo del cofre, resultados ajenos, dos resultados concurrentes, botín retenido, revancha única y conservación de Chispas. Se retiraron las cuentas y registros de prueba. La comprobación de origen usa el encabezado Host del navegador porque Next normaliza las direcciones locales.
