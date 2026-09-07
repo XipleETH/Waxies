@@ -56,10 +56,11 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     box(scene, col*2.5+(row%2)*1.25, row*1.7, -2.6, 2.42,1.61,0.24,mat(shade.getHex()));
   }
   // Portal marks the entry; the vault sits at the opposite end of the route.
+  const portal = new THREE.Group(); scene.add(portal);
   const portalMat = mat(0x72ffd2,{emissive:0x2cdca4,emissiveIntensity:1.6});
-  box(scene,2.5,1.85,-1.3,1.55,2.1,0.3,mat(0x062d2b));
-  for(const x of [1.65,3.35]) box(scene,x,1.85,-1.05,0.18,2.35,0.35,portalMat);
-  box(scene,2.5,3,-1.05,1.85,0.18,0.35,portalMat);
+  box(portal,0,.85,-1.3,1.55,2.1,0.3,mat(0x062d2b));
+  for(const x of [-.85,.85]) box(portal,x,.85,-1.05,0.18,2.35,0.35,portalMat);
+  box(portal,0,2,-1.05,1.85,0.18,0.35,portalMat);
   const chest = new THREE.Group(); scene.add(chest);
   box(chest,0,-0.22,0,1.45,0.7,1.1,wood,true);
   const lid = new THREE.Group(); lid.position.set(0,0.12,-0.5); chest.add(lid);
@@ -91,6 +92,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
       for(let i=0;i<n;i++) if(i%3!==1) box(roomGroup,p.x-p.w/2+i*p.w/n+0.4,p.y+p.h/2-0.13,1.39,0.35,0.2,0.06,mat(0x487963));
     });
     decorationVisuals.update(level);
+    portal.position.set(level.spawn.x,level.spawn.y-PHYSICS.radius,0);
     chest.position.set(level.chest.x,level.chest.y,0.45); lid.rotation.x=0;
     hazardVisuals = createHazardVisuals(scene, level);
     hazardVisuals.update(state);

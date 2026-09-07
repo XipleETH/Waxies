@@ -371,3 +371,15 @@
 .goods::-webkit-scrollbar {
   display: none;
 }
+
+.stage .handle {
+  width: 48px;
+  height: 44px;
+  gap: 2px;
+  flex-direction: column;
+}
+.handle small {
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}

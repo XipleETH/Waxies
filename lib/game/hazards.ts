@@ -1,3 +1,4 @@
+import { projectileVolley, projectileBlocked as blocked } from './projectile-flight';
 import { PARTS } from './catalog';
 import { applyRules, decay, hitRunner, rulesFor, stomp, tickCombat, type StatusMap } from './combat';
 import {roomFor, type Dungeon, type GameState, type Trap} from './physics';
@@ -11,16 +12,11 @@ export const ATTACK={warning:.65,thornRadius:1.65,dashSpeed:10,dashDuration:.38,
 export const isRadial=(id:string)=>['thorny-caterpillar','cactus','pupae'].includes(id);
 function fresh(t:Trap):TrapState {const shield=Math.round(PARTS[t.part].shield*.2);return {x:t.x,y:t.y,facing:-1,stage:'idle',timer:.7+t.phase*.4,shield:shield>0,energy:0,powered:false,shots:0,shotTimer:0,hp:100,shieldHp:shield,maxShield:shield,cycleShield:shield,statuses:{},round:1,broken:false,breakUsed:false,struckUsed:false,draw:0,lastStand:0,aimX:t.x,aimY:t.y,hitThisAttack:false};}
 export function createHazards(level:Dungeon):HazardState {return {traps:level.traps.map(fresh),projectiles:[],pools:[],nextId:0};}
-function blocked(level:Dungeon,x:number,y:number,radius:number){const room=roomFor(level);return x-radius<=room.left||x+radius>=room.right||y-radius<=room.floor||y+radius>=room.h-.5||level.platforms.some(p=>x+radius>p.x-p.w/2&&x-radius<p.x+p.w/2&&y+radius>p.y-p.h/2&&y-radius<p.y+p.h/2);}
 function lineClear(level:Dungeon,x:number,y:number,tx:number,ty:number){const count=Math.ceil(Math.hypot(tx-x,ty-y)/.15);for(let n=1;n<count;n++)if(blocked(level,x+(tx-x)*n/count,y+(ty-y)*n/count,0))return false;return true;}
 function fire(s:GameState,level:Dungeon,i:number){
  const h=s.hazards,t=h.traps[i],part=level.traps[i].part,p=PARTS[part],pattern=p.recipe.pattern;
  if(p.attack===0||isRadial(part)||['bite','dash','barrier','aura'].includes(pattern))return;
- const fan=pattern==='fan',arc=pattern==='arc'||fan,gravity=arc?9:pattern==='sniper'?0:.8;
- const speeds=fan?[1.6,3.6,5.6]:[pattern==='arc'?5:.4];
- for(const vy of speeds){const aim=pattern==='sniper'?Math.atan2(t.aimY-t.y,Math.abs(t.aimX-t.x)):0;
-  h.projectiles.push({id:h.nextId++,owner:i,part,x:t.x+t.facing*.68,y:t.y+.06,vx:t.facing*(pattern==='sniper'?9*Math.cos(aim):arc?5.8:7.5),vy:pattern==='sniper'?9*Math.sin(aim):vy,gravity,life:4,returnAt:pattern==='boomerang'&&level.traps[i].reach===undefined?3.25:undefined,...(level.traps[i].reach!==undefined?{travel:0,maxTravel:level.traps[i].reach!*(pattern==='boomerang'?2:1),turnAfter:pattern==='boomerang'?level.traps[i].reach:undefined}:{})});
- }
+ for(const shot of projectileVolley(level.traps[i],t))h.projectiles.push({id:h.nextId++,owner:i,part,...shot});
 }
 function beginAttack(s:GameState,level:Dungeon,i:number){
  const t=s.hazards.traps[i],p=PARTS[level.traps[i].part],pattern=p.recipe.pattern;

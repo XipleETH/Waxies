@@ -17,7 +17,8 @@
     "courses:verify": "tsx scripts/certify-courses.ts",
     "courses:generate": "tsx scripts/certify-courses.ts --generate",
     "story:generate": "tsx scripts/generate-story.ts",
-    "courses:reach": "tsx scripts/certify-reach.ts"
+    "courses:reach": "tsx scripts/certify-reach.ts",
+    "courses:audit": "tsx scripts/audit-course-quality.ts"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

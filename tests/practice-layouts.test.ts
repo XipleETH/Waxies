@@ -17,7 +17,13 @@ void test('practice contains eight genuinely different room geometries, not just
     for (const c of variants) {
       assert.deepEqual(c.level.room, layout.room);
       assert.deepEqual(c.level.platforms, layout.platforms);
-      assert.deepEqual(c.level.chest, layout.chest);
+      assert.ok(
+        c.level.chest.x > layout.room.left &&
+          c.level.chest.x < layout.room.right,
+      );
+      assert.ok(
+        c.level.chest.y > layout.room.floor && c.level.chest.y < layout.room.h,
+      );
     }
   }
 });

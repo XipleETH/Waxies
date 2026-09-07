@@ -36,6 +36,7 @@ import { PARTS, BATTLE_SLOTS } from '@/lib/game/catalog';
 import { makeVaultTraps } from '@/lib/game/vault-layout';
 import { snapTrap, validFreeTraps } from '@/lib/game/free-vault';
 import { dungeonRoofY } from '@/lib/game/dungeon-framing';
+import { projectilePaths } from '@/lib/game/projectile-flight';
 import { reachSettings } from '@/lib/game/trap-reach';
 import { challengeCode, verifyRoute } from '@/lib/game/route-proof';
 import { randomAxie } from '@/lib/game/random-axie';
@@ -490,6 +491,9 @@ export function LiveVault({
       setMessage('Copia el enlace');
     }
   }
+  const trajectories = t
+    ? projectilePaths(vaultLevel(profile), t, t.x > 6 ? -1 : 1)
+    : [];
   const room = roomFor(vaultLevel(profile)),
     roof = project(room.w / 2, dungeonRoofY(vaultLevel(profile)) + 1.2),
     a = t
@@ -708,6 +712,20 @@ export function LiveVault({
                         100
                       }
                     />
+                  ) : trajectories.length ? (
+                    trajectories.map((points, i) => (
+                      <path
+                        key={i}
+                        d={points
+                          .map((point, j) => {
+                            const p = project(point.x, point.y);
+                            return (
+                              (j ? 'L' : 'M') + p.x * 100 + ' ' + p.y * 100
+                            );
+                          })
+                          .join(' ')}
+                      />
+                    ))
                   ) : (
                     <path d={`M${a.x * 100} ${a.y * 100}H${b.x * 100}`} />
                   )}
@@ -727,7 +745,7 @@ export function LiveVault({
                     t.y,
                   )}
                   aria-label="Ajustar alcance"
-                  title={`Alcance ${(t.reach ?? rule.default).toFixed(1)}`}
+                  title={`${rule.label}: ${(t.reach ?? rule.default).toFixed(1)}`}
                   onKeyDown={(e) => {
                     if (
                       ![
@@ -762,7 +780,8 @@ export function LiveVault({
                   onPointerUp={end}
                   onPointerCancel={cancel}
                 >
-                  ↔
+                  <span>↔</span>
+                  <small>{(t.reach ?? rule.default).toFixed(1)}</small>
                 </button>
               </>
             ) : null}

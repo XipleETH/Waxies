@@ -1,3 +1,4 @@
+import { goalPotential } from './route-pressure';
 import {
   createState,
   requestJump,
@@ -12,7 +13,8 @@ export function solveRoute(level: Dungeon, width = 100): RouteProof | null {
   let beam: Array<{ s: GameState; actions: number[] }> = [
     { s: { ...createState(level), phase: 'playing' }, actions: [] },
   ];
-  const quantum = 12;
+  const quantum = 12,
+    score = goalPotential(level);
   for (let frame = 0; frame < 7800; frame += quantum) {
     const candidates = new Map<string, { s: GameState; actions: number[] }>();
     for (const item of beam)
@@ -45,7 +47,10 @@ export function solveRoute(level: Dungeon, width = 100): RouteProof | null {
         if (!candidates.has(key)) candidates.set(key, { s, actions });
       }
     beam = [...candidates.values()]
-      .sort((a, b) => b.s.y + 0.018 * b.s.vy - (a.s.y + 0.018 * a.s.vy))
+      .sort(
+        (a, b) =>
+          score(b.s) - score(a.s) || a.actions.length - b.actions.length,
+      )
       .slice(0, width);
     if (!beam.length) return null;
   }

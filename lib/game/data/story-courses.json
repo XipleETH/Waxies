@@ -49,7 +49,7 @@
           "part": "carrot",
           "phase": 0,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 7.5
         }
       ],
       "theme": "moss"
@@ -75,7 +75,18 @@
       "jumps": 6
     },
     "number": 1,
-    "chapter": 1
+    "chapter": 1,
+    "pressure": {
+      "encountered": 1,
+      "total": 1,
+      "closest": [
+        0.06
+      ],
+      "exposureFrames": [
+        84
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -133,7 +144,7 @@
           "part": "carrot",
           "phase": 0,
           "patrol": 0,
-          "reach": 7
+          "reach": 9.5
         }
       ],
       "theme": "moss"
@@ -161,7 +172,18 @@
       "jumps": 8
     },
     "number": 2,
-    "chapter": 1
+    "chapter": 1,
+    "pressure": {
+      "encountered": 1,
+      "total": 1,
+      "closest": [
+        0.06
+      ],
+      "exposureFrames": [
+        114
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -202,12 +224,12 @@
       ],
       "traps": [
         {
-          "x": 5.9,
-          "y": 1.525,
+          "x": 10.05,
+          "y": 5.025,
           "part": "carrot",
           "phase": 0,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -231,7 +253,18 @@
       "jumps": 4
     },
     "number": 3,
-    "chapter": 1
+    "chapter": 1,
+    "pressure": {
+      "encountered": 1,
+      "total": 1,
+      "closest": [
+        0.08
+      ],
+      "exposureFrames": [
+        90
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -290,20 +323,20 @@
       ],
       "traps": [
         {
-          "x": 11.9,
-          "y": 6.2,
+          "x": 5.73,
+          "y": 3.8,
           "part": "lam",
           "patrol": 0,
           "phase": 0,
-          "reach": 1.2
+          "reach": 0.8
         },
         {
-          "x": 4.5,
+          "x": 2.46,
           "y": 8.8,
           "part": "anemone-back",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.6
+          "reach": 1
         }
       ],
       "theme": "ember"
@@ -323,22 +356,35 @@
       ]
     },
     "metrics": {
-      "score": 21,
-      "timingPassed": 16,
+      "score": 27,
+      "timingPassed": 14,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
       "jumps": 8
     },
     "number": 4,
-    "chapter": 1
+    "chapter": 1,
+    "pressure": {
+      "encountered": 2,
+      "total": 2,
+      "closest": [
+        0.1,
+        0.2
+      ],
+      "exposureFrames": [
+        84,
+        36
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-05",
       "layoutId": "bridge",
       "name": "El puente del guardián",
-      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "El despertar",
       "rules": "raid",
       "room": {
@@ -349,12 +395,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 11.0678,
+        "y": 13.155000000000001
       },
       "chest": {
-        "x": 10.8,
-        "y": 13.3
+        "x": 11.5,
+        "y": 1.8
       },
       "platforms": [
         {
@@ -390,16 +436,16 @@
       ],
       "traps": [
         {
-          "x": 11.9,
-          "y": 6.2,
+          "x": 11.52,
+          "y": 8.8,
           "part": "axie-kiss",
           "patrol": 0,
           "phase": 0,
-          "reach": 4.5
+          "reach": 9.5
         },
         {
-          "x": 4.5,
-          "y": 8.8,
+          "x": 10.04,
+          "y": 6.2,
           "part": "cottontail",
           "patrol": 0,
           "phase": 1.5,
@@ -410,35 +456,43 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 733,
+      "frames": 765,
       "actions": [
-        60,
-        108,
-        336,
-        444,
+        12,
         504,
-        516,
-        528,
-        672
+        600
       ]
     },
     "metrics": {
-      "score": 19,
-      "timingPassed": 16,
-      "timingTrials": 16,
+      "score": 49,
+      "timingPassed": 2,
+      "timingTrials": 6,
       "timingOffsetMs": 50,
       "seconds": 6,
-      "jumps": 8
+      "jumps": 3
     },
     "number": 5,
-    "chapter": 1
+    "chapter": 1,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 2,
+      "total": 2,
+      "closest": [
+        0.32,
+        0.09
+      ],
+      "exposureFrames": [
+        144,
+        132
+      ]
+    }
   },
   {
     "level": {
       "id": "story-06",
       "layoutId": "bridge",
       "name": "El puente del guardián",
-      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "El despertar",
       "rules": "raid",
       "room": {
@@ -449,12 +503,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 9.609200000000001,
+        "y": 13.155000000000001
       },
       "chest": {
-        "x": 10.8,
-        "y": 13.3
+        "x": 9.1142,
+        "y": 8.8
       },
       "platforms": [
         {
@@ -490,48 +544,61 @@
       ],
       "traps": [
         {
-          "x": 11.9,
-          "y": 6.2,
+          "x": 6.55,
+          "y": 8.8,
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 7
+          "reach": 12
         },
         {
-          "x": 4.5,
+          "x": 3.75,
           "y": 8.8,
           "part": "lagging",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 4.75
+          "reach": 3.8
         }
       ],
       "theme": "ember"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 729,
+      "frames": 733,
       "actions": [
-        60,
-        108,
-        336,
-        444,
-        504,
-        516,
-        528,
+        0,
+        96,
+        192,
+        288,
+        384,
+        480,
+        576,
         672
       ]
     },
     "metrics": {
-      "score": 21,
-      "timingPassed": 16,
+      "score": 40,
+      "timingPassed": 10,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
       "jumps": 8
     },
     "number": 6,
-    "chapter": 1
+    "chapter": 1,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 2,
+      "total": 2,
+      "closest": [
+        0.11,
+        0.2
+      ],
+      "exposureFrames": [
+        78,
+        66
+      ]
+    }
   },
   {
     "level": {
@@ -590,15 +657,15 @@
       ],
       "traps": [
         {
-          "x": 11.9,
-          "y": 6.2,
+          "x": 5.85,
+          "y": 3.8,
           "part": "axie-kiss",
           "patrol": 0,
           "phase": 0,
-          "reach": 9.5
+          "reach": 7.5
         },
         {
-          "x": 4.5,
+          "x": 2.48,
           "y": 8.8,
           "part": "cottontail",
           "patrol": 0,
@@ -623,22 +690,35 @@
       ]
     },
     "metrics": {
-      "score": 21,
-      "timingPassed": 16,
+      "score": 27,
+      "timingPassed": 14,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
       "jumps": 8
     },
     "number": 7,
-    "chapter": 1
+    "chapter": 1,
+    "pressure": {
+      "encountered": 2,
+      "total": 2,
+      "closest": [
+        0.1,
+        0.2
+      ],
+      "exposureFrames": [
+        78,
+        36
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-08",
       "layoutId": "bridge",
       "name": "El puente del guardián",
-      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "El despertar",
       "rules": "raid",
       "room": {
@@ -649,12 +729,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 9.5652,
+        "y": 13.155000000000001
       },
       "chest": {
-        "x": 10.8,
-        "y": 13.3
+        "x": 2.5,
+        "y": 1.8
       },
       "platforms": [
         {
@@ -690,16 +770,16 @@
       ],
       "traps": [
         {
-          "x": 11.9,
-          "y": 6.2,
+          "x": 3.57,
+          "y": 8.8,
           "part": "axie-kiss",
           "patrol": 0,
           "phase": 0,
-          "reach": 12
+          "reach": 9.5
         },
         {
-          "x": 4.5,
-          "y": 8.8,
+          "x": 2.35,
+          "y": 5.725,
           "part": "cottontail",
           "patrol": 0,
           "phase": 1.5,
@@ -710,35 +790,44 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 731,
+      "frames": 688,
       "actions": [
         60,
-        108,
-        336,
-        444,
-        504,
-        516,
-        528,
-        672
+        72,
+        132,
+        684
       ]
     },
     "metrics": {
-      "score": 21,
-      "timingPassed": 16,
-      "timingTrials": 16,
+      "score": 18,
+      "timingPassed": 8,
+      "timingTrials": 8,
       "timingOffsetMs": 50,
       "seconds": 6,
-      "jumps": 8
+      "jumps": 4
     },
     "number": 8,
-    "chapter": 1
+    "chapter": 1,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 2,
+      "total": 2,
+      "closest": [
+        0.22,
+        0.19
+      ],
+      "exposureFrames": [
+        42,
+        168
+      ]
+    }
   },
   {
     "level": {
       "id": "story-09",
       "layoutId": "balconies",
       "name": "Los balcones olvidados",
-      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "El despertar",
       "rules": "raid",
       "room": {
@@ -749,12 +838,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 9.7456,
+        "y": 17.654999999999998
       },
       "chest": {
-        "x": 9.3,
-        "y": 17.8
+        "x": 2.2,
+        "y": 11.100000000000001
       },
       "platforms": [
         {
@@ -802,49 +891,55 @@
       ],
       "traps": [
         {
-          "x": 2,
-          "y": 6.1,
+          "x": 8.3456,
+          "y": 17.799999999999997,
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 4.5
+          "reach": 12
         },
         {
-          "x": 10.168,
-          "y": 13.2,
+          "x": 10.45,
+          "y": 19.025,
           "part": "blue-moon",
           "phase": 0.8,
           "patrol": 0,
-          "reach": 7
+          "reach": 7.5
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 752,
+      "frames": 229,
       "actions": [
-        12,
-        168,
-        204,
-        312,
-        408,
-        420,
-        456,
-        576,
-        672
+        48,
+        120
       ]
     },
     "metrics": {
-      "score": 32,
-      "timingPassed": 15,
-      "timingTrials": 18,
+      "score": 30,
+      "timingPassed": 3,
+      "timingTrials": 4,
       "timingOffsetMs": 50,
-      "seconds": 6,
-      "jumps": 9
+      "seconds": 2,
+      "jumps": 2
     },
     "number": 9,
-    "chapter": 1
+    "chapter": 1,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 2,
+      "total": 2,
+      "closest": [
+        0.19,
+        0.59
+      ],
+      "exposureFrames": [
+        90,
+        66
+      ]
+    }
   },
   {
     "level": {
@@ -903,15 +998,15 @@
       ],
       "traps": [
         {
-          "x": 11.9,
-          "y": 6.2,
+          "x": 5.73,
+          "y": 3.8,
           "part": "swallow",
           "patrol": 0,
           "phase": 0,
-          "reach": 7
+          "reach": 7.5
         },
         {
-          "x": 4.5,
+          "x": 2.69,
           "y": 8.8,
           "part": "hermit",
           "patrol": 0,
@@ -936,22 +1031,35 @@
       ]
     },
     "metrics": {
-      "score": 23,
-      "timingPassed": 16,
+      "score": 29,
+      "timingPassed": 14,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
       "jumps": 8
     },
     "number": 10,
-    "chapter": 1
+    "chapter": 1,
+    "pressure": {
+      "encountered": 2,
+      "total": 2,
+      "closest": [
+        0.1,
+        0.16
+      ],
+      "exposureFrames": [
+        84,
+        30
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-11",
       "layoutId": "patio",
       "name": "El patio de las raíces",
-      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "Senderos de Lunacia",
       "rules": "raid",
       "room": {
@@ -962,12 +1070,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 4.311999999999999,
+        "y": 11.155000000000001
       },
       "chest": {
-        "x": 2.4,
-        "y": 11.3
+        "x": 9.5,
+        "y": 1.8
       },
       "platforms": [
         {
@@ -997,12 +1105,12 @@
       ],
       "traps": [
         {
-          "x": 9.5,
-          "y": 3.9,
+          "x": 9.65,
+          "y": 9.925,
           "part": "incisor",
           "patrol": 0,
           "phase": 0,
-          "reach": 1
+          "reach": 0.5
         },
         {
           "x": 2.1999999999999997,
@@ -1013,48 +1121,61 @@
           "reach": 0.4
         },
         {
-          "x": 9.1,
-          "y": 9.05,
+          "x": 4.3,
+          "y": 6.45,
           "part": "toothless-bite",
           "patrol": 0,
-          "phase": 3,
-          "reach": 4.5
+          "phase": 0,
+          "reach": 7.5
         }
       ],
       "theme": "moss"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1056,
+      "frames": 1185,
       "actions": [
         0,
-        108,
-        324,
-        456,
-        672,
-        756,
-        804,
-        888,
-        960
+        84,
+        468,
+        540,
+        936,
+        1092,
+        1140
       ]
     },
     "metrics": {
-      "score": 29,
-      "timingPassed": 16,
-      "timingTrials": 18,
+      "score": 37,
+      "timingPassed": 10,
+      "timingTrials": 14,
       "timingOffsetMs": 50,
-      "seconds": 9,
-      "jumps": 9
+      "seconds": 10,
+      "jumps": 7
     },
     "number": 11,
-    "chapter": 2
+    "chapter": 2,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.19,
+        0.52,
+        0.28
+      ],
+      "exposureFrames": [
+        240,
+        24,
+        72
+      ]
+    }
   },
   {
     "level": {
       "id": "story-12",
       "layoutId": "patio",
       "name": "El patio de las raíces",
-      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "Senderos de Lunacia",
       "rules": "raid",
       "room": {
@@ -1065,12 +1186,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 2.19,
+        "y": 11.155000000000001
       },
       "chest": {
-        "x": 2.4,
-        "y": 11.3
+        "x": 4.5928,
+        "y": 6.450000000000001
       },
       "platforms": [
         {
@@ -1100,11 +1221,11 @@
       ],
       "traps": [
         {
-          "x": 9.3,
-          "y": 3.9,
+          "x": 9.65,
+          "y": 10.625,
           "part": "incisor",
           "patrol": 0,
-          "phase": 0,
+          "phase": 2.4,
           "reach": 1.2
         },
         {
@@ -1113,7 +1234,7 @@
           "part": "carrot",
           "phase": 0.8,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 7.5
         },
         {
           "x": 9.942,
@@ -1128,29 +1249,40 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1056,
+      "frames": 492,
       "actions": [
-        0,
+        36,
         108,
-        324,
-        456,
-        672,
-        756,
-        804,
-        888,
-        960
+        204,
+        396,
+        420
       ]
     },
     "metrics": {
-      "score": 48,
-      "timingPassed": 9,
-      "timingTrials": 18,
+      "score": 39,
+      "timingPassed": 6,
+      "timingTrials": 10,
       "timingOffsetMs": 50,
-      "seconds": 9,
-      "jumps": 9
+      "seconds": 4,
+      "jumps": 5
     },
     "number": 12,
-    "chapter": 2
+    "chapter": 2,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.26,
+        0.19,
+        0.06
+      ],
+      "exposureFrames": [
+        138,
+        48,
+        66
+      ]
+    }
   },
   {
     "level": {
@@ -1209,15 +1341,15 @@
       ],
       "traps": [
         {
-          "x": 11.9,
-          "y": 6.2,
+          "x": 5.6,
+          "y": 3.8,
           "part": "swallow",
           "patrol": 0,
           "phase": 0,
-          "reach": 4.5
+          "reach": 7.5
         },
         {
-          "x": 4.5,
+          "x": 2.31,
           "y": 8.8,
           "part": "hermit",
           "patrol": 0,
@@ -1225,12 +1357,12 @@
           "reach": 0.4
         },
         {
-          "x": 9.7,
-          "y": 8.8,
+          "x": 1.55,
+          "y": 12.025,
           "part": "oranda",
           "patrol": 0,
-          "phase": 3,
-          "reach": 9.5
+          "phase": 0,
+          "reach": 12
         }
       ],
       "theme": "ember"
@@ -1250,22 +1382,37 @@
       ]
     },
     "metrics": {
-      "score": 30,
-      "timingPassed": 14,
+      "score": 36,
+      "timingPassed": 12,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
       "jumps": 8
     },
     "number": 13,
-    "chapter": 2
+    "chapter": 2,
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.07,
+        0.15,
+        0.26
+      ],
+      "exposureFrames": [
+        78,
+        36,
+        66
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-14",
       "layoutId": "bridge",
       "name": "El puente del guardián",
-      "subtitle": "Rodea el gran puente por sus extremos y busca el salto hacia la isla del cofre.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "Senderos de Lunacia",
       "rules": "raid",
       "room": {
@@ -1276,12 +1423,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 9.733500000000001,
+        "y": 13.155000000000001
       },
       "chest": {
-        "x": 10.8,
-        "y": 13.3
+        "x": 2.5,
+        "y": 1.8
       },
       "platforms": [
         {
@@ -1317,24 +1464,24 @@
       ],
       "traps": [
         {
-          "x": 11.9,
+          "x": 10.45,
           "y": 6.2,
           "part": "axie-kiss",
           "patrol": 0,
-          "phase": 0,
+          "phase": 2.4,
           "reach": 7
         },
         {
-          "x": 4.5,
-          "y": 8.8,
+          "x": 2.35,
+          "y": 3.275,
           "part": "cottontail",
           "patrol": 0,
           "phase": 1.5,
           "reach": 0.4
         },
         {
-          "x": 9.7,
-          "y": 8.8,
+          "x": 2.35,
+          "y": 7.125,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 3,
@@ -1345,35 +1492,47 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 724,
+      "frames": 640,
       "actions": [
-        60,
-        108,
-        336,
-        444,
-        504,
-        516,
-        528,
-        672
+        36,
+        72,
+        120,
+        204,
+        636
       ]
     },
     "metrics": {
-      "score": 30,
-      "timingPassed": 16,
-      "timingTrials": 16,
+      "score": 48,
+      "timingPassed": 6,
+      "timingTrials": 10,
       "timingOffsetMs": 50,
-      "seconds": 6,
-      "jumps": 8
+      "seconds": 5,
+      "jumps": 5
     },
     "number": 14,
-    "chapter": 2
+    "chapter": 2,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.88,
+        0.19,
+        0.19
+      ],
+      "exposureFrames": [
+        6,
+        144,
+        126
+      ]
+    }
   },
   {
     "level": {
       "id": "story-15",
       "layoutId": "patio",
       "name": "El patio de las raíces",
-      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "Senderos de Lunacia",
       "rules": "raid",
       "room": {
@@ -1384,12 +1543,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 4.2225,
+        "y": 11.155000000000001
       },
       "chest": {
-        "x": 2.4,
-        "y": 11.3
+        "x": 2.4859,
+        "y": 6.450000000000001
       },
       "platforms": [
         {
@@ -1419,12 +1578,12 @@
       ],
       "traps": [
         {
-          "x": 9.3,
-          "y": 3.9,
+          "x": 10.49,
+          "y": 9.05,
           "part": "jaguar",
           "patrol": 0,
           "phase": 0,
-          "reach": 4.75
+          "reach": 6
         },
         {
           "x": 2.4,
@@ -1432,11 +1591,11 @@
           "part": "oranda",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 12
+          "reach": 7.5
         },
         {
-          "x": 8.9,
-          "y": 9.05,
+          "x": 2.35,
+          "y": 9.225,
           "part": "feather-fan",
           "patrol": 0,
           "phase": 3,
@@ -1447,29 +1606,39 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1068,
+      "frames": 425,
       "actions": [
         0,
         120,
-        336,
-        468,
-        684,
-        768,
-        816,
-        900,
-        972
+        240,
+        360
       ]
     },
     "metrics": {
-      "score": 32,
-      "timingPassed": 15,
-      "timingTrials": 18,
+      "score": 25,
+      "timingPassed": 7,
+      "timingTrials": 8,
       "timingOffsetMs": 50,
-      "seconds": 9,
-      "jumps": 9
+      "seconds": 4,
+      "jumps": 4
     },
     "number": 15,
-    "chapter": 2
+    "chapter": 2,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.16,
+        0.46,
+        0.39
+      ],
+      "exposureFrames": [
+        36,
+        6,
+        36
+      ]
+    }
   },
   {
     "level": {
@@ -1540,28 +1709,28 @@
       ],
       "traps": [
         {
-          "x": 2,
-          "y": 6.1,
+          "x": 7.93,
+          "y": 8.4,
           "part": "piranha",
           "patrol": 0,
           "phase": 0,
-          "reach": 6
+          "reach": 3.8
         },
         {
-          "x": 7.8,
-          "y": 13.2,
+          "x": 3.61,
+          "y": 15.5,
           "part": "koi",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 2.25
+          "reach": 4.8
         },
         {
-          "x": 10.174,
-          "y": 13.2,
+          "x": 7.7,
+          "y": 17.8,
           "part": "blue-moon",
-          "phase": 1.6,
+          "phase": 2.4,
           "patrol": 0,
-          "reach": 7
+          "reach": 12
         }
       ],
       "theme": "amethyst"
@@ -1582,22 +1751,37 @@
       ]
     },
     "metrics": {
-      "score": 38,
-      "timingPassed": 14,
+      "score": 41,
+      "timingPassed": 13,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 6,
       "jumps": 9
     },
     "number": 16,
-    "chapter": 2
+    "chapter": 2,
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.54,
+        0.2,
+        0.08
+      ],
+      "exposureFrames": [
+        66,
+        42,
+        78
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-17",
       "layoutId": "patio",
       "name": "El patio de las raíces",
-      "subtitle": "Una sala corta: cruza el patio y cambia de lado para alcanzar el balcón.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "Senderos de Lunacia",
       "rules": "raid",
       "room": {
@@ -1608,12 +1792,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 4.2832,
+        "y": 11.155000000000001
       },
       "chest": {
-        "x": 2.4,
-        "y": 11.3
+        "x": 9.5,
+        "y": 1.8
       },
       "platforms": [
         {
@@ -1643,15 +1827,15 @@
       ],
       "traps": [
         {
-          "x": 9.5,
-          "y": 3.9,
+          "x": 9.65,
+          "y": 4.675,
           "part": "rose-bud",
           "patrol": 0,
           "phase": 0.4,
           "reach": 0.4
         },
         {
-          "x": 2.1999999999999997,
+          "x": 4.3,
           "y": 6.45,
           "part": "confident",
           "patrol": 0,
@@ -1659,48 +1843,62 @@
           "reach": 0.4
         },
         {
-          "x": 9.1,
+          "x": 10.27,
           "y": 9.05,
           "part": "pupae",
           "patrol": 0,
-          "phase": 3.4,
-          "reach": 1.65
+          "phase": 0,
+          "reach": 1.7
         }
       ],
       "theme": "moss"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1056,
+      "frames": 985,
       "actions": [
         0,
         108,
-        324,
-        456,
-        672,
-        756,
-        804,
-        888,
-        960
+        156,
+        312,
+        372,
+        732,
+        900,
+        948
       ]
     },
     "metrics": {
-      "score": 34,
+      "score": 29,
       "timingPassed": 14,
-      "timingTrials": 18,
+      "timingTrials": 16,
       "timingOffsetMs": 50,
-      "seconds": 9,
-      "jumps": 9
+      "seconds": 8,
+      "jumps": 8
     },
     "number": 17,
-    "chapter": 2
+    "chapter": 2,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.08,
+        0.18,
+        0.01
+      ],
+      "exposureFrames": [
+        120,
+        66,
+        90
+      ]
+    }
   },
   {
     "level": {
       "id": "story-18",
       "layoutId": "balconies",
       "name": "Los balcones olvidados",
-      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "Senderos de Lunacia",
       "rules": "raid",
       "room": {
@@ -1711,12 +1909,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 7.724,
+        "y": 17.654999999999998
       },
       "chest": {
-        "x": 9.3,
-        "y": 17.8
+        "x": 3.1168000000000005,
+        "y": 11.100000000000001
       },
       "platforms": [
         {
@@ -1764,24 +1962,24 @@
       ],
       "traps": [
         {
-          "x": 2,
-          "y": 6.1,
+          "x": 5.17,
+          "y": 15.5,
           "part": "piranha",
           "patrol": 0,
           "phase": 0,
-          "reach": 3.5
+          "reach": 3.8
         },
         {
-          "x": 7.8,
-          "y": 13.2,
+          "x": 9.65,
+          "y": 14.825,
           "part": "koi",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 4.75
+          "reach": 3.8
         },
         {
-          "x": 4.2,
-          "y": 15.5,
+          "x": 2.35,
+          "y": 14.125,
           "part": "anemone-back",
           "patrol": 0,
           "phase": 3,
@@ -1792,29 +1990,43 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 777,
+      "frames": 733,
       "actions": [
-        12,
-        180,
-        216,
-        324,
-        420,
-        432,
-        468,
-        600,
-        696
+        0,
+        96,
+        192,
+        288,
+        384,
+        480,
+        576,
+        672
       ]
     },
     "metrics": {
       "score": 35,
-      "timingPassed": 15,
-      "timingTrials": 18,
+      "timingPassed": 13,
+      "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
-      "jumps": 9
+      "jumps": 8
     },
     "number": 18,
-    "chapter": 2
+    "chapter": 2,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.07,
+        0.15,
+        0.11
+      ],
+      "exposureFrames": [
+        90,
+        114,
+        96
+      ]
+    }
   },
   {
     "level": {
@@ -1861,28 +2073,28 @@
       ],
       "traps": [
         {
-          "x": 4.8,
-          "y": 10.2,
+          "x": 9.25,
+          "y": 12.625,
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0,
+          "reach": 7.5
+        },
+        {
+          "x": 5.9,
+          "y": 15.3,
+          "part": "carrot",
+          "phase": 0,
+          "patrol": 0,
           "reach": 9.5
         },
         {
-          "x": 7.2,
-          "y": 1.525,
-          "part": "carrot",
-          "phase": 0.8,
-          "patrol": 0,
-          "reach": 12
-        },
-        {
-          "x": 9.268,
-          "y": 12.625,
+          "x": 5.55,
+          "y": 9.925,
           "part": "blue-moon",
           "phase": 1.6,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 12
         }
       ],
       "theme": "ember"
@@ -1903,15 +2115,30 @@
       ]
     },
     "metrics": {
-      "score": 58,
-      "timingPassed": 7,
+      "score": 63,
+      "timingPassed": 5,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,
       "jumps": 9
     },
     "number": 19,
-    "chapter": 2
+    "chapter": 2,
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.32,
+        0.17,
+        0.04
+      ],
+      "exposureFrames": [
+        138,
+        66,
+        54
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -1976,28 +2203,28 @@
       ],
       "traps": [
         {
-          "x": 8.6,
-          "y": 5.2,
+          "x": 1.9,
+          "y": 11.6,
           "part": "tadpole",
           "patrol": 0,
-          "phase": 0.4,
-          "reach": 12
+          "phase": 0,
+          "reach": 9.5
         },
         {
-          "x": 2.3,
+          "x": 3.1,
           "y": 11.6,
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 1.9,
-          "reach": 4.5
+          "reach": 12
         },
         {
-          "x": 4.2,
+          "x": 3.25,
           "y": 3.3,
           "part": "goldfish",
           "patrol": 0,
           "phase": 3.4,
-          "reach": 3.5
+          "reach": 3.8
         }
       ],
       "theme": "moss"
@@ -2018,15 +2245,30 @@
       ]
     },
     "metrics": {
-      "score": 37,
-      "timingPassed": 15,
+      "score": 42,
+      "timingPassed": 13,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 6,
       "jumps": 9
     },
     "number": 20,
-    "chapter": 2
+    "chapter": 2,
+    "traversal": "ascent",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.13,
+        0.19,
+        0.25
+      ],
+      "exposureFrames": [
+        78,
+        72,
+        24
+      ]
+    }
   },
   {
     "level": {
@@ -2091,23 +2333,23 @@
       ],
       "traps": [
         {
-          "x": 8.6,
-          "y": 5.2,
+          "x": 3.1,
+          "y": 11.6,
           "part": "snail-shell",
           "patrol": 0,
           "phase": 0.2,
           "reach": 0.4
         },
         {
-          "x": 2.3,
+          "x": 1.9,
           "y": 11.6,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 1.7,
-          "reach": 7
+          "phase": 0,
+          "reach": 7.5
         },
         {
-          "x": 4.2,
+          "x": 3.21,
           "y": 3.3,
           "part": "goda",
           "patrol": 0,
@@ -2133,15 +2375,30 @@
       ]
     },
     "metrics": {
-      "score": 37,
-      "timingPassed": 15,
+      "score": 45,
+      "timingPassed": 12,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 6,
       "jumps": 9
     },
     "number": 21,
-    "chapter": 3
+    "chapter": 3,
+    "traversal": "ascent",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.19,
+        0.13,
+        0.25
+      ],
+      "exposureFrames": [
+        72,
+        78,
+        24
+      ]
+    }
   },
   {
     "level": {
@@ -2206,23 +2463,23 @@
       ],
       "traps": [
         {
-          "x": 8.4,
-          "y": 5.2,
+          "x": 3.1,
+          "y": 11.6,
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 7
+          "reach": 7.5
         },
         {
-          "x": 2.5,
+          "x": 1.9,
           "y": 11.6,
           "part": "lagging",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 4.75
+          "reach": 4.8
         },
         {
-          "x": 4,
+          "x": 3.32,
           "y": 3.3,
           "part": "tri-feather",
           "patrol": 0,
@@ -2256,7 +2513,22 @@
       "jumps": 9
     },
     "number": 22,
-    "chapter": 3
+    "chapter": 3,
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.19,
+        0.24,
+        0.25
+      ],
+      "exposureFrames": [
+        72,
+        30,
+        24
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -2321,28 +2593,28 @@
       ],
       "traps": [
         {
-          "x": 8.4,
-          "y": 5.2,
+          "x": 3.1,
+          "y": 11.6,
           "part": "snail-shell",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 2.5,
+          "x": 1.5,
           "y": 11.6,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 1.5,
+          "phase": 0,
           "reach": 12
         },
         {
-          "x": 4,
+          "x": 3.3,
           "y": 3.3,
           "part": "goda",
           "patrol": 0,
           "phase": 3,
-          "reach": 4.5
+          "reach": 7.5
         }
       ],
       "theme": "moss"
@@ -2363,22 +2635,37 @@
       ]
     },
     "metrics": {
-      "score": 37,
-      "timingPassed": 15,
+      "score": 39,
+      "timingPassed": 14,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 5,
       "jumps": 9
     },
     "number": 23,
-    "chapter": 3
+    "chapter": 3,
+    "traversal": "ascent",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.19,
+        0.53,
+        0.25
+      ],
+      "exposureFrames": [
+        72,
+        84,
+        24
+      ]
+    }
   },
   {
     "level": {
       "id": "story-24",
       "layoutId": "steps",
       "name": "La escalera rota",
-      "subtitle": "Pequeños escalones y un pilar central: enlaza saltos y aprovecha sus costados.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "Ruinas de cristal",
       "rules": "raid",
       "room": {
@@ -2389,12 +2676,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 7.436,
+        "y": 13.455000000000002
       },
       "chest": {
-        "x": 9.5,
-        "y": 13.6
+        "x": 9.8,
+        "y": 9.3
       },
       "platforms": [
         {
@@ -2436,57 +2723,68 @@
       ],
       "traps": [
         {
-          "x": 8.4,
-          "y": 5.2,
+          "x": 3.9,
+          "y": 11.6,
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
           "reach": 12
         },
         {
-          "x": 2.5,
-          "y": 11.6,
+          "x": 1.55,
+          "y": 13.775,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 2.25
+          "phase": 2.4,
+          "reach": 6
         },
         {
-          "x": 4,
-          "y": 3.3,
+          "x": 9.65,
+          "y": 10.625,
           "part": "tri-feather",
           "patrol": 0,
           "phase": 3,
-          "reach": 7
+          "reach": 9.5
         }
       ],
       "theme": "moss"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 658,
+      "frames": 461,
       "actions": [
         0,
-        12,
-        60,
-        156,
-        300,
-        420,
-        492,
-        564,
-        636
+        96,
+        192,
+        288,
+        384
       ]
     },
     "metrics": {
-      "score": 39,
-      "timingPassed": 14,
-      "timingTrials": 18,
+      "score": 40,
+      "timingPassed": 7,
+      "timingTrials": 10,
       "timingOffsetMs": 50,
-      "seconds": 5,
-      "jumps": 9
+      "seconds": 4,
+      "jumps": 5
     },
     "number": 24,
-    "chapter": 3
+    "chapter": 3,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.18,
+        0.35,
+        0.48
+      ],
+      "exposureFrames": [
+        78,
+        24,
+        18
+      ]
+    }
   },
   {
     "level": {
@@ -2551,28 +2849,28 @@
       ],
       "traps": [
         {
-          "x": 8.4,
-          "y": 5.2,
+          "x": 3.1,
+          "y": 11.6,
           "part": "nut-cracker-tail",
           "patrol": 0,
           "phase": 0,
-          "reach": 4.5
+          "reach": 7.5
         },
         {
-          "x": 2.5,
+          "x": 1.9,
           "y": 11.6,
           "part": "goldfish",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 3.5
+          "reach": 4.8
         },
         {
-          "x": 4,
+          "x": 3.38,
           "y": 3.3,
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 3,
-          "reach": 9.5
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -2601,14 +2899,29 @@
       "jumps": 9
     },
     "number": 25,
-    "chapter": 3
+    "chapter": 3,
+    "pressure": {
+      "encountered": 3,
+      "total": 3,
+      "closest": [
+        0.19,
+        0.24,
+        0.25
+      ],
+      "exposureFrames": [
+        72,
+        30,
+        24
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-26",
       "layoutId": "balconies",
       "name": "Los balcones olvidados",
-      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "Ruinas de cristal",
       "rules": "raid",
       "room": {
@@ -2619,12 +2932,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 8.0151,
+        "y": 17.654999999999998
       },
       "chest": {
-        "x": 9.3,
-        "y": 17.8
+        "x": 2.5,
+        "y": 1.8
       },
       "platforms": [
         {
@@ -2672,65 +2985,81 @@
       ],
       "traps": [
         {
-          "x": 2,
-          "y": 6.1,
+          "x": 1.5,
+          "y": 11.1,
           "part": "cloud",
           "patrol": 0,
           "phase": 0,
-          "reach": 3.5
+          "reach": 4.8
         },
         {
-          "x": 7.8,
-          "y": 13.2,
+          "x": 9.68,
+          "y": 3.9,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 9.5
-        },
-        {
-          "x": 4.2,
-          "y": 15.5,
-          "part": "oranda",
-          "patrol": 0,
-          "phase": 3,
+          "phase": 0,
           "reach": 12
         },
         {
-          "x": 10.194,
-          "y": 13.2,
-          "part": "goda",
-          "phase": 2.4,
+          "x": 9.1,
+          "y": 1.525,
+          "part": "oranda",
           "patrol": 0,
-          "reach": 4.5
+          "phase": 2.4,
+          "reach": 7.5
+        },
+        {
+          "x": 3.9,
+          "y": 6.1,
+          "part": "goda",
+          "phase": 0,
+          "patrol": 0,
+          "reach": 9.5
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 744,
+      "frames": 1103,
       "actions": [
-        12,
+        24,
         168,
-        204,
         312,
-        408,
-        420,
         456,
-        576,
-        672
+        600,
+        744,
+        888,
+        1032
       ]
     },
     "metrics": {
-      "score": 47,
-      "timingPassed": 13,
-      "timingTrials": 18,
+      "score": 53,
+      "timingPassed": 10,
+      "timingTrials": 16,
       "timingOffsetMs": 50,
-      "seconds": 6,
-      "jumps": 9
+      "seconds": 9,
+      "jumps": 8
     },
     "number": 26,
-    "chapter": 3
+    "chapter": 3,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.1,
+        0.18,
+        0.32,
+        0.1
+      ],
+      "exposureFrames": [
+        66,
+        84,
+        42,
+        36
+      ]
+    }
   },
   {
     "level": {
@@ -2795,36 +3124,36 @@
       ],
       "traps": [
         {
-          "x": 8.4,
-          "y": 5.2,
+          "x": 3.1,
+          "y": 11.6,
           "part": "snail-shell",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 2.5,
+          "x": 1.9,
           "y": 11.6,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 12
+          "phase": 0,
+          "reach": 7.5
         },
         {
-          "x": 4,
+          "x": 3.39,
           "y": 3.3,
           "part": "goda",
           "patrol": 0,
           "phase": 3,
-          "reach": 4.5
+          "reach": 9.5
         },
         {
-          "x": 6.981,
-          "y": 5.2,
+          "x": 2.35,
+          "y": 12.725,
           "part": "carrot",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 7
+          "reach": 12
         }
       ],
       "theme": "moss"
@@ -2845,15 +3174,32 @@
       ]
     },
     "metrics": {
-      "score": 47,
-      "timingPassed": 13,
+      "score": 53,
+      "timingPassed": 11,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 5,
       "jumps": 9
     },
     "number": 27,
-    "chapter": 3
+    "chapter": 3,
+    "traversal": "ascent",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.19,
+        0.13,
+        0.25,
+        0.21
+      ],
+      "exposureFrames": [
+        72,
+        84,
+        24,
+        126
+      ]
+    }
   },
   {
     "level": {
@@ -2918,36 +3264,36 @@
       ],
       "traps": [
         {
-          "x": 9.8,
-          "y": 6.1,
+          "x": 4.21,
+          "y": 3.8,
           "part": "furball",
           "patrol": 0,
           "phase": 0,
-          "reach": 12
+          "reach": 7.5
         },
         {
-          "x": 2,
-          "y": 10.6,
+          "x": 4.31,
+          "y": 12.8,
           "part": "little-branch",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 2.25
+          "reach": 4.8
         },
         {
-          "x": 4.2,
-          "y": 12.8,
+          "x": 4.3,
+          "y": 1.525,
           "part": "lam",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.5
+          "reach": 1.2
         },
         {
-          "x": 3.673,
-          "y": 10.6,
+          "x": 2.35,
+          "y": 12.725,
           "part": "carrot",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 7.5
         }
       ],
       "theme": "amethyst"
@@ -2967,22 +3313,39 @@
       ]
     },
     "metrics": {
-      "score": 47,
-      "timingPassed": 11,
+      "score": 53,
+      "timingPassed": 9,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
       "jumps": 8
     },
     "number": 28,
-    "chapter": 3
+    "chapter": 3,
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.04,
+        0.1,
+        0.61,
+        0.15
+      ],
+      "exposureFrames": [
+        30,
+        36,
+        24,
+        102
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-29",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "Ruinas de cristal",
       "rules": "raid",
       "room": {
@@ -2993,12 +3356,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 9.586,
+        "y": 14.955000000000002
       },
       "chest": {
         "x": 9.5,
-        "y": 15.1
+        "y": 1.8
       },
       "platforms": [
         {
@@ -3040,71 +3403,89 @@
       ],
       "traps": [
         {
-          "x": 9.8,
-          "y": 6.1,
+          "x": 4.81,
+          "y": 12.8,
           "part": "sponge",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 8.171,
-          "y": 6.1,
+          "x": 3.1,
+          "y": 10.6,
           "part": "carrot",
-          "phase": 0.8,
+          "phase": 0,
           "patrol": 0,
-          "reach": 7
+          "reach": 12
         },
         {
-          "x": 3.452,
-          "y": 10.6,
+          "x": 4.71,
+          "y": 3.8,
           "part": "oranda",
           "phase": 1.6,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 7.5
         },
         {
-          "x": 2.017,
-          "y": 10.6,
+          "x": 7.9,
+          "y": 1.525,
           "part": "goda",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 12
+          "reach": 9.5
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 826,
+      "frames": 1093,
       "actions": [
-        12,
-        36,
-        96,
-        204,
-        312,
-        432,
-        660,
-        792
+        24,
+        144,
+        264,
+        384,
+        504,
+        624,
+        744,
+        864,
+        984
       ]
     },
     "metrics": {
-      "score": 58,
-      "timingPassed": 8,
-      "timingTrials": 16,
+      "score": 54,
+      "timingPassed": 11,
+      "timingTrials": 18,
       "timingOffsetMs": 50,
-      "seconds": 7,
-      "jumps": 8
+      "seconds": 9,
+      "jumps": 9
     },
     "number": 29,
-    "chapter": 3
+    "chapter": 3,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.12,
+        0.07,
+        0.13,
+        0.19
+      ],
+      "exposureFrames": [
+        84,
+        96,
+        36,
+        24
+      ]
+    }
   },
   {
     "level": {
       "id": "story-30",
       "layoutId": "balconies",
       "name": "Los balcones olvidados",
-      "subtitle": "Alterna saltos largos y descansos pequeños. No todos los balcones llegan a la pared.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "Ruinas de cristal",
       "rules": "raid",
       "room": {
@@ -3115,12 +3496,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 7.7383999999999995,
+        "y": 17.654999999999998
       },
       "chest": {
-        "x": 9.3,
-        "y": 17.8
+        "x": 3.1311999999999998,
+        "y": 11.100000000000001
       },
       "platforms": [
         {
@@ -3168,65 +3549,81 @@
       ],
       "traps": [
         {
-          "x": 2,
-          "y": 6.1,
+          "x": 9.65,
+          "y": 14.825,
           "part": "cloud",
           "patrol": 0,
           "phase": 0,
-          "reach": 3.5
+          "reach": 6
         },
         {
-          "x": 7.8,
-          "y": 13.2,
+          "x": 1.38,
+          "y": 11.1,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 1.5,
+          "phase": 1.2,
+          "reach": 7.5
+        },
+        {
+          "x": 2.35,
+          "y": 13.775,
+          "part": "oranda",
+          "patrol": 0,
+          "phase": 1.2,
           "reach": 9.5
         },
         {
-          "x": 4.2,
-          "y": 15.5,
-          "part": "oranda",
-          "patrol": 0,
-          "phase": 3,
-          "reach": 12
-        },
-        {
-          "x": 10.145,
-          "y": 13.2,
+          "x": 10.45,
+          "y": 19.025,
           "part": "goda",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 12
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 753,
+      "frames": 733,
       "actions": [
-        12,
-        168,
-        204,
-        312,
-        408,
-        420,
-        456,
+        0,
+        96,
+        192,
+        288,
+        384,
+        480,
         576,
         672
       ]
     },
     "metrics": {
-      "score": 48,
+      "score": 43,
       "timingPassed": 12,
-      "timingTrials": 18,
+      "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
-      "jumps": 9
+      "jumps": 8
     },
     "number": 30,
-    "chapter": 3
+    "chapter": 3,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.15,
+        0.21,
+        0.27,
+        0.22
+      ],
+      "exposureFrames": [
+        114,
+        18,
+        96,
+        90
+      ]
+    }
   },
   {
     "level": {
@@ -3291,36 +3688,36 @@
       ],
       "traps": [
         {
-          "x": 9.8,
-          "y": 6.1,
+          "x": 4.44,
+          "y": 12.8,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 8.22,
-          "y": 6.1,
+          "x": 4.34,
+          "y": 3.8,
           "part": "carrot",
           "phase": 0.8,
           "patrol": 0,
-          "reach": 12
+          "reach": 9.5
         },
         {
-          "x": 3.501,
+          "x": 3.1,
           "y": 10.6,
           "part": "blue-moon",
           "phase": 1.6,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 12
         },
         {
-          "x": 2.037,
-          "y": 10.6,
+          "x": 4.3,
+          "y": 1.525,
           "part": "goda",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 7
+          "reach": 7.5
         }
       ],
       "theme": "amethyst"
@@ -3340,22 +3737,39 @@
       ]
     },
     "metrics": {
-      "score": 59,
-      "timingPassed": 7,
+      "score": 62,
+      "timingPassed": 6,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
       "jumps": 8
     },
     "number": 31,
-    "chapter": 4
+    "chapter": 4,
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.09,
+        0.04,
+        0.36,
+        0.61
+      ],
+      "exposureFrames": [
+        42,
+        30,
+        24,
+        24
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-32",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "Guardianes del cofre",
       "rules": "raid",
       "room": {
@@ -3366,12 +3780,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 7.112,
+        "y": 14.955000000000002
       },
       "chest": {
-        "x": 9.5,
-        "y": 15.1
+        "x": 2.5,
+        "y": 1.8
       },
       "platforms": [
         {
@@ -3413,32 +3827,32 @@
       ],
       "traps": [
         {
-          "x": 10,
-          "y": 6.1,
+          "x": 4.27,
+          "y": 12.8,
           "part": "sponge",
           "patrol": 0,
           "phase": 0.4,
           "reach": 0.4
         },
         {
-          "x": 1.8,
-          "y": 10.6,
+          "x": 4.57,
+          "y": 3.8,
           "part": "babylonia",
           "patrol": 0,
           "phase": 1.9,
-          "reach": 0.6
+          "reach": 1.2
         },
         {
-          "x": 4.4,
-          "y": 12.8,
+          "x": 5.63,
+          "y": 8.3,
           "part": "lam",
           "patrol": 0,
           "phase": 3.4,
-          "reach": 0.5
+          "reach": 0.8
         },
         {
-          "x": 3.854,
-          "y": 10.6,
+          "x": 9.65,
+          "y": 7.125,
           "part": "carrot",
           "phase": 2.4,
           "patrol": 0,
@@ -3449,35 +3863,47 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 826,
+      "frames": 706,
       "actions": [
-        12,
         36,
-        96,
-        204,
-        312,
-        432,
-        660,
-        792
+        372,
+        624
       ]
     },
     "metrics": {
       "score": 53,
-      "timingPassed": 9,
-      "timingTrials": 16,
+      "timingPassed": 3,
+      "timingTrials": 6,
       "timingOffsetMs": 50,
-      "seconds": 7,
-      "jumps": 8
+      "seconds": 6,
+      "jumps": 3
     },
     "number": 32,
-    "chapter": 4
+    "chapter": 4,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.28,
+        0.34,
+        0.46,
+        0.39
+      ],
+      "exposureFrames": [
+        36,
+        24,
+        24,
+        108
+      ]
+    }
   },
   {
     "level": {
       "id": "story-33",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "Guardianes del cofre",
       "rules": "raid",
       "room": {
@@ -3488,12 +3914,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 9.5944,
+        "y": 14.955000000000002
       },
       "chest": {
-        "x": 9.5,
-        "y": 15.1
+        "x": 4.5182,
+        "y": 8.3
       },
       "platforms": [
         {
@@ -3535,32 +3961,32 @@
       ],
       "traps": [
         {
-          "x": 9.8,
-          "y": 6.1,
+          "x": 4.83,
+          "y": 12.8,
           "part": "furball",
           "patrol": 0,
-          "phase": 0,
-          "reach": 4.5
+          "phase": 2.4,
+          "reach": 12
         },
         {
-          "x": 2,
+          "x": 2.7,
           "y": 10.6,
           "part": "little-branch",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 3.5
+          "reach": 3.8
         },
         {
-          "x": 3.526,
-          "y": 10.6,
+          "x": 9.65,
+          "y": 8.175,
           "part": "carrot",
           "phase": 1.6,
           "patrol": 0,
           "reach": 9.5
         },
         {
-          "x": 8.196,
-          "y": 6.1,
+          "x": 9.65,
+          "y": 13.075,
           "part": "goda",
           "phase": 2.4,
           "patrol": 0,
@@ -3571,28 +3997,46 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 826,
+      "frames": 817,
       "actions": [
-        12,
-        36,
+        0,
         96,
-        204,
-        312,
-        432,
-        660,
-        792
+        192,
+        288,
+        384,
+        480,
+        576,
+        672,
+        768
       ]
     },
     "metrics": {
-      "score": 56,
-      "timingPassed": 8,
-      "timingTrials": 16,
+      "score": 46,
+      "timingPassed": 13,
+      "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 7,
-      "jumps": 8
+      "jumps": 9
     },
     "number": 33,
-    "chapter": 4
+    "chapter": 4,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.16,
+        0.1,
+        0.18,
+        0.25
+      ],
+      "exposureFrames": [
+        60,
+        30,
+        90,
+        72
+      ]
+    }
   },
   {
     "level": {
@@ -3675,36 +4119,36 @@
       ],
       "traps": [
         {
-          "x": 9.7,
-          "y": 3.8,
+          "x": 5.48,
+          "y": 6.3,
           "part": "babylonia",
           "patrol": 0,
           "phase": 0,
           "reach": 0.8
         },
         {
-          "x": 5,
-          "y": 6.3,
+          "x": 5.17,
+          "y": 11.3,
           "part": "anemone-back",
           "patrol": 0,
           "phase": 1.5,
           "reach": 0.5
         },
         {
-          "x": 9.7,
-          "y": 13.8,
+          "x": 7.5,
+          "y": 1.525,
           "part": "lam",
           "patrol": 0,
           "phase": 3,
           "reach": 1.2
         },
         {
-          "x": 7.441,
-          "y": 13.8,
+          "x": 8.19,
+          "y": 3.8,
           "part": "carrot",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 7.5
         }
       ],
       "theme": "moss"
@@ -3736,14 +4180,31 @@
       "jumps": 12
     },
     "number": 34,
-    "chapter": 4
+    "chapter": 4,
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.25,
+        0.27,
+        0.22,
+        0.33
+      ],
+      "exposureFrames": [
+        36,
+        36,
+        36,
+        72
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-35",
       "layoutId": "forks",
       "name": "El jardín partido",
-      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "Guardianes del cofre",
       "rules": "raid",
       "room": {
@@ -3754,12 +4215,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 6.7031,
+        "y": 16.155
       },
       "chest": {
-        "x": 5.8,
-        "y": 16.3
+        "x": 9.5,
+        "y": 1.8
       },
       "platforms": [
         {
@@ -3819,75 +4280,87 @@
       ],
       "traps": [
         {
-          "x": 9.7,
-          "y": 3.8,
+          "x": 4.72,
+          "y": 11.3,
           "part": "babylonia",
           "patrol": 0,
           "phase": 0,
           "reach": 1
         },
         {
-          "x": 5,
-          "y": 6.3,
+          "x": 3.5,
+          "y": 8.8,
           "part": "anemone-back",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.5
+          "reach": 1.2
         },
         {
-          "x": 9.7,
+          "x": 3.9,
           "y": 13.8,
           "part": "lam",
           "patrol": 0,
-          "phase": 3,
-          "reach": 0.6
+          "phase": 0,
+          "reach": 0.8
         },
         {
-          "x": 7.318,
-          "y": 13.8,
+          "x": 5.41,
+          "y": 6.3,
           "part": "carrot",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 7
+          "reach": 9.5
         }
       ],
       "theme": "moss"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 765,
+      "frames": 955,
       "actions": [
         0,
-        48,
-        96,
-        120,
-        228,
-        252,
         312,
-        468,
-        564,
-        660,
-        684,
-        744
+        360,
+        732,
+        816,
+        864,
+        912
       ]
     },
     "metrics": {
-      "score": 52,
-      "timingPassed": 14,
-      "timingTrials": 24,
+      "score": 36,
+      "timingPassed": 12,
+      "timingTrials": 14,
       "timingOffsetMs": 50,
-      "seconds": 6,
-      "jumps": 12
+      "seconds": 8,
+      "jumps": 7
     },
     "number": 35,
-    "chapter": 4
+    "chapter": 4,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.13,
+        0.35,
+        0.2,
+        0.14
+      ],
+      "exposureFrames": [
+        84,
+        72,
+        36,
+        36
+      ]
+    }
   },
   {
     "level": {
       "id": "story-36",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Salta de isla en isla. Los huecos permiten caer a una ruta inferior y volver a subir.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "Guardianes del cofre",
       "rules": "raid",
       "room": {
@@ -3898,12 +4371,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 7.3064,
+        "y": 14.955000000000002
       },
       "chest": {
-        "x": 9.5,
-        "y": 15.1
+        "x": 5.5192,
+        "y": 8.3
       },
       "platforms": [
         {
@@ -3945,64 +4418,82 @@
       ],
       "traps": [
         {
-          "x": 9.8,
-          "y": 6.1,
+          "x": 2.7,
+          "y": 10.6,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 2,
-          "y": 10.6,
+          "x": 3.98,
+          "y": 12.8,
           "part": "goldfish",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 2.25
+          "reach": 3.8
         },
         {
-          "x": 4.2,
-          "y": 12.8,
+          "x": 10.22,
+          "y": 6.1,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 3,
-          "reach": 7
+          "phase": 2.4,
+          "reach": 9.5
         },
         {
-          "x": 3.583,
-          "y": 10.6,
+          "x": 10.45,
+          "y": 15.875,
           "part": "goda",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 12
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 826,
+      "frames": 803,
       "actions": [
-        12,
-        36,
+        0,
         96,
-        204,
-        312,
-        432,
-        660,
-        792
+        192,
+        288,
+        384,
+        480,
+        576,
+        672,
+        768
       ]
     },
     "metrics": {
-      "score": 53,
-      "timingPassed": 9,
-      "timingTrials": 16,
+      "score": 51,
+      "timingPassed": 11,
+      "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 7,
-      "jumps": 8
+      "jumps": 9
     },
     "number": 36,
-    "chapter": 4
+    "chapter": 4,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.3,
+        0.09,
+        0.3,
+        0.14
+      ],
+      "exposureFrames": [
+        30,
+        78,
+        72,
+        108
+      ]
+    }
   },
   {
     "level": {
@@ -4067,36 +4558,36 @@
       ],
       "traps": [
         {
-          "x": 10,
-          "y": 6.1,
+          "x": 4.23,
+          "y": 12.8,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0.2,
           "reach": 0.4
         },
         {
-          "x": 1.8,
-          "y": 10.6,
+          "x": 4.13,
+          "y": 3.8,
           "part": "goldfish",
           "patrol": 0,
           "phase": 1.7,
-          "reach": 3.5
+          "reach": 4.8
         },
         {
-          "x": 4.4,
-          "y": 12.8,
+          "x": 4.3,
+          "y": 1.525,
           "part": "shrimp",
           "patrol": 0,
           "phase": 3.2,
-          "reach": 9.5
+          "reach": 12
         },
         {
-          "x": 3.788,
-          "y": 10.6,
+          "x": 2.35,
+          "y": 12.725,
           "part": "goda",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
-          "reach": 12
+          "reach": 7.5
         }
       ],
       "theme": "amethyst"
@@ -4124,7 +4615,24 @@
       "jumps": 8
     },
     "number": 37,
-    "chapter": 4
+    "chapter": 4,
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.26,
+        0.04,
+        0.61,
+        0.15
+      ],
+      "exposureFrames": [
+        36,
+        30,
+        18,
+        102
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -4189,36 +4697,36 @@
       ],
       "traps": [
         {
-          "x": 9.8,
-          "y": 6.1,
+          "x": 4.18,
+          "y": 12.8,
           "part": "pliers",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.8
+          "reach": 0.5
         },
         {
-          "x": 2,
-          "y": 10.6,
+          "x": 4.48,
+          "y": 3.8,
           "part": "blue-moon",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 9.5
+          "reach": 12
         },
         {
-          "x": 4.2,
-          "y": 12.8,
+          "x": 4.3,
+          "y": 1.525,
           "part": "confident",
           "patrol": 0,
           "phase": 3,
           "reach": 0.4
         },
         {
-          "x": 3.304,
-          "y": 10.6,
+          "x": 2.35,
+          "y": 12.725,
           "part": "carrot",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 9.5
         }
       ],
       "theme": "amethyst"
@@ -4246,14 +4754,31 @@
       "jumps": 8
     },
     "number": 38,
-    "chapter": 4
+    "chapter": 4,
+    "traversal": "ascent",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.31,
+        0.04,
+        0.61,
+        0.15
+      ],
+      "exposureFrames": [
+        36,
+        30,
+        24,
+        102
+      ]
+    }
   },
   {
     "level": {
       "id": "story-39",
       "layoutId": "forks",
       "name": "El jardín partido",
-      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "Guardianes del cofre",
       "rules": "raid",
       "room": {
@@ -4264,12 +4789,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 6.68,
+        "y": 16.155
       },
       "chest": {
-        "x": 5.8,
-        "y": 16.3
+        "x": 8.12,
+        "y": 8.8
       },
       "platforms": [
         {
@@ -4329,20 +4854,20 @@
       ],
       "traps": [
         {
-          "x": 9.7,
-          "y": 3.8,
+          "x": 5.95,
+          "y": 11.3,
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 9.5
+          "reach": 12
         },
         {
-          "x": 5,
-          "y": 6.3,
+          "x": 9.65,
+          "y": 15.175,
           "part": "lagging",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 6
+          "reach": 3.8
         },
         {
           "x": 9.7,
@@ -4353,49 +4878,52 @@
           "reach": 4.5
         },
         {
-          "x": 7.392,
+          "x": 6.95,
           "y": 13.8,
           "part": "goda",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 7
+          "reach": 12
         }
       ],
       "theme": "moss"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1125,
+      "frames": 587,
       "actions": [
-        0,
-        48,
-        108,
-        156,
-        228,
-        276,
-        324,
-        348,
-        408,
-        588,
-        696,
-        804,
-        900,
-        924,
-        1020,
-        1044,
-        1104
+        36,
+        120,
+        252
       ]
     },
     "metrics": {
       "score": 59,
-      "timingPassed": 13,
-      "timingTrials": 24,
+      "timingPassed": 2,
+      "timingTrials": 6,
       "timingOffsetMs": 50,
-      "seconds": 9,
-      "jumps": 17
+      "seconds": 5,
+      "jumps": 3
     },
     "number": 39,
-    "chapter": 4
+    "chapter": 4,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.26,
+        0.06,
+        0.59,
+        0.67
+      ],
+      "exposureFrames": [
+        48,
+        84,
+        30,
+        24
+      ]
+    }
   },
   {
     "level": {
@@ -4448,36 +4976,36 @@
       ],
       "traps": [
         {
-          "x": 9.3,
-          "y": 3.9,
+          "x": 2.3,
+          "y": 6.45,
           "part": "hermit",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 2.4,
-          "y": 6.45,
+          "x": 6.84,
+          "y": 9.05,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 4.5
+          "phase": 0,
+          "reach": 9.5
         },
         {
-          "x": 8.9,
-          "y": 9.05,
+          "x": 9.67,
+          "y": 3.9,
           "part": "piranha",
           "patrol": 0,
           "phase": 3,
-          "reach": 3.5
+          "reach": 6
         },
         {
-          "x": 5.9,
-          "y": 1.525,
+          "x": 3.9,
+          "y": 6.45,
           "part": "carrot",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 7.5
         }
       ],
       "theme": "moss"
@@ -4497,15 +5025,32 @@
       ]
     },
     "metrics": {
-      "score": 59,
-      "timingPassed": 6,
+      "score": 65,
+      "timingPassed": 4,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 9,
       "jumps": 8
     },
     "number": 40,
-    "chapter": 4
+    "chapter": 4,
+    "pressure": {
+      "encountered": 4,
+      "total": 4,
+      "closest": [
+        0.24,
+        0.36,
+        0.29,
+        0.11
+      ],
+      "exposureFrames": [
+        78,
+        84,
+        72,
+        72
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -4552,44 +5097,44 @@
       ],
       "traps": [
         {
-          "x": 4.8,
-          "y": 10.2,
+          "x": 9.25,
+          "y": 12.625,
           "part": "snake-jar",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 9.25,
-          "y": 12.9,
+          "x": 5.9,
+          "y": 15.3,
           "part": "gila",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 7
+          "phase": 0,
+          "reach": 12
         },
         {
-          "x": 7.2,
-          "y": 1.525,
+          "x": 5.55,
+          "y": 9.925,
           "part": "blue-moon",
           "phase": 1.6,
+          "patrol": 0,
+          "reach": 7.5
+        },
+        {
+          "x": 3.95,
+          "y": 9.925,
+          "part": "oranda",
+          "phase": 0,
           "patrol": 0,
           "reach": 9.5
         },
         {
-          "x": 5.797,
+          "x": 4.3,
           "y": 15.3,
-          "part": "oranda",
-          "phase": 2.4,
+          "part": "risky-beast",
+          "phase": 0,
           "patrol": 0,
           "reach": 12
-        },
-        {
-          "x": 8.5,
-          "y": 1.525,
-          "part": "risky-beast",
-          "phase": 3.2,
-          "patrol": 0,
-          "reach": 4.5
         }
       ],
       "theme": "ember"
@@ -4610,22 +5155,41 @@
       ]
     },
     "metrics": {
-      "score": 70,
-      "timingPassed": 6,
+      "score": 79,
+      "timingPassed": 3,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,
       "jumps": 9
     },
     "number": 41,
-    "chapter": 5
+    "chapter": 5,
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.22,
+        0.1,
+        0.04,
+        0.43,
+        0.53
+      ],
+      "exposureFrames": [
+        138,
+        66,
+        54,
+        42,
+        36
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-42",
       "layoutId": "tower",
       "name": "La torre de los ecos",
-      "subtitle": "Un ascenso largo entre paredes: conserva el ritmo hasta el último cambio de lado.",
+      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
       "difficulty": "La última bóveda",
       "rules": "raid",
       "room": {
@@ -4636,12 +5200,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 6.68,
+        "y": 19.654999999999998
       },
       "chest": {
-        "x": 8.8,
-        "y": 20.28
+        "x": 5.32,
+        "y": 11.85
       },
       "platforms": [
         {
@@ -4689,78 +5253,88 @@
       ],
       "traps": [
         {
-          "x": 3.4,
-          "y": 6.55,
+          "x": 5.35,
+          "y": 14.5,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0,
-          "reach": 7
-        },
-        {
-          "x": 5.8,
-          "y": 11.85,
-          "part": "lagging",
-          "patrol": 0,
-          "phase": 1.5,
-          "reach": 4.75
-        },
-        {
-          "x": 3.4,
-          "y": 17.15,
-          "part": "grass-snake",
-          "patrol": 0,
-          "phase": 3,
+          "phase": 2.4,
           "reach": 12
         },
         {
-          "x": 2.08,
+          "x": 8.15,
+          "y": 14.5,
+          "part": "lagging",
+          "patrol": 0,
+          "phase": 1.5,
+          "reach": 3.8
+        },
+        {
+          "x": 3.9,
           "y": 17.15,
+          "part": "grass-snake",
+          "patrol": 0,
+          "phase": 0,
+          "reach": 9.5
+        },
+        {
+          "x": 9.65,
+          "y": 16.575,
           "part": "blue-moon",
           "phase": 2.4,
           "patrol": 0,
           "reach": 4.5
         },
         {
-          "x": 2.08,
-          "y": 6.55,
+          "x": 9.65,
+          "y": 20.775,
           "part": "oranda",
           "phase": 3.2,
           "patrol": 0,
-          "reach": 7
+          "reach": 7.5
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1578,
+      "frames": 895,
       "actions": [
-        0,
-        228,
+        240,
         324,
-        504,
-        624,
-        708,
-        720,
-        804,
-        960,
-        1056,
-        1176,
-        1272,
-        1428,
-        1548
+        576,
+        612,
+        708
       ]
     },
     "metrics": {
-      "score": 67,
-      "timingPassed": 10,
-      "timingTrials": 24,
+      "score": 65,
+      "timingPassed": 3,
+      "timingTrials": 10,
       "timingOffsetMs": 50,
-      "seconds": 13,
-      "jumps": 14
+      "seconds": 7,
+      "jumps": 5
     },
     "number": 42,
-    "chapter": 5
+    "chapter": 5,
+    "traversal": "balcony",
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.13,
+        0.56,
+        0.55,
+        0.2,
+        0.34
+      ],
+      "exposureFrames": [
+        96,
+        54,
+        72,
+        138,
+        132
+      ]
+    }
   },
   {
     "level": {
@@ -4825,42 +5399,42 @@
       ],
       "traps": [
         {
-          "x": 9.8,
-          "y": 6.1,
+          "x": 4.39,
+          "y": 12.8,
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 9.5
+          "reach": 7.5
         },
         {
-          "x": 2,
-          "y": 10.6,
+          "x": 4.29,
+          "y": 3.8,
           "part": "lagging",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 6
+          "reach": 4.8
         },
         {
-          "x": 4.2,
-          "y": 12.8,
+          "x": 3.5,
+          "y": 10.6,
           "part": "grass-snake",
           "patrol": 0,
-          "phase": 3,
-          "reach": 4.5
+          "phase": 2.4,
+          "reach": 12
         },
         {
-          "x": 3.575,
-          "y": 10.6,
+          "x": 4.3,
+          "y": 1.525,
           "part": "blue-moon",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 7
+          "reach": 7.5
         },
         {
-          "x": 8.081,
-          "y": 6.1,
+          "x": 2.3,
+          "y": 10.6,
           "part": "oranda",
-          "phase": 3.2,
+          "phase": 2.4,
           "patrol": 0,
           "reach": 9.5
         }
@@ -4882,22 +5456,41 @@
       ]
     },
     "metrics": {
-      "score": 71,
-      "timingPassed": 5,
+      "score": 58,
+      "timingPassed": 9,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
       "jumps": 8
     },
     "number": 43,
-    "chapter": 5
+    "chapter": 5,
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.13,
+        0.05,
+        0.53,
+        0.61,
+        0.82
+      ],
+      "exposureFrames": [
+        42,
+        30,
+        24,
+        24,
+        18
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
       "id": "story-44",
       "layoutId": "forks",
       "name": "El jardín partido",
-      "subtitle": "Dos balcones a la misma altura: elige por dónde rodear las defensas.",
+      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
       "difficulty": "La última bóveda",
       "rules": "raid",
       "room": {
@@ -4908,12 +5501,12 @@
         "floor": 1
       },
       "spawn": {
-        "x": 2.2,
-        "y": 1.38
+        "x": 4.933199999999999,
+        "y": 16.155
       },
       "chest": {
-        "x": 5.8,
-        "y": 16.3
+        "x": 2.5,
+        "y": 1.8
       },
       "platforms": [
         {
@@ -4973,42 +5566,42 @@
       ],
       "traps": [
         {
-          "x": 9.7,
-          "y": 3.8,
+          "x": 5.9,
+          "y": 1.525,
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 12
+          "reach": 9.5
         },
         {
-          "x": 5,
+          "x": 5.47,
           "y": 6.3,
           "part": "lagging",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 2.25
+          "reach": 6
         },
         {
-          "x": 9.7,
-          "y": 13.8,
+          "x": 5.19,
+          "y": 11.3,
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3,
-          "reach": 7
+          "reach": 7.5
         },
         {
-          "x": 6.838,
-          "y": 11.3,
+          "x": 2.7,
+          "y": 13.8,
           "part": "blue-moon",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
           "reach": 9.5
         },
         {
-          "x": 7.433,
-          "y": 13.8,
+          "x": 3.9,
+          "y": 3.8,
           "part": "oranda",
-          "phase": 3.2,
+          "phase": 2.4,
           "patrol": 0,
           "reach": 12
         }
@@ -5017,37 +5610,41 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1125,
+      "frames": 726,
       "actions": [
-        0,
-        48,
-        108,
-        156,
-        228,
-        276,
-        324,
-        348,
-        408,
-        588,
-        696,
-        804,
-        900,
-        924,
-        1020,
-        1044,
-        1104
+        36,
+        204
       ]
     },
     "metrics": {
-      "score": 68,
-      "timingPassed": 12,
-      "timingTrials": 24,
+      "score": 57,
+      "timingPassed": 2,
+      "timingTrials": 4,
       "timingOffsetMs": 50,
-      "seconds": 9,
-      "jumps": 17
+      "seconds": 6,
+      "jumps": 2
     },
     "number": 44,
-    "chapter": 5
+    "chapter": 5,
+    "traversal": "descent",
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.07,
+        0.04,
+        0.21,
+        0.23,
+        0.52
+      ],
+      "exposureFrames": [
+        48,
+        48,
+        30,
+        30,
+        18
+      ]
+    }
   },
   {
     "level": {
@@ -5094,44 +5691,44 @@
       ],
       "traps": [
         {
-          "x": 4.8,
-          "y": 10.2,
+          "x": 9.25,
+          "y": 12.625,
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 4.5
+          "reach": 12
         },
         {
-          "x": 9.25,
-          "y": 12.9,
+          "x": 5.9,
+          "y": 15.3,
           "part": "lagging",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 3.5
+          "reach": 6
         },
         {
-          "x": 5.8,
-          "y": 15.3,
+          "x": 4.75,
+          "y": 9.925,
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3,
           "reach": 9.5
         },
         {
-          "x": 4.053,
+          "x": 4.3,
           "y": 15.3,
           "part": "blue-moon",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
           "reach": 12
         },
         {
-          "x": 7.2,
-          "y": 1.525,
+          "x": 2.65,
+          "y": 6.85,
           "part": "oranda",
           "phase": 3.2,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 7.5
         }
       ],
       "theme": "ember"
@@ -5151,15 +5748,34 @@
       ]
     },
     "metrics": {
-      "score": 68,
-      "timingPassed": 6,
+      "score": 71,
+      "timingPassed": 5,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 8,
       "jumps": 8
     },
     "number": 45,
-    "chapter": 5
+    "chapter": 5,
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.32,
+        0.15,
+        0.11,
+        0.33,
+        0.23
+      ],
+      "exposureFrames": [
+        144,
+        66,
+        66,
+        42,
+        126
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -5206,44 +5822,44 @@
       ],
       "traps": [
         {
-          "x": 4.8,
-          "y": 10.2,
+          "x": 9.25,
+          "y": 12.625,
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0,
-          "reach": 7
+          "reach": 7.5
         },
         {
-          "x": 9.25,
-          "y": 12.9,
+          "x": 5.9,
+          "y": 15.3,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5,
+          "phase": 0,
           "reach": 9.5
         },
         {
-          "x": 5.8,
-          "y": 15.3,
+          "x": 5.55,
+          "y": 9.925,
           "part": "hermit",
           "patrol": 0,
           "phase": 3,
           "reach": 0.4
         },
         {
-          "x": 7.2,
-          "y": 1.525,
+          "x": 4.3,
+          "y": 15.3,
           "part": "carrot",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 7.5
         },
         {
-          "x": 8.5,
-          "y": 1.525,
+          "x": 3.95,
+          "y": 9.925,
           "part": "blue-moon",
           "phase": 3.2,
           "patrol": 0,
-          "reach": 7
+          "reach": 9.5
         }
       ],
       "theme": "ember"
@@ -5264,15 +5880,34 @@
       ]
     },
     "metrics": {
-      "score": 70,
-      "timingPassed": 6,
+      "score": 73,
+      "timingPassed": 5,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,
       "jumps": 9
     },
     "number": 46,
-    "chapter": 5
+    "chapter": 5,
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.32,
+        0.17,
+        0.04,
+        0.75,
+        0.89
+      ],
+      "exposureFrames": [
+        138,
+        66,
+        54,
+        36,
+        12
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -5319,44 +5954,44 @@
       ],
       "traps": [
         {
-          "x": 4.8,
-          "y": 10.2,
+          "x": 9.25,
+          "y": 12.625,
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0,
           "reach": 9.5
         },
         {
-          "x": 9.25,
-          "y": 12.9,
+          "x": 5.9,
+          "y": 15.3,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5,
+          "phase": 0,
           "reach": 12
         },
         {
-          "x": 5.8,
-          "y": 15.3,
+          "x": 5.55,
+          "y": 9.925,
           "part": "hermit",
           "patrol": 0,
           "phase": 3,
           "reach": 0.4
         },
         {
-          "x": 7.2,
-          "y": 1.525,
+          "x": 4.3,
+          "y": 15.3,
           "part": "carrot",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
-          "reach": 7
+          "reach": 9.5
         },
         {
-          "x": 8.5,
-          "y": 1.525,
+          "x": 3.95,
+          "y": 9.925,
           "part": "blue-moon",
           "phase": 3.2,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 12
         }
       ],
       "theme": "ember"
@@ -5377,15 +6012,34 @@
       ]
     },
     "metrics": {
-      "score": 73,
-      "timingPassed": 5,
+      "score": 76,
+      "timingPassed": 4,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,
       "jumps": 9
     },
     "number": 47,
-    "chapter": 5
+    "chapter": 5,
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.32,
+        0.17,
+        0.04,
+        0.75,
+        0.89
+      ],
+      "exposureFrames": [
+        138,
+        66,
+        54,
+        36,
+        12
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -5432,44 +6086,44 @@
       ],
       "traps": [
         {
-          "x": 4.8,
-          "y": 10.2,
+          "x": 9.25,
+          "y": 12.625,
           "part": "snake-jar",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 9.25,
-          "y": 12.9,
+          "x": 5.9,
+          "y": 15.3,
           "part": "gila",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 4.5
+          "phase": 0,
+          "reach": 7.5
         },
         {
-          "x": 5.8,
-          "y": 15.3,
+          "x": 5.55,
+          "y": 9.925,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3,
-          "reach": 7
-        },
-        {
-          "x": 7.2,
-          "y": 1.525,
-          "part": "blue-moon",
-          "phase": 2.4,
-          "patrol": 0,
+          "phase": 0,
           "reach": 9.5
         },
         {
-          "x": 8.5,
-          "y": 1.525,
-          "part": "oranda",
-          "phase": 3.2,
+          "x": 3.95,
+          "y": 9.925,
+          "part": "blue-moon",
+          "phase": 0,
           "patrol": 0,
           "reach": 12
+        },
+        {
+          "x": 4.3,
+          "y": 15.3,
+          "part": "oranda",
+          "phase": 0,
+          "patrol": 0,
+          "reach": 7.5
         }
       ],
       "theme": "ember"
@@ -5490,15 +6144,34 @@
       ]
     },
     "metrics": {
-      "score": 73,
-      "timingPassed": 5,
+      "score": 79,
+      "timingPassed": 3,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,
       "jumps": 9
     },
     "number": 48,
-    "chapter": 5
+    "chapter": 5,
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.22,
+        0.1,
+        0.04,
+        0.43,
+        0.53
+      ],
+      "exposureFrames": [
+        138,
+        66,
+        66,
+        42,
+        36
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -5545,44 +6218,44 @@
       ],
       "traps": [
         {
-          "x": 4.8,
-          "y": 10.2,
+          "x": 9.25,
+          "y": 12.625,
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0,
-          "reach": 4.5
+          "reach": 7.5
         },
         {
-          "x": 9.25,
-          "y": 12.9,
+          "x": 5.9,
+          "y": 15.3,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 7
+          "phase": 0,
+          "reach": 9.5
         },
         {
-          "x": 5.8,
-          "y": 15.3,
+          "x": 5.55,
+          "y": 9.925,
           "part": "hermit",
           "patrol": 0,
           "phase": 3,
           "reach": 0.4
         },
         {
-          "x": 4.696,
+          "x": 4.3,
           "y": 15.3,
           "part": "carrot",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
-          "reach": 12
+          "reach": 7.5
         },
         {
-          "x": 7.2,
-          "y": 1.525,
+          "x": 3.95,
+          "y": 9.925,
           "part": "blue-moon",
           "phase": 3.2,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 9.5
         }
       ],
       "theme": "ember"
@@ -5603,15 +6276,34 @@
       ]
     },
     "metrics": {
-      "score": 76,
-      "timingPassed": 4,
+      "score": 79,
+      "timingPassed": 3,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,
       "jumps": 9
     },
     "number": 49,
-    "chapter": 5
+    "chapter": 5,
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.32,
+        0.12,
+        0.04,
+        0.75,
+        0.89
+      ],
+      "exposureFrames": [
+        138,
+        66,
+        54,
+        36,
+        12
+      ]
+    },
+    "traversal": "ascent"
   },
   {
     "level": {
@@ -5658,44 +6350,44 @@
       ],
       "traps": [
         {
-          "x": 5,
-          "y": 10.2,
+          "x": 9.25,
+          "y": 12.625,
           "part": "snake-jar",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 9.05,
-          "y": 12.9,
+          "x": 5.9,
+          "y": 15.3,
           "part": "gila",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 9.5
+          "phase": 0,
+          "reach": 12
         },
         {
-          "x": 6,
-          "y": 15.3,
+          "x": 5.55,
+          "y": 9.925,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3,
-          "reach": 12
+          "phase": 0,
+          "reach": 7.5
         },
         {
           "x": 3.792,
           "y": 9.925,
           "part": "blue-moon",
-          "phase": 2.4,
+          "phase": 0,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 9.5
         },
         {
-          "x": 4.1,
+          "x": 4.3,
           "y": 15.3,
           "part": "oranda",
-          "phase": 3.2,
+          "phase": 0,
           "patrol": 0,
-          "reach": 7
+          "reach": 12
         }
       ],
       "theme": "ember"
@@ -5724,6 +6416,25 @@
       "jumps": 9
     },
     "number": 50,
-    "chapter": 5
+    "chapter": 5,
+    "pressure": {
+      "encountered": 5,
+      "total": 5,
+      "closest": [
+        0.22,
+        0.1,
+        0.04,
+        0.35,
+        0.53
+      ],
+      "exposureFrames": [
+        138,
+        66,
+        66,
+        48,
+        36
+      ]
+    },
+    "traversal": "ascent"
   }
 ]

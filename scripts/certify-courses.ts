@@ -1,3 +1,5 @@
+import { routePressure } from '../lib/game/route-pressure';
+import { replay } from './story-certification';
 import { dungeonGuardians } from '../lib/game/guardians';
 import { storyTrapCount } from '../lib/game/story-difficulty';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -39,7 +41,7 @@ const covered = new Set(
 );
 for (const part of PART_LIST)
   if (!covered.has(part.id)) throw Error('Missing part: ' + part.id);
-if (generate) writeFileSync(path, JSON.stringify(courses, null, 2) + '\n');
+
 console.log(
   `${courses.length} courses across ${PRACTICE_LAYOUTS.length} rooms verified without hits. ${covered.size} Classic parts covered.`,
 );
@@ -55,3 +57,15 @@ for (const [index, course] of story.entries()) {
     throw Error('Invalid story proof: ' + course.level.id);
 }
 console.log('50 story levels verified without hits.');
+
+for (const course of [...courses, ...story]) {
+  const pressure = routePressure(course.level, course.proof);
+  if (pressure.encountered !== pressure.total)
+    throw Error('Defensa fuera del recorrido: ' + course.level.id);
+  if (replay(course.level, [], Math.max(4800, course.proof.frames + 1200)))
+    throw Error('Victoria sin entradas: ' + course.level.id);
+}
+if (generate) writeFileSync(path, JSON.stringify(courses, null, 2) + '\n');
+console.log(
+  `${[...courses, ...story].reduce((sum, c) => sum + c.level.traps.length, 0)} defenses encountered; no room wins without jump input.`,
+);

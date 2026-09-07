@@ -1,3 +1,4 @@
+import sharedFixture from './fixtures/free-vault.json';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
@@ -141,7 +142,7 @@ void test('certificates reject missing jumps, incompatible rules, bad frames and
   );
 });
 void test('a shared defense is reconstructed and replayed before it can be attacked', () => {
-  const c = verified.find(c=>c.level.layoutId==='tower')!;
+  const c = sharedFixture as VerifiedCourse;
   const decoded = decodeChallenge(challengeCode(c));
   assert.ok(verifyRoute(decoded.level, decoded.proof));
   assert.deepEqual(decoded.level.traps, c.level.traps);
