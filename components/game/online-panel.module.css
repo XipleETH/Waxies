@@ -144,3 +144,31 @@
   font-size: 10px;
   color: #8ba790;
 }
+.online > h1 {
+  font: 800 32px var(--font-display);
+  color: #f4e8ba;
+  text-shadow: 0 3px #112b20;
+}
+.card {
+  background: linear-gradient(135deg, #3d5540f5, #213a2ff5);
+  border: 2px solid #839468;
+  border-radius: 20px;
+  box-shadow:
+    0 6px #112b22,
+    inset 0 2px #d7e5aa40;
+}
+.online button {
+  background: linear-gradient(#e0eaae, #abc780);
+  border: 1px solid #d8e5ab;
+  box-shadow: 0 4px #536d40;
+}
+.balance > div {
+  background: linear-gradient(#2c4835, #173026);
+  border: 1px solid #86986780;
+  box-shadow: inset 0 3px #10291f;
+}
+.actions button {
+  background: linear-gradient(#4a6449, #2c4533);
+  color: #ecedca;
+  box-shadow: 0 3px #10291f;
+}

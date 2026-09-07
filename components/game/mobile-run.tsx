@@ -11,6 +11,8 @@ import {
   Sparkles,
   ShieldCheck,
   Bot,
+  Hand,
+  MoveUpRight,
 } from 'lucide-react';
 import { createState, type Dungeon } from '@/lib/game/physics';
 import type { Engine } from '@/lib/game/scene';
@@ -21,11 +23,7 @@ import type { AxieLoadout } from '@/lib/game/axie';
 import { PARTS } from '@/lib/game/catalog';
 import { dungeonGuardians } from '@/lib/game/guardians';
 import { raidPowerDescription } from '@/lib/game/raid-powers';
-import {
-  STORY_LENGTH,
-  STORY_CHAPTERS,
-  storyStars,
-} from '@/lib/game/story-progress';
+import { STORY_LENGTH, storyStars } from '@/lib/game/story-progress';
 export interface RunConfig {
   id: string;
   level: Dungeon;
@@ -195,7 +193,9 @@ export function MobileRun({
       <header className="run-hud">
         <button
           className="m-icon"
-          aria-label="Volver al lobby"
+          aria-label={
+            run.mode === 'story' ? 'Volver al camino' : 'Volver al lobby'
+          }
           onClick={onExit}
         >
           <ArrowLeft size={21} />
@@ -279,19 +279,23 @@ export function MobileRun({
             </h1>
             {state.phase === 'ready' ? (
               <>
-                {rewards ? (
-                  <p className="room-intro">
-                    {run.mode === 'story' && run.storyNumber! % 10 === 1
-                      ? STORY_CHAPTERS[Math.floor((run.storyNumber! - 1) / 10)]
-                          .text + ' '
-                      : ''}
-                    {run.level.subtitle}
-                  </p>
-                ) : null}
-                <p>
-                  Tu Axie corre solo. Toca para saltar y rebota en las paredes.
-                  Cualquier contacto con una trampa reinicia el intento.
-                </p>
+                <div className="game-guide" aria-label="Cómo jugar">
+                  <span>
+                    <Hand size={22} />
+                    <b>Toca</b>
+                    <small>para saltar</small>
+                  </span>
+                  <span>
+                    <MoveUpRight size={22} />
+                    <b>Rebota</b>
+                    <small>en los muros</small>
+                  </span>
+                  <span>
+                    <Heart size={22} />
+                    <b>Esquiva</b>
+                    <small>golpe: −20 salud</small>
+                  </span>
+                </div>
                 <p className="run-rule">
                   {run.level.traps.length}{' '}
                   {run.level.traps.length === 1 ? 'trampa' : 'trampas'} ·{' '}
@@ -503,7 +507,7 @@ export function MobileRun({
                       {claimed
                         ? run.mode === 'story'
                           ? run.storyNumber === STORY_LENGTH
-                            ? 'Volver al refugio'
+                            ? 'Volver al camino'
                             : `Ir al nivel ${run.storyNumber! + 1}`
                           : 'Siguiente pista'
                         : run.mode === 'story'
@@ -536,7 +540,7 @@ export function MobileRun({
               </p>
             ) : null}
             <button className="m-text" onClick={onExit}>
-              Salir al lobby
+              {run.mode === 'story' ? 'Volver al camino' : 'Salir al lobby'}
             </button>
           </section>
         </div>

@@ -198,6 +198,7 @@ export default function MobileApp() {
       );
       setScreen('online');
     }
+    if (run?.mode === 'story') setStoryOpen(true);
     setRun(null);
   }
   function loadAxie(axie: Loadout | null) {
@@ -299,8 +300,12 @@ export default function MobileApp() {
       />
     );
   return (
-    <main className={screen === 'home' ? 'mobile-app is-home' : 'mobile-app'}>
-      {screen === 'home' ? (
+    <main
+      className={
+        screen === 'home' ? 'mobile-app is-home' : 'mobile-app game-menu-room'
+      }
+    >
+      {!storyOpen ? (
         <>
           <AxiePreview
             genes={profile.axie?.genes ?? guestAxie.genes}
@@ -339,11 +344,7 @@ export default function MobileApp() {
                 <button
                   className="home-mode home-mode-story"
                   aria-label={`Historia ${storyUnlocked(profile.story)} de ${STORY_LENGTH}`}
-                  onClick={() =>
-                    profile.story.length === STORY_LENGTH
-                      ? setStoryOpen(true)
-                      : story()
-                  }
+                  onClick={() => setStoryOpen(true)}
                   disabled={!ready}
                 >
                   <span className="home-mode-icon" aria-hidden="true">
@@ -419,13 +420,12 @@ export default function MobileApp() {
             <div className="m-heading">
               <div>
                 <span className="m-eyebrow">TU COMPAÑERO</span>
-                <h1>Partes con poder.</h1>
+                <h1>Mi Axie</h1>
               </div>
               <BookOpen size={27} />
             </div>
             <p className="m-intro">
-              Las partes de tu Axie forman su modelo y desbloquean las defensas
-              de tu refugio. En práctica descubrirás combinaciones aleatorias.
+              Un guardián. Cuatro poderes para tu mazmorra.
             </p>
             {profile.guardianCount === 2 ? (
               <div className="guardian-switch">
@@ -469,8 +469,7 @@ export default function MobileApp() {
         <DialogContent className="room-picker-dialog">
           <DialogTitle>Práctica libre</DialogTitle>
           <DialogDescription>
-            {layoutExamples.length} mapas · {courses.length} combinaciones
-            verificadas · No avanza la historia
+            Elige un portal · Axie y poderes aleatorios
           </DialogDescription>
           <button
             className="m-primary"
@@ -542,19 +541,19 @@ export default function MobileApp() {
         </DialogContent>
       </Dialog>
       <Dialog open={storyOpen} onOpenChange={setStoryOpen}>
-        <DialogContent className="story-dialog">
-          <DialogTitle>Historia de Lunacia</DialogTitle>
-          <DialogDescription>50 niveles. Un cofre a la vez.</DialogDescription>
-          <button
-            className="m-secondary"
-            onClick={() => {
+        <DialogContent className="story-world-dialog">
+          <DialogTitle className="sr-only">Camino de Lunacia</DialogTitle>
+          <DialogDescription className="sr-only">
+            Explora las cinco zonas, elige una mazmorra y recupera sus Chispas.
+          </DialogDescription>
+          <StoryMap
+            best={profile.story}
+            onPlay={story}
+            onPrologue={() => {
               setStoryOpen(false);
               setIntro({ nextLevel: null });
             }}
-          >
-            <BookOpen size={17} /> Ver prólogo · La guerra de los cofres
-          </button>
-          <StoryMap best={profile.story} onPlay={story} />
+          />
         </DialogContent>
       </Dialog>
       {library ? (

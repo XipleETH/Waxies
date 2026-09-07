@@ -1,0 +1,220 @@
+/* Physical game panels share the refuge's moss, carved stone and warm metal. */
+.story-world-dialog[data-slot='dialog-content'] {
+  width: 100%;
+  max-width: 520px !important;
+  height: 100dvh;
+  max-height: 100dvh;
+  padding: 0 !important;
+  gap: 0 !important;
+  display: block;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  color: #eef2d9;
+  background: #172f2b;
+}
+.story-world-dialog > [data-slot='dialog-close'] {
+  top: 18px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(#49644e, #2c4637);
+  border: 1px solid #adc18a70;
+  box-shadow: 0 4px #102a22;
+  border-radius: 10px;
+  color: #eef2d9;
+  z-index: 5;
+}
+.story-world-dialog h2.sr-only {
+  position: absolute;
+}
+.game-menu-room {
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  background: #18362d !important;
+}
+.game-menu-room .refuge-backdrop {
+  position: fixed;
+  filter: brightness(0.5);
+}
+.game-menu-room .home-shading {
+  position: fixed;
+}
+.game-menu-room .m-header,
+.game-menu-room .m-content {
+  position: relative;
+  z-index: 1;
+}
+.game-menu-room .m-heading {
+  padding: 15px 18px;
+  background: linear-gradient(135deg, #425b42f5, #243d30f5);
+  border: 2px solid #789066;
+  border-radius: 18px 18px 8px 8px;
+  box-shadow:
+    0 6px #10271e,
+    inset 0 2px #d4e2a530;
+}
+.game-menu-room .m-heading h1 {
+  font-size: 28px;
+  color: #f3e7b8;
+}
+.game-menu-room .m-intro {
+  margin: 18px 4px;
+  color: #e0e8cd;
+}
+.room-picker-dialog[data-slot='dialog-content'],
+.power-dialog[data-slot='dialog-content'],
+.run-panel {
+  background: linear-gradient(135deg, #3d5540f7, #213a2ff7) !important;
+  border: 2px solid #84976a !important;
+  border-radius: 22px !important;
+  box-shadow:
+    0 9px 0 #10271f,
+    0 22px 60px #06191099,
+    inset 0 2px 0 #d7e5aa60 !important;
+}
+.room-picker-dialog [data-slot='dialog-title'],
+.power-dialog [data-slot='dialog-title'],
+.run-panel h1 {
+  color: #f4e8bb;
+  text-shadow: 0 2px #182c21;
+  font-family: var(--font-display);
+}
+.room-picker-dialog [data-slot='dialog-description'] {
+  font-size: 11px;
+  color: #c5d6b7;
+}
+.room-picker-dialog .map-choice {
+  background: linear-gradient(145deg, #4c6549, #263e30);
+  border: 2px solid #72815d;
+  border-radius: 17px;
+  box-shadow:
+    0 5px #152d22,
+    inset 0 1px #d8e5b340;
+  perspective: 600px;
+}
+.room-picker-dialog .map-choice > svg {
+  transform: rotateX(14deg) rotateY(-12deg);
+  filter: drop-shadow(5px 7px 0 #10271f);
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+.room-picker-dialog .map-choice:hover > svg {
+  transform: rotateX(0) rotateY(0) translateY(-3px);
+}
+.room-picker-dialog .map-choice strong {
+  color: #f0e8bd;
+}
+.room-picker-dialog .map-choice > span {
+  color: #c0d3ac;
+}
+.mobile-app .m-primary,
+.run-panel .m-primary,
+.room-picker-dialog .m-primary,
+.story-world-dialog .m-primary {
+  background: linear-gradient(#e1ecad, #adc982);
+  border: 1px solid #eaf5bc;
+  box-shadow:
+    0 5px 0 #577245,
+    inset 0 2px #f6ffda;
+  color: #203c26;
+  border-radius: 14px;
+  font-weight: 800;
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+.mobile-app .m-primary:active,
+.run-panel .m-primary:active,
+.story-world-dialog .m-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px #577245;
+}
+.run-panel .m-secondary,
+.room-picker-dialog .m-secondary,
+.mobile-app .m-secondary {
+  background: linear-gradient(#466046, #2c4435);
+  border: 1px solid #7e9568;
+  box-shadow: 0 3px #102a21;
+  color: #e4edcd;
+}
+.game-guide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 16px 0;
+}
+.game-guide > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 13px 3px;
+  border-radius: 12px;
+  background: #172f26;
+  border: 1px solid #8b9b6144;
+  box-shadow: inset 0 3px 5px #0a201c66;
+  color: #e8d18b;
+}
+.game-guide b {
+  font-size: 12px;
+  color: #e6edce;
+}
+.game-guide small {
+  font-size: 9px;
+  color: #b9cfb1;
+}
+.run-panel .run-traps button {
+  background: linear-gradient(#658057, #314b35);
+  border: 1px solid #a3b97f;
+  box-shadow: 0 4px #112b20;
+}
+.run-panel .run-tactic {
+  background: #172f27;
+  border: 1px solid #a6b27866;
+  box-shadow: inset 0 2px 5px #0b201e;
+  color: #e9eace;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.power-dialog > img {
+  background: radial-gradient(#94b774, #466449);
+  border: 2px solid #b2c184;
+  box-shadow: 0 5px #142d22;
+  border-radius: 20px;
+  padding: 12px;
+  object-fit: contain;
+}
+.power-dialog h3 {
+  border-bottom: 1px solid #a8bc8255;
+  padding-bottom: 6px;
+  color: #edd38c;
+}
+.power-dialog p {
+  color: #d5e1c5;
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-choice > svg,
+  .m-primary {
+    transition: none !important;
+  }
+}
+.game-menu-room .loadout-card {
+  background: linear-gradient(135deg, #3d5540f5, #213a2ff5);
+  border: 2px solid #839468;
+  box-shadow:
+    0 6px #112b22,
+    inset 0 2px #d7e5aa40;
+  border-radius: 20px;
+}
+.game-menu-room .lab-notice {
+  background: #1c342a;
+  border: 1px solid #83946860;
+  box-shadow: inset 0 2px #10261e;
+}
+.game-menu-room .loadout-parts > div {
+  background: linear-gradient(#59754e, #2c4632);
+  border: 1px solid #9bae72;
+  box-shadow: 0 4px #112c21;
+}

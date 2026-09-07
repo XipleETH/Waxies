@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import './mobile.css';
+import './game-menus.css';
 const geist = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const mono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 const display = Space_Grotesk({
