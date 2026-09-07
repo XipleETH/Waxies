@@ -11,17 +11,16 @@ import {
   LockKeyhole,
   Coins,
   Sparkles,
-  Trash2,
   Link2,
-  X,
   ArrowUp,
 } from 'lucide-react';
 import { vaultLevel, type MobileProfile } from '@/lib/game/mobile-profile';
 import { roomFor, type Trap, type Dungeon } from '@/lib/game/physics';
 import type { Engine } from '@/lib/game/scene';
 import { PARTS, BATTLE_SLOTS } from '@/lib/game/catalog';
-import { defenderParts, makeVaultTraps } from '@/lib/game/vault-layout';
+import { makeVaultTraps } from '@/lib/game/vault-layout';
 import { snapTrap, validFreeTraps } from '@/lib/game/free-vault';
+import { dungeonRoofY } from '@/lib/game/dungeon-framing';
 import { reachSettings } from '@/lib/game/trap-reach';
 import { challengeCode, verifyRoute } from '@/lib/game/route-proof';
 import { randomAxie } from '@/lib/game/random-axie';
@@ -315,7 +314,7 @@ export function LiveVault({
     }
   }
   const room = roomFor(vaultLevel(profile)),
-    roof = project(room.w / 2, room.h + 1.2),
+    roof = project(room.w / 2, dungeonRoofY(vaultLevel(profile)) + 1.2),
     a = t
       ? project(Math.max(room.left, t.x - (t.reach ?? rule!.default)), t.y)
       : null,
@@ -494,6 +493,36 @@ export function LiveVault({
                     t.y,
                   )}
                   aria-label="Ajustar alcance"
+                  title={`Alcance ${(t.reach ?? rule.default).toFixed(1)}`}
+                  onKeyDown={(e) => {
+                    if (
+                      ![
+                        'ArrowLeft',
+                        'ArrowRight',
+                        'ArrowUp',
+                        'ArrowDown',
+                      ].includes(e.key)
+                    )
+                      return;
+                    e.preventDefault();
+                    const delta =
+                      e.key === 'ArrowRight' || e.key === 'ArrowUp'
+                        ? 0.1
+                        : -0.1;
+                    const reach =
+                      Math.round(
+                        Math.max(
+                          rule.min,
+                          Math.min(rule.max, (t.reach ?? rule.default) + delta),
+                        ) * 10,
+                      ) / 10;
+                    if (reach !== (t.reach ?? rule.default))
+                      commit(
+                        traps.map((v) =>
+                          v.anchor === t.anchor ? { ...v, reach } : v,
+                        ),
+                      );
+                  }}
                   onPointerDown={(e) => startDrag(e, t, true)}
                   onPointerMove={move}
                   onPointerUp={end}
@@ -535,72 +564,6 @@ export function LiveVault({
             {mode === 'won' ? 'Cofre' : 'Reintentar'}
           </button>
         </div>
-      ) : null}
-      {mode === 'edit' && t ? (
-        <section className={styles.settings} aria-label="Ajustes de trampa">
-          <select
-            aria-label="Poder"
-            value={t.part}
-            onChange={(e) =>
-              commit(
-                traps.map((v) =>
-                  v.anchor === t.anchor
-                    ? {
-                        ...v,
-                        part: e.target.value,
-                        reach: reachSettings(e.target.value).default,
-                      }
-                    : v,
-                ),
-              )
-            }
-          >
-            {defenderParts(
-              profile.axie,
-              t.anchor!,
-              traps.filter((v) => v.anchor !== t.anchor).map((v) => v.part),
-            ).map((id) => (
-              <option key={id} value={id}>
-                {PARTS[id].name}
-              </option>
-            ))}
-          </select>
-          {rule?.kind !== 'fixed' ? (
-            <label>
-              <span>Alcance {Number(t.reach ?? rule!.default).toFixed(1)}</span>
-              <input
-                aria-label="Alcance"
-                type="range"
-                min={rule!.min}
-                max={rule!.max}
-                step="0.1"
-                value={t.reach ?? rule!.default}
-                onChange={(e) =>
-                  commit(
-                    traps.map((v) =>
-                      v.anchor === t.anchor
-                        ? { ...v, reach: Number(e.target.value) }
-                        : v,
-                    ),
-                  )
-                }
-              />
-            </label>
-          ) : null}
-          <button
-            disabled={traps.length === 1}
-            aria-label="Retirar trampa"
-            onClick={() => {
-              commit(traps.filter((v) => v.anchor !== t.anchor));
-              setSelected(null);
-            }}
-          >
-            <Trash2 size={18} />
-          </button>
-          <button aria-label="Cerrar ajustes" onClick={() => setSelected(null)}>
-            <X size={18} />
-          </button>
-        </section>
       ) : null}
       {message && !fund ? (
         <output className={styles.message}>{message}</output>

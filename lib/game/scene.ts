@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { loadMixedAvatar, type MixedAvatar } from './mixer-avatar';
 import type { AxieLoadout } from './axie';
 import { randomAxie } from './random-axie';
+import { dungeonRoofY } from './dungeon-framing';
 import {createGuardianVisuals} from './guardian-visuals';
 import { randomTrapDungeon } from './random-traps';
 type AvatarInput=Pick<AxieLoadout,'genes'|'class'|'name'> & {testParts?:string[]};
@@ -78,8 +79,8 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     for(const material of roomMaterials){material.dispose();materials.splice(materials.indexOf(material),1);}
     for(const texture of roomTextures){texture.dispose();textures.splice(textures.indexOf(texture),1);}
     const geometryStart=geometries.length,materialStart=materials.length,textureStart=textures.length;
-    const room=roomFor(level);const colors=level.theme==='amethyst'?[0x403c65,0x82749e]:level.theme==='ember'?[0x54372d,0xab7447]:[0x335d54,0x74a488];stone.color.setHex(colors[0]);top.color.setHex(colors[1]);
-    const blocks = [{x:room.w/2,y:room.floor-.65,w:room.w,h:1.3}, ...level.platforms, ...(level.rules==='raid'?[{x:room.w/2,y:room.h-.25,w:room.w,h:.5}]:[]), {x:room.left-.55,y:room.h/2,w:1.1,h:room.h}, {x:room.right+.55,y:room.h/2,w:1.1,h:room.h}];
+    const room=roomFor(level),roofY=dungeonRoofY(level);const colors=level.theme==='amethyst'?[0x403c65,0x82749e]:level.theme==='ember'?[0x54372d,0xab7447]:[0x335d54,0x74a488];stone.color.setHex(colors[0]);top.color.setHex(colors[1]);
+    const blocks = [{x:room.w/2,y:room.floor-.65,w:room.w,h:1.3}, ...level.platforms, ...(level.rules==='raid'?[{x:room.w/2,y:roofY-.25,w:room.w,h:.5}]:[]), {x:room.left-.55,y:roofY/2,w:1.1,h:roofY}, {x:room.right+.55,y:roofY/2,w:1.1,h:roofY}];
     blocks.forEach(p=>{
       box(roomGroup,p.x,p.y,0,p.w,p.h,2.6,stone,true);
       box(roomGroup,p.x,p.y+p.h/2,0.02,p.w+0.12,0.13,2.74,top,true);
@@ -87,8 +88,8 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
       for(let i=1;i<n;i++) box(roomGroup,p.x-p.w/2+i*p.w/n,p.y,1.32,0.025,p.h,0.02,dark);
       for(let i=0;i<n;i++) if(i%3!==1) box(roomGroup,p.x-p.w/2+i*p.w/n+0.4,p.y+p.h/2-0.13,1.39,0.35,0.2,0.06,mat(0x487963));
     });
-    if(level.decoration==='crystals'){for(const x of [1.5,room.w-1.5]){const geo=new THREE.OctahedronGeometry(.3);geometries.push(geo);const crystal=new THREE.Mesh(geo,mat(0xb7a0fc,{emissive:0x6950af,emissiveIntensity:.7}));crystal.position.set(x,room.h-1.4,-.8);roomGroup.add(crystal);}}
-    if(level.decoration==='lanterns'){for(const x of [1.7,room.w-1.7]){box(roomGroup,x,room.h-2,-.5,.32,.6,.35,mat(0xffd391,{emissive:0xd38f34,emissiveIntensity:1.3}));}}
+    if(level.decoration==='crystals'){for(const x of [1.5,room.w-1.5]){const geo=new THREE.OctahedronGeometry(.3);geometries.push(geo);const crystal=new THREE.Mesh(geo,mat(0xb7a0fc,{emissive:0x6950af,emissiveIntensity:.7}));crystal.position.set(x,roofY-1.4,-.8);roomGroup.add(crystal);}}
+    if(level.decoration==='lanterns'){for(const x of [1.7,room.w-1.7]){box(roomGroup,x,roofY-2,-.5,.32,.6,.35,mat(0xffd391,{emissive:0xd38f34,emissiveIntensity:1.3}));}}
     chest.position.set(level.chest.x,level.chest.y,0.45); lid.rotation.x=0;
     hazardVisuals = createHazardVisuals(scene, level);
     hazardVisuals.update(state);
@@ -141,7 +142,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
     }catch(error){if(disposed||request!==avatarRequest)return null;if(bubaModel)bubaModel.visible=true;avatarReady=true;return report({kind:'error',name:'Buba',fallbacks:[],message:error instanceof Error?error.message:'No se pudo ensamblar el Axie.'});}
   };
   refreshRandom=()=>{if(randomMode)void setAxie(randomAxie());};
-  const resize=()=>{const w=host.clientWidth,h=host.clientHeight,room=roomFor(level);renderer.setSize(w,h,false);const aspect=w/Math.max(h,1);const viewH=room.h+(level.rules==='raid'?3.6:0);const vh=Math.max(viewH+1,(room.w+.8)/aspect);camera.left=-vh*aspect/2;camera.right=vh*aspect/2;camera.top=vh/2;camera.bottom=-vh/2;camera.position.set(room.w/2,viewH/2+2,38);camera.lookAt(room.w/2,viewH/2,0);camera.updateProjectionMatrix();};fitRoom=resize;
+  const resize=()=>{const w=host.clientWidth,h=host.clientHeight,room=roomFor(level);renderer.setSize(w,h,false);const aspect=w/Math.max(h,1);const viewH=dungeonRoofY(level)+(level.rules==='raid'?3.6:0);const vh=Math.max(viewH+1,(room.w+.8)/aspect);camera.left=-vh*aspect/2;camera.right=vh*aspect/2;camera.top=vh/2;camera.bottom=-vh/2;camera.position.set(room.w/2,viewH/2+2,38);camera.lookAt(room.w/2,viewH/2,0);camera.updateProjectionMatrix();};fitRoom=resize;
   const observer=new ResizeObserver(resize);observer.observe(host);resize();
   let previous=performance.now(),accumulator=0,lastReport=0,lastPhase=state.phase;
   const loop=(now:number)=>{

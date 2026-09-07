@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { dungeonRoofY } from './dungeon-framing';
 import { dungeonGuardians } from './guardians';
 import { loadMixedAvatar, type MixedAvatar } from './mixer-avatar';
 import { roomFor, type Dungeon } from './physics';
@@ -17,7 +18,7 @@ export function createGuardianVisuals(scene: T.Scene, level: Dungeon) {
   guardians.forEach((guardian, index) => {
     const x =
       room.w / 2 + (guardians.length === 1 ? 0 : index === 0 ? -1.8 : 1.8);
-    const baseY = room.h + 1.05;
+    const baseY = dungeonRoofY(level) + 1.05;
     const geo = new T.CylinderGeometry(0.95, 1.1, 0.22, 12),
       material = new T.MeshStandardMaterial({
         color: index === 0 ? 0x678f77 : 0x958073,

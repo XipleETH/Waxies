@@ -178,47 +178,6 @@
   background: #bfdba8;
   color: #183d2d;
 }
-.settings {
-  position: absolute;
-  bottom: calc(78px + env(safe-area-inset-bottom));
-  left: 10px;
-  right: 10px;
-  border: 1px solid #527858;
-  border-radius: 16px;
-  background: #132c27f5;
-  padding: 10px;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  z-index: 4;
-}
-.settings select {
-  min-width: 0;
-  max-width: 110px;
-  background: #24443b;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  font-size: 12px;
-  height: 44px;
-  color: inherit;
-}
-.settings label {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  font-size: 10px;
-  gap: 4px;
-}
-.settings input {
-  width: 100%;
-  accent-color: #eaca87;
-}
-.settings button {
-  padding: 6px;
-  width: 32px;
-}
 .result {
   position: absolute;
   left: 50%;
@@ -319,11 +278,5 @@
   }
   .bottom button {
     padding: 7px;
-  }
-  .settings {
-    gap: 4px;
-  }
-  .settings select {
-    max-width: 90px;
   }
 }
