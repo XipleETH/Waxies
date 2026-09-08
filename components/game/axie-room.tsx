@@ -12,6 +12,9 @@ import {
 const AxieLoadout = dynamic(() =>
   import('./axie-loadout').then((m) => m.AxieLoadout),
 );
+const EmoteGallery = dynamic(() =>
+  import('./emote-gallery').then((m) => m.EmoteGallery),
+);
 export function AxieRoom({
   axie,
   onLoad,
@@ -24,6 +27,7 @@ export function AxieRoom({
   onBrowse: () => void;
 }) {
   const [panel, setPanel] = useState<'wallet' | 'id' | 'file' | null>(null);
+  const [galleryOpen, setGalleryOpen] = useState(false);
   return (
     <section className="axie-object-room" aria-label="Mi Axie">
       <div className="object-room-title">
@@ -32,6 +36,7 @@ export function AxieRoom({
       <div className="axie-object-actions">
         <ObjectMenu
           label="Acciones de Mi Axie"
+          layout="corner"
           actions={[
             {
               id: 'wallet',
@@ -58,6 +63,13 @@ export function AxieRoom({
               kind: 'scroll',
               onClick: () => setPanel('file'),
             },
+            {
+              id: 'gestures',
+              label: 'Gestos',
+              kind: 'emotes',
+              badge: '20',
+              onClick: () => setGalleryOpen(true),
+            },
           ]}
         />
         {axie ? (
@@ -66,6 +78,9 @@ export function AxieRoom({
           </button>
         ) : null}
       </div>
+      {galleryOpen ? (
+        <EmoteGallery onClose={() => setGalleryOpen(false)} />
+      ) : null}
       <Dialog
         open={panel !== null}
         onOpenChange={(open) => {

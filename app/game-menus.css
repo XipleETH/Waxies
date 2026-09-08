@@ -429,3 +429,12 @@
   background: #254331dc;
   text-shadow: 0 1px #122c1f;
 }
+/* Mi Axie keeps its centre open: two side controls meet a three-button bottom row. */
+.axie-object-actions {left:12px;right:12px;pointer-events:none;}
+.axie-object-actions nav[data-layout='corner'] {height:clamp(234px,34dvh,276px);}
+.axie-object-actions .object-small-action {pointer-events:auto;position:absolute;bottom:calc(100% + 8px);left:0;margin:0;font-size:10px;}
+.axie-object-room .object-room-title > span {padding:7px 13px;font-size:11px;}
+@media(max-height:650px) {
+  .is-axie-room .m-content {top:82px;bottom:90px;}
+  .axie-object-actions nav[data-layout='corner'] {height:216px;}
+}

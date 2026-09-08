@@ -13,9 +13,11 @@ export interface ObjectAction {
 export function ObjectMenu({
   actions,
   label,
+  layout = 'grid',
 }: {
   actions: ObjectAction[];
   label: string;
+  layout?: 'grid' | 'corner';
 }) {
   const host = useRef<HTMLDivElement>(null),
     kinds = actions.map((a) => a.kind).join('|');
@@ -28,6 +30,7 @@ export function ObjectMenu({
         const scene = createObjectMenu(
           host.current,
           kinds.split('|') as MenuObject[],
+          layout,
         );
         dispose = () => scene.dispose();
       })
@@ -36,14 +39,17 @@ export function ObjectMenu({
       stopped = true;
       dispose();
     };
-  }, [kinds]);
+  }, [kinds, layout]);
   return (
     <nav
-      className={styles.objects}
+      className={
+        styles.objects + (layout === 'corner' ? ' ' + styles.corner : '')
+      }
       aria-label={label}
       data-count={actions.length}
+      data-layout={layout}
       style={
-        actions.length > 4
+        layout === 'grid' && actions.length > 4
           ? {
               height: Math.ceil(actions.length / 2) * 160,
               gridTemplateRows: `repeat(${Math.ceil(actions.length / 2)},1fr)`,

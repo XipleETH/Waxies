@@ -1,5 +1,6 @@
 import * as T from 'three';
 export type MenuObject =
+  | 'emotes'
   | 'wallet'
   | 'portal'
   | 'book'
@@ -7,14 +8,18 @@ export type MenuObject =
   | 'scroll'
   | 'swords';
 /** Lit solid objects; accessible labels and hit targets are overlaid by ObjectMenu. */
-export function createObjectMenu(host: HTMLElement, kinds: MenuObject[]) {
+export function createObjectMenu(
+  host: HTMLElement,
+  kinds: MenuObject[],
+  layout: 'grid' | 'corner' = 'grid',
+) {
   const renderer = new T.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
   host.appendChild(renderer.domElement);
   renderer.domElement.setAttribute('aria-hidden', 'true');
   const scene = new T.Scene(),
     camera = new T.OrthographicCamera(-4, 4, 3, -3, 0.1, 30);
-  camera.position.set(0, 3, 12);
+  camera.position.set(0, layout === 'corner' ? 0 : 3, 12);
   camera.lookAt(0, 0, 0);
   scene.add(new T.HemisphereLight(0xffffd9, 0x355748, 3));
   const light = new T.DirectionalLight(0xffefc5, 3);
@@ -83,6 +88,38 @@ export function createObjectMenu(host: HTMLElement, kinds: MenuObject[]) {
         box(b, 0, 0.22 - i * 0.2, 0.3, 0.66, 0.035, 0.025, gold);
       box(b, -0.51, 0.01, 0.33, 0.08, 0.97, 0.08, gold);
     }
+    if (kind === 'emotes') {
+      const faceGeo = new T.SphereGeometry(0.56, 24, 16);
+      geometries.push(faceGeo);
+      const face = new T.Mesh(faceGeo, gold);
+      face.scale.z = 0.32;
+      g.add(face);
+      for (const x of [-0.19, 0.19]) {
+        const geo = new T.SphereGeometry(0.06, 12, 8);
+        geometries.push(geo);
+        const eye = new T.Mesh(geo, dark);
+        eye.position.set(x, 0.12, 0.19);
+        g.add(eye);
+      }
+      const points = Array.from(
+        { length: 13 },
+        (_, i) =>
+          new T.Vector3(
+            -0.24 + i * 0.04,
+            -0.08 - Math.sin((i / 12) * Math.PI) * 0.15,
+            0.19,
+          ),
+      );
+      const smileGeo = new T.TubeGeometry(
+        new T.CatmullRomCurve3(points),
+        24,
+        0.024,
+        6,
+        false,
+      );
+      geometries.push(smileGeo);
+      g.add(new T.Mesh(smileGeo, dark));
+    }
     if (kind === 'swords') {
       for (const sign of [-1, 1]) {
         const b = new T.Group();
@@ -104,6 +141,18 @@ export function createObjectMenu(host: HTMLElement, kinds: MenuObject[]) {
     camera.bottom = -half;
     camera.updateProjectionMatrix();
     groups.forEach((g, i) => {
+      if (layout === 'corner') {
+        const column = i < 3 ? 0 : i - 2,
+          row = i < 3 ? i : 2;
+        g.position.set(
+          -4 + ((column + 0.5) * 8) / 3,
+          half - ((row + 0.36) * 2 * half) / 3,
+          0,
+        );
+        g.scale.setScalar(0.73);
+        g.rotation.x = 0.1;
+        return;
+      }
       const x = i % 2 === 0 ? -2 : 2,
         y =
           half -
