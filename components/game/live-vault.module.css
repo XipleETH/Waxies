@@ -383,3 +383,19 @@
   font-weight: 800;
   line-height: 1;
 }
+
+.top .shopAccess {
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px 10px;
+  background: linear-gradient(#59774d, #2c4933);
+  border: 1px solid #a2b47b;
+  box-shadow: 0 3px #10291e;
+}
+.shopAccess small {
+  font-size: 9px;
+}
+.top .shopAccess[aria-expanded='true'] {
+  background: #d4c687;
+  color: #203d29;
+}

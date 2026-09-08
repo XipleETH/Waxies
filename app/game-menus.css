@@ -438,3 +438,11 @@
   .is-axie-room .m-content {top:82px;bottom:90px;}
   .axie-object-actions nav[data-layout='corner'] {height:216px;}
 }
+
+/* Account access stays above the lobby; the bazaar lives in the refuge. */
+.m-account {position: relative; align-self: center;}
+.m-account .m-balance {justify-content: center; padding: 6px 12px; min-width: 74px;}
+.m-axie-shortcut {position: absolute; top: calc(100% + 10px); right: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 58px; min-height: 56px; padding: 6px; color: #dce9bf; background: linear-gradient(#405e42, #203b2b); border: 1px solid #95a775; border-radius: 14px; box-shadow: 0 4px #10271d, inset 0 1px #c6d59a30;}
+.m-axie-shortcut span {font-size: 9px; font-weight: 700;}
+.m-axie-shortcut[aria-current='page'] {background: linear-gradient(#d3dfa0, #91ad70); color: #203d29; border-color: #e0e7ad;}
+.m-axie-shortcut:active {transform: translateY(2px);}

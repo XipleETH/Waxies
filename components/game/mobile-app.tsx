@@ -333,15 +333,23 @@ export default function MobileApp() {
           <span className="brand-symbol">W</span>WAXIS
           <span className="brand-dot" />
         </button>
-        <button
-          className="m-balance"
-          onClick={() => setScreen('shop')}
-          aria-label={`${profile.chispas} Chispas. Abrir tienda`}
-        >
-          <Sparkles size={17} />
-          {profile.chispas}
-          <span>＋</span>
-        </button>
+        <div className="m-account">
+          <div className="m-balance" aria-label={`${profile.chispas} Chispas`}>
+            <Sparkles size={17} aria-hidden="true" />
+            {profile.chispas}
+          </div>
+          {(screen === 'home' || screen === 'axie') && (
+            <button
+              className="m-axie-shortcut"
+              onClick={() => setScreen('axie')}
+              aria-label="Mi Axie"
+              aria-current={screen === 'axie' ? 'page' : undefined}
+            >
+              <Sparkles size={24} aria-hidden="true" />
+              <span>Mi Axie</span>
+            </button>
+          )}
+        </div>
       </header>
       <div className="m-content">
         {screen === 'home' ? (
@@ -447,7 +455,10 @@ export default function MobileApp() {
           </button>
         </output>
       ) : null}
-      <AppNavigation active={screen} onNavigate={setScreen} />
+      <AppNavigation
+        active={screen === 'axie' ? 'home' : screen}
+        onNavigate={setScreen}
+      />
       <Dialog open={roomsOpen} onOpenChange={setRoomsOpen}>
         <DialogContent className="room-picker-dialog">
           <DialogTitle>Práctica libre</DialogTitle>

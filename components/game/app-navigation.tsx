@@ -1,13 +1,5 @@
 'use client';
-import {
-  Home,
-  Castle,
-  ShoppingBag,
-  Sparkles,
-  Play,
-  Save,
-  Pencil,
-} from 'lucide-react';
+import { Home, Castle, Play, Save, Pencil } from 'lucide-react';
 import styles from './app-navigation.module.css';
 export type AppScreen = 'home' | 'vault' | 'shop' | 'axie' | 'online';
 export function AppNavigation({
@@ -36,8 +28,6 @@ export function AppNavigation({
             : Play
         : Castle,
     },
-    { id: 'shop', label: 'Bazar', Icon: ShoppingBag },
-    { id: 'axie', label: 'Mi Axie', Icon: Sparkles },
   ] as const;
   return (
     <nav className={styles.bar} aria-label="Navegación principal">

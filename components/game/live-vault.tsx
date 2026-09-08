@@ -514,6 +514,18 @@ export function LiveVault({
           {profile.proof ? <Check size={16} /> : <LockKeyhole size={16} />}{' '}
           {profile.proof ? 'Validada' : 'Borrador'}
         </span>
+        {mode !== 'test' ? (
+          <button
+            className={styles.shopAccess}
+            onClick={() => navigate('shop')}
+            aria-label="Bazar"
+            aria-expanded={shopOpen}
+            disabled={!loaded || busy}
+          >
+            <ShoppingBag size={19} aria-hidden="true" />
+            <small>Bazar</small>
+          </button>
+        ) : null}
         {mode === 'test' ? (
           <button
             onClick={() => engine.current?.pause()}
@@ -908,7 +920,7 @@ export function LiveVault({
         </aside>
       ) : null}
       <AppNavigation
-        active={shopOpen ? 'shop' : 'vault'}
+        active="vault"
         onNavigate={navigate}
         vaultAction={{
           label:
