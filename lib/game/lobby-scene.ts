@@ -202,8 +202,8 @@ export function createLobbyScene(
       leaf.rotation.z = (i - 2) * 0.27;
     }
   }
-  // The actual three equipped defenses are shown in their saved order.
-  const defenseSprites: T.Sprite[] = [];
+  // Equipped defenses are shown in their saved order.
+  const defenseDisplays: T.Group[] = [];
   const loader = new T.TextureLoader();
   appearance.parts.forEach((id, i) => {
     const part = PARTS[id];
@@ -216,11 +216,50 @@ export function createLobbyScene(
     base.position.set(x, y / 2, z);
     const cap = mesh(new T.CylinderGeometry(0.47, 0.47, 0.1, 7), trim);
     cap.position.set(x, y + 0.02, z);
+    const display = new T.Group();
+    display.position.set(x, y + 0.44, z);
+    display.userData.baseY = y + 0.44;
+    scene.add(display);
+    defenseDisplays.push(display);
     const texture = loader.load(part.partImage, (loaded) => {
       if (disposed) return;
       const image = loaded.image as { width: number; height: number };
       const scale = Math.min(0.72 / image.width, 0.62 / image.height);
       sprite.scale.set(image.width * scale, image.height * scale, 1);
+      // A closed mouth alone is only a few pixels high. Show its official
+      // Classic illustration on a solid medallion instead of stretching it.
+      if (image.height / image.width < 0.28) {
+        const art = loader.load(part.image, () => {
+          if (disposed) return;
+          sprite.visible = false;
+          const badge = new T.Group();
+          display.add(badge);
+          badge.quaternion.copy(camera.quaternion);
+          const rim = mesh(
+            new T.CylinderGeometry(0.37, 0.37, 0.1, 32),
+            mat(0xe8ad3d, { metalness: 0, roughness: 0.85 }),
+            badge,
+          );
+          rim.rotation.x = Math.PI / 2;
+          const faceMaterial = new T.MeshBasicMaterial({
+            map: art,
+            toneMapped: false,
+            fog: false,
+          });
+          materials.push(faceMaterial);
+          const face = mesh(
+            new T.CircleGeometry(0.335, 40),
+            faceMaterial,
+            badge,
+          );
+          face.position.z = 0.056;
+        });
+        // Frame the illustration, excluding the card's empty text panel.
+        art.colorSpace = T.SRGBColorSpace;
+        art.repeat.set(0.76, 0.5);
+        art.offset.set(0.12, 0.43);
+        textures.push(art);
+      }
     });
     texture.colorSpace = T.SRGBColorSpace;
     textures.push(texture);
@@ -228,10 +267,7 @@ export function createLobbyScene(
     materials.push(material);
     const sprite = new T.Sprite(material);
     sprite.scale.set(0.72, 0.62, 1);
-    sprite.position.set(x, y + 0.44, z);
-    sprite.userData.baseY = y + 0.44;
-    scene.add(sprite);
-    defenseSprites.push(sprite);
+    display.add(sprite);
   });
   const chest = new T.Group();
   chest.position.set(1.12, 0.25, 1.1);
@@ -331,7 +367,7 @@ export function createLobbyScene(
       plants.forEach(
         (p, i) => (p.rotation.z = Math.sin(now * 0.0006 + i) * 0.025),
       );
-      defenseSprites.forEach(
+      defenseDisplays.forEach(
         (s, i) =>
           (s.position.y = s.userData.baseY + Math.sin(now * 0.001 + i) * 0.035),
       );
