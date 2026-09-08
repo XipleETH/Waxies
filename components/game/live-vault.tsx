@@ -2,13 +2,11 @@
 import { useEffect, useRef, useState, type PointerEvent } from 'react';
 import Image from 'next/image';
 import {
-  ArrowLeft,
   Play,
   Pencil,
   Pause,
   RotateCcw,
   Check,
-  LockKeyhole,
   Coins,
   Sparkles,
   Link2,
@@ -35,7 +33,6 @@ import type { Engine } from '@/lib/game/scene';
 import { PARTS, BATTLE_SLOTS } from '@/lib/game/catalog';
 import { makeVaultTraps } from '@/lib/game/vault-layout';
 import { snapTrap, validFreeTraps } from '@/lib/game/free-vault';
-import { dungeonRoofY } from '@/lib/game/dungeon-framing';
 import { projectilePaths } from '@/lib/game/projectile-flight';
 import { reachSettings } from '@/lib/game/trap-reach';
 import { challengeCode, verifyRoute } from '@/lib/game/route-proof';
@@ -52,14 +49,12 @@ import styles from './live-vault.module.css';
 export function LiveVault({
   profile,
   onSave,
-  onExit,
   onNavigate,
   shopOpen,
   onShopChange,
 }: {
   profile: MobileProfile;
   onSave: (p: MobileProfile) => boolean;
-  onExit: () => void;
   onNavigate: (screen: AppScreen) => void;
   shopOpen: boolean;
   onShopChange: (open: boolean) => void;
@@ -495,7 +490,6 @@ export function LiveVault({
     ? projectilePaths(vaultLevel(profile), t, t.x > 6 ? -1 : 1)
     : [];
   const room = roomFor(vaultLevel(profile)),
-    roof = project(room.w / 2, dungeonRoofY(vaultLevel(profile)) + 1.2),
     a = t
       ? project(Math.max(room.left, t.x - (t.reach ?? rule!.default)), t.y)
       : null,
@@ -506,40 +500,6 @@ export function LiveVault({
 
   return (
     <main className={styles.stage} aria-label="Refugio interactivo">
-      <header className={styles.top}>
-        <button onClick={onExit} aria-label="Volver">
-          <ArrowLeft />
-        </button>
-        <span>
-          {profile.proof ? <Check size={16} /> : <LockKeyhole size={16} />}{' '}
-          {profile.proof ? 'Validada' : 'Borrador'}
-        </span>
-        {mode !== 'test' ? (
-          <button
-            className={styles.shopAccess}
-            onClick={() => navigate('shop')}
-            aria-label="Bazar"
-            aria-expanded={shopOpen}
-            disabled={!loaded || busy}
-          >
-            <ShoppingBag size={19} aria-hidden="true" />
-            <small>Bazar</small>
-          </button>
-        ) : null}
-        {mode === 'test' ? (
-          <button
-            onClick={() => engine.current?.pause()}
-            aria-label={paused ? 'Continuar' : 'Pausar'}
-          >
-            {paused ? <Play size={20} /> : <Pause size={20} />}
-          </button>
-        ) : (
-          <button onClick={() => void openFund()} aria-label="Abrir cofre">
-            <Coins size={20} />
-            {view?.player?.chest ?? ''}
-          </button>
-        )}
-      </header>
       <div
         className={styles.world}
         ref={host}
@@ -550,11 +510,7 @@ export function LiveVault({
       >
         {loaded && mode === 'edit' ? (
           <div className={styles.overlay}>
-            <div
-              className={styles.tray}
-              style={{ top: roof.y * 100 + '%' }}
-              aria-label="Cuatro poderes"
-            >
+            <div className={styles.tray} aria-label="Cuatro poderes">
               {BATTLE_SLOTS.map((slot, anchor) => {
                 const card =
                   traps.find((t) => t.anchor === anchor) ??
@@ -919,6 +875,40 @@ export function LiveVault({
           ) : null}
         </aside>
       ) : null}
+      <aside className={styles.tools} aria-label="Herramientas del refugio">
+        {mode !== 'test' ? (
+          <button
+            className={styles.shopAccess}
+            onClick={() => navigate('shop')}
+            aria-label="Bazar"
+            aria-expanded={shopOpen}
+            disabled={!loaded || busy}
+          >
+            <ShoppingBag size={21} aria-hidden="true" />
+            <small>Bazar</small>
+          </button>
+        ) : null}
+        {mode === 'test' ? (
+          <button
+            className={styles.pauseAccess}
+            onClick={() => engine.current?.pause()}
+            aria-label={paused ? 'Continuar' : 'Pausar'}
+          >
+            {paused ? <Play size={21} /> : <Pause size={21} />}
+            <small>{paused ? 'Seguir' : 'Pausa'}</small>
+          </button>
+        ) : (
+          <button
+            className={styles.chestAccess}
+            onClick={() => void openFund()}
+            aria-label="Abrir cofre"
+            disabled={!loaded || busy}
+          >
+            <Coins size={21} aria-hidden="true" />
+            <small>Cofre</small>
+          </button>
+        )}
+      </aside>
       <AppNavigation
         active="vault"
         onNavigate={navigate}

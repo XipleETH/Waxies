@@ -6,24 +6,10 @@
   display: flex;
   flex-direction: column;
   height: 100dvh;
+  padding-top: env(safe-area-inset-top);
   padding-bottom: calc(82px + env(safe-area-inset-bottom));
   isolation: isolate;
   overflow: hidden;
-}
-.top {
-  height: 58px;
-  padding: env(safe-area-inset-top) 14px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
-  box-sizing: content-box;
-}
-.top span {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
 }
 :where(.stage) button {
   display: flex;
@@ -67,7 +53,8 @@
 .tray {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
+  top: 8px;
+  transform: translateX(-50%);
   display: flex;
   gap: 8px;
   pointer-events: auto;
@@ -75,7 +62,7 @@
 .tray button {
   position: relative;
   width: 58px;
-  height: 70px;
+  height: 62px;
   flex-direction: column;
   gap: 0;
   background: #183830e8;
@@ -384,18 +371,46 @@
   line-height: 1;
 }
 
-.top .shopAccess {
+.stage > nav {
+  width: min(calc(100% - 144px), 240px);
+}
+.tools {
+  position: absolute;
+  z-index: 21;
+  left: 50%;
+  bottom: calc(19px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  width: min(calc(100% - 20px), 390px);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.tools button {
+  width: 48px;
+  height: 50px;
+  padding: 5px 3px;
   flex-direction: column;
-  gap: 2px;
-  padding: 5px 10px;
-  background: linear-gradient(#59774d, #2c4933);
-  border: 1px solid #a2b47b;
-  box-shadow: 0 3px #10291e;
+  gap: 3px;
+  pointer-events: auto;
+  background: linear-gradient(#456344, #243f2e);
+  border: 1px solid #90a77599;
+  border-radius: 12px;
+  box-shadow:
+    0 3px #0b211a,
+    inset 0 1px #c9dda333;
 }
-.shopAccess small {
+.tools small {
   font-size: 9px;
+  line-height: 1;
 }
-.top .shopAccess[aria-expanded='true'] {
+.tools .chestAccess,
+.tools .pauseAccess {
+  margin-left: auto;
+}
+.tools .chestAccess {
+  color: #f1d793;
+}
+.tools .shopAccess[aria-expanded='true'] {
   background: #d4c687;
   color: #203d29;
 }

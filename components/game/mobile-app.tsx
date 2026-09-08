@@ -247,7 +247,6 @@ export default function MobileApp() {
       <LiveVault
         profile={profile}
         onSave={save}
-        onExit={() => setScreen('home')}
         onNavigate={setScreen}
         shopOpen={screen === 'shop'}
         onShopChange={(open) => setScreen(open ? 'shop' : 'vault')}
