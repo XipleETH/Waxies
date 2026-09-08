@@ -9,9 +9,12 @@ export interface Projectile { id:number;owner:number;part:string;x:number;y:numb
 export interface PoisonPool { id:number;x:number;y:number;life:number;owner?:number;part?:string }
 export interface HazardState {traps:TrapState[];projectiles:Projectile[];pools:PoisonPool[];nextId:number}
 export const ATTACK={warning:.65,thornRadius:1.65,dashSpeed:10,dashDuration:.38,projectileRadius:.19,poolRadius:.75};
+export const AREA_WARNING=.3;
+export const isArea=(id:string)=>isRadial(id)||PARTS[id].recipe.pattern==='aura';
+export const areaRadius=(t:Trap)=>t.reach??ATTACK.thornRadius;
 export const isRadial=(id:string)=>['thorny-caterpillar','cactus','pupae'].includes(id);
 function fresh(t:Trap):TrapState {const shield=Math.round(PARTS[t.part].shield*.2);return {x:t.x,y:t.y,facing:-1,stage:'idle',timer:.7+t.phase*.4,shield:shield>0,energy:0,powered:false,shots:0,shotTimer:0,hp:100,shieldHp:shield,maxShield:shield,cycleShield:shield,statuses:{},round:1,broken:false,breakUsed:false,struckUsed:false,draw:0,lastStand:0,aimX:t.x,aimY:t.y,hitThisAttack:false};}
-export function createHazards(level:Dungeon):HazardState {return {traps:level.traps.map(fresh),projectiles:[],pools:[],nextId:0};}
+export function createHazards(level:Dungeon):HazardState {return {traps:level.traps.map(t=>({...fresh(t),...(level.rules==='raid'&&isArea(t.part)?{timer:0}:{})})),projectiles:[],pools:[],nextId:0};}
 function lineClear(level:Dungeon,x:number,y:number,tx:number,ty:number){const count=Math.ceil(Math.hypot(tx-x,ty-y)/.15);for(let n=1;n<count;n++)if(blocked(level,x+(tx-x)*n/count,y+(ty-y)*n/count,0))return false;return true;}
 function fire(s:GameState,level:Dungeon,i:number){
  const h=s.hazards,t=h.traps[i],part=level.traps[i].part,p=PARTS[part],pattern=p.recipe.pattern;
@@ -21,7 +24,7 @@ function fire(s:GameState,level:Dungeon,i:number){
 function beginAttack(s:GameState,level:Dungeon,i:number){
  const t=s.hazards.traps[i],p=PARTS[level.traps[i].part],pattern=p.recipe.pattern;
  if((t.statuses.stun||t.statuses.fear)&&p.id!=='bidens'){delete t.statuses.stun;t.stage='recover';t.timer=1.5;return;}
- t.stage='active';t.timer=pattern==='dash'?(level.traps[i].reach??(ATTACK.dashSpeed*ATTACK.dashDuration))/ATTACK.dashSpeed:isRadial(p.id)?.5:.4;t.hitThisAttack=false;
+ t.stage='active';t.timer=pattern==='dash'?(level.traps[i].reach??(ATTACK.dashSpeed*ATTACK.dashDuration))/ATTACK.dashSpeed:s.raid&&isArea(p.id)?.7:isRadial(p.id)?.5:.4;t.hitThisAttack=false;
  const rules=rulesFor(s,level,i,'fire');
  const energy=t.energy;t.powered=energy>0;t.energy=0;
  t.shots=Math.max(1,...rules.filter(r=>r.op==='repeat').map(r=>r.value))-1+Math.min(2,energy);t.shotTimer=.22;
@@ -50,17 +53,18 @@ export function stepHazards(s:GameState,level:Dungeon,dt:number,oldY:number,desc
    const distant=rulesFor(s,level,i,'fire').some(r=>r.op==='target');
    const targetOK=p.id!=='perch'||!rulesFor(s,level,i,'fire').some(r=>r.op==='target')||s.time-s.combat.lastJumpAt>3;
    const skip=p.id==='cloud'&&s.combat.lastStand>0;
-   if(!skip&&targetOK&&(auto||(Math.abs(s.x-t.x)<(distant?9:4.2)&&Math.abs(s.y-t.y)<1.8&&lineClear(level,t.x,t.y,s.x,s.y)))){t.stage='warning';t.timer=ATTACK.warning;t.facing=s.x<t.x?-1:1;t.aimY=s.y;t.aimX=s.x;}
+   const area=s.raid&&isArea(p.id),nearArea=Math.hypot(s.x-t.x,s.y-t.y)<areaRadius(trap)+.38+Math.max(6,Math.abs(s.vy))*AREA_WARNING+.4&&lineClear(level,t.x,t.y,s.x,s.y);
+   if(!skip&&targetOK&&(area?nearArea:(auto||(Math.abs(s.x-t.x)<(distant?9:4.2)&&Math.abs(s.y-t.y)<1.8&&lineClear(level,t.x,t.y,s.x,s.y))))){t.stage='warning';t.timer=area?AREA_WARNING:ATTACK.warning;t.facing=s.x<t.x?-1:1;t.aimY=s.y;t.aimX=s.x;}
   }else if(t.stage==='warning'&&t.timer<=0)beginAttack(s,level,i);
   else if(t.stage==='active'){
    if(pattern==='dash'){
     const speed=ATTACK.dashSpeed*(t.statuses['speed-up']?1.2:1)*(t.statuses['speed-down']?.8:1),next=t.x+t.facing*speed*dt;
     if(blocked(level,next,t.y,.35))t.timer=0;else if(trap.reach!==undefined&&Math.abs(next-trap.x)>=trap.reach){t.x=trap.x+t.facing*trap.reach;t.timer=0;}else t.x=next;
    }
-   const radius=isRadial(p.id)?(trap.reach??ATTACK.thornRadius)+.38:pattern==='bite'?(trap.reach??.5)+.38:.88;
-   if(p.attack>0&&(isRadial(p.id)||['dash','bite','barrier'].includes(pattern))&&!t.hitThisAttack&&Math.hypot(s.x-t.x,s.y-t.y)<radius&&lineClear(level,t.x,t.y,s.x,s.y)){hitRunner(s,level,i);t.hitThisAttack=true;}
+   const radius=s.raid&&isArea(p.id)?areaRadius(trap)+.38:isRadial(p.id)?(trap.reach??ATTACK.thornRadius)+.38:pattern==='bite'?(trap.reach??.5)+.38:.88;
+   if(((s.raid&&isArea(p.id))||(p.attack>0&&(isRadial(p.id)||['dash','bite','barrier'].includes(pattern))))&&!t.hitThisAttack&&Math.hypot(s.x-t.x,s.y-t.y)<radius&&lineClear(level,t.x,t.y,s.x,s.y)){hitRunner(s,level,i);t.hitThisAttack=true;}
    if(t.shots>0){t.shotTimer-=dt;if(t.shotTimer<=0){fire(s,level,i);t.shots--;t.shotTimer=.22;t.timer=Math.max(t.timer,.23);}}
-   if(t.timer<=0){applyRules(s,level,i,rulesFor(s,level,i,'end'));t.stage='recover';t.timer=Math.max(.35,(pattern==='dash'?1.1:1.5)-t.draw*.35);t.draw=0;}
+   if(t.timer<=0){applyRules(s,level,i,rulesFor(s,level,i,'end'));t.stage='recover';t.timer=Math.max(.35,(s.raid&&isArea(p.id)?.65:pattern==='dash'?1.1:1.5)-t.draw*.35);t.draw=0;}
   }else if(t.stage==='recover'){
    if(pattern==='dash')t.x+=(trap.x-t.x)*Math.min(1,dt*5);
    if(t.timer<=0){t.x=trap.x;t.stage='idle';t.timer=.6*(t.statuses['speed-up']?.8:1);t.powered=false;t.round++;decay(t.statuses);t.hp=Math.max(0,t.hp-(t.statuses.poison??0)*2);t.shieldHp=t.maxShield;t.shield=t.shieldHp>0;t.cycleShield=t.shieldHp;t.broken=false;t.breakUsed=false;t.struckUsed=false;}

@@ -26,7 +26,15 @@ export function reachSettings(part: string) {
       label: 'Alcance de mordida',
       kind: 'radius' as const,
     };
-  if (pattern === 'barrier' || pattern === 'aura')
+  if (pattern === 'aura')
+    return {
+      min: 0.4,
+      max: 2.8,
+      default: 1.65,
+      label: 'Radio del pulso',
+      kind: 'radius' as const,
+    };
+  if (pattern === 'barrier')
     return {
       min: 0.4,
       max: 0.4,

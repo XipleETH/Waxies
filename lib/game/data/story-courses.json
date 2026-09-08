@@ -383,8 +383,8 @@
     "level": {
       "id": "story-05",
       "layoutId": "bridge",
-      "name": "El puente del guardián",
-      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
+      "name": "Las tres compuertas",
+      "subtitle": "Cruza las compuertas y salta el pulso que custodia la salida.",
       "difficulty": "El despertar",
       "rules": "raid",
       "room": {
@@ -395,80 +395,68 @@
         "floor": 1
       },
       "spawn": {
-        "x": 11.0678,
-        "y": 13.155000000000001
+        "x": 2.6,
+        "y": 11.1
       },
       "chest": {
-        "x": 11.5,
+        "x": 3,
         "y": 1.8
       },
       "platforms": [
         {
-          "x": 5.2,
-          "y": 3,
-          "w": 3.09,
+          "x": 5.4,
+          "y": 10.1,
+          "w": 8.8,
           "h": 0.55
         },
         {
-          "x": 11.147,
-          "y": 5.4,
-          "w": 3.705,
+          "x": 8.8,
+          "y": 6.8,
+          "w": 8.4,
           "h": 0.55
         },
         {
-          "x": 7,
-          "y": 8,
-          "w": 10.06,
-          "h": 0.55
-        },
-        {
-          "x": 6.5,
-          "y": 10.6,
-          "w": 2.875,
-          "h": 0.55
-        },
-        {
-          "x": 10.3,
-          "y": 12.5,
-          "w": 3.49,
+          "x": 5.1,
+          "y": 3.5,
+          "w": 8.2,
           "h": 0.55
         }
       ],
       "traps": [
         {
-          "x": 11.52,
-          "y": 8.8,
+          "x": 7.7,
+          "y": 7.6,
           "part": "axie-kiss",
           "patrol": 0,
           "phase": 0,
-          "reach": 9.5
+          "reach": 7
         },
         {
-          "x": 10.04,
-          "y": 6.2,
+          "x": 6.9,
+          "y": 1.525,
           "part": "cottontail",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 0.4
+          "phase": 0,
+          "reach": 1.45
         }
       ],
       "theme": "ember"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 765,
+      "frames": 953,
       "actions": [
-        12,
-        504,
-        600
+        48,
+        300,
+        852
       ]
     },
     "metrics": {
-      "score": 49,
-      "timingPassed": 2,
+      "score": 39,
+      "timingPassed": 3,
       "timingTrials": 6,
       "timingOffsetMs": 50,
-      "seconds": 6,
+      "seconds": 8,
       "jumps": 3
     },
     "number": 5,
@@ -478,12 +466,12 @@
       "encountered": 2,
       "total": 2,
       "closest": [
-        0.32,
-        0.09
+        0.17,
+        0.05
       ],
       "exposureFrames": [
-        144,
-        132
+        66,
+        96
       ]
     }
   },
@@ -665,12 +653,12 @@
           "reach": 7.5
         },
         {
-          "x": 2.48,
+          "x": 2.83,
           "y": 8.8,
           "part": "cottontail",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.4
+          "reach": 1.45
         }
       ],
       "theme": "ember"
@@ -690,8 +678,8 @@
       ]
     },
     "metrics": {
-      "score": 27,
-      "timingPassed": 14,
+      "score": 24,
+      "timingPassed": 15,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
@@ -704,11 +692,11 @@
       "total": 2,
       "closest": [
         0.1,
-        0.2
+        0.49
       ],
       "exposureFrames": [
         78,
-        36
+        30
       ]
     },
     "traversal": "ascent"
@@ -717,8 +705,8 @@
     "level": {
       "id": "story-08",
       "layoutId": "bridge",
-      "name": "El puente del guardián",
-      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
+      "name": "El descenso partido",
+      "subtitle": "Cruza las compuertas y salta el pulso que custodia la salida.",
       "difficulty": "El despertar",
       "rules": "raid",
       "room": {
@@ -729,82 +717,69 @@
         "floor": 1
       },
       "spawn": {
-        "x": 9.5652,
-        "y": 13.155000000000001
+        "x": 11.4,
+        "y": 11.1
       },
       "chest": {
-        "x": 2.5,
+        "x": 11,
         "y": 1.8
       },
       "platforms": [
         {
-          "x": 5.2,
-          "y": 3,
-          "w": 2.94,
+          "x": 8.6,
+          "y": 10.1,
+          "w": 8.8,
           "h": 0.55
         },
         {
-          "x": 11.235,
-          "y": 5.4,
-          "w": 3.53,
+          "x": 5.199999999999999,
+          "y": 6.8,
+          "w": 8.4,
           "h": 0.55
         },
         {
-          "x": 7,
-          "y": 8,
-          "w": 9.96,
-          "h": 0.55
-        },
-        {
-          "x": 6.5,
-          "y": 10.6,
-          "w": 2.75,
-          "h": 0.55
-        },
-        {
-          "x": 10.3,
-          "y": 12.5,
-          "w": 3.34,
+          "x": 8.9,
+          "y": 3.5,
+          "w": 8.2,
           "h": 0.55
         }
       ],
       "traps": [
         {
-          "x": 3.57,
-          "y": 8.8,
+          "x": 6.3,
+          "y": 7.6,
           "part": "axie-kiss",
           "patrol": 0,
           "phase": 0,
-          "reach": 9.5
+          "reach": 7
         },
         {
-          "x": 2.35,
-          "y": 5.725,
+          "x": 7.1,
+          "y": 1.525,
           "part": "cottontail",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 0.4
+          "phase": 0,
+          "reach": 1.45
         }
       ],
       "theme": "ember"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 688,
+      "frames": 1010,
       "actions": [
-        60,
-        72,
-        132,
-        684
+        108,
+        360,
+        912
       ]
     },
     "metrics": {
-      "score": 18,
-      "timingPassed": 8,
-      "timingTrials": 8,
+      "score": 31,
+      "timingPassed": 4,
+      "timingTrials": 6,
       "timingOffsetMs": 50,
-      "seconds": 6,
-      "jumps": 4
+      "seconds": 8,
+      "jumps": 3
     },
     "number": 8,
     "chapter": 1,
@@ -813,12 +788,12 @@
       "encountered": 2,
       "total": 2,
       "closest": [
-        0.22,
-        0.19
+        0.27,
+        0.14
       ],
       "exposureFrames": [
-        42,
-        168
+        60,
+        102
       ]
     }
   },
@@ -1464,7 +1439,7 @@
       ],
       "traps": [
         {
-          "x": 10.45,
+          "x": 10.1,
           "y": 6.2,
           "part": "axie-kiss",
           "patrol": 0,
@@ -1472,20 +1447,20 @@
           "reach": 7
         },
         {
-          "x": 2.35,
-          "y": 3.275,
+          "x": 3.05,
+          "y": 3.975,
           "part": "cottontail",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
-          "x": 2.35,
+          "x": 3.4,
           "y": 7.125,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.45
         }
       ],
       "theme": "ember"
@@ -1502,8 +1477,8 @@
       ]
     },
     "metrics": {
-      "score": 48,
-      "timingPassed": 6,
+      "score": 58,
+      "timingPassed": 4,
       "timingTrials": 10,
       "timingOffsetMs": 50,
       "seconds": 5,
@@ -1516,14 +1491,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.88,
-        0.19,
+        0.8,
+        0.5,
         0.19
       ],
       "exposureFrames": [
         6,
-        144,
-        126
+        108,
+        84
       ]
     }
   },
@@ -1828,11 +1803,11 @@
       "traps": [
         {
           "x": 9.65,
-          "y": 4.675,
+          "y": 6.775,
           "part": "rose-bud",
           "patrol": 0,
           "phase": 0.4,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 4.3,
@@ -1840,11 +1815,11 @@
           "part": "confident",
           "patrol": 0,
           "phase": 1.9,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 10.27,
-          "y": 9.05,
+          "y": 7.65,
           "part": "pupae",
           "patrol": 0,
           "phase": 0,
@@ -1882,14 +1857,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.08,
         0.18,
-        0.01
+        0.18,
+        0.98
       ],
       "exposureFrames": [
-        120,
+        48,
         66,
-        90
+        12
       ]
     }
   },
@@ -3688,12 +3663,12 @@
       ],
       "traps": [
         {
-          "x": 4.44,
+          "x": 3.04,
           "y": 12.8,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 4.34,
@@ -3737,8 +3712,8 @@
       ]
     },
     "metrics": {
-      "score": 62,
-      "timingPassed": 6,
+      "score": 59,
+      "timingPassed": 7,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
@@ -3750,13 +3725,13 @@
       "encountered": 4,
       "total": 4,
       "closest": [
-        0.09,
+        0.28,
         0.04,
         0.36,
         0.61
       ],
       "exposureFrames": [
-        42,
+        96,
         30,
         24,
         24
@@ -4418,12 +4393,12 @@
       ],
       "traps": [
         {
-          "x": 2.7,
+          "x": 3.75,
           "y": 10.6,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 3.98,
@@ -4482,13 +4457,13 @@
       "encountered": 4,
       "total": 4,
       "closest": [
-        0.3,
+        0.26,
         0.09,
         0.3,
         0.14
       ],
       "exposureFrames": [
-        30,
+        24,
         78,
         72,
         108
@@ -4558,12 +4533,12 @@
       ],
       "traps": [
         {
-          "x": 4.23,
+          "x": 3.18,
           "y": 12.8,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0.2,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 4.13,
@@ -4620,13 +4595,13 @@
       "encountered": 4,
       "total": 4,
       "closest": [
-        0.26,
+        0.16,
         0.04,
         0.61,
         0.15
       ],
       "exposureFrames": [
-        36,
+        72,
         30,
         18,
         102
@@ -4718,7 +4693,7 @@
           "part": "confident",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 2.35,
@@ -4746,8 +4721,8 @@
       ]
     },
     "metrics": {
-      "score": 58,
-      "timingPassed": 8,
+      "score": 61,
+      "timingPassed": 7,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
@@ -4762,13 +4737,13 @@
       "closest": [
         0.31,
         0.04,
-        0.61,
+        0.26,
         0.15
       ],
       "exposureFrames": [
         36,
         30,
-        24,
+        36,
         102
       ]
     }

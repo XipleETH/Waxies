@@ -10,7 +10,7 @@ const MOVEMENT: Record<Pattern, string> = {
   bite: 'Ataca de cerca tras un aviso. Salta por encima de su alcance; el cuerpo es peligroso incluso entre ataques.',
   sniper:
     'Apunta a tu posición durante el aviso. Cambia de altura o de lado antes del disparo: la mira no te persigue después.',
-  aura: 'Actúa como un obstáculo de contacto y puede apoyar a otras defensas con sus efectos de equipo compatibles. Su aura visual no causa daño a distancia.',
+  aura: 'Emite un pulso tras un aviso dorado. El área iluminada daña mientras está activa; cruza cuando se apague o salta fuera del anillo. El pulso dañino es una adaptación para las mazmorras; conserva sus efectos de apoyo compatibles de Classic.',
   barrier:
     'Ocupa espacio como una barrera de contacto. Rodéala con un salto: no puedes romperla con un pisotón en este modo.',
   boomerang:

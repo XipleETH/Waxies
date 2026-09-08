@@ -590,23 +590,23 @@
       "traps": [
         {
           "x": 10.45,
-          "y": 10.275,
+          "y": 11.675,
           "part": "rose-bud",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
-          "x": 2.4,
+          "x": 3.1,
           "y": 6.45,
           "part": "confident",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 6.15,
-          "y": 9.05,
+          "y": 6.95,
           "part": "pupae",
           "patrol": 0,
           "phase": 0,
@@ -630,14 +630,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.06,
-        0.71,
-        0.11
+        0.32,
+        0.27,
+        0.43
       ],
       "exposureFrames": [
-        66,
-        18,
-        126
+        60,
+        36,
+        30
       ]
     }
   },
@@ -1161,12 +1161,12 @@
       ],
       "traps": [
         {
-          "x": 2.7,
+          "x": 3.75,
           "y": 1.525,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 5.75,
@@ -1199,12 +1199,12 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.39,
+        0.19,
         0.1,
         0.05
       ],
       "exposureFrames": [
-        60,
+        66,
         42,
         42
       ]
@@ -1289,12 +1289,12 @@
           "reach": 7.5
         },
         {
-          "x": 10.15,
+          "x": 9.45,
           "y": 6.1,
           "part": "confident",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.45
         }
       ],
       "theme": "amethyst"
@@ -1319,12 +1319,12 @@
       "closest": [
         0.18,
         0.3,
-        0.68
+        -0.04
       ],
       "exposureFrames": [
         120,
         72,
-        6
+        18
       ]
     }
   },
@@ -2345,12 +2345,12 @@
           "reach": 1
         },
         {
-          "x": 5.15,
+          "x": 4.45,
           "y": 11.3,
           "part": "cottontail",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 8.15,
@@ -2387,12 +2387,12 @@
       "total": 3,
       "closest": [
         0.22,
-        0.29,
+        0.93,
         0.33
       ],
       "exposureFrames": [
         36,
-        36,
+        12,
         72
       ]
     }
@@ -3693,15 +3693,15 @@
           "part": "cottontail",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 1.95,
-          "y": 5.375,
+          "y": 3.625,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.2
         }
       ],
       "theme": "ember"
@@ -3726,12 +3726,12 @@
       "closest": [
         0.08,
         0.19,
-        0.1
+        0.15
       ],
       "exposureFrames": [
         78,
-        36,
-        54
+        48,
+        36
       ]
     },
     "traversal": "ascent"
@@ -3918,7 +3918,7 @@
           "reach": 7.5
         },
         {
-          "x": 6.35,
+          "x": 6.7,
           "y": 8.8,
           "part": "cactus",
           "patrol": 0,
@@ -3955,7 +3955,7 @@
       "closest": [
         0.2,
         0.34,
-        0.92
+        0.82
       ],
       "exposureFrames": [
         42,
@@ -4638,12 +4638,12 @@
       ],
       "traps": [
         {
-          "x": 1.95,
-          "y": 16.225,
+          "x": 2.55,
+          "y": 17.625,
           "part": "thorny-caterpillar",
           "patrol": 0,
           "phase": 0,
-          "reach": 1.65
+          "reach": 2.8
         },
         {
           "x": 2.35,
@@ -4654,12 +4654,12 @@
           "reach": 7.5
         },
         {
-          "x": 4.2,
-          "y": 15.5,
+          "x": 2.35,
+          "y": 18.675,
           "part": "confident",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.2
         }
       ],
       "theme": "amethyst"
@@ -4684,14 +4684,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.2,
+        0.25,
         0.12,
-        0.01
+        0.35
       ],
       "exposureFrames": [
-        132,
+        60,
         102,
-        108
+        42
       ]
     }
   },
@@ -5364,12 +5364,12 @@
       ],
       "traps": [
         {
-          "x": 3.1,
-          "y": 11.6,
+          "x": 2.05,
+          "y": 10.2,
           "part": "bidens",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 3.35,
@@ -5380,12 +5380,12 @@
           "reach": 0.4
         },
         {
-          "x": 1.5,
-          "y": 11.6,
+          "x": 2.2,
+          "y": 10.2,
           "part": "confident",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.45
         }
       ],
       "theme": "moss"
@@ -5410,14 +5410,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.19,
+        0.15,
         0.25,
-        0.92
+        0.07
       ],
       "exposureFrames": [
-        72,
+        42,
         24,
-        12
+        42
       ]
     }
   },
@@ -8879,12 +8879,12 @@
       ],
       "traps": [
         {
-          "x": 4.35,
+          "x": 3.3,
           "y": 12.8,
           "part": "confident",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 4.25,
@@ -8923,12 +8923,12 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.16,
+        0.06,
         0.04,
         0.4
       ],
       "exposureFrames": [
-        36,
+        72,
         30,
         30
       ]
@@ -8998,12 +8998,12 @@
       ],
       "traps": [
         {
-          "x": 4.35,
+          "x": 5.75,
           "y": 12.8,
           "part": "confident",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 5.75,
@@ -9036,12 +9036,12 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.16,
+        0.27,
         0.08,
         0.3
       ],
       "exposureFrames": [
-        36,
+        30,
         36,
         30
       ]
@@ -10514,7 +10514,7 @@
           "part": "confident",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.45
         }
       ],
       "theme": "amethyst"
@@ -10621,12 +10621,12 @@
           "reach": 7.5
         },
         {
-          "x": 9.65,
+          "x": 8.6,
           "y": 8.525,
           "part": "leaf-bug",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.45
         }
       ],
       "theme": "amethyst"
@@ -10651,12 +10651,12 @@
       "closest": [
         0.12,
         0.42,
-        0.15
+        0.19
       ],
       "exposureFrames": [
         96,
         54,
-        96
+        84
       ]
     }
   },
@@ -11157,7 +11157,7 @@
           "reach": 9.5
         },
         {
-          "x": 3.55,
+          "x": 4.95,
           "y": 8.8,
           "part": "cactus",
           "patrol": 0,
@@ -11187,12 +11187,12 @@
       "closest": [
         0.08,
         0.19,
-        0.26
+        0.16
       ],
       "exposureFrames": [
         78,
         36,
-        36
+        66
       ]
     },
     "traversal": "ascent"
@@ -11266,8 +11266,8 @@
       ],
       "traps": [
         {
-          "x": 6.95,
-          "y": 3.9,
+          "x": 5.55,
+          "y": 5.3,
           "part": "thorny-caterpillar",
           "patrol": 0,
           "phase": 0,
@@ -11282,12 +11282,12 @@
           "reach": 12
         },
         {
-          "x": 2.3,
+          "x": 3.7,
           "y": 11.1,
           "part": "shiitake",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.45
         }
       ],
       "theme": "amethyst"
@@ -11306,14 +11306,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.06,
+        -0.07,
         0.05,
-        0.1
+        0.29
       ],
       "exposureFrames": [
-        96,
+        60,
         108,
-        42
+        66
       ]
     }
   },
@@ -11380,12 +11380,12 @@
       ],
       "traps": [
         {
-          "x": 3.1,
-          "y": 11.6,
+          "x": 2.05,
+          "y": 10.2,
           "part": "confident",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 3.35,
@@ -11396,12 +11396,12 @@
           "reach": 0.4
         },
         {
-          "x": 1.5,
-          "y": 11.6,
+          "x": 2.2,
+          "y": 10.2,
           "part": "cottontail",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.45
         }
       ],
       "theme": "moss"
@@ -11426,14 +11426,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.19,
+        0.15,
         0.25,
-        0.92
+        0.07
       ],
       "exposureFrames": [
-        72,
+        42,
         24,
-        12
+        42
       ]
     }
   },
@@ -11500,12 +11500,12 @@
       ],
       "traps": [
         {
-          "x": 3.1,
-          "y": 11.6,
+          "x": 2.05,
+          "y": 10.2,
           "part": "confident",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 3.35,
@@ -11516,12 +11516,12 @@
           "reach": 0.4
         },
         {
-          "x": 1.5,
-          "y": 11.6,
+          "x": 2.2,
+          "y": 10.2,
           "part": "mint",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 1.45
         }
       ],
       "theme": "moss"
@@ -11545,14 +11545,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.19,
+        0.15,
         0.25,
-        0.92
+        0.07
       ],
       "exposureFrames": [
-        72,
+        42,
         24,
-        12
+        42
       ]
     },
     "traversal": "ascent"
@@ -11750,23 +11750,23 @@
       "traps": [
         {
           "x": 10.45,
-          "y": 10.275,
+          "y": 11.675,
           "part": "confident",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
-          "x": 2.4,
+          "x": 3.1,
           "y": 6.45,
           "part": "strawberry-shortcake",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 6.15,
-          "y": 9.05,
+          "y": 6.95,
           "part": "pupae",
           "patrol": 0,
           "phase": 0,
@@ -11790,14 +11790,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.06,
-        0.71,
-        0.11
+        0.32,
+        0.27,
+        0.43
       ],
       "exposureFrames": [
-        66,
-        18,
-        126
+        60,
+        36,
+        30
       ]
     }
   },
@@ -12009,12 +12009,12 @@
           "reach": 1
         },
         {
-          "x": 5.15,
+          "x": 4.45,
           "y": 11.3,
           "part": "silence-whisper",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.4
+          "reach": 1.45
         },
         {
           "x": 8.15,
@@ -12051,12 +12051,12 @@
       "total": 3,
       "closest": [
         0.22,
-        0.29,
+        0.93,
         0.33
       ],
       "exposureFrames": [
         36,
-        36,
+        12,
         72
       ]
     }

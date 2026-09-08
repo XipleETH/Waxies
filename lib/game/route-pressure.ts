@@ -7,7 +7,7 @@ import {
   type Dungeon,
   type GameState,
 } from './physics';
-import { ATTACK, isRadial } from './hazards';
+import { ATTACK, isRadial, isArea, areaRadius } from './hazards';
 import { PARTS } from './catalog';
 import type { RouteProof } from './route-proof';
 export function visibleBetween(
@@ -39,15 +39,22 @@ export function hazardClearances(level: Dungeon, s: GameState): number[] {
       pattern = PARTS[part.part].recipe.pattern;
     if (
       t.stage === 'active' &&
-      PARTS[part.part].attack > 0 &&
+      (PARTS[part.part].attack > 0 || (s.raid && isArea(part.part))) &&
       visibleBetween(level, s.x, s.y, t.x, t.y)
     ) {
-      const radius = isRadial(part.part)
-        ? (part.reach ?? ATTACK.thornRadius)
-        : pattern === 'bite'
-          ? (part.reach ?? 0.5)
-          : 0.5;
-      if (isRadial(part.part) || ['bite', 'dash', 'barrier'].includes(pattern))
+      const radius =
+        s.raid && isArea(part.part)
+          ? areaRadius(part)
+          : isRadial(part.part)
+            ? (part.reach ?? ATTACK.thornRadius)
+            : pattern === 'bite'
+              ? (part.reach ?? 0.5)
+              : 0.5;
+      if (
+        (s.raid && isArea(part.part)) ||
+        isRadial(part.part) ||
+        ['bite', 'dash', 'barrier'].includes(pattern)
+      )
         distance = Math.min(
           distance,
           Math.hypot(s.x - t.x, s.y - t.y) - radius - PHYSICS.radius,

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { ATTACK, isRadial } from './hazards';
+import { ATTACK, isRadial, AREA_WARNING, areaRadius } from './hazards';
 import { PARTS } from './catalog';
 import type { Dungeon, GameState } from './physics';
 
@@ -20,7 +20,7 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
     const color=new THREE.Color(PARTS[trap.part].color).lerp(new THREE.Color(0xffffff),.28).getHex();
     const backing=mesh(disk,new THREE.Color(color).lerp(new THREE.Color(0xffffff),.68).getHex(),.9);backing.scale.set(.66,.56,1);backing.position.z=.84;group.add(backing);
     const base=mesh(disk,0x10282a,0.9);base.scale.set(.69,.2,1);base.position.set(0,-.41,.65);group.add(base);
-    const body=sprite(trap.part,1.32,trap.part==='grass-snake'?.82:1.04);body.position.z=1;group.add(body);
+    const body=sprite(trap.part,1.32,trap.part==='grass-snake'?.82:1.04);body.position.z=1;body.material.onBeforeCompile=shader=>{shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>','#include <map_fragment>\n diffuseColor.rgb = max(diffuseColor.rgb, vec3(0.19, 0.25, 0.23));');};group.add(body);
     const shield=mesh(ring,0x9bffd6,.8);shield.scale.setScalar(.77);shield.position.z=.8;group.add(shield);
     const charge=mesh(disk,0xffd56d);charge.scale.setScalar(.1);charge.position.set(0,.88,1);group.add(charge);
     const cue=mesh(ring,color,.6);cue.position.z=.6;group.add(cue);
@@ -50,7 +50,7 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
       v.body.material.opacity=1;
       v.body.material.color.set(t.stage==='disabled'?0x9aafba:0xffffff);
       v.health.visible=!s.raid&&t.hp<100;v.health.scale.x=.9*Math.max(0,t.hp)/100;v.health.position.x=-(.9-v.health.scale.x)/2;
-      v.links.forEach(l=>{l.visible=PARTS[part].recipe.pattern==='aura'&&active;});
+      v.links.forEach(l=>{l.visible=!s.raid&&PARTS[part].recipe.pattern==='aura'&&active;});
       v.body.position.x=warn?Math.sin(s.time*45)*.035:0;
       v.body.material.rotation=part==='lagging'?(t.facing<0?-.35:.35):part==='grass-snake'?(t.facing<0?.1:-.1):0;
       v.shield.visible=t.shield&&t.stage!=='disabled';
@@ -60,11 +60,12 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
       v.charge.scale.setScalar(.11+Math.sin(s.time*9)*.02);
       const thorn=isRadial(part),aura=PARTS[part].recipe.pattern==='aura';
       v.cue.visible=true;v.area.visible=(thorn||aura)&&(warn||active);
-      const radius=aura?2.2:thorn?(level.traps[i].reach??ATTACK.thornRadius):.65+(warn?(1-t.timer/ATTACK.warning)*.2:0);
+      const radius=aura&&s.raid?areaRadius(level.traps[i]):aura?2.2:thorn?(level.traps[i].reach??ATTACK.thornRadius):.65+(warn?(1-t.timer/((thorn||aura)&&s.raid?AREA_WARNING:ATTACK.warning))*.2:0);
       v.cue.scale.setScalar(radius);v.area.scale.setScalar(radius);
-      v.area.material.opacity=active?.2:.06+(1-t.timer/ATTACK.warning)*.1;
+      v.area.material.color.set(active?0xffa65e:0xffe79a);
+      v.area.material.opacity=active?.36:.06+(1-t.timer/ATTACK.warning)*.1;
       v.cue.material.opacity=active?.95:warn?.55+(Math.sin(s.time*18)+1)*.2:.3;
-      v.cue.material.color.set(warn?0xffd269:active?0xff9476:PARTS[part].color);
+      v.cue.material.color.set(warn?0xffe28a:active?0xffa06b:0xbdebdc);
       if(!warn&&!active)v.cue.scale.setScalar(.7);
       v.backing.material.opacity=warn?.98:.88;
       v.thorns.visible=thorn&&active;v.thorns.scale.setScalar((level.traps[i].reach??ATTACK.thornRadius)/ATTACK.thornRadius);
@@ -77,7 +78,7 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
     darts.forEach((v,i)=>{const p=s.hazards.projectiles[i];v.group.visible=!!p;if(!p)return;
       v.group.position.set(p.x,p.y,1.05);v.group.rotation.z=Math.atan2(p.vy,p.vx);
       const venom=['grass-snake','yam','garish-worm'].includes(p.part);
-      v.carrot.visible=!venom;v.carrot.material.map=maps[p.part];v.venom.visible=venom;v.glow.visible=true;v.glow.material.color.set(venom?0xd6b3ff:PARTS[p.part].color);v.glow.material.opacity=.65;
+      v.carrot.visible=!venom;v.carrot.material.map=maps[p.part];v.venom.visible=venom;v.glow.visible=true;v.glow.material.color.set(venom?0xe2bfff:0xffe5a3);v.glow.material.opacity=.92;
       v.carrot.material.rotation=Math.atan2(p.vy,p.vx)-Math.PI/4;
       v.trail.material.color.set(p.part==='carrot'?0xffbb70:0xad77ff);
     });
