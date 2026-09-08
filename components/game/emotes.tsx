@@ -21,7 +21,7 @@ export function EmoteBubble({ event }: { event: EmoteEvent | null }) {
         <img
           width={96}
           height={96}
-          src={emote.src + '?event=' + key}
+          src={emote.src + '&event=' + key}
           alt={emote.name}
         />
       </picture>

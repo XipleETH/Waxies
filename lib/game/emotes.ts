@@ -2,8 +2,8 @@ import catalog from './data/emotes.json';
 export const EMOTES = catalog.map((e) => ({
   ...e,
   name: e.label,
-  src: '/assets/emotes/' + e.id + '.gif',
-  poster: '/assets/emotes/' + e.id + '.png',
+  src: '/assets/emotes/' + e.id + '.gif?v=face2',
+  poster: '/assets/emotes/' + e.id + '.png?v=face2',
 }));
 export interface EmoteEvent {
   id: string;

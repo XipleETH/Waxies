@@ -15,7 +15,7 @@ void test('20 distinct authentic Axie GIFs are present with GIF89a signatures', 
     assert.match(e.genes, /^0x[0-9a-f]{128}$/i);
     assert.equal(e.testParts.length, 6);
     assert.equal(
-      readFileSync('public' + e.src)
+      readFileSync('public' + e.src.split('?')[0])
         .subarray(0, 6)
         .toString(),
       'GIF89a',
