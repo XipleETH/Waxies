@@ -1,3 +1,4 @@
+import { createMouthRelief, isLineMouth } from './mouth-relief';
 import {partSpriteMaterial} from './part-sprite-material';
 import * as THREE from 'three';
 import { ATTACK, isRadial, AREA_WARNING, areaRadius } from './hazards';
@@ -22,6 +23,8 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
     const backing=mesh(disk,new THREE.Color(color).lerp(new THREE.Color(0xffffff),.68).getHex(),.9);backing.scale.set(.66,.56,1);backing.position.z=.84;group.add(backing);
     const base=mesh(disk,0x10282a,0.9);base.scale.set(.69,.2,1);base.position.set(0,-.41,.65);group.add(base);
     const body=sprite(trap.part,1.32,trap.part==='grass-snake'?.82:1.04);body.position.z=1;group.add(body);
+    const mouth=isLineMouth(trap.part)?createMouthRelief(maps[trap.part],PARTS[trap.part].color):undefined;
+    if(mouth){mouth.root.position.z=1;mouth.root.scale.setScalar(1.15);group.add(mouth.root);body.visible=false;}
     const shield=mesh(ring,0x9bffd6,.8);shield.scale.setScalar(.77);shield.position.z=.8;group.add(shield);
     const charge=mesh(disk,0xffd56d);charge.scale.setScalar(.1);charge.position.set(0,.88,1);group.add(charge);
     const cue=mesh(ring,color,.6);cue.position.z=.6;group.add(cue);
@@ -33,7 +36,7 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
     for(let j=0;j<10;j++){const angle=j*Math.PI*2/10;const tooth=mesh(spike,color);tooth.position.set(Math.cos(angle)*1.3,Math.sin(angle)*1.3,.9);tooth.rotation.z=angle-Math.PI/2;thorns.add(tooth);}
     const health=mesh(quad,0x8ddeaf,.9);health.scale.set(.9,.06,1);health.position.set(0,.64,1.1);group.add(health);
     const links=level.traps.map(target=>{const line=mesh(quad,0x87efba,.3);const dx=target.x-trap.x,dy=target.y-trap.y;line.scale.set(Math.hypot(dx,dy),.045,1);line.rotation.z=Math.atan2(dy,dx);line.position.set(dx/2,dy/2,.85);group.add(line);return line;});
-    return {group,body,backing,shield,charge,cue,area,beam,arrow,thorns,health,links};
+    return {group,body,mouth,backing,shield,charge,cue,area,beam,arrow,thorns,health,links};
   });
   const darts=Array.from({length:64},()=>{
     const group=new THREE.Group();root.add(group);
@@ -48,6 +51,12 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
     stations.forEach((v,i)=>{
       const t=s.hazards.traps[i],part=level.traps[i].part,warn=t.stage==='warning',active=t.stage==='active';
       v.group.position.set(t.x,t.y,0);
+      if(v.mouth){
+        const warningDuration=s.raid&&(isRadial(part)||PARTS[part].recipe.pattern==='aura')?AREA_WARNING:ATTACK.warning;
+        const open=warn?0.2+0.8*(1-t.timer/warningDuration):active?0.04:0.12;
+        v.mouth.setOpen(open);
+        v.mouth.root.position.x=warn?Math.sin(s.time*45)*.035:0;
+      }
       v.body.material.opacity=1;
       v.body.material.color.set(t.stage==='disabled'?0x9aafba:0xffffff);
       v.health.visible=!s.raid&&t.hp<100;v.health.scale.x=.9*Math.max(0,t.hp)/100;v.health.position.x=-(.9-v.health.scale.x)/2;
@@ -87,5 +96,5 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
       v.group.position.set(p.x,p.y,.95);const fade=Math.min(1,p.life/.4);v.fill.material.opacity=.58*fade;v.edge.material.opacity=.85*fade;
     });
   }
-  return {update,dispose:()=>{root.removeFromParent();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());}};
+  return {update,dispose:()=>{root.removeFromParent();stations.forEach(v=>v.mouth?.dispose());geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());}};
 }
