@@ -5,18 +5,33 @@ import { PRACTICE_LAYOUTS } from '../lib/game/practice-layouts';
 import { choosePracticeCourse } from '../lib/game/practice-selection';
 import type { VerifiedCourse } from '../lib/game/route-proof';
 const courses = data as VerifiedCourse[];
-void test('practice contains eight genuinely different room geometries, not just different trap sets', () => {
+void test('practice keeps eight room families with distinct, individually authored paths', () => {
   const fingerprints = new Set(
     PRACTICE_LAYOUTS.map((l) => JSON.stringify([l.room, l.platforms, l.chest])),
   );
   assert.equal(fingerprints.size, 8);
+  assert.ok(
+    new Set(courses.map((c) => JSON.stringify(c.level.platforms))).size >= 20,
+  );
   assert.ok(new Set(PRACTICE_LAYOUTS.map((l) => l.room.h)).size >= 4);
   for (const layout of PRACTICE_LAYOUTS) {
     const variants = courses.filter((c) => c.level.layoutId === layout.id);
     assert.ok(variants.length >= 2, layout.id);
     for (const c of variants) {
       assert.deepEqual(c.level.room, layout.room);
-      assert.deepEqual(c.level.platforms, layout.platforms);
+      assert.ok(c.level.platforms.length >= 3, c.level.id);
+      for (const platform of c.level.platforms) {
+        assert.ok(platform.w > 0 && platform.h > 0, c.level.id);
+        assert.ok(
+          platform.x - platform.w / 2 >= -0.01 &&
+            platform.x + platform.w / 2 <= layout.room.w + 0.01,
+          c.level.id,
+        );
+        assert.ok(
+          platform.y > layout.room.floor && platform.y < layout.room.h,
+          c.level.id,
+        );
+      }
       assert.ok(
         c.level.chest.x > layout.room.left &&
           c.level.chest.x < layout.room.right,

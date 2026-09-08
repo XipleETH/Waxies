@@ -453,3 +453,6 @@
 .home-main-modes .home-mode-online {grid-area: 1 / 1;}
 .home-main-modes .home-mode-story {grid-area: 2 / 1;}
 .home-main-modes > .home-mode:not(.home-mode-online):not(.home-mode-story) {grid-area: 2 / 2;}
+
+/* Keep the same readable ink in part thumbnails outside the WebGL scenes. */
+img[src^='/assets/parts/'] {filter: contrast(.65) brightness(1.3) drop-shadow(0 1px 1px #d5e8a966);}

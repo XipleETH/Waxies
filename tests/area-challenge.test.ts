@@ -3,9 +3,9 @@ import test from 'node:test';
 import { PART_LIST } from '../lib/game/catalog';
 import { createState, type Dungeon } from '../lib/game/physics';
 import { AREA_WARNING, isArea, stepHazards } from '../lib/game/hazards';
-import { replay } from '../scripts/story-certification';
-import { routePressure } from '../lib/game/route-pressure';
 import story from '../lib/game/data/story-courses.json';
+import practice from '../lib/game/data/verified-courses.json';
+import { descentBypass, descends } from '../scripts/descent-certification';
 const base: Dungeon = {
   id: 'area-test',
   name: 'Area',
@@ -71,32 +71,11 @@ void test('Classic support auras retain their original non-damaging behaviour', 
   stepHazards(s, level, 1 / 120, s.y, false);
   assert.equal(s.hp, 100);
 });
-void test('levels 5 and 8 reject passive wall slides and simple routes that avoid a defense', () => {
-  for (const n of [5, 8]) {
-    const c = story[n - 1],
-      level = c.level as Dungeon;
-    assert.equal(replay(level, [], 2400), null, 'passive ' + n);
-    const schedules: number[][] = [];
-    for (let f = 0; f < 1440; f += 12) schedules.push([f]);
-    for (const interval of [24, 36, 48, 60, 90, 120, 180])
-      for (const offset of [0, 12, 24])
-        schedules.push(
-          Array.from(
-            { length: Math.ceil(2400 / interval) },
-            (_, i) => offset + i * interval,
-          ),
-        );
-    for (const actions of schedules) {
-      const proof = replay(level, actions, 2400);
-      if (proof) {
-        const p = routePressure(level, proof);
-        assert.equal(
-          p.encountered,
-          p.total,
-          `level ${n} bypass ${actions.slice(0, 3).join(',')}`,
-        );
-      }
-    }
-  }
+void test('all descending maps reject passive slides, single jumps and simple routes around defenses', () => {
+  const courses = [...story, ...practice].filter((c) =>
+    descends(c.level as Dungeon),
+  );
+  assert.ok(courses.length >= 78);
+  for (const c of courses)
+    assert.equal(descentBypass(c.level as Dungeon), null, c.level.id);
 });
-

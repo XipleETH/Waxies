@@ -1,3 +1,4 @@
+import { partSpriteMaterial } from './part-sprite-material';
 import * as T from 'three';
 import { loadMixedAvatar, type MixedAvatar } from './mixer-avatar';
 import { PARTS } from './catalog';
@@ -215,10 +216,15 @@ export function createLobbyScene(
     base.position.set(x, y / 2, z);
     const cap = mesh(new T.CylinderGeometry(0.47, 0.47, 0.1, 7), trim);
     cap.position.set(x, y + 0.02, z);
-    const texture = loader.load(part.partImage);
+    const texture = loader.load(part.partImage, (loaded) => {
+      if (disposed) return;
+      const image = loaded.image as { width: number; height: number };
+      const scale = Math.min(0.72 / image.width, 0.62 / image.height);
+      sprite.scale.set(image.width * scale, image.height * scale, 1);
+    });
     texture.colorSpace = T.SRGBColorSpace;
     textures.push(texture);
-    const material = new T.SpriteMaterial({ map: texture, depthWrite: false });
+    const material = partSpriteMaterial(texture, part.color);
     materials.push(material);
     const sprite = new T.Sprite(material);
     sprite.scale.set(0.72, 0.62, 1);

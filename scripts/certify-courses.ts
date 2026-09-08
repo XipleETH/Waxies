@@ -1,3 +1,4 @@
+import { descentBypass, descends } from './descent-certification';
 import { routePressure } from '../lib/game/route-pressure';
 import { replay } from './story-certification';
 import { dungeonGuardians } from '../lib/game/guardians';
@@ -68,4 +69,12 @@ for (const course of [...courses, ...story]) {
 if (generate) writeFileSync(path, JSON.stringify(courses, null, 2) + '\n');
 console.log(
   `${[...courses, ...story].reduce((sum, c) => sum + c.level.traps.length, 0)} defenses encountered; no room wins without jump input.`,
+);
+
+const descending = [...courses, ...story].filter((c) => descends(c.level));
+for (const c of descending)
+  if (descentBypass(c.level)) throw Error('Atajo descendente: ' + c.level.id);
+console.log(
+  descending.length +
+    ' descending courses checked against passive, single-jump and repeated-input bypasses.',
 );

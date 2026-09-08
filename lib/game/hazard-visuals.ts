@@ -1,3 +1,4 @@
+import {partSpriteMaterial} from './part-sprite-material';
 import * as THREE from 'three';
 import { ATTACK, isRadial, AREA_WARNING, areaRadius } from './hazards';
 import { PARTS } from './catalog';
@@ -13,14 +14,14 @@ export function createHazardVisuals(scene: THREE.Scene, level: Dungeon) {
   const quad = geometry(new THREE.PlaneGeometry(1,1)), spike = geometry(new THREE.ConeGeometry(0.16,0.65,5));
   const loader = new THREE.TextureLoader();
   const maps = Object.fromEntries([...new Set([...level.traps.map(t=>t.part),'carrot'])].map(id=>{const t=loader.load(PARTS[id].partImage);t.colorSpace=THREE.SRGBColorSpace;textures.push(t);return [id,t];}));
-  const sprite = (id: string, w: number, h: number) => {const m = new THREE.SpriteMaterial({map:maps[id],transparent:true,depthWrite:false,toneMapped:false,fog:false});materials.push(m);const mesh=new THREE.Sprite(m);mesh.scale.set(w,h,1);return mesh;};
+  const sprite = (id: string, w: number, h: number) => {const m = partSpriteMaterial(maps[id],PARTS[id].color);materials.push(m);const mesh=new THREE.Sprite(m);mesh.scale.set(w,h,1);return mesh;};
   const mesh = (g:THREE.BufferGeometry,color:string|number,opacity=1) => new THREE.Mesh(g,material(color,opacity));
   const stations = level.traps.map(trap=>{
     const group=new THREE.Group();root.add(group);
     const color=new THREE.Color(PARTS[trap.part].color).lerp(new THREE.Color(0xffffff),.28).getHex();
     const backing=mesh(disk,new THREE.Color(color).lerp(new THREE.Color(0xffffff),.68).getHex(),.9);backing.scale.set(.66,.56,1);backing.position.z=.84;group.add(backing);
     const base=mesh(disk,0x10282a,0.9);base.scale.set(.69,.2,1);base.position.set(0,-.41,.65);group.add(base);
-    const body=sprite(trap.part,1.32,trap.part==='grass-snake'?.82:1.04);body.position.z=1;body.material.onBeforeCompile=shader=>{shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>','#include <map_fragment>\n diffuseColor.rgb = max(diffuseColor.rgb, vec3(0.19, 0.25, 0.23));');};group.add(body);
+    const body=sprite(trap.part,1.32,trap.part==='grass-snake'?.82:1.04);body.position.z=1;group.add(body);
     const shield=mesh(ring,0x9bffd6,.8);shield.scale.setScalar(.77);shield.position.z=.8;group.add(shield);
     const charge=mesh(disk,0xffd56d);charge.scale.setScalar(.1);charge.position.set(0,.88,1);group.add(charge);
     const cue=mesh(ring,color,.6);cue.position.z=.6;group.add(cue);

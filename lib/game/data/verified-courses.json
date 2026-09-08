@@ -808,6 +808,12 @@
           "y": 14.3,
           "w": 5.2,
           "h": 0.55
+        },
+        {
+          "x": 2.3683333333333567,
+          "y": 13,
+          "w": 2.7366666666667134,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -840,9 +846,12 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 682,
+      "frames": 793,
       "actions": [
-        600
+        36,
+        324,
+        432,
+        684
       ]
     },
     "traversal": "descent",
@@ -850,14 +859,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.16,
-        0.08,
-        0.3
+        0.27,
+        0.69,
+        0.06
       ],
       "exposureFrames": [
-        36,
-        36,
-        48
+        60,
+        12,
+        42
       ]
     }
   },
@@ -1103,7 +1112,7 @@
       "id": "islands-3",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -1114,84 +1123,69 @@
         "floor": 1
       },
       "spawn": {
-        "x": 9.544,
-        "y": 14.955000000000002
+        "x": 2,
+        "y": 12.35
       },
       "chest": {
-        "x": 9.5,
+        "x": 2.2,
         "y": 1.8
       },
       "platforms": [
         {
-          "x": 5.2,
-          "y": 3,
-          "w": 2.6,
-          "h": 0.55
+          "x": 4.605,
+          "y": 3.3,
+          "w": 7.21,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 5.3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.495,
+          "y": 7.4,
+          "w": 7.01,
+          "h": 0.5
         },
         {
-          "x": 5,
-          "y": 7.5,
-          "w": 2.4,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 9.8,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 5.7,
-          "y": 12,
-          "w": 4.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.4,
-          "y": 14.3,
-          "w": 5.2,
-          "h": 0.55
+          "x": 4.605,
+          "y": 11.5,
+          "w": 7.21,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 3.75,
+          "x": 6.699999999999999,
           "y": 1.525,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0,
-          "reach": 1.45
+          "reach": 1.05
         },
         {
-          "x": 5.75,
-          "y": 8.3,
+          "x": 3.9550000000000005,
+          "y": 4.075,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 6
+          "phase": 0.7,
+          "reach": 4.5
         },
         {
-          "x": 4.2,
-          "y": 12.8,
+          "x": 6.845,
+          "y": 8.175,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 3,
-          "reach": 7.5
+          "phase": 1.4,
+          "reach": 4.5
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 838,
+      "frames": 836,
       "actions": [
-        672
+        36,
+        264,
+        432,
+        732
       ]
     },
     "traversal": "descent",
@@ -1199,14 +1193,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.19,
-        0.1,
-        0.05
+        0.05,
+        0.77,
+        0.07
       ],
       "exposureFrames": [
-        66,
-        42,
-        42
+        90,
+        24,
+        54
       ]
     }
   },
@@ -1452,7 +1446,7 @@
       "id": "islands-6",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -1463,84 +1457,69 @@
         "floor": 1
       },
       "spawn": {
-        "x": 7.256,
-        "y": 14.955000000000002
+        "x": 2,
+        "y": 12.35
       },
       "chest": {
-        "x": 2.5,
+        "x": 2.2,
         "y": 1.8
       },
       "platforms": [
         {
-          "x": 5.2,
-          "y": 3,
-          "w": 2.6,
-          "h": 0.55
+          "x": 4.735,
+          "y": 3.3,
+          "w": 7.47,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 5.3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.365,
+          "y": 7.4,
+          "w": 7.27,
+          "h": 0.5
         },
         {
-          "x": 5,
-          "y": 7.5,
-          "w": 2.4,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 9.8,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 5.7,
-          "y": 12,
-          "w": 4.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.4,
-          "y": 14.3,
-          "w": 5.2,
-          "h": 0.55
+          "x": 4.735,
+          "y": 11.5,
+          "w": 7.47,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 4.35,
-          "y": 12.8,
+          "x": 6.699999999999999,
+          "y": 1.525,
           "part": "kotaro",
           "patrol": 0,
           "phase": 0,
-          "reach": 1
+          "reach": 1.05
         },
         {
-          "x": 5.75,
-          "y": 8.3,
+          "x": 4.085,
+          "y": 4.075,
           "part": "anemone-back",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 1.2
+          "phase": 0.7,
+          "reach": 1.05
         },
         {
-          "x": 4.65,
-          "y": 3.8,
+          "x": 6.715,
+          "y": 8.175,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3,
-          "reach": 0.8
+          "phase": 1.4,
+          "reach": 1.05
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 682,
+      "frames": 985,
       "actions": [
-        600
+        36,
+        228,
+        552,
+        876
       ]
     },
     "traversal": "descent",
@@ -1548,14 +1527,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.16,
-        0.08,
-        0.3
+        0.04,
+        0.63,
+        0.4
       ],
       "exposureFrames": [
-        36,
-        36,
-        30
+        102,
+        12,
+        42
       ]
     }
   },
@@ -1909,6 +1888,12 @@
           "y": 15.5,
           "w": 4,
           "h": 0.55
+        },
+        {
+          "x": 8.726666666666679,
+          "y": 9.4,
+          "w": 4.546666666666641,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -2744,6 +2729,12 @@
           "y": 15.5,
           "w": 4,
           "h": 0.55
+        },
+        {
+          "x": 8.726666666666679,
+          "y": 9.4,
+          "w": 4.546666666666641,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -2810,7 +2801,7 @@
       "id": "forks-extra-27",
       "layoutId": "forks",
       "name": "El jardín partido",
-      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -2821,132 +2812,92 @@
         "floor": 1
       },
       "spawn": {
-        "x": 4.92,
-        "y": 16.155
+        "x": 10,
+        "y": 14.125
       },
       "chest": {
-        "x": 9.8,
-        "y": 8.8
+        "x": 2.2,
+        "y": 1.8
       },
       "platforms": [
         {
-          "x": 2.8,
-          "y": 3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 4.67,
+          "y": 3.3,
+          "w": 7.34,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.43,
+          "y": 6.625,
+          "w": 7.14,
+          "h": 0.5
         },
         {
-          "x": 5.6,
-          "y": 5.5,
-          "w": 3.4,
-          "h": 0.55
+          "x": 4.67,
+          "y": 9.95,
+          "w": 7.34,
+          "h": 0.5
         },
         {
-          "x": 2.4,
-          "y": 8,
-          "w": 2.8,
-          "h": 0.55
-        },
-        {
-          "x": 9,
-          "y": 8,
-          "w": 4,
-          "h": 0.55
-        },
-        {
-          "x": 5.9,
-          "y": 10.5,
-          "w": 3,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 13,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.8,
-          "y": 13,
-          "w": 4.4,
-          "h": 0.55
-        },
-        {
-          "x": 5.8,
-          "y": 15.5,
-          "w": 4,
-          "h": 0.55
+          "x": 7.43,
+          "y": 13.275,
+          "w": 7.14,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 1.55,
-          "y": 10.275,
+          "x": 6.699999999999999,
+          "y": 1.525,
           "part": "square-teeth",
           "patrol": 0,
           "phase": 0,
-          "reach": 1.2
+          "reach": 1.05
         },
         {
-          "x": 1.5,
-          "y": 13.8,
+          "x": 4.02,
+          "y": 4.075,
           "part": "ant",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 7.5
+          "phase": 0.7,
+          "reach": 4.5
         },
         {
-          "x": 10.45,
-          "y": 11.675,
+          "x": 6.779999999999999,
+          "y": 7.4,
           "part": "furball",
           "patrol": 0,
-          "phase": 3,
-          "reach": 9.5
+          "phase": 1.4,
+          "reach": 4.5
         }
       ],
       "theme": "moss"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1534,
+      "frames": 1177,
       "actions": [
-        24,
-        120,
-        216,
-        312,
-        408,
-        504,
-        600,
-        696,
-        792,
-        888,
-        984,
-        1080,
-        1176,
-        1272,
-        1368,
-        1464
+        72,
+        336,
+        492,
+        756,
+        852,
+        1068
       ]
     },
-    "traversal": "balcony",
+    "traversal": "descent",
     "pressure": {
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.17,
         0.04,
-        0.13
+        0.47,
+        0.39
       ],
       "exposureFrames": [
-        108,
-        42,
-        84
+        102,
+        66,
+        60
       ]
     }
   },
@@ -3557,6 +3508,12 @@
           "y": 12.5,
           "w": 3.4,
           "h": 0.55
+        },
+        {
+          "x": 11.9,
+          "y": 11.7,
+          "w": 2.1999999999999993,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -3789,6 +3746,12 @@
           "y": 12.5,
           "w": 3.4,
           "h": 0.55
+        },
+        {
+          "x": 2.1,
+          "y": 4.4,
+          "w": 2.2,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -3821,12 +3784,12 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 688,
+      "frames": 904,
       "actions": [
         60,
         72,
         132,
-        684
+        432
       ]
     },
     "traversal": "descent",
@@ -3835,12 +3798,12 @@
       "total": 3,
       "closest": [
         0.21,
-        0.19,
+        0.22,
         0.21
       ],
       "exposureFrames": [
         42,
-        168,
+        84,
         30
       ]
     }
@@ -4142,6 +4105,12 @@
           "y": 17,
           "w": 4.6,
           "h": 0.55
+        },
+        {
+          "x": 3.0833333333333566,
+          "y": 15.8,
+          "w": 4.166666666666713,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -4174,11 +4143,13 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 992,
+      "frames": 2012,
       "actions": [
-        120,
-        612,
-        948
+        0,
+        1044,
+        1272,
+        1632,
+        1968
       ]
     },
     "traversal": "descent",
@@ -4186,14 +4157,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.05,
-        0.19,
-        0.07
+        0.06,
+        0.18,
+        0.03
       ],
       "exposureFrames": [
-        108,
-        60,
-        30
+        120,
+        48,
+        84
       ]
     }
   },
@@ -4514,6 +4485,12 @@
           "y": 17,
           "w": 4.6,
           "h": 0.55
+        },
+        {
+          "x": 2.5416666666666905,
+          "y": 16.1,
+          "w": 3.083333333333381,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -4546,11 +4523,12 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 826,
+      "frames": 874,
       "actions": [
-        168,
+        120,
+        252,
         288,
-        660
+        708
       ]
     },
     "traversal": "descent",
@@ -4558,14 +4536,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.2,
-        0.05,
-        0.06
+        0.17,
+        0.06,
+        0.4
       ],
       "exposureFrames": [
-        54,
-        108,
-        48
+        48,
+        102,
+        36
       ]
     }
   },
@@ -6340,7 +6318,7 @@
       "id": "guardian-practice-perch",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -6351,54 +6329,36 @@
         "floor": 1
       },
       "spawn": {
-        "x": 9.544,
-        "y": 14.955000000000002
+        "x": 2,
+        "y": 12.35
       },
       "chest": {
-        "x": 9.5,
+        "x": 2.2,
         "y": 1.8
       },
       "platforms": [
         {
-          "x": 5.2,
-          "y": 3,
-          "w": 2.6,
-          "h": 0.55
+          "x": 4.702500000000001,
+          "y": 3.3,
+          "w": 7.405,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 5.3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.3975,
+          "y": 7.4,
+          "w": 7.205,
+          "h": 0.5
         },
         {
-          "x": 5,
-          "y": 7.5,
-          "w": 2.4,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 9.8,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 5.7,
-          "y": 12,
-          "w": 4.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.4,
-          "y": 14.3,
-          "w": 5.2,
-          "h": 0.55
+          "x": 4.702500000000001,
+          "y": 11.5,
+          "w": 7.405,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 2.7,
+          "x": 6.699999999999999,
           "y": 1.525,
           "part": "merry",
           "patrol": 0,
@@ -6406,29 +6366,32 @@
           "reach": 0.4
         },
         {
-          "x": 5.75,
-          "y": 8.3,
+          "x": 4.0525,
+          "y": 4.075,
           "part": "lam",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 1.2
+          "phase": 0.7,
+          "reach": 1.05
         },
         {
-          "x": 4.2,
-          "y": 12.8,
+          "x": 6.7475,
+          "y": 8.175,
           "part": "perch",
           "patrol": 0,
-          "phase": 3,
-          "reach": 3.8
+          "phase": 1.4,
+          "reach": 4.5
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 838,
+      "frames": 969,
       "actions": [
-        672
+        36,
+        216,
+        540,
+        864
       ]
     },
     "traversal": "descent",
@@ -6436,13 +6399,13 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.39,
-        0.1,
-        0.05
+        0.09,
+        0.54,
+        0.16
       ],
       "exposureFrames": [
-        60,
-        42,
+        84,
+        24,
         42
       ]
     }
@@ -6452,7 +6415,7 @@
       "id": "guardian-practice-teal-shell",
       "layoutId": "forks",
       "name": "El jardín partido",
-      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -6463,132 +6426,93 @@
         "floor": 1
       },
       "spawn": {
-        "x": 4.92,
-        "y": 16.155
+        "x": 10,
+        "y": 14.125
       },
       "chest": {
-        "x": 9.8,
-        "y": 8.8
+        "x": 2.2,
+        "y": 1.8
       },
       "platforms": [
         {
-          "x": 2.8,
-          "y": 3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 4.8,
+          "y": 3.3,
+          "w": 7.6,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.3,
+          "y": 6.625,
+          "w": 7.4,
+          "h": 0.5
         },
         {
-          "x": 5.6,
-          "y": 5.5,
-          "w": 3.4,
-          "h": 0.55
+          "x": 4.8,
+          "y": 9.95,
+          "w": 7.6,
+          "h": 0.5
         },
         {
-          "x": 2.4,
-          "y": 8,
-          "w": 2.8,
-          "h": 0.55
-        },
-        {
-          "x": 9,
-          "y": 8,
-          "w": 4,
-          "h": 0.55
-        },
-        {
-          "x": 5.9,
-          "y": 10.5,
-          "w": 3,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 13,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.8,
-          "y": 13,
-          "w": 4.4,
-          "h": 0.55
-        },
-        {
-          "x": 5.8,
-          "y": 15.5,
-          "w": 4,
-          "h": 0.55
+          "x": 7.3,
+          "y": 13.275,
+          "w": 7.4,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 1.55,
-          "y": 10.275,
+          "x": 6.699999999999999,
+          "y": 1.525,
           "part": "anemone-back",
           "patrol": 0,
           "phase": 0,
-          "reach": 1.2
+          "reach": 1.05
         },
         {
-          "x": 2.35,
-          "y": 11.325,
+          "x": 4.1499999999999995,
+          "y": 4.075,
           "part": "teal-shell",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 0.8
+          "phase": 0.7,
+          "reach": 1.05
         },
         {
-          "x": 10.05,
-          "y": 12.025,
+          "x": 6.6499999999999995,
+          "y": 7.4,
           "part": "lam",
           "patrol": 0,
-          "phase": 3,
-          "reach": 1
+          "phase": 1.4,
+          "reach": 1.05
         }
       ],
       "theme": "moss"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1534,
+      "frames": 1232,
       "actions": [
+        0,
         24,
-        120,
-        216,
-        312,
-        408,
-        504,
-        600,
-        696,
+        96,
+        348,
+        516,
         792,
-        888,
-        984,
-        1080,
-        1176,
-        1272,
-        1368,
-        1464
+        1128
       ]
     },
-    "traversal": "balcony",
+    "traversal": "descent",
     "pressure": {
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.17,
-        0.17,
-        0.37
+        0.05,
+        0.22,
+        0.13
       ],
       "exposureFrames": [
-        108,
-        48,
-        36
+        90,
+        66,
+        84
       ]
     }
   },
@@ -7786,7 +7710,7 @@
       "id": "guardian-practice-imp",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -7797,84 +7721,69 @@
         "floor": 1
       },
       "spawn": {
-        "x": 9.544,
-        "y": 14.955000000000002
+        "x": 2,
+        "y": 12.35
       },
       "chest": {
-        "x": 9.5,
+        "x": 2.2,
         "y": 1.8
       },
       "platforms": [
         {
-          "x": 5.2,
-          "y": 3,
-          "w": 2.6,
-          "h": 0.55
+          "x": 4.735,
+          "y": 3.3,
+          "w": 7.47,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 5.3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.365,
+          "y": 7.4,
+          "w": 7.27,
+          "h": 0.5
         },
         {
-          "x": 5,
-          "y": 7.5,
-          "w": 2.4,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 9.8,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 5.7,
-          "y": 12,
-          "w": 4.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.4,
-          "y": 14.3,
-          "w": 5.2,
-          "h": 0.55
+          "x": 4.735,
+          "y": 11.5,
+          "w": 7.47,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 2.7,
+          "x": 6.699999999999999,
           "y": 1.525,
           "part": "furball",
           "patrol": 0,
           "phase": 0,
-          "reach": 9.5
+          "reach": 4.5
         },
         {
-          "x": 5.75,
-          "y": 8.3,
+          "x": 4.085,
+          "y": 4.075,
           "part": "piranha",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 6
+          "phase": 0.7,
+          "reach": 4.5
         },
         {
-          "x": 4.2,
-          "y": 12.8,
+          "x": 6.715,
+          "y": 8.175,
           "part": "imp",
           "patrol": 0,
-          "phase": 3,
-          "reach": 0.8
+          "phase": 1.4,
+          "reach": 1.05
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 838,
+      "frames": 1032,
       "actions": [
-        672
+        36,
+        228,
+        516,
+        924
       ]
     },
     "traversal": "descent",
@@ -7882,12 +7791,12 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.39,
-        0.1,
-        0.05
+        0.07,
+        0.4,
+        0.4
       ],
       "exposureFrames": [
-        60,
+        78,
         42,
         42
       ]
@@ -7898,7 +7807,7 @@
       "id": "guardian-practice-pocky",
       "layoutId": "forks",
       "name": "El jardín partido",
-      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -7909,92 +7818,62 @@
         "floor": 1
       },
       "spawn": {
-        "x": 4.92,
-        "y": 16.155
+        "x": 2,
+        "y": 14.125
       },
       "chest": {
-        "x": 9.8,
-        "y": 8.8
+        "x": 9.3,
+        "y": 1.8
       },
       "platforms": [
         {
-          "x": 2.8,
-          "y": 3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.39,
+          "y": 3.3,
+          "w": 7.22,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 4.51,
+          "y": 6.625,
+          "w": 7.02,
+          "h": 0.5
         },
         {
-          "x": 5.6,
-          "y": 5.5,
-          "w": 3.4,
-          "h": 0.55
+          "x": 7.39,
+          "y": 9.95,
+          "w": 7.22,
+          "h": 0.5
         },
         {
-          "x": 2.4,
-          "y": 8,
-          "w": 2.8,
-          "h": 0.55
-        },
-        {
-          "x": 9,
-          "y": 8,
-          "w": 4,
-          "h": 0.55
-        },
-        {
-          "x": 5.9,
-          "y": 10.5,
-          "w": 3,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 13,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.8,
-          "y": 13,
-          "w": 4.4,
-          "h": 0.55
-        },
-        {
-          "x": 5.8,
-          "y": 15.5,
-          "w": 4,
-          "h": 0.55
+          "x": 4.51,
+          "y": 13.275,
+          "w": 7.02,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 1.5,
-          "y": 13.8,
+          "x": 5.300000000000001,
+          "y": 1.525,
           "part": "hermit",
           "patrol": 0,
           "phase": 0,
           "reach": 0.4
         },
         {
-          "x": 2.35,
-          "y": 11.325,
+          "x": 7.39,
+          "y": 4.075,
           "part": "pocky",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 3.8
+          "phase": 0.7,
+          "reach": 5.75
         },
         {
-          "x": 1.55,
-          "y": 10.275,
+          "x": 4.51,
+          "y": 7.4,
           "part": "lam",
           "patrol": 0,
-          "phase": 3,
+          "phase": 1.4,
           "reach": 1.2
         }
       ],
@@ -8002,39 +7881,29 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1534,
+      "frames": 1105,
       "actions": [
-        24,
-        120,
-        216,
-        312,
-        408,
-        504,
+        36,
+        516,
         600,
-        696,
-        792,
-        888,
-        984,
-        1080,
-        1176,
-        1272,
-        1368,
-        1464
+        744,
+        828,
+        1008
       ]
     },
-    "traversal": "balcony",
+    "traversal": "descent",
     "pressure": {
       "encountered": 3,
       "total": 3,
       "closest": [
         0.04,
-        0.17,
+        0.81,
         0.17
       ],
       "exposureFrames": [
-        42,
-        72,
-        108
+        84,
+        18,
+        78
       ]
     }
   },
@@ -8246,6 +8115,12 @@
           "y": 17,
           "w": 4.6,
           "h": 0.55
+        },
+        {
+          "x": 2.5416666666666905,
+          "y": 16.1,
+          "w": 3.083333333333381,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -8278,11 +8153,12 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 826,
+      "frames": 874,
       "actions": [
-        168,
+        120,
+        252,
         288,
-        660
+        708
       ]
     },
     "traversal": "descent",
@@ -8290,14 +8166,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.31,
-        0.2,
-        0.06
+        0.33,
+        0.17,
+        0.4
       ],
       "exposureFrames": [
         90,
-        54,
-        48
+        48,
+        36
       ]
     }
   },
@@ -8366,6 +8242,12 @@
           "y": 17,
           "w": 4.6,
           "h": 0.55
+        },
+        {
+          "x": 2.693333333333358,
+          "y": 15.7,
+          "w": 3.3866666666667156,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -8416,14 +8298,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.2,
+        0.09,
         0.15,
-        0.01
+        0.11
       ],
       "exposureFrames": [
-        126,
+        42,
         108,
-        138
+        30
       ]
     }
   },
@@ -8940,7 +8822,7 @@
       "id": "guardian-practice-kestrel",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -8951,84 +8833,69 @@
         "floor": 1
       },
       "spawn": {
-        "x": 7.256,
-        "y": 14.955000000000002
+        "x": 2,
+        "y": 12.35
       },
       "chest": {
-        "x": 2.5,
+        "x": 2.2,
         "y": 1.8
       },
       "platforms": [
         {
-          "x": 5.2,
-          "y": 3,
-          "w": 2.6,
-          "h": 0.55
+          "x": 4.67,
+          "y": 3.3,
+          "w": 7.34,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 5.3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.43,
+          "y": 7.4,
+          "w": 7.14,
+          "h": 0.5
         },
         {
-          "x": 5,
-          "y": 7.5,
-          "w": 2.4,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 9.8,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 5.7,
-          "y": 12,
-          "w": 4.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.4,
-          "y": 14.3,
-          "w": 5.2,
-          "h": 0.55
+          "x": 4.67,
+          "y": 11.5,
+          "w": 7.34,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 5.75,
-          "y": 12.8,
+          "x": 6.699999999999999,
+          "y": 1.525,
           "part": "confident",
           "patrol": 0,
           "phase": 0,
-          "reach": 1.45
+          "reach": 1.05
         },
         {
-          "x": 5.75,
-          "y": 8.3,
+          "x": 4.02,
+          "y": 4.075,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 6
+          "phase": 0.7,
+          "reach": 4.5
         },
         {
-          "x": 4.65,
-          "y": 3.8,
+          "x": 6.779999999999999,
+          "y": 8.175,
           "part": "kestrel",
           "patrol": 0,
-          "phase": 3,
-          "reach": 7.5
+          "phase": 1.4,
+          "reach": 4.5
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 682,
+      "frames": 1005,
       "actions": [
-        600
+        36,
+        240,
+        504,
+        900
       ]
     },
     "traversal": "descent",
@@ -9036,12 +8903,12 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.27,
-        0.08,
-        0.3
+        0.09,
+        0.59,
+        0.09
       ],
       "exposureFrames": [
-        30,
+        84,
         36,
         30
       ]
@@ -9401,6 +9268,12 @@
           "y": 15.5,
           "w": 4,
           "h": 0.55
+        },
+        {
+          "x": 8.726666666666679,
+          "y": 9.4,
+          "w": 4.546666666666641,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -9515,6 +9388,12 @@
           "y": 12.5,
           "w": 3.4,
           "h": 0.55
+        },
+        {
+          "x": 11.9,
+          "y": 11.7,
+          "w": 2.1999999999999993,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -10435,7 +10314,7 @@
       "id": "guardian-practice-parasite",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -10446,84 +10325,69 @@
         "floor": 1
       },
       "spawn": {
-        "x": 7.256,
-        "y": 14.955000000000002
+        "x": 2,
+        "y": 12.35
       },
       "chest": {
-        "x": 2.5,
+        "x": 2.2,
         "y": 1.8
       },
       "platforms": [
         {
-          "x": 5.2,
-          "y": 3,
-          "w": 2.6,
-          "h": 0.55
+          "x": 4.7675,
+          "y": 3.3,
+          "w": 7.535,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 5.3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.3325,
+          "y": 7.4,
+          "w": 7.335,
+          "h": 0.5
         },
         {
-          "x": 5,
-          "y": 7.5,
-          "w": 2.4,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 9.8,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 5.7,
-          "y": 12,
-          "w": 4.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.4,
-          "y": 14.3,
-          "w": 5.2,
-          "h": 0.55
+          "x": 4.7675,
+          "y": 11.5,
+          "w": 7.535,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 4.35,
-          "y": 12.8,
+          "x": 6.699999999999999,
+          "y": 1.525,
           "part": "anemone-back",
           "patrol": 0,
           "phase": 0,
-          "reach": 1
+          "reach": 1.05
         },
         {
-          "x": 5.75,
-          "y": 8.3,
+          "x": 4.1175,
+          "y": 4.075,
           "part": "parasite",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 12
+          "phase": 0.7,
+          "reach": 4.5
         },
         {
-          "x": 4.65,
-          "y": 3.8,
+          "x": 6.682499999999999,
+          "y": 8.175,
           "part": "confident",
           "patrol": 0,
-          "phase": 3,
-          "reach": 1.45
+          "phase": 1.4,
+          "reach": 1.05
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 682,
+      "frames": 993,
       "actions": [
-        600
+        36,
+        216,
+        552,
+        888
       ]
     },
     "traversal": "descent",
@@ -10531,14 +10395,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.16,
-        0.08,
-        0.3
+        0.09,
+        0.68,
+        0.11
       ],
       "exposureFrames": [
-        36,
-        36,
-        30
+        96,
+        24,
+        48
       ]
     }
   },
@@ -10878,6 +10742,12 @@
           "y": 15.5,
           "w": 4,
           "h": 0.55
+        },
+        {
+          "x": 8.726666666666679,
+          "y": 9.4,
+          "w": 4.546666666666641,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -10944,7 +10814,7 @@
       "id": "guardian-practice-twin-tail",
       "layoutId": "forks",
       "name": "El jardín partido",
-      "subtitle": "Busca el cofre en un balcón intermedio: controla las caídas y los cambios de lado.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -10955,132 +10825,91 @@
         "floor": 1
       },
       "spawn": {
-        "x": 4.92,
-        "y": 16.155
+        "x": 10,
+        "y": 14.125
       },
       "chest": {
-        "x": 9.8,
-        "y": 8.8
+        "x": 2.2,
+        "y": 1.8
       },
       "platforms": [
         {
-          "x": 2.8,
-          "y": 3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 4.735,
+          "y": 3.3,
+          "w": 7.47,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.365,
+          "y": 6.625,
+          "w": 7.27,
+          "h": 0.5
         },
         {
-          "x": 5.6,
-          "y": 5.5,
-          "w": 3.4,
-          "h": 0.55
+          "x": 4.735,
+          "y": 9.95,
+          "w": 7.47,
+          "h": 0.5
         },
         {
-          "x": 2.4,
-          "y": 8,
-          "w": 2.8,
-          "h": 0.55
-        },
-        {
-          "x": 9,
-          "y": 8,
-          "w": 4,
-          "h": 0.55
-        },
-        {
-          "x": 5.9,
-          "y": 10.5,
-          "w": 3,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 13,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.8,
-          "y": 13,
-          "w": 4.4,
-          "h": 0.55
-        },
-        {
-          "x": 5.8,
-          "y": 15.5,
-          "w": 4,
-          "h": 0.55
+          "x": 7.365,
+          "y": 13.275,
+          "w": 7.27,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 1.55,
-          "y": 10.275,
+          "x": 6.699999999999999,
+          "y": 1.525,
           "part": "square-teeth",
           "patrol": 0,
           "phase": 0,
-          "reach": 1.2
+          "reach": 1.05
         },
         {
-          "x": 1.5,
-          "y": 13.8,
+          "x": 4.085,
+          "y": 4.075,
           "part": "anemone-horn",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 7.5
+          "phase": 0.7,
+          "reach": 4.5
         },
         {
-          "x": 10.45,
-          "y": 10.975,
+          "x": 6.715,
+          "y": 7.4,
           "part": "twin-tail",
           "patrol": 0,
-          "phase": 2.4,
-          "reach": 9.5
+          "phase": 1.4,
+          "reach": 4.5
         }
       ],
       "theme": "moss"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 1534,
+      "frames": 1189,
       "actions": [
-        24,
-        120,
-        216,
-        312,
-        408,
-        504,
-        600,
-        696,
-        792,
-        888,
-        984,
-        1080,
-        1176,
-        1272,
-        1368,
-        1464
+        72,
+        336,
+        492,
+        768,
+        1080
       ]
     },
-    "traversal": "balcony",
+    "traversal": "descent",
     "pressure": {
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.17,
         0.04,
-        0.27
+        0.56,
+        0.34
       ],
       "exposureFrames": [
-        108,
-        42,
-        66
+        102,
+        60,
+        54
       ]
     }
   },
@@ -12387,6 +12216,12 @@
           "y": 12.5,
           "w": 3.4,
           "h": 0.55
+        },
+        {
+          "x": 11.9,
+          "y": 6.5,
+          "w": 2.1999999999999993,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -12419,11 +12254,10 @@
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 759,
+      "frames": 693,
       "actions": [
-        12,
-        504,
-        600
+        420,
+        528
       ]
     },
     "traversal": "descent",
@@ -12433,12 +12267,12 @@
       "closest": [
         0.29,
         0.69,
-        0.23
+        0.33
       ],
       "exposureFrames": [
         156,
         48,
-        24
+        48
       ]
     }
   },
@@ -12495,6 +12329,12 @@
           "y": 12.5,
           "w": 3.4,
           "h": 0.55
+        },
+        {
+          "x": 11.9,
+          "y": 11.7,
+          "w": 2.1999999999999993,
+          "h": 0.4
         }
       ],
       "traps": [
@@ -13429,7 +13269,7 @@
       "id": "guardian-practice-razor-bite",
       "layoutId": "islands",
       "name": "Las islas suspendidas",
-      "subtitle": "Entra por arriba y desciende entre las defensas hasta el cofre.",
+      "subtitle": "Cruza las compuertas y cambia de lado para descender hasta el cofre.",
       "difficulty": "Exploración",
       "rules": "raid",
       "room": {
@@ -13440,84 +13280,70 @@
         "floor": 1
       },
       "spawn": {
-        "x": 7.256,
-        "y": 14.955000000000002
+        "x": 2,
+        "y": 12.35
       },
       "chest": {
-        "x": 2.5,
+        "x": 2.2,
         "y": 1.8
       },
       "platforms": [
         {
-          "x": 5.2,
-          "y": 3,
-          "w": 2.6,
-          "h": 0.55
+          "x": 4.605,
+          "y": 3.3,
+          "w": 7.21,
+          "h": 0.5
         },
         {
-          "x": 9.2,
-          "y": 5.3,
-          "w": 3.6,
-          "h": 0.55
+          "x": 7.495,
+          "y": 7.4,
+          "w": 7.01,
+          "h": 0.5
         },
         {
-          "x": 5,
-          "y": 7.5,
-          "w": 2.4,
-          "h": 0.55
-        },
-        {
-          "x": 2.6,
-          "y": 9.8,
-          "w": 3.2,
-          "h": 0.55
-        },
-        {
-          "x": 5.7,
-          "y": 12,
-          "w": 4.2,
-          "h": 0.55
-        },
-        {
-          "x": 8.4,
-          "y": 14.3,
-          "w": 5.2,
-          "h": 0.55
+          "x": 4.605,
+          "y": 11.5,
+          "w": 7.21,
+          "h": 0.5
         }
       ],
       "traps": [
         {
-          "x": 4.35,
-          "y": 12.8,
+          "x": 6.699999999999999,
+          "y": 1.525,
           "part": "anemone-back",
           "patrol": 0,
           "phase": 0,
-          "reach": 1
+          "reach": 1.05
         },
         {
-          "x": 5.75,
-          "y": 8.3,
+          "x": 3.9550000000000005,
+          "y": 4.075,
           "part": "razor-bite",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 1.2
+          "phase": 0.7,
+          "reach": 1.05
         },
         {
-          "x": 4.65,
-          "y": 3.8,
+          "x": 6.845,
+          "y": 8.175,
           "part": "babylonia",
           "patrol": 0,
-          "phase": 3,
-          "reach": 0.8
+          "phase": 1.4,
+          "reach": 1.05
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
       "rules": "portrait-raid-v1",
-      "frames": 682,
+      "frames": 1102,
       "actions": [
-        600
+        36,
+        228,
+        504,
+        672,
+        996
       ]
     },
     "traversal": "descent",
@@ -13525,14 +13351,14 @@
       "encountered": 3,
       "total": 3,
       "closest": [
-        0.16,
-        0.08,
-        0.3
+        0.12,
+        0.73,
+        0.44
       ],
       "exposureFrames": [
-        36,
-        36,
-        30
+        84,
+        42,
+        42
       ]
     }
   },
