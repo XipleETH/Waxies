@@ -164,7 +164,7 @@ export default function MobileApp() {
     launch({
       ...course,
       mode: 'story',
-      axie: null,
+      axie: guestAxie,
       storyNumber: number,
       previousBest: profileRef.current.story[number - 1] ?? 0,
     });
@@ -341,7 +341,7 @@ export default function MobileApp() {
           {(screen === 'home' || screen === 'axie') && (
             <button
               className="m-axie-shortcut"
-              onClick={() => setScreen('axie')}
+              onClick={() => setScreen(screen === 'axie' ? 'home' : 'axie')}
               aria-label="Mi Axie"
               aria-current={screen === 'axie' ? 'page' : undefined}
             >
@@ -355,7 +355,7 @@ export default function MobileApp() {
         {screen === 'home' ? (
           <>
             <section className="home-actions" aria-label="Jugar y personalizar">
-              <div className="home-mode-rail">
+              <div className="home-mode-rail home-main-modes">
                 <button
                   className="home-mode home-mode-story"
                   aria-label={`Historia ${storyUnlocked(profile.story)} de ${STORY_LENGTH}`}
@@ -381,8 +381,6 @@ export default function MobileApp() {
                   </span>
                   <span className="home-mode-label">Online</span>
                 </button>
-              </div>
-              <div className="home-mode-rail">
                 <button
                   className="home-mode"
                   aria-label="Práctica"
@@ -394,6 +392,8 @@ export default function MobileApp() {
                   </span>
                   <span className="home-mode-label">Práctica</span>
                 </button>
+              </div>
+              <div className="home-mode-rail">
                 <button
                   className="home-mode"
                   aria-label="Capítulos"

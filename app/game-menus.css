@@ -446,3 +446,10 @@
 .m-axie-shortcut span {font-size: 9px; font-weight: 700;}
 .m-axie-shortcut[aria-current='page'] {background: linear-gradient(#d3dfa0, #91ad70); color: #203d29; border-color: #e0e7ad;}
 .m-axie-shortcut:active {transform: translateY(2px);}
+
+/* Online sits above Story; Practice shares Story's lower row. */
+.home-actions {align-items: flex-end;}
+.home-main-modes {display: grid; grid-template-columns: repeat(2, 64px); grid-template-rows: auto auto;}
+.home-main-modes .home-mode-online {grid-area: 1 / 1;}
+.home-main-modes .home-mode-story {grid-area: 2 / 1;}
+.home-main-modes > .home-mode:not(.home-mode-online):not(.home-mode-story) {grid-area: 2 / 2;}
