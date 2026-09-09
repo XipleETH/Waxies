@@ -1,90 +1,23 @@
+/* The diorama fills the whole surface; every control floats over it as a chip
+   or button, so no stacked bars box the map in. */
 .map {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   height: 100%;
   min-height: 0;
+  overflow: hidden;
   background: #172f2b;
   color: #eff3dc;
 }
-.heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 62px 8px 20px;
-  background: linear-gradient(#314c40, #20382f);
-}
-.heading small,
-.chapters small,
-.title small {
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: #afc5a9;
-  font-weight: 700;
-}
-.heading h2 {
-  font: 800 30px/1.1 var(--font-display);
-  color: #f4e9bc;
-  margin: 2px 0;
-}
-.lore,
-.chapters button {
-  display: grid;
-  place-items: center;
-  border: 1px solid #94aa7660;
-  background: linear-gradient(#49644e, #2c4637);
-  border-radius: 12px;
-  width: 40px;
-  height: 40px;
-  box-shadow:
-    0 4px 0 #102a22,
-    inset 0 1px #c8df9c40;
-}
-.progress {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 20px;
-  background: #20382f;
-  color: #e4cf90;
-  font-size: 11px;
-  border-bottom: 1px solid #94aa7644;
-}
-.progress span {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-.chapters {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 16px;
-  background: #192f28;
-  z-index: 1;
-  box-shadow: 0 8px 18px #091c2860;
-}
-.chapters div {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 3px;
-}
-.chapters strong {
-  font: 700 16px var(--font-display);
-}
-.chapters button:disabled {
-  opacity: 0.3;
-}
 .scroll {
-  flex: 1;
-  min-height: 0;
+  position: absolute;
+  inset: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: thin;
-  scrollbar-color: #719974 #172f2b;
+  scrollbar-color: #719974 transparent;
 }
 .world {
   position: relative;
-  height: 1240px;
   overflow: hidden;
   background: radial-gradient(ellipse at center, #42694c, #172f2b 70%);
 }
@@ -98,6 +31,144 @@
   height: 100%;
   display: block;
 }
+
+/* Floating HUD — a scrim that fades into the map instead of a solid bar. */
+.topbar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 16px 34px;
+  background: linear-gradient(#172f2bf5 44%, #172f2b00);
+  pointer-events: none;
+}
+.topbar .stat,
+.topbar .lore,
+.topbar .arrow {
+  pointer-events: auto;
+}
+.brandRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding-right: 56px;
+}
+.brand small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #afc5a9;
+  font-weight: 700;
+}
+.brand h2 {
+  font: 800 27px/1.05 var(--font-display);
+  color: #f4e9bc;
+  margin-top: 2px;
+  text-shadow: 0 2px 8px #0a1a16;
+}
+.hud {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  height: 34px;
+  padding: 0 13px;
+  border-radius: 999px;
+  background: #1d332cdb;
+  border: 1px solid #94aa7655;
+  color: #e6d296;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.metric {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.metric + .metric {
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid #94aa7555;
+}
+.lore {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border: 1px solid #94aa7666;
+  background: linear-gradient(#49644e, #2c4637);
+  border-radius: 12px;
+  box-shadow:
+    0 3px 0 #102a22,
+    inset 0 1px #c8df9c40;
+  color: #eff3dc;
+}
+/* Zone selector: two round buttons flanking a name chip. */
+.zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.zoneName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1px;
+  min-width: 148px;
+  padding: 6px 18px;
+  border-radius: 14px;
+  background: #16302be6;
+  border: 1px solid #94aa7644;
+}
+.zoneName small {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #afc5a9;
+  font-weight: 700;
+}
+.zoneName strong {
+  font: 700 15px var(--font-display);
+  color: #eef3db;
+}
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border: 1px solid #94aa7660;
+  background: linear-gradient(#49644e, #2c4637);
+  border-radius: 12px;
+  box-shadow:
+    0 4px 0 #102a22,
+    inset 0 1px #c8df9c40;
+  color: #eff3dc;
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+.arrow:disabled {
+  opacity: 0.3;
+  box-shadow: none;
+}
+.arrow:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #102a22;
+}
+
+/* Level markers projected onto the diorama. */
 .node {
   position: absolute;
   transform: translate(-50%, -8%);
@@ -160,14 +231,28 @@
   border-radius: 12px;
   outline-offset: 4px;
 }
+.node::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  width: 100px;
+  height: 76px;
+}
+
+/* Bottom card holds the mazmorra briefing and the raid button. */
 .preview {
-  padding: 14px 18px max(12px, env(safe-area-inset-bottom));
-  border-top: 3px solid #889f6a;
-  background: linear-gradient(135deg, #385242, #223a30);
-  box-shadow:
-    0 -9px 24px #071c2370,
-    inset 0 1px #e2e9b380;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2;
+  padding: 14px 16px max(14px, env(safe-area-inset-bottom));
+  border-radius: 22px 22px 0 0;
+  border-top: 2px solid #889f6a;
+  background: linear-gradient(#33503fef, #1c352bf7);
+  box-shadow:
+    0 -12px 30px #071c2380,
+    inset 0 1px #e2e9b355;
 }
 .title {
   display: flex;
@@ -193,13 +278,16 @@
 }
 .title small {
   font-size: 8px;
+  letter-spacing: 2px;
+  color: #afc5a9;
+  font-weight: 700;
 }
 .loot {
   display: flex;
   justify-content: space-between;
   gap: 8px;
   font-size: 11px;
-  margin: 12px 0;
+  margin: 11px 0;
   color: #e3c780;
 }
 .loot span {
@@ -213,6 +301,9 @@
 .loot b {
   font-size: 16px;
 }
+.preview > button {
+  min-height: 46px;
+}
 .rule {
   display: block;
   text-align: center;
@@ -220,27 +311,22 @@
   font-size: 10px;
   margin-top: 9px;
 }
-.preview > button {
-  min-height: 44px;
-}
 .fallback {
   position: absolute;
-  top: 8px;
+  top: 96px;
   left: 16px;
   font-size: 11px;
 }
 @media (max-height: 740px) {
-  .heading {
-    padding-top: 10px;
+  .topbar {
+    padding-top: 12px;
+    gap: 9px;
   }
-  .heading h2 {
-    font-size: 25px;
-  }
-  .chapters {
-    padding: 8px 16px;
+  .brand h2 {
+    font-size: 23px;
   }
   .preview {
-    padding-top: 9px;
+    padding-top: 10px;
   }
   .loot {
     margin: 8px 0;
@@ -248,11 +334,4 @@
   .rule {
     font-size: 9px;
   }
-}
-.node::before {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  width: 100px;
-  height: 76px;
 }

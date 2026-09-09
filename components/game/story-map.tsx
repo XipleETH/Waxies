@@ -73,57 +73,20 @@ export function StoryMap({
   }, [pins, chapter, unlocked]);
   const hp = best[selected - 1] ?? 0,
     locked = selected > unlocked,
-    level = courses[selected - 1].level;
+    level = courses[selected - 1].level,
+    done = best.filter((h) => h > 0).length,
+    collected = best.reduce((a, b) => a + b, 0);
   function changeChapter(next: number) {
     setChapter(next);
     setSelected(Math.max(next * 10 + 1, Math.min(unlocked, next * 10 + 10)));
   }
   return (
     <div className={styles.map}>
-      <header className={styles.heading}>
-        <div>
-          <small>LA GUERRA DE LOS COFRES</small>
-          <h2>Lunacia</h2>
-        </div>
-        <button
-          onClick={onPrologue}
-          aria-label="Ver prólogo"
-          className={styles.lore}
-        >
-          <BookOpen size={20} />
-        </button>
-      </header>
-      <div className={styles.progress}>
-        <span>
-          <Check size={14} /> {best.filter((h) => h > 0).length}/{STORY_LENGTH}
-        </span>
-        <span>
-          <Sparkles size={14} /> {best.reduce((a, b) => a + b, 0)} / 5000
-          recogidas
-        </span>
-      </div>
-      <nav className={styles.chapters} aria-label="Zonas de historia">
-        <button
-          disabled={chapter === 0}
-          onClick={() => changeChapter(chapter - 1)}
-          aria-label="Zona anterior"
-        >
-          <ChevronLeft />
-        </button>
-        <div>
-          <small>ZONA {chapter + 1} / 5</small>
-          <strong>{STORY_CHAPTERS[chapter].name}</strong>
-        </div>
-        <button
-          disabled={chapter === 4}
-          onClick={() => changeChapter(chapter + 1)}
-          aria-label="Zona siguiente"
-        >
-          <ChevronRight />
-        </button>
-      </nav>
       <div className={styles.scroll} ref={scroll}>
-        <div className={styles.world} style={{ height: storyMapHeight(chapter) }}>
+        <div
+          className={styles.world}
+          style={{ height: storyMapHeight(chapter) }}
+        >
           <div ref={host} className={styles.scene} />
           {Array.from({ length: 10 }, (_, i) => {
             const n = chapter * 10 + i + 1,
@@ -171,6 +134,56 @@ export function StoryMap({
             </p>
           ) : null}
         </div>
+      </div>
+      <div className={styles.topbar}>
+        <div className={styles.brandRow}>
+          <div className={styles.brand}>
+            <small>LA GUERRA DE LOS COFRES</small>
+            <h2>Lunacia</h2>
+          </div>
+          <div className={styles.hud}>
+            <span
+              className={styles.stat}
+              aria-label={`${done} de ${STORY_LENGTH} mazmorras · ${collected} de 5000 Chispas`}
+            >
+              <span className={styles.metric}>
+                <Check size={13} /> {done}/{STORY_LENGTH}
+              </span>
+              <span className={styles.metric}>
+                <Sparkles size={13} /> {collected}
+              </span>
+            </span>
+            <button
+              onClick={onPrologue}
+              aria-label="Ver prólogo"
+              className={styles.lore}
+            >
+              <BookOpen size={18} />
+            </button>
+          </div>
+        </div>
+        <nav className={styles.zone} aria-label="Zonas de historia">
+          <button
+            className={styles.arrow}
+            disabled={chapter === 0}
+            onClick={() => changeChapter(chapter - 1)}
+            aria-label="Zona anterior"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <div className={styles.zoneName}>
+            <small>ZONA {chapter + 1} / 5</small>
+            <strong>{STORY_CHAPTERS[chapter].name}</strong>
+          </div>
+          <button
+            className={styles.arrow}
+            disabled={chapter === 4}
+            onClick={() => changeChapter(chapter + 1)}
+            aria-label="Zona siguiente"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </nav>
       </div>
       <section className={styles.preview} aria-label={`Mazmorra ${selected}`}>
         <div className={styles.title}>
