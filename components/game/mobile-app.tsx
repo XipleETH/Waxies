@@ -2,14 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import {
-  Swords,
-  Sparkles,
-  Play,
-  Link2,
-  BookOpen,
-  Dumbbell,
-} from 'lucide-react';
+import { Swords, Sparkles, Play, Link2, Dumbbell } from 'lucide-react';
 import { AppNavigation, type AppScreen } from './app-navigation';
 import { AxiePreview } from './axie-preview';
 import { randomAxie } from '@/lib/game/random-axie';
@@ -393,17 +386,6 @@ export default function MobileApp() {
                 </button>
               </div>
               <div className="home-mode-rail">
-                <button
-                  className="home-mode"
-                  aria-label="Capítulos"
-                  onClick={() => setStoryOpen(true)}
-                  disabled={!ready}
-                >
-                  <span className="home-mode-icon" aria-hidden="true">
-                    <BookOpen size={26} />
-                  </span>
-                  <span className="home-mode-label">Capítulos</span>
-                </button>
                 {shared ? (
                   <button
                     className="home-mode home-mode-shared"
