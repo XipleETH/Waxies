@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import {
   STORY_CHAPTERS,
-  STORY_LENGTH,
   storyStars,
   storyUnlocked,
 } from '@/lib/game/story-progress';
@@ -73,9 +72,7 @@ export function StoryMap({
   }, [pins, chapter, unlocked]);
   const hp = best[selected - 1] ?? 0,
     locked = selected > unlocked,
-    level = courses[selected - 1].level,
-    done = best.filter((h) => h > 0).length,
-    collected = best.reduce((a, b) => a + b, 0);
+    level = courses[selected - 1].level;
   function changeChapter(next: number) {
     setChapter(next);
     setSelected(Math.max(next * 10 + 1, Math.min(unlocked, next * 10 + 10)));
@@ -136,52 +133,33 @@ export function StoryMap({
         </div>
       </div>
       <div className={styles.topbar}>
-        <div className={styles.brandRow}>
-          <div className={styles.brand}>
-            <small>LA GUERRA DE LOS COFRES</small>
-            <h2>Lunacia</h2>
-          </div>
-          <div className={styles.hud}>
-            <span
-              className={styles.stat}
-              aria-label={`${done} de ${STORY_LENGTH} mazmorras · ${collected} de 5000 Chispas`}
-            >
-              <span className={styles.metric}>
-                <Check size={13} /> {done}/{STORY_LENGTH}
-              </span>
-              <span className={styles.metric}>
-                <Sparkles size={13} /> {collected}
-              </span>
-            </span>
-            <button
-              onClick={onPrologue}
-              aria-label="Ver prólogo"
-              className={styles.lore}
-            >
-              <BookOpen size={18} />
-            </button>
-          </div>
-        </div>
+        <button
+          onClick={onPrologue}
+          aria-label="Ver prólogo"
+          className={`${styles.plaque} ${styles.lore}`}
+        >
+          <BookOpen size={18} />
+        </button>
         <nav className={styles.zone} aria-label="Zonas de historia">
           <button
-            className={styles.arrow}
+            className={`${styles.plaque} ${styles.arrow}`}
             disabled={chapter === 0}
             onClick={() => changeChapter(chapter - 1)}
             aria-label="Zona anterior"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={22} />
           </button>
-          <div className={styles.zoneName}>
+          <div className={`${styles.plaque} ${styles.zoneName}`}>
             <small>ZONA {chapter + 1} / 5</small>
             <strong>{STORY_CHAPTERS[chapter].name}</strong>
           </div>
           <button
-            className={styles.arrow}
+            className={`${styles.plaque} ${styles.arrow}`}
             disabled={chapter === 4}
             onClick={() => changeChapter(chapter + 1)}
             aria-label="Zona siguiente"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={22} />
           </button>
         </nav>
       </div>

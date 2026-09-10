@@ -1,5 +1,6 @@
-/* The diorama fills the whole surface; every control floats over it as a chip
-   or button, so no stacked bars box the map in. */
+/* This is a three.js diorama, not a web page: the map is the whole screen and
+   every control is a pressable 3D plaque in the game's own language
+   (see object-menu.module.css), never a flat web bar. */
 .map {
   position: relative;
   height: 100%;
@@ -13,8 +14,10 @@
   inset: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: #719974 transparent;
+  scrollbar-width: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
 }
 .world {
   position: relative;
@@ -32,169 +35,143 @@
   display: block;
 }
 
-/* Floating HUD — a scrim that fades into the map instead of a solid bar. */
+/* Shared low-poly plaque — solid, lit, tilted, with a chunky drop. */
+.plaque {
+  border: 2px solid #a1b479;
+  border-radius: 7px;
+  background: linear-gradient(#658559, #3b583e);
+  box-shadow:
+    0 5px #203a2a,
+    inset 0 1px #e3e7a566;
+  color: #f4e6b8;
+  text-shadow: 0 2px #314331;
+  transform: perspective(280px) rotateX(-8deg);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+.plaque:active:not(:disabled) {
+  transform: perspective(280px) rotateX(-8deg) translateY(3px);
+  box-shadow: 0 2px #203a2a;
+}
+.plaque:disabled {
+  opacity: 0.4;
+  box-shadow: none;
+}
+.plaque:focus-visible {
+  outline: 2px solid #f0d88d;
+  outline-offset: 3px;
+}
+
+/* Top: just the zone selector floats over the world, with a small lore plaque. */
 .topbar {
   position: absolute;
-  inset: 0 0 auto 0;
+  inset: 13px 12px auto 12px;
   z-index: 3;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px 16px 34px;
-  background: linear-gradient(#172f2bf5 44%, #172f2b00);
+  align-items: flex-start;
+  justify-content: center;
   pointer-events: none;
 }
-.topbar .stat,
-.topbar .lore,
-.topbar .arrow {
+.topbar > * {
   pointer-events: auto;
 }
-.brandRow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  padding-right: 56px;
-}
-.brand small {
-  display: block;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: #afc5a9;
-  font-weight: 700;
-}
-.brand h2 {
-  font: 800 27px/1.05 var(--font-display);
-  color: #f4e9bc;
-  margin-top: 2px;
-  text-shadow: 0 2px 8px #0a1a16;
-}
-.hud {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex: none;
-}
-.stat {
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  height: 34px;
-  padding: 0 13px;
-  border-radius: 999px;
-  background: #1d332cdb;
-  border: 1px solid #94aa7655;
-  color: #e6d296;
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-.metric {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-.metric + .metric {
-  margin-left: 10px;
-  padding-left: 10px;
-  border-left: 1px solid #94aa7555;
-}
 .lore {
+  position: absolute;
+  left: 0;
+  top: 1px;
   display: grid;
   place-items: center;
   width: 38px;
-  height: 38px;
-  flex: none;
-  border: 1px solid #94aa7666;
-  background: linear-gradient(#49644e, #2c4637);
-  border-radius: 12px;
-  box-shadow:
-    0 3px 0 #102a22,
-    inset 0 1px #c8df9c40;
-  color: #eff3dc;
+  height: 40px;
 }
-/* Zone selector: two round buttons flanking a name chip. */
 .zone {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.zoneName {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1px;
-  min-width: 148px;
-  padding: 6px 18px;
-  border-radius: 14px;
-  background: #16302be6;
-  border: 1px solid #94aa7644;
-}
-.zoneName small {
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: #afc5a9;
-  font-weight: 700;
-}
-.zoneName strong {
-  font: 700 15px var(--font-display);
-  color: #eef3db;
+  gap: 8px;
+  max-width: 100%;
 }
 .arrow {
   display: grid;
   place-items: center;
   width: 40px;
-  height: 40px;
+  height: 44px;
   flex: none;
-  border: 1px solid #94aa7660;
-  background: linear-gradient(#49644e, #2c4637);
-  border-radius: 12px;
-  box-shadow:
-    0 4px 0 #102a22,
-    inset 0 1px #c8df9c40;
-  color: #eff3dc;
-  transition:
-    transform 0.12s,
-    box-shadow 0.12s;
 }
-.arrow:disabled {
-  opacity: 0.3;
-  box-shadow: none;
+.zoneName {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  min-width: 120px;
+  max-width: 168px;
+  padding: 7px 12px 9px;
+  line-height: 1.05;
 }
-.arrow:active:not(:disabled) {
-  transform: translateY(3px);
-  box-shadow: 0 1px 0 #102a22;
+.zoneName small {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #dcebb2;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.zoneName strong {
+  font: 800 14px var(--font-display);
+  color: #f4e6b8;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Level markers projected onto the diorama. */
+/* Level markers: a tilted number plaque sitting on each 3D dungeon. */
 .node {
   position: absolute;
   transform: translate(-50%, -8%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
-  min-width: 70px;
-  min-height: 69px;
+  gap: 4px;
+  min-width: 64px;
+  min-height: 64px;
   color: #f2d47d;
   z-index: 1;
-  filter: drop-shadow(0 3px 2px #0009);
+  filter: drop-shadow(0 4px 3px #0009);
 }
 .number {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  min-width: 38px;
-  height: 28px;
-  border-radius: 8px;
-  background: linear-gradient(#4e7352, #294536);
-  border: 1px solid #c3d59480;
-  box-shadow: 0 3px 0 #132e22;
-  font-size: 16px;
-  font-weight: 900;
+  min-width: 42px;
+  height: 31px;
+  padding: 0 9px;
+  border-radius: 7px;
+  border: 2px solid #a1b479;
+  background: linear-gradient(#658559, #3b583e);
+  box-shadow:
+    0 4px #203a2a,
+    inset 0 1px #e3e7a566;
+  color: #f4e6b8;
+  text-shadow: 0 2px #314331;
+  font: 800 16px var(--font-display);
+  transform: perspective(220px) rotateX(-10deg);
+}
+.selected .number {
+  background: linear-gradient(#f5e191, #c99f4d);
+  border-color: #f7e8ac;
+  color: #33481f;
+  text-shadow: 0 1px #fff6cf99;
+  box-shadow:
+    0 4px #7c5a23,
+    inset 0 1px #fff6cf;
+}
+.locked .number {
+  background: linear-gradient(#3f5947, #2b4436);
+  border-color: #6f8a6a;
+  color: #b7c4ad;
+  text-shadow: none;
 }
 .stars {
   display: flex;
@@ -205,23 +182,15 @@
   align-items: center;
   gap: 3px;
   border-radius: 8px;
-  padding: 2px 6px;
-  background: #132b25ed;
+  padding: 2px 8px;
+  background: #14251feb;
+  border: 1px solid #ffffff14;
   color: #f2df9f;
   font-size: 11px;
-}
-.selected .number {
-  background: linear-gradient(#f9e6a0, #c59a4d);
-  color: #283a25;
-  outline: 2px solid #f7e8ac;
-  outline-offset: 3px;
+  font-weight: 700;
 }
 .locked {
   color: #93a598;
-}
-.locked .number {
-  background: #263c35;
-  color: #b5c2ae;
 }
 .locked small {
   color: #bdc9b0;
@@ -239,94 +208,92 @@
   height: 76px;
 }
 
-/* Bottom card holds the mazmorra briefing and the raid button. */
+/* Bottom: a carved briefing panel, not a web card. */
 .preview {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
   z-index: 2;
-  padding: 14px 16px max(14px, env(safe-area-inset-bottom));
-  border-radius: 22px 22px 0 0;
-  border-top: 2px solid #889f6a;
-  background: linear-gradient(#33503fef, #1c352bf7);
+  padding: 13px 15px max(13px, env(safe-area-inset-bottom));
+  border-radius: 18px;
+  border: 2px solid #6f8a5f;
+  background: linear-gradient(#304b3b, #1c342a);
   box-shadow:
-    0 -12px 30px #071c2380,
-    inset 0 1px #e2e9b355;
+    0 12px 28px #05161180,
+    inset 0 1px #cfe0a933,
+    inset 0 0 0 2px #12241d40;
 }
 .title {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 }
 .title > span {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   flex: none;
-  border-radius: 10px;
-  background: #192e26;
-  border: 1px solid #d1cb8a70;
-  color: #f5d481;
-  font-weight: 800;
-  font-size: 19px;
+  border-radius: 9px;
+  border: 2px solid #a1b479;
+  background: linear-gradient(#658559, #3b583e);
+  box-shadow:
+    0 3px #203a2a,
+    inset 0 1px #e3e7a566;
+  color: #f4e6b8;
+  font: 800 20px var(--font-display);
+  text-shadow: 0 2px #314331;
 }
 .title h3 {
-  font: 700 17px/1.2 var(--font-display);
-  margin: 3px 0;
+  font: 800 18px/1.15 var(--font-display);
+  color: #f2eccf;
+  margin: 3px 0 0;
 }
 .title small {
   font-size: 8px;
   letter-spacing: 2px;
-  color: #afc5a9;
-  font-weight: 700;
+  color: #a9c19f;
+  font-weight: 800;
 }
 .loot {
   display: flex;
-  justify-content: space-between;
-  gap: 8px;
+  justify-content: center;
+  gap: 20px;
   font-size: 11px;
   margin: 11px 0;
   color: #e3c780;
 }
 .loot span {
   display: flex;
-  gap: 4px;
+  gap: 5px;
   align-items: center;
 }
 .loot span:last-child {
   color: #b9d4b5;
 }
 .loot b {
-  font-size: 16px;
+  font-size: 15px;
 }
 .preview > button {
-  min-height: 46px;
+  min-height: 48px;
 }
 .rule {
   display: block;
   text-align: center;
-  color: #baceb6;
+  color: #a7bda3;
   font-size: 10px;
-  margin-top: 9px;
+  margin-top: 8px;
 }
 .fallback {
   position: absolute;
-  top: 96px;
+  top: 70px;
   left: 16px;
   font-size: 11px;
 }
 @media (max-height: 740px) {
-  .topbar {
-    padding-top: 12px;
-    gap: 9px;
-  }
-  .brand h2 {
-    font-size: 23px;
-  }
-  .preview {
-    padding-top: 10px;
+  .zoneName strong {
+    font-size: 15px;
   }
   .loot {
     margin: 8px 0;
