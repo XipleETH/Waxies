@@ -224,44 +224,64 @@
     inset 0 1px #cfe0a933,
     inset 0 0 0 2px #12241d40;
 }
-.title {
+.brief {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 12px;
 }
-.title > span {
+.seal {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   flex: none;
-  border-radius: 9px;
-  border: 2px solid #a1b479;
-  background: linear-gradient(#658559, #3b583e);
+  border-radius: 50%;
+  border: 2px solid #e7c877;
+  background: radial-gradient(circle at 50% 32%, #6d9060, #33503f 72%);
   box-shadow:
-    0 3px #203a2a,
-    inset 0 1px #e3e7a566;
-  color: #f4e6b8;
-  font: 800 20px var(--font-display);
-  text-shadow: 0 2px #314331;
+    0 3px #14271e,
+    inset 0 0 0 3px #2c4636,
+    inset 0 2px #cfe0a955;
+  color: #f6ecc4;
+  font: 800 21px var(--font-display);
+  text-shadow: 0 2px #22321f;
 }
-.title h3 {
-  font: 800 18px/1.15 var(--font-display);
+.info {
+  min-width: 0;
+}
+.info h3 {
+  font: 800 19px/1.1 var(--font-display);
   color: #f2eccf;
-  margin: 3px 0 0;
+  margin: 0 0 6px;
 }
-.title small {
-  font-size: 8px;
-  letter-spacing: 2px;
-  color: #a9c19f;
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 8px;
+  background: #1b322ad0;
+  border: 1px solid #ffffff14;
+  color: #c8d7ac;
+  font-size: 10px;
   font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.tag svg {
+  color: #e7c877;
 }
 .loot {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 22px;
   font-size: 11px;
-  margin: 11px 0;
+  margin: 12px 0;
   color: #e3c780;
 }
 .loot span {
@@ -292,8 +312,8 @@
   font-size: 11px;
 }
 @media (max-height: 740px) {
-  .zoneName strong {
-    font-size: 15px;
+  .info h3 {
+    font-size: 17px;
   }
   .loot {
     margin: 8px 0;

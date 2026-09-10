@@ -9,6 +9,8 @@ import {
   Play,
   BookOpen,
   Check,
+  Zap,
+  Shield,
 } from 'lucide-react';
 import {
   STORY_CHAPTERS,
@@ -72,7 +74,8 @@ export function StoryMap({
   }, [pins, chapter, unlocked]);
   const hp = best[selected - 1] ?? 0,
     locked = selected > unlocked,
-    level = courses[selected - 1].level;
+    level = courses[selected - 1].level,
+    guardianCount = dungeonGuardians(level).length;
   function changeChapter(next: number) {
     setChapter(next);
     setSelected(Math.max(next * 10 + 1, Math.min(unlocked, next * 10 + 10)));
@@ -164,25 +167,29 @@ export function StoryMap({
         </nav>
       </div>
       <section className={styles.preview} aria-label={`Mazmorra ${selected}`}>
-        <div className={styles.title}>
-          <span>{selected}</span>
-          <div>
-            <small>
-              {level.traps.length}{' '}
-              {level.traps.length === 1 ? 'TRAMPA' : 'TRAMPAS'} ·{' '}
-              {dungeonGuardians(level).length}{' '}
-              {dungeonGuardians(level).length === 1 ? 'GUARDIÁN' : 'GUARDIANES'}
-            </small>
+        <div className={styles.brief}>
+          <span className={styles.seal}>{selected}</span>
+          <div className={styles.info}>
             <h3>{level.name}</h3>
+            <div className={styles.meta}>
+              <span className={styles.tag}>
+                <Zap size={12} /> {level.traps.length}{' '}
+                {level.traps.length === 1 ? 'trampa' : 'trampas'}
+              </span>
+              <span className={styles.tag}>
+                <Shield size={12} /> {guardianCount}{' '}
+                {guardianCount === 1 ? 'guardián' : 'guardianes'}
+              </span>
+            </div>
           </div>
         </div>
         <div className={styles.loot}>
           <span>
-            <Sparkles size={17} />
+            <Sparkles size={15} />
             <b>{100 - hp}</b> por recoger
           </span>
           <span>
-            <Check size={15} />
+            <Check size={14} />
             <b>{hp}</b> recogidas
           </span>
         </div>
