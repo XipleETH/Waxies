@@ -5,7 +5,7 @@ import {
 import { validFreeTraps, snapTrap } from './free-vault';
 import { reachSettings } from './trap-reach';
 import { allowedParts, validLoadout, type AxieLoadout } from './axie';
-import { makeVaultTraps, validVaultTraps } from './vault-layout';
+import { makeVaultTraps, validVaultTraps, defenderParts } from './vault-layout';
 import { guardianGenes } from './guardians';
 import { PORTRAIT_BASE, PORTRAIT_SLOTS } from './portrait';
 import { verifyRoute, type RouteProof } from './route-proof';
@@ -93,6 +93,26 @@ export function newProfile(): MobileProfile {
     })),
     proof: null,
   };
+}
+/** A unique free-mode vault for a guest with no wallet Axie: a random part per
+   battle slot, snapped and reach-set exactly like the app's own normalization so
+   it passes validFreeTraps. Persisted in the profile cache, so it stays stable
+   for that user until a wallet Axie replaces it. */
+export function randomVaultParts(random: () => number = Math.random): Trap[] {
+  const used: string[] = [];
+  return makeVaultTraps([], 1, [null]).map((t) => {
+    const choices = defenderParts(null, t.anchor!, used);
+    const part = choices.length
+      ? choices[Math.floor(random() * choices.length)]
+      : t.part;
+    used.push(part);
+    return {
+      ...t,
+      part,
+      ...snapTrap(t.x, t.y),
+      reach: reachSettings(part).default,
+    };
+  });
 }
 export function vaultLevel(p: MobileProfile): Dungeon {
   return {

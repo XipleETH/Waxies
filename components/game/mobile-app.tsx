@@ -16,6 +16,7 @@ import {
   PROFILE_KEY,
   newProfile,
   readProfile,
+  randomVaultParts,
   claimChispas,
   type MobileProfile,
 } from '@/lib/game/mobile-profile';
@@ -80,7 +81,16 @@ export default function MobileApp() {
     queueMicrotask(() => {
       if (stopped) return;
       try {
+        const existing = localStorage.getItem(PROFILE_KEY);
         const p = readProfile();
+        // First-time guests get a unique free-mode vault, cached so it stays
+        // theirs until a wallet Axie replaces its parts.
+        if (!existing && !p.axie) {
+          p.traps = randomVaultParts();
+          try {
+            localStorage.setItem(PROFILE_KEY, JSON.stringify(p));
+          } catch {}
+        }
         setProfile(p);
         profileRef.current = p;
       } catch (e) {
