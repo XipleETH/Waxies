@@ -9,8 +9,6 @@ import {
   Play,
   BookOpen,
   Check,
-  Zap,
-  Shield,
 } from 'lucide-react';
 import {
   STORY_CHAPTERS,
@@ -19,7 +17,6 @@ import {
 } from '@/lib/game/story-progress';
 import courses from '@/lib/game/data/story-courses.json';
 import { storyMapHeight } from '@/lib/game/story-map-layout';
-import { dungeonGuardians } from '@/lib/game/guardians';
 import type { MapPin } from '@/lib/game/story-map-scene';
 import styles from './story-map.module.css';
 export function StoryMap({
@@ -37,7 +34,13 @@ export function StoryMap({
   const [pins, setPins] = useState<MapPin[]>([]),
     [failed, setFailed] = useState(false);
   const host = useRef<HTMLDivElement>(null),
-    scroll = useRef<HTMLDivElement>(null);
+    scroll = useRef<HTMLDivElement>(null),
+    actionHost = useRef<HTMLDivElement>(null),
+    lockedRef = useRef(false),
+    actionRef = useRef<{
+      setLocked: (v: boolean) => void;
+      setPressed: (v: boolean) => void;
+    } | null>(null);
   useEffect(() => {
     let stopped = false,
       dispose = () => {};
@@ -72,10 +75,31 @@ export function StoryMap({
       );
     }
   }, [pins, chapter, unlocked]);
+  useEffect(() => {
+    let stopped = false,
+      dispose = () => {};
+    void import('@/lib/game/story-action-scene')
+      .then(({ createStoryActionScene }) => {
+        if (stopped || !actionHost.current) return;
+        const action = createStoryActionScene(actionHost.current);
+        action.setLocked(lockedRef.current);
+        actionRef.current = action;
+        dispose = () => action.dispose();
+      })
+      .catch(() => {});
+    return () => {
+      stopped = true;
+      actionRef.current = null;
+      dispose();
+    };
+  }, []);
   const hp = best[selected - 1] ?? 0,
     locked = selected > unlocked,
-    level = courses[selected - 1].level,
-    guardianCount = dungeonGuardians(level).length;
+    level = courses[selected - 1].level;
+  useEffect(() => {
+    lockedRef.current = locked;
+    actionRef.current?.setLocked(locked);
+  }, [locked]);
   function changeChapter(next: number) {
     setChapter(next);
     setSelected(Math.max(next * 10 + 1, Math.min(unlocked, next * 10 + 10)));
@@ -166,57 +190,36 @@ export function StoryMap({
           </button>
         </nav>
       </div>
-      <section className={styles.preview} aria-label={`Mazmorra ${selected}`}>
-        <div className={styles.brief}>
-          <span className={styles.seal}>{selected}</span>
-          <div className={styles.info}>
-            <h3>{level.name}</h3>
-            <div className={styles.meta}>
-              <span className={styles.tag}>
-                <Zap size={12} /> {level.traps.length}{' '}
-                {level.traps.length === 1 ? 'trampa' : 'trampas'}
-              </span>
-              <span className={styles.tag}>
-                <Shield size={12} /> {guardianCount}{' '}
-                {guardianCount === 1 ? 'guardián' : 'guardianes'}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className={styles.loot}>
+      <div className={styles.action} aria-label={`Mazmorra ${selected}`}>
+        <p className={styles.brief}>
+          <b>{level.name}</b>
           <span>
-            <Sparkles size={15} />
-            <b>{100 - hp}</b> por recoger
+            {locked
+              ? `Se abre al superar el nivel ${selected - 1}`
+              : hp
+                ? `${hp}/100 Chispas · mejora tu marca`
+                : `Hasta ${100 - hp} Chispas por recoger`}
           </span>
-          <span>
-            <Check size={14} />
-            <b>{hp}</b> recogidas
-          </span>
+        </p>
+        <div className={styles.raid}>
+          <div ref={actionHost} className={styles.raidScene} />
+          <button
+            className={styles.play}
+            disabled={locked}
+            onClick={() => onPlay(selected)}
+            onPointerDown={() => actionRef.current?.setPressed(true)}
+            onPointerUp={() => actionRef.current?.setPressed(false)}
+            onPointerLeave={() => actionRef.current?.setPressed(false)}
+          >
+            {locked ? (
+              <LockKeyhole size={19} />
+            ) : (
+              <Play size={19} fill="currentColor" />
+            )}
+            {locked ? 'Bloqueado' : hp ? 'Volver a asaltar' : 'Asaltar'}
+          </button>
         </div>
-        <button
-          className="m-primary"
-          disabled={locked}
-          onClick={() => onPlay(selected)}
-        >
-          {locked ? (
-            <LockKeyhole size={18} />
-          ) : (
-            <Play size={18} fill="currentColor" />
-          )}
-          {locked
-            ? `Completa el nivel ${selected - 1}`
-            : hp
-              ? 'Volver a asaltar'
-              : 'Asaltar'}
-        </button>
-        <small className={styles.rule}>
-          {locked
-            ? 'Sigue el camino para abrir esta mazmorra.'
-            : hp
-              ? 'Solo recibes Chispas si mejoras tu marca.'
-              : 'Hasta 100 Chispas · cada golpe reduce el premio.'}
-        </small>
-      </section>
+      </div>
     </div>
   );
 }
