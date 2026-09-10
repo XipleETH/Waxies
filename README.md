@@ -63,7 +63,7 @@ Se conservan el modelo por genes, los esqueletos, las animaciones y el shader de
 - [Atlas oficial de partes](https://github.com/axieinfinity/cc-axie-gtk2d/tree/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/atlas-single).
 - [Explorador Classic](https://classic.axieinfinity.com/explorer/cards).
 
-`GET /api/axie/:id` consulta genes y propietario en el contrato Ronin `0x32950db2a7164ae833121501c797d79e7b79d74c`. Las lecturas se fijan al mismo bloque. Ronin Wallet comparte la cuenta y enumera sus Axies; no solicita firmas ni transacciones. Consultar un ID público no acredita que quien lo escribe controle esa billetera.
+`GET /api/axie/:id` consulta genes y propietario en el contrato Ronin `0x32950db2a7164ae833121501c797d79e7b79d74c`. Las lecturas se fijan al mismo bloque. Ronin Wallet comparte la cuenta y enumera sus Axies; no solicita firmas ni transacciones. También puede iniciarse sesión con una **cuenta Sky Mavis** (Ronin Waypoint, con email o redes y sin extensión) cuando se configura su client ID. Cualquiera de las dos vías reconoce los Axies del jugador y, al elegir uno, sus partes definen las trampas de su mazmorra. Consultar un ID público no acredita que quien lo escribe controle esa billetera.
 
 Los recursos pertenecen a sus titulares. Las procedencias detalladas están en `public/assets/provenance.json`, `public/assets/carrot-provenance.json` y `research/`.
 
@@ -78,3 +78,5 @@ Los certificados prueban que existe una ruta con estas reglas; no que sea fácil
 Next.js 16 / Node.js 22. El repositorio [XipleETH/Waxies](https://github.com/XipleETH/Waxies) está conectado con Vercel; los pushes a `main` publican [waxies.vercel.app](https://waxies.vercel.app/). Preset Next.js, raíz del repositorio, `npm ci` y `npm run build`. No se necesitan secretos para la demo de lecturas públicas de Ronin.
 
 El modo Online necesita `DATABASE_URL` (o `POSTGRES_URL`) de Neon en el servidor. Sin esa variable, muestra «Preparando el servidor» y no simula rivales ni transferencias. La instalación de Neon en Vercel requiere que el titular acepte los términos del proveedor.
+
+El inicio de sesión con **cuenta Sky Mavis** (Ronin Waypoint) requiere `NEXT_PUBLIC_WAYPOINT_CLIENT_ID` con un client ID del [Ronin Developer Console](https://developers.skymavis.com) y su redirect URI registrado (el origen del sitio, p. ej. `https://waxies.vercel.app` y `http://localhost:3000` para desarrollo). Sin esa variable, el botón «Iniciar con cuenta Sky Mavis» queda oculto y Ronin Wallet sigue funcionando.

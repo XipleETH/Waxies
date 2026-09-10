@@ -24,6 +24,7 @@
     "@base-ui/react": "1.7.0",
     "@neondatabase/serverless": "^1.1.0",
     "@shadcn/react": "0.3.0",
+    "@sky-mavis/waypoint": "^4.2.2",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "cmdk": "1.1.1",
