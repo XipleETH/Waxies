@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Wallet, Mail, LoaderCircle } from 'lucide-react';
 import {
   RONIN_CHAIN,
+  RONIN_ADD_CHAIN,
   listWalletAxies,
   readAxieOnChain,
 } from '@/lib/game/ronin';
@@ -57,9 +58,25 @@ export function RoninAxies({
     setBusy(true);
     setError('');
     try {
-      if (checkChain) {
-        const chain = await p.request({ method: 'eth_chainId' });
-        if (chain !== RONIN_CHAIN)
+      if (
+        checkChain &&
+        (await p.request({ method: 'eth_chainId' })) !== RONIN_CHAIN
+      ) {
+        // Nudge the wallet to Ronin mainnet instead of just refusing.
+        try {
+          await p.request({
+            method: 'wallet_switchEthereumChain',
+            params: [{ chainId: RONIN_CHAIN }],
+          });
+        } catch (switchError) {
+          if ((switchError as { code?: number }).code === 4902)
+            await p.request({
+              method: 'wallet_addEthereumChain',
+              params: [RONIN_ADD_CHAIN],
+            });
+          else throw switchError;
+        }
+        if ((await p.request({ method: 'eth_chainId' })) !== RONIN_CHAIN)
           throw new Error(
             'Selecciona Ronin Mainnet en tu billetera y vuelve a conectar.',
           );

@@ -3,6 +3,7 @@ import { decodeGenes } from './genes';
 import names from './data/gene-part-names.json';
 export const AXIE_CONTRACT='0x32950db2a7164ae833121501c797d79e7b79d74c';
 export const RONIN_CHAIN='0x7e4';
+export const RONIN_ADD_CHAIN={chainId:RONIN_CHAIN,chainName:'Ronin Mainnet',nativeCurrency:{name:'RON',symbol:'RON',decimals:18},rpcUrls:['https://api.roninchain.com/rpc'],blockExplorerUrls:['https://app.roninchain.com']};
 export type RpcRequest=(args:{method:string;params?:unknown[]})=>Promise<unknown>;
 const word=(value:string|number|bigint)=>BigInt(value).toString(16).padStart(64,'0');
 export const addressWord=(address:string)=>{if(!/^0x[0-9a-f]{40}$/i.test(address))throw new Error('Dirección Ronin no válida.');return address.slice(2).toLowerCase().padStart(64,'0');};
