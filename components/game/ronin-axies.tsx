@@ -13,6 +13,15 @@ import {
   type WalletProvider,
 } from '@/lib/game/waypoint';
 import type { AxieLoadout } from '@/lib/game/axie';
+// Compare chain ids by value, not string: wallets report '0x7e4', '0x7E4',
+// leading-zero hex, or a decimal — all the same Ronin mainnet.
+const sameChain = (value: unknown) => {
+  try {
+    return BigInt(value as string | number) === BigInt(RONIN_CHAIN);
+  } catch {
+    return false;
+  }
+};
 export function RoninAxies({
   onLoad,
 }: {
@@ -58,10 +67,8 @@ export function RoninAxies({
     setBusy(true);
     setError('');
     try {
-      if (
-        checkChain &&
-        (await p.request({ method: 'eth_chainId' })) !== RONIN_CHAIN
-      ) {
+      const readChain = () => p.request({ method: 'eth_chainId' });
+      if (checkChain && !sameChain(await readChain())) {
         // Nudge the wallet to Ronin mainnet instead of just refusing.
         try {
           await p.request({
@@ -76,9 +83,15 @@ export function RoninAxies({
             });
           else throw switchError;
         }
-        if ((await p.request({ method: 'eth_chainId' })) !== RONIN_CHAIN)
+        // Wallets report the new chain asynchronously; give it a moment.
+        let chain = await readChain();
+        for (let i = 0; i < 8 && !sameChain(chain); i++) {
+          await new Promise((r) => setTimeout(r, 150));
+          chain = await readChain();
+        }
+        if (!sameChain(chain))
           throw new Error(
-            'Selecciona Ronin Mainnet en tu billetera y vuelve a conectar.',
+            `Tu billetera no cambió a Ronin Mainnet (red actual: ${String(chain)}). Cámbiala y reintenta.`,
           );
       }
       const accounts = await p.request({ method: 'eth_requestAccounts' });
@@ -191,7 +204,7 @@ export function RoninAxies({
       const chain = await provider.request({ method: 'eth_chainId' });
       const accounts = await provider.request({ method: 'eth_accounts' });
       if (
-        chain !== RONIN_CHAIN ||
+        !sameChain(chain) ||
         !Array.isArray(accounts) ||
         String(accounts[0]).toLowerCase() !== account
       )
