@@ -328,7 +328,8 @@ export default function MobileApp() {
           <div className="home-shading" aria-hidden="true" />
         </>
       ) : null}
-      {!storyOpen && (screen === 'home' || screen === 'axie') ? (
+      {!storyOpen &&
+      (screen === 'home' || screen === 'axie' || screen === 'online') ? (
         <GameObjects />
       ) : null}
       <header className="m-header">
@@ -465,13 +466,16 @@ export default function MobileApp() {
         onNavigate={setScreen}
       />
       <Dialog open={roomsOpen} onOpenChange={setRoomsOpen}>
-        <DialogContent className="room-picker-dialog">
-          <DialogTitle>Práctica libre</DialogTitle>
-          <DialogDescription>
-            Elige un portal · Axie y poderes aleatorios
-          </DialogDescription>
+        <ObjectDialogContent
+          className="practice-object-dialog"
+          title="Práctica"
+          description="Elige un portal · Axie y poderes aleatorios"
+          onClose={() => setRoomsOpen(false)}
+        >
           <button
-            className="m-primary"
+            className="practice-random"
+            data-object="training"
+            data-label="Aleatoria"
             onClick={() => practice()}
             disabled={!ready}
           >
@@ -501,7 +505,7 @@ export default function MobileApp() {
               }))}
             />
           </div>
-        </DialogContent>
+        </ObjectDialogContent>
       </Dialog>
       <Dialog open={storyOpen} onOpenChange={setStoryOpen}>
         <DialogContent className="story-world-dialog" showCloseButton={false}>

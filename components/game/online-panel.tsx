@@ -6,15 +6,11 @@ import { challengeCode, type RouteProof } from '@/lib/game/route-proof';
 import { vaultLevel, type MobileProfile } from '@/lib/game/mobile-profile';
 import type { RaidReplay } from '@/lib/game/raid-replay';
 import styles from './online-panel.module.css';
+import { ObjectDialogContent } from './object-dialog';
 import { ObjectMenu } from './object-menu';
 import { RaidReplayViewer } from './raid-replay-viewer';
 import type { MatchReplayView } from '@/lib/online/types';
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
+import { Dialog } from '@/components/ui/dialog';
 export const REWARD_QUEUE = 'waxies.online-rewards.v1';
 export async function onlineRequest(
   command?: OnlineCommand | { action: 'join'; name: string },
@@ -149,8 +145,16 @@ export function OnlinePanel({
       />
     );
   return (
-    <section className={styles.online} aria-label="Online asíncrono">
-      <div className="object-room-title">
+    <section
+      className={styles.online + ' online-object-room'}
+      aria-label="Online asíncrono"
+    >
+      <div
+        className="object-room-title"
+        data-object="title"
+        data-label="Online"
+        data-value="Guerra de los cofres"
+      >
         <span>GUERRA DE LOS COFRES</span>
       </div>
       {error ? <output className={styles.error}>{error}</output> : null}
@@ -163,8 +167,16 @@ export function OnlinePanel({
             Falta conectar la base de datos para compartir cofres y resultados
             entre jugadores. Puedes preparar y validar tu refugio.
           </p>
-          <button onClick={onEdit}>Editar mi refugio</button>
-          <button onClick={() => void refresh()}>Comprobar conexión</button>
+          <button data-object="map" data-label="Refugio" onClick={onEdit}>
+            Editar mi refugio
+          </button>
+          <button
+            data-object="retry"
+            data-label="Actualizar"
+            onClick={() => void refresh()}
+          >
+            Comprobar conexión
+          </button>
         </div>
       ) : !view.registered ? (
         <>
@@ -186,19 +198,20 @@ export function OnlinePanel({
               if (!open) setPanel(null);
             }}
           >
-            <DialogContent className="power-dialog online-action-dialog">
-              <DialogTitle className="sr-only">Entrar a Lunacia</DialogTitle>
-              <DialogDescription className="sr-only">
-                Gestiona esta acción de Online.
-              </DialogDescription>
+            <ObjectDialogContent
+              className="online-object-dialog online-join-dialog"
+              title="Entrar"
+              description="Tu nombre en Lunacia"
+              onClose={() => setPanel(null)}
+            >
               <div className={styles.online}>
                 <div className={styles.card}>
-                  <h2>Tu nombre en Lunacia</h2>
-                  <p>
-                    Cuenta de este navegador, sin billetera. La beta comienza
-                    con 100 Chispas online. Tus Chispas del Bazar se mantienen
-                    en este dispositivo.
-                  </p>
+                  <div
+                    className="online-join-avatar"
+                    data-object="axie"
+                    aria-hidden="true"
+                  />
+                  <p>Comienzas con 100 Chispas online. Sin billetera.</p>
                   <label htmlFor="online-name">Nombre</label>
                   <input
                     id="online-name"
@@ -210,17 +223,19 @@ export function OnlinePanel({
                   />
                   <button
                     disabled={busy || name.trim().length < 2}
+                    data-object="portal"
+                    data-label="Crear"
                     onClick={() => void act({ action: 'join', name })}
                   >
                     Crear cuenta de prueba
                   </button>
                   <small>
-                    Conserva los datos de este navegador para mantener tu
-                    cuenta.
+                    Tu cuenta se conserva en este navegador. El saldo del Bazar
+                    es independiente.
                   </small>
                 </div>
               </div>
-            </DialogContent>
+            </ObjectDialogContent>
           </Dialog>
         </>
       ) : p ? (
@@ -259,17 +274,29 @@ export function OnlinePanel({
             ]}
           />
           <div className={styles.balance}>
-            <div>
+            <div
+              data-object="gem"
+              data-caption="Disponible"
+              data-value={String(p.available)}
+            >
               <Coins size={18} />
               <b>{p.available}</b>
               <span>Disponibles</span>
             </div>
-            <div>
+            <div
+              data-object="wallet"
+              data-caption="Cofre"
+              data-value={String(p.chest)}
+            >
               <ShieldCheck size={18} />
               <b>{p.chest}</b>
               <span>En tu cofre</span>
             </div>
-            <div>
+            <div
+              data-object="save"
+              data-caption="Retenido"
+              data-value={String(p.held)}
+            >
               <Clock3 size={18} />
               <b>{p.held}</b>
               <span>Retenidas</span>
@@ -282,11 +309,12 @@ export function OnlinePanel({
               if (!open) setPanel(null);
             }}
           >
-            <DialogContent className="power-dialog online-action-dialog">
-              <DialogTitle className="sr-only">Cofre</DialogTitle>
-              <DialogDescription className="sr-only">
-                Gestiona esta acción de Online.
-              </DialogDescription>
+            <ObjectDialogContent
+              className="online-object-dialog"
+              title="Cofre"
+              description="Guerra de los cofres"
+              onClose={() => setPanel(null)}
+            >
               <div className={styles.online}>
                 <div className={styles.card}>
                   <h2>
@@ -309,6 +337,8 @@ export function OnlinePanel({
                   />
                   <button
                     disabled={busy || p.locked || !profile.proof}
+                    data-object="save"
+                    data-label="Activar"
                     onClick={activate}
                   >
                     {p.active
@@ -316,11 +346,18 @@ export function OnlinePanel({
                       : 'Depositar y activar'}
                   </button>
                   <div className={styles.actions}>
-                    <button disabled={busy} onClick={onEdit}>
+                    <button
+                      disabled={busy}
+                      data-object="map"
+                      data-label="Refugio"
+                      onClick={onEdit}
+                    >
                       Editar refugio
                     </button>
                     <button
                       disabled={busy || p.locked || p.chest === 0}
+                      data-object="wallet"
+                      data-label="Retirar"
                       onClick={() => void act({ action: 'withdraw' })}
                     >
                       Retirar y desactivar
@@ -333,7 +370,7 @@ export function OnlinePanel({
                   </small>
                 </div>
               </div>
-            </DialogContent>
+            </ObjectDialogContent>
           </Dialog>
           <Dialog
             open={panel === 'raid'}
@@ -341,11 +378,12 @@ export function OnlinePanel({
               if (!open) setPanel(null);
             }}
           >
-            <DialogContent className="power-dialog online-action-dialog">
-              <DialogTitle className="sr-only">Atacar</DialogTitle>
-              <DialogDescription className="sr-only">
-                Gestiona esta acción de Online.
-              </DialogDescription>
+            <ObjectDialogContent
+              className="online-object-dialog"
+              title="Atacar"
+              description="Guerra de los cofres"
+              onClose={() => setPanel(null)}
+            >
               <div className={styles.online}>
                 <div className={styles.card}>
                   <h2>Buscar una incursión</h2>
@@ -362,6 +400,8 @@ export function OnlinePanel({
                         partida, abandónalo para liberar los cofres.
                       </p>
                       <button
+                        data-object="close"
+                        data-label="Abandonar"
                         disabled={busy}
                         onClick={() =>
                           void act({
@@ -376,6 +416,8 @@ export function OnlinePanel({
                   ) : (
                     <button
                       disabled={busy || !p.active || p.chest < 1 || p.locked}
+                      data-object="swords"
+                      data-label="Buscar rival"
                       onClick={() => void act({ action: 'match' })}
                     >
                       Buscar rival · ±10 %
@@ -387,7 +429,7 @@ export function OnlinePanel({
                   </small>
                 </div>
               </div>
-            </DialogContent>
+            </ObjectDialogContent>
           </Dialog>
           <Dialog
             open={panel === 'loot'}
@@ -395,11 +437,12 @@ export function OnlinePanel({
               if (!open) setPanel(null);
             }}
           >
-            <DialogContent className="power-dialog online-action-dialog">
-              <DialogTitle className="sr-only">Revancha</DialogTitle>
-              <DialogDescription className="sr-only">
-                Gestiona esta acción de Online.
-              </DialogDescription>
+            <ObjectDialogContent
+              className="online-object-dialog"
+              title="Revancha"
+              description="Guerra de los cofres"
+              onClose={() => setPanel(null)}
+            >
               <div className={styles.online}>
                 <div className={styles.card}>
                   <h2>Botines y revanchas</h2>
@@ -420,6 +463,8 @@ export function OnlinePanel({
                         </span>
                         {l.canRevenge ? (
                           <button
+                            data-object="swords"
+                            data-label="Revancha"
                             disabled={busy || p.locked}
                             onClick={() =>
                               void act({ action: 'revenge', lootId: l.id })
@@ -442,7 +487,7 @@ export function OnlinePanel({
                   </small>
                 </div>
               </div>
-            </DialogContent>
+            </ObjectDialogContent>
           </Dialog>
           <Dialog
             open={panel === 'activity'}
@@ -450,15 +495,21 @@ export function OnlinePanel({
               if (!open) setPanel(null);
             }}
           >
-            <DialogContent className="power-dialog online-action-dialog">
-              <DialogTitle className="sr-only">Actividad</DialogTitle>
-              <DialogDescription className="sr-only">
-                Gestiona esta acción de Online.
-              </DialogDescription>
+            <ObjectDialogContent
+              className="online-object-dialog"
+              title="Actividad"
+              description="Guerra de los cofres"
+              onClose={() => setPanel(null)}
+            >
               <div className={styles.online}>
                 <div className={styles.card}>
                   <h2>Actividad</h2>
-                  <button disabled={busy} onClick={() => void refresh()}>
+                  <button
+                    disabled={busy}
+                    data-object="retry"
+                    data-label="Actualizar"
+                    onClick={() => void refresh()}
+                  >
                     Actualizar
                   </button>
                   {view.history?.length ? (
@@ -481,6 +532,8 @@ export function OnlinePanel({
                         {m.hasReplay ? (
                           <button
                             disabled={busy}
+                            data-object="play"
+                            data-label="Repetición"
                             onClick={() => void watchReplay(m.id)}
                           >
                             Ver repetición
@@ -493,7 +546,7 @@ export function OnlinePanel({
                   )}
                 </div>
               </div>
-            </DialogContent>
+            </ObjectDialogContent>
           </Dialog>
           <details className="online-guide">
             <summary>Cómo funciona</summary>
