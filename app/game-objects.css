@@ -731,3 +731,22 @@ button[data-object]:disabled {
 .online-object-dialog button[data-object] {
   align-self: center;
 }
+
+[data-objects-ready='true'] .m-balance[data-object] {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  height: 40px;
+  min-width: 86px;
+}
+.haptic-toggle {
+  position: absolute;
+  top: 44px;
+  left: 8px;
+  width: 72px;
+  height: 57px;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: auto;
+}

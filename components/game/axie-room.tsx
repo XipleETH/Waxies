@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { AxieLoadout as Loadout } from '@/lib/game/axie';
+import { HapticToggle } from './haptic-toggle';
 import { ObjectDialogContent } from './object-dialog';
 import { ObjectMenu } from './object-menu';
 import { Dialog } from '@/components/ui/dialog';
@@ -33,6 +34,7 @@ export function AxieRoom({
       >
         <span>{axie ? 'AXIE #' + axie.id : 'AXIE DE PRUEBA'}</span>
       </div>
+      <HapticToggle />
       <div className="axie-object-actions">
         <ObjectMenu
           label="Acciones de Mi Axie"

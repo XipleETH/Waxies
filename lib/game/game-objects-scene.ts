@@ -276,7 +276,30 @@ export async function createGameObjects(
     const kind = aliases[el.dataset.object ?? ''] ?? el.dataset.object,
       label = el.dataset.label ?? '',
       value = el.dataset.value ?? '';
-    if (kind === 'title') {
+    if (kind === 'balance') {
+      const spark = shape(
+        [
+          [0, 0.55],
+          [0.12, 0.12],
+          [0.5, 0],
+          [0.12, -0.12],
+          [0, -0.55],
+          [-0.12, -0.12],
+          [-0.5, 0],
+          [-0.12, 0.12],
+        ],
+        gold,
+      );
+      spark.position.x = -1;
+      mesh(new T.OctahedronGeometry(0.1), gold, -1.43, 0.44, 0.1);
+      const amount = text(value, 0, 0.58, gold);
+      const offset =
+        new T.Box3().setFromObject(amount).getSize(new T.Vector3()).x / 2 -
+        0.45;
+      group.children.slice(-2).forEach((child) => {
+        child.position.x += offset;
+      });
+    } else if (kind === 'title') {
       text(label, 0.15, 0.6);
       if (value) text(value, -0.52, 0.29, gold);
     } else if (kind === 'node') {
@@ -304,7 +327,24 @@ export async function createGameObjects(
         );
       }
     } else {
-      if (kind === 'pedestal') {
+      if (kind === 'haptics') {
+        box(0, 0, 0, 1.05, 0.55, 0.4, mint);
+        for (const x of [-0.48, 0.48]) box(x, -0.24, 0, 0.27, 0.55, 0.4, mint);
+        box(-0.27, 0.04, 0.23, 0.32, 0.08, 0.08, dark);
+        box(-0.27, 0.04, 0.23, 0.08, 0.32, 0.08, dark);
+        for (const x of [0.18, 0.37])
+          mesh(new T.SphereGeometry(0.075, 8, 6), gold, x, x - 0.2, 0.25);
+        for (const side of [-1, 1]) {
+          const wave = mesh(
+            new T.TorusGeometry(0.32, 0.035, 5, 12, 2.2),
+            gold,
+            side * 0.79,
+            0,
+            0,
+          );
+          wave.rotation.z = side === 1 ? -1.1 : Math.PI - 1.1;
+        }
+      } else if (kind === 'pedestal') {
         const active = el.getAttribute('aria-pressed') === 'true';
         mesh(
           new T.CylinderGeometry(0.68, 0.78, 0.2, 8),

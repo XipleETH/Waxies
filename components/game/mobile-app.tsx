@@ -342,7 +342,12 @@ export default function MobileApp() {
           <span className="brand-dot" />
         </button>
         <div className="m-account">
-          <div className="m-balance" aria-label={`${profile.chispas} Chispas`}>
+          <div
+            className="m-balance"
+            data-object="balance"
+            data-value={String(profile.chispas)}
+            aria-label={`${profile.chispas} Chispas`}
+          >
             <Sparkles size={17} aria-hidden="true" />
             {profile.chispas}
           </div>

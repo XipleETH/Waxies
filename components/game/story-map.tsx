@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { haptic } from '@/lib/game/haptics';
 import { GameObjects } from './game-objects';
 import {
   STORY_CHAPTERS,
@@ -67,6 +68,7 @@ export function StoryMap({
     locked = selected > unlocked,
     level = courses[selected - 1].level;
   function changeChapter(n: number) {
+    haptic('select');
     setChapter(n);
     setSelected(Math.max(n * 10 + 1, Math.min(unlocked, n * 10 + 10)));
   }
@@ -97,7 +99,10 @@ export function StoryMap({
                 data-locked={n > unlocked}
                 aria-pressed={selected === n}
                 aria-label={`Nivel ${n}, ${n > unlocked ? 'bloqueado' : 'disponible'}, ${v} Chispas recogidas, ${100 - v} por recoger`}
-                onClick={() => setSelected(n)}
+                onClick={() => {
+                  haptic(n > unlocked ? 'error' : 'select');
+                  setSelected(n);
+                }}
               >
                 {n} · {storyStars(v)} estrellas · {100 - v} Chispas
               </button>
@@ -165,7 +170,10 @@ export function StoryMap({
             locked ? 'Bloqueado' : hp ? 'Volver a asaltar' : 'Asaltar'
           }
           disabled={locked}
-          onClick={() => onPlay(selected)}
+          onClick={() => {
+            haptic('select');
+            onPlay(selected);
+          }}
         >
           Asaltar
         </button>

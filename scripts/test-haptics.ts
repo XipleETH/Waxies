@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {haptic,stopHaptics,setHapticsEnabled,createGameplayHaptics,createGamepadControls} from '../lib/game/haptics';
+const pulses:unknown[]=[],rumble:unknown[]=[];const storage=new Map<string,string>();let hidden=false;let pads:any[]=[];
+Object.defineProperty(globalThis,'window',{value:new EventTarget(),configurable:true});
+Object.defineProperty(globalThis,'document',{value:{get hidden(){return hidden;},hasFocus:()=>true,activeElement:null},configurable:true});
+Object.defineProperty(globalThis,'localStorage',{value:{getItem:(k:string)=>storage.get(k)??null,setItem:(k:string,v:string)=>storage.set(k,v)},configurable:true});
+Object.defineProperty(globalThis,'navigator',{value:{vibrate:(p:unknown)=>{pulses.push(p);return true;},getGamepads:()=>pads},configurable:true});
+const reset=()=>{stopHaptics();pulses.length=0;rumble.length=0;};
+reset();haptic('select');haptic('select');assert.equal(pulses.length,1,'Repeated UI input is throttled');haptic('hit');assert.deepEqual(pulses.at(-1),[95],'Hit preempts a small pulse');
+setHapticsEnabled(false);reset();haptic('win');assert.equal(pulses.length,0,'Mute suppresses vibrations');setHapticsEnabled(true);
+hidden=true;reset();haptic('match');assert.equal(pulses.length,0,'Hidden pages stay quiet');hidden=false;
+pads=[{index:0,connected:true,buttons:Array.from({length:10},()=>({pressed:false})),vibrationActuator:{playEffect:(kind:string,opts:unknown)=>{rumble.push({kind,opts});return Promise.resolve('complete');},reset:()=>Promise.resolve()}}];
+reset();haptic('match');assert.equal(rumble.length,1,'Gamepad receives match notification');
+const report=createGameplayHaptics();reset();report({phase:'playing',hits:0,jumps:0},true);report({phase:'playing',hits:0,jumps:1},true);assert.deepEqual(pulses.at(-1),[18]);report({phase:'resetting',hits:1,jumps:1},true);assert.deepEqual(pulses.at(-1),[95]);report({phase:'won',hits:1,jumps:1},true);assert.deepEqual(pulses.at(-1),[45,55,90]);reset();report({phase:'playing',hits:0,jumps:0},false);report({phase:'won',hits:0,jumps:1},false);assert.equal(pulses.length,0,'Demonstrations and editing stay quiet');
+let jumps=0,pauses=0;const poll=createGamepadControls({jump:()=>jumps++,pause:()=>pauses++,restart:()=>{}});poll();pads[0].buttons[0].pressed=true;poll();poll();assert.equal(jumps,1,'Holding A does not repeat');pads[0].buttons[9].pressed=true;poll();assert.equal(pauses,1);
+pads[0].vibrationActuator.playEffect=()=>Promise.reject(Error('unsupported'));reset();haptic('win');await new Promise(r=>setTimeout(r,0));
+Object.defineProperty(globalThis,'navigator',{value:{getGamepads:()=>{throw Error('denied');}},configurable:true});reset();haptic('validated');
+console.log('Haptics: priority, mute, background, gamepad, event transitions, held buttons and unsupported APIs passed.');

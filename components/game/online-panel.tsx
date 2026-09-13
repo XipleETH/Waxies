@@ -6,6 +6,7 @@ import { challengeCode, type RouteProof } from '@/lib/game/route-proof';
 import { vaultLevel, type MobileProfile } from '@/lib/game/mobile-profile';
 import type { RaidReplay } from '@/lib/game/raid-replay';
 import styles from './online-panel.module.css';
+import { haptic } from '@/lib/game/haptics';
 import { ObjectDialogContent } from './object-dialog';
 import { ObjectMenu } from './object-menu';
 import { RaidReplayViewer } from './raid-replay-viewer';
@@ -83,6 +84,8 @@ export function OnlinePanel({
     command: OnlineCommand | { action: 'join'; name: string },
   ) {
     if (busy) return;
+    if (command.action === 'match' || command.action === 'revenge')
+      haptic('search');
     setBusy(true);
     setError('');
     try {
@@ -92,9 +95,12 @@ export function OnlinePanel({
       if (
         (command.action === 'match' || command.action === 'revenge') &&
         next.match
-      )
+      ) {
+        haptic('match');
         onAttack(next.match);
+      }
     } catch (e) {
+      haptic('error');
       setError((e as Error).message);
     } finally {
       setBusy(false);

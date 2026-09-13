@@ -22,6 +22,7 @@ import {
   buyGood,
   type MobileProfile,
 } from '@/lib/game/mobile-profile';
+import { haptic } from '@/lib/game/haptics';
 import { ObjectDialogContent } from './object-dialog';
 import { GameObjects } from './game-objects';
 import { AppNavigation, type AppScreen } from './app-navigation';
@@ -168,6 +169,7 @@ export function LiveVault({
                 modeRef.current = 'won';
                 setMode('won');
                 setMessage('Validada');
+                haptic('validated');
               } else {
                 modeRef.current = 'failed';
                 setMode('failed');
