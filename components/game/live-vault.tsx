@@ -22,6 +22,7 @@ import {
   buyGood,
   type MobileProfile,
 } from '@/lib/game/mobile-profile';
+import { ObjectDialogContent } from './object-dialog';
 import { GameObjects } from './game-objects';
 import { AppNavigation, type AppScreen } from './app-navigation';
 import {
@@ -40,12 +41,7 @@ import { challengeCode, verifyRoute } from '@/lib/game/route-proof';
 import { randomAxie } from '@/lib/game/random-axie';
 import { onlineRequest } from './online-panel';
 import type { OnlineView } from '@/lib/online/types';
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
+import { Dialog } from '@/components/ui/dialog';
 import styles from './live-vault.module.css';
 export function LiveVault({
   profile,
@@ -539,7 +535,15 @@ export function LiveVault({
                       height={42}
                       alt=""
                     />
-                    <small>{PARTS[card.part].name}</small>
+                    <span
+                      className={styles.powerStand}
+                      data-object="pedestal"
+                      data-label={PARTS[card.part].name}
+                      aria-pressed={selected === anchor}
+                      data-placed={traps.some((t) => t.anchor === anchor)}
+                    >
+                      <small>{PARTS[card.part].name}</small>
+                    </span>
                     {traps.some((t) => t.anchor === anchor) ? (
                       <Check size={10} />
                     ) : null}
@@ -798,20 +802,47 @@ export function LiveVault({
       {shopOpen ? (
         <aside className={styles.bazaar} aria-label="Bazar del refugio">
           <div className={styles.bazaarHeader}>
-            <span>
+            <span data-object="title" data-label="Bazar">
               <ShoppingBag size={16} /> Bazar
             </span>
-            <span>
+            <span
+              data-object="title"
+              data-label={`${profile.chispas}`}
+              data-value="Chispas"
+            >
               <Sparkles size={14} /> {profile.chispas}
             </span>
-            <button onClick={closeShop} aria-label="Cerrar Bazar">
+            <button
+              onClick={closeShop}
+              aria-label="Cerrar Bazar"
+              data-object="close"
+            >
               <X size={16} />
             </button>
           </div>
-          <div className={styles.goods}>
+          <div className={styles.goods} data-object-scroll>
             {GOODS.map((g) => (
               <button
                 key={g.id}
+                data-object={
+                  g.id === 'crystals'
+                    ? 'crystals'
+                    : g.id === 'lanterns'
+                      ? 'lantern'
+                      : g.id
+                }
+                data-label={
+                  {
+                    moss: 'Musgo',
+                    amethyst: 'Amatista',
+                    ember: 'Ámbar',
+                    crystals: 'Cristales',
+                    lanterns: 'Faroles',
+                  }[g.id]
+                }
+                data-caption={
+                  profile.owned.includes(g.id) ? 'Tuyo' : String(g.price)
+                }
                 disabled={!loaded}
                 aria-label={'Previsualizar ' + g.name}
                 aria-pressed={previewId === g.id}
@@ -849,6 +880,8 @@ export function LiveVault({
             ))}
             <button
               aria-label="Previsualizar sin adornos"
+              data-object="close"
+              data-label="Quitar"
               aria-pressed={previewId === 'none'}
               onClick={() => previewGood('none')}
             >
@@ -860,6 +893,12 @@ export function LiveVault({
             <div className={styles.purchase}>
               <small>Vista previa</small>
               <button
+                data-object="save"
+                data-label={
+                  previewId === 'none' || profile.owned.includes(previewId)
+                    ? 'Aplicar'
+                    : 'Comprar'
+                }
                 onClick={applyGood}
                 disabled={
                   previewId !== 'none' &&
@@ -946,16 +985,28 @@ export function LiveVault({
         />
       ) : null}
       <Dialog open={fund} onOpenChange={setFund}>
-        <DialogContent className={styles.fund}>
-          <DialogTitle>Cofre</DialogTitle>
-          <DialogDescription>
-            {view?.registered
+        <ObjectDialogContent
+          className="vault-coffer"
+          title="Cofre"
+          onClose={() => setFund(false)}
+          description={
+            view?.registered
               ? `${view.player?.available ?? 0} disponibles · ${view.player?.chest ?? 0} guardadas`
-              : '100 Chispas de prueba'}
-          </DialogDescription>
+              : '100 Chispas de prueba'
+          }
+        >
+          <div
+            className="coffer-model"
+            data-object="wallet"
+            aria-hidden="true"
+          />
           {message ? <output>{message}</output> : null}
           {profile.proof ? (
-            <button onClick={() => void share()}>
+            <button
+              data-object="portal"
+              data-label="Compartir"
+              onClick={() => void share()}
+            >
               <Link2 size={16} /> Compartir
             </button>
           ) : null}
@@ -973,6 +1024,8 @@ export function LiveVault({
                 onChange={(e) => setName(e.target.value)}
               />
               <button
+                data-object="save"
+                data-label={busy ? 'Guardando' : 'Crear'}
                 disabled={busy || name.trim().length < 2}
                 onClick={() => void deposit()}
               >
@@ -990,6 +1043,8 @@ export function LiveVault({
                 onChange={(e) => setAmount(e.target.value)}
               />
               <button
+                data-object="save"
+                data-label={busy ? 'Guardando' : 'Activar'}
                 disabled={busy || !profile.proof || view.player?.locked}
                 onClick={() => void deposit()}
               >
@@ -998,7 +1053,7 @@ export function LiveVault({
               {!profile.proof ? <small>Valida sin golpes</small> : null}
             </>
           )}
-        </DialogContent>
+        </ObjectDialogContent>
       </Dialog>
     </main>
   );

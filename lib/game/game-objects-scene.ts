@@ -148,13 +148,16 @@ export async function createGameObjects(
     paper = mat(0xffedb5),
     dark = mat(0x284d40),
     pink = mat(0xf68f87),
-    teal = mat(0x55d4bf);
+    teal = mat(0x55d4bf),
+    violet = mat(0xad83e6),
+    ember = mat(0xe49a53);
   const entries = new Map<
     HTMLElement,
     {
       key: string;
       group: T.Group;
       geos: T.BufferGeometry[];
+      ownedMaterials: T.Material[];
       width: number;
       height: number;
     }
@@ -164,6 +167,7 @@ export async function createGameObjects(
   ) => {
     entry.group.removeFromParent();
     entry.geos.forEach((g) => g.dispose());
+    entry.ownedMaterials.forEach((m) => m.dispose());
   };
   function build(el: HTMLElement, key: string) {
     const group = new T.Group(),
@@ -300,7 +304,48 @@ export async function createGameObjects(
         );
       }
     } else {
-      if (kind === 'wallet') {
+      if (kind === 'pedestal') {
+        const active = el.getAttribute('aria-pressed') === 'true';
+        mesh(
+          new T.CylinderGeometry(0.68, 0.78, 0.2, 8),
+          active ? gold : mint,
+          0,
+          0,
+          0,
+        );
+        mesh(new T.CylinderGeometry(0.76, 0.72, 0.12, 8), dark, 0, -0.15, 0);
+        text(label, -0.54, 0.3);
+        if (el.dataset.placed === 'true')
+          mesh(new T.OctahedronGeometry(0.09), gold, 0.65, 0.13, 0);
+      } else if (kind === 'moss' || kind === 'amethyst' || kind === 'ember') {
+        const stone =
+          kind === 'amethyst' ? violet : kind === 'ember' ? ember : mint;
+        box(0, -0.07, 0, 1.15, 1, 0.7, stone);
+        for (const x of [-0.55, 0.55]) {
+          box(x, 0.2, 0, 0.38, 1.3, 0.85, stone);
+          for (const dx of [-0.1, 0.1])
+            box(x + dx, 0.93, 0, 0.14, 0.2, 0.85, gold);
+        }
+        box(0, -0.26, 0.38, 0.4, 0.65, 0.1, dark);
+        box(0, -0.7, 0.04, 1.6, 0.18, 1, wood);
+      } else if (kind === 'crystals') {
+        for (const [x, y, r] of [
+          [-0.4, 0, 0.3],
+          [0, 0.2, 0.46],
+          [0.42, -0.1, 0.28],
+        ]) {
+          const crystal = mesh(new T.OctahedronGeometry(r), violet, x, y, 0);
+          crystal.scale.y = 1.8;
+        }
+        mesh(new T.CylinderGeometry(0.65, 0.75, 0.17, 7), mint, 0, -0.6, 0);
+      } else if (kind === 'lantern') {
+        box(0, -0.52, 0, 0.9, 0.15, 0.65, wood);
+        box(0, 0.55, 0, 0.95, 0.18, 0.7, gold);
+        for (const x of [-0.36, 0.36]) box(x, 0, 0.25, 0.09, 1, 0.09, gold);
+        const flame = mesh(new T.OctahedronGeometry(0.34), ember, 0, 0, 0.07);
+        flame.scale.y = 1.5;
+        mesh(new T.TorusGeometry(0.18, 0.045, 6, 12), gold, 0, 0.83, 0);
+      } else if (kind === 'wallet') {
         box(0, -0.05, 0, 1.2, 0.8, 0.75, wood);
         box(0, 0.45, 0, 1.3, 0.24, 0.82, gold);
         for (const x of [-0.4, 0.4]) box(x, 0, 0.4, 0.11, 0.8, 0.06, gold);
@@ -503,7 +548,7 @@ export async function createGameObjects(
         box(0, 0.7, 0, 0.1, 0.4, 0.1, wood);
         mesh(new T.OctahedronGeometry(0.16), gold, 0, 0.95, 0);
       }
-      if (label)
+      if (label && kind !== 'pedestal')
         text(
           label,
           -1,
@@ -568,11 +613,33 @@ export async function createGameObjects(
       center = bounds.getCenter(new T.Vector3()),
       size = bounds.getSize(new T.Vector3());
     for (const child of group.children) child.position.sub(center);
+    const ownedMaterials: T.Material[] = [];
+    if (el.matches(':disabled')) {
+      const faded = new Map<T.Material, T.Material>();
+      const dim = (material: T.Material) => {
+        if (!faded.has(material)) {
+          const clone = material.clone();
+          clone.transparent = true;
+          clone.opacity = 0.35;
+          clone.depthWrite = false;
+          faded.set(material, clone);
+          ownedMaterials.push(clone);
+        }
+        return faded.get(material)!;
+      };
+      group.traverse((o) => {
+        if (o instanceof T.Mesh)
+          o.material = Array.isArray(o.material)
+            ? o.material.map(dim)
+            : dim(o.material);
+      });
+    }
     scene.add(group);
     return {
       key,
       group,
       geos,
+      ownedMaterials,
       width: Math.max(0.1, size.x) + 0.18,
       height: Math.max(0.1, size.y) + 0.18,
     };
@@ -605,11 +672,13 @@ export async function createGameObjects(
     for (const el of targets) {
       const key = JSON.stringify([
         el.dataset.object,
+        el.matches(':disabled'),
         el.dataset.label,
         el.dataset.value,
         el.dataset.stars,
         el.dataset.caption,
         el.dataset.frame,
+        el.dataset.placed,
         el.getAttribute('aria-current'),
         el.getAttribute('aria-selected'),
         el.dataset.locked,
@@ -629,7 +698,11 @@ export async function createGameObjects(
       while (scroll && scope.contains(scroll)) {
         const clip = scroll.getBoundingClientRect();
         insideScroll =
-          insideScroll && r.top >= clip.top && r.bottom <= clip.bottom;
+          insideScroll &&
+          r.top >= clip.top &&
+          r.bottom <= clip.bottom &&
+          r.left >= clip.left &&
+          r.right <= clip.right;
         scroll = scroll.parentElement?.closest<HTMLElement>(
           '[data-object-scroll]',
         );

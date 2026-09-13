@@ -588,3 +588,41 @@ button[data-object]:disabled {
   top: 8px;
   right: 0;
 }
+
+.vault-coffer[data-slot='dialog-content'] {
+  height: auto;
+  max-height: 88dvh !important;
+  max-width: 380px !important;
+  width: calc(100% - 20px);
+}
+.vault-coffer .object-dialog-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  overflow: auto;
+}
+.coffer-model {
+  height: 110px;
+  width: 160px;
+  flex-shrink: 0;
+}
+.vault-coffer input {
+  width: 100%;
+  text-align: center;
+}
+.vault-coffer input[type='number'] {
+  font-size: 28px;
+  appearance: textfield;
+}
+.vault-coffer input::-webkit-inner-spin-button {
+  appearance: none;
+}
+.vault-coffer .object-dialog-body button[data-object] {
+  width: 120px;
+  height: 80px;
+  flex-shrink: 0;
+}
+.vault-coffer small {
+  color: #edcf8e;
+}
