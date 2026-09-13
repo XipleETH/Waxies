@@ -34,6 +34,19 @@ export function AppNavigation({
       {entries.map(({ id, label, Icon }) => (
         <button
           key={id}
+          data-object={
+            id === 'home'
+              ? 'home'
+              : !vaultAction
+                ? 'map'
+                : label === 'Guardar'
+                  ? 'save'
+                  : label === 'Editar'
+                    ? 'edit'
+                    : 'play'
+          }
+          data-label={label}
+          aria-label={label}
           className={active === id ? styles.active : ''}
           aria-current={active === id ? 'page' : undefined}
           disabled={id === 'vault' && vaultAction?.disabled}

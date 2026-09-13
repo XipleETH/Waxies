@@ -22,6 +22,7 @@ import {
   buyGood,
   type MobileProfile,
 } from '@/lib/game/mobile-profile';
+import { GameObjects } from './game-objects';
 import { AppNavigation, type AppScreen } from './app-navigation';
 import {
   decorationPositionsFor,
@@ -499,7 +500,12 @@ export function LiveVault({
     center = t ? project(t.x, t.y) : null;
 
   return (
-    <main className={styles.stage} aria-label="Refugio interactivo">
+    <main
+      className={styles.stage}
+      aria-label="Refugio interactivo"
+      data-vault-objects
+    >
+      <GameObjects />
       <div
         className={styles.world}
         ref={host}
@@ -879,6 +885,8 @@ export function LiveVault({
         {mode !== 'test' ? (
           <button
             className={styles.shopAccess}
+            data-object="shop"
+            data-label="Bazar"
             onClick={() => navigate('shop')}
             aria-label="Bazar"
             aria-expanded={shopOpen}
@@ -891,6 +899,8 @@ export function LiveVault({
         {mode === 'test' ? (
           <button
             className={styles.pauseAccess}
+            data-object={paused ? 'play' : 'pause'}
+            data-label={paused ? 'Seguir' : 'Pausa'}
             onClick={() => engine.current?.pause()}
             aria-label={paused ? 'Continuar' : 'Pausar'}
           >
@@ -900,6 +910,8 @@ export function LiveVault({
         ) : (
           <button
             className={styles.chestAccess}
+            data-object="reward"
+            data-label="Cofre"
             onClick={() => void openFund()}
             aria-label="Abrir cofre"
             disabled={!loaded || busy}

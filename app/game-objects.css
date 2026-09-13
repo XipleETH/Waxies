@@ -216,3 +216,46 @@ button[data-object]:disabled {
   font-size: 11px;
   text-align: center;
 }
+
+/* The DOM keeps accessible touch targets; the shared canvas draws the objects. */
+.is-home[data-objects-ready='true'] .home-mode[data-object],
+.is-home[data-objects-ready='true'] .m-axie-shortcut,
+[data-objects-ready='true'] > nav[aria-label='Navegación principal'],
+[data-objects-ready='true'] > nav[aria-label='Navegación principal'] button,
+[data-vault-objects][data-objects-ready='true']
+  [aria-label='Herramientas del refugio']
+  button {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+}
+.is-home[data-objects-ready='true'] .home-mode[data-object] > *,
+.is-home[data-objects-ready='true'] .m-axie-shortcut > *,
+[data-objects-ready='true'] > nav [data-object] > *,
+[data-vault-objects][data-objects-ready='true']
+  [aria-label='Herramientas del refugio']
+  button
+  > * {
+  visibility: hidden;
+}
+.is-home .home-mode[data-object] {
+  height: 82px;
+  width: 64px;
+}
+.is-home .m-axie-shortcut[data-object] {
+  height: 68px;
+  width: 64px;
+}
+[data-objects-ready='true'] > nav[aria-label='Navegación principal'] {
+  padding: 0 7px;
+}
+[data-objects-ready='true'] > nav[aria-label='Navegación principal'] button {
+  height: 64px;
+}
+[data-vault-objects]
+  [aria-label='Herramientas del refugio']
+  button[data-object] {
+  height: 58px;
+  width: 52px;
+}

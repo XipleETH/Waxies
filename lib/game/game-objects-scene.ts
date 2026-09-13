@@ -5,6 +5,52 @@ let fontPromise: Promise<Font> | undefined;
 const fontForUI = () =>
   (fontPromise ??= new FontLoader()
     .loadAsync('/assets/ui/helvetiker-bold.json')
+    .then((font) => {
+      // Extend the bundled Latin font with raised accents, keeping real geometry.
+      for (const [accented, base] of Object.entries({
+        á: 'a',
+        é: 'e',
+        í: 'i',
+        ó: 'o',
+        ú: 'u',
+        Á: 'A',
+        É: 'E',
+        Í: 'I',
+        Ó: 'O',
+        Ú: 'U',
+      })) {
+        if (font.data.glyphs[accented]) continue;
+        const glyph = font.data.glyphs[base];
+        const x = glyph.ha * 0.5,
+          y = base === base.toUpperCase() ? 1080 : 820;
+        font.data.glyphs[accented] = {
+          ...glyph,
+          o:
+            glyph.o +
+            ' m ' +
+            x +
+            ' ' +
+            y +
+            ' l ' +
+            (x + 90) +
+            ' ' +
+            (y + 150) +
+            ' l ' +
+            (x + 210) +
+            ' ' +
+            (y + 150) +
+            ' l ' +
+            (x + 75) +
+            ' ' +
+            y +
+            ' l ' +
+            x +
+            ' ' +
+            y,
+        };
+      }
+      return font;
+    })
     .catch((e) => {
       fontPromise = undefined;
       throw e;
@@ -198,7 +244,88 @@ export async function createGameObjects(
         );
       }
     } else {
-      if (kind === 'portal' || kind === 'map') {
+      if (kind === 'axie') {
+        const body = mesh(new T.IcosahedronGeometry(0.7, 2), mint);
+        body.scale.set(1.15, 0.9, 0.8);
+        for (const x of [-0.28, 0.28]) {
+          mesh(new T.SphereGeometry(0.19, 12, 8), paper, x, 0.08, 0.48);
+          mesh(new T.SphereGeometry(0.115, 12, 8), dark, x, 0.08, 0.63);
+          mesh(new T.SphereGeometry(0.045, 8, 6), paper, x - 0.035, 0.13, 0.72);
+          const ear = mesh(
+            new T.ConeGeometry(0.18, 0.5, 5),
+            gold,
+            x * 1.7,
+            0.69,
+            0,
+          );
+          ear.rotation.z = -x;
+          mesh(new T.SphereGeometry(0.16, 8, 6), teal, x, -0.56, 0.1);
+        }
+        mesh(
+          new T.TorusGeometry(0.13, 0.025, 5, 12, Math.PI),
+          dark,
+          0,
+          -0.23,
+          0.56,
+        ).rotation.z = Math.PI;
+      } else if (kind === 'swords' || kind === 'edit') {
+        for (const angle of kind === 'edit' ? [-0.55] : [-0.65, 0.65]) {
+          const weapon = new T.Group();
+          const start = icon.children.length;
+          box(0, 0.1, 0, 0.17, 1.1, 0.17, kind === 'edit' ? gold : paper);
+          mesh(
+            new T.ConeGeometry(0.13, 0.32, 4),
+            kind === 'edit' ? dark : paper,
+            0,
+            0.78,
+            0,
+          );
+          box(0, -0.48, 0, 0.58, 0.13, 0.25, gold);
+          box(0, -0.72, 0, 0.15, 0.35, 0.18, wood);
+          const pieces = icon.children.slice(start);
+          pieces.forEach((p) => weapon.add(p));
+          weapon.rotation.z = angle;
+          icon.add(weapon);
+        }
+      } else if (kind === 'training') {
+        box(0, 0, 0, 1.25, 0.17, 0.2, gold);
+        for (const x of [-0.52, 0.52]) {
+          mesh(
+            new T.CylinderGeometry(0.36, 0.36, 0.25, 8),
+            mint,
+            x,
+            0,
+            0,
+          ).rotation.z = Math.PI / 2;
+          mesh(
+            new T.CylinderGeometry(0.24, 0.24, 0.15, 8),
+            gold,
+            x * 1.5,
+            0,
+            0,
+          ).rotation.z = Math.PI / 2;
+        }
+        icon.rotation.z = 0.35;
+      } else if (kind === 'shop') {
+        box(0, -0.28, 0, 1.3, 0.6, 0.75, wood);
+        for (const x of [-0.56, 0.56]) box(x, 0.25, 0, 0.1, 1, 0.1, gold);
+        for (let i = 0; i < 5; i++)
+          box((i - 2) * 0.3, 0.65, 0.12, 0.3, 0.22, 1.05, i % 2 ? paper : mint);
+        mesh(new T.OctahedronGeometry(0.22), gold, 0, 0.04, 0.36);
+      } else if (kind === 'save') {
+        box(0, 0, 0, 1.1, 1.25, 0.25, wood);
+        box(0, 0, 0.16, 0.92, 1.08, 0.08, paper);
+        const a = box(-0.18, -0.05, 0.24, 0.16, 0.48, 0.15, mint);
+        a.rotation.z = 0.7;
+        const b = box(0.12, 0.09, 0.24, 0.16, 0.8, 0.15, mint);
+        b.rotation.z = -0.55;
+      } else if (kind === 'home') {
+        box(0, -0.1, 0, 1.1, 0.9, 0.7, mint);
+        const roof = mesh(new T.ConeGeometry(0.92, 0.65, 4), gold, 0, 0.65, 0);
+        roof.rotation.y = Math.PI / 4;
+        box(0, -0.27, 0.37, 0.34, 0.6, 0.08, dark);
+        box(0, -0.65, 0.1, 1.35, 0.14, 0.95, wood);
+      } else if (kind === 'portal' || kind === 'map') {
         box(-0.55, 0, 0, 0.28, 1.3, 0.45, mint);
         box(0.55, 0, 0, 0.28, 1.3, 0.45, mint);
         box(0, 0.7, 0, 1.6, 0.3, 0.55, gold);
@@ -288,6 +415,7 @@ export async function createGameObjects(
         mesh(new T.OctahedronGeometry(0.16), gold, 0, 0.95, 0);
       }
       if (label) text(label, -1, 0.32);
+      if (el.dataset.caption) text(el.dataset.caption, 1.08, 0.28, gold);
       if (value) text(value, -1, 0.52, paper);
     }
     group.updateMatrixWorld(true);
@@ -335,6 +463,7 @@ export async function createGameObjects(
         el.dataset.label,
         el.dataset.value,
         el.dataset.stars,
+        el.dataset.caption,
         el.dataset.locked,
         el.getAttribute('aria-pressed'),
       ]);
@@ -354,7 +483,8 @@ export async function createGameObjects(
         (!node || (r.top > bounds.top + 85 && r.bottom < bounds.bottom - 145));
       const scale =
         Math.min(r.width / e!.width, r.height / e!.height) *
-        (el.matches(':active') ? 0.92 : 1);
+        (el.matches(':active') ? 0.92 : 1) *
+        (el.matches(':disabled') ? 0.88 : 1);
       e!.group.scale.setScalar(scale);
       e!.group.position.set(
         r.left - bounds.left + r.width / 2,
@@ -362,7 +492,9 @@ export async function createGameObjects(
         node ? 0 : 30,
       );
       e!.group.rotation.y =
-        !reduced.matches && el.getAttribute('aria-pressed') === 'true'
+        !reduced.matches &&
+        (el.getAttribute('aria-pressed') === 'true' ||
+          el.getAttribute('aria-current') === 'page')
           ? Math.sin(now * 0.002) * 0.09
           : 0;
     }

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Swords, Sparkles, Play, Link2, Dumbbell } from 'lucide-react';
+import { GameObjects } from './game-objects';
 import { AppNavigation, type AppScreen } from './app-navigation';
 import { AxiePreview } from './axie-preview';
 import { randomAxie } from '@/lib/game/random-axie';
@@ -326,6 +327,9 @@ export default function MobileApp() {
           <div className="home-shading" aria-hidden="true" />
         </>
       ) : null}
+      {!storyOpen && (screen === 'home' || screen === 'axie') ? (
+        <GameObjects />
+      ) : null}
       <header className="m-header">
         <button
           onClick={() => setScreen('home')}
@@ -343,6 +347,8 @@ export default function MobileApp() {
           {(screen === 'home' || screen === 'axie') && (
             <button
               className="m-axie-shortcut"
+              data-object="axie"
+              data-label="Mi Axie"
               onClick={() => setScreen(screen === 'axie' ? 'home' : 'axie')}
               aria-label="Mi Axie"
               aria-current={screen === 'axie' ? 'page' : undefined}
@@ -360,6 +366,9 @@ export default function MobileApp() {
               <div className="home-mode-rail home-main-modes">
                 <button
                   className="home-mode home-mode-story"
+                  data-object="book"
+                  data-label="Historia"
+                  data-caption={`${storyUnlocked(profile.story)}/${STORY_LENGTH}`}
                   aria-label={`Historia ${storyUnlocked(profile.story)} de ${STORY_LENGTH}`}
                   onClick={() => setStoryOpen(true)}
                   disabled={!ready}
@@ -374,6 +383,8 @@ export default function MobileApp() {
                 </button>
                 <button
                   className="home-mode home-mode-online"
+                  data-object="swords"
+                  data-label="Online"
                   aria-label="Online"
                   onClick={() => setScreen('online')}
                   disabled={!ready}
@@ -385,6 +396,8 @@ export default function MobileApp() {
                 </button>
                 <button
                   className="home-mode"
+                  data-object="training"
+                  data-label="Práctica"
                   aria-label="Práctica"
                   onClick={() => setRoomsOpen(true)}
                   disabled={!ready}
