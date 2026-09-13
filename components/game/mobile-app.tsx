@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Swords, Sparkles, Play, Link2, Dumbbell } from 'lucide-react';
+import { ObjectDialogContent } from './object-dialog';
 import { GameObjects } from './game-objects';
 import { AppNavigation, type AppScreen } from './app-navigation';
 import { AxiePreview } from './axie-preview';
@@ -536,14 +537,12 @@ export default function MobileApp() {
           if (!open) setInspect(null);
         }}
       >
-        <DialogContent className="power-dialog">
-          <DialogTitle>
-            {part?.name} · {part?.card}
-          </DialogTitle>
-          <DialogDescription>
-            La carta original y su adaptación a plataformas son reglas
-            diferentes.
-          </DialogDescription>
+        <ObjectDialogContent
+          className="power-detail"
+          title={part?.name ?? 'Poder'}
+          description={part?.card ?? 'Axie Classic'}
+          onClose={() => setInspect(null)}
+        >
           {part ? (
             <>
               <Image
@@ -571,7 +570,7 @@ export default function MobileApp() {
               </a>
             </>
           ) : null}
-        </DialogContent>
+        </ObjectDialogContent>
       </Dialog>
     </main>
   );

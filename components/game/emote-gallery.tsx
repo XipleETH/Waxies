@@ -1,14 +1,10 @@
 'use client';
+import { ObjectDialogContent } from './object-dialog';
 import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
 import { EMOTES } from '@/lib/game/emotes';
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
+import { Dialog } from '@/components/ui/dialog';
 import styles from './emote-gallery.module.css';
 export function EmoteGallery({ onClose }: { onClose: () => void }) {
   const [selected, setSelected] = useState(0),
@@ -25,18 +21,17 @@ export function EmoteGallery({ onClose }: { onClose: () => void }) {
         if (!open) onClose();
       }}
     >
-      <DialogContent className={'power-dialog ' + styles.gallery}>
-        <DialogTitle>
-          Gestos <small className={styles.count}>{EMOTES.length}</small>
-        </DialogTitle>
-        <DialogDescription className="sr-only">
-          Elige un gesto para ver su animación. Puedes usarlos en Online y
-          aparecerán en la repetición del ataque.
-        </DialogDescription>
+      <ObjectDialogContent
+        title="Gestos"
+        description="Tus emociones también aparecen en la repetición del ataque."
+        onClose={onClose}
+        className={'emote-objects ' + styles.gallery}
+      >
         <div className={styles.preview}>
           <button
             onClick={() => choose(selected - 1)}
             aria-label="Gesto anterior"
+            data-object="previous"
           >
             <ChevronLeft size={23} />
           </button>
@@ -53,11 +48,18 @@ export function EmoteGallery({ onClose }: { onClose: () => void }) {
                 alt={emote.name}
               />
             </picture>
-            <figcaption aria-live="polite">{emote.name}</figcaption>
+            <figcaption
+              aria-live="polite"
+              data-object="title"
+              data-label={emote.name}
+            >
+              {emote.name}
+            </figcaption>
           </figure>
           <button
             onClick={() => choose(selected + 1)}
             aria-label="Gesto siguiente"
+            data-object="next"
           >
             <ChevronRight size={23} />
           </button>
@@ -69,12 +71,14 @@ export function EmoteGallery({ onClose }: { onClose: () => void }) {
           <button
             onClick={() => setReplay((n) => n + 1)}
             aria-label="Repetir gesto"
+            data-object="retry"
+            data-label="Repetir"
           >
             <RotateCcw size={15} />
             Repetir
           </button>
         </div>
-        <fieldset className={styles.grid}>
+        <fieldset className={styles.grid} data-object-scroll>
           <legend className="sr-only">Galería de 20 gestos</legend>
           {EMOTES.map((e, i) => (
             <button
@@ -84,11 +88,13 @@ export function EmoteGallery({ onClose }: { onClose: () => void }) {
               onClick={() => choose(i)}
             >
               <Image unoptimized src={e.poster} alt="" width={64} height={64} />
-              <span>{e.name}</span>
+              <span data-object="title" data-label={e.name}>
+                {e.name}
+              </span>
             </button>
           ))}
         </fieldset>
-      </DialogContent>
+      </ObjectDialogContent>
     </Dialog>
   );
 }

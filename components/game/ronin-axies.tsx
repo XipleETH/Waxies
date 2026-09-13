@@ -242,6 +242,8 @@ export function RoninAxies({
             type="button"
             className="secondary-button"
             disabled={busy}
+            data-object="retry"
+            data-label="Actualizar"
             onClick={() => void refresh()}
           >
             {busy ? (
@@ -253,7 +255,13 @@ export function RoninAxies({
           </button>
           <p className="ronin-account">
             {account.slice(0, 6)}…{account.slice(-4)} · {total} Axies{' '}
-            <button type="button" className="text-button" onClick={disconnect}>
+            <button
+              type="button"
+              className="text-button"
+              data-object="close"
+              data-label="Salir"
+              onClick={disconnect}
+            >
               Desconectar
             </button>
           </p>
@@ -262,6 +270,8 @@ export function RoninAxies({
               <button
                 type="button"
                 key={id}
+                data-object="axie"
+                data-label={'#' + id}
                 disabled={busy}
                 onClick={() => void choose(id)}
               >
@@ -274,6 +284,8 @@ export function RoninAxies({
               type="button"
               className="text-button"
               disabled={busy}
+              data-object="next"
+              data-label="Más"
               onClick={() => void more()}
             >
               Cargar más Axies
@@ -287,6 +299,8 @@ export function RoninAxies({
             type="button"
             className="secondary-button"
             disabled={busy}
+            data-object="wallet"
+            data-label="Ronin"
             onClick={connectRonin}
           >
             {busy ? (
@@ -301,6 +315,8 @@ export function RoninAxies({
               type="button"
               className="secondary-button"
               disabled={busy}
+              data-object="portal"
+              data-label="Sky Mavis"
               onClick={() => void connectWaypoint()}
             >
               {busy ? (

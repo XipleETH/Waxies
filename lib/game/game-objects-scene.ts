@@ -49,6 +49,56 @@ const fontForUI = () =>
             y,
         };
       }
+      for (const [accented, base] of [
+        ['ñ', 'n'],
+        ['Ñ', 'N'],
+      ]) {
+        if (font.data.glyphs[accented]) continue;
+        const glyph = font.data.glyphs[base],
+          x = glyph.ha * 0.2,
+          y = base === 'n' ? 840 : 1100;
+        font.data.glyphs[accented] = {
+          ...glyph,
+          o:
+            glyph.o +
+            ' m ' +
+            x +
+            ' ' +
+            y +
+            ' l ' +
+            (x + 90) +
+            ' ' +
+            (y + 70) +
+            ' l ' +
+            (x + 230) +
+            ' ' +
+            (y + 20) +
+            ' l ' +
+            (x + 320) +
+            ' ' +
+            (y + 70) +
+            ' l ' +
+            (x + 350) +
+            ' ' +
+            (y + 10) +
+            ' l ' +
+            (x + 240) +
+            ' ' +
+            (y - 50) +
+            ' l ' +
+            (x + 100) +
+            ' ' +
+            y +
+            ' l ' +
+            (x + 30) +
+            ' ' +
+            (y - 50) +
+            ' l ' +
+            x +
+            ' ' +
+            y,
+        };
+      }
       return font;
     })
     .catch((e) => {
@@ -213,7 +263,13 @@ export async function createGameObjects(
       });
       mesh(geometry, [gold, wood], x, y, 0.2);
     };
-    const kind = el.dataset.object,
+    const aliases: Record<string, string> = {
+      wallet: 'wallet',
+      chest: 'reward',
+      scroll: 'scroll',
+      emotes: 'emotes',
+    };
+    const kind = aliases[el.dataset.object ?? ''] ?? el.dataset.object,
       label = el.dataset.label ?? '',
       value = el.dataset.value ?? '';
     if (kind === 'title') {
@@ -244,7 +300,40 @@ export async function createGameObjects(
         );
       }
     } else {
-      if (kind === 'axie') {
+      if (kind === 'wallet') {
+        box(0, -0.05, 0, 1.2, 0.8, 0.75, wood);
+        box(0, 0.45, 0, 1.3, 0.24, 0.82, gold);
+        for (const x of [-0.4, 0.4]) box(x, 0, 0.4, 0.11, 0.8, 0.06, gold);
+        box(0, 0.05, 0.46, 0.25, 0.25, 0.12, gold);
+      } else if (kind === 'scroll') {
+        box(0, 0, 0, 1.05, 1.2, 0.09, paper);
+        for (const y of [-0.62, 0.62])
+          mesh(
+            new T.CylinderGeometry(0.13, 0.13, 1.35, 8),
+            gold,
+            0,
+            y,
+            0.03,
+          ).rotation.z = Math.PI / 2;
+        for (let i = 0; i < 3; i++)
+          box(0, 0.3 - i * 0.25, 0.07, 0.65, 0.035, 0.025, wood);
+      } else if (kind === 'emotes') {
+        const face = mesh(new T.SphereGeometry(0.63, 16, 12), gold);
+        face.scale.z = 0.45;
+        for (const x of [-0.22, 0.22])
+          mesh(new T.SphereGeometry(0.075, 8, 6), dark, x, 0.14, 0.29);
+        mesh(
+          new T.TorusGeometry(0.28, 0.04, 6, 16, Math.PI),
+          dark,
+          0,
+          -0.08,
+          0.3,
+        ).rotation.z = Math.PI;
+      } else if (kind === 'search') {
+        mesh(new T.TorusGeometry(0.48, 0.1, 6, 20), gold, 0, 0.16, 0);
+        const handle = box(0.4, -0.47, 0, 0.18, 0.6, 0.23, wood);
+        handle.rotation.z = 0.65;
+      } else if (kind === 'axie') {
         const body = mesh(new T.IcosahedronGeometry(0.7, 2), mint);
         body.scale.set(1.15, 0.9, 0.8);
         for (const x of [-0.28, 0.28]) {
@@ -414,9 +503,65 @@ export async function createGameObjects(
         box(0, 0.7, 0, 0.1, 0.4, 0.1, wood);
         mesh(new T.OctahedronGeometry(0.16), gold, 0, 0.95, 0);
       }
-      if (label) text(label, -1, 0.32);
+      if (label)
+        text(
+          label,
+          -1,
+          el.dataset.frame ? 0.4 : 0.32,
+          el.getAttribute('aria-selected') === 'true' ? gold : paper,
+        );
       if (el.dataset.caption) text(el.dataset.caption, 1.08, 0.28, gold);
       if (value) text(value, -1, 0.52, paper);
+    }
+    if (el.dataset.frame === 'true') {
+      group.updateMatrixWorld(true);
+      const b = new T.Box3().setFromObject(group),
+        size = b.getSize(new T.Vector3()),
+        center = b.getCenter(new T.Vector3());
+      const rect = el.getBoundingClientRect();
+      const h = size.y + 0.5,
+        w = Math.max(size.x + 0.5, (h * rect.width) / Math.max(1, rect.height));
+      const outline = new T.Shape();
+      const rounded = (
+        path: T.Shape | T.Path,
+        x: number,
+        y: number,
+        width: number,
+        height: number,
+        r: number,
+      ) => {
+        path.moveTo(x + r, y);
+        path.lineTo(x + width - r, y);
+        path.quadraticCurveTo(x + width, y, x + width, y + r);
+        path.lineTo(x + width, y + height - r);
+        path.quadraticCurveTo(x + width, y + height, x + width - r, y + height);
+        path.lineTo(x + r, y + height);
+        path.quadraticCurveTo(x, y + height, x, y + height - r);
+        path.lineTo(x, y + r);
+        path.quadraticCurveTo(x, y, x + r, y);
+      };
+      rounded(outline, -w / 2, -h / 2, w, h, 0.22);
+      const hole = new T.Path();
+      rounded(hole, -w / 2 + 0.14, -h / 2 + 0.14, w - 0.28, h - 0.28, 0.14);
+      outline.holes.push(hole);
+      const selected =
+        el.getAttribute('aria-current') === 'page' ||
+        el.getAttribute('aria-pressed') === 'true';
+      mesh(
+        new T.ExtrudeGeometry(outline, {
+          depth: 0.18,
+          bevelEnabled: true,
+          bevelSize: 0.025,
+          bevelThickness: 0.035,
+          bevelSegments: 1,
+          curveSegments: 4,
+        }),
+        [selected ? gold : mint, dark],
+        center.x,
+        center.y,
+        -0.38,
+        group,
+      );
     }
     group.updateMatrixWorld(true);
     const bounds = new T.Box3().setFromObject(group),
@@ -451,7 +596,7 @@ export async function createGameObjects(
     camera.updateProjectionMatrix();
     const targets = Array.from(
       scope.querySelectorAll<HTMLElement>('[data-object]'),
-    );
+    ).filter((el) => el.closest('[data-object-scope]') === scope);
     for (const [el, entry] of entries)
       if (!targets.includes(el)) {
         remove(entry);
@@ -464,6 +609,9 @@ export async function createGameObjects(
         el.dataset.value,
         el.dataset.stars,
         el.dataset.caption,
+        el.dataset.frame,
+        el.getAttribute('aria-current'),
+        el.getAttribute('aria-selected'),
         el.dataset.locked,
         el.getAttribute('aria-pressed'),
       ]);
@@ -474,10 +622,23 @@ export async function createGameObjects(
         entries.set(el, e);
       }
       const r = el.getBoundingClientRect();
+      let insideScroll = true;
+      let scroll = el.parentElement?.closest<HTMLElement>(
+        '[data-object-scroll]',
+      );
+      while (scroll && scope.contains(scroll)) {
+        const clip = scroll.getBoundingClientRect();
+        insideScroll =
+          insideScroll && r.top >= clip.top && r.bottom <= clip.bottom;
+        scroll = scroll.parentElement?.closest<HTMLElement>(
+          '[data-object-scroll]',
+        );
+      }
       const node = el.dataset.object === 'node';
       e!.group.visible =
         r.width > 0 &&
         r.height > 0 &&
+        insideScroll &&
         r.bottom > bounds.top &&
         r.top < bounds.bottom &&
         (!node || (r.top > bounds.top + 85 && r.bottom < bounds.bottom - 145));

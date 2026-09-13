@@ -46,6 +46,7 @@ export function AppNavigation({
                     : 'play'
           }
           data-label={label}
+          data-frame="true"
           aria-label={label}
           className={active === id ? styles.active : ''}
           aria-current={active === id ? 'page' : undefined}

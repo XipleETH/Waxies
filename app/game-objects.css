@@ -259,3 +259,332 @@ button[data-object]:disabled {
   height: 58px;
   width: 52px;
 }
+
+/* Open object menus: physical lettering replaces the old CSS plaques. */
+[data-object-scope][data-objects-ready='true'] [data-object] > * {
+  visibility: hidden;
+}
+.axie-object-room .object-room-title {
+  width: min(260px, 75vw);
+  height: 35px;
+  margin: auto;
+}
+.axie-object-room .object-room-title > span {
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+[data-layout][data-objects-ready='true'] > button {
+  align-self: center;
+  height: 82px;
+}
+.object-dialog[data-slot='dialog-content'] {
+  width: min(460px, 100%);
+  max-width: 460px !important;
+  height: min(860px, 96dvh);
+  max-height: 96dvh !important;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 18px 14px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none;
+  overflow: hidden !important;
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    #34513bdc,
+    #102a22f5 80%
+  ) !important;
+  color: #f3e7bf;
+  isolation: isolate;
+}
+.object-dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 10px;
+  height: 60px;
+}
+.object-dialog-heading [data-slot='dialog-title'] {
+  height: 48px;
+  width: calc(100% - 58px);
+  padding: 0 !important;
+  margin: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+.object-dialog-heading button {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+.object-dialog > [data-slot='dialog-description'] {
+  color: #c9d9bc;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  flex-shrink: 0;
+}
+.object-dialog-body {
+  overflow: auto;
+  min-height: 0;
+  flex: 1;
+  padding: 8px 3px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #8aab78 transparent;
+}
+.object-dialog button[data-object],
+.object-dialog [role='tab'][data-object] {
+  min-width: 48px;
+  min-height: 48px;
+  height: 76px;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.object-dialog [data-slot='tabs-list'] {
+  width: calc(100% - 74px);
+  height: 86px;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+.object-dialog [role='tab'] {
+  flex: 1;
+}
+.object-dialog .arsenal-search-toggle {
+  position: absolute;
+  right: 24px;
+  top: 124px;
+  width: 56px;
+  height: 66px;
+  z-index: 4;
+}
+.object-dialog .catalog-count {
+  margin: 10px 0;
+  color: #c9d9bc;
+  font-size: 11px;
+}
+.object-dialog .catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px 10px;
+}
+.object-dialog .catalog-part {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  padding: 3px !important;
+  min-width: 0;
+}
+.object-dialog .catalog-part-image {
+  border: 0 !important;
+  background: none !important;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.object-dialog .catalog-part-image img {
+  object-fit: contain;
+  filter: drop-shadow(0 7px 3px #0005);
+}
+.object-dialog .catalog-part strong[data-object] {
+  display: block;
+  width: 100%;
+  height: 28px;
+  margin: 4px 0;
+}
+.object-dialog .catalog-part > b,
+.object-dialog .catalog-part > small,
+.object-dialog .catalog-count > span {
+  display: none;
+}
+.object-dialog .catalog-part > span {
+  font-size: 9px;
+  color: #bbd2ab;
+}
+.object-dialog .catalog-more {
+  display: block;
+  width: 80px;
+  margin: 18px auto;
+}
+.object-dialog .source-link {
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  color: #b7d2ac;
+  margin: 15px;
+}
+.object-dialog .catalog-scroll {
+  overflow: visible;
+  max-height: none;
+}
+.object-dialog .ronin-axies {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+.object-dialog .ronin-axies > button[data-object] {
+  width: 130px;
+  height: 126px;
+}
+.object-dialog .ronin-axie-list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.object-dialog .ronin-axie-list button {
+  height: 95px;
+}
+.object-dialog .ronin-axies p {
+  flex-basis: 100%;
+}
+.object-dialog .metadata-import {
+  border: 0;
+  background: none;
+  padding: 5px;
+  box-shadow: none;
+}
+.object-dialog input:not([type='file']) {
+  border: 0;
+  border-bottom: 2px solid #c7b56d;
+  border-radius: 0;
+  background: #0c211d66;
+  box-shadow: none;
+  color: #fff0c9;
+  font-size: 16px;
+  min-height: 48px;
+}
+.object-dialog .axie-id-form {
+  padding-top: 25px;
+}
+.object-dialog .axie-id-form > div {
+  align-items: center;
+  gap: 16px;
+}
+.object-dialog .axie-id-form button {
+  width: 85px;
+  flex-shrink: 0;
+  height: 100px;
+}
+.object-file {
+  position: relative;
+  display: block;
+  width: 160px;
+  height: 145px;
+  margin: 32px auto;
+  cursor: pointer;
+}
+.object-file > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.object-file input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.object-file:focus-within {
+  outline: 2px solid #f7d886;
+  border-radius: 12px;
+}
+.emote-objects .object-dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+.emote-objects figure picture {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+.emote-objects figcaption[data-object] {
+  height: 32px;
+  width: 180px;
+}
+.emote-objects fieldset {
+  flex: 1;
+  scrollbar-width: thin;
+}
+.emote-objects fieldset button {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.emote-objects fieldset button[aria-pressed='true'] {
+  filter: drop-shadow(0 0 6px #eace7a);
+}
+.emote-objects fieldset span[data-object] {
+  display: block;
+  width: 100%;
+  height: 24px;
+}
+.emote-objects [data-object='retry'] {
+  width: 76px;
+  height: 58px !important;
+}
+.power-detail .object-dialog-body > img {
+  display: block;
+  margin: 20px auto;
+  width: 150px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 6px #0008);
+}
+.power-detail h3 {
+  color: #e7cf89;
+  margin: 22px 0 8px;
+}
+.power-detail p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e1e8cb;
+}
+@media (max-width: 360px) {
+  .object-dialog[data-slot='dialog-content'] {
+    padding: 12px !important;
+  }
+  .object-dialog .catalog-grid {
+    gap: 15px 6px;
+  }
+  .object-dialog .catalog-part-image {
+    height: 66px;
+  }
+}
+
+.axie-object-room .object-room-title {
+  width: min(205px, 58vw);
+  height: 26px;
+  margin: 4px 0 0 8px;
+}
+[data-objects-ready='true'] > nav[aria-label='Navegación principal'] button {
+  height: 70px;
+}
+
+.object-catalog-toolbar {
+  position: relative;
+  min-height: 86px;
+}
+.object-dialog .object-catalog-toolbar .arsenal-search-toggle {
+  top: 8px;
+  right: 0;
+}

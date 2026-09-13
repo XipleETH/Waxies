@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { GameObjects } from './game-objects';
 import type { MenuObject } from '@/lib/game/object-menu-scene';
 import styles from './object-menu.module.css';
 export interface ObjectAction {
@@ -19,27 +19,6 @@ export function ObjectMenu({
   label: string;
   layout?: 'grid' | 'corner';
 }) {
-  const host = useRef<HTMLDivElement>(null),
-    kinds = actions.map((a) => a.kind).join('|');
-  useEffect(() => {
-    let stopped = false,
-      dispose = () => {};
-    void import('@/lib/game/object-menu-scene')
-      .then(({ createObjectMenu }) => {
-        if (stopped || !host.current) return;
-        const scene = createObjectMenu(
-          host.current,
-          kinds.split('|') as MenuObject[],
-          layout,
-        );
-        dispose = () => scene.dispose();
-      })
-      .catch(() => {});
-    return () => {
-      stopped = true;
-      dispose();
-    };
-  }, [kinds, layout]);
   return (
     <nav
       className={
@@ -57,10 +36,13 @@ export function ObjectMenu({
           : undefined
       }
     >
-      <div ref={host} className={styles.scene} />
+      <GameObjects />
       {actions.map((a) => (
         <button
           key={a.id}
+          data-object={a.kind}
+          data-label={a.label}
+          data-caption={a.badge}
           onClick={a.onClick}
           disabled={a.disabled}
           aria-label={a.label}

@@ -7,6 +7,7 @@ export function GameObjects() {
     let dispose: (() => void) | undefined;
     const parent = host.current?.parentElement;
     if (!parent || !host.current) return;
+    parent.dataset.objectScope = '';
     void import('@/lib/game/game-objects-scene')
       .then((m) => m.createGameObjects(host.current!, parent, abort.signal))
       .then((cleanup) => {
@@ -16,6 +17,7 @@ export function GameObjects() {
       .catch(() => {});
     return () => {
       abort.abort();
+      delete parent.dataset.objectScope;
       dispose?.();
     };
   }, []);
