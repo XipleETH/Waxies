@@ -1,6 +1,3 @@
-/* This is a three.js diorama, not a web page: the map is the whole screen and
-   every control is a pressable 3D plaque in the game's own language
-   (see object-menu.module.css), never a flat web bar. */
 .map {
   position: relative;
   height: 100%;
@@ -8,6 +5,7 @@
   overflow: hidden;
   background: #172f2b;
   color: #eff3dc;
+  isolation: isolate;
 }
 .scroll {
   position: absolute;
@@ -22,7 +20,7 @@
 .world {
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse at center, #42694c, #172f2b 70%);
+  background: #172f2b;
 }
 .scene {
   position: absolute;
@@ -34,269 +32,102 @@
   height: 100%;
   display: block;
 }
-
-/* Shared low-poly plaque — solid, lit, tilted, with a chunky drop. */
-.plaque {
-  border: 2px solid #a1b479;
-  border-radius: 7px;
-  background: linear-gradient(#658559, #3b583e);
-  box-shadow:
-    0 5px #203a2a,
-    inset 0 1px #e3e7a566;
-  color: #f4e6b8;
-  text-shadow: 0 2px #314331;
-  transform: perspective(280px) rotateX(-8deg);
-  transition:
-    transform 0.1s,
-    box-shadow 0.1s;
-}
-.plaque:active:not(:disabled) {
-  transform: perspective(280px) rotateX(-8deg) translateY(3px);
-  box-shadow: 0 2px #203a2a;
-}
-.plaque:disabled {
-  opacity: 0.4;
-  box-shadow: none;
-}
-.plaque:focus-visible {
-  outline: 2px solid #f0d88d;
-  outline-offset: 3px;
-}
-
-/* Top: just the zone selector floats over the world, with a small lore plaque. */
-.topbar {
-  position: absolute;
-  inset: 13px 12px auto 12px;
-  z-index: 3;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  pointer-events: none;
-}
-.topbar > * {
-  pointer-events: auto;
-}
-.lore {
-  position: absolute;
-  left: 0;
-  top: 1px;
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 40px;
-}
-.zone {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  max-width: 100%;
-}
-.arrow {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 44px;
-  flex: none;
-}
-.zoneName {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1px;
-  min-width: 120px;
-  max-width: 168px;
-  padding: 7px 12px 9px;
-  line-height: 1.05;
-}
-.zoneName small {
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: #dcebb2;
-  font-weight: 800;
-  white-space: nowrap;
-}
-.zoneName strong {
-  font: 800 14px var(--font-display);
-  color: #f4e6b8;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Level markers: a tilted number plaque sitting on each 3D dungeon. */
 .node {
   position: absolute;
   transform: translate(-50%, -8%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  min-width: 64px;
-  min-height: 64px;
-  color: #f2d47d;
+  width: 68px;
+  height: 82px;
   z-index: 1;
-  filter: drop-shadow(0 4px 3px #0009);
-}
-.number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  min-width: 42px;
-  height: 31px;
-  padding: 0 9px;
-  border-radius: 7px;
-  border: 2px solid #a1b479;
-  background: linear-gradient(#658559, #3b583e);
-  box-shadow:
-    0 4px #203a2a,
-    inset 0 1px #e3e7a566;
-  color: #f4e6b8;
-  text-shadow: 0 2px #314331;
-  font: 800 16px var(--font-display);
-  transform: perspective(220px) rotateX(-10deg);
-}
-.selected .number {
-  background: linear-gradient(#f5e191, #c99f4d);
-  border-color: #f7e8ac;
-  color: #33481f;
-  text-shadow: 0 1px #fff6cf99;
-  box-shadow:
-    0 4px #7c5a23,
-    inset 0 1px #fff6cf;
-}
-.locked .number {
-  background: linear-gradient(#3f5947, #2b4436);
-  border-color: #6f8a6a;
-  color: #b7c4ad;
-  text-shadow: none;
-}
-.stars {
-  display: flex;
-  gap: 2px;
-}
-.node small {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  border-radius: 8px;
-  padding: 2px 8px;
-  background: #14251feb;
-  border: 1px solid #ffffff14;
-  color: #f2df9f;
+  background: none;
+  border: 0;
+  color: #f7e1ab;
   font-size: 11px;
-  font-weight: 700;
-}
-.locked {
-  color: #93a598;
-}
-.locked small {
-  color: #bdc9b0;
-}
-.node:focus-visible {
-  outline: 2px solid #fff1bc;
-  border-radius: 12px;
-  outline-offset: 4px;
 }
 .node::before {
   content: '';
   position: absolute;
   bottom: 100%;
-  width: 100px;
-  height: 76px;
+  left: -12px;
+  width: 92px;
+  height: 65px;
 }
-
-/* Bottom: no card — floating info over a soft scrim and a real 3D raid button. */
+.topbar {
+  position: absolute;
+  inset: calc(8px + env(safe-area-inset-top)) 6px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  pointer-events: none;
+}
+.topbar button {
+  width: 44px;
+  height: 48px;
+  flex: none;
+  pointer-events: auto;
+  background: none;
+  border: 0;
+  color: inherit;
+  font-size: 10px;
+}
+.zone {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+.zone button {
+  width: 38px;
+}
+.zoneName {
+  flex: 1;
+  min-width: 0;
+  height: 54px;
+  font-size: 12px;
+  text-align: center;
+}
 .action {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  bottom: max(8px, env(safe-area-inset-bottom));
+  left: 12px;
+  right: 12px;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
-  padding: 54px 16px max(16px, env(safe-area-inset-bottom));
-  background: linear-gradient(#17241f00, #16261fd9 62%);
-  pointer-events: none;
-}
-.action > * {
-  pointer-events: auto;
-}
-.brief {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  margin: 0;
-  text-align: center;
-  text-shadow: 0 2px 7px #0a1a15;
-}
-.brief b {
-  font: 800 20px var(--font-display);
-  color: #f4eed2;
-}
-.brief span {
-  font-size: 12px;
-  font-weight: 700;
-  color: #d8c891;
-}
-.raid {
-  position: relative;
-  width: 100%;
-  max-width: 440px;
-  height: 74px;
-}
-.raidScene {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.raidScene canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.play {
-  position: absolute;
-  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  background: transparent;
+  gap: 6px;
+  pointer-events: none;
+  background: radial-gradient(ellipse at bottom, #142e29e0, transparent 75%);
+}
+.brief {
+  width: calc(100% - 105px);
+  max-width: 290px;
+  height: 70px;
+  color: #ffe5a6;
+  text-align: center;
+  font-size: 15px;
+}
+.play {
+  width: 100px;
+  height: 124px;
+  flex: none;
+  pointer-events: auto;
+  background: none;
   border: 0;
-  color: #22401f;
-  font: 800 18px var(--font-display);
-  text-shadow: 0 1px #f6ffdaa0;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  color: #eddf9d;
+  font-weight: 800;
 }
-.play:disabled {
-  color: #d2ddc6;
-  text-shadow: 0 1px #00000055;
-  cursor: default;
+.map button:disabled {
+  opacity: 0.5;
 }
-.play:focus-visible {
-  outline: 2px solid #f0d88d;
-  outline-offset: 4px;
-  border-radius: 16px;
+.map button:focus-visible {
+  outline: 2px solid #f4d488;
+  outline-offset: 3px;
+  border-radius: 50%;
 }
 .fallback {
   position: absolute;
-  top: 70px;
-  left: 16px;
+  top: 80px;
+  left: 12px;
   font-size: 11px;
-}
-@media (max-height: 740px) {
-  .brief b {
-    font-size: 18px;
-  }
-  .action {
-    padding-top: 44px;
-    gap: 7px;
-  }
 }

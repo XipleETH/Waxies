@@ -490,12 +490,13 @@ export default function MobileApp() {
         </DialogContent>
       </Dialog>
       <Dialog open={storyOpen} onOpenChange={setStoryOpen}>
-        <DialogContent className="story-world-dialog">
+        <DialogContent className="story-world-dialog" showCloseButton={false}>
           <DialogTitle className="sr-only">Camino de Lunacia</DialogTitle>
           <DialogDescription className="sr-only">
             Explora las cinco zonas, elige una mazmorra y recupera sus Chispas.
           </DialogDescription>
           <StoryMap
+            onClose={() => setStoryOpen(false)}
             best={profile.story}
             onPlay={story}
             onPrologue={() => {

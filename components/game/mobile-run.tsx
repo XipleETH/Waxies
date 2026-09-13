@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useRef, useState, useMemo } from 'react';
 import Image from 'next/image';
+import { GameObjects } from './game-objects';
+import { StoryRunMenu } from './story-run-menu';
 import { EmoteBubble, EmotePicker } from './emotes';
 import {
   ArrowLeft,
@@ -202,51 +204,78 @@ export function MobileRun({
     state.phase === 'won' ||
     state.phase === 'dead';
   return (
-    <main className="mobile-run" aria-label="Partida vertical">
-      <header className="run-hud">
-        <button
-          className="m-icon"
-          aria-label={
-            run.mode === 'story' ? 'Volver al camino' : 'Volver al lobby'
-          }
-          onClick={onExit}
-        >
-          <ArrowLeft size={21} />
-        </button>
-        <div className="run-vitals">
-          <div>
-            <Heart size={15} fill="currentColor" />
-            <strong>{state.hp}</strong>
-            <span>
-              {demo
-                ? 'REPETICIÓN'
-                : run.mode === 'validate'
-                  ? 'VALIDACIÓN'
-                  : 'SALUD'}
-            </span>
+    <main
+      className={`mobile-run ${run.mode === 'story' ? 'is-story-objects' : ''}`}
+      aria-label="Partida vertical"
+    >
+      {run.mode === 'story' ? (
+        <div className="story-vitals" aria-label="Estado de la partida">
+          <div
+            data-object="heart"
+            data-value={state.hp}
+            aria-label={`Salud: ${state.hp} de 100`}
+          >
+            Salud {state.hp}
           </div>
-          <progress aria-label="Salud restante" value={state.hp} max={100} />
+          <div
+            data-object="title"
+            data-label={`${run.storyNumber} / 50`}
+            aria-label={`Nivel ${run.storyNumber} de 50`}
+          >
+            {run.storyNumber}/50
+          </div>
+          <div
+            data-object="gem"
+            data-value={demo ? 0 : reward}
+            aria-label={`Premio: ${demo ? 0 : reward} Chispas`}
+          >
+            Premio {demo ? 0 : reward}
+          </div>
         </div>
-        <div className="run-prize">
-          <Sparkles size={17} />
-          <strong>
-            {run.mode === 'online'
-              ? Math.floor(((run.onlineLimit ?? 0) * state.hp) / 100)
-              : rewards && !demo
-                ? reward
-                : 0}
-          </strong>
-          <small>premio</small>
-        </div>
-        <button
-          className="m-icon"
-          aria-label="Pausar partida"
-          onClick={() => engine.current?.pause()}
-          disabled={!loaded || state.phase !== 'playing'}
-        >
-          <Pause size={20} />
-        </button>
-      </header>
+      ) : (
+        <header className="run-hud">
+          <button
+            className="m-icon"
+            aria-label="Volver al lobby"
+            onClick={onExit}
+          >
+            <ArrowLeft size={21} />
+          </button>
+          <div className="run-vitals">
+            <div>
+              <Heart size={15} fill="currentColor" />
+              <strong>{state.hp}</strong>
+              <span>
+                {demo
+                  ? 'REPETICIÓN'
+                  : run.mode === 'validate'
+                    ? 'VALIDACIÓN'
+                    : 'SALUD'}
+              </span>
+            </div>
+            <progress aria-label="Salud restante" value={state.hp} max={100} />
+          </div>
+          <div className="run-prize">
+            <Sparkles size={17} />
+            <strong>
+              {run.mode === 'online'
+                ? Math.floor(((run.onlineLimit ?? 0) * state.hp) / 100)
+                : rewards && !demo
+                  ? reward
+                  : 0}
+            </strong>
+            <small>premio</small>
+          </div>
+          <button
+            className="m-icon"
+            aria-label="Pausar partida"
+            onClick={() => engine.current?.pause()}
+            disabled={!loaded || state.phase !== 'playing'}
+          >
+            <Pause size={20} />
+          </button>
+        </header>
+      )}
       <div
         className="run-canvas"
         ref={host}
@@ -286,7 +315,28 @@ export function MobileRun({
           <small>{state.reason} · Volvemos al inicio</small>
         </output>
       ) : null}
-      {overlay ? (
+      {overlay && run.mode === 'story' ? (
+        <StoryRunMenu
+          phase={state.phase}
+          loaded={loaded}
+          demo={demo}
+          claimed={claimed}
+          number={run.storyNumber ?? 1}
+          title={run.level.name}
+          hp={state.hp}
+          reward={reward}
+          error={error}
+          proof={!!run.proof}
+          onEnter={start}
+          onExit={onExit}
+          onResume={() => engine.current?.pause()}
+          onRestart={() => engine.current?.restart()}
+          onFresh={fresh}
+          onProof={showProof}
+          onCollect={collect}
+          onNext={onNext}
+        />
+      ) : overlay ? (
         <div className="run-overlay">
           <section className="run-panel">
             <span className="m-eyebrow">
@@ -583,7 +633,16 @@ export function MobileRun({
           </section>
         </div>
       ) : null}
-      {!overlay && demo ? (
+      {!overlay && demo && run.mode === 'story' ? (
+        <div
+          className="story-demo-mark"
+          data-object="bot"
+          data-label="Sin premio"
+          aria-label="Demostración sin premio"
+        >
+          Sin premio
+        </div>
+      ) : !overlay && demo ? (
         <div className="run-demo">
           <Bot size={15} />{' '}
           {run.mode === 'shared' ? 'Ruta del defensor' : 'Ruta del bot'} · sin
@@ -595,37 +654,79 @@ export function MobileRun({
           {error}
         </div>
       ) : null}
-      <footer className="run-controls">
-        <div>
-          <strong>
-            {run.mode === 'story' ? `${run.storyNumber}. ` : ''}
-            {run.level.name}
-          </strong>
-          <span>
-            {state.phase === 'resetting'
-              ? 'Nuevo intento…'
-              : demo
-                ? 'Observa los saltos'
-                : 'Toca la pantalla o el botón'}
-          </span>
-        </div>
-        <button
-          className="jump-button"
-          disabled={!loaded || demo || state.phase !== 'playing'}
-          onPointerDown={(e) => {
-            e.preventDefault();
-            engine.current?.jump();
-          }}
-          onKeyDown={(e) => {
-            if (e.code === 'Enter' || e.code === 'Space') {
+      {run.mode === 'story' ? (
+        <>
+          {!overlay ? (
+            <div className="story-play-controls">
+              <button
+                data-object="map"
+                data-label="Camino"
+                aria-label="Volver al camino"
+                onClick={onExit}
+              >
+                Camino
+              </button>
+              <button
+                data-object="jump"
+                data-label="Saltar"
+                aria-label="Saltar"
+                disabled={!loaded || demo || state.phase !== 'playing'}
+                onPointerDown={(e) => {
+                  e.preventDefault();
+                  engine.current?.jump();
+                }}
+                onKeyDown={(e) => {
+                  if (e.code === 'Enter' || e.code === 'Space') {
+                    e.preventDefault();
+                    engine.current?.jump();
+                  }
+                }}
+              >
+                Saltar
+              </button>
+              <button
+                data-object="pause"
+                data-label="Pausa"
+                aria-label="Pausar partida"
+                disabled={!loaded || state.phase !== 'playing'}
+                onClick={() => engine.current?.pause()}
+              >
+                Pausa
+              </button>
+            </div>
+          ) : null}
+          <GameObjects />
+        </>
+      ) : (
+        <footer className="run-controls">
+          <div>
+            <strong>{run.level.name}</strong>
+            <span>
+              {state.phase === 'resetting'
+                ? 'Nuevo intento…'
+                : demo
+                  ? 'Observa los saltos'
+                  : 'Toca la pantalla o el botón'}
+            </span>
+          </div>
+          <button
+            className="jump-button"
+            disabled={!loaded || demo || state.phase !== 'playing'}
+            onPointerDown={(e) => {
               e.preventDefault();
               engine.current?.jump();
-            }
-          }}
-        >
-          <ArrowUp size={24} /> SALTAR
-        </button>
-      </footer>
+            }}
+            onKeyDown={(e) => {
+              if (e.code === 'Enter' || e.code === 'Space') {
+                e.preventDefault();
+                engine.current?.jump();
+              }
+            }}
+          >
+            <ArrowUp size={24} /> SALTAR
+          </button>
+        </footer>
+      )}
     </main>
   );
 }

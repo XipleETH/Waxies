@@ -1,15 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import {
-  ChevronLeft,
-  ChevronRight,
-  LockKeyhole,
-  Sparkles,
-  Star,
-  Play,
-  BookOpen,
-  Check,
-} from 'lucide-react';
+import { GameObjects } from './game-objects';
 import {
   STORY_CHAPTERS,
   storyStars,
@@ -23,24 +14,20 @@ export function StoryMap({
   best,
   onPlay,
   onPrologue,
+  onClose,
 }: {
   best: number[];
-  onPlay: (number: number) => void;
+  onPlay: (n: number) => void;
   onPrologue: () => void;
+  onClose: () => void;
 }) {
   const unlocked = storyUnlocked(best);
-  const [chapter, setChapter] = useState(() => Math.floor((unlocked - 1) / 10));
-  const [selected, setSelected] = useState(unlocked);
-  const [pins, setPins] = useState<MapPin[]>([]),
+  const [chapter, setChapter] = useState(() => Math.floor((unlocked - 1) / 10)),
+    [selected, setSelected] = useState(unlocked),
+    [pins, setPins] = useState<MapPin[]>([]),
     [failed, setFailed] = useState(false);
   const host = useRef<HTMLDivElement>(null),
-    scroll = useRef<HTMLDivElement>(null),
-    actionHost = useRef<HTMLDivElement>(null),
-    lockedRef = useRef(false),
-    actionRef = useRef<{
-      setLocked: (v: boolean) => void;
-      setPressed: (v: boolean) => void;
-    } | null>(null);
+    scroll = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let stopped = false,
       dispose = () => {};
@@ -55,6 +42,7 @@ export function StoryMap({
             setPins,
           );
           dispose = () => scene.dispose();
+          setFailed(false);
         }
       })
       .catch(() => {
@@ -67,42 +55,20 @@ export function StoryMap({
   }, [chapter, best, unlocked]);
   useEffect(() => {
     if (pins.length && scroll.current) {
-      const index = Math.max(0, Math.min(9, unlocked - chapter * 10 - 1));
+      const i = Math.max(0, Math.min(9, unlocked - chapter * 10 - 1));
       scroll.current.scrollTop = Math.max(
         0,
-        (pins[index].y / 100) * storyMapHeight(chapter) -
+        (pins[i].y / 100) * storyMapHeight(chapter) -
           scroll.current.clientHeight * 0.4,
       );
     }
   }, [pins, chapter, unlocked]);
-  useEffect(() => {
-    let stopped = false,
-      dispose = () => {};
-    void import('@/lib/game/story-action-scene')
-      .then(({ createStoryActionScene }) => {
-        if (stopped || !actionHost.current) return;
-        const action = createStoryActionScene(actionHost.current);
-        action.setLocked(lockedRef.current);
-        actionRef.current = action;
-        dispose = () => action.dispose();
-      })
-      .catch(() => {});
-    return () => {
-      stopped = true;
-      actionRef.current = null;
-      dispose();
-    };
-  }, []);
   const hp = best[selected - 1] ?? 0,
     locked = selected > unlocked,
     level = courses[selected - 1].level;
-  useEffect(() => {
-    lockedRef.current = locked;
-    actionRef.current?.setLocked(locked);
-  }, [locked]);
-  function changeChapter(next: number) {
-    setChapter(next);
-    setSelected(Math.max(next * 10 + 1, Math.min(unlocked, next * 10 + 10)));
+  function changeChapter(n: number) {
+    setChapter(n);
+    setSelected(Math.max(n * 10 + 1, Math.min(unlocked, n * 10 + 10)));
   }
   return (
     <div className={styles.map}>
@@ -114,112 +80,97 @@ export function StoryMap({
           <div ref={host} className={styles.scene} />
           {Array.from({ length: 10 }, (_, i) => {
             const n = chapter * 10 + i + 1,
-              value = best[n - 1] ?? 0,
-              isLocked = n > unlocked,
-              pin = pins[i] ?? {
+              v = best[n - 1] ?? 0,
+              p = pins[i] ?? {
                 x: 50 + Math.sin(i * 1.45) * 24,
                 y: 10 + i * 8.4,
               };
             return (
               <button
                 key={n}
-                className={`${styles.node} ${selected === n ? styles.selected : ''} ${isLocked ? styles.locked : ''}`}
-                style={{ left: pin.x + '%', top: pin.y + '%' }}
-                onClick={() => setSelected(n)}
+                className={styles.node}
+                style={{ left: p.x + '%', top: p.y + '%' }}
+                data-object="node"
+                data-label={n}
+                data-value={100 - v}
+                data-stars={storyStars(v)}
+                data-locked={n > unlocked}
                 aria-pressed={selected === n}
-                aria-label={`Nivel ${n}, ${isLocked ? 'bloqueado' : 'disponible'}, ${value} Chispas recogidas, ${100 - value} por recoger`}
+                aria-label={`Nivel ${n}, ${n > unlocked ? 'bloqueado' : 'disponible'}, ${v} Chispas recogidas, ${100 - v} por recoger`}
+                onClick={() => setSelected(n)}
               >
-                <span className={styles.number}>
-                  {isLocked ? <LockKeyhole size={12} /> : null}
-                  {n}
-                </span>
-                <span
-                  className={styles.stars}
-                  aria-label={`${storyStars(value)} estrellas`}
-                >
-                  {[0, 1, 2].map((j) => (
-                    <Star
-                      key={j}
-                      size={12}
-                      fill={j < storyStars(value) ? 'currentColor' : 'none'}
-                    />
-                  ))}
-                </span>
-                <small>
-                  <Sparkles size={11} /> {100 - value}
-                  {value === 100 ? <Check size={11} /> : null}
-                </small>
+                {n} · {storyStars(v)} estrellas · {100 - v} Chispas
               </button>
             );
           })}
           {failed ? (
-            <p className={styles.fallback}>
-              Vista sencilla · puedes seguir eligiendo mazmorras.
-            </p>
+            <p className={styles.fallback}>Puedes seguir eligiendo niveles.</p>
           ) : null}
         </div>
       </div>
       <div className={styles.topbar}>
         <button
-          onClick={onPrologue}
+          data-object="book"
           aria-label="Ver prólogo"
-          className={`${styles.plaque} ${styles.lore}`}
+          onClick={onPrologue}
         >
-          <BookOpen size={18} />
+          Prólogo
         </button>
         <nav className={styles.zone} aria-label="Zonas de historia">
           <button
-            className={`${styles.plaque} ${styles.arrow}`}
+            data-object="previous"
             disabled={chapter === 0}
             onClick={() => changeChapter(chapter - 1)}
             aria-label="Zona anterior"
           >
-            <ChevronLeft size={22} />
+            Anterior
           </button>
-          <div className={`${styles.plaque} ${styles.zoneName}`}>
-            <small>ZONA {chapter + 1} / 5</small>
-            <strong>{STORY_CHAPTERS[chapter].name}</strong>
+          <div
+            className={styles.zoneName}
+            data-object="title"
+            data-label={STORY_CHAPTERS[chapter].name}
+            data-value={`ZONA ${chapter + 1} / 5`}
+          >
+            {STORY_CHAPTERS[chapter].name}
           </div>
           <button
-            className={`${styles.plaque} ${styles.arrow}`}
+            data-object="next"
             disabled={chapter === 4}
             onClick={() => changeChapter(chapter + 1)}
             aria-label="Zona siguiente"
           >
-            <ChevronRight size={22} />
+            Siguiente
           </button>
         </nav>
+        <button data-object="close" aria-label="Cerrar mapa" onClick={onClose}>
+          Cerrar
+        </button>
       </div>
-      <div className={styles.action} aria-label={`Mazmorra ${selected}`}>
-        <p className={styles.brief}>
-          <b>{level.name}</b>
-          <span>
-            {locked
-              ? `Se abre al superar el nivel ${selected - 1}`
-              : hp
-                ? `${hp}/100 Chispas · mejora tu marca`
-                : `Hasta ${100 - hp} Chispas por recoger`}
-          </span>
-        </p>
-        <div className={styles.raid}>
-          <div ref={actionHost} className={styles.raidScene} />
-          <button
-            className={styles.play}
-            disabled={locked}
-            onClick={() => onPlay(selected)}
-            onPointerDown={() => actionRef.current?.setPressed(true)}
-            onPointerUp={() => actionRef.current?.setPressed(false)}
-            onPointerLeave={() => actionRef.current?.setPressed(false)}
-          >
-            {locked ? (
-              <LockKeyhole size={19} />
-            ) : (
-              <Play size={19} fill="currentColor" />
-            )}
-            {locked ? 'Bloqueado' : hp ? 'Volver a asaltar' : 'Asaltar'}
-          </button>
+      <div className={styles.action}>
+        <div
+          className={styles.brief}
+          data-object="title"
+          data-label={level.name}
+          data-value={
+            locked ? `SUPERA EL ${selected - 1}` : `${100 - hp} CHISPAS`
+          }
+        >
+          {level.name} · {100 - hp} Chispas
         </div>
+        <button
+          className={styles.play}
+          data-object="portal"
+          data-label={locked ? 'Bloqueado' : 'Asaltar'}
+          aria-label={
+            locked ? 'Bloqueado' : hp ? 'Volver a asaltar' : 'Asaltar'
+          }
+          disabled={locked}
+          onClick={() => onPlay(selected)}
+        >
+          Asaltar
+        </button>
       </div>
+      <GameObjects />
     </div>
   );
 }
