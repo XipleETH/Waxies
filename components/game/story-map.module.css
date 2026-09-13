@@ -131,3 +131,17 @@
   left: 12px;
   font-size: 11px;
 }
+
+.map::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    #0d231d99,
+    transparent 100px,
+    transparent calc(100% - 150px),
+    #0d231dbb
+  );
+}

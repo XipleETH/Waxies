@@ -1,3 +1,4 @@
+import { createStoryLandscape } from './story-landscape';
 import * as THREE from 'three';
 import courses from './data/story-courses.json';
 import {
@@ -97,6 +98,12 @@ export function createStoryMapScene(
   const guardianRooms: Array<{ level: Dungeon; roof: THREE.Group }> = [];
   const curve = new THREE.CatmullRomCurve3(
     nodes.map((p) => new THREE.Vector3(p.x, -0.5, p.z)),
+  );
+  const disposeLandscape = createStoryLandscape(
+    scene,
+    chapter,
+    curve,
+    nodes[nodes.length - 1].z,
   );
   mesh(new THREE.TubeGeometry(curve, 100, 0.57, 5, false), rock, 0, 0, 0);
   for (let i = 0; i <= 95; i++) {
@@ -273,6 +280,7 @@ export function createStoryMapScene(
     dispose() {
       disposed = true;
       guardianLayer.dispose();
+      disposeLandscape();
       scroll?.removeEventListener('scroll', visibleGuardians);
       cancelAnimationFrame(raf);
       observer.disconnect();
