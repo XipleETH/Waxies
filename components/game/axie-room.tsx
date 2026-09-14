@@ -49,13 +49,13 @@ export function AxieRoom({
             {
               id: 'id',
               label: 'Invocar',
-              kind: 'portal',
+              kind: 'summon',
               onClick: () => setPanel('id'),
             },
             {
               id: 'parts',
               label: 'Poderes',
-              kind: 'book',
+              kind: 'powers',
               onClick: onBrowse,
               badge: '132',
             },

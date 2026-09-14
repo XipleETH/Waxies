@@ -1,5 +1,7 @@
 import * as T from 'three';
 export type MenuObject =
+  | 'summon'
+  | 'powers'
   | 'emotes'
   | 'wallet'
   | 'portal'

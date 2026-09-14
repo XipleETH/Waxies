@@ -373,7 +373,7 @@ export default function MobileApp() {
               <div className="home-mode-rail home-main-modes">
                 <button
                   className="home-mode home-mode-story"
-                  data-object="book"
+                  data-object="path"
                   data-label="Historia"
                   data-caption={`${storyUnlocked(profile.story)}/${STORY_LENGTH}`}
                   aria-label={`Historia ${storyUnlocked(profile.story)} de ${STORY_LENGTH}`}

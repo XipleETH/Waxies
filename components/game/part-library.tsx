@@ -75,7 +75,7 @@ export function PartLibrary({
             <TabsList>
               <TabsTrigger
                 value="cards"
-                data-object="book"
+                data-object="powers"
                 data-label="Poderes"
               >
                 132 poderes

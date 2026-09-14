@@ -299,7 +299,7 @@ export function RoninAxies({
             type="button"
             className="secondary-button"
             disabled={busy}
-            data-object="wallet"
+            data-object="ronin"
             data-label="Ronin"
             onClick={connectRonin}
           >
@@ -315,7 +315,7 @@ export function RoninAxies({
               type="button"
               className="secondary-button"
               disabled={busy}
-              data-object="portal"
+              data-object="sky-mavis"
               data-label="Sky Mavis"
               onClick={() => void connectWaypoint()}
             >

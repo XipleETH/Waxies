@@ -126,7 +126,7 @@ export function AxieLoadout({
           />
           <button
             className="primary-button"
-            data-object="portal"
+            data-object="summon"
             data-label={busy ? 'Cargando' : 'Invocar'}
             disabled={busy}
             aria-label="Consultar partes del Axie"

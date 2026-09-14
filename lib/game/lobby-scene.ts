@@ -212,7 +212,7 @@ export function createLobbyScene(
     if (!part) return;
     const compact = appearance.parts.length > 3;
     const x = compact ? [-1.6, -0.65, 0.65, 1.6][i % 4] : [-1.5, 0, 1.5][i],
-      y = compact ? (i < 4 ? 0.75 : 1.7) : [0.75, 1.7, 0.75][i],
+      y = compact ? (i < 4 ? [0.75, 1.55, 1.55, 0.75][i] : 1.7) : [0.75, 1.7, 0.75][i],
       z = compact ? (i < 4 ? -0.85 : -2.1) : i === 1 ? -2.1 : -0.85;
     const base = mesh(new T.CylinderGeometry(0.42, 0.5, y, 7), stone);
     base.position.set(x, y / 2, z);

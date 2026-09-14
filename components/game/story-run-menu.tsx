@@ -119,7 +119,7 @@ export function StoryRunMenu({
         </p>
       ) : null}
       <div className="story-menu-actions">
-        {button('map', 'Camino', onExit)}
+        {button('path', 'Camino', onExit)}
         {phase === 'ready'
           ? button('portal', loaded ? 'Entrar' : 'Cargando', onEnter, !loaded)
           : null}
@@ -138,7 +138,7 @@ export function StoryRunMenu({
           : null}
         {phase === 'won' && !demo
           ? button(
-              claimed ? 'portal' : 'reward',
+              claimed ? (number === 50 ? 'path' : 'next') : 'reward',
               claimed ? (number === 50 ? 'Camino' : 'Siguiente') : 'Recoger',
               claimed ? onNext : onCollect,
             )

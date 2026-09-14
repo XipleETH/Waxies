@@ -659,7 +659,7 @@ export function MobileRun({
           {!overlay ? (
             <div className="story-play-controls">
               <button
-                data-object="map"
+                data-object="path"
                 data-label="Camino"
                 aria-label="Volver al camino"
                 onClick={onExit}
