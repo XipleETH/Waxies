@@ -110,7 +110,7 @@
     "decoration": "none"
   },
   "proof": {
-    "rules": "portrait-raid-v1",
+    "rules": "portrait-raid-v2",
     "frames": 1674,
     "actions": [
       0,

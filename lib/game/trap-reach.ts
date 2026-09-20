@@ -1,6 +1,92 @@
+import { raidFamily } from './raid-mechanics';
 import { PARTS } from './catalog';
 import type { Trap } from './physics';
 export function reachSettings(part: string) {
+  const family = raidFamily(part);
+  const custom: Partial<
+    Record<
+      typeof family,
+      {
+        min: number;
+        max: number;
+        default: number;
+        label: string;
+        kind: 'radius' | 'line';
+      }
+    >
+  > = {
+    orbit: {
+      min: 0.5,
+      max: 2.8,
+      default: 1.25,
+      label: 'Radio orbital',
+      kind: 'radius',
+    },
+    pendulum: {
+      min: 0.5,
+      max: 2.8,
+      default: 1.25,
+      label: 'Longitud del péndulo',
+      kind: 'radius',
+    },
+    lift: {
+      min: 0.5,
+      max: 4,
+      default: 1.25,
+      label: 'Ascenso vertical',
+      kind: 'line',
+    },
+    leap: {
+      min: 1,
+      max: 5,
+      default: 2,
+      label: 'Alcance del salto',
+      kind: 'line',
+    },
+    breath: {
+      min: 0.5,
+      max: 3,
+      default: 2,
+      label: 'Longitud del soplido',
+      kind: 'line',
+    },
+    cloud: {
+      min: 1,
+      max: 6,
+      default: 2,
+      label: 'Viaje de la nube',
+      kind: 'line',
+    },
+    gas: {
+      min: 0.5,
+      max: 2.8,
+      default: 2,
+      label: 'Radio del gas',
+      kind: 'radius',
+    },
+    wave: {
+      min: 0.5,
+      max: 2.8,
+      default: 2,
+      label: 'Expansión de la onda',
+      kind: 'radius',
+    },
+    spikes: {
+      min: 0.5,
+      max: 2.8,
+      default: 2,
+      label: 'Alcance de espinas',
+      kind: 'line',
+    },
+    gate: {
+      min: 0.4,
+      max: 2,
+      default: 1,
+      label: 'Radio de la barrera',
+      kind: 'radius',
+    },
+  };
+  if (custom[family]) return custom[family]!;
   const pattern = PARTS[part].recipe.pattern;
   if (['thorny-caterpillar', 'cactus', 'pupae'].includes(part))
     return {

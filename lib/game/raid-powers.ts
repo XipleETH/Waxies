@@ -1,3 +1,4 @@
+import { raidFamily, FAMILY_LABELS } from './raid-mechanics';
 import { PARTS } from './catalog';
 import type { Pattern } from './recipes';
 const MOVEMENT: Record<Pattern, string> = {
@@ -16,7 +17,41 @@ const MOVEMENT: Record<Pattern, string> = {
   boomerang:
     'El proyectil sale y regresa. No aterrices en su trayecto de vuelta.',
 };
+const FAMILY_GUIDES: Partial<Record<ReturnType<typeof raidFamily>, string>> = {
+  orbit:
+    'Gira alrededor de un ancla: cruza cuando el cuerpo deja libre el paso.',
+  pendulum:
+    'Se balancea sujeto a un pivote y acelera en el centro. Sigue su regreso con un salto.',
+  lift: 'Sube y baja periódicamente. Cambia de altura mientras se aleja.',
+  leap: 'Fija tu posición, avisa y salta antes de volver. Abandona el recorrido marcado.',
+  cannon:
+    'Lanza munición grande y lenta. Salta sobre ella durante el descanso del cañón.',
+  mortar:
+    'Lanza en parábola por encima de los desniveles. Evita su zona de caída.',
+  boomerang:
+    'El proyectil recorre la distancia elegida y vuelve a la misma altura. Esquiva ambos pasos.',
+  breath:
+    'Expulsa un cono corto durante el ataque. Su alcance termina en el borde iluminado.',
+  cloud:
+    'Una nube recorre el alcance elegido, crece y se disipa. Busca otra altura para cruzar.',
+  gas: 'El gas crece alrededor de la pieza y se disipa antes del siguiente ciclo. Cruza durante el descanso.',
+  wave: 'Un anillo se expande: el borde hace daño, su interior queda libre.',
+  spikes:
+    'Extiende espinas hacia el lado anunciado. Pasa por detrás o espera la retracción.',
+  gate: 'La barrera se cierra por ciclos. Durante su descanso puedes atravesar también el cuerpo.',
+};
 export function raidPowerDescription(id: string) {
+  const family = raidFamily(id);
+  return (
+    FAMILY_LABELS[family] +
+    '. ' +
+    (FAMILY_GUIDES[family] ?? MOVEMENT[PARTS[id].recipe.pattern]) +
+    ' Movimiento y daño de área adaptados para mazmorras; la carta Classic original es ' +
+    PARTS[id].card +
+    '.'
+  );
+}
+export function legacyRaidPowerDescription(id: string) {
   if (id === 'carrot')
     return 'Lanza zanahorias en línea recta. Salta sobre el proyectil y cruza durante la recuperación. Carrot Hammer recupera energía al romperse su escudo en Classic; aquí el lanzador es una adaptación visual y no se rompe.';
   if (id === 'grass-snake')

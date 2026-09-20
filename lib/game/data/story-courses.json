@@ -47,15 +47,15 @@
           "x": 4.432,
           "y": 6.45,
           "part": "carrot",
-          "phase": 0,
+          "phase": 3.33,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 5.5
         }
       ],
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 563,
       "actions": [
         0,
@@ -67,8 +67,8 @@
       ]
     },
     "metrics": {
-      "score": 19,
-      "timingPassed": 10,
+      "score": 23,
+      "timingPassed": 9,
       "timingTrials": 12,
       "timingOffsetMs": 50,
       "seconds": 5,
@@ -142,15 +142,15 @@
           "x": 4.432,
           "y": 6.45,
           "part": "carrot",
-          "phase": 0,
+          "phase": 3.33,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 5.5
         }
       ],
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 792,
       "actions": [
         0,
@@ -164,8 +164,8 @@
       ]
     },
     "metrics": {
-      "score": 18,
-      "timingPassed": 14,
+      "score": 21,
+      "timingPassed": 13,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
@@ -235,7 +235,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 363,
       "actions": [
         0,
@@ -342,7 +342,7 @@
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 730,
       "actions": [
         60,
@@ -428,36 +428,37 @@
           "y": 7.6,
           "part": "axie-kiss",
           "patrol": 0,
-          "phase": 0,
-          "reach": 7
+          "phase": 2.8299999999999983,
+          "reach": 8.5
         },
         {
           "x": 6.9,
           "y": 1.525,
           "part": "cottontail",
           "patrol": 0,
-          "phase": 0,
-          "reach": 1.45
+          "phase": 3,
+          "reach": 0.96
         }
       ],
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 953,
+      "rules": "portrait-raid-v2",
+      "frames": 1080,
       "actions": [
         48,
         300,
-        852
+        408,
+        984
       ]
     },
     "metrics": {
-      "score": 39,
+      "score": 46,
       "timingPassed": 3,
-      "timingTrials": 6,
+      "timingTrials": 8,
       "timingOffsetMs": 50,
-      "seconds": 8,
-      "jumps": 3
+      "seconds": 9,
+      "jumps": 4
     },
     "number": 5,
     "chapter": 1,
@@ -539,7 +540,7 @@
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 985,
       "actions": [
         84,
@@ -634,22 +635,22 @@
           "y": 3.8,
           "part": "axie-kiss",
           "patrol": 0,
-          "phase": 0,
-          "reach": 7.5
+          "phase": 1.1099999999999999,
+          "reach": 8.5
         },
         {
           "x": 2.83,
           "y": 8.8,
           "part": "cottontail",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 1.45
+          "phase": 2.78,
+          "reach": 0.96
         }
       ],
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 728,
       "actions": [
         60,
@@ -663,8 +664,8 @@
       ]
     },
     "metrics": {
-      "score": 24,
-      "timingPassed": 15,
+      "score": 27,
+      "timingPassed": 14,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
@@ -735,36 +736,38 @@
           "y": 7.6,
           "part": "axie-kiss",
           "patrol": 0,
-          "phase": 0,
-          "reach": 7
+          "phase": 2.8299999999999983,
+          "reach": 8.5
         },
         {
           "x": 7.1,
           "y": 1.525,
-          "part": "cottontail",
+          "part": "hot-butt",
           "patrol": 0,
-          "phase": 0,
-          "reach": 1.45
+          "phase": 3,
+          "reach": 2
         }
       ],
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 1010,
+      "rules": "portrait-raid-v2",
+      "frames": 1073,
       "actions": [
-        108,
-        360,
-        912
+        12,
+        84,
+        192,
+        420,
+        972
       ]
     },
     "metrics": {
-      "score": 31,
-      "timingPassed": 4,
-      "timingTrials": 6,
+      "score": 36,
+      "timingPassed": 6,
+      "timingTrials": 10,
       "timingOffsetMs": 50,
-      "seconds": 8,
-      "jumps": 3
+      "seconds": 9,
+      "jumps": 5
     },
     "number": 8,
     "chapter": 1,
@@ -859,24 +862,24 @@
         {
           "x": 8.3456,
           "y": 17.799999999999997,
-          "part": "carrot",
+          "part": "hot-butt",
           "patrol": 0,
           "phase": 0,
-          "reach": 12
+          "reach": 2
         },
         {
           "x": 10.45,
           "y": 19.025,
-          "part": "blue-moon",
+          "part": "indian-star",
           "phase": 0.8,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 0.5
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 473,
       "actions": [
         48,
@@ -967,24 +970,24 @@
         {
           "x": 5.73,
           "y": 3.8,
-          "part": "swallow",
+          "part": "gerbil",
           "patrol": 0,
           "phase": 0,
-          "reach": 7.5
+          "reach": 2
         },
         {
           "x": 2.69,
           "y": 8.8,
-          "part": "hermit",
+          "part": "indian-star",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.4
+          "reach": 1.25
         }
       ],
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 728,
       "actions": [
         60,
@@ -998,8 +1001,8 @@
       ]
     },
     "metrics": {
-      "score": 29,
-      "timingPassed": 14,
+      "score": 26,
+      "timingPassed": 15,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
@@ -1074,18 +1077,18 @@
         {
           "x": 9.65,
           "y": 9.925,
-          "part": "incisor",
+          "part": "shoal-star",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.5
+          "reach": 6
         },
         {
           "x": 2.1999999999999997,
           "y": 6.45,
-          "part": "hermit",
+          "part": "indian-star",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 0.4
+          "reach": 0.5
         },
         {
           "x": 4.3,
@@ -1099,7 +1102,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 1185,
       "actions": [
         0,
@@ -1112,8 +1115,8 @@
       ]
     },
     "metrics": {
-      "score": 37,
-      "timingPassed": 10,
+      "score": 40,
+      "timingPassed": 9,
       "timingTrials": 14,
       "timingOffsetMs": 50,
       "seconds": 10,
@@ -1190,32 +1193,32 @@
         {
           "x": 9.65,
           "y": 10.625,
-          "part": "incisor",
+          "part": "shoal-star",
           "patrol": 0,
-          "phase": 2.4,
-          "reach": 1.2
+          "phase": 5.390000000000001,
+          "reach": 6
         },
         {
           "x": 3.495,
           "y": 6.45,
-          "part": "carrot",
-          "phase": 0.8,
+          "part": "gerbil",
+          "phase": 3.960000000000001,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 1
         },
         {
           "x": 9.942,
           "y": 9.05,
-          "part": "blue-moon",
-          "phase": 1.6,
+          "part": "indian-star",
+          "phase": 4.93,
           "patrol": 0,
-          "reach": 7
+          "reach": 1.25
         }
       ],
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 492,
       "actions": [
         36,
@@ -1226,8 +1229,8 @@
       ]
     },
     "metrics": {
-      "score": 39,
-      "timingPassed": 6,
+      "score": 24,
+      "timingPassed": 9,
       "timingTrials": 10,
       "timingOffsetMs": 50,
       "seconds": 4,
@@ -1310,10 +1313,10 @@
         {
           "x": 5.6,
           "y": 3.8,
-          "part": "swallow",
+          "part": "hot-butt",
           "patrol": 0,
           "phase": 0,
-          "reach": 7.5
+          "reach": 2
         },
         {
           "x": 2.31,
@@ -1326,16 +1329,16 @@
         {
           "x": 1.55,
           "y": 12.025,
-          "part": "oranda",
+          "part": "shoal-star",
           "patrol": 0,
           "phase": 0,
-          "reach": 12
+          "reach": 6
         }
       ],
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 733,
       "actions": [
         60,
@@ -1349,8 +1352,8 @@
       ]
     },
     "metrics": {
-      "score": 36,
-      "timingPassed": 12,
+      "score": 33,
+      "timingPassed": 13,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
@@ -1423,47 +1426,46 @@
           "y": 1.525,
           "part": "axie-kiss",
           "patrol": 0,
-          "phase": 0,
-          "reach": 4.5
+          "phase": 2.8299999999999983,
+          "reach": 8.5
         },
         {
           "x": 5.085,
           "y": 4.075,
-          "part": "cottontail",
+          "part": "hot-butt",
           "patrol": 0,
-          "phase": 0.7,
-          "reach": 1.05
+          "phase": 3.700000000000003,
+          "reach": 2
         },
         {
           "x": 7.715,
           "y": 7.508,
           "part": "cuckoo",
           "patrol": 0,
-          "phase": 1.4,
-          "reach": 1.05
+          "phase": 4.57,
+          "reach": 1.73
         }
       ],
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 985,
       "actions": [
         84,
-        312,
-        396,
-        540,
+        384,
+        552,
         648,
         852
       ]
     },
     "metrics": {
-      "score": 42,
-      "timingPassed": 7,
-      "timingTrials": 12,
+      "score": 41,
+      "timingPassed": 6,
+      "timingTrials": 10,
       "timingOffsetMs": 50,
       "seconds": 8,
-      "jumps": 6
+      "jumps": 5
     },
     "number": 14,
     "chapter": 2,
@@ -1544,10 +1546,10 @@
         {
           "x": 2.4,
           "y": 6.45,
-          "part": "oranda",
+          "part": "shoal-star",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 7.5
+          "reach": 6
         },
         {
           "x": 2.35,
@@ -1561,7 +1563,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 425,
       "actions": [
         0,
@@ -1692,7 +1694,7 @@
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 775,
       "actions": [
         12,
@@ -1783,53 +1785,54 @@
       ],
       "traps": [
         {
-          "x": 9.65,
-          "y": 6.775,
-          "part": "rose-bud",
+          "x": 6.55,
+          "y": 7.405,
+          "part": "dual-blade",
           "patrol": 0,
-          "phase": 0.4,
-          "reach": 1.45
+          "phase": 3.229999999999997,
+          "reach": 1.25
         },
         {
           "x": 4.3,
           "y": 6.45,
           "part": "confident",
           "patrol": 0,
-          "phase": 1.9,
-          "reach": 1.45
+          "phase": 4.899999999999999,
+          "reach": 0.96
         },
         {
-          "x": 10.27,
-          "y": 7.65,
+          "x": 9.527,
+          "y": 10.005,
           "part": "pupae",
           "patrol": 0,
-          "phase": 0,
-          "reach": 1.7
+          "phase": 3.1700000000000017,
+          "reach": 1.31
         }
       ],
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
-      "frames": 985,
+      "rules": "portrait-raid-v2",
+      "frames": 1135,
       "actions": [
         0,
-        108,
-        156,
-        312,
-        372,
-        732,
-        900,
-        948
+        144,
+        324,
+        432,
+        516,
+        540,
+        888,
+        1044,
+        1092
       ]
     },
     "metrics": {
-      "score": 29,
+      "score": 35,
       "timingPassed": 14,
-      "timingTrials": 16,
+      "timingTrials": 18,
       "timingOffsetMs": 50,
-      "seconds": 8,
-      "jumps": 8
+      "seconds": 9,
+      "jumps": 9
     },
     "number": 17,
     "chapter": 2,
@@ -1951,7 +1954,7 @@
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 1015,
       "actions": [
         12,
@@ -2033,10 +2036,10 @@
         {
           "x": 9.25,
           "y": 12.625,
-          "part": "anemone-horn",
+          "part": "dual-blade",
           "patrol": 0,
           "phase": 0,
-          "reach": 7.5
+          "reach": 1.25
         },
         {
           "x": 5.9,
@@ -2058,7 +2061,7 @@
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 908,
       "actions": [
         24,
@@ -2188,7 +2191,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 662,
       "actions": [
         0,
@@ -2312,13 +2315,13 @@
           "part": "goda",
           "patrol": 0,
           "phase": 3.2,
-          "reach": 9.5
+          "reach": 2.8
         }
       ],
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 660,
       "actions": [
         0,
@@ -2333,8 +2336,8 @@
       ]
     },
     "metrics": {
-      "score": 45,
-      "timingPassed": 12,
+      "score": 42,
+      "timingPassed": 13,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 6,
@@ -2448,7 +2451,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 658,
       "actions": [
         0,
@@ -2572,13 +2575,13 @@
           "part": "goda",
           "patrol": 0,
           "phase": 3,
-          "reach": 7.5
+          "reach": 2.8
         }
       ],
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 658,
       "actions": [
         0,
@@ -2593,8 +2596,8 @@
       ]
     },
     "metrics": {
-      "score": 39,
-      "timingPassed": 14,
+      "score": 37,
+      "timingPassed": 15,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 5,
@@ -2708,7 +2711,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 461,
       "actions": [
         0,
@@ -2820,7 +2823,7 @@
           "part": "goldfish",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 4.8
+          "reach": 4
         },
         {
           "x": 3.38,
@@ -2834,7 +2837,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 658,
       "actions": [
         0,
@@ -2948,37 +2951,37 @@
           "part": "cloud",
           "patrol": 0,
           "phase": 0,
-          "reach": 4.8
+          "reach": 2
         },
         {
           "x": 9.68,
           "y": 3.9,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 0,
-          "reach": 12
+          "phase": 0.17,
+          "reach": 5.5
         },
         {
-          "x": 9.1,
-          "y": 1.525,
+          "x": 4.32,
+          "y": 16.365,
           "part": "oranda",
           "patrol": 0,
-          "phase": 2.4,
-          "reach": 7.5
+          "phase": 2.7399999999999998,
+          "reach": 7
         },
         {
-          "x": 3.9,
-          "y": 6.1,
+          "x": 11.719999999999999,
+          "y": 18.751666666666665,
           "part": "goda",
-          "phase": 0,
+          "phase": 0.51,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 2
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 1103,
       "actions": [
         24,
@@ -2992,8 +2995,8 @@
       ]
     },
     "metrics": {
-      "score": 53,
-      "timingPassed": 10,
+      "score": 56,
+      "timingPassed": 9,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 9,
@@ -3103,7 +3106,7 @@
           "part": "goda",
           "patrol": 0,
           "phase": 3,
-          "reach": 9.5
+          "reach": 2.8
         },
         {
           "x": 2.35,
@@ -3117,7 +3120,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 658,
       "actions": [
         0,
@@ -3132,8 +3135,8 @@
       ]
     },
     "metrics": {
-      "score": 53,
-      "timingPassed": 11,
+      "score": 50,
+      "timingPassed": 12,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 5,
@@ -3257,7 +3260,7 @@
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 826,
       "actions": [
         12,
@@ -3365,38 +3368,38 @@
           "y": 12.8,
           "part": "sponge",
           "patrol": 0,
-          "phase": 0,
-          "reach": 0.4
+          "phase": 4.530000000000001,
+          "reach": 0.96
         },
         {
           "x": 3.1,
           "y": 10.6,
           "part": "carrot",
-          "phase": 0,
+          "phase": 4.700000000000003,
           "patrol": 0,
-          "reach": 12
+          "reach": 7
         },
         {
           "x": 4.71,
           "y": 3.8,
           "part": "oranda",
-          "phase": 1.6,
+          "phase": 6.470000000000002,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 8.5
         },
         {
           "x": 7.9,
           "y": 1.525,
           "part": "goda",
-          "phase": 2.4,
+          "phase": 0.4400000000000013,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 0.96
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 1093,
       "actions": [
         24,
@@ -3512,37 +3515,37 @@
           "part": "cloud",
           "patrol": 0,
           "phase": 0,
-          "reach": 6
+          "reach": 2
         },
         {
           "x": 1.38,
           "y": 11.1,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 1.2,
-          "reach": 7.5
+          "phase": 1.3699999999999999,
+          "reach": 5.5
         },
         {
           "x": 2.35,
           "y": 13.775,
           "part": "oranda",
           "patrol": 0,
-          "phase": 1.2,
-          "reach": 9.5
+          "phase": 1.54,
+          "reach": 7
         },
         {
           "x": 10.45,
           "y": 19.025,
           "part": "goda",
-          "phase": 2.4,
+          "phase": 2.91,
           "patrol": 0,
-          "reach": 12
+          "reach": 2
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 733,
       "actions": [
         0,
@@ -3556,8 +3559,8 @@
       ]
     },
     "metrics": {
-      "score": 43,
-      "timingPassed": 12,
+      "score": 40,
+      "timingPassed": 13,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 6,
@@ -3675,13 +3678,13 @@
           "part": "goda",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 2.8
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 826,
       "actions": [
         12,
@@ -3802,7 +3805,7 @@
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 985,
       "actions": [
         36,
@@ -3812,8 +3815,8 @@
       ]
     },
     "metrics": {
-      "score": 56,
-      "timingPassed": 3,
+      "score": 50,
+      "timingPassed": 4,
       "timingTrials": 8,
       "timingOffsetMs": 50,
       "seconds": 8,
@@ -3907,37 +3910,37 @@
           "part": "furball",
           "patrol": 0,
           "phase": 2.4,
-          "reach": 12
+          "reach": 4
         },
         {
           "x": 2.7,
           "y": 10.6,
           "part": "little-branch",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 3.8
+          "phase": 1.67,
+          "reach": 2.75
         },
         {
           "x": 9.65,
           "y": 8.175,
           "part": "carrot",
-          "phase": 1.6,
+          "phase": 1.9400000000000002,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 7
         },
         {
           "x": 9.65,
           "y": 13.075,
           "part": "goda",
-          "phase": 2.4,
+          "phase": 2.91,
           "patrol": 0,
-          "reach": 12
+          "reach": 2
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 817,
       "actions": [
         0,
@@ -3952,8 +3955,8 @@
       ]
     },
     "metrics": {
-      "score": 46,
-      "timingPassed": 13,
+      "score": 43,
+      "timingPassed": 14,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 7,
@@ -4095,7 +4098,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 765,
       "actions": [
         0,
@@ -4256,7 +4259,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 955,
       "actions": [
         0,
@@ -4359,42 +4362,42 @@
       ],
       "traps": [
         {
-          "x": 3.75,
-          "y": 10.6,
+          "x": 2.8133333333333783,
+          "y": 10.985000000000005,
           "part": "cuckoo",
           "patrol": 0,
           "phase": 0,
-          "reach": 1.45
+          "reach": 1.2
         },
         {
           "x": 3.98,
           "y": 12.8,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 3.8
+          "phase": 1.67,
+          "reach": 1.73
         },
         {
-          "x": 10.22,
-          "y": 6.1,
+          "x": 1.883,
+          "y": 16.003,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 2.4,
-          "reach": 9.5
+          "phase": 2.7399999999999998,
+          "reach": 7
         },
         {
           "x": 10.45,
           "y": 15.875,
           "part": "goda",
-          "phase": 2.4,
+          "phase": 2.91,
           "patrol": 0,
-          "reach": 12
+          "reach": 2
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 803,
       "actions": [
         0,
@@ -4409,8 +4412,8 @@
       ]
     },
     "metrics": {
-      "score": 51,
-      "timingPassed": 11,
+      "score": 54,
+      "timingPassed": 10,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 7,
@@ -4503,38 +4506,38 @@
           "y": 12.8,
           "part": "cuckoo",
           "patrol": 0,
-          "phase": 0.2,
-          "reach": 1.45
+          "phase": 2.0500000000000003,
+          "reach": 1.73
         },
         {
           "x": 4.13,
           "y": 3.8,
           "part": "goldfish",
           "patrol": 0,
-          "phase": 1.7,
-          "reach": 4.8
+          "phase": 3.7199999999999998,
+          "reach": 2.25
         },
         {
           "x": 4.3,
           "y": 1.525,
           "part": "shrimp",
           "patrol": 0,
-          "phase": 3.2,
-          "reach": 12
+          "phase": 5.390000000000001,
+          "reach": 8.5
         },
         {
           "x": 2.35,
           "y": 12.725,
           "part": "goda",
-          "phase": 0,
+          "phase": 2.3600000000000003,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 0.96
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 826,
       "actions": [
         12,
@@ -4548,8 +4551,8 @@
       ]
     },
     "metrics": {
-      "score": 56,
-      "timingPassed": 8,
+      "score": 59,
+      "timingPassed": 7,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
@@ -4673,7 +4676,7 @@
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 826,
       "actions": [
         12,
@@ -4687,8 +4690,8 @@
       ]
     },
     "metrics": {
-      "score": 61,
-      "timingPassed": 7,
+      "score": 58,
+      "timingPassed": 8,
       "timingTrials": 16,
       "timingOffsetMs": 50,
       "seconds": 7,
@@ -4799,38 +4802,38 @@
           "y": 11.3,
           "part": "carrot",
           "patrol": 0,
-          "phase": 0,
-          "reach": 12
+          "phase": 1.85,
+          "reach": 5.5
         },
         {
           "x": 9.65,
           "y": 15.175,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 3.8
+          "phase": 3.52,
+          "reach": 3.5
         },
         {
           "x": 9.7,
           "y": 13.8,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 3,
-          "reach": 4.5
+          "phase": 5.1899999999999995,
+          "reach": 8.5
         },
         {
           "x": 6.95,
           "y": 13.8,
           "part": "goda",
-          "phase": 2.4,
+          "phase": 4.76,
           "patrol": 0,
-          "reach": 12
+          "reach": 0.96
         }
       ],
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 587,
       "actions": [
         36,
@@ -4839,8 +4842,8 @@
       ]
     },
     "metrics": {
-      "score": 59,
-      "timingPassed": 2,
+      "score": 50,
+      "timingPassed": 3,
       "timingTrials": 6,
       "timingOffsetMs": 50,
       "seconds": 5,
@@ -4952,7 +4955,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 1066,
       "actions": [
         0,
@@ -5043,45 +5046,45 @@
           "part": "snake-jar",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 0.72
         },
         {
           "x": 5.9,
           "y": 15.3,
           "part": "gila",
           "patrol": 0,
-          "phase": 0,
-          "reach": 12
+          "phase": 0.17,
+          "reach": 1.31
         },
         {
           "x": 5.55,
           "y": 9.925,
           "part": "blue-moon",
-          "phase": 1.6,
+          "phase": 1.9400000000000002,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 7
         },
         {
           "x": 3.95,
           "y": 9.925,
           "part": "oranda",
-          "phase": 0,
+          "phase": 0.51,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 8.5
         },
         {
           "x": 4.3,
           "y": 15.3,
           "part": "risky-beast",
-          "phase": 0,
+          "phase": 0.68,
           "patrol": 0,
-          "reach": 12
+          "reach": 4
         }
       ],
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 920,
       "actions": [
         36,
@@ -5096,8 +5099,8 @@
       ]
     },
     "metrics": {
-      "score": 79,
-      "timingPassed": 3,
+      "score": 73,
+      "timingPassed": 5,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,
@@ -5198,46 +5201,46 @@
           "y": 14.5,
           "part": "carrot",
           "patrol": 0,
-          "phase": 2.4,
-          "reach": 12
+          "phase": 3.88,
+          "reach": 4
         },
         {
           "x": 8.15,
           "y": 14.5,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 3.8
+          "phase": 3.15,
+          "reach": 2.75
         },
         {
           "x": 3.9,
           "y": 17.15,
           "part": "grass-snake",
           "patrol": 0,
-          "phase": 0,
-          "reach": 9.5
+          "phase": 1.82,
+          "reach": 3.5
         },
         {
           "x": 9.65,
           "y": 16.575,
           "part": "blue-moon",
-          "phase": 2.4,
+          "phase": 4.39,
           "patrol": 0,
-          "reach": 4.5
+          "reach": 8.5
         },
         {
           "x": 9.65,
           "y": 20.775,
           "part": "oranda",
-          "phase": 3.2,
+          "phase": 5.359999999999999,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 4
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 895,
       "actions": [
         240,
@@ -5345,45 +5348,45 @@
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 7.5
+          "reach": 4
         },
         {
           "x": 4.29,
           "y": 3.8,
           "part": "lagging",
           "patrol": 0,
-          "phase": 1.5,
-          "reach": 4.8
+          "phase": 1.67,
+          "reach": 2.75
         },
         {
-          "x": 3.5,
-          "y": 10.6,
+          "x": 3.572,
+          "y": 5.524,
           "part": "grass-snake",
           "patrol": 0,
-          "phase": 2.4,
-          "reach": 12
+          "phase": 2.7399999999999998,
+          "reach": 3.5
         },
         {
           "x": 4.3,
           "y": 1.525,
           "part": "blue-moon",
-          "phase": 2.4,
+          "phase": 2.91,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 8.5
         },
         {
-          "x": 2.3,
-          "y": 10.6,
+          "x": 5.063,
+          "y": 9.255,
           "part": "oranda",
-          "phase": 2.4,
+          "phase": 3.08,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 4
         }
       ],
       "theme": "amethyst"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 850,
       "actions": [
         12,
@@ -5534,7 +5537,7 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3,
-          "reach": 7.5
+          "reach": 6
         },
         {
           "x": 2.7,
@@ -5556,7 +5559,7 @@
       "theme": "moss"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 726,
       "actions": [
         36,
@@ -5661,7 +5664,7 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3,
-          "reach": 9.5
+          "reach": 6
         },
         {
           "x": 4.3,
@@ -5683,7 +5686,7 @@
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 932,
       "actions": [
         60,
@@ -5814,7 +5817,7 @@
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 908,
       "actions": [
         24,
@@ -5946,7 +5949,7 @@
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 908,
       "actions": [
         24,
@@ -6040,45 +6043,45 @@
           "part": "snake-jar",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 0.72
         },
         {
           "x": 5.9,
           "y": 15.3,
           "part": "gila",
           "patrol": 0,
-          "phase": 0,
-          "reach": 7.5
+          "phase": 0.17,
+          "reach": 1.31
         },
         {
           "x": 5.55,
           "y": 9.925,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 0,
-          "reach": 9.5
+          "phase": 0.34,
+          "reach": 7
         },
         {
           "x": 3.95,
           "y": 9.925,
           "part": "blue-moon",
-          "phase": 0,
+          "phase": 0.51,
           "patrol": 0,
-          "reach": 12
+          "reach": 8.5
         },
         {
           "x": 4.3,
           "y": 15.3,
           "part": "oranda",
-          "phase": 0,
+          "phase": 0.68,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 4
         }
       ],
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 920,
       "actions": [
         36,
@@ -6093,8 +6096,8 @@
       ]
     },
     "metrics": {
-      "score": 79,
-      "timingPassed": 3,
+      "score": 73,
+      "timingPassed": 5,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,
@@ -6210,7 +6213,7 @@
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 909,
       "actions": [
         24,
@@ -6304,45 +6307,45 @@
           "part": "snake-jar",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 0.72
         },
         {
           "x": 5.9,
           "y": 15.3,
           "part": "gila",
           "patrol": 0,
-          "phase": 0,
-          "reach": 12
+          "phase": 0.17,
+          "reach": 1.31
         },
         {
           "x": 5.55,
           "y": 9.925,
           "part": "tri-feather",
           "patrol": 0,
-          "phase": 0,
-          "reach": 7.5
+          "phase": 0.34,
+          "reach": 7
         },
         {
           "x": 3.792,
           "y": 9.925,
           "part": "blue-moon",
-          "phase": 0,
+          "phase": 0.51,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 8.5
         },
         {
           "x": 4.3,
           "y": 15.3,
           "part": "oranda",
-          "phase": 0,
+          "phase": 0.68,
           "patrol": 0,
-          "reach": 12
+          "reach": 4
         }
       ],
       "theme": "ember"
     },
     "proof": {
-      "rules": "portrait-raid-v1",
+      "rules": "portrait-raid-v2",
       "frames": 920,
       "actions": [
         36,
@@ -6357,8 +6360,8 @@
       ]
     },
     "metrics": {
-      "score": 79,
-      "timingPassed": 3,
+      "score": 73,
+      "timingPassed": 5,
       "timingTrials": 18,
       "timingOffsetMs": 50,
       "seconds": 8,

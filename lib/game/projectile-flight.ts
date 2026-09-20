@@ -1,3 +1,4 @@
+import { raidFamily, CUSTOM_FAMILIES, raidMotion } from './raid-mechanics';
 import { PARTS } from './catalog';
 import { roomFor, type Dungeon, type Trap } from './physics';
 import type { Projectile, TrapState } from './hazards';
@@ -25,12 +26,26 @@ export function projectileBlocked(
 export function projectileVolley(
   trap: Trap,
   t: Pick<TrapState, 'x' | 'y' | 'facing' | 'aimX' | 'aimY'>,
+  raid = true,
 ): Array<Omit<Projectile, 'id' | 'owner' | 'part'>> {
-  const pattern = PARTS[trap.part].recipe.pattern,
+  const family = raid ? raidFamily(trap.part) : PARTS[trap.part].recipe.pattern;
+  const pattern =
+      family === 'mortar'
+        ? 'arc'
+        : family === 'cannon'
+          ? 'bolt'
+          : family === 'boomerang'
+            ? 'boomerang'
+            : PARTS[trap.part].recipe.pattern,
     fan = pattern === 'fan',
     arc = pattern === 'arc' || fan,
-    gravity = arc ? 9 : pattern === 'sniper' ? 0 : 0.8;
+    gravity = arc
+      ? 9
+      : pattern === 'sniper' || pattern === 'boomerang'
+        ? 0
+        : 0.8;
   if (
+    (raid && CUSTOM_FAMILIES.has(raidFamily(trap.part))) ||
     PARTS[trap.part].attack === 0 ||
     ['bite', 'dash', 'barrier', 'aura'].includes(pattern) ||
     ['thorny-caterpillar', 'cactus', 'pupae'].includes(trap.part)
@@ -46,8 +61,21 @@ export function projectileVolley(
       x: t.x + t.facing * 0.68,
       y: t.y + 0.06,
       vx:
-        t.facing * (pattern === 'sniper' ? 9 * Math.cos(aim) : arc ? 5.8 : 7.5),
-      vy: pattern === 'sniper' ? 9 * Math.sin(aim) : vy,
+        t.facing *
+        (pattern === 'sniper'
+          ? 9 * Math.cos(aim)
+          : family === 'cannon'
+            ? 4.2
+            : arc
+              ? 5.8
+              : 7.5),
+      vy:
+        pattern === 'sniper'
+          ? 9 * Math.sin(aim)
+          : pattern === 'boomerang'
+            ? 0
+            : vy,
+      radius: family === 'cannon' ? 0.32 : 0.19,
       gravity,
       life: 4,
       returnAt:
@@ -64,6 +92,13 @@ export function projectileVolley(
 }
 /** Same launch parameters and 120 Hz integration as the live projectile. Preview points stop at walls or range. */
 export function projectilePaths(level: Dungeon, trap: Trap, facing: 1 | -1) {
+  const family = raidFamily(trap.part);
+  if (['orbit', 'pendulum', 'lift'].includes(family))
+    return [
+      Array.from({ length: 81 }, (_, i) =>
+        raidMotion(trap, (i * Math.PI * 2) / 1.65 / 80),
+      ),
+    ];
   return projectileVolley(trap, {
     ...trap,
     facing,
@@ -89,7 +124,8 @@ export function projectilePaths(level: Dungeon, trap: Trap, facing: 1 | -1) {
           p.turnAfter = undefined;
         }
       }
-      if (projectileBlocked(level, p.x, p.y, 0.19) || p.life <= 0) break;
+      if (projectileBlocked(level, p.x, p.y, p.radius ?? 0.19) || p.life <= 0)
+        break;
       if (i % 6 === 0) points.push({ x: p.x, y: p.y });
     }
     return points;

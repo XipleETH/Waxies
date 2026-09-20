@@ -1,4 +1,10 @@
 import {
+  raidFamily,
+  CUSTOM_FAMILIES,
+  raidZone,
+  zoneClearance,
+} from './raid-mechanics';
+import {
   createState,
   requestJump,
   step,
@@ -60,13 +66,20 @@ export function hazardClearances(level: Dungeon, s: GameState): number[] {
           Math.hypot(s.x - t.x, s.y - t.y) - radius - PHYSICS.radius,
         );
     }
+    const zone = s.raid && t.stage === 'active' ? raidZone(part, t) : null;
+    if (
+      zone &&
+      visibleBetween(level, t.x, t.y, zone.x, zone.y) &&
+      visibleBetween(level, zone.x, zone.y, s.x, s.y)
+    )
+      distance = Math.min(distance, zoneClearance(zone, s.x, s.y));
     for (const p of s.hazards.projectiles)
       if (p.owner === i && visibleBetween(level, s.x, s.y, p.x, p.y))
         distance = Math.min(
           distance,
           Math.hypot(s.x - p.x, s.y - p.y) -
             PHYSICS.radius -
-            ATTACK.projectileRadius,
+            (p.radius ?? ATTACK.projectileRadius),
         );
     for (const p of s.hazards.pools)
       if (p.owner === i && Math.abs(s.y - p.y) < 0.8)

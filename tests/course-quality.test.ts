@@ -1,3 +1,4 @@
+import { raidFamily } from '../lib/game/raid-mechanics';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import story from '../lib/game/data/story-courses.json';
@@ -64,7 +65,7 @@ void test('every shooting part exposes a configurable range and trajectory', () 
     assert.equal(reachSettings(part.id).kind, 'line', part.id);
     assert.ok(
       volley.every(
-        (p) => p.maxTravel === (part.recipe.pattern === 'boomerang' ? 8 : 4),
+        (p) => p.maxTravel === (raidFamily(part.id) === 'boomerang' ? 8 : 4),
       ),
       part.id,
     );

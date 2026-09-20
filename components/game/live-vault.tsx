@@ -677,7 +677,7 @@ export function LiveVault({
                   preserveAspectRatio="none"
                   aria-hidden="true"
                 >
-                  {rule.kind === 'radius' ? (
+                  {rule.kind === 'radius' && !trajectories.length ? (
                     <ellipse
                       cx={center.x * 100}
                       cy={center.y * 100}

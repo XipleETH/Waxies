@@ -1,5 +1,5 @@
 import type { Dungeon } from './physics';
-export const MOBILE_RULES = 'portrait-raid-v1';
+export const MOBILE_RULES = 'portrait-raid-v2';
 export const PORTRAIT_ROOM = { w: 12, h: 22, left: 1, right: 11, floor: 1 };
 export const PORTRAIT_BASE: Dungeon = {
   id: 'portrait',

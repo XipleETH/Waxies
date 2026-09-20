@@ -1,3 +1,4 @@
+import { raidFamily } from '../lib/game/raid-mechanics';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { PART_LIST } from '../lib/game/catalog';
@@ -29,37 +30,33 @@ function scene(part: string) {
   s.y = 10;
   return { level, s };
 }
-void test('every radial and aura trap damages inside its active field without body contact', () => {
-  for (const p of PART_LIST.filter((p) => isArea(p.id))) {
-    const { level, s } = scene(p.id);
-    stepHazards(s, level, 1 / 120, s.y, false);
-    assert.equal(s.hazards.traps[0].stage, 'warning', p.id);
-    assert.equal(s.hits, 0);
-    for (let i = 0; i < Math.ceil(AREA_WARNING * 120) + 3; i++)
+void test('every converted area damages away from the body during its active cycle', () => {
+  for (const p of PART_LIST.filter((p) =>
+    ['wave', 'spikes', 'gas'].includes(raidFamily(p.id)),
+  )) {
+    const { level, s } = scene(p.id),
+      t = s.hazards.traps[0];
+    t.stage = 'active';
+    t.timer = 0.3;
+    t.facing = 1;
+    for (let i = 0; i < 30 && !s.hits; i++)
       stepHazards(s, level, 1 / 120, s.y, false);
     assert.equal(s.hits, 1, p.id);
     assert.equal(s.hp, 80, p.id);
   }
 });
-void test('area warnings catch a fast descent beside the body and respect walls and radius', () => {
-  const { level, s } = scene('cottontail');
-  s.x = 11.5;
-  s.y = 13;
-  s.vy = -12;
-  for (let i = 0; i < 55 && s.hits === 0; i++) {
-    const old = s.y;
-    s.y -= 12 / 120;
-    stepHazards(s, level, 1 / 120, old, true);
-  }
-  assert.equal(s.hits, 1);
-  for (const blocked of [false, true]) {
-    const { level, s } = scene('cactus');
-    if (blocked) level.platforms = [{ x: 10.65, y: 10, w: 0.2, h: 4 }];
-    else s.x = 12.1;
-    s.hazards.traps[0].stage = 'active';
-    s.hazards.traps[0].timer = 1;
+void test('directional spikes respect walls, range and their open recovery window', () => {
+  for (const mode of ['wall', 'far', 'behind', 'recover']) {
+    const { level, s } = scene('cactus'),
+      t = s.hazards.traps[0];
+    t.stage = mode === 'recover' ? 'recover' : 'active';
+    t.timer = 1;
+    t.facing = 1;
+    if (mode === 'wall') level.platforms = [{ x: 10.65, y: 10, w: 0.2, h: 4 }];
+    if (mode === 'far') s.x = 12.2;
+    if (mode === 'behind') s.x = 8.7;
     stepHazards(s, level, 1 / 120, s.y, false);
-    assert.equal(s.hits, 0);
+    assert.equal(s.hits, 0, mode);
   }
 });
 void test('Classic support auras retain their original non-damaging behaviour', () => {
