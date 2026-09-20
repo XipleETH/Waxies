@@ -27,6 +27,7 @@ export async function onlineRequest(
   });
   const data = await res.json();
   if (!res.ok) throw Error(data.error ?? 'No se pudo conectar.');
+  if (command) window.dispatchEvent(new Event('online-balance-changed'));
   return data;
 }
 export function queueOnlineReward(

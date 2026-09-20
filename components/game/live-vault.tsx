@@ -1,4 +1,5 @@
 'use client';
+import { isLineMouth } from '@/lib/game/mouth-relief';
 import { useEffect, useRef, useState, type PointerEvent } from 'react';
 import Image from 'next/image';
 import {
@@ -530,13 +531,27 @@ export function LiveVault({
                     onPointerUp={end}
                     onPointerCancel={cancel}
                   >
-                    <Image
-                      unoptimized
-                      src={PARTS[card.part].partImage}
-                      width={42}
-                      height={42}
-                      alt=""
-                    />
+                    {isLineMouth(card.part) ? (
+                      <span
+                        data-object="mouth"
+                        data-value={card.part}
+                        aria-hidden="true"
+                        style={{
+                          display: 'block',
+                          width: 42,
+                          height: 42,
+                          margin: '0 auto',
+                        }}
+                      />
+                    ) : (
+                      <Image
+                        unoptimized
+                        src={PARTS[card.part].partImage}
+                        width={42}
+                        height={42}
+                        alt=""
+                      />
+                    )}
                     <span
                       className={styles.powerStand}
                       data-object="pedestal"

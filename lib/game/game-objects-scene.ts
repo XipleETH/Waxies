@@ -1,3 +1,5 @@
+import { createMouthRelief } from './mouth-relief';
+import { PARTS } from './catalog';
 import * as T from 'three';
 import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
 import { skyMavisMark } from './brand-marks';
@@ -155,7 +157,9 @@ export async function createGameObjects(
     ember = mat(0xe49a53);
   let roninTexture: T.Texture | undefined;
   const brandBlue = mat(0x2065ee);
-  const mavisShapes = new SVGLoader().parse(skyMavisMark).paths.flatMap((path) => SVGLoader.createShapes(path));
+  const mavisShapes = new SVGLoader()
+    .parse(skyMavisMark)
+    .paths.flatMap((path) => SVGLoader.createShapes(path));
   const entries = new Map<
     HTMLElement,
     {
@@ -163,6 +167,7 @@ export async function createGameObjects(
       group: T.Group;
       geos: T.BufferGeometry[];
       ownedMaterials: T.Material[];
+      cleanup?: () => void;
       width: number;
       height: number;
     }
@@ -171,6 +176,7 @@ export async function createGameObjects(
     entry: typeof entries extends Map<HTMLElement, infer E> ? E : never,
   ) => {
     entry.group.removeFromParent();
+    entry.cleanup?.();
     entry.geos.forEach((g) => g.dispose());
     entry.ownedMaterials.forEach((m) => m.dispose());
   };
@@ -281,7 +287,22 @@ export async function createGameObjects(
     const kind = aliases[el.dataset.object ?? ''] ?? el.dataset.object,
       label = el.dataset.label ?? '',
       value = el.dataset.value ?? '';
-    if (kind === 'balance') {
+    let cleanup: (() => void) | undefined;
+    if (kind === 'mouth' && PARTS[value]) {
+      let removed = false;
+      const texture = new T.TextureLoader().load(PARTS[value].partImage, () => {
+        if (!removed) relief.setOpen(0.18);
+      });
+      texture.colorSpace = T.SRGBColorSpace;
+      const relief = createMouthRelief(texture, PARTS[value].color);
+      relief.setOpen(0.18);
+      group.add(relief.root);
+      cleanup = () => {
+        removed = true;
+        relief.dispose();
+        texture.dispose();
+      };
+    } else if (kind === 'balance') {
       const spark = shape(
         [
           [0, 0.55],
@@ -392,17 +413,29 @@ export async function createGameObjects(
         mesh(new T.TorusGeometry(0.18, 0.045, 6, 12), gold, 0, 0.83, 0);
       } else if (kind === 'ronin') {
         box(0, 0, -0.06, 1.16, 1.16, 0.3, brandBlue);
-        roninTexture ??= new T.TextureLoader().load('/assets/ui/ronin-logo.png');
+        roninTexture ??= new T.TextureLoader().load(
+          '/assets/ui/ronin-logo.png',
+        );
         roninTexture.colorSpace = T.SRGBColorSpace;
-        const face = new T.MeshStandardMaterial({ map: roninTexture, roughness: 0.65 });
+        const face = new T.MeshStandardMaterial({
+          map: roninTexture,
+          roughness: 0.65,
+        });
         materials.push(face);
         mesh(new T.PlaneGeometry(1.12, 1.12), face, 0, 0, 0.1);
       } else if (kind === 'sky-mavis') {
         for (const outline of mavisShapes) {
-          const emblem = mesh(new T.ExtrudeGeometry(outline, {
-            depth: 17, bevelEnabled: true, bevelSize: 1,
-            bevelThickness: 1, bevelSegments: 1, steps: 1,
-          }), brandBlue);
+          const emblem = mesh(
+            new T.ExtrudeGeometry(outline, {
+              depth: 17,
+              bevelEnabled: true,
+              bevelSize: 1,
+              bevelThickness: 1,
+              bevelSegments: 1,
+              steps: 1,
+            }),
+            brandBlue,
+          );
           emblem.scale.set(0.008, -0.008, 0.008);
           emblem.position.set(-0.7, 0.71, 0);
         }
@@ -528,20 +561,43 @@ export async function createGameObjects(
         box(0, -0.65, 0.1, 1.35, 0.14, 0.95, wood);
       } else if (kind === 'path') {
         // A raised winding trail, shared by Historia and Camino.
-        const trail = [[-0.46, -0.55], [-0.12, -0.34], [0.22, -0.12], [0.06, 0.12], [-0.24, 0.34], [0.05, 0.53]];
+        const trail = [
+          [-0.46, -0.55],
+          [-0.12, -0.34],
+          [0.22, -0.12],
+          [0.06, 0.12],
+          [-0.24, 0.34],
+          [0.05, 0.53],
+        ];
         for (const [i, [x, y]] of trail.entries()) {
           const stone = box(x, y, 0, 0.47, 0.25, 0.22, i % 2 ? paper : gold);
           stone.rotation.z = i < 3 ? 0.35 : -0.35;
         }
-        for (const [x, y] of [[-0.65, 0.05], [0.52, 0.32]]) {
+        for (const [x, y] of [
+          [-0.65, 0.05],
+          [0.52, 0.32],
+        ]) {
           mesh(new T.IcosahedronGeometry(0.17, 0), mint, x, y, -0.02);
         }
         box(0.23, 0.65, 0.1, 0.055, 0.65, 0.06, wood);
-        const flag = shape([[0, 0.3], [0.4, 0.19], [0, 0.04]], teal);
+        const flag = shape(
+          [
+            [0, 0.3],
+            [0.4, 0.19],
+            [0, 0.04],
+          ],
+          teal,
+        );
         flag.position.set(0.24, 0.66, 0.1);
       } else if (kind === 'summon') {
         mesh(new T.CylinderGeometry(0.65, 0.76, 0.18, 8), violet, 0, -0.54, 0);
-        const ring = mesh(new T.TorusGeometry(0.54, 0.055, 6, 24), gold, 0, -0.41, 0);
+        const ring = mesh(
+          new T.TorusGeometry(0.54, 0.055, 6, 24),
+          gold,
+          0,
+          -0.41,
+          0,
+        );
         ring.rotation.x = Math.PI / 2;
         const egg = mesh(new T.SphereGeometry(0.43, 12, 10), paper, 0, 0.08, 0);
         egg.scale.set(0.9, 1.35, 0.9);
@@ -552,12 +608,25 @@ export async function createGameObjects(
       } else if (kind === 'powers') {
         mesh(new T.TorusGeometry(0.48, 0.07, 6, 20), wood, 0, 0.05, 0);
         for (const [x, y, material] of [
-          [-0.56, 0.05, teal], [0.56, 0.05, pink],
-          [0, 0.61, mint], [0, -0.51, violet],
+          [-0.56, 0.05, teal],
+          [0.56, 0.05, pink],
+          [0, 0.61, mint],
+          [0, -0.51, violet],
         ] as const) {
           mesh(new T.OctahedronGeometry(0.24), material, x, y, 0.08);
         }
-        const bolt = shape([[-0.02, 0.44], [-0.3, -0.03], [-0.05, -0.03], [-0.15, -0.4], [0.32, 0.14], [0.08, 0.14], [0.2, 0.44]], gold);
+        const bolt = shape(
+          [
+            [-0.02, 0.44],
+            [-0.3, -0.03],
+            [-0.05, -0.03],
+            [-0.15, -0.4],
+            [0.32, 0.14],
+            [0.08, 0.14],
+            [0.2, 0.44],
+          ],
+          gold,
+        );
         bolt.position.z = 0.19;
       } else if (kind === 'portal' || kind === 'map') {
         box(-0.55, 0, 0, 0.28, 1.3, 0.45, mint);
@@ -740,6 +809,7 @@ export async function createGameObjects(
       group,
       geos,
       ownedMaterials,
+      cleanup,
       width: Math.max(0.1, size.x) + 0.18,
       height: Math.max(0.1, size.y) + 0.18,
     };

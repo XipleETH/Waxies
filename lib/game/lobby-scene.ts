@@ -1,3 +1,5 @@
+import { FontLoader, type Font } from 'three/addons/loaders/FontLoader.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import { createMouthRelief, isLineMouth } from './mouth-relief';
 import { partSpriteMaterial } from './part-sprite-material';
 import * as T from 'three';
@@ -212,7 +214,11 @@ export function createLobbyScene(
     if (!part) return;
     const compact = appearance.parts.length > 3;
     const x = compact ? [-1.6, -0.65, 0.65, 1.6][i % 4] : [-1.5, 0, 1.5][i],
-      y = compact ? (i < 4 ? [0.75, 1.55, 1.55, 0.75][i] : 1.7) : [0.75, 1.7, 0.75][i],
+      y = compact
+        ? i < 4
+          ? [0.75, 1.55, 1.55, 0.75][i]
+          : 1.7
+        : [0.75, 1.7, 0.75][i],
       z = compact ? (i < 4 ? -0.85 : -2.1) : i === 1 ? -2.1 : -0.85;
     const base = mesh(new T.CylinderGeometry(0.42, 0.5, y, 7), stone);
     base.position.set(x, y / 2, z);
@@ -250,6 +256,58 @@ export function createLobbyScene(
       display.add(sprite);
     }
   });
+  const balanceLabel = new T.Group();
+  balanceLabel.position.set(1.12, 0.88, 1.1);
+  scene.add(balanceLabel);
+  const labelMaterial = new T.MeshBasicMaterial({
+    color: 0xffe595,
+    toneMapped: false,
+    depthTest: false,
+  });
+  materials.push(labelMaterial);
+  let labelFont: Font | undefined;
+  let balanceText = '...';
+  let labelGeometry: T.BufferGeometry | undefined;
+  const setChestBalance = (amount: number | null) => {
+    balanceText =
+      amount === null
+        ? '...'
+        : Math.max(0, Math.floor(amount)).toLocaleString('es-CO') + ' Chispas';
+    if (!labelFont || disposed) return;
+    balanceLabel.clear();
+    labelGeometry?.dispose();
+    const geo = new TextGeometry(balanceText, {
+      font: labelFont,
+      size: 0.14,
+      depth: 0.022,
+      curveSegments: 3,
+      bevelEnabled: true,
+      bevelThickness: 0.003,
+      bevelSize: 0.002,
+      bevelSegments: 1,
+    });
+    geo.computeBoundingBox();
+    const width = geo.boundingBox!.max.x - geo.boundingBox!.min.x;
+    geo.translate(-width / 2, 0, 0);
+    const text = new T.Mesh(geo, labelMaterial);
+    text.scale.setScalar(Math.min(1, 1.35 / Math.max(width, 0.01)));
+    text.renderOrder = 10;
+    balanceLabel.add(text);
+    labelGeometry = geo;
+  };
+  let chestAmount: number | null = null;
+  const updateChestBalance = (amount: number | null) => {
+    chestAmount = amount;
+    setChestBalance(amount);
+  };
+  void new FontLoader()
+    .loadAsync('/assets/ui/helvetiker-bold.json')
+    .then((font) => {
+      if (disposed) return;
+      labelFont = font;
+      setChestBalance(chestAmount);
+    })
+    .catch(() => {});
   const chest = new T.Group();
   chest.position.set(1.12, 0.25, 1.1);
   chest.rotation.y = -0.3;
@@ -361,6 +419,7 @@ export function createLobbyScene(
           (s.position.y = s.userData.baseY + Math.sin(now * 0.001 + i) * 0.035),
       );
     }
+    balanceLabel.quaternion.copy(camera.quaternion);
     renderer.render(scene, camera);
   };
   raf = requestAnimationFrame(loop);
@@ -385,6 +444,7 @@ export function createLobbyScene(
         onReady('No se pudo cargar el Axie. Puedes seguir usando el menú.');
     });
   return {
+    updateChestBalance,
     dispose: () => {
       disposed = true;
       abort.abort();
@@ -395,6 +455,7 @@ export function createLobbyScene(
       geometries.forEach((g) => g.dispose());
       materials.forEach((m) => m.dispose());
       textures.forEach((t) => t.dispose());
+      labelGeometry?.dispose();
       renderer.dispose();
       renderer.domElement.remove();
     },

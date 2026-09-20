@@ -1,4 +1,4 @@
-# WAXIS · Vault Raiders
+# Axie Vault Riders
 
 Juego de plataformas 2.5D para una hackatón de Axie Infinity. Three.js dibuja los Axies oficiales; la física corre en 2D a 120 pasos por segundo. La experiencia principal es una app web vertical para teléfono.
 
@@ -31,7 +31,7 @@ npm run build
 - El Axie corre solo. Tocar, Espacio o Flecha arriba salta. Saltar contra una pared permite rebotar. P/Escape pausa y R vuelve al inicio conservando salud.
 - Cualquier contacto dañino con una defensa, proyectil o charco reinicia el intento y resta 20 de salud. La pista, el Axie y el ciclo inicial se conservan. Cinco golpes agotan el premio.
 - En Historia, guardar el resultado desbloquea el siguiente nivel. El primer premio equivale a la salud restante; las repeticiones solo pagan la mejora sobre el mejor premio previo. Tres estrellas requieren 100 de salud; dos, al menos 60; una, llegar. Práctica mantiene sus premios por partida. La repetición del bot no concede premios ni desbloqueos.
-- Chispas compra tres temas y dos adornos, visibles en el lobby y la mazmorra propia. Son puntos locales; no existe conversión a dinero ni pagos con tokens.
+- Chispas compra tres temas y dos adornos, visibles en el lobby y la mazmorra propia. Son puntos de juego, con guardado local para invitados y copia en la nube para cuentas vinculadas; no existe conversión a dinero ni pagos con tokens.
 - La partida ocupa el área disponible con `100dvh` y zonas seguras. Intenta entrar en Fullscreen al pulsar Jugar si el navegador lo admite. El manifiesto pide orientación vertical; en iOS puede añadirse a la pantalla de inicio para abrirla como app independiente.
 
 La certificación y la estimación de dificultad se explican en [STORY_MODE.md](research/STORY_MODE.md).
@@ -63,15 +63,42 @@ Se conservan el modelo por genes, los esqueletos, las animaciones y el shader de
 - [Atlas oficial de partes](https://github.com/axieinfinity/cc-axie-gtk2d/tree/1a446848bff0061334f32dcbd8f69ab9d36987b0/assets/axie-mixer/material/atlas-single).
 - [Explorador Classic](https://classic.axieinfinity.com/explorer/cards).
 
-`GET /api/axie/:id` consulta genes y propietario en el contrato Ronin `0x32950db2a7164ae833121501c797d79e7b79d74c`. Las lecturas se fijan al mismo bloque. Ronin Wallet comparte la cuenta y enumera sus Axies; no solicita firmas ni transacciones. También puede iniciarse sesión con una **cuenta Sky Mavis** (Ronin Waypoint, con email o redes y sin extensión) cuando se configura su client ID. Cualquiera de las dos vías reconoce los Axies del jugador y, al elegir uno, sus partes definen las trampas de su mazmorra. Consultar un ID público no acredita que quien lo escribe controle esa billetera.
+`GET /api/axie/:id` consulta genes y propietario en el contrato Ronin `0x32950db2a7164ae833121501c797d79e7b79d74c`. Las lecturas se fijan al mismo bloque. Ronin Wallet comparte la cuenta y enumera sus Axies. El acceso a la cuenta online solicita una firma de autenticación; no solicita transferencias de fondos. También puede iniciarse sesión con una **cuenta Sky Mavis** (Ronin Waypoint, con email o redes y sin extensión) cuando se configura su client ID. Cualquiera de las dos vías reconoce los Axies del jugador y, al elegir uno, sus partes definen las trampas de su mazmorra. Consultar un ID público no acredita que quien lo escribe controle esa billetera.
 
 Los recursos pertenecen a sus titulares. Las procedencias detalladas están en `public/assets/provenance.json`, `public/assets/carrot-provenance.json` y `research/`.
 
 ## Guardado y alcance
 
-`waxies.mobile.v1` guarda Chispas, compras, Axie, defensa y mejores resultados de Historia en el navegador. Las defensas anteriores al editor libre se migran a cuatro partes compatibles de un guardián y vuelven a borrador: necesitan una nueva validación sin golpes. Se conservan los resultados de Historia, Chispas y compras. Los perfiles anteriores a Historia reciben una campaña vacía. El guardado antiguo `waxis.practice.v1` se conserva y solo se importa su selección de Axie compatible. Los saldos simulados SLP/AXS/RON del prototipo anterior no se convierten en Chispas. El motor y las pruebas del combate anterior permanecen como referencia técnica; la portada usa las reglas `portrait-raid-v1`.
+`waxies.mobile.v1` guarda Chispas, compras, Axie, defensa y mejores resultados de Historia en el navegador. Las defensas anteriores al editor libre se migran a cuatro partes compatibles de un guardián y vuelven a borrador: necesitan una nueva validación sin golpes. Se conservan los resultados de Historia, Chispas y compras. Los perfiles anteriores a Historia reciben una campaña vacía. El guardado antiguo `waxis.practice.v1` se conserva y solo se importa su selección de Axie compatible. Los saldos simulados SLP/AXS/RON del prototipo anterior no se convierten en Chispas. El motor y las pruebas del combate anterior permanecen como referencia técnica; la portada usa las reglas `portrait-raid-v2`.
 
-Los certificados prueban que existe una ruta con estas reglas; no que sea fácil para todos los jugadores ni que el cliente sea una fuente confiable para dinero. Antes de vender cosméticos con SLP, AXS, RON o USDC hacen falta autenticación, inventario y validación de recompensas en servidor, además de integración de pagos. No hay pagos ni recompensas on-chain activos.
+Los certificados prueban que existe una ruta con estas reglas; no que sea fácil para todos los jugadores ni que el cliente sea una fuente confiable para dinero. La autenticación firmada ya está implementada. Antes de dar valor económico a los cosméticos hacen falta inventario y validación de sus recompensas en servidor, además de integración de pagos. No hay pagos ni recompensas on-chain activos.
+
+## Depósitos de tokens: pendiente, no implementar todavía
+
+**Decisión actual:** mantener únicamente la liga de Chispas activa. No desarrollar
+ni desplegar contratos, ni habilitar depósitos de SLP, AXS o RON en esta fase.
+
+Para la futura liga con tokens se prevé un contrato de custodia en Ronin que
+gestione depósitos, reservas durante ataques, distribución del botín y retiros.
+Conectar una billetera o firmar el acceso no deposita tokens.
+
+Trabajo futuro antes de activar esa liga:
+
+- Definir las reglas de custodia, retiros, revancha, liquidación y permisos del contrato.
+- Definir cómo se acreditan los resultados de las partidas ante el contrato; el certificado de una mazmorra no demuestra por sí solo un resultado on-chain.
+- Implementar y revisar los contratos, con pruebas en testnet antes de usar fondos reales.
+- Registrar los activos admitidos y sus decimales; verificar depósitos confirmados, evitar acreditaciones duplicadas y manejar reorganizaciones de la cadena.
+- Integrar cotizaciones fiables y recientes para comparar el valor en dólares de los cofres de SLP, AXS y RON, conservando unidades y precios al reservar cada ataque.
+- Activar un matchmaking de tokens separado del de Chispas. Dentro de la liga de tokens, comparar cofres por valor en dólares, con rango inicial de ±10%.
+
+Existe una base de valoración en `lib/online/token-valuation.ts`, pero
+`TOKEN_LEAGUE.enabled` sigue en `false`. No hay depósitos, retiros ni premios
+reales con tokens disponibles. Las Chispas no se convierten en tokens o dólares.
+
+Las cuentas invitadas ya guardan su cofre y saldo competitivo en el servidor,
+con acceso mediante la cookie del navegador. Su historia y Bazar son locales.
+Vincular Ronin o Sky Mavis permite guardar y recuperar también ese progreso
+entre dispositivos. Detalles: [cuentas y futura liga con tokens](docs/online-accounts.md).
 
 ## Publicación
 
