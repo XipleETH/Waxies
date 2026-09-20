@@ -4,6 +4,14 @@ import type { RaidReplay } from '../game/raid-replay';
 export const REVENGE_MS = 24 * 60 * 60 * 1000;
 export const MATCH_MS = 10 * 60 * 1000;
 export interface Player {
+  wallet?: string;
+  sessions?: Array<{ hash: string; expires: number }>;
+  cloud?: {
+    revision: number;
+    profile: import('../game/mobile-profile').MobileProfile;
+    updated: number;
+  };
+  starterId?: string;
   id: string;
   secretHash: string;
   name: string;
@@ -44,6 +52,7 @@ export interface Loot {
   recovered?: number;
 }
 export interface OnlineState {
+  loginChallenges?: Record<string, import('./account').LoginChallenge>;
   players: Record<string, Player>;
   matches: Record<string, Match>;
   loot: Record<string, Loot>;
@@ -68,6 +77,7 @@ export type OnlineCommand =
       replay: RaidReplay;
     };
 export interface OnlineView {
+  starterId?: string;
   configured: boolean;
   registered: boolean;
   player?: {

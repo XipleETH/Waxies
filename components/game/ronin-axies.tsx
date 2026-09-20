@@ -335,7 +335,7 @@ export function RoninAxies({
         </p>
       ) : null}
       <p className="loadout-footnote">
-        Consulta de cuenta, propiedad y genes. Sin firmas ni transferencias de
+        Consulta de propiedad y genes de tus Axies. Sin transferencias de
         fondos.
       </p>
     </div>

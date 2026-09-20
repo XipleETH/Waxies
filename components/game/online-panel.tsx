@@ -1,4 +1,5 @@
 'use client';
+import { AccountAccess } from './account-access';
 import { useEffect, useState } from 'react';
 import { ShieldCheck, Coins, Clock3 } from 'lucide-react';
 import type { OnlineView, OnlineCommand } from '@/lib/online/types';
@@ -14,7 +15,9 @@ import type { MatchReplayView } from '@/lib/online/types';
 import { Dialog } from '@/components/ui/dialog';
 export const REWARD_QUEUE = 'waxies.online-rewards.v1';
 export async function onlineRequest(
-  command?: OnlineCommand | { action: 'join'; name: string },
+  command?:
+    | OnlineCommand
+    | { action: 'join'; name: string; starterId?: string },
 ): Promise<OnlineView> {
   const res = await fetch('/api/online', {
     method: command ? 'POST' : 'GET',
@@ -42,10 +45,12 @@ export function queueOnlineReward(
 export function OnlinePanel({
   profile,
   onEdit,
+  onStarter,
   onAttack,
 }: {
   profile: MobileProfile;
   onEdit: () => void;
+  onStarter: (id: string) => void;
   onAttack: (m: NonNullable<OnlineView['match']>) => void;
 }) {
   const [view, setView] = useState<OnlineView | null>(null),
@@ -59,6 +64,7 @@ export function OnlinePanel({
     try {
       const next = await onlineRequest();
       setView(next);
+      if (next.starterId) onStarter(next.starterId);
       if (next.registered) {
         const queue = JSON.parse(
           localStorage.getItem(REWARD_QUEUE) || '[]',
@@ -81,7 +87,9 @@ export function OnlinePanel({
     queueMicrotask(() => void refresh());
   }, []);
   async function act(
-    command: OnlineCommand | { action: 'join'; name: string },
+    command:
+      | OnlineCommand
+      | { action: 'join'; name: string; starterId?: string },
   ) {
     if (busy) return;
     if (command.action === 'match' || command.action === 'revenge')
@@ -91,6 +99,7 @@ export function OnlinePanel({
     try {
       const next = await onlineRequest(command);
       setView(next);
+      if (next.starterId) onStarter(next.starterId);
       if (command.action === 'join') setPanel(null);
       if (
         (command.action === 'match' || command.action === 'revenge') &&
@@ -217,7 +226,11 @@ export function OnlinePanel({
                     data-object="axie"
                     aria-hidden="true"
                   />
-                  <p>Comienzas con 100 Chispas online. Sin billetera.</p>
+                  <p>
+                    Refugio listo con 4 trampas y 100 Chispas en el cofre. Sin
+                    billetera.
+                  </p>
+                  <AccountAccess />
                   <label htmlFor="online-name">Nombre</label>
                   <input
                     id="online-name"
@@ -231,7 +244,13 @@ export function OnlinePanel({
                     disabled={busy || name.trim().length < 2}
                     data-object="portal"
                     data-label="Crear"
-                    onClick={() => void act({ action: 'join', name })}
+                    onClick={() =>
+                      void act({
+                        action: 'join',
+                        name,
+                        starterId: profile.starterId,
+                      })
+                    }
                   >
                     Crear cuenta de prueba
                   </button>

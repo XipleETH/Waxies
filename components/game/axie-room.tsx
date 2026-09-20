@@ -1,4 +1,5 @@
 'use client';
+import { AccountAccess } from './account-access';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { AxieLoadout as Loadout } from '@/lib/game/axie';
@@ -25,6 +26,7 @@ export function AxieRoom({
 }) {
   const [panel, setPanel] = useState<'wallet' | 'id' | 'file' | null>(null);
   const [galleryOpen, setGalleryOpen] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
   return (
     <section className="axie-object-room" aria-label="Mi Axie">
       <div
@@ -99,7 +101,7 @@ export function AxieRoom({
           }
           description={
             panel === 'wallet'
-              ? 'Elige uno de tus Axies.'
+              ? 'Tu cuenta, tu progreso y tus Axies.'
               : panel === 'id'
                 ? 'Introduce el ID de tu Axie.'
                 : 'Importa las partes de tu Axie.'
@@ -107,7 +109,10 @@ export function AxieRoom({
           onClose={() => setPanel(null)}
           className="axie-action-dialog"
         >
-          {panel ? (
+          {panel === 'wallet' ? (
+            <AccountAccess onAuthenticated={setAuthenticated} />
+          ) : null}
+          {panel && (panel !== 'wallet' || authenticated) ? (
             <AxieLoadout
               view={panel}
               axie={axie}

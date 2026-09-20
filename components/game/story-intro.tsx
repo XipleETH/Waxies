@@ -80,7 +80,7 @@ export function StoryIntro({
       <div className={styles.stage}>
         <figure className={styles.canvas} ref={host} aria-label={page.scene} />
         <span className={styles.issue}>
-          WAXIS STORIES <b>№ 01</b>
+          AXIE VAULT RIDERS <b>№ 01</b>
         </span>
         <span key={panel} className={styles.whisper} aria-hidden="true">
           {page.whisper}
@@ -139,7 +139,7 @@ export function StoryIntro({
           </button>
         </div>
         <small className={styles.note}>
-          Relato de WAXIS · En la partida ganas Chispas.
+          Relato de Axie Vault Riders · En la partida ganas Chispas.
         </small>
       </section>
     </main>

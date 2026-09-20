@@ -1,4 +1,6 @@
 'use client';
+import { queueCloudSave, restoreCloud } from '@/lib/online/cloud-client';
+import { syncStarterProfile } from '@/lib/game/mobile-profile';
 import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -18,7 +20,6 @@ import {
   PROFILE_KEY,
   newProfile,
   readProfile,
-  randomVaultParts,
   claimChispas,
   type MobileProfile,
 } from '@/lib/game/mobile-profile';
@@ -80,19 +81,12 @@ export default function MobileApp() {
     introSeen = useRef(false);
   useEffect(() => {
     let stopped = false;
-    queueMicrotask(() => {
+    queueMicrotask(async () => {
       if (stopped) return;
       try {
-        const existing = localStorage.getItem(PROFILE_KEY);
-        const p = readProfile();
-        // First-time guests get a unique free-mode vault, cached so it stays
-        // theirs until a wallet Axie replaces its parts.
-        if (!existing && !p.axie) {
-          p.traps = randomVaultParts();
-          try {
-            localStorage.setItem(PROFILE_KEY, JSON.stringify(p));
-          } catch {}
-        }
+        const p = await restoreCloud(readProfile(), setNotice);
+        if (stopped) return;
+        localStorage.setItem(PROFILE_KEY, JSON.stringify(p));
         setProfile(p);
         profileRef.current = p;
       } catch (e) {
@@ -134,6 +128,7 @@ export default function MobileApp() {
       localStorage.setItem(PROFILE_KEY, JSON.stringify(p));
       profileRef.current = p;
       setProfile(p);
+      queueCloudSave(p);
       return true;
     } catch {
       setNotice(
@@ -336,9 +331,12 @@ export default function MobileApp() {
         <button
           onClick={() => setScreen('home')}
           className="m-brand"
-          aria-label="WAXIS inicio"
+          aria-label="Axie Vault Riders inicio"
         >
-          <span className="brand-symbol">W</span>WAXIS
+          <span className="brand-symbol">A</span>
+          <span className="brand-name">
+            AXIE<small>VAULT RIDERS</small>
+          </span>
           <span className="brand-dot" />
         </button>
         <div className="m-account">
@@ -437,6 +435,10 @@ export default function MobileApp() {
         {screen === 'online' ? (
           <OnlinePanel
             profile={profile}
+            onStarter={(id) => {
+              const p = syncStarterProfile(profileRef.current, id);
+              if (p !== profileRef.current) save(p);
+            }}
             onEdit={() => setScreen('vault')}
             onAttack={attack}
           />

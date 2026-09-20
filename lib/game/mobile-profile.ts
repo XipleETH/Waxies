@@ -1,3 +1,4 @@
+import { starterVault } from './starter-vaults';
 import {
   validDecorationPositions,
   type DecorationPosition,
@@ -55,6 +56,7 @@ export const GOODS = [
   },
 ] as const;
 export interface MobileProfile {
+  starterId?: string;
   version: 1;
   vaultVersion: 2;
   freePlacement?: boolean;
@@ -73,7 +75,9 @@ export interface MobileProfile {
   story: number[];
 }
 export function newProfile(): MobileProfile {
+  const starter = starterVault();
   return {
+    starterId: starter.level.id,
     version: 1,
     vaultVersion: 2,
     freePlacement: true,
@@ -87,11 +91,8 @@ export function newProfile(): MobileProfile {
     claimed: [],
     wins: 0,
     axie: null,
-    traps: makeVaultTraps([], 1, [null]).map((t) => ({
-      ...t,
-      reach: reachSettings(t.part).default,
-    })),
-    proof: null,
+    traps: starter.level.traps,
+    proof: starter.proof,
   };
 }
 /** A unique free-mode vault for a guest with no wallet Axie: a random part per
@@ -184,7 +185,12 @@ export function readProfile(): MobileProfile {
     } catch {}
     return p;
   }
-  const p = JSON.parse(text) as MobileProfile;
+  return parseProfile(JSON.parse(text));
+}
+/** Bounded save data validation shared by local restore and cloud backups. */
+export function parseProfile(value: unknown): MobileProfile {
+  if (!value || typeof value !== 'object') throw Error('Perfil inválido.');
+  const p = structuredClone(value) as MobileProfile;
   p.story ??= [];
   if (!validDecorationPositions(p.decorationPositions, PORTRAIT_BASE))
     throw Error('Posiciones de adornos no válidas.');
@@ -262,4 +268,22 @@ export function readProfile(): MobileProfile {
     throw Error('La defensa contiene partes ajenas a tu Axie.');
   if (p.proof && !verifyRoute(vaultLevel(p), p.proof)) p.proof = null;
   return p;
+}
+
+/** Restore an account's assigned starter only while the local starter is untouched. */
+export function syncStarterProfile(
+  p: MobileProfile,
+  id: string,
+): MobileProfile {
+  if (!p.starterId || p.axie || p.starterId === id) return p;
+  const previous = starterVault(p.starterId);
+  if (JSON.stringify(p.traps) !== JSON.stringify(previous.level.traps))
+    return p;
+  const next = starterVault(id);
+  return {
+    ...p,
+    starterId: next.level.id,
+    traps: next.level.traps,
+    proof: next.proof,
+  };
 }

@@ -1,4 +1,10 @@
-import { createHash, randomBytes, randomUUID } from 'node:crypto';
+import {
+  SESSION_COOKIE,
+  hashSecret,
+  sessionPlayer,
+} from '@/lib/online/session';
+import { createLeaguePlayer } from '@/lib/online/starter';
+import { randomBytes, randomUUID } from 'node:crypto';
 import { NextRequest, NextResponse } from 'next/server';
 import { onlineConfigured, transact } from '@/lib/online/store';
 import {
@@ -9,14 +15,9 @@ import {
 } from '@/lib/online/rules';
 import type { OnlineCommand, OnlineState } from '@/lib/online/types';
 export const runtime = 'nodejs';
-const COOKIE = 'waxies_online_session';
-const hash = (v: string) => createHash('sha256').update(v).digest('hex');
-function identity(req: NextRequest, s: OnlineState) {
-  const token = req.cookies.get(COOKIE)?.value;
-  if (!token || !/^[a-f0-9]{64}$/.test(token)) return undefined;
-  const h = hash(token);
-  return Object.values(s.players).find((p) => p.secretHash === h)?.id;
-}
+const COOKIE = SESSION_COOKIE;
+const hash = hashSecret;
+const identity = sessionPlayer;
 function response(data: unknown, status = 200) {
   return NextResponse.json(data, {
     status,
@@ -64,7 +65,9 @@ export async function POST(req: NextRequest) {
       },
       503,
     );
-  let command: OnlineCommand | { action: 'join'; name: string };
+  let command:
+    | OnlineCommand
+    | { action: 'join'; name: string; starterId?: string };
   try {
     const text = await req.text();
     if (text.length > 220000)
@@ -96,16 +99,7 @@ export async function POST(req: NextRequest) {
           if (name.length < 2 || name.length > 24)
             throw new RuleError('Escribe un nombre de 2 a 24 caracteres.');
           id = randomUUID();
-          s.players[id] = {
-            id,
-            secretHash: hash(token),
-            name,
-            available: 100,
-            chest: 0,
-            active: false,
-            created: now,
-            rewards: {},
-          };
+          createLeaguePlayer(s, id, hash(token), name, now, command.starterId);
           created = true;
         }
       } else {

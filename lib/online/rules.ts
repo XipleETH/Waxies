@@ -79,6 +79,7 @@ export function applyOnline(
       p.available += p.chest - command.amount;
       p.chest = command.amount;
       p.defense = c;
+      delete p.starterId;
       p.active = true;
       break;
     }
@@ -267,6 +268,7 @@ export function onlineView(
     (m) => m.attacker === id && m.status === 'pending',
   );
   return {
+    starterId: p.starterId,
     configured: true,
     registered: true,
     player: {
