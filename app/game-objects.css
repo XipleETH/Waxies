@@ -1028,3 +1028,20 @@ button[data-object]:disabled {
   line-height: 1.6;
   color: #b7c9b1;
 }
+
+.m-brand .brand-emblem {
+  display: inline-block;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  background: none;
+  transform: none;
+}
+.brand-emblem img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+[data-objects-ready='true'] .brand-emblem img {
+  visibility: hidden;
+}

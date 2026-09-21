@@ -1,5 +1,5 @@
 'use client';
-import { mountGameAudio, setLobbyMusic } from '@/lib/game/audio';
+import { mountGameAudio, setMusicScene } from '@/lib/game/audio';
 import { queueCloudSave, restoreCloud } from '@/lib/online/cloud-client';
 import { syncStarterProfile } from '@/lib/game/mobile-profile';
 import { useEffect, useRef, useState } from 'react';
@@ -79,7 +79,7 @@ export default function MobileApp() {
     [guestAxie] = useState(() => randomAxie());
   useEffect(() => mountGameAudio(), []);
   useEffect(
-    () => setLobbyMusic(!run && screen !== 'vault' && screen !== 'shop'),
+    () => setMusicScene(run || screen === 'vault' ? 'dungeon' : 'lobby'),
     [run, screen],
   );
   const profileRef = useRef(profile),
@@ -337,11 +337,23 @@ export default function MobileApp() {
         <button
           onClick={() => setScreen('home')}
           className="m-brand"
-          aria-label="Axie Vault Riders inicio"
+          aria-label="Axie Vault Raiders inicio"
         >
-          <span className="brand-symbol">A</span>
+          <span
+            className="brand-emblem"
+            data-object="raider"
+            aria-hidden="true"
+          >
+            <Image
+              unoptimized
+              src="/favicon.svg"
+              alt=""
+              width="64"
+              height="64"
+            />
+          </span>
           <span className="brand-name">
-            AXIE<small>VAULT RIDERS</small>
+            AXIE<small>VAULT RAIDERS</small>
           </span>
           <span className="brand-dot" />
         </button>

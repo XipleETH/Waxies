@@ -1,4 +1,4 @@
-# Axie Vault Riders
+# Axie Vault Raiders
 
 Juego de plataformas 2.5D para una hackatón de Axie Infinity. Three.js dibuja los Axies oficiales; la física corre en 2D a 120 pasos por segundo. La experiencia principal es una app web vertical para teléfono.
 
@@ -128,4 +128,4 @@ El inicio de sesión con **cuenta Sky Mavis** (Ronin Waypoint) requiere `NEXT_PU
 
 ## Música y efectos
 
-El lobby reproduce un tema instrumental original de 16 compases a 84 BPM, sintetizado con Web Audio (arpegios, campanas y bajo suave), sin descargas de audio ni pistas externas. Comienza tras el primer toque o tecla y se desvanece al entrar en una mazmorra. Los efectos acompañan selección, salto, daño, victoria, validación y matchmaking; funcionan aunque la vibración esté desactivada. Mi Axie → Sonido permite ajustar ambos volúmenes, probar efectos y silenciar todo. Las preferencias se conservan en el dispositivo. La pestaña oculta suspende el audio y salir de la aplicación libera el contexto y el temporizador.
+Dos temas originales de 16 compases sintetizados con Web Audio: lobby oscuro a 100 BPM y techno de mazmorra a 128 BPM. Combinan bajo resonante, bombo, caja, hi-hats, acordes menores y secuencias filtradas, con introducción, desarrollo, descanso y regreso. Cambian automáticamente entre menú y mazmorra sin superponer las pistas. No requieren descargas ni pistas externas. El audio comienza tras el primer toque o tecla. Los efectos funcionan aunque la vibración esté desactivada. Mi Axie → Sonido permite ajustar música y efectos, probarlos y silenciar todo; las preferencias se guardan en el dispositivo. La pestaña oculta suspende el audio y salir libera los recursos.

@@ -1,3 +1,9 @@
+import {
+  musicStep,
+  musicTempo,
+  type MusicScene,
+  type MusicNote,
+} from './music-score';
 export type SoundEvent =
   | 'select'
   | 'jump'
@@ -14,8 +20,13 @@ let settings = defaults;
 let context: AudioContext | undefined;
 let musicBus: GainNode, effectsBus: GainNode;
 let timer: ReturnType<typeof setInterval> | undefined;
-let lobby = true,
-  beat = 0,
+let scene: MusicScene = 'lobby';
+let noise: AudioBuffer | undefined;
+const musicVoices = new Set<{
+  source: AudioScheduledSourceNode;
+  envelope: GainNode;
+}>();
+let beat = 0,
   nextNote = 0;
 const lastSound = new Map<SoundEvent, number>();
 export function audioSettings() {
@@ -41,7 +52,7 @@ export function setAudioSettings(next: Partial<AudioSettings>) {
 function updateVolume() {
   if (!context) return;
   musicBus.gain.setTargetAtTime(
-    lobby ? settings.music * 0.45 : 0,
+    settings.music * 0.35,
     context.currentTime,
     0.18,
   );
@@ -84,44 +95,81 @@ function note(
     envelope.disconnect();
   };
 }
-// Original 16-bar theme: plucked arpeggios, bell melody and a soft bass, at 84 BPM.
-const chords = [
-  [50, 57, 62, 65],
-  [46, 53, 58, 62],
-  [53, 60, 65, 69],
-  [48, 55, 60, 64],
-];
-const melody = [
-  74, 0, 77, 76, 74, 0, 69, 72, 70, 0, 74, 72, 70, 0, 65, 69, 72, 0, 77, 79, 77,
-  0, 76, 72, 76, 0, 72, 69, 67, 0, 69, 72,
-];
+function instrument(event: MusicNote, at: number) {
+  if (!context) return;
+  const envelope = context.createGain(),
+    filter = context.createBiquadFilter();
+  const percussion = event.voice === 'hat' || event.voice === 'snare';
+  let source: AudioScheduledSourceNode;
+  if (percussion) {
+    if (!noise) {
+      noise = context.createBuffer(1, context.sampleRate, context.sampleRate);
+      const data = noise.getChannelData(0);
+      let seed = 7331;
+      for (let i = 0; i < data.length; i++) {
+        seed = (seed * 1664525 + 1013904223) >>> 0;
+        data[i] = seed / 2147483648 - 1;
+      }
+    }
+    const buffer = context.createBufferSource();
+    buffer.buffer = noise;
+    source = buffer;
+    filter.type = event.voice === 'hat' ? 'highpass' : 'bandpass';
+    filter.frequency.value = event.voice === 'hat' ? 6500 : 1800;
+    filter.Q.value = 0.7;
+  } else {
+    const oscillator = context.createOscillator();
+    source = oscillator;
+    oscillator.type =
+      event.voice === 'kick'
+        ? 'sine'
+        : event.voice === 'pad'
+          ? 'triangle'
+          : 'sawtooth';
+    const frequency = 440 * 2 ** ((event.midi - 69) / 12);
+    oscillator.frequency.setValueAtTime(
+      event.voice === 'kick' ? 145 : frequency,
+      at,
+    );
+    if (event.voice === 'kick')
+      oscillator.frequency.exponentialRampToValueAtTime(43, at + 0.12);
+    filter.type = 'lowpass';
+    filter.Q.value = event.voice === 'bass' ? 3 : 0.7;
+    filter.frequency.setValueAtTime(event.cutoff ?? 900, at);
+    if (event.voice === 'bass' || event.voice === 'lead')
+      filter.frequency.exponentialRampToValueAtTime(140, at + event.duration);
+  }
+  envelope.gain.setValueAtTime(0, at);
+  envelope.gain.linearRampToValueAtTime(
+    event.volume,
+    at + (event.voice === 'pad' ? 0.25 : 0.006),
+  );
+  envelope.gain.exponentialRampToValueAtTime(0.0001, at + event.duration);
+  source.connect(filter);
+  filter.connect(envelope);
+  envelope.connect(musicBus);
+  const voice = { source, envelope };
+  musicVoices.add(voice);
+  source.onended = () => {
+    source.disconnect();
+    filter.disconnect();
+    envelope.disconnect();
+    musicVoices.delete(voice);
+  };
+  source.start(at);
+  source.stop(at + event.duration + 0.03);
+}
 function scheduleMusic() {
   if (!context || context.state !== 'running' || document.hidden) return;
-  if (!lobby || !settings.music) {
+  if (!settings.music) {
     nextNote = context.currentTime;
     return;
   }
   if (nextNote < context.currentTime) nextNote = context.currentTime + 0.04;
   while (nextNote < context.currentTime + 0.15) {
-    const chord = chords[Math.floor(beat / 32) % 4];
-    note(
-      chord[[0, 2, 1, 3, 2, 1, 3, 2][beat % 8]] + 12,
-      nextNote,
-      0.65,
-      0.12,
-      musicBus,
-      'triangle',
-    );
-    if (beat % 8 === 0) note(chord[0] - 12, nextNote, 2.4, 0.23, musicBus);
-    if (beat % 4 === 0) {
-      const pitch = melody[Math.floor(beat / 4) % melody.length];
-      if (pitch) {
-        note(pitch, nextNote, 1.05, 0.18, musicBus);
-        note(pitch + 12, nextNote, 0.32, 0.035, musicBus);
-      }
-    }
-    nextNote += 60 / 84 / 2;
-    beat = (beat + 1) % 128;
+    for (const event of musicStep(scene, beat)) instrument(event, nextNote);
+    nextNote += 60 / musicTempo(scene) / 4;
+    beat = (beat + 1) % 256;
   }
 }
 export function unlockAudio() {
@@ -154,9 +202,20 @@ export function unlockAudio() {
     /* Unsupported audio must never interrupt gameplay. */
   }
 }
-export function setLobbyMusic(enabled: boolean) {
-  lobby = enabled;
-  updateVolume();
+export function setMusicScene(next: MusicScene) {
+  if (scene === next) return;
+  scene = next;
+  beat = 0;
+  if (context) {
+    const now = context.currentTime;
+    for (const voice of musicVoices) {
+      voice.envelope.gain.cancelScheduledValues(now);
+      voice.envelope.gain.setTargetAtTime(0, now, 0.025);
+      voice.source.stop(now + 0.1);
+    }
+    musicVoices.clear();
+    nextNote = now + 0.12;
+  }
 }
 export function playSound(event: SoundEvent) {
   if (
@@ -225,6 +284,8 @@ export function mountGameAudio() {
     document.removeEventListener('visibilitychange', visibility);
     if (timer) clearInterval(timer);
     if (context) void context.close().catch(() => {});
+    musicVoices.clear();
+    noise = undefined;
     context = undefined;
     timer = undefined;
     beat = 0;

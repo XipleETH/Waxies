@@ -11,7 +11,7 @@ const display = Space_Grotesk({
   subsets: ['latin'],
 });
 export const metadata: Metadata = {
-  title: 'Axie Vault Riders',
+  title: 'Axie Vault Raiders',
   icons: { icon: '/favicon.svg' },
   manifest: '/manifest.webmanifest',
   description:

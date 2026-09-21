@@ -36,7 +36,7 @@ export function SoundControls() {
         >
           <div className="sound-settings">
             <label htmlFor="music-volume">
-              Música del lobby · {Math.round(settings.music * 100)} %
+              Música · {Math.round(settings.music * 100)} %
             </label>
             <input
               id="music-volume"
@@ -83,8 +83,8 @@ export function SoundControls() {
               </button>
             </div>
             <p>
-              Volúmenes guardados en este dispositivo. La música descansa
-              durante las mazmorras y todo el audio se pausa al salir del juego.
+              Volúmenes guardados en este dispositivo. Lobby oscuro y techno en
+              las mazmorras. Todo el audio se pausa al salir del juego.
             </p>
           </div>
         </ObjectDialogContent>

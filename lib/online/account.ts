@@ -17,7 +17,7 @@ export function loginMessage(
     new URL(origin).host +
     ' wants you to sign in with your Ethereum account:\n' +
     getAddress(address) +
-    '\n\nIniciar sesion en Axie Vault Riders. Sin transferencias de fondos.\n\nURI: ' +
+    '\n\nIniciar sesion en Axie Vault Raiders. Sin transferencias de fondos.\n\nURI: ' +
     origin +
     '\nVersion: 1\nChain ID: 2020\nNonce: ' +
     nonce +

@@ -3,13 +3,13 @@ import { PART_LIST, CLASSIC_SOURCE } from '@/lib/game/catalog';
 import { raidPowerDescription } from '@/lib/game/raid-powers';
 import { GENE_SOURCE } from '@/lib/game/genes';
 export const metadata = {
-  title: 'Investigación de partes Classic · Axie Vault Riders',
+  title: 'Investigación de partes Classic · Axie Vault Raiders',
 };
 export default function Research() {
   return (
     <main className="research-page">
       <Link href="/" className="source-link">
-        ← Volver a Axie Vault Riders
+        ← Volver a Axie Vault Raiders
       </Link>
       <p className="eyebrow">CATÁLOGO VERIFICADO · 5 SEPTIEMBRE 2026</p>
       <h1>
@@ -161,7 +161,7 @@ export default function Research() {
       <section>
         <h2>Reglas de adaptación del plataformas</h2>
         <p>
-          Classic es un combate por turnos; Axie Vault Riders conserva carrera
+          Classic es un combate por turnos; Axie Vault Raiders conserva carrera
           automática y un botón de salto. Las formas de disparo, embestida,
           mordida, barrera, espinas y apoyo son adaptaciones. No presentamos sus
           segundos, trayectorias ni valores de daño como reglas de Classic.
@@ -281,7 +281,7 @@ export default function Research() {
                 <th>Parte y carta</th>
                 <th>Clase / pieza</th>
                 <th>A / E / C</th>
-                <th>En Axie Vault Riders</th>
+                <th>En Axie Vault Raiders</th>
               </tr>
             </thead>
             <tbody>

@@ -5,7 +5,7 @@ import {
   unlockAudio,
   playSound,
   setAudioSettings,
-  setLobbyMusic,
+  setMusicScene,
 } from '../lib/game/audio';
 
 void test('audio uses one context, separates channels, suspends in background and releases resources', async () => {
@@ -33,6 +33,7 @@ void test('audio uses one context, separates channels, suspends in background an
     setTargetAtTime(value: number) {
       this.value = value;
     },
+    cancelScheduledValues() {},
     setValueAtTime() {},
     linearRampToValueAtTime() {},
     exponentialRampToValueAtTime() {},
@@ -48,6 +49,15 @@ void test('audio uses one context, separates channels, suspends in background an
       const node = { gain: parameter(), connect() {}, disconnect() {} };
       gains.push(node);
       return node;
+    }
+    createBiquadFilter() {
+      return {
+        frequency: parameter(),
+        Q: parameter(),
+        type: 'lowpass',
+        connect() {},
+        disconnect() {},
+      };
     }
     createOscillator() {
       return {
@@ -90,8 +100,9 @@ void test('audio uses one context, separates channels, suspends in background an
     unlockAudio();
     unlockAudio();
     assert.equal(contexts, 1);
-    setLobbyMusic(false);
-    assert.equal(gains[0].gain.value, 0);
+    setMusicScene('dungeon');
+    assert.ok(gains[0].gain.value > 0);
+    assert.equal(contexts, 1);
     const before = notes;
     playSound('hit');
     assert.ok(notes > before);
@@ -100,7 +111,7 @@ void test('audio uses one context, separates channels, suspends in background an
     playSound('win');
     assert.equal(notes, muted);
     setAudioSettings({ music: 0.5, effects: 0.5 });
-    setLobbyMusic(true);
+    setMusicScene('lobby');
     assert.ok(gains[0].gain.value > 0);
     doc.hidden = true;
     doc.dispatchEvent(new Event('visibilitychange'));

@@ -403,7 +403,61 @@ export async function createGameObjects(
         );
       }
     } else {
-      if (kind === 'music') {
+      if (kind === 'raider') {
+        // A delighted Axie lifting the treasure lid, built from real low-poly geometry.
+        const body = mesh(
+          new T.IcosahedronGeometry(0.67, 2),
+          mint,
+          -0.23,
+          0.25,
+          -0.1,
+        );
+        body.scale.set(1.05, 0.91, 0.75);
+        for (const x of [-0.49, 0.02]) {
+          const ear = mesh(
+            new T.ConeGeometry(0.18, 0.43, 5),
+            teal,
+            x,
+            0.92,
+            -0.08,
+          );
+          ear.rotation.z = x < -0.2 ? 0.3 : -0.3;
+          mesh(new T.SphereGeometry(0.17, 12, 8), paper, x, 0.36, 0.35);
+          mesh(new T.SphereGeometry(0.105, 12, 8), dark, x + 0.035, 0.33, 0.49);
+          mesh(new T.SphereGeometry(0.035, 8, 6), paper, x + 0.015, 0.38, 0.57);
+          mesh(new T.SphereGeometry(0.15, 8, 6), teal, x, -0.5, 0.02);
+        }
+        mesh(
+          new T.TorusGeometry(0.12, 0.025, 5, 12, Math.PI),
+          dark,
+          -0.22,
+          0.13,
+          0.46,
+        ).rotation.z = Math.PI;
+        box(0.24, -0.39, 0.39, 1.04, 0.59, 0.66, wood);
+        box(0.24, -0.07, 0.39, 1.06, 0.1, 0.7, gold);
+        box(0.24, -0.005, 0.39, 0.84, 0.02, 0.48, dark);
+        for (const x of [-0.12, 0.6])
+          box(x, -0.38, 0.75, 0.1, 0.58, 0.08, gold);
+        box(0.24, -0.3, 0.79, 0.18, 0.2, 0.08, gold);
+        const lid = new T.Group();
+        icon.add(lid);
+        lid.position.set(0.24, -0.02, 0.05);
+        lid.rotation.x = -1.02;
+        mesh(new T.BoxGeometry(1.07, 0.17, 0.7), wood, 0, 0.07, 0.31, lid);
+        for (const x of [-0.36, 0.36])
+          mesh(new T.BoxGeometry(0.11, 0.06, 0.72), gold, x, 0.17, 0.31, lid);
+        mesh(new T.SphereGeometry(0.14, 10, 8), mint, -0.34, 0.05, 0.4);
+        mesh(new T.SphereGeometry(0.14, 10, 8), mint, 0.65, 0.3, 0.03);
+        const glint = mesh(
+          new T.OctahedronGeometry(0.17),
+          gold,
+          0.63,
+          0.81,
+          0.4,
+        );
+        glint.scale.set(0.6, 1.3, 0.5);
+      } else if (kind === 'music') {
         for (const x of [-0.4, 0.4]) {
           const head = mesh(
             new T.SphereGeometry(0.25, 12, 8),
