@@ -9,6 +9,7 @@ export interface ObjectAction {
   onClick: () => void;
   disabled?: boolean;
   badge?: string;
+  variant?: string;
 }
 export function ObjectMenu({
   actions,
@@ -43,6 +44,7 @@ export function ObjectMenu({
           data-object={a.kind}
           data-label={a.label}
           data-caption={a.badge}
+          data-variant={a.variant}
           onClick={a.onClick}
           disabled={a.disabled}
           aria-label={a.label}

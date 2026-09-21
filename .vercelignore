@@ -5,3 +5,10 @@ dist/
 .wrangler/
 .next/
 *.tsbuildinfo
+.env*
+.agents/
+.claude/
+.codex/
+AGENTS.md
+CLAUDE.md
+skills-lock.json

@@ -507,6 +507,7 @@ export default function MobileApp() {
                     } as Record<string, string>
                   )[level.layoutId ?? ''] ?? level.name,
                 kind: 'portal' as const,
+                variant: level.layoutId ?? level.id,
                 onClick: () => practice(level.layoutId),
                 disabled: !ready,
               }))}

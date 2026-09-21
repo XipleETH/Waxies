@@ -1,4 +1,4 @@
-import { starterVault } from './starter-vaults';
+import { starterVault, STARTER_VAULTS } from './starter-vaults';
 import {
   validDecorationPositions,
   type DecorationPosition,
@@ -270,19 +270,28 @@ export function parseProfile(value: unknown): MobileProfile {
   return p;
 }
 
-/** Restore an account's assigned starter only while the local starter is untouched. */
+/** Adopt the renewed guest defense once; never replace a selected wallet Axie. */
 export function syncStarterProfile(
   p: MobileProfile,
   id: string,
 ): MobileProfile {
-  if (!p.starterId || p.axie || p.starterId === id) return p;
+  if (p.axie || p.starterId === id) return p;
+  const renewed =
+    id.startsWith('starter-v2-') &&
+    STARTER_VAULTS.some((c) => c.level.id === id);
+  if (!renewed && !p.starterId) return p;
   const previous = starterVault(p.starterId);
-  if (JSON.stringify(p.traps) !== JSON.stringify(previous.level.traps))
+  if (
+    !renewed &&
+    JSON.stringify(p.traps) !== JSON.stringify(previous.level.traps)
+  )
     return p;
   const next = starterVault(id);
   return {
     ...p,
     starterId: next.level.id,
+    freePlacement: true,
+    guardianCount: 1,
     traps: next.level.traps,
     proof: next.proof,
   };

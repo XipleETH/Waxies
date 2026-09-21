@@ -8,6 +8,7 @@ export type MenuObject =
   | 'book'
   | 'chest'
   | 'scroll'
+  | 'revenge'
   | 'swords';
 /** Lit solid objects; accessible labels and hit targets are overlaid by ObjectMenu. */
 export function createObjectMenu(

@@ -1,4 +1,5 @@
 import type { VerifiedCourse } from './route-proof';
+import { raidFamily } from './raid-mechanics';
 /** Pick a room first so templates with more card combinations aren't favored. */
 export function choosePracticeCourse(
   courses: VerifiedCourse[],
@@ -20,7 +21,18 @@ export function choosePracticeCourse(
       Math.min(items.length - 1, Math.max(0, Math.floor(rng() * items.length)))
     ];
   const layout = pick(candidates);
+  const rooms = courses.filter(
+    (c) => (c.level.layoutId ?? c.level.id) === layout,
+  );
+  // Choose a family first so common card combinations don't hide rarer effects.
+  const family = pick([
+    ...new Set(
+      rooms.flatMap((c) => c.level.traps.map((t) => raidFamily(t.part))),
+    ),
+  ]);
   return pick(
-    courses.filter((c) => (c.level.layoutId ?? c.level.id) === layout),
+    rooms.filter((c) =>
+      c.level.traps.some((t) => raidFamily(t.part) === family),
+    ),
   );
 }

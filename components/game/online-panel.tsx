@@ -1,10 +1,8 @@
 'use client';
 import { AccountAccess } from './account-access';
-import { useEffect, useState } from 'react';
-import { ShieldCheck, Coins, Clock3 } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
 import type { OnlineView, OnlineCommand } from '@/lib/online/types';
-import { challengeCode, type RouteProof } from '@/lib/game/route-proof';
-import { vaultLevel, type MobileProfile } from '@/lib/game/mobile-profile';
+import type { MobileProfile } from '@/lib/game/mobile-profile';
 import type { RaidReplay } from '@/lib/game/raid-replay';
 import styles from './online-panel.module.css';
 import { haptic } from '@/lib/game/haptics';
@@ -58,10 +56,9 @@ export function OnlinePanel({
     [error, setError] = useState(''),
     [busy, setBusy] = useState(false),
     [name, setName] = useState(''),
-    [amount, setAmount] = useState('50'),
     [replayMatch, setReplayMatch] = useState<MatchReplayView | null>(null),
     [panel, setPanel] = useState<string | null>(null);
-  async function refresh() {
+  const refresh = useCallback(async () => {
     try {
       const next = await onlineRequest();
       setView(next);
@@ -83,10 +80,10 @@ export function OnlinePanel({
     } catch (e) {
       setError((e as Error).message);
     }
-  }
+  }, [onStarter]);
   useEffect(() => {
     queueMicrotask(() => void refresh());
-  }, []);
+  }, [refresh]);
   async function act(
     command:
       | OnlineCommand
@@ -114,19 +111,6 @@ export function OnlinePanel({
       setError((e as Error).message);
     } finally {
       setBusy(false);
-    }
-  }
-  function activate() {
-    try {
-      if (!profile.proof)
-        throw Error('Completa tu mazmorra sin golpes y guarda la defensa.');
-      const code = challengeCode({
-        level: vaultLevel(profile),
-        proof: profile.proof as RouteProof,
-      });
-      void act({ action: 'activate', amount: Number(amount), code });
-    } catch (e) {
-      setError((e as Error).message);
     }
   }
   async function watchReplay(id: string) {
@@ -276,16 +260,9 @@ export function OnlinePanel({
                 onClick: () => setPanel('raid'),
               },
               {
-                id: 'chest',
-                label: 'Cofre',
-                kind: 'chest',
-                onClick: () => setPanel('chest'),
-                badge: String(p.chest),
-              },
-              {
                 id: 'loot',
                 label: 'Revancha',
-                kind: 'portal',
+                kind: 'revenge',
                 onClick: () => setPanel('loot'),
                 badge: String(
                   view.loot?.filter((l) => l.canRevenge).length ?? 0,
@@ -299,105 +276,6 @@ export function OnlinePanel({
               },
             ]}
           />
-          <div className={styles.balance}>
-            <div
-              data-object="gem"
-              data-caption="Disponible"
-              data-value={String(p.available)}
-            >
-              <Coins size={18} />
-              <b>{p.available}</b>
-              <span>Disponibles</span>
-            </div>
-            <div
-              data-object="wallet"
-              data-caption="Cofre"
-              data-value={String(p.chest)}
-            >
-              <ShieldCheck size={18} />
-              <b>{p.chest}</b>
-              <span>En tu cofre</span>
-            </div>
-            <div
-              data-object="save"
-              data-caption="Retenido"
-              data-value={String(p.held)}
-            >
-              <Clock3 size={18} />
-              <b>{p.held}</b>
-              <span>Retenidas</span>
-            </div>
-          </div>
-          <p className={styles.muted}>{p.name}</p>
-          <Dialog
-            open={panel === 'chest'}
-            onOpenChange={(open) => {
-              if (!open) setPanel(null);
-            }}
-          >
-            <ObjectDialogContent
-              className="online-object-dialog"
-              title="Cofre"
-              description="Guerra de los cofres"
-              onClose={() => setPanel(null)}
-            >
-              <div className={styles.online}>
-                <div className={styles.card}>
-                  <h2>
-                    {p.active ? 'Tu refugio está activo' : 'Activa tu refugio'}
-                  </h2>
-                  <p>
-                    {profile.proof
-                      ? 'Defensa local validada. Deposita Chispas para publicarla.'
-                      : 'Primero completa tu defensa local sin recibir golpes.'}
-                  </p>
-                  <label htmlFor="online-amount">Chispas en el cofre</label>
-                  <input
-                    type="number"
-                    id="online-amount"
-                    min={1}
-                    max={p.available + p.chest}
-                    step={1}
-                    value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
-                  />
-                  <button
-                    disabled={busy || p.locked || !profile.proof}
-                    data-object="save"
-                    data-label="Activar"
-                    onClick={activate}
-                  >
-                    {p.active
-                      ? 'Actualizar defensa y depósito'
-                      : 'Depositar y activar'}
-                  </button>
-                  <div className={styles.actions}>
-                    <button
-                      disabled={busy}
-                      data-object="map"
-                      data-label="Refugio"
-                      onClick={onEdit}
-                    >
-                      Editar refugio
-                    </button>
-                    <button
-                      disabled={busy || p.locked || p.chest === 0}
-                      data-object="wallet"
-                      data-label="Retirar"
-                      onClick={() => void act({ action: 'withdraw' })}
-                    >
-                      Retirar y desactivar
-                    </button>
-                  </div>
-                  <small>
-                    Editar el borrador no cambia la defensa publicada hasta que
-                    la valides y actualices. Un ataque en curso bloquea el cofre
-                    durante un máximo de 10 minutos.
-                  </small>
-                </div>
-              </div>
-            </ObjectDialogContent>
-          </Dialog>
           <Dialog
             open={panel === 'raid'}
             onOpenChange={(open) => {
@@ -489,7 +367,7 @@ export function OnlinePanel({
                         </span>
                         {l.canRevenge ? (
                           <button
-                            data-object="swords"
+                            data-object="revenge"
                             data-label="Revancha"
                             disabled={busy || p.locked}
                             onClick={() =>
@@ -570,19 +448,19 @@ export function OnlinePanel({
                   ) : (
                     <p>Todavía no hay ataques.</p>
                   )}
+                  <details className="online-guide">
+                    <summary>Cómo funciona</summary>
+                    <p className={styles.muted}>
+                      Historia aporta premios online por mejora; Práctica, por
+                      la mejor victoria de cada pista al día. Se validan al
+                      abrir Online. Las compras locales siguen usando el saldo
+                      del dispositivo durante esta beta.
+                    </p>
+                  </details>
                 </div>
               </div>
             </ObjectDialogContent>
           </Dialog>
-          <details className="online-guide">
-            <summary>Cómo funciona</summary>
-            <p className={styles.muted}>
-              Historia aporta premios online por mejora; Práctica, por la mejor
-              victoria de cada pista al día. Se validan al abrir Online. Las
-              compras locales siguen usando el saldo del dispositivo durante
-              esta beta.
-            </p>
-          </details>
         </>
       ) : null}
     </section>

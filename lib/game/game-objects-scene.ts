@@ -159,7 +159,7 @@ export async function createGameObjects(
   const brandBlue = mat(0x2065ee);
   const mavisShapes = new SVGLoader()
     .parse(skyMavisMark)
-    .paths.flatMap((path) => SVGLoader.createShapes(path));
+    .paths.flatMap((path) => path.toShapes());
   const entries = new Map<
     HTMLElement,
     {
@@ -286,7 +286,8 @@ export async function createGameObjects(
     };
     const kind = aliases[el.dataset.object ?? ''] ?? el.dataset.object,
       label = el.dataset.label ?? '',
-      value = el.dataset.value ?? '';
+      value = el.dataset.value ?? '',
+      variant = el.dataset.variant ?? '';
     let cleanup: (() => void) | undefined;
     if (kind === 'mouth' && PARTS[value]) {
       let removed = false;
@@ -502,6 +503,29 @@ export async function createGameObjects(
           -0.23,
           0.56,
         ).rotation.z = Math.PI;
+      } else if (kind === 'revenge') {
+        // Two chasing arrows around a guarded spark: a return attack, not a doorway.
+        for (const [rotation, side] of [
+          [0.15, 1],
+          [Math.PI + 0.15, -1],
+        ] as const) {
+          const arc = mesh(
+            new T.TorusGeometry(0.55, 0.09, 7, 22, Math.PI * 0.72),
+            side > 0 ? gold : paper,
+          );
+          arc.rotation.z = rotation;
+          const tip = mesh(
+            new T.ConeGeometry(0.18, 0.36, 5),
+            side > 0 ? gold : paper,
+            side * 0.5,
+            side * 0.37,
+            0.02,
+          );
+          tip.rotation.z = side > 0 ? -0.8 : 2.35;
+        }
+        const guard = mesh(new T.OctahedronGeometry(0.28), ember, 0, 0, 0.18);
+        guard.scale.set(0.85, 1.2, 0.45);
+        mesh(new T.SphereGeometry(0.075, 8, 6), gold, 0, 0, 0.48);
       } else if (kind === 'swords' || kind === 'edit') {
         for (const angle of kind === 'edit' ? [-0.55] : [-0.65, 0.65]) {
           const weapon = new T.Group();
@@ -629,11 +653,129 @@ export async function createGameObjects(
         );
         bolt.position.z = 0.19;
       } else if (kind === 'portal' || kind === 'map') {
-        box(-0.55, 0, 0, 0.28, 1.3, 0.45, mint);
-        box(0.55, 0, 0, 0.28, 1.3, 0.45, mint);
-        box(0, 0.7, 0, 1.6, 0.3, 0.55, gold);
-        box(0, -0.65, 0.05, 1.65, 0.18, 0.8, wood);
-        box(0, 0, -0.12, 0.85, 1.1, 0.14, teal);
+        const portalFloor = (material: T.Material = wood) =>
+          box(0, -0.65, 0.05, 1.65, 0.18, 0.8, material);
+        if (kind === 'map' || !variant || variant === 'patio') {
+          box(-0.55, 0, 0, 0.28, 1.3, 0.45, mint);
+          box(0.55, 0, 0, 0.28, 1.3, 0.45, mint);
+          box(0, 0.7, 0, 1.6, 0.3, 0.55, gold);
+          box(0, 0, -0.12, 0.85, 1.1, 0.14, teal);
+          portalFloor();
+          if (variant === 'patio')
+            for (const x of [-0.75, 0.75])
+              mesh(new T.ConeGeometry(0.18, 0.55, 6), mint, x, -0.35, 0.2);
+        } else if (variant === 'islands') {
+          for (const [x, y, size] of [
+            [-0.56, -0.28, 0.5],
+            [0.06, 0.12, 0.64],
+            [0.58, 0.5, 0.38],
+          ] as const) {
+            const island = mesh(new T.OctahedronGeometry(size), mint, x, y, 0);
+            island.scale.y = 0.45;
+            mesh(
+              new T.CylinderGeometry(size * 0.6, size * 0.72, 0.1, 7),
+              gold,
+              x,
+              y + size * 0.32,
+              0.05,
+            );
+          }
+          const ring = mesh(
+            new T.TorusGeometry(0.34, 0.07, 6, 18),
+            teal,
+            0.05,
+            0.17,
+            0.2,
+          );
+          ring.rotation.x = 0.25;
+        } else if (variant === 'forks') {
+          portalFloor(mint);
+          box(0, -0.02, 0, 0.24, 1.35, 0.3, wood);
+          for (const side of [-1, 1]) {
+            const branch = box(side * 0.35, 0.38, 0, 0.18, 0.75, 0.25, wood);
+            branch.rotation.z = side * -0.75;
+            mesh(
+              new T.IcosahedronGeometry(0.38, 1),
+              mint,
+              side * 0.56,
+              0.55,
+              0,
+            );
+          }
+          mesh(new T.TorusGeometry(0.43, 0.07, 6, 20), teal, 0, -0.13, 0.22);
+        } else if (variant === 'chimneys') {
+          portalFloor();
+          for (const [x, height] of [
+            [-0.43, 1.15],
+            [0.4, 0.82],
+          ] as const) {
+            box(x, -0.52 + height / 2, 0, 0.48, height, 0.48, dark);
+            box(x, -0.52 + height, 0, 0.62, 0.16, 0.6, gold);
+            for (let i = 0; i < 2; i++)
+              mesh(
+                new T.SphereGeometry(0.16 + i * 0.04, 8, 6),
+                paper,
+                x + i * 0.14,
+                0.74 + i * 0.28,
+                -0.05,
+              );
+          }
+        } else if (variant === 'bridge') {
+          for (let i = 0; i < 6; i++) {
+            const plank = box(
+              -0.63 + i * 0.25,
+              -0.48 + Math.sin(i * 0.7) * 0.11,
+              0,
+              0.22,
+              0.13,
+              0.78,
+              i % 2 ? gold : wood,
+            );
+            plank.rotation.z = (i - 2.5) * 0.025;
+          }
+          for (const x of [-0.78, 0.78]) box(x, 0.08, 0, 0.11, 1.2, 0.12, mint);
+          for (const y of [-0.05, 0.25]) {
+            const rope = box(0, y, 0.25, 1.5, 0.04, 0.04, paper);
+            rope.rotation.z = -0.05;
+          }
+        } else if (variant === 'balconies') {
+          for (const [x, y, width] of [
+            [-0.32, -0.45, 1.15],
+            [0.26, 0.14, 1.05],
+            [-0.18, 0.68, 0.82],
+          ] as const) {
+            box(x, y, 0, width, 0.15, 0.62, y > 0.5 ? gold : mint);
+            box(x - width * 0.35, y - 0.25, -0.08, 0.12, 0.5, 0.18, dark);
+          }
+        } else if (variant === 'steps') {
+          for (let i = 0; i < 6; i++)
+            box(
+              -0.62 + i * 0.24,
+              -0.55 + i * 0.2,
+              0,
+              0.28,
+              0.16,
+              0.68,
+              i % 2 ? mint : gold,
+            );
+          mesh(new T.OctahedronGeometry(0.22), teal, 0.68, 0.64, 0.18);
+        } else {
+          // Torre: a tall fortified portal for the final practice room.
+          portalFloor(dark);
+          box(0, 0, 0, 1.18, 1.35, 0.7, mint);
+          box(0, -0.28, 0.38, 0.42, 0.64, 0.08, dark);
+          for (let i = 0; i < 4; i++)
+            box(
+              -0.48 + i * 0.32,
+              0.78,
+              0,
+              0.2,
+              0.34,
+              0.72,
+              i % 2 ? gold : mint,
+            );
+          mesh(new T.ConeGeometry(0.22, 0.48, 5), gold, 0, 1.06, 0);
+        }
         if (kind === 'map')
           for (let i = 0; i < 3; i++)
             box((i - 1) * 0.5, 0.98, 0, 0.22, 0.25, 0.35, mint);
@@ -842,6 +984,7 @@ export async function createGameObjects(
     for (const el of targets) {
       const key = JSON.stringify([
         el.dataset.object,
+        el.dataset.variant,
         el.matches(':disabled'),
         el.dataset.label,
         el.dataset.value,

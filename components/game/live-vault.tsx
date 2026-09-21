@@ -460,9 +460,24 @@ export function LiveVault({
           code: challengeCode({ level: vaultLevel(p), proof: p.proof }),
         }),
       );
-      setFund(false);
       edit();
       setMessage('Cofre activo');
+    } catch (e) {
+      setMessage((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function withdraw() {
+    if (busy || !view?.registered) return;
+    setBusy(true);
+    setMessage('');
+    try {
+      const next = await onlineRequest({ action: 'withdraw' });
+      setView(next);
+      setAmount('0');
+      setMessage('Chispas retiradas · refugio desactivado');
     } catch (e) {
       setMessage((e as Error).message);
     } finally {
@@ -981,13 +996,11 @@ export function LiveVault({
         active="vault"
         onNavigate={navigate}
         vaultAction={{
-          label:
-            mode === 'test' ? 'Editar' : profile.proof ? 'Guardar' : 'Probar',
+          label: mode === 'test' ? 'Editar' : 'Probar',
           disabled: !loaded || busy,
           onClick: () => {
             if (shopOpen) closeShop();
             if (mode === 'test') edit();
-            else if (profile.proof) void saveVault();
             else test();
           },
         }}
@@ -1007,17 +1020,25 @@ export function LiveVault({
           title="Cofre"
           onClose={() => setFund(false)}
           description={
-            view?.registered
-              ? `${view.player?.available ?? 0} disponibles · ${view.player?.chest ?? 0} guardadas`
-              : '100 Chispas de prueba'
+            view?.registered ? 'Chispas online' : '100 Chispas de prueba'
           }
         >
           <div
             className="coffer-model"
-            data-object="wallet"
+            data-object="reward"
             aria-hidden="true"
           />
           {message ? <output>{message}</output> : null}
+          {profile.proof ? (
+            <button
+              data-object="save"
+              data-label="Guardar"
+              disabled={busy || view?.player?.locked}
+              onClick={() => void saveVault()}
+            >
+              Guardar defensa
+            </button>
+          ) : null}
           {profile.proof ? (
             <button
               data-object="portal"
@@ -1051,7 +1072,33 @@ export function LiveVault({
             </>
           ) : (
             <>
+              <div
+                className={styles.cofferBalance}
+                aria-label="Saldo del cofre"
+              >
+                <div>
+                  <strong>{view.player?.available ?? 0}</strong>
+                  <span>Disponibles</span>
+                </div>
+                <div>
+                  <strong>{view.player?.chest ?? 0}</strong>
+                  <span>En el cofre</span>
+                </div>
+                <div>
+                  <strong>{view.player?.held ?? 0}</strong>
+                  <span>Retenidas</span>
+                </div>
+              </div>
+              <p className={styles.cofferState}>
+                {view.player?.active
+                  ? 'Refugio publicado y disponible para ataques.'
+                  : 'Carga Chispas y guarda una defensa validada para publicarlo.'}
+              </p>
+              <label htmlFor="vault-chest-amount">
+                Chispas que quieres guardar
+              </label>
               <input
+                id="vault-chest-amount"
                 aria-label="Chispas"
                 type="number"
                 min={1}
@@ -1068,6 +1115,19 @@ export function LiveVault({
                 {busy ? 'Guardando…' : 'Activar'}
               </button>
               {!profile.proof ? <small>Valida sin golpes</small> : null}
+              <button
+                className={styles.withdraw}
+                data-object="wallet"
+                data-label="Retirar"
+                disabled={busy || view.player?.locked || !view.player?.chest}
+                onClick={() => void withdraw()}
+              >
+                Retirar y desactivar
+              </button>
+              <small>
+                Un ataque en curso bloquea los movimientos del cofre durante un
+                máximo de 10 minutos.
+              </small>
             </>
           )}
         </ObjectDialogContent>

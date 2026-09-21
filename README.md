@@ -102,6 +102,24 @@ entre dispositivos. Detalles: [cuentas y futura liga con tokens](docs/online-acc
 
 ## Publicación
 
+### Variedad y renovación de mazmorras
+
+Los catálogos incluyen las 19 familias de trampas. `npx tsx scripts/audit-power-variety.ts`
+muestra su reparto; `npx tsx scripts/rebalance-powers.ts` genera copias revisables y
+respaldos en `output/power-variety/`, sin sobrescribir los catálogos. La generación
+conserva la geometría, certifica rutas sin golpes y mantiene las 132 piezas en
+Práctica. Los 100 refugios de la segunda serie usan identificadores `starter-v2-*`;
+los anteriores siguen disponibles para recuperar perfiles antiguos.
+
+La renovación de cuentas invitadas se prepara con
+`npx tsx scripts/renew-league-defenses.ts` y solo se aplica con `--apply`.
+Requiere `.env.maintenance.local`, crea un respaldo privado en
+`output/league-renewal/` y cancela si cambia la revisión de la base de datos.
+Solo cambia defensas e identificadores de plantilla: conserva cuentas, saldos,
+actividad y botines. Rechaza partidas pendientes y perfiles en la nube, que
+requieren revisar sus Axies por separado. Publicar primero los catálogos nuevos.
+Nunca ejecutar como parte del arranque ni del build.
+
 Next.js 16 / Node.js 22. El repositorio [XipleETH/Waxies](https://github.com/XipleETH/Waxies) está conectado con Vercel; los pushes a `main` publican [waxies.vercel.app](https://waxies.vercel.app/). Preset Next.js, raíz del repositorio, `npm ci` y `npm run build`. No se necesitan secretos para la demo de lecturas públicas de Ronin.
 
 El modo Online necesita `DATABASE_URL` (o `POSTGRES_URL`) de Neon en el servidor. Sin esa variable, muestra «Preparando el servidor» y no simula rivales ni transferencias. La instalación de Neon en Vercel requiere que el titular acepte los términos del proveedor.
