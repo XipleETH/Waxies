@@ -4,13 +4,15 @@
 
 - Una cuenta invitada por sesión de navegador, identificada con una cookie HttpOnly. No requiere Axie ni billetera. La cuenta recibe 100 Chispas de prueba; borrar la cookie pierde su acceso. No hay recuperación de cuenta todavía.
 - Una defensa individual tiene un guardián y de una a cuatro partes diferentes. Hay que completar su disposición exacta sin golpes antes de publicarla. El servidor vuelve a simular su certificado.
-- Depositar mueve Chispas disponibles al cofre. Solo una defensa publicada, activa y con cofre positivo habilita incursiones ordinarias. Retirar desactiva la defensa. Editar el borrador no modifica la versión publicada.
+- Depositar mueve Chispas disponibles al cofre. Solo una defensa publicada, activa y con cofre positivo habilita incursiones ordinarias. Retirar reduce el saldo y el puesto; solo vaciar el cofre desactiva la defensa. Editar el borrador no modifica la versión publicada.
 - El rival debe tener un cofre entre el 90 % y el 110 % del atacante, ambos inclusive. No se añaden rivales artificiales si no hay jugadores compatibles.
-- Cada ataque reserva ambos cofres hasta resolverse o transcurrir diez minutos. No se puede retirar ni cambiar la defensa durante esa reserva. Se congela la geometría de ambos refugios.
+- Un ataque por dirección entre dos jugadores cada 24 horas desde su inicio, incluso si falla, se abandona o caduca. A puede atacar a B y B a A, con una revancha por cada robo: hasta dos ataques y dos revanchas. Se pueden atacar otros rivales en ese intervalo.
+- Cada ataque bloquea nuevas partidas de ambos participantes y cambios de defensa durante hasta diez minutos. Solo reserva el importe del cofre atacado: se puede retirar saldo asegurado no comprometido, incluso durante una partida. Se congela la geometría de ambos refugios.
 - Un golpe reinicia el intento y resta 20 de salud. El botín es `floor(cofre rival × salud final / 100)`. Cinco golpes, abandono o vencimiento no producen botín.
 - El botín sale del cofre atacado y queda retenido durante 24 horas. Su ganador no puede depositarlo ni gastarlo todavía.
-- La víctima dispone de una sola revancha, incluso si su cofre quedó vacío. Ataca la defensa que tenía el rival al robarle. Recupera como máximo lo perdido, escalado por su salud final. El resto se libera al ganador original, sin cadenas de revanchas.
+- La víctima dispone de una sola revancha, incluso si su cofre quedó vacío. Ataca la defensa que tenía el rival al robarle. Recupera como máximo lo perdido, escalado por su salud final. Lo recuperado se acredita al cofre del defensor y el resto al cofre del atacante, sin cadenas de revanchas. Si vence el plazo sin revancha, todo se acredita al cofre del atacante. Los cofres con defensa vuelven a activarse al recibir saldo.
 - Una revancha empezada antes de las 24 horas mantiene la reserva hasta terminar o alcanzar su propio límite de diez minutos. Fallarla o abandonarla consume la oportunidad y libera el botín original.
+- El ranking ordena los cofres asegurados de mayor a menor; los empates comparten puesto. No cuenta el saldo disponible ni el botín temporal. Actividad muestra los primeros 20 y el puesto propio. Depositar aumenta el rango y el riesgo; retirar lo reduce.
 - Dúos y clanes aparecen como próximos modos; no tienen apuestas ni partidas activas.
 
 ## Editor y alcance

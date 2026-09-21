@@ -15,7 +15,12 @@ import {
 } from '../lib/game/route-proof';
 import { verifyRaidReplay, type RaidReplay } from '../lib/game/raid-replay';
 import { validFreeTraps, snapTrap } from '../lib/game/free-vault';
-import { createState, step, type Dungeon } from '../lib/game/physics';
+import {
+  createState,
+  requestJump,
+  step,
+  type Dungeon,
+} from '../lib/game/physics';
 import { stepHazards } from '../lib/game/hazards';
 import fixture from './fixtures/free-vault.json';
 const course = fixture as VerifiedCourse,
@@ -169,7 +174,8 @@ void test('winning transfers into escrow once; early withdrawal and duplicate re
   assert.equal(s.players.a.available, 200);
   assert.equal(onlineView(s, 'a', 30002).player?.held, 100);
   settle(s, 30000 + REVENGE_MS);
-  assert.equal(s.players.a.available, 300);
+  assert.equal(s.players.a.available, 200);
+  assert.equal(s.players.a.chest, 100);
   settle(s, 30000 + REVENGE_MS + 1);
   assert.equal(total(s), 600);
 });
@@ -187,7 +193,8 @@ void test('one revenge works with an empty chest against the frozen attacker def
   assert.equal(s.players.b.chest, 0);
   assert.deepEqual(revenge.level, first.counterLevel);
   act('b', { action: 'finish', matchId: revenge.id, replay: win }, 62000);
-  assert.equal(s.players.b.available, 200);
+  assert.equal(s.players.b.available, 100);
+  assert.equal(s.players.b.chest, 100);
   assert.equal(loot.status, 'recovered');
   assert.equal(total(s), 600);
   assert.throws(() => act('b', { action: 'revenge', lootId: loot.id }, 63000));
@@ -200,19 +207,20 @@ void test('abandoned revenge releases the held loot; timeout unlocks normal cofr
   settle(s, 1000 + MATCH_MS);
   assert.equal(s.players.a.lock, undefined);
   assert.equal(s.players.b.chest, 100);
-  act('a', { action: 'match' }, MATCH_MS + 2000);
+  act('a', { action: 'match' }, REVENGE_MS + 2000);
   const raid = Object.values(s.matches)[1];
   act(
     'a',
     { action: 'finish', matchId: raid.id, replay: win },
-    MATCH_MS + 32000,
+    REVENGE_MS + 32000,
   );
   const loot = Object.values(s.loot)[0];
-  act('b', { action: 'revenge', lootId: loot.id }, MATCH_MS + 33000);
+  act('b', { action: 'revenge', lootId: loot.id }, REVENGE_MS + 33000);
   const revenge = Object.values(s.matches)[2];
-  act('b', { action: 'abandon', matchId: revenge.id }, MATCH_MS + 34000);
+  act('b', { action: 'abandon', matchId: revenge.id }, REVENGE_MS + 34000);
   assert.equal(loot.status, 'released');
-  assert.equal(s.players.a.available, 200);
+  assert.equal(s.players.a.available, 100);
+  assert.equal(s.players.a.chest, 200);
   assert.equal(total(s), 600);
 });
 void test('a revenge begun before the deadline reserves escrow until its match resolves', () => {
@@ -298,5 +306,104 @@ void test('replay retention removes only old recordings, never results or balanc
   assert.equal(s.matches['old-0'].status, 'lost');
   assert.equal(s.matches['old-0'].replay, undefined);
   assert.ok(s.matches[id].replay);
+  assert.equal(total(s), 600);
+});
+
+void test('each direction has its own rolling 24-hour raid limit, including abandoned attempts', () => {
+  const { s, act } = setup();
+  for (const id of ['a', 'b'])
+    act(id, { action: 'activate', code, amount: 100 });
+  act('a', { action: 'match' });
+  act('a', { action: 'abandon', matchId: s.players.a.lock! });
+  assert.equal(onlineView(s, 'a', 1001).activePlayers, 0);
+  assert.throws(() => act('a', { action: 'match' }, 1001));
+  act('b', { action: 'match' }, 1001);
+  act('b', { action: 'abandon', matchId: s.players.b.lock! }, 1002);
+  assert.throws(() => act('a', { action: 'match' }, 999 + REVENGE_MS));
+  act('c', { action: 'activate', code, amount: 100 }, 2000);
+  assert.equal(onlineView(s, 'a', 2000).activePlayers, 1);
+  act('a', { action: 'match' }, 2000);
+  assert.equal(s.matches[s.players.a.lock!].defender, 'c');
+  act('a', { action: 'abandon', matchId: s.players.a.lock! }, 2001);
+  act('a', { action: 'match' }, 1000 + REVENGE_MS);
+  assert.equal(s.matches[s.players.a.lock!].defender, 'b');
+  assert.equal(total(s), 600);
+});
+
+void test('ranking excludes escrow and available funds; withdrawals preserve an ongoing defense reservation', () => {
+  const { s, act } = setup();
+  for (const id of ['a', 'b'])
+    act(id, { action: 'activate', code, amount: 100 });
+  act('a', { action: 'match' });
+  // A previous escrow can settle while a new raid is already defending this chest.
+  s.loot.earlier = {
+    id: 'earlier',
+    winner: 'b',
+    victim: 'c',
+    amount: 40,
+    created: 0,
+    releaseAt: 2000,
+    status: 'held',
+    counterLevel: course.level,
+  };
+  s.players.c.available -= 40;
+  settle(s, 2000);
+  assert.equal(onlineView(s, 'b', 2000).player?.withdrawable, 40);
+  assert.equal(onlineView(s, 'b', 2000).player?.rank, 1);
+  assert.throws(() => act('b', { action: 'withdraw', amount: 41 }, 2000));
+  act('b', { action: 'withdraw', amount: 20 }, 2000);
+  assert.equal(s.players.b.chest, 120);
+  act('b', { action: 'withdraw' }, 2000);
+  assert.equal(s.players.b.chest, 100);
+  act('a', { action: 'withdraw', amount: 50 }, 2000);
+  act('a', { action: 'finish', matchId: s.players.a.lock!, replay: win }, 3000);
+  assert.equal(onlineView(s, 'a', 3000).player?.held, 100);
+  assert.equal(onlineView(s, 'a', 3000).ranking?.[0].chest, 50);
+  assert.equal(total(s), 600);
+  settle(s, 3000 + REVENGE_MS);
+  assert.equal(s.players.a.chest, 150);
+  assert.equal(total(s), 600);
+});
+
+void test('partial revenge splits escrow into both ranked chests exactly once', () => {
+  const { s, act } = setup();
+  for (const id of ['a', 'b'])
+    act(id, { action: 'activate', code, amount: 100 });
+  act('a', { action: 'match' });
+  act('a', { action: 'finish', matchId: s.players.a.lock!, replay: win }, 2000);
+  const loot = Object.values(s.loot)[0];
+  act('b', { action: 'revenge', lootId: loot.id }, 3000);
+  const state = createState(course.level);
+  state.phase = 'playing';
+  const actions: number[] = [];
+  while (!state.hits && state.frame < 10000 && state.phase === 'playing') {
+    if (state.frame % 60 === 0) {
+      actions.push(state.frame);
+      requestJump(state);
+    }
+    step(state, course.level);
+  }
+  assert.equal(state.hits, 1);
+  const replay: RaidReplay = {
+    attempts: [
+      { rules: course.proof.rules, frames: state.frame, actions, end: 'hit' },
+      ...win.attempts,
+    ],
+  };
+  assert.equal(verifyRaidReplay(course.level, replay), 80);
+  const command: OnlineCommand = {
+    action: 'finish',
+    matchId: s.players.b.lock!,
+    replay,
+  };
+  act('b', command, 4000);
+  assert.equal(s.players.b.chest, 80);
+  assert.equal(s.players.a.chest, 120);
+  assert.equal(s.players.b.active, true);
+  assert.equal(loot.recovered, 80);
+  act('b', command, 4001);
+  settle(s, 4000 + REVENGE_MS);
+  assert.equal(s.players.b.chest, 80);
+  assert.equal(s.players.a.chest, 120);
   assert.equal(total(s), 600);
 });

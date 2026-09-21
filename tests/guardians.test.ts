@@ -13,6 +13,7 @@ import {
   decodeAppearance,
   resolveAppearanceParts,
 } from '../lib/game/appearance';
+import { validFreeTraps } from '../lib/game/free-vault';
 import { makeVaultTraps, validVaultTraps } from '../lib/game/vault-layout';
 import {
   newProfile,
@@ -72,7 +73,9 @@ void test('all certified rooms have at most two coherent guardians and distinct 
 void test('vault supports four or eight distinct slot-bound defenses, and deduplicates shared powers', () => {
   const p = newProfile();
   assert.equal(p.traps.length, 4);
-  assert.ok(validVaultTraps(p.traps, 1));
+  assert.equal(p.freePlacement, true);
+  assert.ok(validFreeTraps(p.traps));
+  assert.ok(p.proof && verifyRoute(vaultLevel(p), p.proof));
   p.guardianCount = 2;
   p.traps = makeVaultTraps([], 2, [null, null]);
   assert.equal(p.traps.length, 8);

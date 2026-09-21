@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { GameObjects } from './game-objects';
 import {
   ArrowLeft,
   Pause,
@@ -111,15 +112,25 @@ function ReplayScene({
         <button
           className="m-icon"
           onClick={onClose}
+          data-object="close"
+          data-label="Salir"
           aria-label="Cerrar repetición"
         >
           <ArrowLeft size={21} />
         </button>
-        <div>
+        <div
+          data-object="title"
+          data-label={match.attacker}
+          data-value="REPETICIÓN"
+        >
           <small>REPETICIÓN</small>
           <strong>{match.attacker}</strong>
         </div>
-        <span>
+        <span
+          data-object="heart"
+          data-value={state?.hp ?? 100}
+          aria-label={`Salud: ${state?.hp ?? 100}`}
+        >
           <Heart size={15} />
           {state?.hp ?? 100}
         </span>
@@ -131,7 +142,12 @@ function ReplayScene({
         </output>
       ) : null}
       {playback?.complete ? (
-        <output className="replay-result">
+        <output
+          className="replay-result"
+          data-object="balance"
+          data-value={match.amount}
+          aria-label={`${match.amount} Chispas, ${state?.phase === 'won' ? 'cofre alcanzado' : 'sin botín'}`}
+        >
           <Sparkles size={22} />
           {match.amount} Chispas
           <small>
@@ -146,6 +162,8 @@ function ReplayScene({
         <button
           className="m-icon"
           disabled={!ready || playback?.complete}
+          data-object={playback?.paused ? 'play' : 'pause'}
+          data-label={playback?.paused ? 'Seguir' : 'Pausa'}
           onClick={() => engine.current?.pause()}
           aria-label={
             playback?.paused ? 'Continuar repetición' : 'Pausar repetición'
@@ -156,12 +174,15 @@ function ReplayScene({
         <button
           className="m-icon"
           disabled={!ready}
+          data-object="retry"
+          data-label="Repetir"
           onClick={() => engine.current?.playRaidReplay(match.replay)}
           aria-label="Repetir ataque"
         >
           <RotateCcw size={20} />
         </button>
       </footer>
+      <GameObjects />
     </section>
   );
 }

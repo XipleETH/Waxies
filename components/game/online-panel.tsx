@@ -290,12 +290,25 @@ export function OnlinePanel({
             >
               <div className={styles.online}>
                 <div className={styles.card}>
-                  <h2>Buscar una incursión</h2>
+                  <div
+                    className="matchmaking-emblem"
+                    data-object="swords"
+                    aria-hidden="true"
+                  />
+                  <h2>Elige tu próximo desafío</h2>
+                  <div className="matchmaking-stats">
+                    <div>
+                      <b>{p.rank ? `#${p.rank}` : '—'}</b>
+                      <span>Tu puesto</span>
+                    </div>
+                    <div>
+                      <b>{view.activePlayers ?? 0}</b>
+                      <span>Rivales disponibles</span>
+                    </div>
+                  </div>
                   <p>
                     Cofres entre {Math.ceil(p.chest * 0.9)} y{' '}
-                    {Math.floor(p.chest * 1.1)} Chispas.{' '}
-                    {view.activePlayers ?? 0} refugios de otros jugadores
-                    disponibles.
+                    {Math.floor(p.chest * 1.1)} Chispas aseguradas.
                   </p>
                   {view.match ? (
                     <>
@@ -328,8 +341,10 @@ export function OnlinePanel({
                     </button>
                   )}
                   <small>
-                    El botín depende de tu salud al llegar. Queda retenido 24
-                    horas o hasta resolver la única revancha.
+                    Un ataque por rival cada 24 h, desde que lo inicias. El
+                    rival también puede atacarte una vez y cada robo permite una
+                    revancha. El botín espera en el cofre temporal hasta
+                    resolverla o vencer sus 24 h.
                   </small>
                 </div>
               </div>
@@ -349,7 +364,12 @@ export function OnlinePanel({
             >
               <div className={styles.online}>
                 <div className={styles.card}>
-                  <h2>Botines y revanchas</h2>
+                  <div
+                    className="matchmaking-emblem"
+                    data-object="revenge"
+                    aria-hidden="true"
+                  />
+                  <h2>Cofre temporal de revancha</h2>
                   {view.loot?.length ? (
                     view.loot.map((l) => (
                       <article key={l.id} className={styles.event}>
@@ -359,11 +379,14 @@ export function OnlinePanel({
                         <span>
                           {l.amount} Chispas ·{' '}
                           {l.status === 'held'
-                            ? 'Retenidas hasta ' +
+                            ? 'Revancha disponible hasta ' +
                               new Date(l.releaseAt).toLocaleString()
                             : l.status === 'recovered'
-                              ? 'Recuperadas: ' + l.recovered
-                              : 'Liberadas'}
+                              ? 'Al defensor: ' +
+                                l.recovered +
+                                ' · Al atacante: ' +
+                                (l.amount - l.recovered)
+                              : 'Aseguradas en el cofre del atacante'}
                         </span>
                         {l.canRevenge ? (
                           <button
@@ -387,7 +410,10 @@ export function OnlinePanel({
                   )}
                   <small>
                     Puedes vengarte aunque tu cofre haya quedado vacío. Atacas
-                    la defensa que tenía el rival cuando te robó.
+                    la defensa que tenía el rival cuando te robó. Con 100 de
+                    salud recuperas todo; con 80, el 80 %. Lo recuperado va a tu
+                    cofre y el resto al del atacante. El saldo temporal no suma
+                    al ranking.
                   </small>
                 </div>
               </div>
@@ -407,7 +433,29 @@ export function OnlinePanel({
             >
               <div className={styles.online}>
                 <div className={styles.card}>
-                  <h2>Actividad</h2>
+                  <h2>Clasificación de cofres</h2>
+                  <p>
+                    Tu puesto: {p.rank ? `#${p.rank}` : 'sin clasificar'}. Solo
+                    cuenta el saldo asegurado del cofre.
+                  </p>
+                  <ol
+                    className="league-ranking"
+                    aria-label="Ranking de Chispas aseguradas"
+                  >
+                    {view.ranking?.map((entry) => (
+                      <li
+                        key={entry.id}
+                        aria-current={entry.id === p.id ? 'true' : undefined}
+                      >
+                        <b>#{entry.rank}</b>
+                        <span>{entry.name}</span>
+                        <strong aria-label={`${entry.chest} Chispas`}>
+                          ✦ {entry.chest}
+                        </strong>
+                      </li>
+                    ))}
+                  </ol>
+                  <h2>Últimos combates</h2>
                   <button
                     disabled={busy}
                     data-object="retry"

@@ -1,4 +1,6 @@
+import { playSound } from './audio';
 export type HapticEvent =
+  | 'test'
   | 'select'
   | 'jump'
   | 'hit'
@@ -11,8 +13,9 @@ const patterns: Record<
   HapticEvent,
   { pattern: number[]; strength: number; priority: number }
 > = {
-  select: { pattern: [12], strength: 0.16, priority: 0 },
-  jump: { pattern: [18], strength: 0.22, priority: 1 },
+  test: { pattern: [180, 100, 180], strength: 0.85, priority: 6 },
+  select: { pattern: [35], strength: 0.16, priority: 0 },
+  jump: { pattern: [30], strength: 0.22, priority: 1 },
   hit: { pattern: [95], strength: 0.8, priority: 3 },
   win: { pattern: [45, 55, 90], strength: 0.6, priority: 4 },
   validated: { pattern: [45, 45, 65, 45, 100], strength: 0.7, priority: 5 },
@@ -96,18 +99,39 @@ export function subscribeHaptics(listener: () => void) {
     window.removeEventListener('storage', listener);
   };
 }
-export function haptic(event: HapticEvent) {
-  if (typeof navigator === 'undefined' || document.hidden || !hapticsEnabled())
-    return;
+export type HapticResult =
+  | 'requested'
+  | 'unsupported'
+  | 'blocked'
+  | 'disabled'
+  | 'suppressed';
+export function testHaptics(): HapticResult {
+  setHapticsEnabled(true);
+  until = 0;
+  priority = -1;
+  return haptic('test');
+}
+export function haptic(event: HapticEvent): HapticResult {
+  if (event !== 'test') playSound(event);
+  if (typeof navigator === 'undefined' || typeof document === 'undefined')
+    return 'unsupported';
+  if (!hapticsEnabled()) return 'disabled';
+  if (document.hidden) return 'blocked';
   const effect = patterns[event],
     now = performance.now();
-  if (now < until && effect.priority <= priority) return;
+  if (now < until && effect.priority <= priority) return 'suppressed';
   const duration = effect.pattern.reduce((sum, n) => sum + n, 0);
-  until = now + duration + 35;
-  priority = effect.priority;
+
   // Only short, bounded pulses; neither matchmaking polling nor holding a button repeats them.
-  swallow(() => navigator.vibrate?.(effect.pattern));
-  actuators().forEach((a) => {
+  let accepted = false;
+  const phone = typeof navigator.vibrate === 'function';
+  if (phone) {
+    try {
+      accepted = navigator.vibrate(effect.pattern);
+    } catch {}
+  }
+  const motors = actuators().filter((a) => a.playEffect || a.pulse);
+  motors.forEach((a) => {
     if (a.playEffect)
       swallow(() =>
         a.playEffect!('dual-rumble', {
@@ -119,6 +143,12 @@ export function haptic(event: HapticEvent) {
       );
     else if (a.pulse) swallow(() => a.pulse!(effect.strength, duration));
   });
+  if (accepted || motors.length) {
+    until = now + duration + 35;
+    priority = effect.priority;
+    return 'requested';
+  }
+  return phone ? 'blocked' : 'unsupported';
 }
 export function createGameplayHaptics() {
   let old: { phase: string; hits: number; jumps: number } | undefined;

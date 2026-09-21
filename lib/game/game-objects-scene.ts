@@ -1,4 +1,5 @@
-import { createMouthRelief } from './mouth-relief';
+import { createMouthRelief, isLineMouth } from './mouth-relief';
+import { partSpriteMaterial } from './part-sprite-material';
 import { PARTS } from './catalog';
 import * as T from 'three';
 import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
@@ -303,6 +304,54 @@ export async function createGameObjects(
         relief.dispose();
         texture.dispose();
       };
+    } else if (kind === 'power' && PARTS[value]) {
+      const part = PARTS[value];
+      const texture = new T.TextureLoader().load(part.partImage);
+      texture.colorSpace = T.SRGBColorSpace;
+      mesh(
+        new T.CylinderGeometry(0.63, 0.75, 0.22, 8),
+        el.getAttribute('aria-pressed') === 'true' ? gold : mint,
+        0,
+        -0.25,
+        0,
+      );
+      mesh(new T.CylinderGeometry(0.72, 0.68, 0.12, 8), dark, 0, -0.43, 0);
+      if (isLineMouth(value)) {
+        const relief = createMouthRelief(texture, part.color);
+        relief.root.scale.setScalar(0.8);
+        relief.root.position.set(0, 0.33, 0.25);
+        relief.setOpen(0.18);
+        group.add(relief.root);
+        cleanup = () => {
+          relief.dispose();
+          texture.dispose();
+        };
+      } else {
+        const material = partSpriteMaterial(texture, part.color);
+        const sprite = new T.Sprite(material);
+        sprite.scale.set(1.25, 1.05, 1);
+        sprite.position.set(0, 0.4, 0.25);
+        group.add(sprite);
+        cleanup = () => {
+          material.dispose();
+          texture.dispose();
+        };
+      }
+      const words = label.split(' ');
+      const lines =
+        label.length > 12 && words.length > 1
+          ? [words.shift()!, words.join(' ')]
+          : [label];
+      lines.forEach((line, i) => {
+        const lettering = text(line, -0.78 - i * 0.28, 0.27);
+        const width = new T.Box3()
+          .setFromObject(lettering)
+          .getSize(new T.Vector3()).x;
+        const scale = Math.min(1, 1.9 / Math.max(width, 0.01));
+        group.children
+          .slice(-2)
+          .forEach((child) => child.scale.multiplyScalar(scale));
+      });
     } else if (kind === 'balance') {
       const spark = shape(
         [
@@ -354,7 +403,20 @@ export async function createGameObjects(
         );
       }
     } else {
-      if (kind === 'haptics') {
+      if (kind === 'music') {
+        for (const x of [-0.4, 0.4]) {
+          const head = mesh(
+            new T.SphereGeometry(0.25, 12, 8),
+            gold,
+            x - 0.12,
+            -0.4,
+            0,
+          );
+          head.scale.set(1.3, 0.8, 0.65);
+          box(x + 0.08, 0.1, 0, 0.12, 1.05, 0.18, mint);
+        }
+        box(0.08, 0.57, 0, 0.92, 0.2, 0.2, gold);
+      } else if (kind === 'haptics') {
         box(0, 0, 0, 1.05, 0.55, 0.4, mint);
         for (const x of [-0.48, 0.48]) box(x, -0.24, 0, 0.27, 0.55, 0.4, mint);
         box(-0.27, 0.04, 0.23, 0.32, 0.08, 0.08, dark);

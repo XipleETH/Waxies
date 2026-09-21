@@ -1,4 +1,5 @@
 'use client';
+import { mountGameAudio, setLobbyMusic } from '@/lib/game/audio';
 import { queueCloudSave, restoreCloud } from '@/lib/online/cloud-client';
 import { syncStarterProfile } from '@/lib/game/mobile-profile';
 import { useEffect, useRef, useState } from 'react';
@@ -76,6 +77,11 @@ export default function MobileApp() {
     [intro, setIntro] = useState<{ nextLevel: number | null } | null>(null),
     [activeDefender, setActiveDefender] = useState<0 | 1>(0),
     [guestAxie] = useState(() => randomAxie());
+  useEffect(() => mountGameAudio(), []);
+  useEffect(
+    () => setLobbyMusic(!run && screen !== 'vault' && screen !== 'shop'),
+    [run, screen],
+  );
   const profileRef = useRef(profile),
     lastLayout = useRef<string | null>(null),
     introSeen = useRef(false);

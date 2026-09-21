@@ -64,7 +64,7 @@ export const emptyOnlineState = (): OnlineState => ({
 });
 export type OnlineCommand =
   | { action: 'activate'; code: string; amount: number }
-  | { action: 'withdraw' }
+  | { action: 'withdraw'; amount?: number }
   | { action: 'match' }
   | { action: 'revenge'; lootId: string }
   | { action: 'finish'; matchId: string; replay: RaidReplay }
@@ -88,6 +88,8 @@ export interface OnlineView {
     held: number;
     active: boolean;
     locked: boolean;
+    withdrawable?: number;
+    rank?: number | null;
   };
   match?: {
     id: string;
@@ -118,6 +120,7 @@ export interface OnlineView {
     recovered: number;
   }>;
   activePlayers?: number;
+  ranking?: Array<{ id: string; name: string; chest: number; rank: number }>;
   error?: string;
 }
 

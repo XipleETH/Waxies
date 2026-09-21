@@ -102,9 +102,9 @@ export function StoryRunMenu({
       {phase === 'won' && !demo ? (
         <div
           className="story-run-loot"
-          data-object="title"
-          data-label={`+${reward} CHISPAS`}
-          data-value={`${storyStars(hp)} ESTRELLAS${claimed ? ' · GUARDADO' : ''}`}
+          data-object="balance"
+          data-value={`+${reward}`}
+          aria-label={`${reward} Chispas, ${storyStars(hp)} estrellas${claimed ? ', guardado' : ''}`}
         >
           +{reward} Chispas · {storyStars(hp)} estrellas
           {claimed ? ' · Guardado' : ''}
@@ -112,6 +112,11 @@ export function StoryRunMenu({
       ) : null}
       {demo ? (
         <p className="story-demo-note">Demostración · sin premio</p>
+      ) : null}
+      {phase === 'won' && !demo ? (
+        <p className="story-demo-note">
+          {storyStars(hp)} estrellas{claimed ? ' · Guardado' : ''}
+        </p>
       ) : null}
       {error ? (
         <p className="m-error" role="alert">

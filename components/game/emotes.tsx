@@ -49,9 +49,15 @@ export function EmotePicker({
       {open ? (
         <fieldset className="emote-tray" aria-label="20 gestos Axie">
           <header>
-            <strong>Gestos</strong>
+            <strong data-object="title" data-label="Gestos">
+              Gestos
+            </strong>
             <small>{count}/30</small>
-            <button aria-label="Cerrar gestos" onClick={() => setOpen(false)}>
+            <button
+              data-object="close"
+              aria-label="Cerrar gestos"
+              onClick={() => setOpen(false)}
+            >
               <X size={18} />
             </button>
           </header>
@@ -83,6 +89,8 @@ export function EmotePicker({
       ) : null}
       <button
         className="emote-toggle"
+        data-object="emotes"
+        data-label={wait > 0 ? `${Math.ceil(wait / 120)}s` : 'Gestos'}
         aria-label={open ? 'Cerrar gestos' : 'Abrir gestos'}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}

@@ -125,3 +125,7 @@ Next.js 16 / Node.js 22. El repositorio [XipleETH/Waxies](https://github.com/Xip
 El modo Online necesita `DATABASE_URL` (o `POSTGRES_URL`) de Neon en el servidor. Sin esa variable, muestra «Preparando el servidor» y no simula rivales ni transferencias. La instalación de Neon en Vercel requiere que el titular acepte los términos del proveedor.
 
 El inicio de sesión con **cuenta Sky Mavis** (Ronin Waypoint) requiere `NEXT_PUBLIC_WAYPOINT_CLIENT_ID` con un client ID del [Ronin Developer Console](https://developers.skymavis.com) y su redirect URI registrado (el origen del sitio, p. ej. `https://waxies.vercel.app` y `http://localhost:3000` para desarrollo). Sin esa variable, el botón «Iniciar con cuenta Sky Mavis» queda oculto y Ronin Wallet sigue funcionando.
+
+## Música y efectos
+
+El lobby reproduce un tema instrumental original de 16 compases a 84 BPM, sintetizado con Web Audio (arpegios, campanas y bajo suave), sin descargas de audio ni pistas externas. Comienza tras el primer toque o tecla y se desvanece al entrar en una mazmorra. Los efectos acompañan selección, salto, daño, victoria, validación y matchmaking; funcionan aunque la vibración esté desactivada. Mi Axie → Sonido permite ajustar ambos volúmenes, probar efectos y silenciar todo. Las preferencias se conservan en el dispositivo. La pestaña oculta suspende el audio y salir de la aplicación libera el contexto y el temporizador.

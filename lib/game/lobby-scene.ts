@@ -265,6 +265,23 @@ export function createLobbyScene(
     depthTest: false,
   });
   materials.push(labelMaterial);
+  const sparkShape = new T.Shape([
+    new T.Vector2(0, 0.12),
+    new T.Vector2(0.028, 0.028),
+    new T.Vector2(0.1, 0),
+    new T.Vector2(0.028, -0.028),
+    new T.Vector2(0, -0.12),
+    new T.Vector2(-0.028, -0.028),
+    new T.Vector2(-0.1, 0),
+    new T.Vector2(-0.028, 0.028),
+  ]);
+  const sparkGeometry = new T.ExtrudeGeometry(sparkShape, {
+    depth: 0.025,
+    bevelEnabled: false,
+  });
+  geometries.push(sparkGeometry);
+  const balanceSpark = new T.Mesh(sparkGeometry, labelMaterial);
+  balanceSpark.renderOrder = 10;
   let labelFont: Font | undefined;
   let balanceText = '...';
   let labelGeometry: T.BufferGeometry | undefined;
@@ -272,7 +289,7 @@ export function createLobbyScene(
     balanceText =
       amount === null
         ? '...'
-        : Math.max(0, Math.floor(amount)).toLocaleString('es-CO') + ' Chispas';
+        : Math.max(0, Math.floor(amount)).toLocaleString('es-CO');
     if (!labelFont || disposed) return;
     balanceLabel.clear();
     labelGeometry?.dispose();
@@ -292,7 +309,9 @@ export function createLobbyScene(
     const text = new T.Mesh(geo, labelMaterial);
     text.scale.setScalar(Math.min(1, 1.35 / Math.max(width, 0.01)));
     text.renderOrder = 10;
-    balanceLabel.add(text);
+    text.position.x = 0.1;
+    balanceSpark.position.set((-width * text.scale.x) / 2 - 0.08, 0.06, 0);
+    balanceLabel.add(text, balanceSpark);
     labelGeometry = geo;
   };
   let chestAmount: number | null = null;

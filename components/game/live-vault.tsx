@@ -76,6 +76,7 @@ export function LiveVault({
     [busy, setBusy] = useState(false),
     [name, setName] = useState(''),
     [amount, setAmount] = useState('50'),
+    [withdrawAmount, setWithdrawAmount] = useState(''),
     [link, setLink] = useState(''),
     [preview, setPreview] = useState<MobileProfile | null>(null),
     [previewId, setPreviewId] = useState<string | null>(null),
@@ -474,10 +475,16 @@ export function LiveVault({
     setBusy(true);
     setMessage('');
     try {
-      const next = await onlineRequest({ action: 'withdraw' });
+      const next = await onlineRequest({
+        action: 'withdraw',
+        ...(withdrawAmount.trim() ? { amount: Number(withdrawAmount) } : {}),
+      });
+      setWithdrawAmount('');
       setView(next);
-      setAmount('0');
-      setMessage('Chispas retiradas · refugio desactivado');
+      setAmount(String(next.player?.chest ?? 0));
+      setMessage(
+        'Chispas libres retiradas. El saldo reservado permanece en el cofre.',
+      );
     } catch (e) {
       setMessage((e as Error).message);
     } finally {
@@ -838,9 +845,9 @@ export function LiveVault({
               <ShoppingBag size={16} /> Bazar
             </span>
             <span
-              data-object="title"
-              data-label={`${profile.chispas}`}
-              data-value="Chispas"
+              data-object="balance"
+              data-value={profile.chispas}
+              aria-label={`${profile.chispas} Chispas`}
             >
               <Sparkles size={14} /> {profile.chispas}
             </span>
@@ -1082,11 +1089,11 @@ export function LiveVault({
                 </div>
                 <div>
                   <strong>{view.player?.chest ?? 0}</strong>
-                  <span>En el cofre</span>
+                  <span>Aseguradas · ranking</span>
                 </div>
                 <div>
                   <strong>{view.player?.held ?? 0}</strong>
-                  <span>Retenidas</span>
+                  <span>Revancha temporal</span>
                 </div>
               </div>
               <p className={styles.cofferState}>
@@ -1115,18 +1122,33 @@ export function LiveVault({
                 {busy ? 'Guardando…' : 'Activar'}
               </button>
               {!profile.proof ? <small>Valida sin golpes</small> : null}
+              <label htmlFor="vault-withdraw-amount">Cantidad a retirar</label>
+              <input
+                id="vault-withdraw-amount"
+                type="number"
+                min={1}
+                max={view.player?.withdrawable ?? 0}
+                placeholder="Todo el saldo libre"
+                value={withdrawAmount}
+                onChange={(e) => setWithdrawAmount(e.target.value)}
+              />
               <button
                 className={styles.withdraw}
                 data-object="wallet"
                 data-label="Retirar"
-                disabled={busy || view.player?.locked || !view.player?.chest}
+                disabled={
+                  busy || !(view.player?.withdrawable ?? view.player?.chest)
+                }
                 onClick={() => void withdraw()}
               >
-                Retirar y desactivar
+                Retirar saldo libre
               </button>
               <small>
-                Un ataque en curso bloquea los movimientos del cofre durante un
-                máximo de 10 minutos.
+                Puesto{' '}
+                {view.player?.rank ? `#${view.player.rank}` : 'sin clasificar'}.
+                Puedes retirar {view.player?.withdrawable ?? 0} Chispas libres.
+                El botín temporal no se retira ni suma al ranking. Solo el saldo
+                que está siendo atacado queda reservado, hasta 10 minutos.
               </small>
             </>
           )}

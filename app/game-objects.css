@@ -217,6 +217,203 @@ button[data-object]:disabled {
   text-align: center;
 }
 
+/* Shared in-world menus for practice, raids, validation and challenges. */
+.object-run-menu {
+  position: absolute;
+  inset: calc(68px + env(safe-area-inset-top)) 0 env(safe-area-inset-bottom);
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 16px 16px;
+  gap: 10px;
+  background: linear-gradient(#102b25b8, #102b251a 45%, #0b201de8);
+}
+.object-run-title {
+  width: min(100%, 440px);
+  height: 68px;
+  flex-shrink: 0;
+  margin: 0;
+  text-align: center;
+  color: #ffe4ae;
+  font-size: 22px;
+}
+.object-run-powers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(100%, 460px);
+  gap: 4px;
+  flex-shrink: 0;
+}
+.object-run-powers button {
+  height: 100px;
+  min-width: 0;
+  background: none;
+  border: 0;
+  color: #ffe4ae;
+}
+.object-run-notes {
+  width: min(100%, 420px);
+  overflow: auto;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #87a979 transparent;
+  color: #f3e7c5;
+  text-shadow: 0 2px 3px #081c16;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.object-run-notes p {
+  margin: 8px 0;
+}
+.object-run-notes .story-run-help {
+  margin: auto;
+  width: 100%;
+}
+.object-run-notes .story-run-help button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100px;
+  height: 80px;
+  background: none;
+  border: 0;
+}
+.object-run-reward {
+  height: 90px;
+  width: 180px;
+  margin: auto;
+}
+.object-run-emblem {
+  width: 150px;
+  height: 140px;
+  margin: 12px auto;
+}
+.is-story-objects .emote-controls {
+  z-index: 20;
+  left: auto;
+  right: 12px;
+  bottom: calc(78px + env(safe-area-inset-bottom));
+}
+.is-story-objects .emote-toggle {
+  width: 58px;
+  height: 68px;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+.is-story-objects .emote-tray {
+  left: auto;
+  right: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: radial-gradient(ellipse, #183c31fa, #102923f0);
+}
+.is-story-objects .emote-tray header strong {
+  height: 40px;
+}
+.is-story-objects .emote-tray header button {
+  width: 44px;
+  height: 44px;
+  background: none;
+}
+.is-story-objects .emote-grid button {
+  border: 0;
+  background: none;
+  border-radius: 0;
+}
+.is-story-objects .emote-grid img {
+  filter: drop-shadow(0 4px 2px #051913);
+}
+.raid-viewer .raid-viewer-canvas {
+  inset: 0 0 72px;
+}
+.object-run-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: min(100%, 460px);
+  gap: 8px;
+  flex-shrink: 0;
+}
+.object-run-actions button {
+  flex: 1;
+  min-width: 44px;
+  max-width: 125px;
+  height: 94px;
+  background: none;
+  border: 0;
+  color: #ffe4ae;
+}
+.object-run-actions button[data-object='portal'],
+.object-run-actions button[data-object='reward'] {
+  height: 126px;
+}
+
+.raid-viewer .replay-hud,
+.raid-viewer .replay-controls {
+  border: 0;
+  background: linear-gradient(#102923b0, transparent);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.raid-viewer .replay-controls {
+  background: linear-gradient(transparent, #102923b0);
+}
+.raid-viewer .replay-hud button,
+.raid-viewer .replay-controls button {
+  width: 62px;
+  height: 64px;
+  border: 0;
+  background: none;
+}
+.raid-viewer .replay-hud > div {
+  width: min(55%, 240px);
+  height: 48px;
+}
+.raid-viewer .replay-hud > span {
+  width: 55px;
+  height: 60px;
+}
+.raid-viewer .replay-result {
+  width: 180px;
+  height: 95px;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+.story-vitals > div[data-object='balance'] {
+  width: 88px;
+  height: 42px;
+}
+@media (max-height: 650px) {
+  .object-run-menu {
+    gap: 4px;
+    padding: 4px 12px 8px;
+  }
+  .object-run-emblem {
+    height: 90px;
+    width: 100px;
+    margin: 4px auto;
+  }
+  .object-run-title {
+    height: 48px;
+  }
+  .object-run-powers button {
+    height: 70px;
+  }
+  .object-run-actions button {
+    height: 68px;
+  }
+  .object-run-actions button[data-object='portal'],
+  .object-run-actions button[data-object='reward'] {
+    height: 86px;
+  }
+}
+
 /* The DOM keeps accessible touch targets; the shared canvas draws the objects. */
 .is-home[data-objects-ready='true'] .home-mode[data-object],
 .is-home[data-objects-ready='true'] .m-axie-shortcut,
@@ -749,4 +946,85 @@ button[data-object]:disabled {
   border: 0 !important;
   box-shadow: none !important;
   pointer-events: auto;
+}
+
+/* League menus: sculpted emblems and a compact hall of ranks. */
+.matchmaking-emblem {
+  width: 150px;
+  height: 120px;
+  margin: 0 auto;
+}
+.matchmaking-stats {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin: 16px 0;
+  text-align: center;
+}
+.matchmaking-stats b {
+  display: block;
+  color: #eedc8f;
+  font-size: 30px;
+  text-shadow: 0 3px #253827;
+}
+.matchmaking-stats span {
+  font-size: 12px;
+  color: #bed1af;
+}
+.league-ranking {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 26px;
+}
+.league-ranking li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid #b7cb7830;
+}
+.league-ranking li[aria-current] {
+  background: linear-gradient(90deg, #d4d78026, transparent);
+}
+.league-ranking span {
+  overflow-wrap: anywhere;
+}
+.league-ranking b,
+.league-ranking strong {
+  color: #eedc8f;
+  text-shadow: 0 2px #102a20;
+}
+
+.sound-toggle {
+  position: absolute;
+  top: 106px;
+  left: 8px;
+  width: 72px;
+  height: 57px;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: auto;
+}
+.sound-settings {
+  display: grid;
+  gap: 18px;
+  padding: 16px 8px;
+  color: #e5e6ba;
+}
+.sound-settings input[type='range'] {
+  width: 100%;
+  min-height: 44px;
+  accent-color: #dccc7e;
+}
+.sound-actions {
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+}
+.sound-settings p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #b7c9b1;
 }

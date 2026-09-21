@@ -23,10 +23,44 @@ function unlock(s: OnlineState, m: Match) {
   for (const id of [m.attacker, m.defender])
     if (s.players[id]?.lock === m.id) delete s.players[id].lock;
 }
+function creditChest(p: Player, amount: number) {
+  p.chest += amount;
+  p.active = !!p.defense && p.chest > 0;
+}
+function reserved(s: OnlineState, id: string) {
+  return Object.values(s.matches)
+    .filter(
+      (m) => m.kind === 'raid' && m.defender === id && m.status === 'pending',
+    )
+    .reduce((n, m) => n + m.limit, 0);
+}
+function candidates(s: OnlineState, p: Player, now: number) {
+  const recent = new Set(
+    Object.values(s.matches)
+      .filter(
+        (m) =>
+          m.kind === 'raid' &&
+          m.attacker === p.id &&
+          m.created + REVENGE_MS > now,
+      )
+      .map((m) => m.defender),
+  );
+  return Object.values(s.players).filter(
+    (q) =>
+      q.id !== p.id &&
+      q.active &&
+      q.defense &&
+      q.chest > 0 &&
+      !q.lock &&
+      !recent.has(q.id) &&
+      q.chest * 100 >= p.chest * 90 &&
+      q.chest * 100 <= p.chest * 110,
+  );
+}
 function release(s: OnlineState, id: string) {
   const l = s.loot[id];
   if (l?.status === 'held') {
-    s.players[l.winner].available += l.amount;
+    creditChest(s.players[l.winner], l.amount);
     l.status = 'released';
   }
 }
@@ -83,41 +117,38 @@ export function applyOnline(
       p.active = true;
       break;
     }
-    case 'withdraw':
-      requireAvailable(p);
-      p.available += p.chest;
-      p.chest = 0;
-      p.active = false;
+    case 'withdraw': {
+      const withdrawable = p.chest - reserved(s, id);
+      const amount = command.amount ?? withdrawable;
+      if (!Number.isSafeInteger(amount) || amount < 1 || amount > withdrawable)
+        fail(
+          'Solo puedes retirar Chispas aseguradas que no estén en un ataque en curso.',
+        );
+      p.available += amount;
+      p.chest -= amount;
+      p.active = !!p.defense && p.chest > 0;
       break;
+    }
     case 'match': {
       requireAvailable(p);
       if (!p.active || !p.defense || p.chest < 1)
         fail('Activa tu mazmorra validada y coloca Chispas en el cofre.');
-      const candidates = Object.values(s.players).filter(
-        (q) =>
-          q.id !== id &&
-          q.active &&
-          q.defense &&
-          q.chest > 0 &&
-          !q.lock &&
-          q.chest * 100 >= p.chest * 90 &&
-          q.chest * 100 <= p.chest * 110,
-      );
-      candidates.sort(
+      const rivals = candidates(s, p, now);
+      rivals.sort(
         (a, b) =>
           Math.abs(a.chest - p.chest) - Math.abs(b.chest - p.chest) ||
           a.created - b.created,
       );
       const rival =
-        candidates[
+        rivals[
           Math.floor(
             Number.parseInt(uid().replaceAll('-', '').slice(0, 6), 16) %
-              Math.max(1, candidates.length),
+              Math.max(1, rivals.length),
           )
         ];
       if (!rival)
         fail(
-          'No hay rivales con cofres dentro de ±10 %. Conservas todas tus Chispas; vuelve más tarde.',
+          'No hay rivales disponibles dentro de ±10 %. Cada rival admite un ataque tuyo cada 24 horas; puedes buscar otros más tarde.',
         );
       const matchId = uid();
       s.matches[matchId] = {
@@ -211,8 +242,8 @@ export function applyOnline(
         const l = s.loot[m.lootId!];
         if (!l || l.status !== 'held')
           fail('El botín de esta revancha ya se resolvió.');
-        p.available += m.amount;
-        s.players[l.winner].available += l.amount - m.amount;
+        creditChest(p, m.amount);
+        creditChest(s.players[l.winner], l.amount - m.amount);
         l.recovered = m.amount;
         l.status = m.amount > 0 ? 'recovered' : 'released';
       } else if (m.amount > 0) {
@@ -267,6 +298,14 @@ export function onlineView(
   const pending = Object.values(s.matches).find(
     (m) => m.attacker === id && m.status === 'pending',
   );
+  const ranking = Object.values(s.players)
+    .filter((q) => q.chest > 0)
+    .sort(
+      (a, b) =>
+        b.chest - a.chest || a.created - b.created || a.id.localeCompare(b.id),
+    );
+  const rank = (q: Player) =>
+    1 + ranking.filter((other) => other.chest > q.chest).length;
   return {
     starterId: p.starterId,
     configured: true,
@@ -281,6 +320,8 @@ export function onlineView(
         .reduce((n, l) => n + l.amount, 0),
       active: p.active,
       locked: !!p.lock,
+      withdrawable: Math.max(0, p.chest - reserved(s, id)),
+      rank: p.chest > 0 ? rank(p) : null,
     },
     match: pending
       ? {
@@ -292,9 +333,10 @@ export function onlineView(
           opponent: s.players[pending.defender].name,
         }
       : undefined,
-    activePlayers: Object.values(s.players).filter(
-      (q) => q.id !== id && q.active && q.chest > 0 && !q.lock,
-    ).length,
+    activePlayers: p.active && !p.lock ? candidates(s, p, now).length : 0,
+    ranking: ranking
+      .slice(0, 20)
+      .map((q) => ({ id: q.id, name: q.name, chest: q.chest, rank: rank(q) })),
     history: Object.values(s.matches)
       .filter((m) => m.attacker === id || m.defender === id)
       .sort((a, b) => b.created - a.created)
