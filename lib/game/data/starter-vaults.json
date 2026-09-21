@@ -1,7 +1,7 @@
 [
   {
     "level": {
-      "id": "starter-v2-01",
+      "id": "starter-v3-01",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -73,7 +73,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -100,7 +103,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -134,7 +140,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-02",
+      "id": "starter-v3-02",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -206,7 +212,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -233,7 +242,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -267,7 +279,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-03",
+      "id": "starter-v3-03",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -339,7 +351,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -366,7 +381,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -400,7 +418,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-04",
+      "id": "starter-v3-04",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -472,7 +490,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -490,7 +511,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -499,7 +523,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -533,7 +560,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-05",
+      "id": "starter-v3-05",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -632,7 +659,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -666,7 +696,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-06",
+      "id": "starter-v3-06",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -738,7 +768,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -765,7 +798,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -799,7 +835,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-07",
+      "id": "starter-v3-07",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -889,7 +925,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -898,7 +937,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -932,7 +974,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-08",
+      "id": "starter-v3-08",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -1004,7 +1046,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -1031,7 +1076,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -1065,7 +1113,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-09",
+      "id": "starter-v3-09",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -1146,7 +1194,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.4,
@@ -1155,7 +1206,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -1164,7 +1218,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -1198,7 +1255,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-10",
+      "id": "starter-v3-10",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -1270,7 +1327,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 4.6,
@@ -1297,7 +1357,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -1331,7 +1394,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-11",
+      "id": "starter-v3-11",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -1421,7 +1484,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.8,
@@ -1430,7 +1496,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -1464,7 +1533,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-12",
+      "id": "starter-v3-12",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -1536,7 +1605,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -1563,7 +1635,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -1597,7 +1672,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-13",
+      "id": "starter-v3-13",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -1687,7 +1762,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 1.13
+          "reach": 1.13,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.6,
@@ -1696,7 +1774,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -1730,7 +1811,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-14",
+      "id": "starter-v3-14",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -1820,7 +1901,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.3,
@@ -1829,7 +1913,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -1863,7 +1950,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-15",
+      "id": "starter-v3-15",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -1935,7 +2022,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.8,
@@ -1944,7 +2034,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 2.9,
@@ -1962,7 +2055,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.92
+          "reach": 0.92,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -1996,7 +2092,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-16",
+      "id": "starter-v3-16",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -2086,7 +2182,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.7,
@@ -2095,7 +2194,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -2129,7 +2231,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-17",
+      "id": "starter-v3-17",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -2201,7 +2303,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -2219,7 +2324,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 9,
@@ -2228,7 +2336,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 1.05
+          "reach": 1.05,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -2262,7 +2373,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-18",
+      "id": "starter-v3-18",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -2334,7 +2445,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -2343,7 +2457,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.2,
@@ -2361,7 +2478,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -2395,7 +2515,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-19",
+      "id": "starter-v3-19",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -2494,7 +2614,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 1,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -2528,7 +2651,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-20",
+      "id": "starter-v3-20",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -2600,7 +2723,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.4,
@@ -2618,7 +2744,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 8.3,
@@ -2627,7 +2756,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -2661,7 +2793,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-21",
+      "id": "starter-v3-21",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -2742,7 +2874,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 4,
@@ -2751,7 +2887,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2.03
+          "reach": 2.03,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.5,
@@ -2760,7 +2899,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -2794,7 +2936,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-22",
+      "id": "starter-v3-22",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -2866,7 +3008,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -2884,7 +3029,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.3,
@@ -2893,7 +3041,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 1.21
+          "reach": 1.21,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -2927,7 +3078,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-23",
+      "id": "starter-v3-23",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -2999,7 +3150,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 1.68
+          "reach": 1.68,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -3008,7 +3162,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6.73
+          "reach": 6.73,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.1,
@@ -3026,7 +3183,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 7.88
+          "reach": 7.88,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -3060,7 +3220,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-24",
+      "id": "starter-v3-24",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -3141,7 +3301,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.5,
@@ -3159,7 +3322,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -3193,7 +3359,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-25",
+      "id": "starter-v3-25",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -3265,7 +3431,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -3274,7 +3443,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 5.15
+          "reach": 5.15,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.4,
@@ -3283,7 +3455,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9.1,
@@ -3292,7 +3467,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -3326,7 +3504,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-26",
+      "id": "starter-v3-26",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -3398,7 +3576,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -3416,7 +3597,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2.26
+          "reach": 2.26,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.1,
@@ -3425,7 +3609,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6.21
+          "reach": 6.21,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -3459,7 +3646,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-27",
+      "id": "starter-v3-27",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -3549,7 +3736,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -3558,7 +3748,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -3592,7 +3785,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-28",
+      "id": "starter-v3-28",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -3664,7 +3857,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -3673,7 +3869,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 4.2
+          "reach": 4.2,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 3.7,
@@ -3691,7 +3891,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -3725,7 +3928,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-29",
+      "id": "starter-v3-29",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -3797,7 +4000,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 5.8,
@@ -3806,7 +4012,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.6,
@@ -3815,7 +4024,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.5,
@@ -3824,7 +4036,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 1.04
+          "reach": 1.04,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -3858,7 +4073,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-30",
+      "id": "starter-v3-30",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -3930,7 +4145,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 1.16
+          "reach": 1.16,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -3948,7 +4166,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.4,
@@ -3957,7 +4178,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -3991,7 +4215,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-31",
+      "id": "starter-v3-31",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -4063,7 +4287,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 1.69
+          "reach": 1.69,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -4081,7 +4308,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.3,
@@ -4090,7 +4320,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -4124,7 +4357,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-32",
+      "id": "starter-v3-32",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -4196,7 +4429,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.8,
@@ -4205,7 +4441,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.3,
@@ -4214,7 +4453,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 3.35
+          "reach": 3.35,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 8.2,
@@ -4223,7 +4465,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 7.6
+          "reach": 7.6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -4257,7 +4502,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-33",
+      "id": "starter-v3-33",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -4329,7 +4574,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -4338,7 +4586,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 3.4,
@@ -4356,7 +4608,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -4390,7 +4645,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-34",
+      "id": "starter-v3-34",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -4480,7 +4735,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -4489,7 +4747,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -4523,7 +4784,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-35",
+      "id": "starter-v3-35",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -4595,7 +4856,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 4.32
+          "reach": 4.32,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.4,
@@ -4613,7 +4877,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.3,
@@ -4622,7 +4889,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -4656,7 +4926,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-36",
+      "id": "starter-v3-36",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -4728,7 +4998,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 1.48
+          "reach": 1.48,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.8,
@@ -4737,7 +5010,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.1,
@@ -4755,7 +5031,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -4789,7 +5068,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-37",
+      "id": "starter-v3-37",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -4870,7 +5149,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.9,
@@ -4888,7 +5170,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -4922,7 +5207,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-38",
+      "id": "starter-v3-38",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -4994,7 +5279,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -5012,7 +5300,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 9.5,
@@ -5021,7 +5312,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -5055,7 +5349,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-39",
+      "id": "starter-v3-39",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -5127,7 +5421,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -5136,7 +5433,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 5.68
+          "reach": 5.68,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.8,
@@ -5145,7 +5445,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 8.88
+          "reach": 8.88,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.7,
@@ -5154,7 +5457,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -5188,7 +5494,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-40",
+      "id": "starter-v3-40",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -5260,7 +5566,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -5278,7 +5587,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9.4,
@@ -5287,7 +5599,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -5321,7 +5636,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-41",
+      "id": "starter-v3-41",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -5393,7 +5708,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6.03
+          "reach": 6.03,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -5402,7 +5720,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 8.29
+          "reach": 8.29,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 3.2,
@@ -5411,7 +5733,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 4.49
+          "reach": 4.49,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 8.7,
@@ -5420,7 +5745,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -5454,7 +5782,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-42",
+      "id": "starter-v3-42",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -5535,7 +5863,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 2.9,
@@ -5553,7 +5885,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -5587,7 +5922,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-43",
+      "id": "starter-v3-43",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -5677,7 +6012,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -5686,7 +6024,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -5720,7 +6061,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-44",
+      "id": "starter-v3-44",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -5819,7 +6160,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.6
+          "reach": 4.6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -5853,7 +6197,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-45",
+      "id": "starter-v3-45",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -5925,7 +6269,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -5934,7 +6281,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.9,
@@ -5952,7 +6302,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -5986,7 +6339,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-46",
+      "id": "starter-v3-46",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -6067,7 +6420,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 2.8,
@@ -6076,7 +6433,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6.76
+          "reach": 6.76,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9.3,
@@ -6085,7 +6445,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 1.65
+          "reach": 1.65,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -6119,7 +6482,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-47",
+      "id": "starter-v3-47",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -6191,7 +6554,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -6200,7 +6566,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 5.14
+          "reach": 5.14,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.2,
@@ -6209,7 +6578,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 9.4,
@@ -6218,7 +6590,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 5.98
+          "reach": 5.98,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -6252,7 +6627,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-48",
+      "id": "starter-v3-48",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -6324,7 +6699,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -6342,7 +6720,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 9.4,
@@ -6351,7 +6732,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -6385,7 +6769,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-49",
+      "id": "starter-v3-49",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -6457,7 +6841,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -6466,7 +6853,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 4.31
+          "reach": 4.31,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.4,
@@ -6475,7 +6865,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9,
@@ -6484,7 +6877,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -6518,7 +6914,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-50",
+      "id": "starter-v3-50",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -6590,7 +6986,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.6,
@@ -6617,7 +7016,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.92
+          "reach": 4.92,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -6651,7 +7053,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-51",
+      "id": "starter-v3-51",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -6723,7 +7125,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -6732,7 +7137,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 3.2,
@@ -6741,7 +7150,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -6750,7 +7162,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -6784,7 +7199,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-52",
+      "id": "starter-v3-52",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -6865,7 +7280,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4,
@@ -6874,7 +7292,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9.4,
@@ -6883,7 +7304,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 8.37
+          "reach": 8.37,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -6917,7 +7341,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-53",
+      "id": "starter-v3-53",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -6989,7 +7413,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -6998,7 +7425,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.4,
@@ -7007,7 +7437,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 1.83
+          "reach": 1.83,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.5,
@@ -7016,7 +7449,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6.38
+          "reach": 6.38,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -7050,7 +7486,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-54",
+      "id": "starter-v3-54",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -7122,7 +7558,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -7140,7 +7579,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -7149,7 +7591,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6.2
+          "reach": 6.2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -7183,7 +7628,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-55",
+      "id": "starter-v3-55",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -7255,7 +7700,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 4.2,
@@ -7282,7 +7730,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -7316,7 +7767,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-56",
+      "id": "starter-v3-56",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -7388,7 +7839,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -7397,7 +7851,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 7.6
+          "reach": 7.6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.2,
@@ -7406,7 +7863,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 8.2,
@@ -7415,7 +7875,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -7449,7 +7912,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-57",
+      "id": "starter-v3-57",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -7530,7 +7993,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.5,
@@ -7539,7 +8005,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 1.85
+          "reach": 1.85,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 9.4,
@@ -7548,7 +8017,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -7582,7 +8054,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-58",
+      "id": "starter-v3-58",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -7654,7 +8126,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.8,
@@ -7663,7 +8138,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 2.9,
@@ -7672,7 +8150,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9.4,
@@ -7681,7 +8162,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -7715,7 +8199,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-59",
+      "id": "starter-v3-59",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -7787,7 +8271,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.7,
@@ -7814,7 +8301,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -7848,7 +8338,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-60",
+      "id": "starter-v3-60",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -7920,7 +8410,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -7929,7 +8422,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6.61
+          "reach": 6.61,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 3.8,
@@ -7938,7 +8435,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.3,
@@ -7947,7 +8447,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -7981,7 +8484,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-61",
+      "id": "starter-v3-61",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -8053,7 +8556,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -8062,7 +8568,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 3.9,
@@ -8071,7 +8581,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -8080,7 +8593,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -8114,7 +8630,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-62",
+      "id": "starter-v3-62",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -8186,7 +8702,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -8204,7 +8723,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -8213,7 +8735,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.75
+          "reach": 0.75,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -8247,7 +8772,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-63",
+      "id": "starter-v3-63",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -8319,7 +8844,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 4.27
+          "reach": 4.27,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.8,
@@ -8328,7 +8856,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.1,
@@ -8346,7 +8877,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -8380,7 +8914,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-64",
+      "id": "starter-v3-64",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -8452,7 +8986,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 1.14
+          "reach": 1.14,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 4.7,
@@ -8470,7 +9007,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.2,
@@ -8479,7 +9019,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.65
+          "reach": 4.65,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -8513,7 +9056,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-65",
+      "id": "starter-v3-65",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -8585,7 +9128,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 4.36
+          "reach": 4.36,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -8594,7 +9140,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 1.22
+          "reach": 1.22,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4,
@@ -8603,7 +9152,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 9.2,
@@ -8612,7 +9164,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.26
+          "reach": 4.26,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -8646,7 +9201,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-66",
+      "id": "starter-v3-66",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -8718,7 +9273,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.93
+          "reach": 0.93,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.8,
@@ -8727,7 +9285,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.2,
@@ -8745,7 +9306,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -8779,7 +9343,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-67",
+      "id": "starter-v3-67",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -8851,7 +9415,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 7.78
+          "reach": 7.78,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -8860,7 +9427,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 7.33
+          "reach": 7.33,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.8,
@@ -8878,7 +9448,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -8912,7 +9485,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-68",
+      "id": "starter-v3-68",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -8984,7 +9557,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 5.19
+          "reach": 5.19,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.5,
@@ -9002,7 +9578,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 9.2,
@@ -9011,7 +9590,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 1.2
+          "reach": 1.2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -9045,7 +9627,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-69",
+      "id": "starter-v3-69",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -9117,7 +9699,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.63
+          "reach": 0.63,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.8,
@@ -9126,7 +9711,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 7.51
+          "reach": 7.51,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3,
@@ -9135,7 +9723,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 7.66
+          "reach": 7.66,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.8,
@@ -9144,7 +9735,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 7.26
+          "reach": 7.26,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -9178,7 +9772,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-70",
+      "id": "starter-v3-70",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -9250,7 +9844,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 6.1,
@@ -9259,7 +9856,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 1.03
+          "reach": 1.03,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.8,
@@ -9277,7 +9877,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.03
+          "reach": 4.03,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -9311,7 +9914,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-71",
+      "id": "starter-v3-71",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -9383,7 +9986,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 1.99
+          "reach": 1.99,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -9392,7 +9998,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 3.63
+          "reach": 3.63,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 4,
@@ -9401,7 +10011,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 0.65
+          "reach": 0.65,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 9.5,
@@ -9410,7 +10023,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.98
+          "reach": 0.98,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -9444,7 +10060,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-72",
+      "id": "starter-v3-72",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -9516,7 +10132,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.71
+          "reach": 0.71,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.5,
@@ -9525,7 +10144,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 3.5
+          "reach": 3.5,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.8,
@@ -9534,7 +10157,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 8.74
+          "reach": 8.74,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.9,
@@ -9543,7 +10169,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6.14
+          "reach": 6.14,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -9577,7 +10206,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-73",
+      "id": "starter-v3-73",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -9649,7 +10278,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.61
+          "reach": 0.61,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -9658,7 +10290,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.9,
@@ -9667,7 +10302,11 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2.56
+          "reach": 2.56,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 8.4,
@@ -9676,7 +10315,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.65
+          "reach": 0.65,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -9710,7 +10352,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-74",
+      "id": "starter-v3-74",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -9782,7 +10424,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.74
+          "reach": 0.74,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -9791,7 +10436,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 3.7
+          "reach": 3.7,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 3.9,
@@ -9809,7 +10458,11 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 3.62
+          "reach": 3.62,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         }
       ],
       "freePlacement": true,
@@ -9843,7 +10496,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-75",
+      "id": "starter-v3-75",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -9915,7 +10568,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.95
+          "reach": 0.95,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -9924,7 +10580,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 8.19
+          "reach": 8.19,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.9,
@@ -9933,7 +10592,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 1.08
+          "reach": 1.08,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.3,
@@ -9942,7 +10604,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 3.84
+          "reach": 3.84,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -9976,7 +10641,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-76",
+      "id": "starter-v3-76",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -10048,7 +10713,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.71
+          "reach": 0.71,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -10057,7 +10725,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 1.3
+          "reach": 1.3,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.8,
@@ -10066,7 +10737,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6.99
+          "reach": 6.99,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9,
@@ -10075,7 +10749,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.65
+          "reach": 0.65,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -10109,7 +10786,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-77",
+      "id": "starter-v3-77",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -10181,7 +10858,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.98
+          "reach": 0.98,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.5,
@@ -10190,7 +10870,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 1.93
+          "reach": 1.93,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.4,
@@ -10199,7 +10883,11 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 4.24
+          "reach": 4.24,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 8.6,
@@ -10208,7 +10896,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.89
+          "reach": 0.89,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -10242,7 +10933,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-78",
+      "id": "starter-v3-78",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -10314,7 +11005,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 5.27
+          "reach": 5.27,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -10323,7 +11017,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 4.43
+          "reach": 4.43,
+          "motion": "diagonal",
+          "motionRange": 1,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3,
@@ -10332,7 +11030,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 5.01
+          "reach": 5.01,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 9.3,
@@ -10341,7 +11042,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 3.28
+          "reach": 3.28,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -10375,7 +11079,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-79",
+      "id": "starter-v3-79",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -10447,7 +11151,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.81
+          "reach": 0.81,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -10456,7 +11163,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 4.19
+          "reach": 4.19,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.4,
@@ -10465,7 +11175,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 8.63
+          "reach": 8.63,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9.5,
@@ -10474,7 +11187,11 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.32
+          "reach": 4.32,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         }
       ],
       "freePlacement": true,
@@ -10508,7 +11225,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-80",
+      "id": "starter-v3-80",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -10580,7 +11297,11 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 2.07
+          "reach": 2.07,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 5.2,
@@ -10589,7 +11310,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 2.7
+          "reach": 2.7,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.6,
@@ -10598,7 +11323,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 4.74
+          "reach": 4.74,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.3,
@@ -10607,7 +11335,11 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2.49
+          "reach": 2.49,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         }
       ],
       "freePlacement": true,
@@ -10641,7 +11373,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-81",
+      "id": "starter-v3-81",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -10713,7 +11445,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.66
+          "reach": 0.66,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -10722,7 +11457,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 4.42
+          "reach": 4.42,
+          "motion": "diagonal",
+          "motionRange": 1,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.2,
@@ -10731,7 +11470,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 0.64
+          "reach": 0.64,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.2,
@@ -10740,7 +11482,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 1.13
+          "reach": 1.13,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -10774,7 +11519,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-82",
+      "id": "starter-v3-82",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -10846,7 +11591,11 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 4
+          "reach": 4,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 5.9,
@@ -10855,7 +11604,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 7.29
+          "reach": 7.29,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.8,
@@ -10864,7 +11616,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 1.15
+          "reach": 1.15,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.3,
@@ -10873,7 +11628,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 5.41
+          "reach": 5.41,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -10907,7 +11665,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-83",
+      "id": "starter-v3-83",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -10979,7 +11737,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 7.61
+          "reach": 7.61,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -10988,7 +11749,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 7.43
+          "reach": 7.43,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.1,
@@ -10997,7 +11761,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 4.44
+          "reach": 4.44,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.5,
@@ -11006,7 +11773,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 3.96
+          "reach": 3.96,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -11040,7 +11810,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-84",
+      "id": "starter-v3-84",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -11112,7 +11882,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 3.96
+          "reach": 3.96,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -11121,7 +11894,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 3.02
+          "reach": 3.02,
+          "motion": "diagonal",
+          "motionRange": 1,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.4,
@@ -11130,7 +11907,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2.92
+          "reach": 2.92,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 9,
@@ -11139,7 +11919,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.38
+          "reach": 4.38,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -11173,7 +11956,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-85",
+      "id": "starter-v3-85",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -11245,7 +12028,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.55
+          "reach": 0.55,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -11254,7 +12040,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 7.36
+          "reach": 7.36,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": -1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 4,
@@ -11263,7 +12053,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 2.2
+          "reach": 2.2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.2,
@@ -11272,7 +12065,11 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2.67
+          "reach": 2.67,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         }
       ],
       "freePlacement": true,
@@ -11306,7 +12103,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-86",
+      "id": "starter-v3-86",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -11378,7 +12175,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.56
+          "reach": 0.56,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.8,
@@ -11387,7 +12187,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6.22
+          "reach": 6.22,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.5,
@@ -11396,7 +12199,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 7.9
+          "reach": 7.9,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.6,
@@ -11405,7 +12211,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 5.02
+          "reach": 5.02,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -11439,7 +12248,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-87",
+      "id": "starter-v3-87",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -11511,7 +12320,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 1.58
+          "reach": 1.58,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 6.4,
@@ -11520,7 +12332,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 1.49
+          "reach": 1.49,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": -1
         },
         {
           "x": 3.5,
@@ -11529,7 +12344,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 0.87
+          "reach": 0.87,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.9,
@@ -11538,7 +12356,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 1.12
+          "reach": 1.12,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -11572,7 +12393,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-88",
+      "id": "starter-v3-88",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -11644,7 +12465,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.65
+          "reach": 0.65,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -11653,7 +12477,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 7.07
+          "reach": 7.07,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.8,
@@ -11662,7 +12489,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 4.47
+          "reach": 4.47,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.5,
@@ -11671,7 +12501,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6.98
+          "reach": 6.98,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -11705,7 +12538,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-89",
+      "id": "starter-v3-89",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -11777,7 +12610,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.62
+          "reach": 0.62,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.4,
@@ -11786,7 +12622,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 2.11
+          "reach": 2.11,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.6,
@@ -11795,7 +12635,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 1.18
+          "reach": 1.18,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 8.7,
@@ -11804,7 +12647,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.85
+          "reach": 0.85,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -11838,7 +12684,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-90",
+      "id": "starter-v3-90",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -11910,7 +12756,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.65
+          "reach": 0.65,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 5.6,
@@ -11919,7 +12768,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 1.35
+          "reach": 1.35,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": -1
         },
         {
           "x": 4,
@@ -11928,7 +12780,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 1.26
+          "reach": 1.26,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.4,
@@ -11937,7 +12792,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 3.05
+          "reach": 3.05,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -11971,7 +12829,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-91",
+      "id": "starter-v3-91",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -12043,7 +12901,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.92
+          "reach": 0.92,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -12052,7 +12913,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 2.58
+          "reach": 2.58,
+          "motion": "diagonal",
+          "motionRange": 1,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.2,
@@ -12061,7 +12926,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 0.76
+          "reach": 0.76,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.7,
@@ -12070,7 +12938,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 0.91
+          "reach": 0.91,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -12104,7 +12975,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-92",
+      "id": "starter-v3-92",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -12176,7 +13047,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.71
+          "reach": 0.71,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.4,
@@ -12185,7 +13059,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 0.67
+          "reach": 0.67,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.1,
@@ -12194,7 +13071,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 8.26
+          "reach": 8.26,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 8.9,
@@ -12203,7 +13083,11 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.03
+          "reach": 4.03,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         }
       ],
       "freePlacement": true,
@@ -12237,7 +13121,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-93",
+      "id": "starter-v3-93",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -12309,7 +13193,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.74
+          "reach": 0.74,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -12318,7 +13205,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 5.03
+          "reach": 5.03,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.5,
@@ -12327,7 +13217,11 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 4.36
+          "reach": 4.36,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 9.2,
@@ -12336,7 +13230,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 1.79
+          "reach": 1.79,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -12370,7 +13267,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-94",
+      "id": "starter-v3-94",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -12442,7 +13339,11 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 3.06
+          "reach": 3.06,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 6,
@@ -12451,7 +13352,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 4.01
+          "reach": 4.01,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.4,
@@ -12460,7 +13364,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 1.23
+          "reach": 1.23,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9.3,
@@ -12469,7 +13376,11 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 2.94
+          "reach": 2.94,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         }
       ],
       "freePlacement": true,
@@ -12503,7 +13414,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-95",
+      "id": "starter-v3-95",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -12575,7 +13486,11 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 3.09
+          "reach": 3.09,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 5.2,
@@ -12584,7 +13499,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 0.84
+          "reach": 0.84,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.4,
@@ -12593,7 +13511,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 8.04
+          "reach": 8.04,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 8.5,
@@ -12602,7 +13523,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 3.95
+          "reach": 3.95,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -12636,7 +13560,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-96",
+      "id": "starter-v3-96",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -12708,7 +13632,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.62
+          "reach": 0.62,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -12717,7 +13644,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 6.99
+          "reach": 6.99,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.6,
@@ -12726,7 +13656,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 0.55
+          "reach": 0.55,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.7,
@@ -12735,7 +13668,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.77
+          "reach": 4.77,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -12769,7 +13705,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-97",
+      "id": "starter-v3-97",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -12841,7 +13777,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6.02
+          "reach": 6.02,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -12850,7 +13789,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 1.22
+          "reach": 1.22,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.2,
@@ -12859,7 +13801,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 1.91
+          "reach": 1.91,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.7,
@@ -12868,7 +13813,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 8.77
+          "reach": 8.77,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -12902,7 +13850,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-98",
+      "id": "starter-v3-98",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -12974,7 +13922,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 4.08
+          "reach": 4.08,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 6,
@@ -12983,7 +13934,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 8.28
+          "reach": 8.28,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.2,
@@ -12992,7 +13946,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 6.73
+          "reach": 6.73,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 8.6,
@@ -13001,7 +13958,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 3.91
+          "reach": 3.91,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -13035,7 +13995,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-99",
+      "id": "starter-v3-99",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -13107,7 +14067,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 6.63
+          "reach": 6.63,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 5.7,
@@ -13116,7 +14079,10 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 1.33
+          "reach": 1.33,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": -1
         },
         {
           "x": 3.2,
@@ -13125,7 +14091,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 7.98
+          "reach": 7.98,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 8.2,
@@ -13134,7 +14103,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 4.4
+          "reach": 4.4,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,
@@ -13168,7 +14140,7 @@
   },
   {
     "level": {
-      "id": "starter-v2-100",
+      "id": "starter-v3-100",
       "name": "Mi refugio",
       "subtitle": "Llega al cofre sin tocar una defensa",
       "difficulty": "Práctica",
@@ -13240,7 +14212,10 @@
           "phase": 0,
           "patrol": 0,
           "anchor": 0,
-          "reach": 0.73
+          "reach": 0.73,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.3,
@@ -13249,7 +14224,11 @@
           "phase": 1.5,
           "patrol": 0,
           "anchor": 1,
-          "reach": 3.82
+          "reach": 3.82,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.9,
@@ -13258,7 +14237,10 @@
           "phase": 3,
           "patrol": 0,
           "anchor": 2,
-          "reach": 4.91
+          "reach": 4.91,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 8.3,
@@ -13267,7 +14249,10 @@
           "phase": 0.8,
           "patrol": 0,
           "anchor": 3,
-          "reach": 6.69
+          "reach": 6.69,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "freePlacement": true,

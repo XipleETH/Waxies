@@ -1,3 +1,4 @@
+import { raidFamily, MOVING_FAMILIES } from './raid-mechanics';
 import { starterVault, STARTER_VAULTS } from './starter-vaults';
 import {
   validDecorationPositions,
@@ -266,6 +267,24 @@ export function parseProfile(value: unknown): MobileProfile {
     })
   )
     throw Error('La defensa contiene partes ajenas a tu Axie.');
+  // Upgrade only the saved draft. Published defenses and historical replays keep their snapshot.
+  if (p.starterId?.startsWith('starter-v2-') && !p.axie) {
+    const old = starterVault(p.starterId);
+    if (JSON.stringify(p.traps) === JSON.stringify(old.level.traps)) {
+      const next = starterVault(
+        p.starterId.replace('starter-v2-', 'starter-v3-'),
+      );
+      p.traps = next.level.traps;
+      p.proof = next.proof;
+      p.starterId = next.level.id;
+    }
+  }
+  p.traps = p.traps.map((t) => {
+    const family = raidFamily(t.part);
+    return t.motion || MOVING_FAMILIES.has(family)
+      ? t
+      : { ...t, motion: 'bounce', motionRange: 0.5, motionDirection: 1 };
+  });
   if (p.proof && !verifyRoute(vaultLevel(p), p.proof)) p.proof = null;
   return p;
 }
@@ -276,8 +295,10 @@ export function syncStarterProfile(
   id: string,
 ): MobileProfile {
   if (p.axie || p.starterId === id) return p;
+  if (p.starterId?.startsWith('starter-v3-') && !id.startsWith('starter-v3-'))
+    return p;
   const renewed =
-    id.startsWith('starter-v2-') &&
+    (id.startsWith('starter-v2-') || id.startsWith('starter-v3-')) &&
     STARTER_VAULTS.some((c) => c.level.id === id);
   if (!renewed && !p.starterId) return p;
   const previous = starterVault(p.starterId);

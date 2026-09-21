@@ -1,3 +1,4 @@
+import type { Dungeon } from '../lib/game/physics';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import courses from '../lib/game/data/story-courses.json';
@@ -26,7 +27,7 @@ void test('map fortresses grow with story progression and preserve the actual de
     const size = dungeonMapSize(i + 1, c.level.traps.length);
     assert.ok(size.width >= previous.width && size.height >= previous.height);
     previous = size;
-    const guardians = dungeonGuardians(c.level);
+    const guardians = dungeonGuardians(c.level as Dungeon);
     assert.equal(
       guardians.flatMap((g) => g.traps).length,
       c.level.traps.length,

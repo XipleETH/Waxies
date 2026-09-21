@@ -49,7 +49,10 @@
           "part": "carrot",
           "phase": 3.33,
           "patrol": 0,
-          "reach": 5.5
+          "reach": 5.5,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -59,14 +62,20 @@
     },
     "proof": {
       "rules": "portrait-raid-v2",
-      "frames": 563,
+      "frames": 1640,
       "actions": [
-        0,
-        216,
-        312,
-        420,
+        48,
+        180,
         504,
-        540
+        528,
+        708,
+        792,
+        876,
+        948,
+        1056,
+        1272,
+        1392,
+        1488
       ]
     },
     "metrics": {
@@ -235,7 +244,10 @@
           "part": "cactus",
           "phase": 0,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -345,7 +357,10 @@
           "part": "green-thorns",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "ember",
@@ -441,7 +456,10 @@
           "part": "furball",
           "patrol": 0,
           "phase": 2.8299999999999983,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 6.9,
@@ -449,7 +467,10 @@
           "part": "kestrel",
           "patrol": 0,
           "phase": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         }
       ],
       "theme": "ember",
@@ -459,11 +480,10 @@
     },
     "proof": {
       "rules": "portrait-raid-v2",
-      "frames": 1080,
+      "frames": 1077,
       "actions": [
-        48,
-        300,
-        408,
+        96,
+        432,
         984
       ]
     },
@@ -654,7 +674,11 @@
           "part": "tri-spikes",
           "patrol": 0,
           "phase": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 2.83,
@@ -662,7 +686,10 @@
           "part": "yam",
           "patrol": 0,
           "phase": 2.78,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": -1
         }
       ],
       "theme": "ember",
@@ -758,7 +785,10 @@
           "part": "furball",
           "patrol": 0,
           "phase": 2.8299999999999983,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         },
         {
           "x": 7.1,
@@ -766,7 +796,10 @@
           "part": "hot-butt",
           "patrol": 0,
           "phase": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 0.5,
+          "motionDirection": -1
         }
       ],
       "theme": "ember",
@@ -889,7 +922,10 @@
           "part": "hot-butt",
           "patrol": 0,
           "phase": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         },
         {
           "x": 10.45,
@@ -1110,7 +1146,10 @@
           "part": "shoal-star",
           "patrol": 0,
           "phase": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.1999999999999997,
@@ -1126,7 +1165,10 @@
           "part": "toothless-bite",
           "patrol": 0,
           "phase": 0,
-          "reach": 7.5
+          "reach": 7.5,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": -1
         }
       ],
       "theme": "moss",
@@ -1229,7 +1271,10 @@
           "part": "shoal-star",
           "patrol": 0,
           "phase": 5.390000000000001,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 3.495,
@@ -1352,7 +1397,11 @@
           "part": "hot-butt",
           "patrol": 0,
           "phase": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 2.31,
@@ -1360,7 +1409,10 @@
           "part": "doubletalk",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 1.55,
@@ -1368,7 +1420,10 @@
           "part": "shoal-star",
           "patrol": 0,
           "phase": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "ember",
@@ -1466,7 +1521,10 @@
           "part": "garish-worm",
           "patrol": 0,
           "phase": 2.8299999999999983,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 5.085,
@@ -1474,7 +1532,10 @@
           "part": "hot-butt",
           "patrol": 0,
           "phase": 3.700000000000003,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 7.715,
@@ -1583,7 +1644,10 @@
           "part": "little-owl",
           "patrol": 0,
           "phase": 0.8,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 2.4,
@@ -1591,7 +1655,10 @@
           "part": "shoal-star",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 2.35,
@@ -1609,12 +1676,12 @@
     },
     "proof": {
       "rules": "portrait-raid-v2",
-      "frames": 425,
+      "frames": 329,
       "actions": [
         0,
-        120,
-        240,
-        360
+        108,
+        156,
+        264
       ]
     },
     "metrics": {
@@ -1717,7 +1784,10 @@
           "part": "cactus",
           "patrol": 0,
           "phase": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": -1
         },
         {
           "x": 3.61,
@@ -1725,7 +1795,10 @@
           "part": "twin-tail",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 7.7,
@@ -1733,7 +1806,10 @@
           "part": "doubletalk",
           "phase": 0,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -1743,17 +1819,28 @@
     },
     "proof": {
       "rules": "portrait-raid-v2",
-      "frames": 775,
+      "frames": 1903,
       "actions": [
         12,
-        180,
-        216,
-        324,
+        108,
+        204,
+        312,
+        408,
         420,
-        432,
-        468,
-        600,
-        696
+        456,
+        588,
+        720,
+        804,
+        900,
+        1044,
+        1224,
+        1344,
+        1452,
+        1548,
+        1560,
+        1596,
+        1728,
+        1824
       ]
     },
     "metrics": {
@@ -1846,7 +1933,10 @@
           "part": "furball",
           "patrol": 0,
           "phase": 4.899999999999999,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 9.527,
@@ -1854,7 +1944,10 @@
           "part": "pupae",
           "patrol": 0,
           "phase": 3.1700000000000017,
-          "reach": 1.31
+          "reach": 1.31,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -1983,7 +2076,10 @@
           "part": "wing-horn",
           "patrol": 0,
           "phase": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 9.65,
@@ -1991,7 +2087,10 @@
           "part": "yam",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": -1
         },
         {
           "x": 2.35,
@@ -1999,7 +2098,10 @@
           "part": "garish-worm",
           "patrol": 0,
           "phase": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         }
       ],
       "theme": "amethyst",
@@ -2109,7 +2211,10 @@
           "part": "green-thorns",
           "phase": 1.6,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": -1
         }
       ],
       "theme": "ember",
@@ -2226,7 +2331,10 @@
           "part": "twin-tail",
           "patrol": 0,
           "phase": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         },
         {
           "x": 3.1,
@@ -2234,7 +2342,10 @@
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 1.9,
-          "reach": 12
+          "reach": 12,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         },
         {
           "x": 3.25,
@@ -2359,7 +2470,10 @@
           "part": "yam",
           "patrol": 0,
           "phase": 0.8,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         },
         {
           "x": 1.9,
@@ -2375,7 +2489,10 @@
           "part": "furball",
           "patrol": 0,
           "phase": 3.2,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -2492,7 +2609,10 @@
           "part": "ranchu",
           "patrol": 0,
           "phase": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 1,
+          "motionDirection": 1
         },
         {
           "x": 1.9,
@@ -2508,7 +2628,10 @@
           "part": "tri-feather",
           "patrol": 0,
           "phase": 3,
-          "reach": 12
+          "reach": 12,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -2633,7 +2756,10 @@
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0,
-          "reach": 12
+          "reach": 12,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.3,
@@ -2641,7 +2767,10 @@
           "part": "thorny-caterpillar",
           "patrol": 0,
           "phase": 3,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -2758,7 +2887,10 @@
           "part": "little-owl",
           "patrol": 0,
           "phase": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 1.55,
@@ -2774,7 +2906,10 @@
           "part": "tri-feather",
           "patrol": 0,
           "phase": 3,
-          "reach": 9.5
+          "reach": 9.5,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -2887,7 +3022,10 @@
           "part": "twin-tail",
           "patrol": 0,
           "phase": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 1,
+          "motionDirection": 1
         },
         {
           "x": 1.9,
@@ -2903,7 +3041,10 @@
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 3,
-          "reach": 12
+          "reach": 12,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -3026,7 +3167,10 @@
           "part": "gila",
           "patrol": 0,
           "phase": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 9.68,
@@ -3034,7 +3178,10 @@
           "part": "tri-feather",
           "patrol": 0,
           "phase": 0.17,
-          "reach": 5.5
+          "reach": 5.5,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 4.32,
@@ -3042,7 +3189,10 @@
           "part": "caterpillars",
           "patrol": 0,
           "phase": 2.7399999999999998,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 11.719999999999999,
@@ -3168,7 +3318,10 @@
           "part": "garish-worm",
           "patrol": 0,
           "phase": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         },
         {
           "x": 1.9,
@@ -3176,7 +3329,10 @@
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0,
-          "reach": 7.5
+          "reach": 7.5,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 3.39,
@@ -3184,7 +3340,10 @@
           "part": "goda",
           "patrol": 0,
           "phase": 3,
-          "reach": 2.8
+          "reach": 2.8,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.35,
@@ -3192,7 +3351,10 @@
           "part": "granma-s-fan",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -3311,7 +3473,10 @@
           "part": "furball",
           "patrol": 0,
           "phase": 0,
-          "reach": 7.5
+          "reach": 7.5,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 4.31,
@@ -3319,7 +3484,11 @@
           "part": "little-branch",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 4.8
+          "reach": 4.8,
+          "motion": "diagonal",
+          "motionRange": 2,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 4.3,
@@ -3327,7 +3496,10 @@
           "part": "toothless-bite",
           "patrol": 0,
           "phase": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 2.35,
@@ -3335,7 +3507,10 @@
           "part": "pupae",
           "phase": 0,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -3453,7 +3628,10 @@
           "part": "furball",
           "patrol": 0,
           "phase": 4.530000000000001,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 3.1,
@@ -3461,7 +3639,10 @@
           "part": "ranchu",
           "phase": 4.700000000000003,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.71,
@@ -3477,7 +3658,10 @@
           "part": "goda",
           "phase": 0.4400000000000013,
           "patrol": 0,
-          "reach": 0.96
+          "reach": 0.96,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         }
       ],
       "theme": "amethyst",
@@ -3487,17 +3671,16 @@
     },
     "proof": {
       "rules": "portrait-raid-v2",
-      "frames": 1093,
+      "frames": 1068,
       "actions": [
-        24,
-        144,
+        132,
+        228,
         264,
-        384,
-        504,
-        624,
+        396,
         744,
-        864,
-        984
+        852,
+        876,
+        1008
       ]
     },
     "metrics": {
@@ -3602,7 +3785,11 @@
           "part": "cloud",
           "patrol": 0,
           "phase": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 1.38,
@@ -3610,7 +3797,10 @@
           "part": "tri-feather",
           "patrol": 0,
           "phase": 1.3699999999999999,
-          "reach": 5.5
+          "reach": 5.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 2.35,
@@ -3626,7 +3816,10 @@
           "part": "goda",
           "phase": 2.91,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -3752,7 +3945,10 @@
           "part": "twin-tail",
           "phase": 0.8,
           "patrol": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.1,
@@ -3768,7 +3964,10 @@
           "part": "goda",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 2.8
+          "reach": 2.8,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -3868,7 +4067,10 @@
           "part": "sponge",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 0.4,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         },
         {
           "x": 4.085,
@@ -3876,7 +4078,10 @@
           "part": "babylonia",
           "patrol": 0,
           "phase": 0.7,
-          "reach": 1.05
+          "reach": 1.05,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 6.715,
@@ -3884,7 +4089,10 @@
           "part": "lam",
           "patrol": 0,
           "phase": 1.4,
-          "reach": 1.05
+          "reach": 1.05,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": -1
         },
         {
           "x": 4.735,
@@ -3892,7 +4100,10 @@
           "part": "yam",
           "phase": 2.0999999999999996,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -4006,7 +4217,10 @@
           "part": "furball",
           "patrol": 0,
           "phase": 2.4,
-          "reach": 4
+          "reach": 4,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 2.7,
@@ -4014,7 +4228,11 @@
           "part": "little-branch",
           "patrol": 0,
           "phase": 1.67,
-          "reach": 2.75
+          "reach": 2.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 2.356194490192345
         },
         {
           "x": 9.65,
@@ -4022,7 +4240,10 @@
           "part": "grass-snake",
           "phase": 1.9400000000000002,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": -1
         },
         {
           "x": 9.65,
@@ -4030,7 +4251,10 @@
           "part": "goda",
           "phase": 2.91,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -4167,7 +4391,10 @@
           "part": "babylonia",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.8
+          "reach": 0.8,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.17,
@@ -4183,7 +4410,10 @@
           "part": "lam",
           "patrol": 0,
           "phase": 3,
-          "reach": 1.2
+          "reach": 1.2,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         },
         {
           "x": 8.19,
@@ -4191,7 +4421,10 @@
           "part": "ant",
           "phase": 0,
           "patrol": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 1,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -4331,7 +4564,10 @@
           "part": "babylonia",
           "patrol": 0,
           "phase": 0,
-          "reach": 1
+          "reach": 1,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": -1
         },
         {
           "x": 3.5,
@@ -4339,7 +4575,10 @@
           "part": "anemone-back",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 1.2
+          "reach": 1.2,
+          "motion": "bounce",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 3.9,
@@ -4347,7 +4586,10 @@
           "part": "lam",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.8
+          "reach": 0.8,
+          "motion": "flight",
+          "motionRange": 1,
+          "motionDirection": -1
         },
         {
           "x": 5.41,
@@ -4355,7 +4597,10 @@
           "part": "cattail",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 1
+          "reach": 1,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -4488,7 +4733,10 @@
           "part": "shrimp",
           "patrol": 0,
           "phase": 2.7399999999999998,
-          "reach": 7
+          "reach": 7,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 10.45,
@@ -4496,7 +4744,10 @@
           "part": "goda",
           "phase": 2.91,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -4631,7 +4882,10 @@
           "part": "shrimp",
           "patrol": 0,
           "phase": 5.390000000000001,
-          "reach": 8.5
+          "reach": 8.5,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 2.35,
@@ -4639,7 +4893,10 @@
           "part": "goda",
           "phase": 2.3600000000000003,
           "patrol": 0,
-          "reach": 0.96
+          "reach": 0.96,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -4757,7 +5014,10 @@
           "part": "pliers",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.5
+          "reach": 0.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.48,
@@ -4765,7 +5025,10 @@
           "part": "furball",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.3,
@@ -4773,7 +5036,10 @@
           "part": "confident",
           "patrol": 0,
           "phase": 3,
-          "reach": 1.45
+          "reach": 1.45,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 2.35,
@@ -4781,7 +5047,10 @@
           "part": "nimo",
           "phase": 0,
           "patrol": 0,
-          "reach": 0.5
+          "reach": 0.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -4917,7 +5186,10 @@
           "part": "carrot",
           "patrol": 0,
           "phase": 1.85,
-          "reach": 5.5
+          "reach": 5.5,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 9.65,
@@ -4925,7 +5197,11 @@
           "part": "lagging",
           "patrol": 0,
           "phase": 3.52,
-          "reach": 3.5
+          "reach": 3.5,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 1.5707963267948966
         },
         {
           "x": 9.7,
@@ -4933,7 +5209,10 @@
           "part": "tri-feather",
           "patrol": 0,
           "phase": 5.1899999999999995,
-          "reach": 8.5
+          "reach": 8.5,
+          "motion": "diagonal",
+          "motionRange": 0.5,
+          "motionDirection": 1
         },
         {
           "x": 6.95,
@@ -4941,7 +5220,10 @@
           "part": "goda",
           "phase": 4.76,
           "patrol": 0,
-          "reach": 0.96
+          "reach": 0.96,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -5042,7 +5324,10 @@
           "part": "hermit",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.4
+          "reach": 0.4,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": -1
         },
         {
           "x": 6.84,
@@ -5050,7 +5335,10 @@
           "part": "kestrel",
           "patrol": 0,
           "phase": 0.8,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": -1
         },
         {
           "x": 9.67,
@@ -5058,7 +5346,11 @@
           "part": "piranha",
           "patrol": 0,
           "phase": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.9,
@@ -5066,7 +5358,10 @@
           "part": "carrot",
           "phase": 0,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 7.5,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -5166,7 +5461,10 @@
           "part": "snake-jar",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.72
+          "reach": 0.72,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         },
         {
           "x": 5.9,
@@ -5174,7 +5472,10 @@
           "part": "gila",
           "patrol": 0,
           "phase": 0.17,
-          "reach": 1.31
+          "reach": 1.31,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         },
         {
           "x": 5.55,
@@ -5190,7 +5491,10 @@
           "part": "doubletalk",
           "phase": 0.51,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 4.3,
@@ -5326,7 +5630,10 @@
           "part": "carrot",
           "patrol": 0,
           "phase": 3.88,
-          "reach": 4
+          "reach": 4,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         },
         {
           "x": 8.15,
@@ -5334,7 +5641,11 @@
           "part": "lagging",
           "patrol": 0,
           "phase": 3.15,
-          "reach": 2.75
+          "reach": 2.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 1.5707963267948966
         },
         {
           "x": 3.9,
@@ -5342,7 +5653,10 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 1.82,
-          "reach": 3.5
+          "reach": 3.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 9.65,
@@ -5358,7 +5672,10 @@
           "part": "tri-spikes",
           "phase": 5.359999999999999,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "theme": "amethyst",
@@ -5476,7 +5793,10 @@
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 4
+          "reach": 4,
+          "motion": "flight",
+          "motionRange": 1,
+          "motionDirection": 1
         },
         {
           "x": 4.29,
@@ -5484,7 +5804,11 @@
           "part": "lagging",
           "patrol": 0,
           "phase": 1.67,
-          "reach": 2.75
+          "reach": 2.75,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 3.572,
@@ -5492,7 +5816,10 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 2.7399999999999998,
-          "reach": 3.5
+          "reach": 3.5,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.3,
@@ -5500,7 +5827,10 @@
           "part": "garish-worm",
           "phase": 2.91,
           "patrol": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 5.063,
@@ -5653,7 +5983,10 @@
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 9.5
+          "reach": 9.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.47,
@@ -5661,7 +5994,11 @@
           "part": "lagging",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0
         },
         {
           "x": 5.19,
@@ -5669,7 +6006,10 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 2.7,
@@ -5677,7 +6017,10 @@
           "part": "blue-moon",
           "phase": 0,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 9.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.9,
@@ -5685,7 +6028,10 @@
           "part": "shoal-star",
           "phase": 2.4,
           "patrol": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "moss",
@@ -5784,7 +6130,10 @@
           "part": "carrot",
           "patrol": 0,
           "phase": 0,
-          "reach": 12
+          "reach": 12,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -5792,7 +6141,11 @@
           "part": "lagging",
           "patrol": 0,
           "phase": 1.5,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1,
+          "motionPhase": 0.7853981633974483
         },
         {
           "x": 4.75,
@@ -5800,7 +6153,10 @@
           "part": "grass-snake",
           "patrol": 0,
           "phase": 3,
-          "reach": 6
+          "reach": 6,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         },
         {
           "x": 4.3,
@@ -5808,7 +6164,10 @@
           "part": "tri-feather",
           "phase": 0,
           "patrol": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 2.65,
@@ -5816,7 +6175,10 @@
           "part": "furball",
           "phase": 3.2,
           "patrol": 0,
-          "reach": 6
+          "reach": 6,
+          "motion": "flight",
+          "motionRange": 1,
+          "motionDirection": 1
         }
       ],
       "theme": "ember",
@@ -5919,7 +6281,10 @@
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0,
-          "reach": 7.5
+          "reach": 7.5,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -5927,7 +6292,10 @@
           "part": "gila",
           "patrol": 0,
           "phase": 0,
-          "reach": 2
+          "reach": 2,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.55,
@@ -5935,7 +6303,10 @@
           "part": "hermit",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 0.4,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.3,
@@ -5943,7 +6314,10 @@
           "part": "carrot",
           "phase": 0,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 7.5,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 3.95,
@@ -5951,7 +6325,10 @@
           "part": "blue-moon",
           "phase": 3.2,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 9.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         }
       ],
       "theme": "ember",
@@ -6055,7 +6432,10 @@
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0,
-          "reach": 9.5
+          "reach": 9.5,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -6063,7 +6443,10 @@
           "part": "oranda",
           "patrol": 0,
           "phase": 0,
-          "reach": 12
+          "reach": 12,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         },
         {
           "x": 5.55,
@@ -6071,7 +6454,10 @@
           "part": "hermit",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 0.4,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": -1
         },
         {
           "x": 4.3,
@@ -6079,7 +6465,10 @@
           "part": "carrot",
           "phase": 0,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 9.5,
+          "motion": "diagonal",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 3.95,
@@ -6087,7 +6476,10 @@
           "part": "blue-moon",
           "phase": 3.2,
           "patrol": 0,
-          "reach": 12
+          "reach": 12,
+          "motion": "flight",
+          "motionRange": 1,
+          "motionDirection": -1
         }
       ],
       "theme": "ember",
@@ -6191,7 +6583,10 @@
           "part": "snake-jar",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.72
+          "reach": 0.72,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -6199,7 +6594,10 @@
           "part": "gila",
           "patrol": 0,
           "phase": 0.17,
-          "reach": 1.31
+          "reach": 1.31,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         },
         {
           "x": 5.55,
@@ -6207,7 +6605,10 @@
           "part": "tri-feather",
           "patrol": 0,
           "phase": 0.34,
-          "reach": 7
+          "reach": 7,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 3.95,
@@ -6215,7 +6616,10 @@
           "part": "blue-moon",
           "phase": 0.51,
           "patrol": 0,
-          "reach": 8.5
+          "reach": 8.5,
+          "motion": "flight",
+          "motionRange": 1,
+          "motionDirection": 1
         },
         {
           "x": 4.3,
@@ -6223,7 +6627,10 @@
           "part": "oranda",
           "phase": 0.68,
           "patrol": 0,
-          "reach": 4
+          "reach": 4,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": 1
         }
       ],
       "theme": "ember",
@@ -6327,7 +6734,10 @@
           "part": "anemone-horn",
           "patrol": 0,
           "phase": 0,
-          "reach": 7.5
+          "reach": 7.5,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 5.9,
@@ -6335,7 +6745,10 @@
           "part": "oranda",
           "patrol": 0,
           "phase": 0,
-          "reach": 9.5
+          "reach": 9.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": 1
         },
         {
           "x": 5.55,
@@ -6343,7 +6756,10 @@
           "part": "hermit",
           "patrol": 0,
           "phase": 3,
-          "reach": 0.4
+          "reach": 0.4,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         },
         {
           "x": 4.3,
@@ -6351,7 +6767,10 @@
           "part": "carrot",
           "phase": 0,
           "patrol": 0,
-          "reach": 7.5
+          "reach": 7.5,
+          "motion": "flight",
+          "motionRange": 2,
+          "motionDirection": 1
         },
         {
           "x": 3.95,
@@ -6359,7 +6778,10 @@
           "part": "blue-moon",
           "phase": 3.2,
           "patrol": 0,
-          "reach": 9.5
+          "reach": 9.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         }
       ],
       "theme": "ember",
@@ -6463,7 +6885,10 @@
           "part": "snake-jar",
           "patrol": 0,
           "phase": 0,
-          "reach": 0.72
+          "reach": 0.72,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         },
         {
           "x": 5.9,
@@ -6471,7 +6896,10 @@
           "part": "gila",
           "patrol": 0,
           "phase": 0.17,
-          "reach": 1.31
+          "reach": 1.31,
+          "motion": "bounce",
+          "motionRange": 0.35,
+          "motionDirection": 1
         },
         {
           "x": 5.55,
@@ -6479,7 +6907,10 @@
           "part": "tri-feather",
           "patrol": 0,
           "phase": 0.34,
-          "reach": 7
+          "reach": 7,
+          "motion": "flight",
+          "motionRange": 4,
+          "motionDirection": -1
         },
         {
           "x": 3.792,
@@ -6487,7 +6918,10 @@
           "part": "blue-moon",
           "phase": 0.51,
           "patrol": 0,
-          "reach": 8.5
+          "reach": 8.5,
+          "motion": "diagonal",
+          "motionRange": 1.4,
+          "motionDirection": -1
         },
         {
           "x": 4.3,
@@ -6495,7 +6929,10 @@
           "part": "oranda",
           "phase": 0.68,
           "patrol": 0,
-          "reach": 4
+          "reach": 4,
+          "motion": "bounce",
+          "motionRange": 0.8,
+          "motionDirection": 1
         }
       ],
       "theme": "ember",

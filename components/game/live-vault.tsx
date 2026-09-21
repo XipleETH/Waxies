@@ -1,4 +1,5 @@
 'use client';
+import { MOTION_LABELS } from '@/lib/game/trap-motion';
 import { isLineMouth } from '@/lib/game/mouth-relief';
 import { useEffect, useRef, useState, type PointerEvent } from 'react';
 import Image from 'next/image';
@@ -801,6 +802,70 @@ export function LiveVault({
                   <small>{(t.reach ?? rule.default).toFixed(1)}</small>
                 </button>
               </>
+            ) : null}
+            {t && mode === 'edit' ? (
+              <div
+                className="trap-motion-controls"
+                aria-label="Movimiento de la defensa"
+              >
+                <button
+                  data-object="retry"
+                  data-label={t.motion ? MOTION_LABELS[t.motion] : 'Movimiento'}
+                  onClick={() => {
+                    const kinds = ['bounce', 'flight', 'diagonal'] as const;
+                    const motion =
+                      kinds[
+                        (kinds.indexOf(t.motion ?? 'diagonal') + 1) %
+                          kinds.length
+                      ];
+                    commit(
+                      traps.map((v) =>
+                        v.anchor === t.anchor
+                          ? {
+                              ...v,
+                              motion,
+                              motionRange:
+                                motion === 'flight'
+                                  ? 4
+                                  : motion === 'diagonal'
+                                    ? 1.4
+                                    : 0.8,
+                            }
+                          : v,
+                      ),
+                    );
+                  }}
+                >
+                  Cambiar movimiento:{' '}
+                  {t.motion ? MOTION_LABELS[t.motion] : 'original'}
+                </button>
+                <button
+                  data-object={
+                    (t.motionDirection ?? 1) === 1 ? 'next' : 'previous'
+                  }
+                  data-label="Sentido"
+                  disabled={!t.motion || t.motion === 'bounce'}
+                  onClick={() =>
+                    commit(
+                      traps.map((v) =>
+                        v.anchor === t.anchor
+                          ? {
+                              ...v,
+                              motionDirection:
+                                (v.motionDirection ?? 1) === 1 ? -1 : 1,
+                            }
+                          : v,
+                      ),
+                    )
+                  }
+                >
+                  Invertir sentido
+                </button>
+                <small>
+                  Combina dos diagonales en sentidos opuestos. Vuelve a validar
+                  al cambiar el recorrido.
+                </small>
+              </div>
             ) : null}
             <button
               className={styles.chest}

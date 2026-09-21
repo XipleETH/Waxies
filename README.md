@@ -114,7 +114,7 @@ los anteriores siguen disponibles para recuperar perfiles antiguos.
 La renovación de cuentas invitadas se prepara con
 `npx tsx scripts/renew-league-defenses.ts` y solo se aplica con `--apply`.
 Requiere `.env.maintenance.local`, crea un respaldo privado en
-`output/league-renewal/` y cancela si cambia la revisión de la base de datos.
+`output/league-renewal-v3/` y cancela si cambia la revisión de la base de datos.
 Solo cambia defensas e identificadores de plantilla: conserva cuentas, saldos,
 actividad y botines. Rechaza partidas pendientes y perfiles en la nube, que
 requieren revisar sus Axies por separado. Publicar primero los catálogos nuevos.
@@ -129,3 +129,11 @@ El inicio de sesión con **cuenta Sky Mavis** (Ronin Waypoint) requiere `NEXT_PU
 ## Música y efectos
 
 Dos temas originales de 16 compases sintetizados con Web Audio: lobby oscuro a 100 BPM y techno de mazmorra a 128 BPM. Combinan bajo resonante, bombo, caja, hi-hats, acordes menores y secuencias filtradas, con introducción, desarrollo, descanso y regreso. Cambian automáticamente entre menú y mazmorra sin superponer las pistas. No requieren descargas ni pistas externas. El audio comienza tras el primer toque o tecla. Los efectos funcionan aunque la vibración esté desactivada. Mi Axie → Sonido permite ajustar música y efectos, probarlos y silenciar todo; las preferencias se guardan en el dispositivo. La pestaña oculta suspende el audio y salir libera los recursos.
+
+## Recorridos de las defensas
+
+Todas las trampas de los catálogos actuales tienen movimiento físico: mantienen órbita, péndulo, ascenso o salto, o incorporan rebote, vuelo lateral o diagonal. Las embestidas se mueven también durante la espera. Los recorridos afectan al cuerpo, a las colisiones y al origen de los ataques; respetan paredes y plataformas. En Refugio, selecciona una pieza para cambiar el recorrido e invertir su sentido; dos piezas diagonales pueden cruzarse en direcciones opuestas. Cambiar el movimiento invalida la prueba y exige completar la nueva disposición sin golpes.
+
+Las 50 salas de Historia, 115 de Práctica y 100 plantillas `starter-v3` conservan rutas certificadas. Las plantillas anteriores y las defensas publicadas conservan sus instantáneas para no modificar combates ni replays existentes. Los borradores antiguos se actualizan al leerlos, preservando progreso y monedas; una disposición personalizada puede requerir otra validación y publicación. No se modifica la base de datos de jugadores automáticamente.
+
+`npx tsx scripts/animate-traps.ts` genera candidatos en `output/moving-traps-final`, sin sobrescribir catálogos ni datos online. Comprueba ruta, exposición a las defensas, desplazamiento real y atajos descendentes; `--continue` continúa sobre esos candidatos.

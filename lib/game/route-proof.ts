@@ -1,3 +1,4 @@
+import { validMotion } from './trap-motion';
 import { validDecorationPositions } from './decoration-layout';
 import { validReach } from './trap-reach';
 import { validFreeTraps } from './free-vault';
@@ -60,6 +61,16 @@ export function challengeCode(course: VerifiedCourse): string {
     d: course.level.decorationPositions,
     t: course.level.traps.map((t) => ({
       part: t.part,
+      ...(t.motion
+        ? {
+            motion: t.motion,
+            motionDirection: t.motionDirection,
+            motionRange: t.motionRange,
+            ...(t.motionPhase !== undefined
+              ? { motionPhase: t.motionPhase }
+              : {}),
+          }
+        : {}),
       x: t.x,
       ...(modern ? { anchor: t.anchor } : {}),
       ...(course.level.freePlacement ? { y: t.y } : {}),
@@ -94,6 +105,10 @@ export function decodeChallenge(code: string): VerifiedCourse {
         x: number;
         y?: number;
         reach?: number;
+        motion?: import('./physics').Trap['motion'];
+        motionDirection?: 1 | -1;
+        motionRange?: number;
+        motionPhase?: number;
         anchor?: number;
       },
       i: number,
@@ -103,6 +118,7 @@ export function decodeChallenge(code: string): VerifiedCourse {
         !slot ||
         (modern && !Number.isInteger(t.anchor)) ||
         !PARTS[t.part] ||
+        !validMotion(t) ||
         !validReach(t as import('./physics').Trap) ||
         !Number.isFinite(t.x) ||
         (!free && Math.abs(t.x - slot.x) > 1.5)
@@ -111,6 +127,16 @@ export function decodeChallenge(code: string): VerifiedCourse {
       return {
         ...slot,
         part: t.part,
+        ...(t.motion
+          ? {
+              motion: t.motion,
+              motionDirection: t.motionDirection,
+              motionRange: t.motionRange,
+              ...(t.motionPhase !== undefined
+                ? { motionPhase: t.motionPhase }
+                : {}),
+            }
+          : {}),
         x: t.x,
         ...(modern ? { anchor: t.anchor } : {}),
         ...(free ? { y: t.y! } : {}),

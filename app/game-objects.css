@@ -1045,3 +1045,28 @@ button[data-object]:disabled {
 [data-objects-ready='true'] .brand-emblem img {
   visibility: hidden;
 }
+
+.trap-motion-controls {
+  position: absolute;
+  top: 150px;
+  left: 8px;
+  width: 185px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  pointer-events: auto;
+}
+.trap-motion-controls button {
+  height: 70px;
+  background: none;
+  border: 0;
+}
+.trap-motion-controls small {
+  grid-column: 1 / -1;
+  color: #f3e8bc;
+  font-size: 10px;
+  text-align: center;
+  padding: 6px;
+  background: #102a23da;
+  border-radius: 8px;
+}

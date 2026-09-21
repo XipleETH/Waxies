@@ -229,7 +229,10 @@ export function stepRaidTrap(
   const moving = MOVING_FAMILIES.has(family),
     oldX = t.x,
     oldY = t.y;
-  if (family === 'orbit' || family === 'pendulum' || family === 'lift') {
+  if (
+    !trap.motion &&
+    (family === 'orbit' || family === 'pendulum' || family === 'lift')
+  ) {
     const pos = raidMotion(trap, s.time);
     if (clearRay(level, oldX, oldY, pos.x, pos.y)) {
       t.x = pos.x;
@@ -248,7 +251,7 @@ export function stepRaidTrap(
     t.timer = 1.25;
     t.hitThisAttack = false;
   } else if (t.stage === 'active') {
-    if (family === 'leap') {
+    if (family === 'leap' && !trap.motion) {
       const p = Math.min(1, Math.max(0, 1 - t.timer / 1.25)),
         r = raidReach(trap);
       const endX = trap.x + Math.max(-r, Math.min(r, t.aimX - trap.x));
@@ -286,7 +289,7 @@ export function stepRaidTrap(
   ) {
     hitRunner(s, level, i);
   }
-  if (!moving) {
+  if (!moving && !trap.motion) {
     t.x = trap.x;
     t.y = trap.y;
   }

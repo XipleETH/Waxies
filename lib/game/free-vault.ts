@@ -1,3 +1,4 @@
+import { validMotion } from './trap-motion';
 import { PORTRAIT_BASE, PORTRAIT_ROOM } from './portrait';
 import { PARTS, BATTLE_SLOTS } from './catalog';
 import { VAULT_SLOTS } from './vault-layout';
@@ -42,6 +43,7 @@ export function validFreeTraps(traps: Trap[]) {
         return false;
       const snapped = snapTrap(t.x, t.y);
       return (
+        validMotion(t) &&
         PARTS[t.part].slotId === BATTLE_SLOTS[t.anchor!] &&
         Math.abs(snapped.x - t.x) < 0.011 &&
         Math.abs(snapped.y - t.y) < 0.011 &&

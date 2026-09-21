@@ -1,3 +1,5 @@
+import { raidFamily, MOVING_FAMILIES } from './raid-mechanics';
+import { validMotion } from './trap-motion';
 import { PORTRAIT_SLOTS, PORTRAIT_BASE } from './portrait';
 import { PARTS, BATTLE_SLOTS } from './catalog';
 import { allowedParts, type AxieLoadout } from './axie';
@@ -67,6 +69,20 @@ export function makeVaultTraps(
       ...base,
       anchor,
       part,
+      ...(old?.motion
+        ? {
+            motion: old.motion,
+            motionRange: old.motionRange,
+            motionPhase: old.motionPhase,
+            motionDirection: old.motionDirection,
+          }
+        : !MOVING_FAMILIES.has(raidFamily(part))
+          ? {
+              motion: 'bounce' as const,
+              motionRange: 0.8,
+              motionDirection: (anchor % 2 ? -1 : 1) as 1 | -1,
+            }
+          : {}),
       x: Math.max(range.min, Math.min(range.max, old?.x ?? base.x)),
     });
   }
@@ -90,6 +106,7 @@ export function validVaultTraps(traps: Trap[], count: 1 | 2) {
       const base = VAULT_SLOTS[t.anchor!],
         range = vaultRange(t.anchor!);
       return (
+        validMotion(t) &&
         PARTS[t.part].slotId === BATTLE_SLOTS[t.anchor! % 4] &&
         Number.isFinite(t.x) &&
         t.x >= range.min &&

@@ -2,7 +2,7 @@ import { createCombat, decay, type CombatState } from './combat';
 import { createHazards, stepHazards, type HazardState } from './hazards';
 import type { PartId } from './catalog';
 export interface Rect { x: number; y: number; w: number; h: number }
-export interface Trap { reach?:number; anchor?:number; part: PartId; x: number; y: number; patrol: number; phase: number }
+export interface Trap { motion?: 'bounce' | 'flight' | 'diagonal'; motionDirection?: 1 | -1; motionRange?: number; motionPhase?: number; reach?:number; anchor?:number; part: PartId; x: number; y: number; patrol: number; phase: number }
 export interface Dungeon {
   decorationPositions?: import('./decoration-layout').DecorationPosition[];
   id: string; guardianGenes?: string[]; freePlacement?:boolean; layoutId?: string; name: string; subtitle: string; difficulty: string;

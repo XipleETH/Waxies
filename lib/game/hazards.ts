@@ -1,3 +1,4 @@
+import { moveTrap } from './trap-motion';
 import { stepRaidTrap, raidFamily } from './raid-mechanics';
 import {
   projectileVolley,
@@ -228,6 +229,11 @@ export function stepHazards(
       t = h.traps[i],
       p = PARTS[trap.part],
       pattern = p.recipe.pattern;
+    if (
+      s.raid &&
+      !(pattern === 'dash' && (t.stage === 'active' || t.stage === 'recover'))
+    )
+      moveTrap(trap, t, s.time, level);
     if (s.raid && stepRaidTrap(s, level, i, dt)) {
       if (s.phase !== 'playing') return;
       continue;
@@ -369,7 +375,7 @@ export function stepHazards(
     } else if (t.stage === 'recover') {
       if (pattern === 'dash') t.x += (trap.x - t.x) * Math.min(1, dt * 5);
       if (t.timer <= 0) {
-        t.x = trap.x;
+        if (!trap.motion) t.x = trap.x;
         t.stage = 'idle';
         t.timer = 0.6 * (t.statuses['speed-up'] ? 0.8 : 1);
         t.powered = false;
