@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useState } from 'react';
 import { storyStars } from '@/lib/game/story-progress';
 export function StoryRunMenu({
@@ -40,6 +43,7 @@ export function StoryRunMenu({
   onCollect: () => void;
   onNext: () => void;
 }) {
+  useLocale();
   const [help, setHelp] = useState(false);
   const button = (
     kind: string,
@@ -51,29 +55,29 @@ export function StoryRunMenu({
     <button
       type="button"
       data-object={kind}
-      data-label={label}
-      aria-label={aria}
+      data-label={translateText(label)}
+      aria-label={translateText(aria)}
       onClick={action}
       disabled={disabled}
     >
-      {label}
+      {translateText(label)}
     </button>
   );
   return (
     <section
       className="story-run-menu"
-      aria-label={
+      aria-label={translateText(
         phase === 'ready'
           ? 'Entrada al nivel'
           : phase === 'paused'
             ? 'Pausa'
-            : 'Resultado'
-      }
+            : 'Resultado',
+      )}
     >
       <div
         className="story-run-heading"
         data-object="title"
-        data-label={
+        data-label={translateText(
           phase === 'ready'
             ? title
             : phase === 'paused'
@@ -82,20 +86,23 @@ export function StoryRunMenu({
                 ? 'Sin salud'
                 : demo
                   ? 'Tu turno'
-                  : 'Cofre abierto'
-        }
-        data-value={`NIVEL ${number} / 50`}
+                  : 'Cofre abierto',
+        )}
+        data-value={translateText(`NIVEL ${number} / 50`)}
       >
-        {title} · Nivel {number}
+        {translateText(title)}
+        {translateText(' · Nivel ')}
+        {number}
       </div>
       {help ? (
         <div className="story-run-help">
-          <div data-object="jump" data-label="Toca" />
-          <div data-object="next" data-label="Rebota" />
-          <div data-object="heart" data-label="Esquiva" />
+          <div data-object="jump" data-label={translateText('Toca')} />
+          <div data-object="next" data-label={translateText('Rebota')} />
+          <div data-object="heart" data-label={translateText('Esquiva')} />
           <p>
-            Toca para saltar y rebota en los muros. Cada golpe reinicia el
-            intento y resta 20 de salud y de premio.
+            {translateText(
+              'Toca para saltar y rebota en los muros. Cada golpe reinicia el intento y resta 20 de salud y de premio.',
+            )}
           </p>
         </div>
       ) : null}
@@ -103,24 +110,33 @@ export function StoryRunMenu({
         <div
           className="story-run-loot"
           data-object="balance"
-          data-value={`+${reward}`}
-          aria-label={`${reward} Chispas, ${storyStars(hp)} estrellas${claimed ? ', guardado' : ''}`}
+          data-value={translateText(`+${reward}`)}
+          aria-label={translateText(
+            `${reward} Chispas, ${storyStars(hp)} estrellas${claimed ? ', guardado' : ''}`,
+          )}
         >
-          +{reward} Chispas · {storyStars(hp)} estrellas
-          {claimed ? ' · Guardado' : ''}
+          +{reward}
+          {translateText(' Chispas · ')}
+          {storyStars(hp)}
+          {translateText(' estrellas')}
+          {translateText(claimed ? ' · Guardado' : '')}
         </div>
       ) : null}
       {demo ? (
-        <p className="story-demo-note">Demostración · sin premio</p>
+        <p className="story-demo-note">
+          {translateText('Demostración · sin premio')}
+        </p>
       ) : null}
       {phase === 'won' && !demo ? (
         <p className="story-demo-note">
-          {storyStars(hp)} estrellas{claimed ? ' · Guardado' : ''}
+          {storyStars(hp)}
+          {translateText(' estrellas')}
+          {translateText(claimed ? ' · Guardado' : '')}
         </p>
       ) : null}
       {error ? (
         <p className="m-error" role="alert">
-          {error}
+          {translateText(error)}
         </p>
       ) : null}
       <div className="story-menu-actions">

@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import type { ReactNode } from 'react';
 import {
   DialogContent,
@@ -19,6 +22,7 @@ export function ObjectDialogContent({
   children: ReactNode;
   className?: string;
 }) {
+  useLocale();
   return (
     <DialogContent
       className={'object-dialog ' + className}
@@ -26,21 +30,21 @@ export function ObjectDialogContent({
     >
       <GameObjects />
       <header className="object-dialog-heading">
-        <DialogTitle data-object="title" data-label={title}>
-          {title}
+        <DialogTitle data-object="title" data-label={translateText(title)}>
+          {translateText(title)}
         </DialogTitle>
         <button
           type="button"
           data-object="close"
-          aria-label="Cerrar"
+          aria-label={translateText('Cerrar')}
           onClick={onClose}
         >
-          Cerrar
+          {translateText('Cerrar')}
         </button>
       </header>
-      <DialogDescription>{description}</DialogDescription>
+      <DialogDescription>{translateText(description)}</DialogDescription>
       <div className="object-dialog-body" data-object-scroll>
-        {children}
+        {translateText(children)}
       </div>
     </DialogContent>
   );

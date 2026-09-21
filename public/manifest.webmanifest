@@ -1,10 +1,11 @@
 {
   "name": "Axie Vault Raiders",
   "short_name": "Vault Raiders",
-  "description": "Torres verticales, Axies y cofres por conquistar.",
+  "description": "Vertical dungeons, Axies and treasure chests. Play in English or Spanish.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#101f23",
   "theme_color": "#101f23",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "lang": "en"
 }

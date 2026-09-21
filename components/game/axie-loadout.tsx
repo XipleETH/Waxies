@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import {
@@ -31,6 +34,7 @@ export function AxieLoadout({
   onLab: () => void;
   onBrowse: () => void;
 }) {
+  useLocale();
   const [input, setInput] = useState(''),
     [busy, setBusy] = useState(false),
     [error, setError] = useState('');
@@ -95,9 +99,10 @@ export function AxieLoadout({
     >
       <div className="card-overline">
         <span>
-          <Link2 size={15} /> PARTES DE TU AXIE
+          <Link2 size={15} />
+          {translateText(' PARTES DE TU AXIE')}
         </span>
-        <span>NIV. 1</span>
+        <span>{translateText('NIV. 1')}</span>
       </div>
       <RoninAxies
         onLoad={(axie) => {
@@ -115,58 +120,68 @@ export function AxieLoadout({
           void submit();
         }}
       >
-        <label htmlFor="axie-id">ID o enlace de App.Axie</label>
+        <label htmlFor="axie-id">
+          {translateText('ID o enlace de App.Axie')}
+        </label>
         <div>
           <Input
             id="axie-id"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ej. 4200042"
+            placeholder={translateText('Ej. 4200042')}
             maxLength={160}
           />
           <button
             className="primary-button"
             data-object="summon"
-            data-label={busy ? 'Cargando' : 'Invocar'}
+            data-label={translateText(busy ? 'Cargando' : 'Invocar')}
             disabled={busy}
-            aria-label="Consultar partes del Axie"
+            aria-label={translateText('Consultar partes del Axie')}
           >
             <Search size={16} />
-            {busy ? '…' : 'Cargar'}
+            {translateText(busy ? '…' : 'Cargar')}
           </button>
         </div>
       </form>
       {error ? (
         <p className="form-error" role="alert">
-          {error}
+          {translateText(error)}
         </p>
       ) : null}
       <details
         className="metadata-import"
         open={view === 'file' ? true : undefined}
       >
-        <summary>Importar archivo de partes</summary>
+        <summary>{translateText('Importar archivo de partes')}</summary>
         <p>
-          Si falla la consulta, abre los metadatos del Axie, guárdalos como
-          archivo JSON y selecciónalo aquí. El archivo permite probar sus
-          partes; su procedencia no queda verificada.
+          {translateText(
+            'Si falla la consulta, abre los metadatos del Axie, guárdalos como archivo JSON y selecciónalo aquí. El archivo permite probar sus partes; su procedencia no queda verificada.',
+          )}
         </p>
         {metadataUrl ? (
           <a href={metadataUrl} target="_blank" rel="noreferrer">
-            Abrir metadatos de Axie #{parseAxieId(input)} ↗
+            {translateText('Abrir metadatos de Axie #')}
+            {translateText(parseAxieId(input))} ↗
           </a>
         ) : (
-          <p>Introduce arriba el ID para abrir sus metadatos oficiales.</p>
+          <p>
+            {translateText(
+              'Introduce arriba el ID para abrir sus metadatos oficiales.',
+            )}
+          </p>
         )}
         <label className="object-file" htmlFor="axie-metadata-file">
-          <span data-object="scroll" data-label="Elegir archivo">
-            Elegir archivo
+          <span
+            data-object="scroll"
+            data-label={translateText('Elegir archivo')}
+          >
+            {translateText('Elegir archivo')}
           </span>
           <Input
             type="file"
             id="axie-metadata-file"
             accept=".json,application/json"
-            aria-label="Archivo de metadatos del Axie"
+            aria-label={translateText('Archivo de metadatos del Axie')}
             onChange={(e) => {
               void importFile(e.target.files?.[0]);
               e.target.value = '';
@@ -177,15 +192,19 @@ export function AxieLoadout({
       {axie ? (
         <>
           <div className="axie-loaded">
-            <strong>Axie #{axie.id}</strong>
+            <strong>
+              {translateText('Axie #')}
+              {translateText(axie.id)}
+            </strong>
             <span>
-              {axie.class} · {unlocked.length}/4 cartas
+              {translateText(axie.class)} · {unlocked.length}
+              {translateText('/4 cartas')}
             </span>
             <a
               href={'https://app.axieinfinity.com/marketplace/axies/' + axie.id}
               target="_blank"
               rel="noreferrer"
-              aria-label="Ver Axie en App.Axie"
+              aria-label={translateText('Ver Axie en App.Axie')}
             >
               <ArrowUpRight size={16} />
             </a>
@@ -195,7 +214,9 @@ export function AxieLoadout({
               <div
                 key={p.slot}
                 className={p.card ? '' : 'passive-part'}
-                title={p.card ? PARTS[p.card].card : 'Sin carta en Classic'}
+                title={translateText(
+                  p.card ? PARTS[p.card].card : 'Sin carta en Classic',
+                )}
               >
                 {p.image ? (
                   <Image
@@ -203,37 +224,42 @@ export function AxieLoadout({
                     src={p.image}
                     width={64}
                     height={48}
-                    alt=""
+                    alt={''}
                   />
                 ) : (
                   <LockKeyhole size={23} />
                 )}
-                <strong>{p.name}</strong>
+                <strong>{translateText(p.name)}</strong>
                 <span>
-                  {p.card
-                    ? PARTS[p.card].slot + (p.artIsBase ? ' · arte base' : '')
-                    : p.slot === 'eyes'
-                      ? 'Ojos · sin carta'
-                      : 'Orejas · sin carta'}
+                  {translateText(
+                    p.card
+                      ? PARTS[p.card].slot + (p.artIsBase ? ' · arte base' : '')
+                      : p.slot === 'eyes'
+                        ? 'Ojos · sin carta'
+                        : 'Orejas · sin carta',
+                  )}
                 </span>
               </div>
             ))}
           </div>
           {axie.source === 'ronin-contract' ? (
             <p className="loadout-note">
-              Genes leídos del contrato de Ronin. Las miniaturas muestran la
-              parte base.
+              {translateText(
+                'Genes leídos del contrato de Ronin. Las miniaturas muestran la parte base.',
+              )}
             </p>
           ) : null}
           {axie.source === 'metadata-file' ? (
             <p className="loadout-note">
-              Importado de archivo · procedencia sin verificar.
+              {translateText(
+                'Importado de archivo · procedencia sin verificar.',
+              )}
             </p>
           ) : null}
           <p className="loadout-note">
-            Estas partes forman tu personaje 3D y habilitan sus trampas. La
-            apariencia conserva la evolución disponible; las habilidades usan
-            Classic nivel 1.
+            {translateText(
+              'Estas partes forman tu personaje 3D y habilitan sus trampas. La apariencia conserva la evolución disponible; las habilidades usan Classic nivel 1.',
+            )}
           </p>
           <button
             className="text-button"
@@ -242,27 +268,31 @@ export function AxieLoadout({
               onLab();
             }}
           >
-            <FlaskConical size={14} /> Volver al laboratorio libre
+            <FlaskConical size={14} />
+            {translateText(' Volver al laboratorio libre')}
           </button>
         </>
       ) : (
         <div className="lab-notice">
           <FlaskConical size={20} />
           <div>
-            <strong>Laboratorio libre</strong>
+            <strong>{translateText('Laboratorio libre')}</strong>
             <p>
-              Prueba las 132 cartas. Carga un Axie para limitar tu defensa a sus
-              partes.
+              {translateText(
+                'Prueba las 132 cartas. Carga un Axie para limitar tu defensa a sus partes.',
+              )}
             </p>
           </div>
         </div>
       )}
       <button className="catalog-open-button" onClick={onBrowse}>
-        Explorar todas las partes <ArrowUpRight size={15} />
+        {translateText('Explorar todas las partes ')}
+        <ArrowUpRight size={15} />
       </button>
       <p className="loadout-footnote">
-        El ID consulta genes y propietario en Ronin. Introducirlo no demuestra
-        que controles esa billetera.
+        {translateText(
+          'El ID consulta genes y propietario en Ronin. Introducirlo no demuestra que controles esa billetera.',
+        )}
       </p>
     </section>
   );

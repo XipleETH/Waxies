@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useEffect, useRef, useState } from 'react';
 import { GameObjects } from './game-objects';
 import {
@@ -23,6 +26,7 @@ export function RaidReplayViewer(props: {
   match: MatchReplayView;
   onClose: () => void;
 }) {
+  useLocale();
   return (
     <Dialog
       open
@@ -31,10 +35,15 @@ export function RaidReplayViewer(props: {
       }}
     >
       <DialogContent className="replay-dialog" showCloseButton={false}>
-        <DialogTitle className="sr-only">Repetición del ataque</DialogTitle>
+        <DialogTitle className="sr-only">
+          {translateText('Repetición del ataque')}
+        </DialogTitle>
         <DialogDescription className="sr-only">
-          Ataque de {props.match.attacker} a {props.match.defender}, con sus
-          gestos grabados.
+          {translateText('Ataque de ')}
+          {props.match.attacker}
+          {translateText(' a ')}
+          {props.match.defender}
+          {translateText(', con sus gestos grabados.')}
         </DialogDescription>
         <ReplayScene {...props} />
       </DialogContent>
@@ -48,6 +57,7 @@ function ReplayScene({
   match: MatchReplayView;
   onClose: () => void;
 }) {
+  useLocale();
   const host = useRef<HTMLDivElement>(null),
     engine = useRef<Engine | null>(null);
   const [snapshot, setSnapshot] = useState<{
@@ -106,30 +116,33 @@ function ReplayScene({
   }, [match]);
   const { playback, event, ...state } = snapshot;
   return (
-    <section className="raid-viewer" aria-label="Repetición del ataque">
+    <section
+      className="raid-viewer"
+      aria-label={translateText('Repetición del ataque')}
+    >
       <div className="raid-viewer-canvas" ref={host} />
       <header className="replay-hud">
         <button
           className="m-icon"
           onClick={onClose}
           data-object="close"
-          data-label="Salir"
-          aria-label="Cerrar repetición"
+          data-label={translateText('Salir')}
+          aria-label={translateText('Cerrar repetición')}
         >
           <ArrowLeft size={21} />
         </button>
         <div
           data-object="title"
           data-label={match.attacker}
-          data-value="REPETICIÓN"
+          data-value={translateText('REPETICIÓN')}
         >
-          <small>REPETICIÓN</small>
+          <small>{translateText('REPETICIÓN')}</small>
           <strong>{match.attacker}</strong>
         </div>
         <span
           data-object="heart"
-          data-value={state?.hp ?? 100}
-          aria-label={`Salud: ${state?.hp ?? 100}`}
+          data-value={translateText(state?.hp ?? 100)}
+          aria-label={translateText(`Salud: ${state?.hp ?? 100}`)}
         >
           <Heart size={15} />
           {state?.hp ?? 100}
@@ -138,36 +151,42 @@ function ReplayScene({
       <EmoteBubble event={event} />
       {!ready || error ? (
         <output className="replay-message">
-          {error || 'Preparando Axie…'}
+          {translateText(error || 'Preparando Axie…')}
         </output>
       ) : null}
       {playback?.complete ? (
         <output
           className="replay-result"
           data-object="balance"
-          data-value={match.amount}
-          aria-label={`${match.amount} Chispas, ${state?.phase === 'won' ? 'cofre alcanzado' : 'sin botín'}`}
+          data-value={translateText(match.amount)}
+          aria-label={translateText(
+            `${match.amount} Chispas, ${state?.phase === 'won' ? 'cofre alcanzado' : 'sin botín'}`,
+          )}
         >
           <Sparkles size={22} />
-          {match.amount} Chispas
+          {match.amount}
+          {translateText(' Chispas')}
           <small>
-            {state?.phase === 'won' ? 'Cofre alcanzado' : 'Sin botín'}
+            {translateText(
+              state?.phase === 'won' ? 'Cofre alcanzado' : 'Sin botín',
+            )}
           </small>
         </output>
       ) : null}
       <footer className="replay-controls">
         <span>
-          Intento {(playback?.attempt ?? 0) + 1}/{match.replay.attempts.length}
+          {translateText('Intento ')}
+          {(playback?.attempt ?? 0) + 1}/{match.replay.attempts.length}
         </span>
         <button
           className="m-icon"
           disabled={!ready || playback?.complete}
           data-object={playback?.paused ? 'play' : 'pause'}
-          data-label={playback?.paused ? 'Seguir' : 'Pausa'}
+          data-label={translateText(playback?.paused ? 'Seguir' : 'Pausa')}
           onClick={() => engine.current?.pause()}
-          aria-label={
-            playback?.paused ? 'Continuar repetición' : 'Pausar repetición'
-          }
+          aria-label={translateText(
+            playback?.paused ? 'Continuar repetición' : 'Pausar repetición',
+          )}
         >
           {playback?.paused ? <Play size={20} /> : <Pause size={20} />}
         </button>
@@ -175,9 +194,9 @@ function ReplayScene({
           className="m-icon"
           disabled={!ready}
           data-object="retry"
-          data-label="Repetir"
+          data-label={translateText('Repetir')}
           onClick={() => engine.current?.playRaidReplay(match.replay)}
-          aria-label="Repetir ataque"
+          aria-label={translateText('Repetir ataque')}
         >
           <RotateCcw size={20} />
         </button>

@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Wallet, Mail, LoaderCircle } from 'lucide-react';
 import {
@@ -27,6 +30,7 @@ export function RoninAxies({
 }: {
   onLoad: (axie: AxieLoadout) => void;
 }) {
+  useLocale();
   const [account, setAccount] = useState(''),
     [ids, setIds] = useState<string[]>([]),
     [total, setTotal] = useState(0),
@@ -243,26 +247,30 @@ export function RoninAxies({
             className="secondary-button"
             disabled={busy}
             data-object="retry"
-            data-label="Actualizar"
+            data-label={translateText('Actualizar')}
             onClick={() => void refresh()}
           >
             {busy ? (
               <LoaderCircle size={16} className="spin" />
             ) : (
               <Wallet size={16} />
-            )}{' '}
-            Actualizar mis Axies
+            )}
+            {translateText(' ')}
+            {translateText('Actualizar mis Axies')}
           </button>
           <p className="ronin-account">
-            {account.slice(0, 6)}…{account.slice(-4)} · {total} Axies{' '}
+            {translateText(account.slice(0, 6))}…
+            {translateText(account.slice(-4))} · {total}
+            {translateText(' Axies')}
+            {translateText(' ')}
             <button
               type="button"
               className="text-button"
               data-object="close"
-              data-label="Salir"
+              data-label={translateText('Salir')}
               onClick={disconnect}
             >
-              Desconectar
+              {translateText('Desconectar')}
             </button>
           </p>
           <div className="ronin-axie-list">
@@ -271,11 +279,12 @@ export function RoninAxies({
                 type="button"
                 key={id}
                 data-object="axie"
-                data-label={'#' + id}
+                data-label={translateText('#' + id)}
                 disabled={busy}
                 onClick={() => void choose(id)}
               >
-                Axie #{id}
+                {translateText('Axie #')}
+                {translateText(id)}
               </button>
             ))}
           </div>
@@ -285,13 +294,15 @@ export function RoninAxies({
               className="text-button"
               disabled={busy}
               data-object="next"
-              data-label="Más"
+              data-label={translateText('Más')}
               onClick={() => void more()}
             >
-              Cargar más Axies
+              {translateText('Cargar más Axies')}
             </button>
           ) : null}
-          {total === 0 ? <p>No hay Axies en esta cuenta.</p> : null}
+          {total === 0 ? (
+            <p>{translateText('No hay Axies en esta cuenta.')}</p>
+          ) : null}
         </>
       ) : (
         <>
@@ -300,15 +311,16 @@ export function RoninAxies({
             className="secondary-button"
             disabled={busy}
             data-object="ronin"
-            data-label="Ronin"
+            data-label={translateText('Ronin')}
             onClick={connectRonin}
           >
             {busy ? (
               <LoaderCircle size={16} className="spin" />
             ) : (
               <Wallet size={16} />
-            )}{' '}
-            Conectar Ronin Wallet
+            )}
+            {translateText(' ')}
+            {translateText('Conectar Ronin Wallet')}
           </button>
           {WAYPOINT_ENABLED ? (
             <button
@@ -316,27 +328,29 @@ export function RoninAxies({
               className="secondary-button"
               disabled={busy}
               data-object="sky-mavis"
-              data-label="Sky Mavis"
+              data-label={translateText('Sky Mavis')}
               onClick={() => void connectWaypoint()}
             >
               {busy ? (
                 <LoaderCircle size={16} className="spin" />
               ) : (
                 <Mail size={16} />
-              )}{' '}
-              Iniciar con cuenta Sky Mavis
+              )}
+              {translateText(' ')}
+              {translateText('Iniciar con cuenta Sky Mavis')}
             </button>
           ) : null}
         </>
       )}
       {error ? (
         <p className="form-error" role="alert">
-          {error}
+          {translateText(error)}
         </p>
       ) : null}
       <p className="loadout-footnote">
-        Consulta de propiedad y genes de tus Axies. Sin transferencias de
-        fondos.
+        {translateText(
+          'Consulta de propiedad y genes de tus Axies. Sin transferencias de fondos.',
+        )}
       </p>
     </div>
   );

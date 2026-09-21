@@ -137,3 +137,9 @@ Todas las trampas de los catálogos actuales tienen movimiento físico: mantiene
 Las 50 salas de Historia, 115 de Práctica y 100 plantillas `starter-v3` conservan rutas certificadas. Las plantillas anteriores y las defensas publicadas conservan sus instantáneas para no modificar combates ni replays existentes. Los borradores antiguos se actualizan al leerlos, preservando progreso y monedas; una disposición personalizada puede requerir otra validación y publicación. No se modifica la base de datos de jugadores automáticamente.
 
 `npx tsx scripts/animate-traps.ts` genera candidatos en `output/moving-traps-final`, sin sobrescribir catálogos ni datos online. Comprueba ruta, exposición a las defensas, desplazamiento real y atajos descendentes; `--continue` continúa sobre esos candidatos.
+
+## Idiomas
+
+La interfaz del juego está disponible en inglés y español. El selector EN/ES del lobby guarda la preferencia en el navegador, sin cambiar el perfil, las partidas ni los certificados de las mazmorras. En la primera visita se usa el idioma del navegador (español para `es-*`, inglés para los demás). Los enlaces `/?lang=en` y `/?lang=es` tienen prioridad y guardan esa elección. Para los jueces: https://waxies.vercel.app/?lang=en.
+
+El catálogo `lib/i18n/en.json` traduce los textos de presentación, incluidos rótulos 3D, menús, narrativa, poderes, accesibilidad y errores del servidor. Los IDs, nombres oficiales de partes, nombres de jugadores y datos guardados conservan su valor original. La traducción ocurre al renderizar; no se modifican las instantáneas de defensas ni las repeticiones.

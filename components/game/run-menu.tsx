@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useState } from 'react';
 import type { RunConfig } from './mobile-run';
 import { PARTS } from '@/lib/game/catalog';
@@ -45,6 +48,7 @@ export function RunMenu({
   onNext: () => void;
   onSubmit: () => void;
 }) {
+  useLocale();
   const [help, setHelp] = useState(false);
   const [tip, setTip] = useState<number | null>(null);
   const online = run.mode === 'online';
@@ -79,37 +83,37 @@ export function RunMenu({
     <button
       type="button"
       data-object={kind}
-      data-label={label}
+      data-label={translateText(label)}
       onClick={click}
       disabled={disabled}
-      aria-label={aria}
+      aria-label={translateText(aria)}
     >
-      {label}
+      {translateText(label)}
     </button>
   );
   return (
     <section
       className="object-run-menu"
-      aria-label={
+      aria-label={translateText(
         phase === 'ready'
           ? 'Entrada a la partida'
           : phase === 'paused'
             ? 'Pausa'
-            : 'Resultado'
-      }
+            : 'Resultado',
+      )}
     >
       <h1
         className="object-run-title"
         data-object="title"
-        data-label={title}
-        data-value={mode}
+        data-label={translateText(title)}
+        data-value={translateText(mode)}
       >
-        {title} · {mode}
+        {translateText(title)} · {translateText(mode)}
       </h1>
       {phase === 'ready' ? (
         <div
           className="object-run-powers"
-          aria-label="Poderes de la mazmorra"
+          aria-label={translateText('Poderes de la mazmorra')}
           style={{
             gridTemplateColumns: `repeat(${Math.max(1, Math.min(4, run.level.traps.length))}, minmax(0, 1fr))`,
           }}
@@ -120,12 +124,12 @@ export function RunMenu({
               type="button"
               data-object="power"
               data-value={t.part}
-              data-label={PARTS[t.part].name}
-              aria-label={'Cómo esquivar ' + PARTS[t.part].name}
+              data-label={translateText(PARTS[t.part].name)}
+              aria-label={translateText('Cómo esquivar ' + PARTS[t.part].name)}
               aria-pressed={tip === i}
               onClick={() => setTip(tip === i ? null : i)}
             >
-              {PARTS[t.part].name}
+              {translateText(PARTS[t.part].name)}
             </button>
           ))}
         </div>
@@ -141,36 +145,41 @@ export function RunMenu({
                   ? 'pause'
                   : 'reward'
             }
-            data-value={phase === 'dead' ? '0' : undefined}
+            data-value={translateText(phase === 'dead' ? '0' : undefined)}
             aria-hidden="true"
           />
         ) : null}
         {phase === 'ready' && tip !== null ? (
-          <p>{raidPowerDescription(run.level.traps[tip].part)}</p>
+          <p>
+            {translateText(raidPowerDescription(run.level.traps[tip].part))}
+          </p>
         ) : null}
         {phase === 'ready' && tip === null ? (
-          <p>Toca un poder para descubrir cómo esquivarlo.</p>
+          <p>
+            {translateText('Toca un poder para descubrir cómo esquivarlo.')}
+          </p>
         ) : null}
         {help ? (
           <div className="story-run-help">
             <div
               data-object="jump"
-              data-label="Toca"
-              aria-label="Toca para saltar"
+              data-label={translateText('Toca')}
+              aria-label={translateText('Toca para saltar')}
             />
             <div
               data-object="next"
-              data-label="Rebota"
-              aria-label="Rebota en los muros"
+              data-label={translateText('Rebota')}
+              aria-label={translateText('Rebota en los muros')}
             />
             <div
               data-object="heart"
-              data-label="Esquiva"
-              aria-label="Esquiva los poderes"
+              data-label={translateText('Esquiva')}
+              aria-label={translateText('Esquiva los poderes')}
             />
             <p>
-              Toca la pantalla o pulsa Espacio para saltar. Rebota en los muros.
-              Cada golpe resta 20 de salud.
+              {translateText(
+                'Toca la pantalla o pulsa Espacio para saltar. Rebota en los muros. Cada golpe resta 20 de salud.',
+              )}
             </p>
             {run.proof && loaded
               ? action('bot', 'Ver ruta', onProof, false, 'Ver ruta sin premio')
@@ -179,62 +188,77 @@ export function RunMenu({
         ) : null}
         {phase === 'ready' && online ? (
           <p>
-            El botín depende de tu salud al llegar. Queda retenido para la
-            revancha.
+            {translateText(
+              'El botín depende de tu salud al llegar. Queda retenido para la revancha.',
+            )}
           </p>
         ) : null}
         {phase === 'ready' && run.mode === 'validate' ? (
-          <p>Llega sin golpes para guardar tu defensa.</p>
+          <p>{translateText('Llega sin golpes para guardar tu defensa.')}</p>
         ) : null}
-        {phase === 'paused' ? <p>Las trampas también están en pausa.</p> : null}
+        {phase === 'paused' ? (
+          <p>{translateText('Las trampas también están en pausa.')}</p>
+        ) : null}
         {phase === 'dead' ? (
           <p>
-            {online
-              ? 'Ataque terminado sin botín. Confirma el resultado para cerrarlo.'
-              : 'Respira y vuelve a intentarlo.'}
+            {translateText(
+              online
+                ? 'Ataque terminado sin botín. Confirma el resultado para cerrarlo.'
+                : 'Respira y vuelve a intentarlo.',
+            )}
           </p>
         ) : null}
         {phase === 'won' && demo ? (
-          <p>Ruta completada sin golpes. Ahora prueba tú.</p>
+          <p>{translateText('Ruta completada sin golpes. Ahora prueba tú.')}</p>
         ) : null}
         {phase === 'won' && !demo && run.mode === 'validate' ? (
           <p>
-            {hits
-              ? 'Necesitas un intento sin golpes para validar.'
-              : 'Defensa validada. Lista para guardar.'}
+            {translateText(
+              hits
+                ? 'Necesitas un intento sin golpes para validar.'
+                : 'Defensa validada. Lista para guardar.',
+            )}
           </p>
         ) : null}
         {phase === 'won' && !demo && run.mode === 'shared' ? (
-          <p>¡Has superado la defensa de tu amigo!</p>
+          <p>{translateText('¡Has superado la defensa de tu amigo!')}</p>
         ) : null}
         {phase === 'won' && !demo && (online || run.mode === 'practice') ? (
           <>
             <div
               className="object-run-reward"
               data-object="balance"
-              data-value={reward}
-              aria-label={`${reward} Chispas`}
+              data-value={translateText(reward)}
+              aria-label={translateText(`${reward} Chispas`)}
             >
-              {reward} Chispas
+              {reward}
+              {translateText(' Chispas')}
             </div>
             <p>
-              {hp} de salud · {hits} golpes
+              {hp}
+              {translateText(' de salud · ')}
+              {hits}
+              {translateText(' golpes')}
             </p>
             {online ? (
               <p>
-                {claimed
-                  ? 'Resultado confirmado.'
-                  : run.onlineKind === 'revenge'
-                    ? 'Recuperas como máximo lo perdido.'
-                    : 'Botín retenido 24 horas o hasta resolver la revancha.'}
+                {translateText(
+                  claimed
+                    ? 'Resultado confirmado.'
+                    : run.onlineKind === 'revenge'
+                      ? 'Recuperas como máximo lo perdido.'
+                      : 'Botín retenido 24 horas o hasta resolver la revancha.',
+                )}
               </p>
             ) : null}
-            {claimed ? <output>Premio guardado.</output> : null}
+            {claimed ? (
+              <output>{translateText('Premio guardado.')}</output>
+            ) : null}
           </>
         ) : null}
         {error ? (
           <p role="alert" className="m-error">
-            {error}
+            {translateText(error)}
           </p>
         ) : null}
       </div>

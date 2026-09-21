@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useEffect, useRef, useState } from 'react';
 import { haptic } from '@/lib/game/haptics';
 import { GameObjects } from './game-objects';
@@ -22,6 +25,7 @@ export function StoryMap({
   onPrologue: () => void;
   onClose: () => void;
 }) {
+  useLocale();
   const unlocked = storyUnlocked(best);
   const [chapter, setChapter] = useState(() => Math.floor((unlocked - 1) / 10)),
     [selected, setSelected] = useState(unlocked),
@@ -93,89 +97,104 @@ export function StoryMap({
                 className={styles.node}
                 style={{ left: p.x + '%', top: p.y + '%' }}
                 data-object="node"
-                data-label={n}
-                data-value={100 - v}
+                data-label={translateText(n)}
+                data-value={translateText(100 - v)}
                 data-stars={storyStars(v)}
                 data-locked={n > unlocked}
                 aria-pressed={selected === n}
-                aria-label={`Nivel ${n}, ${n > unlocked ? 'bloqueado' : 'disponible'}, ${v} Chispas recogidas, ${100 - v} por recoger`}
+                aria-label={translateText(
+                  `Nivel ${n}, ${n > unlocked ? 'bloqueado' : 'disponible'}, ${v} Chispas recogidas, ${100 - v} por recoger`,
+                )}
                 onClick={() => {
                   haptic(n > unlocked ? 'error' : 'select');
                   setSelected(n);
                 }}
               >
-                {n} · {storyStars(v)} estrellas · {100 - v} Chispas
+                {n} · {storyStars(v)}
+                {translateText(' estrellas · ')}
+                {100 - v}
+                {translateText(' Chispas')}
               </button>
             );
           })}
           {failed ? (
-            <p className={styles.fallback}>Puedes seguir eligiendo niveles.</p>
+            <p className={styles.fallback}>
+              {translateText('Puedes seguir eligiendo niveles.')}
+            </p>
           ) : null}
         </div>
       </div>
       <div className={styles.topbar}>
         <button
           data-object="book"
-          aria-label="Ver prólogo"
+          aria-label={translateText('Ver prólogo')}
           onClick={onPrologue}
         >
-          Prólogo
+          {translateText('Prólogo')}
         </button>
-        <nav className={styles.zone} aria-label="Zonas de historia">
+        <nav
+          className={styles.zone}
+          aria-label={translateText('Zonas de historia')}
+        >
           <button
             data-object="previous"
             disabled={chapter === 0}
             onClick={() => changeChapter(chapter - 1)}
-            aria-label="Zona anterior"
+            aria-label={translateText('Zona anterior')}
           >
-            Anterior
+            {translateText('Anterior')}
           </button>
           <div
             className={styles.zoneName}
             data-object="title"
-            data-label={STORY_CHAPTERS[chapter].name}
-            data-value={`ZONA ${chapter + 1} / 5`}
+            data-label={translateText(STORY_CHAPTERS[chapter].name)}
+            data-value={translateText(`ZONA ${chapter + 1} / 5`)}
           >
-            {STORY_CHAPTERS[chapter].name}
+            {translateText(STORY_CHAPTERS[chapter].name)}
           </div>
           <button
             data-object="next"
             disabled={chapter === 4}
             onClick={() => changeChapter(chapter + 1)}
-            aria-label="Zona siguiente"
+            aria-label={translateText('Zona siguiente')}
           >
-            Siguiente
+            {translateText('Siguiente')}
           </button>
         </nav>
-        <button data-object="close" aria-label="Cerrar mapa" onClick={onClose}>
-          Cerrar
+        <button
+          data-object="close"
+          aria-label={translateText('Cerrar mapa')}
+          onClick={onClose}
+        >
+          {translateText('Cerrar')}
         </button>
       </div>
       <div className={styles.action}>
         <div
           className={styles.brief}
           data-object="title"
-          data-label={level.name}
-          data-value={
-            locked ? `SUPERA EL ${selected - 1}` : `${100 - hp} CHISPAS`
-          }
+          data-label={translateText(level.name)}
+          data-value={translateText(
+            locked ? `SUPERA EL ${selected - 1}` : `${100 - hp} CHISPAS`,
+          )}
         >
-          {level.name} · {100 - hp} Chispas
+          {translateText(level.name)} · {100 - hp}
+          {translateText(' Chispas')}
         </div>
         <button
           className={styles.play}
           data-object="portal"
-          data-label={locked ? 'Bloqueado' : 'Asaltar'}
-          aria-label={
-            locked ? 'Bloqueado' : hp ? 'Volver a asaltar' : 'Asaltar'
-          }
+          data-label={translateText(locked ? 'Bloqueado' : 'Asaltar')}
+          aria-label={translateText(
+            locked ? 'Bloqueado' : hp ? 'Volver a asaltar' : 'Asaltar',
+          )}
           disabled={locked}
           onClick={() => {
             haptic('select');
             onPlay(selected);
           }}
         >
-          Asaltar
+          {translateText('Asaltar')}
         </button>
       </div>
       <GameObjects />

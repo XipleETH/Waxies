@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useEffect, useRef, useState } from 'react';
 import { RunMenu } from './run-menu';
 import { GameObjects } from './game-objects';
@@ -40,6 +43,7 @@ export function MobileRun({
   onOnline?: (replay: RaidReplay) => Promise<number>;
   onValidate: (proof: RouteProof) => void;
 }) {
+  useLocale();
   const host = useRef<HTMLDivElement>(null),
     engine = useRef<Engine | null>(null),
     handled = useRef(false);
@@ -193,18 +197,25 @@ export function MobileRun({
         ? reward
         : 0;
   return (
-    <main className="mobile-run is-story-objects" aria-label="Partida vertical">
-      <div className="story-vitals" aria-label="Estado de la partida">
+    <main
+      className="mobile-run is-story-objects"
+      aria-label={translateText('Partida vertical')}
+    >
+      <div
+        className="story-vitals"
+        aria-label={translateText('Estado de la partida')}
+      >
         <div
           data-object="heart"
-          data-value={state.hp}
-          aria-label={`Salud: ${state.hp} de 100`}
+          data-value={translateText(state.hp)}
+          aria-label={translateText(`Salud: ${state.hp} de 100`)}
         >
-          Salud {state.hp}
+          {translateText('Salud ')}
+          {state.hp}
         </div>
         <div
           data-object="title"
-          data-label={
+          data-label={translateText(
             run.mode === 'story'
               ? `${run.storyNumber} / 50`
               : demo
@@ -215,13 +226,13 @@ export function MobileRun({
                     ? 'Validación'
                     : run.mode === 'shared'
                       ? 'Reto'
-                      : 'Práctica'
-          }
+                      : 'Práctica',
+          )}
         />
         <div
           data-object="balance"
-          data-value={hudReward}
-          aria-label={`Premio: ${hudReward} Chispas`}
+          data-value={translateText(hudReward)}
+          aria-label={translateText(`Premio: ${hudReward} Chispas`)}
         />
       </div>
       <div
@@ -259,8 +270,13 @@ export function MobileRun({
       ) : null}
       {state.phase === 'resetting' ? (
         <output className="run-hit">
-          <Heart size={24} /> −20 salud{' '}
-          <small>{state.reason} · Volvemos al inicio</small>
+          <Heart size={24} />
+          {translateText(' −20 salud')}
+          {translateText(' ')}
+          <small>
+            {translateText(state.reason)}
+            {translateText(' · Volvemos al inicio')}
+          </small>
         </output>
       ) : null}
       {overlay && run.mode === 'story' ? (
@@ -270,7 +286,7 @@ export function MobileRun({
           demo={demo}
           claimed={claimed}
           number={run.storyNumber ?? 1}
-          title={run.level.name}
+          title={translateText(run.level.name)}
           hp={state.hp}
           reward={reward}
           error={error}
@@ -316,15 +332,15 @@ export function MobileRun({
         <div
           className="story-demo-mark"
           data-object="bot"
-          data-label="Sin premio"
-          aria-label="Demostración sin premio"
+          data-label={translateText('Sin premio')}
+          aria-label={translateText('Demostración sin premio')}
         >
-          Sin premio
+          {translateText('Sin premio')}
         </div>
       ) : null}
       {!overlay && error ? (
         <div className="run-demo" role="alert">
-          {error}
+          {translateText(error)}
         </div>
       ) : null}
       <>
@@ -332,18 +348,20 @@ export function MobileRun({
           <div className="story-play-controls">
             <button
               data-object={run.mode === 'story' ? 'path' : 'home'}
-              data-label={run.mode === 'story' ? 'Camino' : 'Lobby'}
-              aria-label={
-                run.mode === 'story' ? 'Volver al camino' : 'Volver al lobby'
-              }
+              data-label={translateText(
+                run.mode === 'story' ? 'Camino' : 'Lobby',
+              )}
+              aria-label={translateText(
+                run.mode === 'story' ? 'Volver al camino' : 'Volver al lobby',
+              )}
               onClick={onExit}
             >
-              Camino
+              {translateText('Camino')}
             </button>
             <button
               data-object="jump"
-              data-label="Saltar"
-              aria-label="Saltar"
+              data-label={translateText('Saltar')}
+              aria-label={translateText('Saltar')}
               disabled={!loaded || demo || state.phase !== 'playing'}
               onPointerDown={(e) => {
                 e.preventDefault();
@@ -356,16 +374,16 @@ export function MobileRun({
                 }
               }}
             >
-              Saltar
+              {translateText('Saltar')}
             </button>
             <button
               data-object="pause"
-              data-label="Pausa"
-              aria-label="Pausar partida"
+              data-label={translateText('Pausa')}
+              aria-label={translateText('Pausar partida')}
               disabled={!loaded || state.phase !== 'playing'}
               onClick={() => engine.current?.pause()}
             >
-              Pausa
+              {translateText('Pausa')}
             </button>
           </div>
         ) : null}

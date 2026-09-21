@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { AccountAccess } from './account-access';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -25,23 +28,26 @@ export function AxieRoom({
   onLab: () => void;
   onBrowse: () => void;
 }) {
+  useLocale();
   const [panel, setPanel] = useState<'wallet' | 'id' | 'file' | null>(null);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   return (
-    <section className="axie-object-room" aria-label="Mi Axie">
+    <section className="axie-object-room" aria-label={translateText('Mi Axie')}>
       <div
         className="object-room-title"
         data-object="title"
-        data-label={axie ? 'AXIE #' + axie.id : 'AXIE DE PRUEBA'}
+        data-label={translateText(axie ? 'AXIE #' + axie.id : 'AXIE DE PRUEBA')}
       >
-        <span>{axie ? 'AXIE #' + axie.id : 'AXIE DE PRUEBA'}</span>
+        <span>
+          {translateText(axie ? 'AXIE #' + axie.id : 'AXIE DE PRUEBA')}
+        </span>
       </div>
       <HapticToggle />
       <SoundControls />
       <div className="axie-object-actions">
         <ObjectMenu
-          label="Acciones de Mi Axie"
+          label={translateText('Acciones de Mi Axie')}
           layout="corner"
           actions={[
             {
@@ -80,7 +86,7 @@ export function AxieRoom({
         />
         {axie ? (
           <button className="object-small-action" onClick={onLab}>
-            Axie de prueba
+            {translateText('Axie de prueba')}
           </button>
         ) : null}
       </div>
@@ -94,20 +100,20 @@ export function AxieRoom({
         }}
       >
         <ObjectDialogContent
-          title={
+          title={translateText(
             panel === 'wallet'
               ? 'Billetera'
               : panel === 'id'
                 ? 'Invocar'
-                : 'Archivo'
-          }
-          description={
+                : 'Archivo',
+          )}
+          description={translateText(
             panel === 'wallet'
               ? 'Tu cuenta, tu progreso y tus Axies.'
               : panel === 'id'
                 ? 'Introduce el ID de tu Axie.'
-                : 'Importa las partes de tu Axie.'
-          }
+                : 'Importa las partes de tu Axie.',
+          )}
           onClose={() => setPanel(null)}
           className="axie-action-dialog"
         >

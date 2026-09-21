@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { AccountAccess } from './account-access';
 import { useCallback, useEffect, useState } from 'react';
 import type { OnlineView, OnlineCommand } from '@/lib/online/types';
@@ -52,6 +55,7 @@ export function OnlinePanel({
   onStarter: (id: string) => void;
   onAttack: (m: NonNullable<OnlineView['match']>) => void;
 }) {
+  const locale = useLocale();
   const [view, setView] = useState<OnlineView | null>(null),
     [error, setError] = useState(''),
     [busy, setBusy] = useState(false),
@@ -147,41 +151,48 @@ export function OnlinePanel({
   return (
     <section
       className={styles.online + ' online-object-room'}
-      aria-label="Online asíncrono"
+      aria-label={translateText('Online asíncrono')}
     >
       <div
         className="object-room-title"
         data-object="title"
-        data-label="Online"
-        data-value="Guerra de los cofres"
+        data-label={translateText('Online')}
+        data-value={translateText('Guerra de los cofres')}
       >
-        <span>GUERRA DE LOS COFRES</span>
+        <span>{translateText('GUERRA DE LOS COFRES')}</span>
       </div>
-      {error ? <output className={styles.error}>{error}</output> : null}
+      {error ? (
+        <output className={styles.error}>{translateText(error)}</output>
+      ) : null}
       {!view ? (
-        <p>Conectando con los refugios…</p>
+        <p>{translateText('Conectando con los refugios…')}</p>
       ) : !view.configured ? (
         <div className={styles.card}>
-          <h2>Preparando el servidor</h2>
+          <h2>{translateText('Preparando el servidor')}</h2>
           <p>
-            Falta conectar la base de datos para compartir cofres y resultados
-            entre jugadores. Puedes preparar y validar tu refugio.
+            {translateText(
+              'Falta conectar la base de datos para compartir cofres y resultados entre jugadores. Puedes preparar y validar tu refugio.',
+            )}
           </p>
-          <button data-object="map" data-label="Refugio" onClick={onEdit}>
-            Editar mi refugio
+          <button
+            data-object="map"
+            data-label={translateText('Refugio')}
+            onClick={onEdit}
+          >
+            {translateText('Editar mi refugio')}
           </button>
           <button
             data-object="retry"
-            data-label="Actualizar"
+            data-label={translateText('Actualizar')}
             onClick={() => void refresh()}
           >
-            Comprobar conexión
+            {translateText('Comprobar conexión')}
           </button>
         </div>
       ) : !view.registered ? (
         <>
           <ObjectMenu
-            label="Entrar a Online"
+            label={translateText('Entrar a Online')}
             actions={[
               {
                 id: 'join',
@@ -200,8 +211,8 @@ export function OnlinePanel({
           >
             <ObjectDialogContent
               className="online-object-dialog online-join-dialog"
-              title="Entrar"
-              description="Tu nombre en Lunacia"
+              title={translateText('Entrar')}
+              description={translateText('Tu nombre en Lunacia')}
               onClose={() => setPanel(null)}
             >
               <div className={styles.online}>
@@ -212,11 +223,12 @@ export function OnlinePanel({
                     aria-hidden="true"
                   />
                   <p>
-                    Refugio listo con 4 trampas y 100 Chispas en el cofre. Sin
-                    billetera.
+                    {translateText(
+                      'Refugio listo con 4 trampas y 100 Chispas en el cofre. Sin billetera.',
+                    )}
                   </p>
                   <AccountAccess />
-                  <label htmlFor="online-name">Nombre</label>
+                  <label htmlFor="online-name">{translateText('Nombre')}</label>
                   <input
                     id="online-name"
                     value={name}
@@ -228,7 +240,7 @@ export function OnlinePanel({
                   <button
                     disabled={busy || name.trim().length < 2}
                     data-object="portal"
-                    data-label="Crear"
+                    data-label={translateText('Crear')}
                     onClick={() =>
                       void act({
                         action: 'join',
@@ -237,11 +249,12 @@ export function OnlinePanel({
                       })
                     }
                   >
-                    Crear cuenta de prueba
+                    {translateText('Crear cuenta de prueba')}
                   </button>
                   <small>
-                    Tu cuenta se conserva en este navegador. El saldo del Bazar
-                    es independiente.
+                    {translateText(
+                      'Tu cuenta se conserva en este navegador. El saldo del Bazar es independiente.',
+                    )}
                   </small>
                 </div>
               </div>
@@ -251,7 +264,7 @@ export function OnlinePanel({
       ) : p ? (
         <>
           <ObjectMenu
-            label="Acciones Online"
+            label={translateText('Acciones Online')}
             actions={[
               {
                 id: 'raid',
@@ -284,8 +297,8 @@ export function OnlinePanel({
           >
             <ObjectDialogContent
               className="online-object-dialog"
-              title="Atacar"
-              description="Guerra de los cofres"
+              title={translateText('Atacar')}
+              description={translateText('Guerra de los cofres')}
               onClose={() => setPanel(null)}
             >
               <div className={styles.online}>
@@ -295,30 +308,35 @@ export function OnlinePanel({
                     data-object="swords"
                     aria-hidden="true"
                   />
-                  <h2>Elige tu próximo desafío</h2>
+                  <h2>{translateText('Elige tu próximo desafío')}</h2>
                   <div className="matchmaking-stats">
                     <div>
-                      <b>{p.rank ? `#${p.rank}` : '—'}</b>
-                      <span>Tu puesto</span>
+                      <b>{translateText(p.rank ? `#${p.rank}` : '—')}</b>
+                      <span>{translateText('Tu puesto')}</span>
                     </div>
                     <div>
                       <b>{view.activePlayers ?? 0}</b>
-                      <span>Rivales disponibles</span>
+                      <span>{translateText('Rivales disponibles')}</span>
                     </div>
                   </div>
                   <p>
-                    Cofres entre {Math.ceil(p.chest * 0.9)} y{' '}
-                    {Math.floor(p.chest * 1.1)} Chispas aseguradas.
+                    {translateText('Cofres entre ')}
+                    {Math.ceil(p.chest * 0.9)}
+                    {translateText(' y')}
+                    {translateText(' ')}
+                    {Math.floor(p.chest * 1.1)}
+                    {translateText(' Chispas aseguradas.')}
                   </p>
                   {view.match ? (
                     <>
                       <p>
-                        Hay un ataque reservado en otra vista. Si cerraste la
-                        partida, abandónalo para liberar los cofres.
+                        {translateText(
+                          'Hay un ataque reservado en otra vista. Si cerraste la partida, abandónalo para liberar los cofres.',
+                        )}
                       </p>
                       <button
                         data-object="close"
-                        data-label="Abandonar"
+                        data-label={translateText('Abandonar')}
                         disabled={busy}
                         onClick={() =>
                           void act({
@@ -327,24 +345,23 @@ export function OnlinePanel({
                           })
                         }
                       >
-                        Abandonar ataque
+                        {translateText('Abandonar ataque')}
                       </button>
                     </>
                   ) : (
                     <button
                       disabled={busy || !p.active || p.chest < 1 || p.locked}
                       data-object="swords"
-                      data-label="Buscar rival"
+                      data-label={translateText('Buscar rival')}
                       onClick={() => void act({ action: 'match' })}
                     >
-                      Buscar rival · ±10 %
+                      {translateText('Buscar rival · ±10 %')}
                     </button>
                   )}
                   <small>
-                    Un ataque por rival cada 24 h, desde que lo inicias. El
-                    rival también puede atacarte una vez y cada robo permite una
-                    revancha. El botín espera en el cofre temporal hasta
-                    resolverla o vencer sus 24 h.
+                    {translateText(
+                      'Un ataque por rival cada 24 h, desde que lo inicias. El rival también puede atacarte una vez y cada robo permite una revancha. El botín espera en el cofre temporal hasta resolverla o vencer sus 24 h.',
+                    )}
                   </small>
                 </div>
               </div>
@@ -358,8 +375,8 @@ export function OnlinePanel({
           >
             <ObjectDialogContent
               className="online-object-dialog"
-              title="Revancha"
-              description="Guerra de los cofres"
+              title={translateText('Revancha')}
+              description={translateText('Guerra de los cofres')}
               onClose={() => setPanel(null)}
             >
               <div className={styles.online}>
@@ -369,51 +386,55 @@ export function OnlinePanel({
                     data-object="revenge"
                     aria-hidden="true"
                   />
-                  <h2>Cofre temporal de revancha</h2>
+                  <h2>{translateText('Cofre temporal de revancha')}</h2>
                   {view.loot?.length ? (
                     view.loot.map((l) => (
                       <article key={l.id} className={styles.event}>
                         <strong>
-                          {l.incoming ? 'Robaste a' : 'Te atacó'} {l.opponent}
+                          {translateText(l.incoming ? 'Robaste a' : 'Te atacó')}{' '}
+                          {l.opponent}
                         </strong>
                         <span>
-                          {l.amount} Chispas ·{' '}
-                          {l.status === 'held'
-                            ? 'Revancha disponible hasta ' +
-                              new Date(l.releaseAt).toLocaleString()
-                            : l.status === 'recovered'
-                              ? 'Al defensor: ' +
-                                l.recovered +
-                                ' · Al atacante: ' +
-                                (l.amount - l.recovered)
-                              : 'Aseguradas en el cofre del atacante'}
+                          {l.amount}
+                          {translateText(' Chispas ·')}
+                          {translateText(' ')}
+                          {translateText(
+                            l.status === 'held'
+                              ? 'Revancha disponible hasta ' +
+                                  new Date(l.releaseAt).toLocaleString(locale)
+                              : l.status === 'recovered'
+                                ? 'Al defensor: ' +
+                                  l.recovered +
+                                  ' · Al atacante: ' +
+                                  (l.amount - l.recovered)
+                                : 'Aseguradas en el cofre del atacante',
+                          )}
                         </span>
                         {l.canRevenge ? (
                           <button
                             data-object="revenge"
-                            data-label="Revancha"
+                            data-label={translateText('Revancha')}
                             disabled={busy || p.locked}
                             onClick={() =>
                               void act({ action: 'revenge', lootId: l.id })
                             }
                           >
-                            Contraatacar · una oportunidad
+                            {translateText('Contraatacar · una oportunidad')}
                           </button>
                         ) : null}
                       </article>
                     ))
                   ) : (
                     <p>
-                      Aquí aparecerán tus botines y las oportunidades de
-                      revancha.
+                      {translateText(
+                        'Aquí aparecerán tus botines y las oportunidades de revancha.',
+                      )}
                     </p>
                   )}
                   <small>
-                    Puedes vengarte aunque tu cofre haya quedado vacío. Atacas
-                    la defensa que tenía el rival cuando te robó. Con 100 de
-                    salud recuperas todo; con 80, el 80 %. Lo recuperado va a tu
-                    cofre y el resto al del atacante. El saldo temporal no suma
-                    al ranking.
+                    {translateText(
+                      'Puedes vengarte aunque tu cofre haya quedado vacío. Atacas la defensa que tenía el rival cuando te robó. Con 100 de salud recuperas todo; con 80, el 80 %. Lo recuperado va a tu cofre y el resto al del atacante. El saldo temporal no suma al ranking.',
+                    )}
                   </small>
                 </div>
               </div>
@@ -427,20 +448,23 @@ export function OnlinePanel({
           >
             <ObjectDialogContent
               className="online-object-dialog"
-              title="Actividad"
-              description="Guerra de los cofres"
+              title={translateText('Actividad')}
+              description={translateText('Guerra de los cofres')}
               onClose={() => setPanel(null)}
             >
               <div className={styles.online}>
                 <div className={styles.card}>
-                  <h2>Clasificación de cofres</h2>
+                  <h2>{translateText('Clasificación de cofres')}</h2>
                   <p>
-                    Tu puesto: {p.rank ? `#${p.rank}` : 'sin clasificar'}. Solo
-                    cuenta el saldo asegurado del cofre.
+                    {translateText('Tu puesto: ')}
+                    {translateText(p.rank ? `#${p.rank}` : 'sin clasificar')}
+                    {translateText(
+                      '. Solo cuenta el saldo asegurado del cofre.',
+                    )}
                   </p>
                   <ol
                     className="league-ranking"
-                    aria-label="Ranking de Chispas aseguradas"
+                    aria-label={translateText('Ranking de Chispas aseguradas')}
                   >
                     {view.ranking?.map((entry) => (
                       <li
@@ -449,60 +473,70 @@ export function OnlinePanel({
                       >
                         <b>#{entry.rank}</b>
                         <span>{entry.name}</span>
-                        <strong aria-label={`${entry.chest} Chispas`}>
+                        <strong
+                          aria-label={translateText(`${entry.chest} Chispas`)}
+                        >
                           ✦ {entry.chest}
                         </strong>
                       </li>
                     ))}
                   </ol>
-                  <h2>Últimos combates</h2>
+                  <h2>{translateText('Últimos combates')}</h2>
                   <button
                     disabled={busy}
                     data-object="retry"
-                    data-label="Actualizar"
+                    data-label={translateText('Actualizar')}
                     onClick={() => void refresh()}
                   >
-                    Actualizar
+                    {translateText('Actualizar')}
                   </button>
                   {view.history?.length ? (
                     view.history.map((m) => (
                       <article key={m.id} className={styles.event}>
                         <strong>
-                          {m.attacking ? 'Atacaste a' : 'Te atacó'} {m.opponent}
+                          {translateText(
+                            m.attacking ? 'Atacaste a' : 'Te atacó',
+                          )}{' '}
+                          {m.opponent}
                         </strong>
                         <span>
-                          {m.kind === 'revenge' ? 'Revancha' : 'Incursión'} ·{' '}
-                          {{
-                            pending: 'En curso',
-                            won: 'Cofre alcanzado',
-                            lost: 'Sin botín',
-                            expired: 'Tiempo agotado',
-                            abandoned: 'Abandonado',
-                          }[m.status] ?? m.status}{' '}
-                          · {m.amount} Chispas
+                          {translateText(
+                            m.kind === 'revenge' ? 'Revancha' : 'Incursión',
+                          )}{' '}
+                          ·{translateText(' ')}
+                          {translateText(
+                            {
+                              pending: 'En curso',
+                              won: 'Cofre alcanzado',
+                              lost: 'Sin botín',
+                              expired: 'Tiempo agotado',
+                              abandoned: 'Abandonado',
+                            }[m.status] ?? m.status,
+                          )}
+                          {translateText(' ')}· {m.amount}
+                          {translateText(' Chispas')}
                         </span>
                         {m.hasReplay ? (
                           <button
                             disabled={busy}
                             data-object="play"
-                            data-label="Repetición"
+                            data-label={translateText('Repetición')}
                             onClick={() => void watchReplay(m.id)}
                           >
-                            Ver repetición
+                            {translateText('Ver repetición')}
                           </button>
                         ) : null}
                       </article>
                     ))
                   ) : (
-                    <p>Todavía no hay ataques.</p>
+                    <p>{translateText('Todavía no hay ataques.')}</p>
                   )}
                   <details className="online-guide">
-                    <summary>Cómo funciona</summary>
+                    <summary>{translateText('Cómo funciona')}</summary>
                     <p className={styles.muted}>
-                      Historia aporta premios online por mejora; Práctica, por
-                      la mejor victoria de cada pista al día. Se validan al
-                      abrir Online. Las compras locales siguen usando el saldo
-                      del dispositivo durante esta beta.
+                      {translateText(
+                        'Historia aporta premios online por mejora; Práctica, por la mejor victoria de cada pista al día. Se validan al abrir Online. Las compras locales siguen usando el saldo del dispositivo durante esta beta.',
+                      )}
                     </p>
                   </details>
                 </div>

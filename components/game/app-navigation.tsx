@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { Home, Castle, Play, Save, Pencil } from 'lucide-react';
 import styles from './app-navigation.module.css';
 export type AppScreen = 'home' | 'vault' | 'shop' | 'axie' | 'online';
@@ -15,6 +18,7 @@ export function AppNavigation({
     disabled?: boolean;
   };
 }) {
+  useLocale();
   const entries = [
     { id: 'home', label: 'Jugar', Icon: Home },
     {
@@ -30,7 +34,10 @@ export function AppNavigation({
     },
   ] as const;
   return (
-    <nav className={styles.bar} aria-label="Navegación principal">
+    <nav
+      className={styles.bar}
+      aria-label={translateText('Navegación principal')}
+    >
       {entries.map(({ id, label, Icon }) => (
         <button
           key={id}
@@ -45,9 +52,9 @@ export function AppNavigation({
                     ? 'edit'
                     : 'play'
           }
-          data-label={label}
+          data-label={translateText(label)}
           data-frame="true"
-          aria-label={label}
+          aria-label={translateText(label)}
           className={active === id ? styles.active : ''}
           aria-current={active === id ? 'page' : undefined}
           disabled={id === 'vault' && vaultAction?.disabled}
@@ -58,7 +65,7 @@ export function AppNavigation({
           }
         >
           <Icon size={23} />
-          <span>{label}</span>
+          <span>{translateText(label)}</span>
         </button>
       ))}
     </nav>

@@ -1,4 +1,8 @@
 'use client';
+import { LanguageSelector } from './language-selector';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { mountGameAudio, setMusicScene } from '@/lib/game/audio';
 import { queueCloudSave, restoreCloud } from '@/lib/online/cloud-client';
 import { syncStarterProfile } from '@/lib/game/mobile-profile';
@@ -64,6 +68,7 @@ const layoutExamples = [
   ...new Map(courses.map((c) => [c.level.layoutId ?? c.level.id, c])).values(),
 ];
 export default function MobileApp() {
+  useLocale();
   const [profile, setProfile] = useState<MobileProfile>(newProfile),
     [ready, setReady] = useState(false),
     [screen, setScreen] = useState<AppScreen>('home'),
@@ -337,7 +342,7 @@ export default function MobileApp() {
         <button
           onClick={() => setScreen('home')}
           className="m-brand"
-          aria-label="Axie Vault Raiders inicio"
+          aria-label={translateText('Axie Vault Raiders inicio')}
         >
           <span
             className="brand-emblem"
@@ -347,22 +352,24 @@ export default function MobileApp() {
             <Image
               unoptimized
               src="/favicon.svg"
-              alt=""
+              alt={''}
               width="64"
               height="64"
             />
           </span>
           <span className="brand-name">
-            AXIE<small>VAULT RAIDERS</small>
+            {translateText('AXIE')}
+            <small>{translateText('VAULT RAIDERS')}</small>
           </span>
           <span className="brand-dot" />
         </button>
         <div className="m-account">
+          <LanguageSelector />
           <div
             className="m-balance"
             data-object="balance"
-            data-value={String(profile.chispas)}
-            aria-label={`${profile.chispas} Chispas`}
+            data-value={translateText(String(profile.chispas))}
+            aria-label={translateText(`${profile.chispas} Chispas`)}
           >
             <Sparkles size={17} aria-hidden="true" />
             {profile.chispas}
@@ -371,13 +378,13 @@ export default function MobileApp() {
             <button
               className="m-axie-shortcut"
               data-object="axie"
-              data-label="Mi Axie"
+              data-label={translateText('Mi Axie')}
               onClick={() => setScreen(screen === 'axie' ? 'home' : 'axie')}
-              aria-label="Mi Axie"
+              aria-label={translateText('Mi Axie')}
               aria-current={screen === 'axie' ? 'page' : undefined}
             >
               <Sparkles size={24} aria-hidden="true" />
-              <span>Mi Axie</span>
+              <span>{translateText('Mi Axie')}</span>
             </button>
           )}
         </div>
@@ -385,14 +392,21 @@ export default function MobileApp() {
       <div className="m-content">
         {screen === 'home' ? (
           <>
-            <section className="home-actions" aria-label="Jugar y personalizar">
+            <section
+              className="home-actions"
+              aria-label={translateText('Jugar y personalizar')}
+            >
               <div className="home-mode-rail home-main-modes">
                 <button
                   className="home-mode home-mode-story"
                   data-object="path"
-                  data-label="Historia"
-                  data-caption={`${storyUnlocked(profile.story)}/${STORY_LENGTH}`}
-                  aria-label={`Historia ${storyUnlocked(profile.story)} de ${STORY_LENGTH}`}
+                  data-label={translateText('Historia')}
+                  data-caption={translateText(
+                    `${storyUnlocked(profile.story)}/${STORY_LENGTH}`,
+                  )}
+                  aria-label={translateText(
+                    `Historia ${storyUnlocked(profile.story)} de ${STORY_LENGTH}`,
+                  )}
                   onClick={() => setStoryOpen(true)}
                   disabled={!ready}
                 >
@@ -402,40 +416,46 @@ export default function MobileApp() {
                       {storyUnlocked(profile.story)}/{STORY_LENGTH}
                     </span>
                   </span>
-                  <span className="home-mode-label">Historia</span>
+                  <span className="home-mode-label">
+                    {translateText('Historia')}
+                  </span>
                 </button>
                 <button
                   className="home-mode home-mode-online"
                   data-object="swords"
-                  data-label="Online"
-                  aria-label="Online"
+                  data-label={translateText('Online')}
+                  aria-label={translateText('Online')}
                   onClick={() => setScreen('online')}
                   disabled={!ready}
                 >
                   <span className="home-mode-icon" aria-hidden="true">
                     <Swords size={26} />
                   </span>
-                  <span className="home-mode-label">Online</span>
+                  <span className="home-mode-label">
+                    {translateText('Online')}
+                  </span>
                 </button>
                 <button
                   className="home-mode"
                   data-object="training"
-                  data-label="Práctica"
-                  aria-label="Práctica"
+                  data-label={translateText('Práctica')}
+                  aria-label={translateText('Práctica')}
                   onClick={() => setRoomsOpen(true)}
                   disabled={!ready}
                 >
                   <span className="home-mode-icon" aria-hidden="true">
                     <Dumbbell size={26} />
                   </span>
-                  <span className="home-mode-label">Práctica</span>
+                  <span className="home-mode-label">
+                    {translateText('Práctica')}
+                  </span>
                 </button>
               </div>
               <div className="home-mode-rail">
                 {shared ? (
                   <button
                     className="home-mode home-mode-shared"
-                    aria-label="Reto"
+                    aria-label={translateText('Reto')}
                     onClick={() =>
                       launch({ ...shared, mode: 'shared', axie: profile.axie })
                     }
@@ -443,7 +463,9 @@ export default function MobileApp() {
                     <span className="home-mode-icon" aria-hidden="true">
                       <Link2 size={26} />
                     </span>
-                    <span className="home-mode-label">Reto</span>
+                    <span className="home-mode-label">
+                      {translateText('Reto')}
+                    </span>
                   </button>
                 ) : null}
               </div>
@@ -465,8 +487,12 @@ export default function MobileApp() {
           <>
             {profile.guardianCount === 2 ? (
               <div className="guardian-switch">
-                <button onClick={() => setActiveDefender(0)}>Guardián 1</button>
-                <button onClick={() => setActiveDefender(1)}>Guardián 2</button>
+                <button onClick={() => setActiveDefender(0)}>
+                  {translateText('Guardián 1')}
+                </button>
+                <button onClick={() => setActiveDefender(1)}>
+                  {translateText('Guardián 2')}
+                </button>
               </div>
             ) : null}
             <AxieRoom
@@ -480,8 +506,11 @@ export default function MobileApp() {
       </div>
       {notice ? (
         <output className="m-toast">
-          <span>{notice}</span>
-          <button onClick={() => setNotice('')} aria-label="Cerrar aviso">
+          <span>{translateText(notice)}</span>
+          <button
+            onClick={() => setNotice('')}
+            aria-label={translateText('Cerrar aviso')}
+          >
             ×
           </button>
         </output>
@@ -493,22 +522,25 @@ export default function MobileApp() {
       <Dialog open={roomsOpen} onOpenChange={setRoomsOpen}>
         <ObjectDialogContent
           className="practice-object-dialog"
-          title="Práctica"
-          description="Elige un portal · Axie y poderes aleatorios"
+          title={translateText('Práctica')}
+          description={translateText(
+            'Elige un portal · Axie y poderes aleatorios',
+          )}
           onClose={() => setRoomsOpen(false)}
         >
           <button
             className="practice-random"
             data-object="training"
-            data-label="Aleatoria"
+            data-label={translateText('Aleatoria')}
             onClick={() => practice()}
             disabled={!ready}
           >
-            <Play size={17} /> Sala aleatoria
+            <Play size={17} />
+            {translateText(' Sala aleatoria')}
           </button>
           <div className="practice-portals">
             <ObjectMenu
-              label="Portales de práctica"
+              label={translateText('Portales de práctica')}
               actions={layoutExamples.map(({ level }) => ({
                 id: level.layoutId ?? level.id,
                 label:
@@ -535,9 +567,13 @@ export default function MobileApp() {
       </Dialog>
       <Dialog open={storyOpen} onOpenChange={setStoryOpen}>
         <DialogContent className="story-world-dialog" showCloseButton={false}>
-          <DialogTitle className="sr-only">Camino de Lunacia</DialogTitle>
+          <DialogTitle className="sr-only">
+            {translateText('Camino de Lunacia')}
+          </DialogTitle>
           <DialogDescription className="sr-only">
-            Explora las cinco zonas, elige una mazmorra y recupera sus Chispas.
+            {translateText(
+              'Explora las cinco zonas, elige una mazmorra y recupera sus Chispas.',
+            )}
           </DialogDescription>
           <StoryMap
             onClose={() => setStoryOpen(false)}
@@ -569,8 +605,8 @@ export default function MobileApp() {
       >
         <ObjectDialogContent
           className="power-detail"
-          title={part?.name ?? 'Poder'}
-          description={part?.card ?? 'Axie Classic'}
+          title={translateText(part?.name ?? 'Poder')}
+          description={translateText(part?.card ?? 'Axie Classic')}
           onClose={() => setInspect(null)}
         >
           {part ? (
@@ -580,23 +616,23 @@ export default function MobileApp() {
                 src={part.partImage}
                 width={120}
                 height={90}
-                alt={part.name}
+                alt={translateText(part.name)}
               />
-              <h3>Axie Classic</h3>
-              <p>{part.original}</p>
-              <h3>En tu mazmorra</h3>
-              <p>{raidPowerDescription(part.id)}</p>
+              <h3>{translateText('Axie Classic')}</h3>
+              <p>{translateText(part.original)}</p>
+              <h3>{translateText('En tu mazmorra')}</h3>
+              <p>{translateText(raidPowerDescription(part.id))}</p>
               <p className="m-footnote">
-                En este modo, cualquier contacto dañino reinicia el intento y
-                resta 20 de salud. Los efectos de combate posteriores a un golpe
-                no se acumulan. La defensa permanece visible entre ataques.
+                {translateText(
+                  'En este modo, cualquier contacto dañino reinicia el intento y resta 20 de salud. Los efectos de combate posteriores a un golpe no se acumulan. La defensa permanece visible entre ataques.',
+                )}
               </p>
               <a
                 href="https://classic.axieinfinity.com/explorer/cards"
                 target="_blank"
                 rel="noreferrer"
               >
-                Consultar carta oficial ↗
+                {translateText('Consultar carta oficial ↗')}
               </a>
             </>
           ) : null}

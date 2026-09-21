@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useEffect, useRef, useState } from 'react';
 import type { Trap } from '@/lib/game/physics';
 export function AxiePreview({
@@ -14,6 +17,7 @@ export function AxiePreview({
   traps: Trap[];
   validated: boolean;
 }) {
+  useLocale();
   const host = useRef<HTMLDivElement>(null),
     [status, setStatus] = useState('Preparando tu refugio…');
   const balanceUpdater = useRef<((amount: number | null) => void) | null>(null);
@@ -67,10 +71,10 @@ export function AxiePreview({
         if (host.current)
           host.current.setAttribute(
             'aria-label',
-            'Tu Axie y cofre: ' +
+            translateText('Tu Axie y cofre: ') +
               (amount === null
-                ? 'saldo no disponible'
-                : amount + ' Chispas cargadas'),
+                ? translateText('saldo no disponible')
+                : translateText(amount + ' Chispas cargadas')),
           );
       } catch {
         if (!abort.signal.aborted) balanceUpdater.current?.(null);
@@ -93,9 +97,11 @@ export function AxiePreview({
     <div
       className="refuge-backdrop"
       ref={host}
-      aria-label="Tu Axie animado en tu refugio personal"
+      aria-label={translateText('Tu Axie animado en tu refugio personal')}
     >
-      {status ? <span className="refuge-loading">{status}</span> : null}
+      {status ? (
+        <span className="refuge-loading">{translateText(status)}</span>
+      ) : null}
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { t } from '../i18n/translate';
 import { createGameplayHaptics, createGamepadControls, stopHaptics } from './haptics';
 import { EMOTES, EMOTE_COOLDOWN, emoteTime, visibleEmote, type EmoteEvent } from './emotes';
 import { RaidPlayback } from './raid-playback';
@@ -32,7 +33,7 @@ export function createEngine(host: HTMLElement, onState: (s: GameState) => void,
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.5;
-  renderer.domElement.setAttribute('aria-label', 'Mazmorra 3D. Espacio o clic para saltar; P para pausar; R para reintentar.');
+  renderer.domElement.setAttribute('aria-label', t('Mazmorra 3D. Espacio o clic para saltar; P para pausar; R para reintentar.'));
   renderer.domElement.tabIndex=0; host.appendChild(renderer.domElement);
   const scene = new THREE.Scene(); scene.fog = new THREE.FogExp2(0x0c191d, 0.018);
   const camera = new THREE.OrthographicCamera(-13, 13, 7.5, -7.5, 0.1, 100);

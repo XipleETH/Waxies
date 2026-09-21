@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useState, useSyncExternalStore } from 'react';
 import {
   hapticsEnabled,
@@ -20,6 +23,7 @@ const messages: Record<HapticResult, string> = {
   suppressed: 'Hay otra vibración en curso. Vuelve a probar.',
 };
 export function HapticToggle() {
+  useLocale();
   const enabled = useSyncExternalStore(
     subscribeHaptics,
     hapticsEnabled,
@@ -32,42 +36,50 @@ export function HapticToggle() {
       <button
         className="haptic-toggle"
         data-object="haptics"
-        data-label={enabled ? 'Vibración' : 'Sin vibrar'}
-        aria-label="Configurar vibración"
+        data-label={translateText(enabled ? 'Vibración' : 'Sin vibrar')}
+        aria-label={translateText('Configurar vibración')}
         onClick={() => setOpen(true)}
       >
-        Vibración
+        {translateText('Vibración')}
       </button>
       <Dialog open={open} onOpenChange={setOpen}>
         <ObjectDialogContent
-          title="Vibración"
-          description="Teléfono y mando"
+          title={translateText('Vibración')}
+          description={translateText('Teléfono y mando')}
           onClose={() => setOpen(false)}
         >
-          <p>Saltos, golpes, victorias, mapa y encuentros online.</p>
+          <p>
+            {translateText(
+              'Saltos, golpes, victorias, mapa y encuentros online.',
+            )}
+          </p>
           <button
             data-object="haptics"
-            data-label={enabled ? 'Activada' : 'Desactivada'}
-            aria-label="Activar vibración"
+            data-label={translateText(enabled ? 'Activada' : 'Desactivada')}
+            aria-label={translateText('Activar vibración')}
             aria-pressed={enabled}
             onClick={() => {
               setHapticsEnabled(!enabled);
               setResult(null);
             }}
           >
-            {enabled ? 'Desactivar vibración' : 'Activar vibración'}
+            {translateText(
+              enabled ? 'Desactivar vibración' : 'Activar vibración',
+            )}
           </button>
           <button
             data-object="play"
-            data-label="Probar"
+            data-label={translateText('Probar')}
             onClick={() => setResult(testHaptics())}
           >
-            Activar y probar vibración
+            {translateText('Activar y probar vibración')}
           </button>
           <output aria-live="polite">
-            {result
-              ? messages[result]
-              : 'Pulsa Probar para activar la vibración y sentir dos pulsos largos.'}
+            {translateText(
+              result
+                ? messages[result]
+                : 'Pulsa Probar para activar la vibración y sentir dos pulsos largos.',
+            )}
           </output>
         </ObjectDialogContent>
       </Dialog>

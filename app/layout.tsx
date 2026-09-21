@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   icons: { icon: '/favicon.svg' },
   manifest: '/manifest.webmanifest',
   description:
-    'Asalta las ruinas de Lunacia. Torres verticales con Axies, trampas de Axie Classic y Chispas para decorar tu refugio.',
+    'Raid the ruins of Lunacia. Vertical dungeons, Axie Classic powers and Sparks to customize your refuge. Play in English or Spanish.',
 };
 export const viewport: Viewport = {
   width: 'device-width',
@@ -27,7 +27,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className="dark">
+    <html lang="en" className="dark">
       <body
         className={`${geist.variable} ${mono.variable} ${display.variable}`}
       >

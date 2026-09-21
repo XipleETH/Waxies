@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Pause, Play, X } from 'lucide-react';
 import { STORY_PANELS } from '@/lib/game/story-narrative';
@@ -14,6 +17,7 @@ export function StoryIntro({
   onFinish: () => void;
   onClose: () => void;
 }) {
+  useLocale();
   const [panel, setPanel] = useState(0),
     [paused, setPaused] = useState(false),
     [status, setStatus] = useState('Preparando la escena…');
@@ -67,62 +71,77 @@ export function StoryIntro({
   return (
     <main
       className={styles.intro}
-      aria-label="La guerra de los cofres"
+      aria-label={translateText('La guerra de los cofres')}
       data-paused={paused}
     >
       <header className={styles.top}>
-        <button onClick={onClose} aria-label="Cerrar historia">
+        <button onClick={onClose} aria-label={translateText('Cerrar historia')}>
           <X size={20} />
         </button>
-        <span>CRÓNICAS DE LUNACIA</span>
-        <button onClick={onFinish}>{replay ? 'Cerrar' : 'Saltar'}</button>
+        <span>{translateText('CRÓNICAS DE LUNACIA')}</span>
+        <button onClick={onFinish}>
+          {translateText(replay ? 'Cerrar' : 'Omitir')}
+        </button>
       </header>
       <div className={styles.stage}>
-        <figure className={styles.canvas} ref={host} aria-label={page.scene} />
+        <figure
+          className={styles.canvas}
+          ref={host}
+          aria-label={translateText(page.scene)}
+        />
         <span className={styles.issue}>
-          AXIE VAULT RAIDERS <b>№ 01</b>
+          {translateText('AXIE VAULT RAIDERS ')}
+          <b>№ 01</b>
         </span>
         <span key={panel} className={styles.whisper} aria-hidden="true">
-          {page.whisper}
+          {translateText(page.whisper)}
         </span>
-        {status ? <output className={styles.status}>{status}</output> : null}
+        {status ? (
+          <output className={styles.status}>{translateText(status)}</output>
+        ) : null}
         <button
           className={styles.motion}
           onClick={() => setPaused((v) => !v)}
-          aria-label={paused ? 'Reanudar animación' : 'Pausar animación'}
+          aria-label={translateText(
+            paused ? 'Reanudar animación' : 'Pausar animación',
+          )}
         >
           {paused ? <Play size={16} /> : <Pause size={16} />}
         </button>
-        <span className={styles.resources}>SLP · AXS · RON</span>
+        <span className={styles.resources}>
+          {translateText('SLP · AXS · RON')}
+        </span>
       </div>
       <section className={styles.caption}>
         <div
           className={styles.progress}
-          aria-label={`Escena ${panel + 1} de ${STORY_PANELS.length}`}
+          aria-label={translateText(
+            `Escena ${panel + 1} de ${STORY_PANELS.length}`,
+          )}
         >
           {STORY_PANELS.map((p, i) => (
             <button
               key={p.tag}
               onClick={() => setPanel(i)}
-              aria-label={`Escena ${i + 1}: ${p.title}`}
+              aria-label={translateText(`Escena ${i + 1}: ${p.title}`)}
               aria-current={i === panel ? 'step' : undefined}
               className={i <= panel ? styles.read : ''}
             />
           ))}
         </div>
         <div className={styles.copy} key={panel}>
-          <span className={styles.tag}>{page.tag}</span>
+          <span className={styles.tag}>{translateText(page.tag)}</span>
           <h1 ref={heading} tabIndex={-1}>
-            {page.title}
+            {translateText(page.title)}
           </h1>
-          <p>{page.text}</p>
+          <p>{translateText(page.text)}</p>
         </div>
         <div className={styles.controls}>
           <button
             className={styles.back}
             disabled={panel === 0}
             onClick={() => setPanel((p) => p - 1)}
-            aria-label="Escena anterior"
+            aria-label={translateText('Escena anterior')}
           >
             <ArrowLeft size={20} />
           </button>
@@ -130,16 +149,20 @@ export function StoryIntro({
             className={styles.next}
             onClick={() => (last ? onFinish() : setPanel((p) => p + 1))}
           >
-            {last
-              ? replay
-                ? 'Volver a capítulos'
-                : 'Entrar a la mazmorra'
-              : 'Continuar'}
+            {translateText(
+              last
+                ? replay
+                  ? 'Volver a capítulos'
+                  : 'Entrar a la mazmorra'
+                : 'Continuar',
+            )}
             <ArrowRight size={19} />
           </button>
         </div>
         <small className={styles.note}>
-          Relato de Axie Vault Raiders · En la partida ganas Chispas.
+          {translateText(
+            'Relato de Axie Vault Raiders · En la partida ganas Chispas.',
+          )}
         </small>
       </section>
     </main>

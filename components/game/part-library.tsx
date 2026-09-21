@@ -1,4 +1,8 @@
 'use client';
+import { raidPowerDescription } from '@/lib/game/raid-powers';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { ArrowUpRight, LockKeyhole, Search } from 'lucide-react';
@@ -26,6 +30,7 @@ export function PartLibrary({
   onInspect: (id: PartId) => void;
   available: PartId[];
 }) {
+  const locale = useLocale();
   const [query, setQuery] = useState(''),
     [cl, setCl] = useState('all'),
     [slot, setSlot] = useState('all'),
@@ -38,12 +43,18 @@ export function PartLibrary({
         (p) =>
           (cl === 'all' || p.class.toLowerCase() === cl) &&
           (slot === 'all' || p.slotId === slot) &&
-          [p.name, p.card, p.original, p.arcade]
+          [
+            p.name,
+            p.card,
+            p.original,
+            p.arcade,
+            raidPowerDescription(p.id, locale),
+          ]
             .join(' ')
             .toLowerCase()
             .includes(query.toLowerCase()),
       ),
-    [query, cl, slot],
+    [query, cl, slot, locale],
   );
   const bodies = useMemo(
     () =>
@@ -59,8 +70,8 @@ export function PartLibrary({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <ObjectDialogContent
         className="catalog-dialog"
-        title="Poderes"
-        description="Elige una pieza para conocer su poder."
+        title={translateText('Poderes')}
+        description={translateText('Elige una pieza para conocer su poder.')}
         onClose={() => onOpenChange(false)}
       >
         <div className="object-catalog-toolbar">
@@ -76,23 +87,28 @@ export function PartLibrary({
               <TabsTrigger
                 value="cards"
                 data-object="powers"
-                data-label="Poderes"
+                data-label={translateText('Poderes')}
               >
-                132 poderes
+                {translateText('132 poderes')}
               </TabsTrigger>
-              <TabsTrigger value="body" data-object="axie" data-label="Piezas">
-                Todas las piezas
+              <TabsTrigger
+                value="body"
+                data-object="axie"
+                data-label={translateText('Piezas')}
+              >
+                {translateText('Todas las piezas')}
               </TabsTrigger>
             </TabsList>
           </Tabs>
           <button
             className="arsenal-search-toggle"
             data-object="search"
-            data-label="Buscar"
+            data-label={translateText('Buscar')}
             onClick={() => setFilters((v) => !v)}
             aria-expanded={filters}
           >
-            <Search size={16} /> Buscar
+            <Search size={16} />
+            {translateText(' Buscar')}
           </button>
         </div>
         {filters ? (
@@ -100,8 +116,8 @@ export function PartLibrary({
             <div className="catalog-search">
               <Search size={16} />
               <Input
-                aria-label="Buscar parte o habilidad"
-                placeholder="Parte, carta o efecto…"
+                aria-label={translateText('Buscar parte o habilidad')}
+                placeholder={translateText('Parte, carta o efecto…')}
                 value={query}
                 onChange={(e) => {
                   setQuery(e.target.value);
@@ -116,15 +132,17 @@ export function PartLibrary({
                 setLimit(24);
               }}
             >
-              <SelectTrigger aria-label="Filtrar por clase">
+              <SelectTrigger aria-label={translateText('Filtrar por clase')}>
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Todas las clases</SelectItem>
+                <SelectItem value="all">
+                  {translateText('Todas las clases')}
+                </SelectItem>
                 {['beast', 'aquatic', 'plant', 'bird', 'bug', 'reptile'].map(
                   (c) => (
                     <SelectItem key={c} value={c}>
-                      {c[0].toUpperCase() + c.slice(1)}
+                      {translateText(c[0].toUpperCase() + c.slice(1))}
                     </SelectItem>
                   ),
                 )}
@@ -137,11 +155,13 @@ export function PartLibrary({
                 setLimit(24);
               }}
             >
-              <SelectTrigger aria-label="Filtrar por pieza">
+              <SelectTrigger aria-label={translateText('Filtrar por pieza')}>
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Todas las piezas</SelectItem>
+                <SelectItem value="all">
+                  {translateText('Todas las piezas')}
+                </SelectItem>
                 {Object.entries({
                   mouth: 'Boca',
                   horn: 'Cuerno',
@@ -150,7 +170,7 @@ export function PartLibrary({
                   ...(tab === 'body' ? { eyes: 'Ojos', ears: 'Orejas' } : {}),
                 }).map(([id, label]) => (
                   <SelectItem key={id} value={id}>
-                    {label}
+                    {translateText(label)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -158,11 +178,15 @@ export function PartLibrary({
           </div>
         ) : null}
         <div className="catalog-count">
-          {tab === 'cards' ? cards.length : bodies.length} resultados{' '}
+          {tab === 'cards' ? cards.length : bodies.length}
+          {translateText(' resultados')}
+          {translateText(' ')}
           <span>
-            {tab === 'cards'
-              ? 'Los candados indican partes ajenas al Axie cargado.'
-              : 'Ojos y orejas no generan trampas en Classic.'}
+            {translateText(
+              tab === 'cards'
+                ? 'Los candados indican partes ajenas al Axie cargado.'
+                : 'Ojos y orejas no generan trampas en Classic.',
+            )}
           </span>
         </div>
         <div className="catalog-scroll" data-object-scroll>
@@ -183,20 +207,23 @@ export function PartLibrary({
                         src={p.partImage}
                         width={100}
                         height={80}
-                        alt=""
+                        alt={''}
                       />
                       {!available.includes(p.id) ? (
                         <LockKeyhole size={15} />
                       ) : null}
                     </div>
-                    <strong data-object="title" data-label={p.name}>
-                      {p.name}
+                    <strong
+                      data-object="title"
+                      data-label={translateText(p.name)}
+                    >
+                      {translateText(p.name)}
                     </strong>
                     <span>
-                      {p.slot} · {p.class}
+                      {translateText(p.slot)} · {translateText(p.class)}
                     </span>
-                    <b>{p.card}</b>
-                    <small>{p.short}</small>
+                    <b>{translateText(p.card)}</b>
+                    <small>{translateText(p.short)}</small>
                   </button>
                 ))
               : bodies.slice(0, limit).map((p) => (
@@ -211,36 +238,40 @@ export function PartLibrary({
                           src={p.image}
                           width={100}
                           height={80}
-                          alt=""
+                          alt={''}
                         />
                       ) : (
-                        <span>Arte no disponible</span>
+                        <span>{translateText('Arte no disponible')}</span>
                       )}
                     </div>
-                    <strong>{p.name}</strong>
+                    <strong>{translateText(p.name)}</strong>
                     <span>
-                      {p.slot} · {p.class}
+                      {translateText(p.slot)} · {translateText(p.class)}
                     </span>
                     <small>
-                      {p.standard ? 'Estándar' : 'Variante cosmética'}
-                      {p.cardId ? ' · Carta base' : ' · Sin carta'}
+                      {translateText(
+                        p.standard ? 'Estándar' : 'Variante cosmética',
+                      )}
+                      {translateText(
+                        p.cardId ? ' · Carta base' : ' · Sin carta',
+                      )}
                     </small>
                   </article>
                 ))}
           </div>
           {(tab === 'cards' ? cards.length : bodies.length) === 0 ? (
             <p className="catalog-empty">
-              No hay piezas que coincidan con esos filtros.
+              {translateText('No hay piezas que coincidan con esos filtros.')}
             </p>
           ) : null}
           {(tab === 'cards' ? cards.length : bodies.length) > limit ? (
             <button
               className="secondary-button catalog-more"
               data-object="next"
-              data-label="Más"
+              data-label={translateText('Más')}
               onClick={() => setLimit((n) => n + 24)}
             >
-              Mostrar 24 más
+              {translateText('Mostrar 24 más')}
             </button>
           ) : null}
         </div>
@@ -250,7 +281,8 @@ export function PartLibrary({
           target="_blank"
           rel="noreferrer"
         >
-          Investigación completa y reglas de adaptación{' '}
+          {translateText('Investigación completa y reglas de adaptación')}
+          {translateText(' ')}
           <ArrowUpRight size={14} />
         </a>
       </ObjectDialogContent>

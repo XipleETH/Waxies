@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { MOTION_LABELS } from '@/lib/game/trap-motion';
 import { isLineMouth } from '@/lib/game/mouth-relief';
 import { useEffect, useRef, useState, type PointerEvent } from 'react';
@@ -59,6 +62,7 @@ export function LiveVault({
   shopOpen: boolean;
   onShopChange: (open: boolean) => void;
 }) {
+  useLocale();
   const host = useRef<HTMLDivElement>(null),
     engine = useRef<Engine | null>(null),
     latest = useRef(profile),
@@ -524,7 +528,7 @@ export function LiveVault({
   return (
     <main
       className={styles.stage}
-      aria-label="Refugio interactivo"
+      aria-label={translateText('Refugio interactivo')}
       data-vault-objects
     >
       <GameObjects />
@@ -538,7 +542,10 @@ export function LiveVault({
       >
         {loaded && mode === 'edit' ? (
           <div className={styles.overlay}>
-            <div className={styles.tray} aria-label="Cuatro poderes">
+            <div
+              className={styles.tray}
+              aria-label={translateText('Cuatro poderes')}
+            >
               {BATTLE_SLOTS.map((slot, anchor) => {
                 const card =
                   traps.find((t) => t.anchor === anchor) ??
@@ -546,7 +553,9 @@ export function LiveVault({
                 return (
                   <button
                     key={slot}
-                    aria-label={'Colocar ' + PARTS[card.part].name}
+                    aria-label={translateText(
+                      'Colocar ' + PARTS[card.part].name,
+                    )}
                     aria-pressed={selected === anchor}
                     onClick={() => setSelected(anchor)}
                     onPointerDown={(e) => startDrag(e, card)}
@@ -572,17 +581,17 @@ export function LiveVault({
                         src={PARTS[card.part].partImage}
                         width={42}
                         height={42}
-                        alt=""
+                        alt={''}
                       />
                     )}
                     <span
                       className={styles.powerStand}
                       data-object="pedestal"
-                      data-label={PARTS[card.part].name}
+                      data-label={translateText(PARTS[card.part].name)}
                       aria-pressed={selected === anchor}
                       data-placed={traps.some((t) => t.anchor === anchor)}
                     >
-                      <small>{PARTS[card.part].name}</small>
+                      <small>{translateText(PARTS[card.part].name)}</small>
                     </span>
                     {traps.some((t) => t.anchor === anchor) ? (
                       <Check size={10} />
@@ -597,7 +606,7 @@ export function LiveVault({
                     key={'decor-' + index}
                     className={styles.decorTarget}
                     style={pos(point.x, point.y)}
-                    aria-label={`Mover adorno ${index + 1}`}
+                    aria-label={translateText(`Mover adorno ${index + 1}`)}
                     onPointerDown={(e) => startDecor(e, index)}
                     onPointerMove={moveDecor}
                     onPointerUp={endDecor}
@@ -653,7 +662,7 @@ export function LiveVault({
                 key={trap.anchor}
                 className={`${styles.target} ${selected === trap.anchor ? styles.selected : ''}`}
                 style={pos(trap.x, trap.y)}
-                aria-label={'Mover ' + PARTS[trap.part].name}
+                aria-label={translateText('Mover ' + PARTS[trap.part].name)}
                 onClick={() => setSelected(trap.anchor!)}
                 onPointerDown={(e) => startDrag(e, trap)}
                 onPointerMove={move}
@@ -703,7 +712,7 @@ export function LiveVault({
                   src={PARTS[ghost.part].partImage}
                   width={42}
                   height={42}
-                  alt=""
+                  alt={''}
                 />
               </div>
             ) : null}
@@ -762,8 +771,10 @@ export function LiveVault({
                     ),
                     t.y,
                   )}
-                  aria-label="Ajustar alcance"
-                  title={`${rule.label}: ${(t.reach ?? rule.default).toFixed(1)}`}
+                  aria-label={translateText('Ajustar alcance')}
+                  title={translateText(
+                    `${rule.label}: ${(t.reach ?? rule.default).toFixed(1)}`,
+                  )}
                   onKeyDown={(e) => {
                     if (
                       ![
@@ -799,18 +810,22 @@ export function LiveVault({
                   onPointerCancel={cancel}
                 >
                   <span>↔</span>
-                  <small>{(t.reach ?? rule.default).toFixed(1)}</small>
+                  <small>
+                    {translateText((t.reach ?? rule.default).toFixed(1))}
+                  </small>
                 </button>
               </>
             ) : null}
             {t && mode === 'edit' ? (
               <div
                 className="trap-motion-controls"
-                aria-label="Movimiento de la defensa"
+                aria-label={translateText('Movimiento de la defensa')}
               >
                 <button
                   data-object="retry"
-                  data-label={t.motion ? MOTION_LABELS[t.motion] : 'Movimiento'}
+                  data-label={translateText(
+                    t.motion ? MOTION_LABELS[t.motion] : 'Movimiento',
+                  )}
                   onClick={() => {
                     const kinds = ['bounce', 'flight', 'diagonal'] as const;
                     const motion =
@@ -836,14 +851,17 @@ export function LiveVault({
                     );
                   }}
                 >
-                  Cambiar movimiento:{' '}
-                  {t.motion ? MOTION_LABELS[t.motion] : 'original'}
+                  {translateText('Cambiar movimiento:')}
+                  {translateText(' ')}
+                  {translateText(
+                    t.motion ? MOTION_LABELS[t.motion] : 'original',
+                  )}
                 </button>
                 <button
                   data-object={
                     (t.motionDirection ?? 1) === 1 ? 'next' : 'previous'
                   }
-                  data-label="Sentido"
+                  data-label={translateText('Sentido')}
                   disabled={!t.motion || t.motion === 'bounce'}
                   onClick={() =>
                     commit(
@@ -859,11 +877,12 @@ export function LiveVault({
                     )
                   }
                 >
-                  Invertir sentido
+                  {translateText('Invertir sentido')}
                 </button>
                 <small>
-                  Combina dos diagonales en sentidos opuestos. Vuelve a validar
-                  al cambiar el recorrido.
+                  {translateText(
+                    'Combina dos diagonales en sentidos opuestos. Vuelve a validar al cambiar el recorrido.',
+                  )}
                 </small>
               </div>
             ) : null}
@@ -874,51 +893,60 @@ export function LiveVault({
                 vaultLevel(profile).chest.y,
               )}
               onClick={() => void openFund()}
-              aria-label="Cargar cofre"
+              aria-label={translateText('Cargar cofre')}
             />
           </div>
         ) : null}
       </div>
-      {!loaded ? <div className={styles.loading}>Cargando…</div> : null}
+      {!loaded ? (
+        <div className={styles.loading}>{translateText('Cargando…')}</div>
+      ) : null}
       {mode === 'failed' || mode === 'won' ? (
         <div className={styles.result}>
           <span>
             {mode === 'won' ? <Check /> : <RotateCcw />}
-            {mode === 'won'
-              ? 'Validada'
-              : message === 'No se pudo guardar'
-                ? 'Sin guardar'
-                : 'Un golpe'}
+            {translateText(
+              mode === 'won'
+                ? 'Validada'
+                : message === 'No se pudo guardar'
+                  ? 'Sin guardar'
+                  : 'Un golpe',
+            )}
           </span>
           <button onClick={edit}>
             <Pencil size={18} />
-            Editar
+            {translateText('Editar')}
           </button>
           <button onClick={mode === 'won' ? () => void openFund() : test}>
-            {mode === 'won' ? <Coins size={18} /> : <Play size={18} />}{' '}
-            {mode === 'won' ? 'Cofre' : 'Reintentar'}
+            {mode === 'won' ? <Coins size={18} /> : <Play size={18} />}
+            {translateText(' ')}
+            {translateText(mode === 'won' ? 'Cofre' : 'Reintentar')}
           </button>
         </div>
       ) : null}
       {message && !fund ? (
-        <output className={styles.message}>{message}</output>
+        <output className={styles.message}>{translateText(message)}</output>
       ) : null}
       {shopOpen ? (
-        <aside className={styles.bazaar} aria-label="Bazar del refugio">
+        <aside
+          className={styles.bazaar}
+          aria-label={translateText('Bazar del refugio')}
+        >
           <div className={styles.bazaarHeader}>
-            <span data-object="title" data-label="Bazar">
-              <ShoppingBag size={16} /> Bazar
+            <span data-object="title" data-label={translateText('Bazar')}>
+              <ShoppingBag size={16} />
+              {translateText(' Bazar')}
             </span>
             <span
               data-object="balance"
-              data-value={profile.chispas}
-              aria-label={`${profile.chispas} Chispas`}
+              data-value={translateText(profile.chispas)}
+              aria-label={translateText(`${profile.chispas} Chispas`)}
             >
               <Sparkles size={14} /> {profile.chispas}
             </span>
             <button
               onClick={closeShop}
-              aria-label="Cerrar Bazar"
+              aria-label={translateText('Cerrar Bazar')}
               data-object="close"
             >
               <X size={16} />
@@ -935,20 +963,20 @@ export function LiveVault({
                       ? 'lantern'
                       : g.id
                 }
-                data-label={
+                data-label={translateText(
                   {
                     moss: 'Musgo',
                     amethyst: 'Amatista',
                     ember: 'Ámbar',
                     crystals: 'Cristales',
                     lanterns: 'Faroles',
-                  }[g.id]
-                }
-                data-caption={
-                  profile.owned.includes(g.id) ? 'Tuyo' : String(g.price)
-                }
+                  }[g.id],
+                )}
+                data-caption={translateText(
+                  profile.owned.includes(g.id) ? 'Tuyo' : String(g.price),
+                )}
                 disabled={!loaded}
-                aria-label={'Previsualizar ' + g.name}
+                aria-label={translateText('Previsualizar ' + g.name)}
                 aria-pressed={previewId === g.id}
                 onClick={() => previewGood(g.id)}
                 style={{ color: g.color }}
@@ -961,15 +989,15 @@ export function LiveVault({
                   <Flame size={24} />
                 )}
                 <small>
-                  {
+                  {translateText(
                     {
                       moss: 'Musgo',
                       amethyst: 'Amatista',
                       ember: 'Ámbar',
                       crystals: 'Cristales',
                       lanterns: 'Faroles',
-                    }[g.id]
-                  }
+                    }[g.id],
+                  )}
                 </small>
                 <small>
                   {profile.owned.includes(g.id) ? (
@@ -983,26 +1011,26 @@ export function LiveVault({
               </button>
             ))}
             <button
-              aria-label="Previsualizar sin adornos"
+              aria-label={translateText('Previsualizar sin adornos')}
               data-object="close"
-              data-label="Quitar"
+              data-label={translateText('Quitar')}
               aria-pressed={previewId === 'none'}
               onClick={() => previewGood('none')}
             >
               <X size={24} />
-              <small>Sin adornos</small>
+              <small>{translateText('Sin adornos')}</small>
             </button>
           </div>
           {previewId ? (
             <div className={styles.purchase}>
-              <small>Vista previa</small>
+              <small>{translateText('Vista previa')}</small>
               <button
                 data-object="save"
-                data-label={
+                data-label={translateText(
                   previewId === 'none' || profile.owned.includes(previewId)
                     ? 'Aplicar'
-                    : 'Comprar'
-                }
+                    : 'Comprar',
+                )}
                 onClick={applyGood}
                 disabled={
                   previewId !== 'none' &&
@@ -1011,56 +1039,63 @@ export function LiveVault({
                     (GOODS.find((g) => g.id === previewId)?.price ?? 0)
                 }
               >
-                {previewId === 'none' || profile.owned.includes(previewId) ? (
-                  'Aplicar'
-                ) : (
-                  <>
-                    Comprar · {GOODS.find((g) => g.id === previewId)?.price}{' '}
-                    <Sparkles size={12} />
-                  </>
+                {translateText(
+                  previewId === 'none' || profile.owned.includes(previewId) ? (
+                    'Aplicar'
+                  ) : (
+                    <>
+                      {translateText('Comprar · ')}
+                      {GOODS.find((g) => g.id === previewId)?.price}
+                      {translateText(' ')}
+                      <Sparkles size={12} />
+                    </>
+                  ),
                 )}
               </button>
             </div>
           ) : null}
         </aside>
       ) : null}
-      <aside className={styles.tools} aria-label="Herramientas del refugio">
+      <aside
+        className={styles.tools}
+        aria-label={translateText('Herramientas del refugio')}
+      >
         {mode !== 'test' ? (
           <button
             className={styles.shopAccess}
             data-object="shop"
-            data-label="Bazar"
+            data-label={translateText('Bazar')}
             onClick={() => navigate('shop')}
-            aria-label="Bazar"
+            aria-label={translateText('Bazar')}
             aria-expanded={shopOpen}
             disabled={!loaded || busy}
           >
             <ShoppingBag size={21} aria-hidden="true" />
-            <small>Bazar</small>
+            <small>{translateText('Bazar')}</small>
           </button>
         ) : null}
         {mode === 'test' ? (
           <button
             className={styles.pauseAccess}
             data-object={paused ? 'play' : 'pause'}
-            data-label={paused ? 'Seguir' : 'Pausa'}
+            data-label={translateText(paused ? 'Seguir' : 'Pausa')}
             onClick={() => engine.current?.pause()}
-            aria-label={paused ? 'Continuar' : 'Pausar'}
+            aria-label={translateText(paused ? 'Continuar' : 'Pausar')}
           >
             {paused ? <Play size={21} /> : <Pause size={21} />}
-            <small>{paused ? 'Seguir' : 'Pausa'}</small>
+            <small>{translateText(paused ? 'Seguir' : 'Pausa')}</small>
           </button>
         ) : (
           <button
             className={styles.chestAccess}
             data-object="reward"
-            data-label="Cofre"
+            data-label={translateText('Cofre')}
             onClick={() => void openFund()}
-            aria-label="Abrir cofre"
+            aria-label={translateText('Abrir cofre')}
             disabled={!loaded || busy}
           >
             <Coins size={21} aria-hidden="true" />
-            <small>Cofre</small>
+            <small>{translateText('Cofre')}</small>
           </button>
         )}
       </aside>
@@ -1080,7 +1115,7 @@ export function LiveVault({
       {link && mode === 'edit' ? (
         <input
           className={styles.link}
-          aria-label="Enlace del reto"
+          aria-label={translateText('Enlace del reto')}
           readOnly
           value={link}
           onFocus={(e) => e.target.select()}
@@ -1089,89 +1124,92 @@ export function LiveVault({
       <Dialog open={fund} onOpenChange={setFund}>
         <ObjectDialogContent
           className="vault-coffer"
-          title="Cofre"
+          title={translateText('Cofre')}
           onClose={() => setFund(false)}
-          description={
-            view?.registered ? 'Chispas online' : '100 Chispas de prueba'
-          }
+          description={translateText(
+            view?.registered ? 'Chispas online' : '100 Chispas de prueba',
+          )}
         >
           <div
             className="coffer-model"
             data-object="reward"
             aria-hidden="true"
           />
-          {message ? <output>{message}</output> : null}
+          {message ? <output>{translateText(message)}</output> : null}
           {profile.proof ? (
             <button
               data-object="save"
-              data-label="Guardar"
+              data-label={translateText('Guardar')}
               disabled={busy || view?.player?.locked}
               onClick={() => void saveVault()}
             >
-              Guardar defensa
+              {translateText('Guardar defensa')}
             </button>
           ) : null}
           {profile.proof ? (
             <button
               data-object="portal"
-              data-label="Compartir"
+              data-label={translateText('Compartir')}
               onClick={() => void share()}
             >
-              <Link2 size={16} /> Compartir
+              <Link2 size={16} />
+              {translateText(' Compartir')}
             </button>
           ) : null}
           {!view ? (
-            <span>Conectando…</span>
+            <span>{translateText('Conectando…')}</span>
           ) : !view.configured ? (
-            <span>Sin conexión</span>
+            <span>{translateText('Sin conexión')}</span>
           ) : !view.registered ? (
             <>
               <input
-                aria-label="Nombre online"
-                placeholder="Nombre"
+                aria-label={translateText('Nombre online')}
+                placeholder={translateText('Nombre')}
                 value={name}
                 maxLength={24}
                 onChange={(e) => setName(e.target.value)}
               />
               <button
                 data-object="save"
-                data-label={busy ? 'Guardando' : 'Crear'}
+                data-label={translateText(busy ? 'Guardando' : 'Crear')}
                 disabled={busy || name.trim().length < 2}
                 onClick={() => void deposit()}
               >
-                Crear
+                {translateText('Crear')}
               </button>
             </>
           ) : (
             <>
               <div
                 className={styles.cofferBalance}
-                aria-label="Saldo del cofre"
+                aria-label={translateText('Saldo del cofre')}
               >
                 <div>
                   <strong>{view.player?.available ?? 0}</strong>
-                  <span>Disponibles</span>
+                  <span>{translateText('Disponibles')}</span>
                 </div>
                 <div>
                   <strong>{view.player?.chest ?? 0}</strong>
-                  <span>Aseguradas · ranking</span>
+                  <span>{translateText('Aseguradas · ranking')}</span>
                 </div>
                 <div>
                   <strong>{view.player?.held ?? 0}</strong>
-                  <span>Revancha temporal</span>
+                  <span>{translateText('Revancha temporal')}</span>
                 </div>
               </div>
               <p className={styles.cofferState}>
-                {view.player?.active
-                  ? 'Refugio publicado y disponible para ataques.'
-                  : 'Carga Chispas y guarda una defensa validada para publicarlo.'}
+                {translateText(
+                  view.player?.active
+                    ? 'Refugio publicado y disponible para ataques.'
+                    : 'Carga Chispas y guarda una defensa validada para publicarlo.',
+                )}
               </p>
               <label htmlFor="vault-chest-amount">
-                Chispas que quieres guardar
+                {translateText('Chispas que quieres guardar')}
               </label>
               <input
                 id="vault-chest-amount"
-                aria-label="Chispas"
+                aria-label={translateText('Chispas')}
                 type="number"
                 min={1}
                 max={(view.player?.available ?? 0) + (view.player?.chest ?? 0)}
@@ -1180,40 +1218,49 @@ export function LiveVault({
               />
               <button
                 data-object="save"
-                data-label={busy ? 'Guardando' : 'Activar'}
+                data-label={translateText(busy ? 'Guardando' : 'Activar')}
                 disabled={busy || !profile.proof || view.player?.locked}
                 onClick={() => void deposit()}
               >
-                {busy ? 'Guardando…' : 'Activar'}
+                {translateText(busy ? 'Guardando…' : 'Activar')}
               </button>
-              {!profile.proof ? <small>Valida sin golpes</small> : null}
-              <label htmlFor="vault-withdraw-amount">Cantidad a retirar</label>
+              {!profile.proof ? (
+                <small>{translateText('Valida sin golpes')}</small>
+              ) : null}
+              <label htmlFor="vault-withdraw-amount">
+                {translateText('Cantidad a retirar')}
+              </label>
               <input
                 id="vault-withdraw-amount"
                 type="number"
                 min={1}
                 max={view.player?.withdrawable ?? 0}
-                placeholder="Todo el saldo libre"
+                placeholder={translateText('Todo el saldo libre')}
                 value={withdrawAmount}
                 onChange={(e) => setWithdrawAmount(e.target.value)}
               />
               <button
                 className={styles.withdraw}
                 data-object="wallet"
-                data-label="Retirar"
+                data-label={translateText('Retirar')}
                 disabled={
                   busy || !(view.player?.withdrawable ?? view.player?.chest)
                 }
                 onClick={() => void withdraw()}
               >
-                Retirar saldo libre
+                {translateText('Retirar saldo libre')}
               </button>
               <small>
-                Puesto{' '}
-                {view.player?.rank ? `#${view.player.rank}` : 'sin clasificar'}.
-                Puedes retirar {view.player?.withdrawable ?? 0} Chispas libres.
-                El botín temporal no se retira ni suma al ranking. Solo el saldo
-                que está siendo atacado queda reservado, hasta 10 minutos.
+                {translateText('Puesto')}
+                {translateText(' ')}
+                {translateText(
+                  view.player?.rank ? `#${view.player.rank}` : 'sin clasificar',
+                )}
+                {translateText('. Puedes retirar ')}
+                {view.player?.withdrawable ?? 0}
+                {translateText(
+                  ' Chispas libres. El botín temporal no se retira ni suma al ranking. Solo el saldo que está siendo atacado queda reservado, hasta 10 minutos.',
+                )}
               </small>
             </>
           )}

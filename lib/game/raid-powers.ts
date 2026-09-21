@@ -1,3 +1,5 @@
+import { t } from '../i18n/translate';
+import { getLocale, type Locale } from '../i18n/locale';
 import { raidFamily, FAMILY_LABELS } from './raid-mechanics';
 import { PARTS } from './catalog';
 import type { Pattern } from './recipes';
@@ -40,13 +42,16 @@ const FAMILY_GUIDES: Partial<Record<ReturnType<typeof raidFamily>, string>> = {
     'Extiende espinas hacia el lado anunciado. Pasa por detrás o espera la retracción.',
   gate: 'La barrera se cierra por ciclos. Durante su descanso puedes atravesar también el cuerpo.',
 };
-export function raidPowerDescription(id: string) {
+export function raidPowerDescription(id: string, locale: Locale = getLocale()) {
   const family = raidFamily(id);
   return (
-    FAMILY_LABELS[family] +
+    t(FAMILY_LABELS[family], locale) +
     '. ' +
-    (FAMILY_GUIDES[family] ?? MOVEMENT[PARTS[id].recipe.pattern]) +
-    ' Movimiento y daño de área adaptados para mazmorras; la carta Classic original es ' +
+    t(FAMILY_GUIDES[family] ?? MOVEMENT[PARTS[id].recipe.pattern], locale) +
+    t(
+      ' Movimiento y daño de área adaptados para mazmorras; la carta Classic original es ',
+      locale,
+    ) +
     PARTS[id].card +
     '.'
   );

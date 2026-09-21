@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useState, useSyncExternalStore } from 'react';
 import {
   audioSettings,
@@ -11,6 +14,7 @@ import { Dialog } from '@/components/ui/dialog';
 import { ObjectDialogContent } from './object-dialog';
 const serverSettings = { music: 0.35, effects: 0.65 };
 export function SoundControls() {
+  useLocale();
   const settings = useSyncExternalStore(
     subscribeAudio,
     audioSettings,
@@ -22,21 +26,22 @@ export function SoundControls() {
       <button
         className="sound-toggle"
         data-object="music"
-        data-label="Sonido"
-        aria-label="Configurar sonido"
+        data-label={translateText('Sonido')}
+        aria-label={translateText('Configurar sonido')}
         onClick={() => setOpen(true)}
       >
-        Sonido
+        {translateText('Sonido')}
       </button>
       <Dialog open={open} onOpenChange={setOpen}>
         <ObjectDialogContent
-          title="Sonido"
-          description="La música de Lunacia"
+          title={translateText('Sonido')}
+          description={translateText('La música de Lunacia')}
           onClose={() => setOpen(false)}
         >
           <div className="sound-settings">
             <label htmlFor="music-volume">
-              Música · {Math.round(settings.music * 100)} %
+              {translateText('Música · ')}
+              {Math.round(settings.music * 100)} %
             </label>
             <input
               id="music-volume"
@@ -50,7 +55,8 @@ export function SoundControls() {
               }}
             />
             <label htmlFor="effects-volume">
-              Efectos · {Math.round(settings.effects * 100)} %
+              {translateText('Efectos · ')}
+              {Math.round(settings.effects * 100)} %
             </label>
             <input
               id="effects-volume"
@@ -66,25 +72,26 @@ export function SoundControls() {
             <div className="sound-actions">
               <button
                 data-object="play"
-                data-label="Probar"
+                data-label={translateText('Probar')}
                 onClick={() => {
                   unlockAudio();
                   playSound('win');
                 }}
               >
-                Probar efectos
+                {translateText('Probar efectos')}
               </button>
               <button
                 data-object="music"
-                data-label="Silenciar"
+                data-label={translateText('Silenciar')}
                 onClick={() => setAudioSettings({ music: 0, effects: 0 })}
               >
-                Silenciar todo
+                {translateText('Silenciar todo')}
               </button>
             </div>
             <p>
-              Volúmenes guardados en este dispositivo. Lobby oscuro y techno en
-              las mazmorras. Todo el audio se pausa al salir del juego.
+              {translateText(
+                'Volúmenes guardados en este dispositivo. Lobby oscuro y techno en las mazmorras. Todo el audio se pausa al salir del juego.',
+              )}
             </p>
           </div>
         </ObjectDialogContent>

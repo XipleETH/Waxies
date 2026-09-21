@@ -1,4 +1,7 @@
 'use client';
+import { t as translateText } from '@/lib/i18n/translate';
+import { useLocale } from '@/lib/i18n/use-locale';
+
 import { useEffect, useState } from 'react';
 import { stringToHex } from 'viem';
 import {
@@ -13,6 +16,7 @@ export function AccountAccess({
 }: {
   onAuthenticated?: (value: boolean) => void;
 }) {
+  useLocale();
   const [wallet, setWallet] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -102,56 +106,65 @@ export function AccountAccess({
     }
   }
   return (
-    <section className="cloud-account" aria-label="Cuenta y progreso">
+    <section
+      className="cloud-account"
+      aria-label={translateText('Cuenta y progreso')}
+    >
       {wallet ? (
         <>
           <p>
-            Cuenta protegida · {wallet.slice(0, 6)}…{wallet.slice(-4)}
+            {translateText('Cuenta protegida · ')}
+            {translateText(wallet.slice(0, 6))}…
+            {translateText(wallet.slice(-4))}
           </p>
           <p>
-            Historia, Bazar y refugio se guardan en tu cuenta. El cofre conserva
-            su saldo online.
+            {translateText(
+              'Historia, Bazar y refugio se guardan en tu cuenta. El cofre conserva su saldo online.',
+            )}
           </p>
           <button
             data-object="close"
-            data-label="Salir"
+            data-label={translateText('Salir')}
             disabled={busy}
             onClick={() => void logout()}
           >
-            Cerrar sesión
+            {translateText('Cerrar sesión')}
           </button>
         </>
       ) : (
         <>
-          <p>Guarda y recupera tu aventura con tu cuenta.</p>
+          <p>{translateText('Guarda y recupera tu aventura con tu cuenta.')}</p>
           <div className="cloud-account-actions">
             <button
               data-object="ronin"
-              data-label="Ronin"
+              data-label={translateText('Ronin')}
               disabled={busy}
               onClick={() => void connect(false)}
             >
-              Entrar con Ronin
+              {translateText('Entrar con Ronin')}
             </button>
             {WAYPOINT_ENABLED ? (
               <button
                 data-object="sky-mavis"
-                data-label="Sky Mavis"
+                data-label={translateText('Sky Mavis')}
                 disabled={busy}
                 onClick={() => void connect(true)}
               >
-                Entrar con Sky Mavis
+                {translateText('Entrar con Sky Mavis')}
               </button>
             ) : null}
           </div>
           <small>
-            Firma de acceso, sin transferir fondos. Se conserva tu cuenta online
-            actual al vincularla por primera vez.
+            {translateText(
+              'Firma de acceso, sin transferir fondos. Se conserva tu cuenta online actual al vincularla por primera vez.',
+            )}
           </small>
         </>
       )}
-      {busy ? <output>Guardando y conectando…</output> : null}
-      {error ? <p role="alert">{error}</p> : null}
+      {busy ? (
+        <output>{translateText('Guardando y conectando…')}</output>
+      ) : null}
+      {error ? <p role="alert">{translateText(error)}</p> : null}
     </section>
   );
 }
